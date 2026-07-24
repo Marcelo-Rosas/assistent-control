@@ -1,7 +1,13 @@
-# Guia de Integração — Eros no assistent-control (Supabase Backend)
+# Guia de Integração — Eros / GymSite Pipeline (Supabase Backend)
 
-> **Arquitetura**: Frontend React (assistent-control) → Supabase direto — **SEM VectraClaw**
-> 
+> **GymSite channel layer (2026-07-24):** Evolution-first WhatsApp.  
+> Spec: `docs/superpowers/specs/2026-07-24-gymsite-pipeline-design.md`  
+> Plan: `docs/superpowers/plans/2026-07-24-gymsite-pipeline.md`  
+> Meta webhooks **no-op** unless `CHANNEL_PROVIDER=meta`. Eros UI mocks **removed**.  
+> Secrets = Edge Secrets only (never `VITE_SAKANA_*` / never keys in `eros_config`).
+
+> **Arquitetura**: Frontend React (GymSite - Pipeline) → Supabase direto — **SEM VectraClaw**
+>
 > **Supabase URL**: `https://gxmaxbjgdrqdcizvdojp.supabase.co`
 
 ---
