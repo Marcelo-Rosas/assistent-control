@@ -10,17 +10,17 @@ export const STATS: StatMetric[] = [
 export const MOCK_TEAM: TeamMember[] = [
   { 
     id: 't1', 
-    name: 'Admin User', 
-    email: 'admin@viverdeia.com', 
+    name: 'Marcelo Rosas', 
+    email: 'marketing@gymsite.com.br', 
     role: 'admin', 
     status: 'active', 
-    avatar: 'https://ui-avatars.com/api/?name=Admin+User&background=0891b2&color=fff',
+    avatar: 'https://ui-avatars.com/api/?name=Marcelo+Rosas&background=0891b2&color=fff',
     lastActive: 'Agora'
   },
   { 
     id: 't2', 
     name: 'Sarah Connor', 
-    email: 'sarah@viverdeia.com', 
+    email: 'sarah@gymsite.com.br', 
     role: 'creator', 
     status: 'active', 
     avatar: 'https://i.pravatar.cc/150?u=sarah',
@@ -29,7 +29,7 @@ export const MOCK_TEAM: TeamMember[] = [
   { 
     id: 't3', 
     name: 'John Doe', 
-    email: 'john@viverdeia.com', 
+    email: 'john@gymsite.com.br', 
     role: 'basic', 
     status: 'invited', 
     avatar: 'https://ui-avatars.com/api/?name=John+Doe&background=334155&color=fff',
@@ -284,7 +284,7 @@ async function processAIResponse(job) {
   const completion = await openai.chat.completions.create({
     model: "gpt-4-turbo",
     messages: [
-      { role: "system", content: "Você é um assistente da Viver de IA..." },
+      { role: "system", content: "Você é um assistente da GymSite..." },
       ...history.map(msg => ({ role: msg.direction === 'incoming' ? 'user' : 'assistant', content: msg.content }))
     ]
   });

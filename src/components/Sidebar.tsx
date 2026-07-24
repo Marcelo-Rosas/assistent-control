@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { LayoutDashboard, MessageSquare, Users, Settings as SettingsIcon, LogOut, Command, ChevronLeft, ChevronRight, Zap, ShieldCheck, Calendar, Kanban, Code2, Lock } from 'lucide-react';
+import { LayoutDashboard, MessageSquare, Users, Settings as SettingsIcon, LogOut, Command, ChevronLeft, ChevronRight, Zap, ShieldCheck, Calendar, Kanban, Code2, Lock, Heart } from 'lucide-react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useRoles } from '../context/RoleContext';
 
@@ -14,11 +14,12 @@ const Sidebar: React.FC = () => {
 
   const menuItems = [
     { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard, permission: 'read_dashboard' },
-    { id: 'kanban', label: 'Pipeline', icon: Kanban, permission: 'view_dashboard' }, // Anyone can view pipeline, basic user has read-only
+    { id: 'kanban', label: 'Pipeline', icon: Kanban, permission: 'read_dashboard' }, // leitura para todos; edição é controlada dentro da tela
     { id: 'chat', label: 'Chat Ao Vivo', icon: MessageSquare, permission: 'interact_chat' },
     { id: 'contacts', label: 'Contatos', icon: Users, permission: 'interact_chat' },
-    { id: 'scheduling', label: 'Agendamentos', icon: Calendar, permission: 'view_dashboard' }, // Anyone can view sched
-    { id: 'team', label: 'Equipe', icon: ShieldCheck, permission: 'view_dashboard' }, // Everyone can view Permissions Matrix in team!
+    { id: 'scheduling', label: 'Agendamentos', icon: Calendar, permission: 'read_dashboard' },
+    { id: 'team', label: 'Equipe', icon: ShieldCheck, permission: 'read_dashboard' },
+    { id: 'eros', label: 'Eros', icon: Heart, permission: 'access_eros' },
     { id: 'functions', label: 'Funções', icon: Code2, permission: 'edit_functions' },
     { id: 'settings', label: 'Configurações', icon: SettingsIcon, permission: 'manage_settings' },
   ];
@@ -28,22 +29,22 @@ const Sidebar: React.FC = () => {
     switch (currentRole) {
       case 'admin':
         return {
-          name: 'Admin User',
-          email: 'admin@viverdeia.com',
-          initials: 'AD',
+          name: 'Marcelo Rosas',
+          email: 'marketing@gymsite.com.br',
+          initials: 'MR',
           tagColor: 'bg-cyan-500/10 border-cyan-500/20 text-cyan-400',
         };
       case 'creator':
         return {
           name: 'Sarah Connor',
-          email: 'sarah@viverdeia.com',
+          email: 'sarah@gymsite.com.br',
           initials: 'SC',
           tagColor: 'bg-violet-500/10 border-violet-500/20 text-violet-400',
         };
       case 'basic':
         return {
           name: 'John Doe',
-          email: 'john@viverdeia.com',
+          email: 'john@gymsite.com.br',
           initials: 'JD',
           tagColor: 'bg-slate-800 border-slate-700 text-slate-400',
         };
@@ -78,8 +79,8 @@ const Sidebar: React.FC = () => {
         <div className={`hidden lg:flex flex-col ml-3 overflow-hidden whitespace-nowrap transition-all duration-300 ${
           isExpanded ? 'w-40 opacity-100' : 'w-0 opacity-0'
         }`}>
-          <span className="font-bold text-lg tracking-tight text-white">Viver de IA</span>
-          <span className="text-[10px] uppercase tracking-wider text-cyan-500 font-semibold">Workspace</span>
+          <span className="font-bold text-lg tracking-tight text-white">GymSite - Pipeline</span>
+          <span className="text-[10px] uppercase tracking-wider text-cyan-500 font-semibold">@gymsite.com.br</span>
         </div>
       </div>
 
