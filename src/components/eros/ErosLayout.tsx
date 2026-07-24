@@ -26,6 +26,8 @@ export const ErosLayout: React.FC = () => {
   const [llmProvider, setLlmProvider] = useState<LlmProviderOption>('sakana');
   const [llmSaving, setLlmSaving] = useState(false);
   const [llmError, setLlmError] = useState<string | null>(null);
+  const [autoReply, setAutoReply] = useState(false);
+  const [autoSaving, setAutoSaving] = useState(false);
 
   useEffect(() => {
     if (!canToggleLlm) return;
@@ -37,6 +39,14 @@ export const ErosLayout: React.FC = () => {
       })
       .catch(() => {
         if (!cancelled) setLlmProvider('sakana');
+      });
+    void erosService
+      .getAutoReply()
+      .then((enabled) => {
+        if (!cancelled) setAutoReply(enabled);
+      })
+      .catch(() => {
+        if (!cancelled) setAutoReply(false);
       });
     return () => {
       cancelled = true;
@@ -58,6 +68,21 @@ export const ErosLayout: React.FC = () => {
     }
   };
 
+  const handleAutoReplyChange = async (next: boolean) => {
+    const previous = autoReply;
+    setAutoReply(next);
+    setAutoSaving(true);
+    setLlmError(null);
+    try {
+      await erosService.setAutoReply(next);
+    } catch (e: unknown) {
+      setAutoReply(previous);
+      setLlmError(e instanceof Error ? e.message : 'Falha ao salvar auto-reply');
+    } finally {
+      setAutoSaving(false);
+    }
+  };
+
   return (
     <div className="h-full flex flex-col overflow-hidden">
       <div className="flex-shrink-0 px-6 pt-4 pb-0 border-b border-slate-800/60 bg-slate-950/40">
@@ -69,24 +94,36 @@ export const ErosLayout: React.FC = () => {
             <span className="text-sm font-semibold text-slate-300">Eros</span>
           </div>
           {canToggleLlm && (
-            <div className="flex items-center gap-2">
-              <label htmlFor="eros-llm-provider" className="text-[11px] text-slate-500 whitespace-nowrap">
-                LLM
+            <div className="flex items-center gap-3 flex-wrap justify-end">
+              <div className="flex items-center gap-2">
+                <label htmlFor="eros-llm-provider" className="text-[11px] text-slate-500 whitespace-nowrap">
+                  LLM
+                </label>
+                <select
+                  id="eros-llm-provider"
+                  value={llmProvider}
+                  disabled={llmSaving}
+                  onChange={(e) => void handleLlmChange(e.target.value as LlmProviderOption)}
+                  className="text-xs bg-slate-900 border border-slate-700 text-slate-200 rounded-md px-2 py-1.5 focus:outline-none focus:ring-1 focus:ring-pink-500/50 disabled:opacity-60"
+                >
+                  {LLM_OPTIONS.map((opt) => (
+                    <option key={opt.value} value={opt.value}>
+                      {opt.label}
+                    </option>
+                  ))}
+                </select>
+              </div>
+              <label className="flex items-center gap-1.5 text-[11px] text-slate-400 cursor-pointer select-none">
+                <input
+                  type="checkbox"
+                  checked={autoReply}
+                  disabled={autoSaving}
+                  onChange={(e) => void handleAutoReplyChange(e.target.checked)}
+                  className="rounded border-slate-600 bg-slate-900 text-pink-500 focus:ring-pink-500/40"
+                />
+                Auto-reply WA
               </label>
-              <select
-                id="eros-llm-provider"
-                value={llmProvider}
-                disabled={llmSaving}
-                onChange={(e) => void handleLlmChange(e.target.value as LlmProviderOption)}
-                className="text-xs bg-slate-900 border border-slate-700 text-slate-200 rounded-md px-2 py-1.5 focus:outline-none focus:ring-1 focus:ring-pink-500/50 disabled:opacity-60"
-              >
-                {LLM_OPTIONS.map((opt) => (
-                  <option key={opt.value} value={opt.value}>
-                    {opt.label}
-                  </option>
-                ))}
-              </select>
-              {llmSaving && <span className="text-[10px] text-slate-500">salvando…</span>}
+              {(llmSaving || autoSaving) && <span className="text-[10px] text-slate-500">salvando…</span>}
               {llmError && <span className="text-[10px] text-rose-400 max-w-[160px] truncate">{llmError}</span>}
             </div>
           )}

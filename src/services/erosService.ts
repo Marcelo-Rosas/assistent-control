@@ -10,11 +10,32 @@ export type LlmProviderOption = 'sakana' | 'ollama' | 'gemini' | 'openai';
 
 const LLM_PROVIDERS = new Set<string>(['sakana', 'ollama', 'gemini', 'openai']);
 const LLM_STORAGE_KEY = 'gymsite_llm_provider';
+const AUTO_REPLY_STORAGE_KEY = 'gymsite_eros_auto_reply';
 
 function normalizeProvider(raw: unknown): LlmProviderOption | null {
   const value = String(raw || '').toLowerCase();
   const normalized = value === 'fugu' ? 'sakana' : value;
   return LLM_PROVIDERS.has(normalized) ? (normalized as LlmProviderOption) : null;
+}
+
+async function upsertConfig(key: string, value_json: Record<string, unknown>): Promise<void> {
+  const supabase = getSupabaseClient();
+  const { data: existing, error: selectError } = await supabase
+    .from('eros_config')
+    .select('id')
+    .eq('key', key)
+    .is('company_id', null)
+    .maybeSingle();
+  if (selectError) throw selectError;
+  if (existing) {
+    const { error: updateError } = await supabase.from('eros_config').update({ value_json }).eq('id', existing.id);
+    if (updateError) throw updateError;
+  } else {
+    const { error: insertError } = await supabase
+      .from('eros_config')
+      .insert({ key, value_json, company_id: null });
+    if (insertError) throw insertError;
+  }
 }
 
 export const erosService = {
@@ -50,28 +71,37 @@ export const erosService = {
       localStorage.setItem(LLM_STORAGE_KEY, normalized);
       return;
     }
-    const supabase = getSupabaseClient();
-    const value_json = { provider: normalized };
-    const { data: existing, error: selectError } = await supabase
-      .from('eros_config')
-      .select('id')
-      .eq('key', 'llm_provider')
-      .is('company_id', null)
-      .maybeSingle();
-    if (selectError) throw selectError;
-    if (existing) {
-      const { error: updateError } = await supabase
-        .from('eros_config')
-        .update({ value_json })
-        .eq('id', existing.id);
-      if (updateError) throw updateError;
-    } else {
-      const { error: insertError } = await supabase
-        .from('eros_config')
-        .insert({ key: 'llm_provider', value_json, company_id: null });
-      if (insertError) throw insertError;
-    }
+    await upsertConfig('llm_provider', { provider: normalized });
     localStorage.setItem(LLM_STORAGE_KEY, normalized);
+  },
+
+  async getAutoReply(): Promise<boolean> {
+    if (isSupabaseConfigured) {
+      try {
+        const supabase = getSupabaseClient();
+        const { data } = await supabase
+          .from('eros_config')
+          .select('value_json')
+          .eq('key', 'eros_auto_reply')
+          .is('company_id', null)
+          .maybeSingle();
+        const cfg = data?.value_json as { enabled?: boolean } | boolean | null;
+        if (cfg && typeof cfg === 'object' && typeof cfg.enabled === 'boolean') return cfg.enabled;
+        if (typeof cfg === 'boolean') return cfg;
+      } catch {
+        // fall through
+      }
+    }
+    return localStorage.getItem(AUTO_REPLY_STORAGE_KEY) === 'true';
+  },
+
+  async setAutoReply(enabled: boolean): Promise<void> {
+    if (!isSupabaseConfigured) {
+      localStorage.setItem(AUTO_REPLY_STORAGE_KEY, enabled ? 'true' : 'false');
+      return;
+    }
+    await upsertConfig('eros_auto_reply', { enabled });
+    localStorage.setItem(AUTO_REPLY_STORAGE_KEY, enabled ? 'true' : 'false');
   },
 
   async listLeads(): Promise<ErosLead[]> {
