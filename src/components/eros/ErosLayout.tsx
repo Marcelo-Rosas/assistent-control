@@ -44,12 +44,14 @@ export const ErosLayout: React.FC = () => {
   }, [canToggleLlm]);
 
   const handleLlmChange = async (next: LlmProviderOption) => {
+    const previous = llmProvider;
     setLlmProvider(next);
     setLlmSaving(true);
     setLlmError(null);
     try {
       await erosService.setLlmProvider(next);
     } catch (e: unknown) {
+      setLlmProvider(previous);
       setLlmError(e instanceof Error ? e.message : 'Falha ao salvar LLM');
     } finally {
       setLlmSaving(false);

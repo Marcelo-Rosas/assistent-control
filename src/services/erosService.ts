@@ -46,14 +46,32 @@ export const erosService = {
 
   async setLlmProvider(provider: LlmProviderOption): Promise<void> {
     const normalized = normalizeProvider(provider) || 'sakana';
-    localStorage.setItem(LLM_STORAGE_KEY, normalized);
-    if (!isSupabaseConfigured) return;
+    if (!isSupabaseConfigured) {
+      localStorage.setItem(LLM_STORAGE_KEY, normalized);
+      return;
+    }
     const supabase = getSupabaseClient();
-    const { error } = await supabase.from('eros_config').upsert(
-      { key: 'llm_provider', value_json: { provider: normalized }, company_id: null },
-      { onConflict: 'key' },
-    );
-    if (error) throw error;
+    const value_json = { provider: normalized };
+    const { data: existing, error: selectError } = await supabase
+      .from('eros_config')
+      .select('id')
+      .eq('key', 'llm_provider')
+      .is('company_id', null)
+      .maybeSingle();
+    if (selectError) throw selectError;
+    if (existing) {
+      const { error: updateError } = await supabase
+        .from('eros_config')
+        .update({ value_json })
+        .eq('id', existing.id);
+      if (updateError) throw updateError;
+    } else {
+      const { error: insertError } = await supabase
+        .from('eros_config')
+        .insert({ key: 'llm_provider', value_json, company_id: null });
+      if (insertError) throw insertError;
+    }
+    localStorage.setItem(LLM_STORAGE_KEY, normalized);
   },
 
   async listLeads(): Promise<ErosLead[]> {
