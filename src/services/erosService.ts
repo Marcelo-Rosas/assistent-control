@@ -6,9 +6,54 @@ import {
 } from '../types';
 import { getSupabaseClient, isSupabaseConfigured } from './supabaseClient';
 
+export type LlmProviderOption = 'sakana' | 'ollama' | 'gemini' | 'openai';
+
+const LLM_PROVIDERS = new Set<string>(['sakana', 'ollama', 'gemini', 'openai']);
+const LLM_STORAGE_KEY = 'gymsite_llm_provider';
+
+function normalizeProvider(raw: unknown): LlmProviderOption | null {
+  const value = String(raw || '').toLowerCase();
+  const normalized = value === 'fugu' ? 'sakana' : value;
+  return LLM_PROVIDERS.has(normalized) ? (normalized as LlmProviderOption) : null;
+}
+
 export const erosService = {
   get configured() {
     return isSupabaseConfigured;
+  },
+
+  async getLlmProvider(): Promise<LlmProviderOption> {
+    if (isSupabaseConfigured) {
+      try {
+        const supabase = getSupabaseClient();
+        const { data } = await supabase
+          .from('eros_config')
+          .select('value_json')
+          .eq('key', 'llm_provider')
+          .is('company_id', null)
+          .maybeSingle();
+        const fromConfig = normalizeProvider(
+          (data?.value_json as { provider?: string } | string | null)?.provider ?? data?.value_json,
+        );
+        if (fromConfig) return fromConfig;
+      } catch {
+        // fall through to localStorage
+      }
+    }
+    const fromStorage = normalizeProvider(localStorage.getItem(LLM_STORAGE_KEY));
+    return fromStorage || 'sakana';
+  },
+
+  async setLlmProvider(provider: LlmProviderOption): Promise<void> {
+    const normalized = normalizeProvider(provider) || 'sakana';
+    localStorage.setItem(LLM_STORAGE_KEY, normalized);
+    if (!isSupabaseConfigured) return;
+    const supabase = getSupabaseClient();
+    const { error } = await supabase.from('eros_config').upsert(
+      { key: 'llm_provider', value_json: { provider: normalized }, company_id: null },
+      { onConflict: 'key' },
+    );
+    if (error) throw error;
   },
 
   async listLeads(): Promise<ErosLead[]> {
