@@ -44,7 +44,7 @@ export const permissionsMatrix: Permission[] = [
     module: 'Pipeline (Kanban)',
     admin: true,
     creator: true,
-    basic: false, // Básico has access only to view
+    basic: false,
   },
   {
     action: 'manage_appointments',
@@ -52,7 +52,7 @@ export const permissionsMatrix: Permission[] = [
     module: 'Agendamentos',
     admin: true,
     creator: true,
-    basic: false, // Básico can only view, not create
+    basic: false,
   },
   {
     action: 'manage_team',
@@ -78,6 +78,14 @@ export const permissionsMatrix: Permission[] = [
     creator: false,
     basic: false,
   },
+  {
+    action: 'access_eros',
+    description: 'Acessar o módulo Eros (prospecção social, chat, kanban e conteúdo)',
+    module: 'Eros',
+    admin: true,
+    creator: true,
+    basic: true,
+  },
 ];
 
 export const RoleProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
@@ -92,7 +100,7 @@ export const RoleProvider: React.FC<{ children: React.ReactNode }> = ({ children
   };
 
   const hasPermission = (action: string): boolean => {
-    const perm = permissionsMatrix.find(p => p.action === action);
+    const perm = permissionsMatrix.find((p) => p.action === action);
     if (!perm) return false;
     return perm[currentRole];
   };
