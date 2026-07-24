@@ -1,8 +1,17 @@
 /** Select-then-insert — avoid PostgREST onConflict on partial unique (company_id IS NULL). */
 export async function ensurePipelineRow(supabase: any, leadId: string) {
-  const { data } = await supabase.from('eros_pipeline').select('id').eq('lead_id', leadId).maybeSingle();
+  const { data, error } = await supabase
+    .from('eros_pipeline')
+    .select('id')
+    .eq('lead_id', leadId)
+    .is('company_id', null)
+    .maybeSingle();
+  if (error) throw new Error(error.message);
   if (data?.id) return;
-  await supabase.from('eros_pipeline').insert({ lead_id: leadId, stage: 'new', position: 0 });
+  const { error: insertError } = await supabase
+    .from('eros_pipeline')
+    .insert({ lead_id: leadId, stage: 'new', position: 0 });
+  if (insertError) throw new Error(insertError.message);
 }
 
 const SHARED = new Set(['new', 'qualifying', 'qualified', 'call', 'proposal', 'converted']);
@@ -14,16 +23,31 @@ const SHARED = new Set(['new', 'qualifying', 'qualified', 'call', 'proposal', 'c
  */
 export async function setLeadStage(supabase: any, leadId: string, stage: string) {
   if (stage === 'discarded') {
-    await supabase.from('eros_leads').update({ status: 'discarded' }).eq('id', leadId);
+    const { error } = await supabase.from('eros_leads').update({ status: 'discarded' }).eq('id', leadId);
+    if (error) throw new Error(error.message);
     return;
   }
   if (!SHARED.has(stage)) throw new Error(`invalid_stage:${stage}`);
-  await supabase.from('eros_leads').update({ status: stage }).eq('id', leadId);
+  const { error: leadError } = await supabase.from('eros_leads').update({ status: stage }).eq('id', leadId);
+  if (leadError) throw new Error(leadError.message);
 
-  const { data } = await supabase.from('eros_pipeline').select('id').eq('lead_id', leadId).maybeSingle();
+  const { data, error } = await supabase
+    .from('eros_pipeline')
+    .select('id')
+    .eq('lead_id', leadId)
+    .is('company_id', null)
+    .maybeSingle();
+  if (error) throw new Error(error.message);
   if (data?.id) {
-    await supabase.from('eros_pipeline').update({ stage, position: 0 }).eq('id', data.id);
+    const { error: updateError } = await supabase
+      .from('eros_pipeline')
+      .update({ stage, position: 0 })
+      .eq('id', data.id);
+    if (updateError) throw new Error(updateError.message);
   } else {
-    await supabase.from('eros_pipeline').insert({ lead_id: leadId, stage, position: 0 });
+    const { error: insertError } = await supabase
+      .from('eros_pipeline')
+      .insert({ lead_id: leadId, stage, position: 0 });
+    if (insertError) throw new Error(insertError.message);
   }
 }
