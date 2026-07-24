@@ -102,3 +102,72 @@ export interface BackendFunction {
   status: 'pending' | 'development' | 'completed';
   code: string; // Pseudo-code or JSON spec
 }
+
+// -------------------------
+// EROS (primeiro agente)
+// -------------------------
+
+export type ErosChannel = 'instagram' | 'whatsapp';
+export type ErosClassification = 'hot' | 'morno' | 'frio';
+export type ErosLeadStatus = 'new' | 'qualifying' | 'qualified' | 'call' | 'proposal' | 'converted' | 'discarded';
+export type ErosPipelineStage = 'new' | 'qualifying' | 'qualified' | 'call' | 'proposal' | 'converted';
+export type ErosSpinPhase = 'situation' | 'problem' | 'implication' | 'need_payoff';
+
+export interface ErosLead {
+  id: string;
+  created_at: string;
+  updated_at: string;
+
+  channel: ErosChannel;
+  external_id?: string | null;
+
+  name: string;
+  username?: string | null;
+  phone?: string | null;
+  email?: string | null;
+  avatar_url?: string | null;
+
+  classification: ErosClassification;
+  score: number; // 0..100
+  status: ErosLeadStatus;
+
+  tags: string[];
+  notes?: string | null;
+  last_contact_at?: string | null;
+}
+
+export interface ErosConversation {
+  id: string;
+  lead_id: string;
+  channel: ErosChannel;
+  external_thread_id?: string | null;
+  last_message_at?: string | null;
+  last_message_preview?: string | null;
+  unread_count: number;
+}
+
+export type ErosMessageDirection = 'incoming' | 'outgoing';
+export type ErosMessageType = 'text' | 'image' | 'audio';
+export type ErosMessageStatus = 'sent' | 'delivered' | 'read' | 'failed';
+
+export interface ErosMessage {
+  id: string;
+  created_at: string;
+  conversation_id: string;
+  lead_id: string;
+
+  direction: ErosMessageDirection;
+  message_type: ErosMessageType;
+  status: ErosMessageStatus;
+
+  content?: string | null;
+  media_url?: string | null;
+  spin_phase?: ErosSpinPhase | null;
+}
+
+export interface ErosPipelineItem {
+  id: string;
+  lead_id: string;
+  stage: ErosPipelineStage;
+  position: number;
+}
