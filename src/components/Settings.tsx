@@ -12,7 +12,7 @@ const Settings: React.FC = () => {
       <div className="mb-10 flex items-center justify-between">
         <div>
             <h2 className="text-3xl font-bold tracking-tight text-white">Configurações</h2>
-            <p className="text-sm text-slate-400 mt-1">Central de controle da sua instância Viver de IA.</p>
+            <p className="text-sm text-slate-400 mt-1">Central de controle da sua instância GymSite - Pipeline.</p>
         </div>
         <div className="flex gap-2">
             <span className="px-3 py-1 bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs rounded-full font-mono flex items-center">
@@ -128,7 +128,7 @@ const Settings: React.FC = () => {
                 <input
                     type="text"
                     disabled={!isAdmin}
-                    placeholder="https://viverdeia.com/api/hooks/chat"
+                    placeholder="https://gymsite.com.br/api/hooks/chat"
                     className="flex-1 h-11 rounded-lg border border-slate-700 bg-slate-950 px-4 py-2 text-sm text-slate-100 placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-violet-500/50 focus:border-violet-500/50 transition-all shadow-inner disabled:opacity-50"
                 />
                 <Button disabled={!isAdmin} variant="secondary" className="bg-slate-800 border-slate-700 text-slate-300 hover:text-white disabled:opacity-50">Testar</Button>

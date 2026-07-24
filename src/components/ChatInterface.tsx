@@ -456,7 +456,7 @@ const ChatInterface: React.FC = () => {
                 <div className="absolute inset-0 bg-cyan-500/20 rounded-full blur-xl group-hover:bg-cyan-500/30 transition-all duration-1000"></div>
                 <MessageSquare className="w-10 h-10 text-cyan-500" />
             </div>
-            <h2 className="text-2xl font-bold text-white mb-2">Viver de IA Workspace</h2>
+            <h2 className="text-2xl font-bold text-white mb-2">GymSite - Pipeline</h2>
             <p className="text-slate-400 text-sm leading-relaxed">
               Selecione uma conversa ao lado para iniciar o atendimento inteligente. Sua IA está ativa e monitorando.
             </p>

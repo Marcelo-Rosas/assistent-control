@@ -282,7 +282,7 @@ const Team: React.FC = () => {
               Matriz Geral de Roles & Regras do Sistema
             </h3>
             <p className="text-sm text-slate-400 leading-relaxed mb-6">
-              A tabela abaixo resume detalhadamente o perfil e as permissões de cada nível de acesso da plataforma Viver de IA. 
+              A tabela abaixo resume detalhadamente o perfil e as permissões de cada nível de acesso da plataforma GymSite - Pipeline. 
               Mude o seu papel simulado no topo da tela para ver essas regras agindo interativamente no painel.
             </p>
 
@@ -425,7 +425,7 @@ const Team: React.FC = () => {
                             required
                             type="email" 
                             className="w-full bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-sm text-white focus:ring-1 focus:ring-cyan-500 outline-none transition-all placeholder:text-slate-700 focus:border-cyan-500"
-                            placeholder="joao@viverdeia.com"
+                            placeholder="joao@gymsite.com.br"
                             value={formData.email}
                             onChange={(e) => setFormData({...formData, email: e.target.value})}
                         />

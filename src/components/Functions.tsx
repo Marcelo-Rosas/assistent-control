@@ -27,7 +27,7 @@ const Functions: React.FC = () => {
     const defaultLogs = [
       {
         id: 'log_1',
-        userName: 'Admin User',
+        userName: 'Marcelo Rosas',
         userRole: 'Administrador',
         action: 'update',
         targetName: 'Send Whatsapp Template',
@@ -37,7 +37,7 @@ const Functions: React.FC = () => {
       },
       {
         id: 'log_2',
-        userName: 'Admin User',
+        userName: 'Marcelo Rosas',
         userRole: 'Administrador',
         action: 'create',
         targetName: 'Evolution Message Callback',
@@ -47,7 +47,7 @@ const Functions: React.FC = () => {
       },
       {
         id: 'log_3',
-        userName: 'Admin User',
+        userName: 'Marcelo Rosas',
         userRole: 'Administrador',
         action: 'update',
         targetName: 'Auth System Login',
@@ -64,7 +64,7 @@ const Functions: React.FC = () => {
   const [logActionFilter, setLogActionFilter] = useState<'all' | 'create' | 'update' | 'delete'>('all');
 
   const addAuditLog = (action: 'create' | 'update' | 'delete', fn: BackendFunction, original?: BackendFunction) => {
-    const logUser = currentRole === 'admin' ? 'Admin User' : currentRole === 'creator' ? 'Sarah Connor' : 'John Doe';
+    const logUser = currentRole === 'admin' ? 'Marcelo Rosas' : currentRole === 'creator' ? 'Sarah Connor' : 'John Doe';
     const roleName = getRoleName();
     
     let details = '';
