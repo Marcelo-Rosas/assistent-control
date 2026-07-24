@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { LayoutDashboard, MessageSquare, Users, Settings as SettingsIcon, LogOut, Command, ChevronLeft, ChevronRight, Zap, ShieldCheck, Calendar, Kanban, Code2, Lock, Heart } from 'lucide-react';
+import { LayoutDashboard, MessageSquare, Users, Settings as SettingsIcon, LogOut, Command, ChevronLeft, ChevronRight, Zap, ShieldCheck, Calendar, Kanban, Code2, Lock, Heart, Database, Sparkles } from 'lucide-react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useRoles } from '../context/RoleContext';
 
@@ -14,12 +14,14 @@ const Sidebar: React.FC = () => {
 
   const menuItems = [
     { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard, permission: 'read_dashboard' },
-    { id: 'kanban', label: 'Pipeline', icon: Kanban, permission: 'read_dashboard' }, // leitura para todos; edição é controlada dentro da tela
+    { id: 'kanban', label: 'Pipeline', icon: Kanban, permission: 'read_dashboard' },
     { id: 'chat', label: 'Chat Ao Vivo', icon: MessageSquare, permission: 'interact_chat' },
     { id: 'contacts', label: 'Contatos', icon: Users, permission: 'interact_chat' },
     { id: 'scheduling', label: 'Agendamentos', icon: Calendar, permission: 'read_dashboard' },
     { id: 'team', label: 'Equipe', icon: ShieldCheck, permission: 'read_dashboard' },
     { id: 'eros', label: 'Eros', icon: Heart, permission: 'access_eros' },
+    { id: 'playground', label: 'Playground', icon: Sparkles, permission: 'manage_settings' },
+    { id: 'knowledge', label: 'Base de Conhecimento', icon: Database, permission: 'interact_chat' },
     { id: 'functions', label: 'Funções', icon: Code2, permission: 'edit_functions' },
     { id: 'settings', label: 'Configurações', icon: SettingsIcon, permission: 'manage_settings' },
   ];

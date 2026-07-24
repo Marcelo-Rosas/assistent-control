@@ -12,6 +12,17 @@ import MeetingRoom from './components/MeetingRoom';
 import Functions from './components/Functions';
 import { RoleProvider, useRoles, UserRole } from './context/RoleContext';
 import { Shield, Sparkles, UserCheck } from 'lucide-react';
+import {
+  ErosChat,
+  ErosContacts,
+  ErosContentQueue,
+  ErosDashboard,
+  ErosKanban,
+  ErosLayout,
+  ErosProspection,
+} from './components/eros';
+import { FuguPlayground } from './components/playground/FuguPlayground';
+import { KnowledgeBase } from './components/knowledge/KnowledgeBase';
 
 // Componente de Layout que envolve a aplicação principal
 const AppLayout: React.FC = () => {
@@ -100,7 +111,18 @@ const App: React.FC = () => {
             <Route path="/scheduling" element={<Scheduling />} />
             <Route path="/team" element={<Team />} />
             <Route path="/functions" element={<Functions />} />
+            <Route path="/playground" element={<FuguPlayground />} />
+            <Route path="/knowledge" element={<KnowledgeBase />} />
             <Route path="/settings" element={<Settings />} />
+
+            <Route path="/eros" element={<ErosLayout />}>
+              <Route index element={<ErosDashboard />} />
+              <Route path="kanban" element={<ErosKanban />} />
+              <Route path="chat" element={<ErosChat />} />
+              <Route path="contacts" element={<ErosContacts />} />
+              <Route path="prospection" element={<ErosProspection />} />
+              <Route path="content" element={<ErosContentQueue />} />
+            </Route>
           </Route>
         </Routes>
       </BrowserRouter>

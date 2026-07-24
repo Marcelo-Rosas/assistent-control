@@ -22,6 +22,21 @@ const Settings: React.FC = () => {
       </div>
 
       <div className="space-y-8 relative">
+        {isAdmin && (
+          <div className="rounded-2xl border border-slate-800 bg-slate-900/50 p-5 text-sm text-slate-300 space-y-2">
+            <h3 className="font-bold text-white text-base">Edge Secrets (Dashboard)</h3>
+            <p className="text-xs text-slate-400">
+              Nunca grave API keys em `eros_config` nem com prefixo `VITE_`. Configure no Supabase Dashboard → Edge Functions → Secrets:
+            </p>
+            <ul className="text-xs font-mono text-slate-400 list-disc pl-5 space-y-1">
+              <li>CHANNEL_PROVIDER=evolution</li>
+              <li>EVOLUTION_URL / EVOLUTION_INSTANCE / EVOLUTION_API_KEY</li>
+              <li>SAKANA_API_KEY / LLM_PROVIDER / SAKANA_TIMEOUT_MS</li>
+              <li>EROS_AUTO_REPLY=false</li>
+            </ul>
+            <p className="text-xs text-slate-500">LLM provider e auto-reply não-secretos: Eros layout / eros_config.</p>
+          </div>
+        )}
         {/* Dynamic Restricted Access Overlay */}
         {!isAdmin && (
           <div className="absolute inset-x-[-12px] inset-y-[-12px] z-40 bg-slate-950/80 backdrop-blur-[6px] rounded-2xl border border-slate-800/40 p-8 flex flex-col items-center justify-center text-center">
