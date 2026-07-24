@@ -213,6 +213,17 @@ function isUniqueViolation(error: { code?: string; message?: string } | null): b
 
 Deno.serve(async (req) => {
   if (req.method === 'OPTIONS') return json({ ok: true }, 200);
+
+  // Evolution Manager / browser often probe with GET — health only, no writes
+  if (req.method === 'GET') {
+    return json({
+      ok: true,
+      service: 'eros-evolution-webhook',
+      channel: getChannelProvider(),
+      hint: 'POST MESSAGES_UPSERT with header apikey',
+    }, 200);
+  }
+
   if (req.method !== 'POST') return json({ error: 'method_not_allowed' }, 405);
 
   if (getChannelProvider() !== 'evolution') {
