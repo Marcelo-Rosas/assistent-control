@@ -1,6 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { Heart, Send, Sparkles } from 'lucide-react';
-import { Link } from 'react-router-dom';
 import { useEros } from '../../hooks/useEros';
 import { Button } from '../Button';
 import { erosService } from '../../services/erosService';
@@ -35,10 +34,15 @@ export const ErosChat: React.FC = () => {
     return leads.find((l) => l.id === selectedConversation.lead_id) || null;
   }, [leads, selectedConversation]);
 
+  // Evolution active → only WhatsApp sends work
+  const canSendViaProvider = lead?.channel === 'whatsapp';
+  const channelMismatch = Boolean(lead && !canSendViaProvider);
+
   const handleSend = async (e?: React.FormEvent) => {
     e?.preventDefault();
     if (!selectedConversation || !lead) return;
     if (!text.trim()) return;
+    if (!canSendViaProvider) return;
     const content = text.trim();
     setText('');
     await sendMessage({ conversationId: selectedConversation.id, leadId: lead.id, content });
@@ -116,13 +120,11 @@ export const ErosChat: React.FC = () => {
               {isLoading && <div className="px-4 py-4 text-sm text-slate-400">Carregando…</div>}
               {!isLoading && !needsSetup && conversations.length === 0 && (
                 <div className="px-4 py-6 space-y-3 text-sm text-slate-400">
-                  <p>Nenhuma conversa</p>
+                  <p>Nenhuma conversa WhatsApp</p>
                   <p className="text-xs">
-                    Cadastre via webhook Meta ou insira leads em{' '}
-                    <Link to="/eros/contacts" className="text-pink-400 hover:underline">
-                      Contatos
-                    </Link>
-                    .
+                    Manda msg pro número da instance Evolution — webhook cria lead{' '}
+                    <code className="text-slate-300">channel=whatsapp</code>. Lead Instagram (seed Meta) não
+                    envia com Evolution.
                   </p>
                 </div>
               )}
@@ -130,6 +132,7 @@ export const ErosChat: React.FC = () => {
                 conversations.map((c) => {
                   const l = leads.find((x) => x.id === c.lead_id);
                   const active = c.id === selectedConversationId;
+                  const isWa = l?.channel === 'whatsapp';
                   return (
                     <button
                       key={c.id}
@@ -148,11 +151,15 @@ export const ErosChat: React.FC = () => {
                         <div className="min-w-0 flex-1">
                           <div className="flex items-center justify-between gap-3">
                             <div className="text-sm font-semibold text-slate-100 truncate">{l?.name || '—'}</div>
-                            {c.unread_count > 0 && (
-                              <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-pink-500/15 border border-pink-500/25 text-pink-200">
-                                {c.unread_count}
-                              </span>
-                            )}
+                            <span
+                              className={`text-[10px] font-bold px-2 py-0.5 rounded-full border shrink-0 ${
+                                isWa
+                                  ? 'bg-emerald-500/10 border-emerald-500/25 text-emerald-200'
+                                  : 'bg-violet-500/10 border-violet-500/25 text-violet-200'
+                              }`}
+                            >
+                              {l?.channel || '—'}
+                            </span>
                           </div>
                           <div className="text-[11px] text-slate-400 truncate">
                             {c.last_message_preview || '—'}
@@ -242,17 +249,30 @@ export const ErosChat: React.FC = () => {
                 ))}
             </div>
 
-            <form onSubmit={handleSend} className="p-3 border-t border-slate-800/70 flex items-center gap-2">
-              <input
-                value={text}
-                onChange={(e) => setText(e.target.value)}
-                placeholder="Digite sua mensagem…"
-                className="flex-1 h-11 px-3 rounded-xl bg-slate-950/40 border border-slate-800/70 text-slate-200 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-pink-500/30"
-              />
-              <Button type="submit" variant="primary" className="gap-2">
-                <Send className="w-4 h-4" />
-                Enviar
-              </Button>
+            <form onSubmit={handleSend} className="p-3 border-t border-slate-800/70 space-y-2">
+              {channelMismatch && (
+                <div className="rounded-xl px-3 py-2 text-xs border border-amber-500/25 bg-amber-500/10 text-amber-100">
+                  Canal <strong>{lead?.channel}</strong> — Evolution só envia <strong>whatsapp</strong>.
+                  Envie msg WA pro número da instance pra criar conversa certa, ou ignore este lead seed IG.
+                </div>
+              )}
+              <div className="flex items-center gap-2">
+                <input
+                  value={text}
+                  onChange={(e) => setText(e.target.value)}
+                  disabled={!canSendViaProvider}
+                  placeholder={
+                    channelMismatch
+                      ? 'Envio bloqueado — lead Instagram'
+                      : 'Digite sua mensagem…'
+                  }
+                  className="flex-1 h-11 px-3 rounded-xl bg-slate-950/40 border border-slate-800/70 text-slate-200 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-pink-500/30 disabled:opacity-50"
+                />
+                <Button type="submit" variant="primary" className="gap-2" disabled={!canSendViaProvider || !text.trim()}>
+                  <Send className="w-4 h-4" />
+                  Enviar
+                </Button>
+              </div>
             </form>
           </div>
 

@@ -1,0 +1,20 @@
+{
+  "name": "gymsite-pipeline",
+  "main": "workers/site.ts",
+  "compatibility_date": "2025-03-07",
+  "compatibility_flags": ["nodejs_compat"],
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application"
+  },
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 1
+  },
+  // Production = app-assistent.gymsite.com.br (Custom Domain)
+  // Preview/staging = preview-assistent.gymsite.com.br (Custom Domain)
+  // Ephemeral version previews = *.workers.dev (previews_enabled)
+  "workers_dev": true,
+  "preview_urls": true
+}
