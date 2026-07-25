@@ -1,7 +1,7 @@
 # Gurupass accept-geo ingest
 
 Date: 2026-07-25  
-Status: draft (awaiting user review)  
+Status: approved  
 Scope: hot path “quem aceita GP no bairro” — não planos/preços
 
 ## Problem
