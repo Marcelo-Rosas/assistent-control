@@ -103,7 +103,7 @@ const App: React.FC = () => {
 
           {/* Rotas Internas (Com Sidebar) */}
           <Route element={<AppLayout />}>
-            <Route path="/" element={<Navigate to="/dashboard" replace />} />
+            <Route path="/" element={<Navigate to="/eros" replace />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/kanban" element={<Kanban />} />
             <Route path="/chat" element={<ChatInterface />} />

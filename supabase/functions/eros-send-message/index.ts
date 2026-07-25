@@ -30,20 +30,29 @@ Deno.serve(async (req) => {
     .single();
   if (leadErr) return json({ error: 'lead_not_found', details: leadErr.message }, 404);
 
-  const { data: messageRow, error: msgErr } = await supabase
-    .from('eros_messages')
-    .insert({
-      conversation_id: body.conversation_id,
-      lead_id: body.lead_id,
-      direction: 'outgoing',
-      message_type: 'text',
-      status: 'sent',
-      content: body.text,
-      spin_phase: null,
-    })
-    .select('*')
-    .single();
-  if (msgErr) return json({ error: 'db_insert_failed', details: msgErr.message }, 500);
+  // Validate channel BEFORE inserting (avoid orphan outgoing rows)
+  if (provider === 'evolution' && lead.channel !== 'whatsapp') {
+    return json(
+      {
+        error: 'unsupported_channel',
+        channel: lead.channel,
+        provider,
+        hint: 'CHANNEL_PROVIDER=evolution só envia WhatsApp. Lead Instagram não usa Evolution — mande WA real ou converta lead.',
+      },
+      400,
+    );
+  }
+  if (provider === 'meta' && lead.channel !== 'instagram') {
+    return json(
+      {
+        error: 'unsupported_channel',
+        channel: lead.channel,
+        provider,
+        hint: 'CHANNEL_PROVIDER=meta só envia Instagram.',
+      },
+      400,
+    );
+  }
 
   const updatePreview = async () => {
     await supabase
@@ -56,11 +65,23 @@ Deno.serve(async (req) => {
   };
 
   if (provider === 'evolution') {
-    if (lead.channel !== 'whatsapp') {
-      return json({ error: 'unsupported_channel', channel: lead.channel }, 400);
-    }
     const number = lead.phone || digitsOnly(String(lead.external_id || ''));
     if (!number) return json({ error: 'missing_phone' }, 400);
+
+    const { data: messageRow, error: msgErr } = await supabase
+      .from('eros_messages')
+      .insert({
+        conversation_id: body.conversation_id,
+        lead_id: body.lead_id,
+        direction: 'outgoing',
+        message_type: 'text',
+        status: 'sent',
+        content: body.text,
+        spin_phase: null,
+      })
+      .select('*')
+      .single();
+    if (msgErr) return json({ error: 'db_insert_failed', details: msgErr.message }, 500);
 
     let result: { ok: boolean; raw: unknown };
     try {
@@ -81,14 +102,26 @@ Deno.serve(async (req) => {
     );
   }
 
-  // Meta path
+  // Meta / Instagram path
+  if (!lead.external_id) return json({ error: 'missing_external_id' }, 400);
+
   const metaToken = Deno.env.get('META_ACCESS_TOKEN');
   if (!metaToken) return json({ error: 'META_ACCESS_TOKEN not set' }, 503);
 
-  if (lead.channel !== 'instagram') {
-    return json({ error: 'unsupported_channel', channel: lead.channel }, 400);
-  }
-  if (!lead.external_id) return json({ error: 'missing_external_id' }, 400);
+  const { data: messageRow, error: msgErr } = await supabase
+    .from('eros_messages')
+    .insert({
+      conversation_id: body.conversation_id,
+      lead_id: body.lead_id,
+      direction: 'outgoing',
+      message_type: 'text',
+      status: 'sent',
+      content: body.text,
+      spin_phase: null,
+    })
+    .select('*')
+    .single();
+  if (msgErr) return json({ error: 'db_insert_failed', details: msgErr.message }, 500);
 
   const response = await fetch(`https://graph.facebook.com/v18.0/me/messages?access_token=${metaToken}`, {
     method: 'POST',
