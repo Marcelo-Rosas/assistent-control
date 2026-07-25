@@ -1,47 +1,51 @@
 # Gurupass accept-geo — ops runbook
 
-Date: 2026-07-25  
+Date: 2026-07-25 (refactored: plano_minimo)  
 Spec: `Docs/superpowers/specs/2026-07-25-gurupass-accept-geo-design.md`  
 Plan: `Docs/superpowers/plans/2026-07-25-gurupass-accept-geo.md`
 
 ## Product question
 
-> Quais academias aceitam Gurupass no bairro Cocó?
+> Quais academias aceitam Gurupass em Fortaleza / no bairro X — e a partir de qual plano?
 
-Answer source: accept list from [`buscar-academias/`](https://www.gurupass.com.br/buscar-academias/) (fixture), **not** plan tier and **not** Maps name join.
+Source: [`buscar-academias/…](https://www.gurupass.com.br/buscar-academias/brasil/fortaleza---ce/?type=city)` export.
 
-Planos Ilimitado / créditos / preços = **out of this path**.
+**Correction:** GP is **not** binary. Each gym has `plano_minimo` (ex. `Ilimitado 35`) + `valor_mensal_brl`. Gate = `creditos_minimos ≤ user_credits` (same idea as TP “a partir de”).
 
-## Hot path (daily / local, $0 API)
+## Hot path ($0 API)
 
 | Env | Role |
 |-----|------|
-| `GP_ACCEPT_FIXTURE` | Path to accept JSON (e.g. `ingest/fixtures/gp-accept-coco.json`) |
-| `BAIRRO` / `CIDADE` / `UF` | Target geo (defaults Cocó / Fortaleza / CE) |
-| `REQUIRE_ACCEPT_FIXTURE=1` | Fail if fixture unset/missing |
-| `GEO_FIXTURE` | Optional Maps context only — does **not** set acceptance |
+| `GP_ACCEPT_FIXTURE` | JSON with `academias[]` (page export) or `items[]` |
+| `BAIRRO` | Empty = city-wide; set to filter (ex. `Aldeota`) |
+| `CIDADE` / `UF` | Default Fortaleza / CE |
+| `GP_USER_CREDITS` | e.g. `35` — filter gyms with min ≤ 35 |
+| `GP_USER_PLAN` | e.g. `Ilimitado 35` — same as credits parse |
+| `REQUIRE_ACCEPT_FIXTURE=1` | Fail if fixture missing |
 
-### PowerShell smoke
+Default fixture: `ingest/fixtures/gp-accept-fortaleza.json` (manual export 2026-07-25).
+
+### PowerShell — all Fortaleza GP gyms
 
 ```powershell
-$env:GP_ACCEPT_FIXTURE="ingest/fixtures/gp-accept-coco.json"
-$env:BAIRRO="Cocó"
-$env:CIDADE="Fortaleza"
-$env:UF="CE"
+$env:GP_ACCEPT_FIXTURE="ingest/fixtures/gp-accept-fortaleza.json"
+$env:BAIRRO=""
+Remove-Item Env:GP_USER_CREDITS -ErrorAction SilentlyContinue
 node scripts/ingest-gurupass-canonical.mjs
 ```
 
-Expect: `ingest_kind: gurupass_accept_geo`, `gp_accept_count` ≥ 0, artifact under `ingest/gurupass/`.
+Expect: `gp_accept_count: 6`, each row has `plano_minimo` + `valor_mensal_brl`.
 
-Seed fixture currently yields **2** hits (Cocó + citywide unknown); Aldeota dropped.
+### PowerShell — user has Ilimitado 35
 
-### Bash smoke
-
-```bash
-GP_ACCEPT_FIXTURE=ingest/fixtures/gp-accept-coco.json \
-BAIRRO=Cocó CIDADE=Fortaleza UF=CE \
+```powershell
+$env:GP_ACCEPT_FIXTURE="ingest/fixtures/gp-accept-fortaleza.json"
+$env:BAIRRO=""
+$env:GP_USER_CREDITS="35"
 node scripts/ingest-gurupass-canonical.mjs
 ```
+
+Expect: gyms with min ≤ 35 (Healthy 15, Libra 25, CT Libra 30, Cross Experience 30, vs club 35). Crossfit Aldeota (70) out.
 
 ### Tests
 
@@ -49,15 +53,27 @@ node scripts/ingest-gurupass-canonical.mjs
 node --test scripts/lib/gpAcceptGeo.test.mjs
 ```
 
-## Cold path (stub)
+## Fixture formats
 
-`GP_ACCEPT_REFRESH=1` → exit **2** with stub error. Not implemented.
+**Page export (preferred):**
 
-Future: Playwright on `buscar-academias/` (filter cidade/bairro) → rewrite `ingest/fixtures/gp-accept-*.json` → optional diff. Cron ~30d. Hot path keeps reading disk only.
+```json
+{
+  "cidade": "Fortaleza, CE",
+  "academias": [
+    {
+      "nome": "…",
+      "endereco": "…, Bairro - Fortaleza",
+      "modalidades": [],
+      "plano_minimo": "Ilimitado 35",
+      "valor_mensal_brl": 173.25
+    }
+  ]
+}
+```
 
-## Artifact fields (hot)
+Canonical `items[]` also accepted (name/address/bairro/…).
 
-- `accept_list` — filtered gyms
-- `summary.gp_accept_count`
-- `catalog.plan.status` = `out_of_scope`
-- `maps_context` — optional; never defines GP hit
+## Cold stub
+
+`GP_ACCEPT_REFRESH=1` → exit 2. Future Playwright must capture **plano_minimo** + price per card, not name-only.

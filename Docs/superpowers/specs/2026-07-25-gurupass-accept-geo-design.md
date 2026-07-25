@@ -1,50 +1,45 @@
 # Gurupass accept-geo ingest
 
 Date: 2026-07-25  
-Status: approved  
-Scope: hot path “quem aceita GP no bairro” — não planos/preços
+Status: approved (amended 2026-07-25 — plano_minimo)  
+Scope: hot path “quem aceita GP no geo + a partir de qual Ilimitado N”
 
 ## Problem
 
-Gurupass differs from TotalPass and Wellhub. TP/WH gate access by plan tier (`plan_minimo ≤ user_plan`). Gurupass gates by **binary acceptance**: the gym is (or is not) on Gurupass.
+Manual export from [`buscar-academias/brasil/fortaleza---ce/?type=city`](https://www.gurupass.com.br/buscar-academias/brasil/fortaleza---ce/?type=city) shows each gym has **`plano_minimo`** (e.g. `Ilimitado 70`) and **`valor_mensal_brl`**. GP is **not** binary accept/reject.
 
-National plan catalog (Ilimitado 10…140, credits/day, BRL) does **not** answer “which gyms in Cocó accept GP?”. If zero gyms in the target geo accept GP, the subscriber’s plan is irrelevant for that map question.
+Gate (same idea as TP): user credits ≥ gym `creditos_minimos` parsed from `plano_minimo`.
 
-Current `scripts/ingest-gurupass-canonical.mjs` still frames catalog as `/nossos-planos/` smoke (`needs_browser`) and geo as Maps fixture with empty `gurupass_hit` / `plan_hint`. That does not answer the product question:
+Source of truth for geo+plan: buscar-academias export (fixture), not `/nossos-planos/` alone and not Maps name join.
 
-> Liste quais academias aceitam os agregadores no bairro Cocó
-
-For Gurupass, the answer source is [`buscar-academias/`](https://www.gurupass.com.br/buscar-academias/), not plan join.
+> Liste quais academias aceitam Gurupass em Fortaleza / no bairro — e com qual plano mínimo.
 
 ## Goals
 
-1. Hot ingest produces an artifact that lists GP-accepted gyms for a target geo (bairro/cidade/uf).
-2. Hot path stays $0 API (fixture on disk).
-3. Cold path (cron ~30d) refreshes the fixture via browser against `buscar-academias/`.
-4. Smoke Cocó: one hot run → readable `accept_list` + `gp_accept_count` (0 is a valid answer).
+1. Hot ingest lists GP gyms for target geo with `plano_minimo` + `valor_mensal_brl`.
+2. Optional user plan filter: `creditos_minimos ≤ GP_USER_CREDITS`.
+3. Hot path $0 API (fixture on disk); accepts page export `{ academias: [...] }`.
+4. Cold path (cron) refreshes fixture from buscar-academias **including plano_minimo**.
+5. Smoke Fortaleza: fixture → artifact with plan fields (count 6 city-wide).
 
 ## Non-goals (this cycle)
 
-- Ilimitado / credits / price catalog join
-- Name-to-name join Maps × GP (Maps optional context only)
-- Partner page modalidades / grade horária
 - Live browser on every hot run
+- Full national Ilimitado 10…140 ladder scrape (prices already on each gym card)
+- Name-to-name join Maps × GP
 - Dashboard / NL agent wiring
-- Implementing Playwright cold job in the same first smoke (contract + stub only)
+- Playwright cold job implementation (stub only)
 
 ## Approach (chosen)
 
-**Hybrid hot fixture + cold browser** (approach 2).
+**Hybrid hot fixture + cold browser**, with **plan gate**:
 
 | Path | Behavior |
 |------|----------|
-| Hot | Read `GP_ACCEPT_FIXTURE`, filter by target geo, write `ingest/gurupass/<run_id>.json` |
-| Cold | Browser export from `buscar-academias/` → rewrite fixture; optional diff vs previous |
+| Hot | Read fixture → geo filter → optional user-credits filter → artifact |
+| Cold | Browser export buscar-academias → rewrite fixture (must keep `plano_minimo`) |
 
-Rejected:
-
-- Fixture-only forever (no refresh contract)
-- Live browser on hot ingest (breaks $0 / speed)
+Match rule: gym on list for geo **and** (if user plan set) `creditos_minimos ≤ user_credits`.
 
 ## Architecture
 
