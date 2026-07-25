@@ -1,0 +1,40 @@
+{
+  "aggregator": "gurupass",
+  "source": {
+    "url": "https://www.gurupass.com.br/buscar-academias/",
+    "method": "manual_seed",
+    "fetched_at": "2026-07-25T00:00:00.000Z",
+    "note": "Synthetic seed for hot smoke; replace via cold browser refresh"
+  },
+  "target_geo": {
+    "bairro": "Cocó",
+    "cidade": "Fortaleza",
+    "uf": "CE"
+  },
+  "items": [
+    {
+      "name": "Keep In Shape Cocó (seed)",
+      "address": "Cocó, Fortaleza - CE",
+      "bairro": "Cocó",
+      "cidade": "Fortaleza",
+      "uf": "CE",
+      "partner_url": null
+    },
+    {
+      "name": "Fortaleza Citywide Unknown Bairro (seed)",
+      "address": null,
+      "bairro": null,
+      "cidade": "Fortaleza",
+      "uf": "CE",
+      "partner_url": null
+    },
+    {
+      "name": "Aldeota Only (seed)",
+      "address": "Aldeota, Fortaleza - CE",
+      "bairro": "Aldeota",
+      "cidade": "Fortaleza",
+      "uf": "CE",
+      "partner_url": null
+    }
+  ]
+}
