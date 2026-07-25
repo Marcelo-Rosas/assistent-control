@@ -1,0 +1,70 @@
+{
+  "aggregator": "gurupass",
+  "source": {
+    "url": "https://www.gurupass.com.br/buscar-academias/brasil/fortaleza---ce/?type=city",
+    "method": "manual_page_export",
+    "fetched_at": "2026-07-25T18:14:00.000Z",
+    "note": "Manual export Fortaleza city; each gym has plano_minimo (not binary accept)"
+  },
+  "target_geo": {
+    "cidade": "Fortaleza",
+    "uf": "CE"
+  },
+  "cidade": "Fortaleza, CE",
+  "academias": [
+    {
+      "nome": "Crossfit Aldeota",
+      "distancia_km": 1,
+      "endereco": "Rua Ildefonso Albano 1392, Meireles, Fortaleza",
+      "modalidades": ["Musculação", "Personal Trainer"],
+      "plano_minimo": "Ilimitado 70",
+      "valor_mensal_brl": 346.5
+    },
+    {
+      "nome": "vs club",
+      "distancia_km": 3,
+      "endereco": "Avenida Padre Antônio Tomás, Aldeota - Fortaleza",
+      "modalidades": [
+        "Musculação",
+        "Hidroginástica",
+        "Natação",
+        "Ritmos",
+        "Muay Thai"
+      ],
+      "plano_minimo": "Ilimitado 35",
+      "valor_mensal_brl": 173.25
+    },
+    {
+      "nome": "Centro de Treinamento Libra",
+      "distancia_km": 3,
+      "endereco": "Rua Capitão Vasconcelos, 388, Alto da Balança - Fortaleza",
+      "modalidades": ["Musculação"],
+      "plano_minimo": "Ilimitado 30",
+      "valor_mensal_brl": 148.5
+    },
+    {
+      "nome": "Cross Experience Fortaleza",
+      "distancia_km": 4,
+      "endereco": "Rua Padre Aluísio, 13 A, Varjota, Fortaleza",
+      "modalidades": ["Cross Training"],
+      "plano_minimo": "Ilimitado 30",
+      "valor_mensal_brl": 148.5
+    },
+    {
+      "nome": "Libra Academia",
+      "distancia_km": 4,
+      "endereco": "Avenida Governador Raul Barbosa, 7151, Aerolândia - Fortaleza",
+      "modalidades": ["Musculação"],
+      "plano_minimo": "Ilimitado 25",
+      "valor_mensal_brl": 123.75
+    },
+    {
+      "nome": "Healthy Academia",
+      "distancia_km": 5,
+      "endereco": "Rua Rodrigues de Andrade, 394, Demócrito Rocha - Fortaleza",
+      "modalidades": ["Musculação"],
+      "plano_minimo": "Ilimitado 15",
+      "valor_mensal_brl": 74.25
+    }
+  ]
+}
