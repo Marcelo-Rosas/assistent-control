@@ -11,7 +11,12 @@
     "deploy": "npm run build && wrangler deploy",
     "deploy:prod": "npm run deploy",
     "cf:login": "wrangler login",
-    "cf:tail": "wrangler tail gymsite-pipeline"
+    "cf:tail": "wrangler tail gymsite-pipeline",
+    "enrich:tp": "npx tsx scripts/enrich-totalpass.ts",
+    "ingest:tp": "npx tsx scripts/ingest-totalpass.ts",
+    "fetch:tp-sp": "npx tsx scripts/fetch-all-sp-gyms.ts",
+    "ingest:tp-sp": "npx tsx scripts/ingest-totalpass-sp.ts",
+    "embed:tp": "npx tsx scripts/generate-embeddings.ts"
   },
   "dependencies": {
     "@fontsource-variable/geist": "^5.2.9",

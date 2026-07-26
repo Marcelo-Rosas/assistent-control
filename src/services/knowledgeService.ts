@@ -163,23 +163,89 @@ export const knowledgeService = {
   async ask(input: {
     groupId: string;
     messages: Array<{ role: string; content: string }>;
-  }): Promise<{ text: string; provider?: string }> {
+    /** Prefer camelCase; snake_case aliases accepted for prompts/clients. */
+    topK?: number;
+    top_k?: number;
+    minSimilarity?: number;
+    min_similarity?: number;
+    modalidade?: string;
+    bairro?: string;
+    municipio?: string;
+    plano_rank?: number;
+    /** When true, Edge returns debug_prompt (header x-rag-include-debug). */
+    includeDebug?: boolean;
+  }): Promise<{
+    text: string;
+    provider?: string;
+    sources?: Array<{
+      chunk_id: string;
+      score: number;
+      url?: string | null;
+      section?: string | null;
+      nome_academia?: string | null;
+      bairro?: string | null;
+      municipios?: string[];
+      modalidade?: string | null;
+      plano_minimo?: string | null;
+      warning?: string | null;
+      source_ref?: string | null;
+    }>;
+    agent_status?: string | null;
+    chunk_count?: number;
+    retrieval?: string;
+    debug_prompt?: string;
+  }> {
     const lastUser = [...input.messages].reverse().find((m) => m.role === 'user');
     const question = lastUser?.content?.trim() || '';
 
-    const local = askPublishedAgent(input.groupId, question);
-    if (local) return local;
-
+    // Local mock only when Supabase not configured
     if (!isSupabaseConfigured) {
+      const local = askPublishedAgent(input.groupId, question);
+      if (local) return { ...local, sources: [] };
       throw new Error('Agente não publicado. Clique em Treinar & Publicar Agente.');
     }
 
+    const topK = input.topK ?? input.top_k;
+    const minSimilarity = input.minSimilarity ?? input.min_similarity;
+
     const supabase = requireClient();
-    const { data, error } = await supabase.functions.invoke('eros-knowledge-query', {
-      body: input,
+    const { data, error } = await supabase.functions.invoke('knowledge-ask', {
+      body: {
+        groupId: input.groupId,
+        messages: input.messages,
+        top_k: topK,
+        min_similarity: minSimilarity,
+        modalidade: input.modalidade,
+        bairro: input.bairro,
+        municipio: input.municipio,
+        plano_rank: input.plano_rank,
+      },
+      headers: input.includeDebug ? { 'x-rag-include-debug': 'true' } : undefined,
     });
     if (error) throw error;
+    if (data?.error === 'forbidden' || data?.error === 'forbidden_tenant') {
+      throw new Error('Acesso negado a este grupo (tenant).');
+    }
+    if (data?.error === 'agent_not_published') {
+      throw new Error('Agente não publicado — rode ingestão TP + embed:tp.');
+    }
+    if (data?.error === 'embedding_failed' || data?.error === 'embed_query_failed') {
+      throw new Error(
+        data.hint || data.details || 'Falha ao embedar pergunta (OLLAMA/VOYAGE no Edge?)',
+      );
+    }
+    if (data?.error === 'retrieval_failed') {
+      throw new Error(data.details || 'Falha na busca vetorial');
+    }
     if (!data?.text) throw new Error(data?.error || 'empty_knowledge_response');
-    return { text: String(data.text), provider: data.provider };
+    return {
+      text: String(data.text),
+      provider: data.provider,
+      sources: Array.isArray(data.sources) ? data.sources : [],
+      agent_status: data.agent_status ?? null,
+      chunk_count: typeof data.chunk_count === 'number' ? data.chunk_count : undefined,
+      retrieval: data.retrieval,
+      debug_prompt: typeof data.debug_prompt === 'string' ? data.debug_prompt : undefined,
+    };
   },
 };

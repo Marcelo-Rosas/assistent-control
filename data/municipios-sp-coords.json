@@ -1,0 +1,722 @@
+[
+  {
+    "nome": "São Paulo",
+    "ibge": "3550308",
+    "lat": -23.5329,
+    "lng": -46.6395
+  },
+  {
+    "nome": "Guarulhos",
+    "ibge": "3518800",
+    "lat": -23.4538,
+    "lng": -46.5333
+  },
+  {
+    "nome": "Campinas",
+    "ibge": "3509502",
+    "lat": -22.9053,
+    "lng": -47.0659
+  },
+  {
+    "nome": "São Bernardo do Campo",
+    "ibge": "3548708",
+    "lat": -23.6914,
+    "lng": -46.5646
+  },
+  {
+    "nome": "Santo André",
+    "ibge": "3547809",
+    "lat": -23.6737,
+    "lng": -46.5432
+  },
+  {
+    "nome": "Sorocaba",
+    "ibge": "3552205",
+    "lat": -23.4969,
+    "lng": -47.4451
+  },
+  {
+    "nome": "Osasco",
+    "ibge": "3534401",
+    "lat": -23.5324,
+    "lng": -46.7916
+  },
+  {
+    "nome": "Ribeirão Preto",
+    "ibge": "3543402",
+    "lat": -21.1699,
+    "lng": -47.8099
+  },
+  {
+    "nome": "São José dos Campos",
+    "ibge": "3549904",
+    "lat": -23.1896,
+    "lng": -45.8841
+  },
+  {
+    "nome": "São José do Rio Preto",
+    "ibge": "3549805",
+    "lat": -20.8113,
+    "lng": -49.3758
+  },
+  {
+    "nome": "Mogi das Cruzes",
+    "ibge": "3530607",
+    "lat": -23.5208,
+    "lng": -46.1854
+  },
+  {
+    "nome": "Jundiaí",
+    "ibge": "3525904",
+    "lat": -23.1852,
+    "lng": -46.8974
+  },
+  {
+    "nome": "Piracicaba",
+    "ibge": "3538709",
+    "lat": -22.7338,
+    "lng": -47.6476
+  },
+  {
+    "nome": "Santos",
+    "ibge": "3548500",
+    "lat": -23.9535,
+    "lng": -46.335
+  },
+  {
+    "nome": "Mauá",
+    "ibge": "3529401",
+    "lat": -23.6677,
+    "lng": -46.4613
+  },
+  {
+    "nome": "Diadema",
+    "ibge": "3513801",
+    "lat": -23.6813,
+    "lng": -46.6205
+  },
+  {
+    "nome": "Carapicuíba",
+    "ibge": "3510609",
+    "lat": -23.5235,
+    "lng": -46.8407
+  },
+  {
+    "nome": "Bauru",
+    "ibge": "3506003",
+    "lat": -22.3246,
+    "lng": -49.0871
+  },
+  {
+    "nome": "Itaquaquecetuba",
+    "ibge": "3523107",
+    "lat": -23.4835,
+    "lng": -46.3457
+  },
+  {
+    "nome": "Praia Grande",
+    "ibge": "3541000",
+    "lat": -24.0084,
+    "lng": -46.4121
+  },
+  {
+    "nome": "Franca",
+    "ibge": "3516200",
+    "lat": -20.5352,
+    "lng": -47.4039
+  },
+  {
+    "nome": "São Vicente",
+    "ibge": "3551009",
+    "lat": -23.9574,
+    "lng": -46.3883
+  },
+  {
+    "nome": "Barueri",
+    "ibge": "3505708",
+    "lat": -23.5057,
+    "lng": -46.879
+  },
+  {
+    "nome": "Taubaté",
+    "ibge": "3554102",
+    "lat": -23.0104,
+    "lng": -45.5593
+  },
+  {
+    "nome": "Suzano",
+    "ibge": "3552502",
+    "lat": -23.5448,
+    "lng": -46.3112
+  },
+  {
+    "nome": "Limeira",
+    "ibge": "3526902",
+    "lat": -22.566,
+    "lng": -47.397
+  },
+  {
+    "nome": "Guarujá",
+    "ibge": "3518701",
+    "lat": -23.9888,
+    "lng": -46.258
+  },
+  {
+    "nome": "Sumaré",
+    "ibge": "3552403",
+    "lat": -22.8204,
+    "lng": -47.2728
+  },
+  {
+    "nome": "Cotia",
+    "ibge": "3513009",
+    "lat": -23.6022,
+    "lng": -46.919
+  },
+  {
+    "nome": "Taboão da Serra",
+    "ibge": "3552809",
+    "lat": -23.6019,
+    "lng": -46.7526
+  },
+  {
+    "nome": "Indaiatuba",
+    "ibge": "3520509",
+    "lat": -23.0816,
+    "lng": -47.2101
+  },
+  {
+    "nome": "São Carlos",
+    "ibge": "3548906",
+    "lat": -22.0174,
+    "lng": -47.886
+  },
+  {
+    "nome": "Embu das Artes",
+    "ibge": "3515004",
+    "lat": -23.6437,
+    "lng": -46.8579
+  },
+  {
+    "nome": "Araraquara",
+    "ibge": "3503208",
+    "lat": -21.7845,
+    "lng": -48.178
+  },
+  {
+    "nome": "Jacareí",
+    "ibge": "3524402",
+    "lat": -23.2983,
+    "lng": -45.9658
+  },
+  {
+    "nome": "Hortolândia",
+    "ibge": "3519071",
+    "lat": -22.8529,
+    "lng": -47.2143
+  },
+  {
+    "nome": "Americana",
+    "ibge": "3501608",
+    "lat": -22.7374,
+    "lng": -47.3331
+  },
+  {
+    "nome": "Marília",
+    "ibge": "3529005",
+    "lat": -22.2171,
+    "lng": -49.9501
+  },
+  {
+    "nome": "Itapevi",
+    "ibge": "3522505",
+    "lat": -23.5488,
+    "lng": -46.9327
+  },
+  {
+    "nome": "Presidente Prudente",
+    "ibge": "3541406",
+    "lat": -22.1207,
+    "lng": -51.3925
+  },
+  {
+    "nome": "Rio Claro",
+    "ibge": "3543907",
+    "lat": -22.3984,
+    "lng": -47.5546
+  },
+  {
+    "nome": "Araçatuba",
+    "ibge": "3502804",
+    "lat": -21.2076,
+    "lng": -50.4401
+  },
+  {
+    "nome": "Santa Bárbara d'Oeste",
+    "ibge": "3545803",
+    "lat": -22.7553,
+    "lng": -47.4143
+  },
+  {
+    "nome": "Ferraz de Vasconcelos",
+    "ibge": "3515707",
+    "lat": -23.5411,
+    "lng": -46.371
+  },
+  {
+    "nome": "Bragança Paulista",
+    "ibge": "3507605",
+    "lat": -22.9527,
+    "lng": -46.5419
+  },
+  {
+    "nome": "Itu",
+    "ibge": "3523909",
+    "lat": -23.2544,
+    "lng": -47.2927
+  },
+  {
+    "nome": "São Caetano do Sul",
+    "ibge": "3548807",
+    "lat": -23.6229,
+    "lng": -46.5548
+  },
+  {
+    "nome": "Pindamonhangaba",
+    "ibge": "3538006",
+    "lat": -22.9246,
+    "lng": -45.4613
+  },
+  {
+    "nome": "Francisco Morato",
+    "ibge": "3516309",
+    "lat": -23.2792,
+    "lng": -46.7448
+  },
+  {
+    "nome": "Atibaia",
+    "ibge": "3504107",
+    "lat": -23.1171,
+    "lng": -46.5563
+  },
+  {
+    "nome": "Itapecerica da Serra",
+    "ibge": "3522208",
+    "lat": -23.7161,
+    "lng": -46.8572
+  },
+  {
+    "nome": "Itapetininga",
+    "ibge": "3522307",
+    "lat": -23.5886,
+    "lng": -48.0483
+  },
+  {
+    "nome": "Santana de Parnaíba",
+    "ibge": "3547304",
+    "lat": -23.4439,
+    "lng": -46.9178
+  },
+  {
+    "nome": "Mogi Guaçu",
+    "ibge": "3530706",
+    "lat": -22.3675,
+    "lng": -46.9428
+  },
+  {
+    "nome": "Botucatu",
+    "ibge": "3507506",
+    "lat": -22.8837,
+    "lng": -48.4437
+  },
+  {
+    "nome": "Franco da Rocha",
+    "ibge": "3516408",
+    "lat": -23.3229,
+    "lng": -46.729
+  },
+  {
+    "nome": "Caraguatatuba",
+    "ibge": "3510500",
+    "lat": -23.6125,
+    "lng": -45.4125
+  },
+  {
+    "nome": "Salto",
+    "ibge": "3545209",
+    "lat": -23.1996,
+    "lng": -47.2931
+  },
+  {
+    "nome": "Jaú",
+    "ibge": "3525300",
+    "lat": -22.2936,
+    "lng": -48.5592
+  },
+  {
+    "nome": "Araras",
+    "ibge": "3503307",
+    "lat": -22.3572,
+    "lng": -47.3842
+  },
+  {
+    "nome": "Votorantim",
+    "ibge": "3557006",
+    "lat": -23.5446,
+    "lng": -47.4388
+  },
+  {
+    "nome": "Sertãozinho",
+    "ibge": "3551702",
+    "lat": -21.1316,
+    "lng": -47.9875
+  },
+  {
+    "nome": "Valinhos",
+    "ibge": "3556206",
+    "lat": -22.9698,
+    "lng": -46.9974
+  },
+  {
+    "nome": "Tatuí",
+    "ibge": "3554003",
+    "lat": -23.3487,
+    "lng": -47.8461
+  },
+  {
+    "nome": "Barretos",
+    "ibge": "3505500",
+    "lat": -20.5531,
+    "lng": -48.5698
+  },
+  {
+    "nome": "Itatiba",
+    "ibge": "3523404",
+    "lat": -23.0035,
+    "lng": -46.8464
+  },
+  {
+    "nome": "Birigui",
+    "ibge": "3506508",
+    "lat": -21.291,
+    "lng": -50.3432
+  },
+  {
+    "nome": "Jandira",
+    "ibge": "3525003",
+    "lat": -23.5275,
+    "lng": -46.9023
+  },
+  {
+    "nome": "Guaratinguetá",
+    "ibge": "3518404",
+    "lat": -22.8075,
+    "lng": -45.1938
+  },
+  {
+    "nome": "Várzea Paulista",
+    "ibge": "3556503",
+    "lat": -23.2136,
+    "lng": -46.8234
+  },
+  {
+    "nome": "Catanduva",
+    "ibge": "3511102",
+    "lat": -21.1314,
+    "lng": -48.977
+  },
+  {
+    "nome": "Ribeirão Pires",
+    "ibge": "3543303",
+    "lat": -23.7067,
+    "lng": -46.4058
+  },
+  {
+    "nome": "Itanhaém",
+    "ibge": "3522109",
+    "lat": -24.1736,
+    "lng": -46.788
+  },
+  {
+    "nome": "Paulínia",
+    "ibge": "3536505",
+    "lat": -22.7542,
+    "lng": -47.1488
+  },
+  {
+    "nome": "Cubatão",
+    "ibge": "3513504",
+    "lat": -23.8911,
+    "lng": -46.424
+  },
+  {
+    "nome": "Ourinhos",
+    "ibge": "3534708",
+    "lat": -22.9797,
+    "lng": -49.8697
+  },
+  {
+    "nome": "Poá",
+    "ibge": "3539806",
+    "lat": -23.5333,
+    "lng": -46.3473
+  },
+  {
+    "nome": "Assis",
+    "ibge": "3504008",
+    "lat": -22.66,
+    "lng": -50.4183
+  },
+  {
+    "nome": "Leme",
+    "ibge": "3526704",
+    "lat": -22.1809,
+    "lng": -47.3841
+  },
+  {
+    "nome": "Votuporanga",
+    "ibge": "3557105",
+    "lat": -20.4237,
+    "lng": -49.9781
+  },
+  {
+    "nome": "Caçapava",
+    "ibge": "3508504",
+    "lat": -23.0992,
+    "lng": -45.7076
+  },
+  {
+    "nome": "Caieiras",
+    "ibge": "3509007",
+    "lat": -23.3607,
+    "lng": -46.7397
+  },
+  {
+    "nome": "Mairiporã",
+    "ibge": "3528502",
+    "lat": -23.3171,
+    "lng": -46.5897
+  },
+  {
+    "nome": "Cajamar",
+    "ibge": "3509205",
+    "lat": -23.355,
+    "lng": -46.8781
+  },
+  {
+    "nome": "Ubatuba",
+    "ibge": "3555406",
+    "lat": -23.4332,
+    "lng": -45.0834
+  },
+  {
+    "nome": "Avaré",
+    "ibge": "3504503",
+    "lat": -23.1067,
+    "lng": -48.9251
+  },
+  {
+    "nome": "São João da Boa Vista",
+    "ibge": "3549102",
+    "lat": -21.9707,
+    "lng": -46.7944
+  },
+  {
+    "nome": "Mogi Mirim",
+    "ibge": "3530805",
+    "lat": -22.4332,
+    "lng": -46.9532
+  },
+  {
+    "nome": "Itapeva",
+    "ibge": "3522406",
+    "lat": -23.9788,
+    "lng": -48.8764
+  },
+  {
+    "nome": "Arujá",
+    "ibge": "3503901",
+    "lat": -23.3965,
+    "lng": -46.32
+  },
+  {
+    "nome": "Lorena",
+    "ibge": "3527207",
+    "lat": -22.7334,
+    "lng": -45.1197
+  },
+  {
+    "nome": "São Sebastião",
+    "ibge": "3550704",
+    "lat": -23.7951,
+    "lng": -45.4143
+  },
+  {
+    "nome": "São Roque",
+    "ibge": "3550605",
+    "lat": -23.5226,
+    "lng": -47.1357
+  },
+  {
+    "nome": "Matão",
+    "ibge": "3529302",
+    "lat": -21.6025,
+    "lng": -48.364
+  },
+  {
+    "nome": "Campo Limpo Paulista",
+    "ibge": "3509601",
+    "lat": -23.2078,
+    "lng": -46.7889
+  },
+  {
+    "nome": "Vinhedo",
+    "ibge": "3556701",
+    "lat": -23.0302,
+    "lng": -46.9833
+  },
+  {
+    "nome": "Bebedouro",
+    "ibge": "3506102",
+    "lat": -20.9491,
+    "lng": -48.4791
+  },
+  {
+    "nome": "Ibiúna",
+    "ibge": "3519709",
+    "lat": -23.6596,
+    "lng": -47.223
+  },
+  {
+    "nome": "Lins",
+    "ibge": "3527108",
+    "lat": -21.6718,
+    "lng": -49.7526
+  },
+  {
+    "nome": "Cruzeiro",
+    "ibge": "3513405",
+    "lat": -22.5728,
+    "lng": -44.969
+  },
+  {
+    "nome": "Pirassununga",
+    "ibge": "3539301",
+    "lat": -21.996,
+    "lng": -47.4257
+  },
+  {
+    "nome": "Itupeva",
+    "ibge": "3524006",
+    "lat": -23.1526,
+    "lng": -47.0593
+  },
+  {
+    "nome": "Itapira",
+    "ibge": "3522604",
+    "lat": -22.4357,
+    "lng": -46.8224
+  },
+  {
+    "nome": "Jaboticabal",
+    "ibge": "3524303",
+    "lat": -21.252,
+    "lng": -48.3252
+  },
+  {
+    "nome": "Fernandópolis",
+    "ibge": "3515509",
+    "lat": -20.2806,
+    "lng": -50.2471
+  },
+  {
+    "nome": "Peruíbe",
+    "ibge": "3537602",
+    "lat": -24.312,
+    "lng": -47.0012
+  },
+  {
+    "nome": "Amparo",
+    "ibge": "3501905",
+    "lat": -22.7088,
+    "lng": -46.772
+  },
+  {
+    "nome": "Mococa",
+    "ibge": "3530508",
+    "lat": -21.4647,
+    "lng": -47.0024
+  },
+  {
+    "nome": "Embu-Guaçu",
+    "ibge": "3515103",
+    "lat": -23.8297,
+    "lng": -46.8136
+  },
+  {
+    "nome": "Lençóis Paulista",
+    "ibge": "3526803",
+    "lat": -22.6027,
+    "lng": -48.8037
+  },
+  {
+    "nome": "Monte Mor",
+    "ibge": "3531803",
+    "lat": -22.945,
+    "lng": -47.3122
+  },
+  {
+    "nome": "Bertioga",
+    "ibge": "3506359",
+    "lat": -23.8486,
+    "lng": -46.1396
+  },
+  {
+    "nome": "Mirassol",
+    "ibge": "3530300",
+    "lat": -20.8169,
+    "lng": -49.5206
+  },
+  {
+    "nome": "Tupã",
+    "ibge": "3555000",
+    "lat": -21.9335,
+    "lng": -50.5191
+  },
+  {
+    "nome": "Mongaguá",
+    "ibge": "3531100",
+    "lat": -24.0809,
+    "lng": -46.6265
+  },
+  {
+    "nome": "Nova Odessa",
+    "ibge": "3533403",
+    "lat": -22.7832,
+    "lng": -47.2941
+  },
+  {
+    "nome": "Boituva",
+    "ibge": "3507001",
+    "lat": -23.2855,
+    "lng": -47.6786
+  },
+  {
+    "nome": "Penápolis",
+    "ibge": "3537305",
+    "lat": -21.4148,
+    "lng": -50.0769
+  },
+  {
+    "nome": "Ibitinga",
+    "ibge": "3519600",
+    "lat": -21.7562,
+    "lng": -48.8319
+  },
+  {
+    "nome": "Jaguariúna",
+    "ibge": "3524709",
+    "lat": -22.7037,
+    "lng": -46.9851
+  }
+]

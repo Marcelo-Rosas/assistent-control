@@ -17,7 +17,7 @@ import {
   Database,
   Sparkles,
   Search,
-  FileText,
+  Bug,
 } from 'lucide-react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useRoles } from '../context/RoleContext';
@@ -36,6 +36,7 @@ const Sidebar: React.FC = () => {
     { id: 'prospection', label: 'Prospecção', icon: Search, permission: 'access_eros' },
     { id: 'content', label: 'Conteúdo', icon: FileText, permission: 'access_eros' },
     { id: 'knowledge', label: 'Base de Conhecimento', icon: Database, permission: 'manage_knowledge' },
+    { id: 'rag', label: 'RAG Playground', icon: Bug, permission: 'manage_knowledge' },
     { id: 'scheduling', label: 'Agendamentos', icon: Calendar, permission: 'manage_appointments' },
     { id: 'playground', label: 'Playground', icon: Sparkles, permission: 'manage_settings' },
     { id: 'team', label: 'Equipe', icon: ShieldCheck, permission: 'manage_team' },
