@@ -18,6 +18,7 @@ import {
 } from './components/eros';
 import { FuguPlayground } from './components/playground/FuguPlayground';
 import { KnowledgeBase } from './components/knowledge/KnowledgeBase';
+import { RagPlayground } from './components/RagPlayground';
 import { PipelineLlmBar } from './components/PipelineLlmBar';
 
 const AppLayout: React.FC = () => {
@@ -110,6 +111,7 @@ const App: React.FC = () => {
             <Route path="/prospection" element={<ErosProspection />} />
             <Route path="/content" element={<ErosContentQueue />} />
             <Route path="/knowledge" element={<KnowledgeBase />} />
+            <Route path="/rag" element={<RagPlayground />} />
             <Route path="/scheduling" element={<Scheduling />} />
             <Route path="/playground" element={<FuguPlayground />} />
             <Route path="/team" element={<Team />} />

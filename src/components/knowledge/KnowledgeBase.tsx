@@ -17,7 +17,17 @@ import { knowledgeService, KnowledgeFile, KnowledgeGroup } from '../../services/
 import { PublishedAgent, agentMissingPlans, clearLocalAgent } from '../../services/knowledgeTrainService';
 import { isSupabaseConfigured } from '../../services/supabaseClient';
 
-type ChatMsg = { id: string; role: 'user' | 'assistant'; text: string };
+type ChatMsg = {
+  id: string;
+  role: 'user' | 'assistant';
+  text: string;
+  sources?: Array<{
+    chunk_id: string;
+    score: number;
+    url?: string | null;
+    section?: string | null;
+  }>;
+};
 
 export const KnowledgeBase: React.FC = () => {
   const { hasPermission } = useRoles();
@@ -70,38 +80,14 @@ export const KnowledgeBase: React.FC = () => {
     }
     const ag = knowledgeService.getPublishedAgent(activeGroupId);
     setPublished(ag);
-    // Auto-fix stale Cocó seed (no plano_minimo)
-    if (ag && agentMissingPlans(ag) && canManage && !training) {
-      setToast('Índice GP sem preços detectado — reindexando seeds…');
-      void (async () => {
-        clearLocalAgent();
-        setTraining(true);
-        try {
-          const groupId = activeGroupId;
-          const agent = await knowledgeService.trainAndPublish({
-            groupId,
-            name: 'GymSite Knowledge',
-          });
-          setPublished(agent);
-          setToast(
-            `Reindex OK: ${agent.chunk_count} chunks · ${(agent.domains || []).join('+')} · ${agent.source_refs.join(', ')}`,
-          );
-          setChat([
-            {
-              id: `sys-${Date.now()}`,
-              role: 'assistant',
-              text: `Índice corrigido (${agent.chunk_count} chunks).\nDomínios: ${(agent.domains || []).join(', ')}\nTeste TP: "Quais academias TotalPass com TP3?"\nTeste GP: "Liste Gurupass Ilimitado 35"`,
-            },
-          ]);
-        } catch (e) {
-          setError(e instanceof Error ? e.message : String(e));
-        } finally {
-          setTraining(false);
-        }
-      })();
+    // Validação GP sem planos: só UI. Job externo: knowledge-validate / re-treino manual.
+    // (auto-fix Cocó removido — ver Docs/CHUNKING_EROS.md + ops RAG phase2)
+    if (ag && agentMissingPlans(ag) && canManage) {
+      setToast(
+        'Validação: índice GP sem plano/preço — rode Treinar & Publicar com seed Fortaleza (não Cocó sintético).',
+      );
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps -- one-shot fix when bad seed detected
-  }, [activeGroupId]);
+  }, [activeGroupId, canManage]);
 
   useEffect(() => {
     endRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -376,15 +362,49 @@ export const KnowledgeBase: React.FC = () => {
           <h2 className="text-sm font-bold text-white mb-2">Teste do agente</h2>
           <div className="flex-1 overflow-y-auto space-y-2 mb-3">
             {chat.map((m) => (
-              <div
-                key={m.id}
-                className={`text-xs whitespace-pre-wrap rounded-lg px-2 py-1.5 ${
-                  m.role === 'user'
-                    ? 'text-right text-cyan-200 bg-cyan-500/5 ml-8'
-                    : 'text-slate-300 bg-slate-950/50 mr-4'
-                }`}
-              >
-                {m.text}
+              <div key={m.id} className="space-y-1">
+                <div
+                  className={`text-xs whitespace-pre-wrap rounded-lg px-2 py-1.5 ${
+                    m.role === 'user'
+                      ? 'text-right text-cyan-200 bg-cyan-500/5 ml-8'
+                      : 'text-slate-300 bg-slate-950/50 mr-4'
+                  }`}
+                >
+                  {m.text}
+                </div>
+                {m.role === 'assistant' && m.sources && m.sources.length > 0 && (
+                  <div className="mr-4 flex flex-wrap gap-1.5 pl-1">
+                    <span className="text-[10px] uppercase tracking-wider text-slate-500 self-center">
+                      Fontes
+                    </span>
+                    {m.sources.map((s) => {
+                      const label = `${s.chunk_id.slice(0, 24)}${s.chunk_id.length > 24 ? '…' : ''} · ${s.score.toFixed(2)}`;
+                      if (s.url) {
+                        return (
+                          <a
+                            key={`${m.id}-${s.chunk_id}`}
+                            href={s.url}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="text-[10px] px-2 py-0.5 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-200 hover:bg-cyan-500/20"
+                            title={s.section || s.chunk_id}
+                          >
+                            {label}
+                          </a>
+                        );
+                      }
+                      return (
+                        <span
+                          key={`${m.id}-${s.chunk_id}`}
+                          className="text-[10px] px-2 py-0.5 rounded-full border border-slate-700 bg-slate-900/60 text-slate-300"
+                          title={s.section || s.chunk_id}
+                        >
+                          {label}
+                        </span>
+                      );
+                    })}
+                  </div>
+                )}
               </div>
             ))}
             {typing && (
@@ -423,6 +443,7 @@ export const KnowledgeBase: React.FC = () => {
                     id: `a-${Date.now()}`,
                     role: 'assistant',
                     text: `${res.text}${res.provider ? `\n\n〔${res.provider}〕` : ''}`,
+                    sources: res.sources,
                   },
                 ]);
               } catch (err) {

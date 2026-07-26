@@ -174,41 +174,26 @@ export async function trainAndPublish(input: {
 
 async function syncAgentToSupabase(agent: PublishedAgent) {
   const supabase = getSupabaseClient();
-
-  await supabase.from('eros_knowledge_chunks').delete().eq('group_id', agent.groupId);
-
-  const rows = agent.chunks.map((c) => ({
-    group_id: agent.groupId,
-    source_kind: String(c.meta?.domain || 'generic'),
-    source_ref: agent.source_refs[0] || null,
-    chunk_id: c.chunk_id,
-    chunk_type: c.chunk_type,
-    text: c.text,
-    meta: c.meta || {},
-  }));
-
-  const { error: chunkErr } = await supabase.from('eros_knowledge_chunks').insert(rows);
-  if (chunkErr) throw chunkErr;
-
-  const { error: agentErr } = await supabase.from('eros_knowledge_agents').upsert(
-    {
-      group_id: agent.groupId,
+  const { data, error } = await supabase.functions.invoke('eros-knowledge-ingest', {
+    body: {
+      groupId: agent.groupId,
       name: agent.name,
-      status: 'published',
-      system_prompt: agent.system_prompt,
-      chunk_count: agent.chunk_count,
-      last_trained_at: agent.last_trained_at,
-      last_error: null,
-      updated_at: new Date().toISOString(),
+      systemPrompt: agent.system_prompt,
+      sourceRefs: agent.source_refs,
+      chunks: agent.chunks.map((c) => ({
+        chunk_id: c.chunk_id,
+        chunk_type: c.chunk_type,
+        text: c.text,
+        meta: c.meta || {},
+        source_kind: String(c.meta?.domain || 'generic'),
+        source_ref: agent.source_refs[0] || null,
+      })),
     },
-    { onConflict: 'group_id' },
-  );
-  if (agentErr) throw agentErr;
-
-  await supabase
-    .from('eros_knowledge_urls')
-    .update({ status: 'synced' })
-    .eq('group_id', agent.groupId);
+  });
+  if (error) throw error;
+  if (data?.error) {
+    throw new Error(`${data.error}${data.details ? `: ${data.details}` : ''}`);
+  }
 }
 
 export function askPublishedAgent(
