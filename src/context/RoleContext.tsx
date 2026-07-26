@@ -86,6 +86,14 @@ export const permissionsMatrix: Permission[] = [
     creator: true,
     basic: true,
   },
+  {
+    action: 'manage_knowledge',
+    description: 'Treinar, publicar e testar Base de Conhecimento / agentes',
+    module: 'Base de Conhecimento',
+    admin: true,
+    creator: true,
+    basic: false,
+  },
 ];
 
 export const RoleProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {

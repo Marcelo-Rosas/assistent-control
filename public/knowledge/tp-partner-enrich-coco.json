@@ -1,0 +1,139 @@
+{
+  "schema_version": 1,
+  "aggregator": "totalpass",
+  "fonte": "browser_accordion",
+  "fetched_note": "Modalidades e planos + Comodidades via Chrome on totalpass.com/br/academias/{slug}/",
+  "catalog_prices_brl": {
+    "TP Free": 0,
+    "TP GO": 39.9,
+    "TP1": 59.9,
+    "TP1+": 89.9,
+    "TP2": 119.9,
+    "TP3": 199.9,
+    "TP4": 299.9,
+    "TP5": 399.9,
+    "TP5+": 499.9,
+    "TP6": 599.9,
+    "TP7": 699.9
+  },
+  "partners": [
+    {
+      "slug": "cangaco",
+      "name": "Cangaço",
+      "match_names": ["CF Cangaço", "Cangaço"],
+      "url": "https://totalpass.com/br/academias/cangaco/",
+      "totalpass_hit": true,
+      "plan_hint": {
+        "plan_minimo": "TP 3",
+        "price_brl_month": 199.9,
+        "modalities": [{ "name": "Crossfit", "plan_from": "TP 3" }]
+      },
+      "comodidades": [
+        "Ar Condicionado",
+        "Bebedouro",
+        "Secador de cabelo",
+        "Vestiário Adulto",
+        "Wi-fi"
+      ]
+    },
+    {
+      "slug": "tbox",
+      "name": "TBOX",
+      "match_names": ["TBOX"],
+      "url": "https://totalpass.com/br/academias/tbox/",
+      "totalpass_hit": true,
+      "plan_hint": {
+        "plan_minimo": "TP 3",
+        "price_brl_month": 199.9,
+        "modalities": [
+          { "name": "Cross Training", "plan_from": "TP 3" },
+          { "name": "Cross Funcional", "plan_from": "TP 3" },
+          { "name": "Hyrox", "plan_from": "TP 3" }
+        ]
+      },
+      "comodidades": [
+        "Ar Condicionado",
+        "Armários",
+        "Banheiro Adulto",
+        "Bebedouro",
+        "Estacionamento Grátis",
+        "Estacionamento Pago",
+        "Ventilador",
+        "Wi-fi"
+      ]
+    },
+    {
+      "slug": "rek-crossfit",
+      "name": "REK CROSSFIT",
+      "match_names": ["Complexo REK CrossFit", "REK CROSSFIT", "REK CrossFit"],
+      "url": "https://totalpass.com/br/academias/rek-crossfit/",
+      "totalpass_hit": true,
+      "plan_hint": {
+        "plan_minimo": "TP 3",
+        "price_brl_month": 199.9,
+        "modalities": [
+          { "name": "Crossfit", "plan_from": "TP 3" },
+          { "name": "Cross Training", "plan_from": "TP 3" }
+        ]
+      },
+      "comodidades": [
+        "Armários",
+        "Banheiro Adulto",
+        "Bebedouro",
+        "Estacionamento Grátis",
+        "Estacionamento Pago",
+        "Lanchonete",
+        "Manobrista",
+        "Ventilador",
+        "Vestiário Adulto",
+        "Wi-fi"
+      ]
+    },
+    {
+      "slug": "keep-in-shape",
+      "name": "Keep In Shape",
+      "match_names": ["Keep in shape Academia", "Keep In Shape"],
+      "url": "https://totalpass.com/br/academias/keep-in-shape/",
+      "totalpass_hit": true,
+      "plan_hint": {
+        "plan_minimo": "TP 2",
+        "price_brl_month": 119.9,
+        "modalities": [{ "name": "Musculação", "plan_from": "TP 2" }]
+      },
+      "comodidades": [
+        "Acessibilidade",
+        "Ar Condicionado",
+        "Armários",
+        "Banheiro Acessível",
+        "Banheiro Adulto",
+        "Bebedouro",
+        "Estacionamento Grátis",
+        "Estacionamento Pago",
+        "Ventilador",
+        "Wi-fi"
+      ]
+    },
+    {
+      "slug": "instituto-pilates-coco",
+      "name": "Instituto Pilates Cocó",
+      "match_names": ["Instituto Pilates Cocó"],
+      "url": "https://totalpass.com/br/academias/instituto-pilates-coco/",
+      "totalpass_hit": true,
+      "plan_hint": {
+        "plan_minimo": "TP 5",
+        "price_brl_month": 399.9,
+        "modalities": [{ "name": "Pilates", "plan_from": "TP 5" }]
+      },
+      "comodidades": [
+        "Ar Condicionado",
+        "Armários",
+        "Banheiro Adulto",
+        "Banheiro Infantil",
+        "Bebedouro",
+        "Estacionamento Grátis",
+        "Vestiário Adulto",
+        "Wi-fi"
+      ]
+    }
+  ]
+}

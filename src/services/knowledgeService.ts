@@ -1,9 +1,18 @@
 import { getSupabaseClient, isSupabaseConfigured } from './supabaseClient';
+import {
+  askPublishedAgent,
+  ensureLocalGroup,
+  listLocalGroups,
+  loadLocalAgent,
+  trainAndPublish,
+  type PublishedAgent,
+} from './knowledgeTrainService';
 
 export type KnowledgeGroup = {
   id: string;
   name: string;
   urls: Array<{ id: string; url: string; status: string }>;
+  local?: boolean;
 };
 
 export type KnowledgeFile = {
@@ -24,28 +33,49 @@ export const knowledgeService = {
   },
 
   async listGroups(): Promise<KnowledgeGroup[]> {
-    const supabase = requireClient();
-    const { data: groups, error } = await supabase
-      .from('eros_knowledge_groups')
-      .select('id, name')
-      .order('created_at', { ascending: true });
-    if (error) throw error;
-
-    const { data: urls, error: urlErr } = await supabase
-      .from('eros_knowledge_urls')
-      .select('id, group_id, url, status');
-    if (urlErr) throw urlErr;
-
-    return (groups || []).map((g) => ({
+    const local = listLocalGroups().map((g) => ({
       id: g.id,
       name: g.name,
-      urls: (urls || [])
-        .filter((u) => u.group_id === g.id)
-        .map((u) => ({ id: u.id, url: u.url, status: u.status })),
+      urls: [] as KnowledgeGroup['urls'],
+      local: true,
     }));
+
+    if (!isSupabaseConfigured) return local;
+
+    try {
+      const supabase = requireClient();
+      const { data: groups, error } = await supabase
+        .from('eros_knowledge_groups')
+        .select('id, name')
+        .order('created_at', { ascending: true });
+      if (error) throw error;
+
+      const { data: urls, error: urlErr } = await supabase
+        .from('eros_knowledge_urls')
+        .select('id, group_id, url, status');
+      if (urlErr) throw urlErr;
+
+      const remote: KnowledgeGroup[] = (groups || []).map((g) => ({
+        id: g.id,
+        name: g.name,
+        urls: (urls || [])
+          .filter((u) => u.group_id === g.id)
+          .map((u) => ({ id: u.id, url: u.url, status: u.status })),
+        local: false,
+      }));
+
+      // Prefer remote; append local-only ids not in remote
+      const remoteIds = new Set(remote.map((r) => r.id));
+      return [...remote, ...local.filter((l) => !remoteIds.has(l.id))];
+    } catch {
+      return local;
+    }
   },
 
   async createGroup(name: string) {
+    if (!isSupabaseConfigured) {
+      return ensureLocalGroup(name);
+    }
     const supabase = requireClient();
     const { data, error } = await supabase
       .from('eros_knowledge_groups')
@@ -57,6 +87,13 @@ export const knowledgeService = {
   },
 
   async deleteGroup(id: string) {
+    if (id.startsWith('local-')) {
+      const key = 'gymsite_knowledge_local_groups';
+      const groups = listLocalGroups().filter((g) => g.id !== id);
+      localStorage.setItem(key, JSON.stringify(groups));
+      localStorage.removeItem(`gymsite_knowledge_agent:${id}`);
+      return;
+    }
     const supabase = requireClient();
     const { error } = await supabase.from('eros_knowledge_groups').delete().eq('id', id);
     if (error) throw error;
@@ -64,6 +101,9 @@ export const knowledgeService = {
 
   async addUrl(groupId: string, url: string) {
     if (!/^https?:\/\//i.test(url)) throw new Error('invalid_url');
+    if (groupId.startsWith('local-') || !isSupabaseConfigured) {
+      throw new Error('URLs remotas exigem Supabase — use Treinar com fixture GP');
+    }
     const supabase = requireClient();
     const { error } = await supabase.from('eros_knowledge_urls').insert({
       group_id: groupId,
@@ -80,6 +120,7 @@ export const knowledgeService = {
   },
 
   async listFiles(): Promise<KnowledgeFile[]> {
+    if (!isSupabaseConfigured) return [];
     const supabase = requireClient();
     const { data, error } = await supabase
       .from('eros_knowledge_files')
@@ -106,10 +147,33 @@ export const knowledgeService = {
     if (error) throw error;
   },
 
+  getPublishedAgent(groupId: string): PublishedAgent | null {
+    return loadLocalAgent(groupId);
+  },
+
+  async trainAndPublish(input: {
+    groupId: string;
+    name?: string;
+    payload?: unknown;
+    sourceRef?: string;
+  }) {
+    return trainAndPublish(input);
+  },
+
   async ask(input: {
     groupId: string;
     messages: Array<{ role: string; content: string }>;
   }): Promise<{ text: string; provider?: string }> {
+    const lastUser = [...input.messages].reverse().find((m) => m.role === 'user');
+    const question = lastUser?.content?.trim() || '';
+
+    const local = askPublishedAgent(input.groupId, question);
+    if (local) return local;
+
+    if (!isSupabaseConfigured) {
+      throw new Error('Agente não publicado. Clique em Treinar & Publicar Agente.');
+    }
+
     const supabase = requireClient();
     const { data, error } = await supabase.functions.invoke('eros-knowledge-query', {
       body: input,

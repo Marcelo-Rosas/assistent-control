@@ -1,15 +1,27 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
-import { Database, Globe, Plus, Trash2, Send, Loader2, AlertCircle } from 'lucide-react';
+import {
+  Database,
+  Globe,
+  Plus,
+  Trash2,
+  Send,
+  Loader2,
+  AlertCircle,
+  Rocket,
+  CheckCircle2,
+  Upload,
+} from 'lucide-react';
 import { useRoles } from '../../context/RoleContext';
 import { Button } from '../Button';
 import { knowledgeService, KnowledgeFile, KnowledgeGroup } from '../../services/knowledgeService';
+import { PublishedAgent, agentMissingPlans, clearLocalAgent } from '../../services/knowledgeTrainService';
 import { isSupabaseConfigured } from '../../services/supabaseClient';
 
 type ChatMsg = { id: string; role: 'user' | 'assistant'; text: string };
 
 export const KnowledgeBase: React.FC = () => {
   const { hasPermission } = useRoles();
-  const canManage = hasPermission('manage_settings');
+  const canManage = hasPermission('manage_knowledge') || hasPermission('manage_settings');
   const canChat = hasPermission('interact_chat') || canManage;
 
   const [groups, setGroups] = useState<KnowledgeGroup[]>([]);
@@ -22,18 +34,26 @@ export const KnowledgeBase: React.FC = () => {
   const [chatInput, setChatInput] = useState('');
   const [chat, setChat] = useState<ChatMsg[]>([]);
   const [typing, setTyping] = useState(false);
+  const [training, setTraining] = useState(false);
+  const [published, setPublished] = useState<PublishedAgent | null>(null);
   const endRef = useRef<HTMLDivElement>(null);
+  const fileRef = useRef<HTMLInputElement>(null);
 
   const activeGroup = groups.find((g) => g.id === activeGroupId) || null;
 
   const reload = useCallback(async () => {
-    if (!isSupabaseConfigured) return;
     setError(null);
     try {
-      const [g, f] = await Promise.all([knowledgeService.listGroups(), knowledgeService.listFiles()]);
+      const g = await knowledgeService.listGroups();
       setGroups(g);
-      setFiles(f);
       if (!activeGroupId && g[0]) setActiveGroupId(g[0].id);
+      if (isSupabaseConfigured) {
+        try {
+          setFiles(await knowledgeService.listFiles());
+        } catch {
+          setFiles([]);
+        }
+      }
     } catch (e) {
       setError(e instanceof Error ? e.message : String(e));
     }
@@ -44,23 +64,99 @@ export const KnowledgeBase: React.FC = () => {
   }, [reload]);
 
   useEffect(() => {
+    if (!activeGroupId) {
+      setPublished(null);
+      return;
+    }
+    const ag = knowledgeService.getPublishedAgent(activeGroupId);
+    setPublished(ag);
+    // Auto-fix stale Cocó seed (no plano_minimo)
+    if (ag && agentMissingPlans(ag) && canManage && !training) {
+      setToast('Índice GP sem preços detectado — reindexando seeds…');
+      void (async () => {
+        clearLocalAgent();
+        setTraining(true);
+        try {
+          const groupId = activeGroupId;
+          const agent = await knowledgeService.trainAndPublish({
+            groupId,
+            name: 'GymSite Knowledge',
+          });
+          setPublished(agent);
+          setToast(
+            `Reindex OK: ${agent.chunk_count} chunks · ${(agent.domains || []).join('+')} · ${agent.source_refs.join(', ')}`,
+          );
+          setChat([
+            {
+              id: `sys-${Date.now()}`,
+              role: 'assistant',
+              text: `Índice corrigido (${agent.chunk_count} chunks).\nDomínios: ${(agent.domains || []).join(', ')}\nTeste TP: "Quais academias TotalPass com TP3?"\nTeste GP: "Liste Gurupass Ilimitado 35"`,
+            },
+          ]);
+        } catch (e) {
+          setError(e instanceof Error ? e.message : String(e));
+        } finally {
+          setTraining(false);
+        }
+      })();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- one-shot fix when bad seed detected
+  }, [activeGroupId]);
+
+  useEffect(() => {
     endRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [chat, typing]);
 
-  if (!isSupabaseConfigured) {
-    return (
-      <div className="p-6 text-sm text-amber-300 bg-amber-500/10 border-b border-amber-500/20">
-        Configure `VITE_SUPABASE_URL` / `VITE_SUPABASE_ANON_KEY` para usar a Base de Conhecimento.
-      </div>
-    );
-  }
+  const ensureGroup = async () => {
+    if (activeGroupId) return activeGroupId;
+    const g = await knowledgeService.createGroup('Gurupass Fortaleza');
+    await reload();
+    setActiveGroupId(g.id);
+    return g.id;
+  };
+
+  const runTrain = async (payload?: unknown, sourceRef?: string) => {
+    if (!canManage) return;
+    setTraining(true);
+    setError(null);
+    setToast(null);
+    try {
+      const groupId = await ensureGroup();
+      // Drop stale Cocó index before writing Fortaleza
+      if (!payload) clearLocalAgent(groupId);
+      const agent = await knowledgeService.trainAndPublish({
+        groupId,
+        name: 'GymSite Knowledge',
+        payload,
+        sourceRef,
+      });
+      setPublished(agent);
+      setToast(
+        `Publicado: ${agent.chunk_count} chunks · domínios: ${(agent.domains || []).join(', ') || '?'} · fontes: ${agent.source_refs.join(', ')}${
+          agent.last_error ? ` · aviso: ${agent.last_error}` : ''
+        }`,
+      );
+      setChat([
+        {
+          id: `sys-${Date.now()}`,
+          role: 'assistant',
+          text: `Agente publicado (${agent.chunk_count} chunks).\nDomínios: ${(agent.domains || []).join(', ')}\nFontes: ${agent.source_refs.join(', ')}\nTeste GP: "Liste academias Gurupass com Ilimitado 35"\nTeste TP: "Quais academias TotalPass no Cocó com TP3?"`,
+        },
+      ]);
+      await reload();
+    } catch (e) {
+      setError(e instanceof Error ? e.message : String(e));
+    } finally {
+      setTraining(false);
+    }
+  };
 
   return (
-    <div className="h-full flex flex-col lg:flex-row gap-4 p-6 bg-slate-950 text-slate-100 overflow-hidden">
+    <div className="h-full flex flex-col lg:flex-row gap-4 p-6 bg-slate-950 text-slate-100 overflow-hidden relative">
       {!canManage && (
         <div className="absolute top-0 left-0 right-0 bg-yellow-500/10 border-b border-yellow-500/20 text-yellow-500 text-xs py-2 px-4 flex items-center gap-2 z-20">
           <AlertCircle className="w-4 h-4" />
-          Visualização apenas — use Administrador para gerenciar fontes.
+          Sem manage_knowledge — troque papel para Criador/Admin para treinar.
         </div>
       )}
 
@@ -69,12 +165,15 @@ export const KnowledgeBase: React.FC = () => {
           <Database className="w-5 h-5 text-cyan-400" />
           <div>
             <h1 className="text-lg font-bold text-white">Base de Conhecimento</h1>
-            <p className="text-xs text-slate-400">GymSite — fontes persistidas (status honesto: pending até indexação real)</p>
+            <p className="text-xs text-slate-400">
+              Train global (GP/TP/regulatório/genérico) → teste no painel
+              {!isSupabaseConfigured && ' · modo local'}
+            </p>
           </div>
         </div>
 
         {error && <p className="text-xs text-red-400">{error}</p>}
-        {toast && <p className="text-xs text-cyan-300">{toast}</p>}
+        {toast && <p className="text-xs text-cyan-300 whitespace-pre-wrap">{toast}</p>}
 
         <div className="flex flex-wrap gap-2 items-center">
           {groups.map((g) => (
@@ -88,7 +187,7 @@ export const KnowledgeBase: React.FC = () => {
                   : 'border-slate-700 text-slate-400'
               }`}
             >
-              {g.name} ({g.urls.length})
+              {g.name} {g.local ? '(local)' : `(${g.urls.length})`}
             </button>
           ))}
           {canManage && (
@@ -97,8 +196,9 @@ export const KnowledgeBase: React.FC = () => {
               onSubmit={async (e) => {
                 e.preventDefault();
                 if (!newGroupName.trim()) return;
-                await knowledgeService.createGroup(newGroupName.trim());
+                const g = await knowledgeService.createGroup(newGroupName.trim());
                 setNewGroupName('');
+                setActiveGroupId(g.id);
                 await reload();
               }}
             >
@@ -115,7 +215,7 @@ export const KnowledgeBase: React.FC = () => {
           )}
         </div>
 
-        {canManage && activeGroup && (
+        {canManage && activeGroup && isSupabaseConfigured && !activeGroup.local && (
           <form
             className="flex gap-2"
             onSubmit={async (e) => {
@@ -132,7 +232,7 @@ export const KnowledgeBase: React.FC = () => {
             <input
               value={newUrl}
               onChange={(e) => setNewUrl(e.target.value)}
-              placeholder="https://..."
+              placeholder="https://... (opcional)"
               className="flex-1 bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-sm"
             />
             <Button type="submit">Ingerir URL</Button>
@@ -140,83 +240,150 @@ export const KnowledgeBase: React.FC = () => {
         )}
 
         <div className="flex-1 overflow-y-auto space-y-2">
-          {!activeGroup || activeGroup.urls.length === 0 ? (
+          {!activeGroup ? (
             <div className="border border-dashed border-slate-800 rounded-xl p-8 text-center text-xs text-slate-500">
               <Globe className="w-8 h-8 mx-auto mb-2 text-slate-700" />
-              Nenhum grupo/URL. {canManage ? 'Crie um grupo e adicione links.' : ''}
+              Crie um grupo ou clique Treinar — cria “Gurupass Fortaleza” automaticamente.
+            </div>
+          ) : activeGroup.urls.length === 0 ? (
+            <div className="border border-dashed border-slate-800 rounded-xl p-6 text-xs text-slate-500 space-y-2">
+              <p>Fontes do agente = fixture GP em <code className="text-cyan-400">/knowledge/gp-accept-fortaleza.json</code></p>
+              <p>Ou faça upload de JSON (export buscar-academias / artefato ingest).</p>
             </div>
           ) : (
             activeGroup.urls.map((u) => (
-              <div key={u.id} className="flex items-center justify-between p-3 rounded-xl bg-slate-950/40 border border-slate-800">
+              <div
+                key={u.id}
+                className="flex items-center justify-between p-3 rounded-xl bg-slate-950/40 border border-slate-800"
+              >
                 <span className="text-xs font-mono text-slate-300 truncate">{u.url}</span>
-                <div className="flex items-center gap-2">
-                  <span className="text-[10px] px-2 py-0.5 rounded-full border border-slate-700 text-slate-400">{u.status}</span>
-                  {canManage && (
-                    <button
-                      type="button"
-                      onClick={async () => {
-                        await knowledgeService.removeUrl(u.id);
-                        await reload();
-                      }}
-                      className="text-slate-500 hover:text-red-400"
-                    >
-                      <Trash2 className="w-3.5 h-3.5" />
-                    </button>
-                  )}
-                </div>
+                <span className="text-[10px] px-2 py-0.5 rounded-full border border-slate-700 text-slate-400">
+                  {u.status}
+                </span>
+                {canManage && (
+                  <button
+                    type="button"
+                    onClick={async () => {
+                      await knowledgeService.removeUrl(u.id);
+                      await reload();
+                    }}
+                    className="text-slate-500 hover:text-red-400"
+                  >
+                    <Trash2 className="w-3.5 h-3.5" />
+                  </button>
+                )}
               </div>
             ))
           )}
         </div>
 
-        <div className="border-t border-slate-800 pt-3">
-          <p className="text-xs text-slate-500 mb-2">Arquivos ({files.length}) — metadados only; status pending</p>
-          {canManage && (
-            <label className="text-xs text-cyan-400 cursor-pointer">
-              + Adicionar arquivo (meta)
-              <input
-                type="file"
-                className="hidden"
-                multiple
-                onChange={async (e) => {
-                  const list = Array.from(e.target.files || []);
-                  for (const f of list) {
-                    await knowledgeService.addFileMeta({ name: f.name, size_bytes: f.size, mime: f.type });
-                  }
-                  await reload();
-                }}
-              />
-            </label>
-          )}
-          <div className="mt-2 space-y-1 max-h-28 overflow-y-auto">
-            {files.map((f) => (
-              <div key={f.id} className="flex justify-between text-xs text-slate-400">
-                <span className="truncate">{f.name}</span>
-                <span>{f.status}</span>
-              </div>
-            ))}
+        {isSupabaseConfigured && (
+          <div className="border-t border-slate-800 pt-3">
+            <p className="text-xs text-slate-500 mb-2">Arquivos meta ({files.length})</p>
+            <div className="space-y-1 max-h-20 overflow-y-auto">
+              {files.map((f) => (
+                <div key={f.id} className="flex justify-between text-xs text-slate-400">
+                  <span className="truncate">{f.name}</span>
+                  <span>{f.status}</span>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
+        )}
       </div>
 
-      <div className="w-full lg:w-[420px] flex flex-col gap-4 shrink-0">
-        <div className="bg-slate-900/40 border border-slate-800 rounded-2xl p-4">
-          <h2 className="text-sm font-bold text-white mb-2">Treinamento</h2>
+      <div className="w-full lg:w-[440px] flex flex-col gap-4 shrink-0">
+        <div className="bg-slate-900/40 border border-slate-800 rounded-2xl p-4 space-y-3">
+          <div className="flex items-center justify-between">
+            <h2 className="text-sm font-bold text-white">Treinamento</h2>
+            {published?.status === 'published' ? (
+              <span className="text-[10px] flex items-center gap-1 text-emerald-400 border border-emerald-500/30 px-2 py-0.5 rounded-full">
+                <CheckCircle2 className="w-3 h-3" /> published · {published.chunk_count} chunks
+              </span>
+            ) : (
+              <span className="text-[10px] text-slate-500 border border-slate-700 px-2 py-0.5 rounded-full">
+                draft
+              </span>
+            )}
+          </div>
+
           <Button
-            className="w-full"
-            disabled={!canManage}
-            onClick={() => setToast('Indexação automática v1 ainda não disponível')}
+            className="w-full gap-2"
+            disabled={!canManage || training}
+            onClick={() => void runTrain()}
           >
+            {training ? <Loader2 className="w-4 h-4 animate-spin" /> : <Rocket className="w-4 h-4" />}
             Treinar & Publicar Agente
           </Button>
-          <p className="text-[10px] text-slate-500 mt-2">Sem progresso falso — worker de embeddings fica para ciclo futuro.</p>
+
+          <div className="flex gap-2">
+            <Button
+              variant="secondary"
+              className="flex-1 gap-1 text-xs"
+              disabled={!canManage || training}
+              onClick={() => fileRef.current?.click()}
+            >
+              <Upload className="w-3.5 h-3.5" />
+              Upload JSON
+            </Button>
+            <Button
+              variant="outline"
+              className="gap-1 text-xs shrink-0"
+              disabled={!canManage || training}
+              onClick={() => {
+                clearLocalAgent();
+                setPublished(null);
+                void runTrain();
+              }}
+            >
+              Reindex seeds
+            </Button>
+            <input
+              ref={fileRef}
+              type="file"
+              accept="application/json,.json"
+              className="hidden"
+              onChange={async (e) => {
+                const f = e.target.files?.[0];
+                if (!f) return;
+                try {
+                  const text = await f.text();
+                  const payload = JSON.parse(text);
+                  await runTrain(payload, f.name);
+                } catch (err) {
+                  setError(err instanceof Error ? err.message : String(err));
+                } finally {
+                  e.target.value = '';
+                }
+              }}
+            />
+          </div>
+
+          <p className="text-[10px] text-slate-500 leading-relaxed">
+            Train global: merge seeds em /knowledge/ (GP+TP) ou upload JSON de qualquer domínio
+            (agregador, regulatório pages/laws, genérico). Router responde conforme a pergunta.
+            {isSupabaseConfigured ? ' Sync Supabase se grupo remoto.' : ''}
+          </p>
+
+          {published?.last_trained_at && (
+            <p className="text-[10px] text-slate-400">
+              Último treino: {new Date(published.last_trained_at).toLocaleString()}
+            </p>
+          )}
         </div>
 
-        <div className="flex-1 bg-slate-900/40 border border-slate-800 rounded-2xl p-4 flex flex-col min-h-[280px]">
-          <h2 className="text-sm font-bold text-white mb-2">Teste (Edge)</h2>
+        <div className="flex-1 bg-slate-900/40 border border-slate-800 rounded-2xl p-4 flex flex-col min-h-[320px]">
+          <h2 className="text-sm font-bold text-white mb-2">Teste do agente</h2>
           <div className="flex-1 overflow-y-auto space-y-2 mb-3">
             {chat.map((m) => (
-              <div key={m.id} className={`text-xs whitespace-pre-wrap ${m.role === 'user' ? 'text-right text-cyan-200' : 'text-slate-300'}`}>
+              <div
+                key={m.id}
+                className={`text-xs whitespace-pre-wrap rounded-lg px-2 py-1.5 ${
+                  m.role === 'user'
+                    ? 'text-right text-cyan-200 bg-cyan-500/5 ml-8'
+                    : 'text-slate-300 bg-slate-950/50 mr-4'
+                }`}
+              >
                 {m.text}
               </div>
             ))}
@@ -231,7 +398,15 @@ export const KnowledgeBase: React.FC = () => {
             className="flex gap-2"
             onSubmit={async (e) => {
               e.preventDefault();
-              if (!canChat || !activeGroupId || !chatInput.trim()) return;
+              if (!canChat || !chatInput.trim()) return;
+              let groupId = activeGroupId;
+              if (!groupId) {
+                groupId = await ensureGroup();
+              }
+              if (!knowledgeService.getPublishedAgent(groupId)) {
+                setError('Publique o agente antes de testar (Treinar & Publicar).');
+                return;
+              }
               const text = chatInput.trim();
               setChatInput('');
               setChat((prev) => [...prev, { id: `u-${Date.now()}`, role: 'user', text }]);
@@ -241,8 +416,15 @@ export const KnowledgeBase: React.FC = () => {
                   role: m.role === 'user' ? 'user' : 'assistant',
                   content: m.text,
                 }));
-                const res = await knowledgeService.ask({ groupId: activeGroupId, messages: history });
-                setChat((prev) => [...prev, { id: `a-${Date.now()}`, role: 'assistant', text: res.text }]);
+                const res = await knowledgeService.ask({ groupId, messages: history });
+                setChat((prev) => [
+                  ...prev,
+                  {
+                    id: `a-${Date.now()}`,
+                    role: 'assistant',
+                    text: `${res.text}${res.provider ? `\n\n〔${res.provider}〕` : ''}`,
+                  },
+                ]);
               } catch (err) {
                 setChat((prev) => [
                   ...prev,
@@ -260,8 +442,8 @@ export const KnowledgeBase: React.FC = () => {
             <input
               value={chatInput}
               onChange={(e) => setChatInput(e.target.value)}
-              disabled={!canChat || !activeGroupId}
-              placeholder="Pergunte com base nas URLs…"
+              disabled={!canChat}
+              placeholder='Ex: TotalPass TP3 Cocó / Gurupass Ilimitado 35'
               className="flex-1 bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-xs"
             />
             <Button type="submit" size="sm" disabled={!canChat}>

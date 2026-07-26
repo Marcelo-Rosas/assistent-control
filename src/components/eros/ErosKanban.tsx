@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useState } from 'react';
 import { Heart } from 'lucide-react';
 import { useEros } from '../../hooks/useEros';
 import { ErosPipelineStage } from '../../types';
@@ -13,7 +13,11 @@ const STAGES: { id: ErosPipelineStage; title: string }[] = [
 ];
 
 export const ErosKanban: React.FC = () => {
-  const { pipeline, leads, isLoading, error, needsSetup } = useEros();
+  const { pipeline, leads, isLoading, error, needsSetup, moveLeadStage } = useEros();
+  const [draggingLeadId, setDraggingLeadId] = useState<string | null>(null);
+  const [dropTarget, setDropTarget] = useState<ErosPipelineStage | null>(null);
+  const [busyLeadId, setBusyLeadId] = useState<string | null>(null);
+  const [localError, setLocalError] = useState<string | null>(null);
 
   const byStage = useMemo(() => {
     const map = new Map<ErosPipelineStage, { id: string; leadId: string; pos: number }[]>();
@@ -31,16 +35,30 @@ export const ErosKanban: React.FC = () => {
     return map;
   }, [pipeline]);
 
+  const onMove = async (leadId: string, stage: ErosPipelineStage) => {
+    setLocalError(null);
+    setBusyLeadId(leadId);
+    try {
+      await moveLeadStage(leadId, stage);
+    } catch (e: any) {
+      setLocalError(e?.message ?? 'Falha ao mover');
+    } finally {
+      setBusyLeadId(null);
+      setDraggingLeadId(null);
+      setDropTarget(null);
+    }
+  };
+
   return (
     <div className="h-full overflow-hidden flex flex-col">
       <div className="p-6 pb-3 flex items-start justify-between gap-4">
         <div className="flex items-center gap-2">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-pink-500 to-purple-600 flex items-center justify-center shadow-lg shadow-pink-500/20">
+          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center shadow-lg shadow-cyan-500/20">
             <Heart className="w-5 h-5 text-white" />
           </div>
           <div>
-            <h1 className="text-xl font-bold text-slate-50">Eros • Kanban</h1>
-            <p className="text-xs text-slate-400">Pipeline social (read-only por enquanto).</p>
+            <h1 className="text-xl font-bold text-slate-50">Pipeline • Kanban</h1>
+            <p className="text-xs text-slate-400">Arraste cards ou mude stage no seletor.</p>
           </div>
         </div>
 
@@ -60,10 +78,10 @@ export const ErosKanban: React.FC = () => {
         </div>
       )}
 
-      {error && (
+      {(error || localError) && (
         <div className="px-6 pb-3">
           <div className="p-3 rounded-xl bg-red-500/10 border border-red-500/20 text-red-200 text-sm">
-            {error}
+            {localError || error}
           </div>
         </div>
       )}
@@ -72,10 +90,25 @@ export const ErosKanban: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-6 gap-3 min-w-[1000px] lg:min-w-0">
           {STAGES.map((s) => {
             const items = byStage.get(s.id) ?? [];
+            const isOver = dropTarget === s.id;
             return (
               <div
                 key={s.id}
-                className="rounded-2xl border border-slate-800/70 bg-slate-950/30 backdrop-blur-xl overflow-hidden"
+                className={`rounded-2xl border backdrop-blur-xl overflow-hidden transition-colors ${
+                  isOver
+                    ? 'border-cyan-500/50 bg-cyan-950/20'
+                    : 'border-slate-800/70 bg-slate-950/30'
+                }`}
+                onDragOver={(e) => {
+                  e.preventDefault();
+                  setDropTarget(s.id);
+                }}
+                onDragLeave={() => setDropTarget((cur) => (cur === s.id ? null : cur))}
+                onDrop={(e) => {
+                  e.preventDefault();
+                  const leadId = e.dataTransfer.getData('text/lead-id') || draggingLeadId;
+                  if (leadId) void onMove(leadId, s.id);
+                }}
               >
                 <div className="px-3 py-3 border-b border-slate-800/70 flex items-center justify-between">
                   <div className="text-sm font-semibold text-slate-100">{s.title}</div>
@@ -84,23 +117,55 @@ export const ErosKanban: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="p-3 space-y-2">
+                <div className="p-3 space-y-2 min-h-[120px]">
                   {items.map((it) => {
                     const lead = leads.find((l) => l.id === it.leadId);
+                    const busy = busyLeadId === it.leadId;
                     return (
                       <div
                         key={it.id}
-                        className="p-3 rounded-xl bg-slate-900/40 border border-slate-800/70 hover:bg-slate-900/55 transition-colors"
+                        draggable={!needsSetup && !busy}
+                        onDragStart={(e) => {
+                          setDraggingLeadId(it.leadId);
+                          e.dataTransfer.setData('text/lead-id', it.leadId);
+                          e.dataTransfer.effectAllowed = 'move';
+                        }}
+                        onDragEnd={() => {
+                          setDraggingLeadId(null);
+                          setDropTarget(null);
+                        }}
+                        className={`p-3 rounded-xl border transition-colors cursor-grab active:cursor-grabbing ${
+                          busy
+                            ? 'opacity-60 bg-slate-900/30 border-slate-800/50'
+                            : 'bg-slate-900/40 border-slate-800/70 hover:bg-slate-900/55'
+                        }`}
                       >
-                        <div className="text-sm font-semibold text-slate-100 truncate">{lead?.name || '—'}</div>
-                        <div className="mt-1 text-[11px] text-slate-400 truncate">
-                          {lead ? `${lead.channel} • ${lead.classification.toUpperCase()} • ${lead.score}` : '—'}
+                        <div className="text-sm font-semibold text-slate-100 truncate">
+                          {lead?.name || '—'}
                         </div>
+                        <div className="mt-1 text-[11px] text-slate-400 truncate">
+                          {lead
+                            ? `${lead.channel} • ${lead.classification.toUpperCase()} • ${lead.score}`
+                            : '—'}
+                        </div>
+                        <select
+                          disabled={needsSetup || busy}
+                          value={s.id}
+                          onChange={(e) => void onMove(it.leadId, e.target.value as ErosPipelineStage)}
+                          className="mt-2 w-full h-8 text-[11px] rounded-lg bg-slate-950/60 border border-slate-800/70 text-slate-200 focus:outline-none focus:ring-1 focus:ring-cyan-500/40"
+                          aria-label="Mover stage"
+                        >
+                          {STAGES.map((opt) => (
+                            <option key={opt.id} value={opt.id}>
+                              {opt.title}
+                            </option>
+                          ))}
+                        </select>
                       </div>
                     );
                   })}
                   {!isLoading && items.length === 0 && (
-                    <div className="text-xs text-slate-500">Sem itens</div>
+                    <div className="text-xs text-slate-500">Solte aqui</div>
                   )}
                 </div>
               </div>
@@ -111,4 +176,3 @@ export const ErosKanban: React.FC = () => {
     </div>
   );
 };
-

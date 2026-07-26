@@ -3,6 +3,7 @@ import {
   ErosLead,
   ErosMessage,
   ErosPipelineItem,
+  ErosPipelineStage,
 } from '../types';
 import { getSupabaseClient, isSupabaseConfigured } from './supabaseClient';
 
@@ -179,5 +180,110 @@ export const erosService = {
     const { data, error } = await supabase.from('eros_pipeline').select('*').order('stage').order('position');
     if (error) throw error;
     return data as ErosPipelineItem[];
+  },
+
+  /** Move lead: updates eros_leads.status + eros_pipeline.stage (same as Edge setLeadStage). */
+  async setLeadStage(leadId: string, stage: ErosPipelineStage | 'discarded'): Promise<void> {
+    if (!isSupabaseConfigured) throw new Error('SUPABASE_NOT_CONFIGURED');
+    const supabase = getSupabaseClient();
+    const SHARED = new Set(['new', 'qualifying', 'qualified', 'call', 'proposal', 'converted']);
+
+    if (stage === 'discarded') {
+      const { error } = await supabase.from('eros_leads').update({ status: 'discarded' }).eq('id', leadId);
+      if (error) throw error;
+      return;
+    }
+    if (!SHARED.has(stage)) throw new Error(`invalid_stage:${stage}`);
+
+    const { error: leadError } = await supabase.from('eros_leads').update({ status: stage }).eq('id', leadId);
+    if (leadError) throw leadError;
+
+    const { data, error } = await supabase
+      .from('eros_pipeline')
+      .select('id')
+      .eq('lead_id', leadId)
+      .is('company_id', null)
+      .maybeSingle();
+    if (error) throw error;
+
+    if (data?.id) {
+      const { error: updateError } = await supabase
+        .from('eros_pipeline')
+        .update({ stage, position: 0 })
+        .eq('id', data.id);
+      if (updateError) throw updateError;
+    } else {
+      const { error: insertError } = await supabase
+        .from('eros_pipeline')
+        .insert({ lead_id: leadId, stage, position: 0 });
+      if (insertError) throw insertError;
+    }
+  },
+
+  async createLead(input: {
+    name: string;
+    channel: 'instagram' | 'whatsapp';
+    username?: string | null;
+    phone?: string | null;
+    email?: string | null;
+    classification?: 'hot' | 'morno' | 'frio';
+    score?: number;
+    notes?: string | null;
+  }): Promise<ErosLead> {
+    if (!isSupabaseConfigured) throw new Error('SUPABASE_NOT_CONFIGURED');
+    const supabase = getSupabaseClient();
+    const row = {
+      name: input.name.trim(),
+      channel: input.channel,
+      username: input.username?.trim() || null,
+      phone: input.phone?.trim() || null,
+      email: input.email?.trim() || null,
+      classification: input.classification || 'morno',
+      score: Math.min(100, Math.max(0, input.score ?? 0)),
+      status: 'new' as const,
+      notes: input.notes?.trim() || null,
+    };
+    const { data, error } = await supabase.from('eros_leads').insert(row).select('*').single();
+    if (error) throw error;
+
+    const { error: pipeErr } = await supabase
+      .from('eros_pipeline')
+      .insert({ lead_id: data.id, stage: 'new', position: 0 });
+    if (pipeErr) throw pipeErr;
+
+    return data as ErosLead;
+  },
+
+  async updateLead(
+    leadId: string,
+    patch: Partial<{
+      name: string;
+      channel: 'instagram' | 'whatsapp';
+      username: string | null;
+      phone: string | null;
+      email: string | null;
+      classification: 'hot' | 'morno' | 'frio';
+      score: number;
+      notes: string | null;
+      status: string;
+    }>,
+  ): Promise<ErosLead> {
+    if (!isSupabaseConfigured) throw new Error('SUPABASE_NOT_CONFIGURED');
+    const supabase = getSupabaseClient();
+    const { data, error } = await supabase
+      .from('eros_leads')
+      .update(patch)
+      .eq('id', leadId)
+      .select('*')
+      .single();
+    if (error) throw error;
+    return data as ErosLead;
+  },
+
+  async deleteLead(leadId: string): Promise<void> {
+    if (!isSupabaseConfigured) throw new Error('SUPABASE_NOT_CONFIGURED');
+    const supabase = getSupabaseClient();
+    const { error } = await supabase.from('eros_leads').delete().eq('id', leadId);
+    if (error) throw error;
   },
 };
