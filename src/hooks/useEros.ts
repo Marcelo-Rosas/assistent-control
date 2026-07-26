@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { erosService } from '../services/erosService';
-import { ErosConversation, ErosLead, ErosMessage, ErosPipelineItem } from '../types';
+import { ErosConversation, ErosLead, ErosMessage, ErosPipelineItem, ErosPipelineStage } from '../types';
 import { getSupabaseClient, isSupabaseConfigured } from '../services/supabaseClient';
 
 export function useEros() {
@@ -68,7 +68,6 @@ export function useEros() {
         const current = prev[input.conversationId] ?? [];
         return { ...prev, [input.conversationId]: [...current, msg] };
       });
-      // refresh conversation list to update previews (fallback; realtime will also keep it fresh)
       try {
         const c = await erosService.listConversations();
         setConversations(c);
@@ -81,6 +80,51 @@ export function useEros() {
       throw e;
     }
   }, []);
+
+  const moveLeadStage = useCallback(async (leadId: string, stage: ErosPipelineStage | 'discarded') => {
+    // optimistic pipeline update
+    setPipeline((prev) =>
+      prev.map((p) => (p.lead_id === leadId && stage !== 'discarded' ? { ...p, stage, position: 0 } : p)),
+    );
+    setLeads((prev) => prev.map((l) => (l.id === leadId ? { ...l, status: stage as ErosLead['status'] } : l)));
+    try {
+      await erosService.setLeadStage(leadId, stage);
+      const [l, p] = await Promise.all([erosService.listLeads(), erosService.listPipeline()]);
+      setLeads(l);
+      setPipeline(p);
+    } catch (e: any) {
+      setError(e?.message ?? 'Falha ao mover stage');
+      await loadBase();
+      throw e;
+    }
+  }, [loadBase]);
+
+  const createLead = useCallback(
+    async (input: Parameters<typeof erosService.createLead>[0]) => {
+      const lead = await erosService.createLead(input);
+      await loadBase();
+      return lead;
+    },
+    [loadBase],
+  );
+
+  const updateLead = useCallback(
+    async (leadId: string, patch: Parameters<typeof erosService.updateLead>[1]) => {
+      const lead = await erosService.updateLead(leadId, patch);
+      setLeads((prev) => prev.map((l) => (l.id === leadId ? lead : l)));
+      return lead;
+    },
+    [],
+  );
+
+  const deleteLead = useCallback(
+    async (leadId: string) => {
+      await erosService.deleteLead(leadId);
+      setLeads((prev) => prev.filter((l) => l.id !== leadId));
+      setPipeline((prev) => prev.filter((p) => p.lead_id !== leadId));
+    },
+    [],
+  );
 
   useEffect(() => {
     void loadBase();
@@ -166,5 +210,9 @@ export function useEros() {
     reload: loadBase,
     selectConversation,
     sendMessage,
+    moveLeadStage,
+    createLead,
+    updateLead,
+    deleteLead,
   };
 }

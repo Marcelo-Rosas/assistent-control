@@ -1,0 +1,208 @@
+{
+  "schema_version": 1,
+  "ingest_kind": "gurupass_accept_plan_geo",
+  "aggregator": "gurupass",
+  "run_id": "2026-07-25T18-16-17-462Z",
+  "geo": {
+    "bairro": "",
+    "cidade": "Fortaleza",
+    "uf": "CE"
+  },
+  "user_plan": {
+    "credits": null,
+    "plan": null,
+    "rule": "creditos_minimos <= user_credits (a partir de)"
+  },
+  "catalog": {
+    "source": {
+      "method": "derived_from_accept_list",
+      "note": "Prices from buscar-academias page fields; national ladder optional later"
+    },
+    "parse_mode": "from_gym_plano_minimo",
+    "prices_seen": [
+      74.25,
+      123.75,
+      148.5,
+      173.25,
+      346.5
+    ],
+    "plans": [
+      {
+        "nome": "Ilimitado 15",
+        "creditos_por_dia": 15,
+        "valor_mensal_brl": 74.25
+      },
+      {
+        "nome": "Ilimitado 25",
+        "creditos_por_dia": 25,
+        "valor_mensal_brl": 123.75
+      },
+      {
+        "nome": "Ilimitado 30",
+        "creditos_por_dia": 30,
+        "valor_mensal_brl": 148.5
+      },
+      {
+        "nome": "Ilimitado 35",
+        "creditos_por_dia": 35,
+        "valor_mensal_brl": 173.25
+      },
+      {
+        "nome": "Ilimitado 70",
+        "creditos_por_dia": 70,
+        "valor_mensal_brl": 346.5
+      }
+    ],
+    "plan": {
+      "code": "GP",
+      "price_brl_month": 74.25,
+      "parse_warnings": [],
+      "status": "from_accept_list"
+    }
+  },
+  "accept_source": {
+    "url": "https://www.gurupass.com.br/buscar-academias/brasil/fortaleza---ce/?type=city",
+    "method": "manual_page_export",
+    "fetched_at": "2026-07-25T18:14:00.000Z",
+    "note": "Manual export Fortaleza city; each gym has plano_minimo (not binary accept)",
+    "fixture": "ingest/fixtures/gp-accept-fortaleza.json",
+    "item_count_raw": 6,
+    "geo_count": 6,
+    "user_credits": null
+  },
+  "accept_warnings": [],
+  "accept_list": [
+    {
+      "name": "Crossfit Aldeota",
+      "address": "Rua Ildefonso Albano 1392, Meireles, Fortaleza",
+      "bairro": "Meireles",
+      "cidade": "Fortaleza",
+      "uf": "CE",
+      "modalidades": [
+        "Musculação",
+        "Personal Trainer"
+      ],
+      "plano_minimo": "Ilimitado 70",
+      "creditos_minimos": 70,
+      "valor_mensal_brl": 346.5,
+      "distancia_km": 1,
+      "partner_url": null,
+      "user_plan_ok": null
+    },
+    {
+      "name": "vs club",
+      "address": "Avenida Padre Antônio Tomás, Aldeota - Fortaleza",
+      "bairro": "Aldeota",
+      "cidade": "Fortaleza",
+      "uf": "CE",
+      "modalidades": [
+        "Musculação",
+        "Hidroginástica",
+        "Natação",
+        "Ritmos",
+        "Muay Thai"
+      ],
+      "plano_minimo": "Ilimitado 35",
+      "creditos_minimos": 35,
+      "valor_mensal_brl": 173.25,
+      "distancia_km": 3,
+      "partner_url": null,
+      "user_plan_ok": null
+    },
+    {
+      "name": "Centro de Treinamento Libra",
+      "address": "Rua Capitão Vasconcelos, 388, Alto da Balança - Fortaleza",
+      "bairro": "Alto da Balança",
+      "cidade": "Fortaleza",
+      "uf": "CE",
+      "modalidades": [
+        "Musculação"
+      ],
+      "plano_minimo": "Ilimitado 30",
+      "creditos_minimos": 30,
+      "valor_mensal_brl": 148.5,
+      "distancia_km": 3,
+      "partner_url": null,
+      "user_plan_ok": null
+    },
+    {
+      "name": "Cross Experience Fortaleza",
+      "address": "Rua Padre Aluísio, 13 A, Varjota, Fortaleza",
+      "bairro": "Varjota",
+      "cidade": "Fortaleza",
+      "uf": "CE",
+      "modalidades": [
+        "Cross Training"
+      ],
+      "plano_minimo": "Ilimitado 30",
+      "creditos_minimos": 30,
+      "valor_mensal_brl": 148.5,
+      "distancia_km": 4,
+      "partner_url": null,
+      "user_plan_ok": null
+    },
+    {
+      "name": "Libra Academia",
+      "address": "Avenida Governador Raul Barbosa, 7151, Aerolândia - Fortaleza",
+      "bairro": "Aerolândia",
+      "cidade": "Fortaleza",
+      "uf": "CE",
+      "modalidades": [
+        "Musculação"
+      ],
+      "plano_minimo": "Ilimitado 25",
+      "creditos_minimos": 25,
+      "valor_mensal_brl": 123.75,
+      "distancia_km": 4,
+      "partner_url": null,
+      "user_plan_ok": null
+    },
+    {
+      "name": "Healthy Academia",
+      "address": "Rua Rodrigues de Andrade, 394, Demócrito Rocha - Fortaleza",
+      "bairro": "Demócrito Rocha",
+      "cidade": "Fortaleza",
+      "uf": "CE",
+      "modalidades": [
+        "Musculação"
+      ],
+      "plano_minimo": "Ilimitado 15",
+      "creditos_minimos": 15,
+      "valor_mensal_brl": 74.25,
+      "distancia_km": 5,
+      "partner_url": null,
+      "user_plan_ok": null
+    }
+  ],
+  "summary": {
+    "gp_accept_count": 6,
+    "geo_count": 6,
+    "target_geo": {
+      "bairro": "",
+      "cidade": "Fortaleza",
+      "uf": "CE"
+    },
+    "user_credits": null
+  },
+  "maps_context": {
+    "source": {
+      "method": "geo_fixture",
+      "fixture": "ingest/fixtures/searchapi-maps-academia-coco-fortaleza.json"
+    },
+    "note": "Maps context only — does not define GP acceptance",
+    "exists": true
+  },
+  "cold_refresh": {
+    "env": "GP_ACCEPT_REFRESH",
+    "requested": false,
+    "status": "idle",
+    "note": "Cold browser → buscar-academias/ rewrites fixture with plano_minimo; follow-up"
+  },
+  "rag_chunks": [
+    {
+      "id": "gp-accept-fortaleza-city",
+      "type": "gp_accept_plan_geo",
+      "text": "Gurupass cidade Fortaleza-CE: 6 academias (user_credits=any) | Crossfit Aldeota ≥Ilimitado 70 R$346.5; vs club ≥Ilimitado 35 R$173.25; Centro de Treinamento Libra ≥Ilimitado 30 R$148.5; Cross Experience Fortaleza ≥Ilimitado 30 R$148.5; Libra Academia ≥Ilimitado 25 R$123.75; Healthy Academia ≥Ilimitado 15 R$74.25"
+    }
+  ]
+}
