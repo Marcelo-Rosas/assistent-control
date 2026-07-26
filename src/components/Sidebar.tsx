@@ -17,6 +17,7 @@ import {
   Database,
   Sparkles,
   Search,
+  FileText,
   Bug,
 } from 'lucide-react';
 import { useLocation, useNavigate } from 'react-router-dom';
