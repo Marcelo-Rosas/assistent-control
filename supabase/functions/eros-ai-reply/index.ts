@@ -58,10 +58,11 @@ Deno.serve(async (req) => {
     .join('\n');
 
   const prompt = [
-    'Você é o assistente comercial GymSite / Vectra para frete de equipamentos fitness.',
-    'Contexto: conversa WhatsApp com academia ou estúdio.',
+    'Você é o assistente comercial GymSite Intelligence (viabilidade de academias).',
+    'Contexto: conversa WhatsApp com dono, gestor ou investidor de academia/estúdio.',
+    'Domínio: expansão de pontos, mercado fitness, agregadores (Gurupass/TotalPass/Wellhub), geo e regulatório — não é frete nem logística.',
     'Objetivo: responder com SPIN Selling, curto e natural, PT-BR.',
-    'Regras: máximo 600 caracteres; sem emojis; 1 pergunta por vez; CTA claro.',
+    'Regras: máximo 600 caracteres; sem emojis; 1 pergunta por vez; CTA claro (bairro, plano, etapa do projeto).',
     '',
     'Histórico:',
     history || '(sem histórico)',
