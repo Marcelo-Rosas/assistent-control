@@ -1,0 +1,273 @@
+{
+  "timestamp": "2026-07-27T22:27:47.050621",
+  "group_id": "b7dad505-2d2a-49a9-bbaf-d4b9c4929dea",
+  "domain": "regulatorio_lei",
+  "embed_model": "mxbai-embed-large",
+  "embed_dim": 1024,
+  "min_similarity": 0.35,
+  "top_k": 5,
+  "metrics": {
+    "avg_recall@5": 0.96875,
+    "avg_precision@5": 0.775,
+    "avg_mrr": 0.9375,
+    "doc_match_rate": 1.0
+  },
+  "results": [
+    {
+      "query": "Quem pode exercer atividades de Educação Física segundo a Lei 9.696?",
+      "expected_doc": "Art. 1",
+      "retrieved_count": 5,
+      "recall@5": 1.0,
+      "precision@5": 0.6,
+      "mrr": 1.0,
+      "document_match": true,
+      "top_sims": [
+        0.832,
+        0.816,
+        0.78
+      ],
+      "id": "lei-01",
+      "chunks_preview": [
+        {
+          "source_ref": "data/raw/Regulatorio/L9696.html",
+          "similarity": 0.832072883618991,
+          "text": "Lei 9.696/1998 — Art. 2º\nTema: inscricao_registro_cref\n\nArt. 2o Apenas serão\ninscritos nos quadros dos Conselhos Regionais de Educação Física os seguintes\nprofissionais:\nI\n- os possuidores de diploma obtido em curso de Educação Física, ofic"
+        },
+        {
+          "source_ref": "data/raw/Regulatorio/L9696.html",
+          "similarity": 0.815607525778714,
+          "text": "Lei 9.696/1998 — Art. 1º\nTema: prerrogativa_profissional\n\nArt. 1o O exercício das\natividades de Educação Física e a designação de Profissional de Educação Física é\nprerrogativa dos profissionais regularmente registrados nos Conselhos Region"
+        },
+        {
+          "source_ref": "data/raw/Regulatorio/L9696.html",
+          "similarity": 0.780354712051715,
+          "text": "Lei 9.696/1998 — Art. 5º-B\nTema: competencia_confef_detalhe\n\nArt. 5º-B. Compete\naos Crefs:\n(Incluído pela\nLei nº 14.386, de 2022)\nI - organizar e\npromover a eleição do Presidente e do Vice-Presidente dos Crefs;\n(Incluído pela\nLei nº 14.386,"
+        }
+      ]
+    },
+    {
+      "query": "Quem pode se inscrever nos Conselhos Regionais de Educação Física?",
+      "expected_doc": "Art. 2",
+      "retrieved_count": 5,
+      "recall@5": 1.0,
+      "precision@5": 1.0,
+      "mrr": 1.0,
+      "document_match": true,
+      "top_sims": [
+        0.73,
+        0.689,
+        0.677
+      ],
+      "id": "lei-02",
+      "chunks_preview": [
+        {
+          "source_ref": "data/raw/Regulatorio/L9696.html",
+          "similarity": 0.730245839997383,
+          "text": "Lei 9.696/1998 — Art. 2º\nTema: inscricao_registro_cref\n\nArt. 2o Apenas serão\ninscritos nos quadros dos Conselhos Regionais de Educação Física os seguintes\nprofissionais:\nI\n- os possuidores de diploma obtido em curso de Educação Física, ofic"
+        },
+        {
+          "source_ref": "data/raw/Regulatorio/L9696.html",
+          "similarity": 0.688851915461053,
+          "text": "Lei 9.696/1998 — Art. 1º\nTema: prerrogativa_profissional\n\nArt. 1o O exercício das\natividades de Educação Física e a designação de Profissional de Educação Física é\nprerrogativa dos profissionais regularmente registrados nos Conselhos Region"
+        },
+        {
+          "source_ref": "data/raw/Regulatorio/L9696.html",
+          "similarity": 0.676708917421635,
+          "text": "Lei 9.696/1998 — Art. 4º\nTema: criacao_confef_cref\n\nArt. 4º Ficam\ncriados o Conselho Federal de Educação Física (Confef) e os\nConselhos Regionais de Educação Física (Crefs), dotados de\npersonalidade jurídica de direito público e de autonomi"
+        }
+      ]
+    },
+    {
+      "query": "Quais competências do Profissional de Educação Física na Lei 9.696?",
+      "expected_doc": "Art. 3",
+      "retrieved_count": 5,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "mrr": 0.5,
+      "document_match": true,
+      "top_sims": [
+        0.853,
+        0.878,
+        0.826
+      ],
+      "id": "lei-03",
+      "chunks_preview": [
+        {
+          "source_ref": "data/raw/Regulatorio/L9696.html",
+          "similarity": 0.853035329915503,
+          "text": "Lei 9.696/1998 — Art. 2º\nTema: inscricao_registro_cref\n\nArt. 2o Apenas serão\ninscritos nos quadros dos Conselhos Regionais de Educação Física os seguintes\nprofissionais:\nI\n- os possuidores de diploma obtido em curso de Educação Física, ofic"
+        },
+        {
+          "source_ref": "data/raw/Regulatorio/L9696.html",
+          "similarity": 0.878470380169489,
+          "text": "Lei 9.696/1998 — Art. 3º\nTema: competencia_conselhos\n\nArt. 3o Compete ao\nProfissional de Educação Física coordenar, planejar, programar, supervisionar,\ndinamizar, dirigir, organizar, avaliar e executar trabalhos, programas, planos e projeto"
+        },
+        {
+          "source_ref": "data/raw/Regulatorio/L9696.html",
+          "similarity": 0.826314989673345,
+          "text": "Lei 9.696/1998 — Art. 5º-B\nTema: competencia_confef_detalhe\n\nArt. 5º-B. Compete\naos Crefs:\n(Incluído pela\nLei nº 14.386, de 2022)\nI - organizar e\npromover a eleição do Presidente e do Vice-Presidente dos Crefs;\n(Incluído pela\nLei nº 14.386,"
+        }
+      ]
+    },
+    {
+      "query": "A Lei 9.696 cria quais conselhos de Educação Física?",
+      "expected_doc": "Art. 4",
+      "retrieved_count": 5,
+      "recall@5": 1.0,
+      "precision@5": 0.8,
+      "mrr": 1.0,
+      "document_match": true,
+      "top_sims": [
+        0.858,
+        0.834,
+        0.774
+      ],
+      "id": "lei-04",
+      "chunks_preview": [
+        {
+          "source_ref": "data/raw/Regulatorio/L9696.html",
+          "similarity": 0.857532237408143,
+          "text": "Lei 9.696/1998 — Art. 2º\nTema: inscricao_registro_cref\n\nArt. 2o Apenas serão\ninscritos nos quadros dos Conselhos Regionais de Educação Física os seguintes\nprofissionais:\nI\n- os possuidores de diploma obtido em curso de Educação Física, ofic"
+        },
+        {
+          "source_ref": "data/raw/Regulatorio/L9696.html",
+          "similarity": 0.833658441988438,
+          "text": "Lei 9.696/1998 — Art. 5º\nTema: composicao_conselhos\n\nArt. 5o Os primeiros membros\nefetivos e suplentes do Conselho Federal de Educação Física serão eleitos para um\nmandato tampão de dois anos, em reunião das associações representativas de\nP"
+        },
+        {
+          "source_ref": "data/raw/Regulatorio/L9696.html",
+          "similarity": 0.773808627256113,
+          "text": "Lei 9.696/1998 — Art. 4º\nTema: criacao_confef_cref\n\nArt. 4º Ficam\ncriados o Conselho Federal de Educação Física (Confef) e os\nConselhos Regionais de Educação Física (Crefs), dotados de\npersonalidade jurídica de direito público e de autonomi"
+        }
+      ]
+    },
+    {
+      "query": "Quais são as competências do Confef no Art. 5º-A?",
+      "expected_doc": "Art. 5",
+      "retrieved_count": 5,
+      "recall@5": 1.0,
+      "precision@5": 1.0,
+      "mrr": 1.0,
+      "document_match": true,
+      "top_sims": [
+        0.805,
+        0.784,
+        0.745
+      ],
+      "id": "lei-05",
+      "chunks_preview": [
+        {
+          "source_ref": "data/raw/Regulatorio/L9696.html",
+          "similarity": 0.804597642229915,
+          "text": "Lei 9.696/1998 — Art. 5º-A\nTema: competencia_confef\n\nArt. 5º-A. Compete ao Confef:\n(Incluído pela\nLei nº 14.386, de 2022)\nI - organizar e\npromover a eleição do seu Presidente e do Vice-Presidente;\n(Incluído pela\nLei nº 14.386, de 2022)\nII -"
+        },
+        {
+          "source_ref": "data/raw/Regulatorio/L9696.html",
+          "similarity": 0.783719198093082,
+          "text": "Lei 9.696/1998 — Art. 5º-B\nTema: competencia_confef_detalhe\n\nArt. 5º-B. Compete\naos Crefs:\n(Incluído pela\nLei nº 14.386, de 2022)\nI - organizar e\npromover a eleição do Presidente e do Vice-Presidente dos Crefs;\n(Incluído pela\nLei nº 14.386,"
+        },
+        {
+          "source_ref": "data/raw/Regulatorio/L9696.html",
+          "similarity": 0.74481986185189,
+          "text": "Lei 9.696/1998 — Art. 5º-C\nTema: estrutura_confef\n\nArt. 5º-C. O Confef\nserá composto de 20 (vinte) conselheiros titulares e de 8 (oito)\nsuplentes.\n(Incluído pela\nLei nº 14.386, de 2022)\n§ 1º Os conselheiros\nserão escolhidos em eleição diret"
+        }
+      ]
+    },
+    {
+      "query": "A Lei 9.696 regulamenta a profissão de Educação Física?",
+      "expected_doc": "L9696",
+      "retrieved_count": 5,
+      "recall@5": 0.75,
+      "precision@5": 1.0,
+      "mrr": 1.0,
+      "document_match": true,
+      "top_sims": [
+        0.868,
+        0.825,
+        0.818
+      ],
+      "id": "lei-06",
+      "chunks_preview": [
+        {
+          "source_ref": "data/raw/Regulatorio/L9696.html",
+          "similarity": 0.868179979242679,
+          "text": "Lei 9.696/1998 — Art. 2º\nTema: inscricao_registro_cref\n\nArt. 2o Apenas serão\ninscritos nos quadros dos Conselhos Regionais de Educação Física os seguintes\nprofissionais:\nI\n- os possuidores de diploma obtido em curso de Educação Física, ofic"
+        },
+        {
+          "source_ref": "data/raw/Regulatorio/L9696.html",
+          "similarity": 0.824763073751012,
+          "text": "Lei 9.696/1998 — Art. 5º\nTema: composicao_conselhos\n\nArt. 5o Os primeiros membros\nefetivos e suplentes do Conselho Federal de Educação Física serão eleitos para um\nmandato tampão de dois anos, em reunião das associações representativas de\nP"
+        },
+        {
+          "source_ref": "data/raw/Regulatorio/L9696.html",
+          "similarity": 0.817972066696297,
+          "text": "Lei 9.696/1998 — Art. 1º\nTema: prerrogativa_profissional\n\nArt. 1o O exercício das\natividades de Educação Física e a designação de Profissional de Educação Física é\nprerrogativa dos profissionais regularmente registrados nos Conselhos Region"
+        }
+      ]
+    },
+    {
+      "query": "Egressos de cursos superiores de Tecnologia podem se registrar no CREF?",
+      "expected_doc": "Art. 2",
+      "retrieved_count": 5,
+      "recall@5": 1.0,
+      "precision@5": 0.6,
+      "mrr": 1.0,
+      "document_match": true,
+      "top_sims": [
+        0.701,
+        0.709,
+        0.672
+      ],
+      "id": "lei-07",
+      "chunks_preview": [
+        {
+          "source_ref": "data/raw/Regulatorio/L9696.html",
+          "similarity": 0.700504285127191,
+          "text": "Lei 9.696/1998 — Art. 2º\nTema: inscricao_registro_cref\n\nArt. 2o Apenas serão\ninscritos nos quadros dos Conselhos Regionais de Educação Física os seguintes\nprofissionais:\nI\n- os possuidores de diploma obtido em curso de Educação Física, ofic"
+        },
+        {
+          "source_ref": "data/raw/Regulatorio/L9696.html",
+          "similarity": 0.708959639072423,
+          "text": "Lei 9.696/1998 — Art. 5º-B\nTema: competencia_confef_detalhe\n\nArt. 5º-B. Compete\naos Crefs:\n(Incluído pela\nLei nº 14.386, de 2022)\nI - organizar e\npromover a eleição do Presidente e do Vice-Presidente dos Crefs;\n(Incluído pela\nLei nº 14.386,"
+        },
+        {
+          "source_ref": "data/raw/Regulatorio/L9696.html",
+          "similarity": 0.671578188444485,
+          "text": "Lei 9.696/1998 — Art. 3º\nTema: competencia_conselhos\n\nArt. 3o Compete ao\nProfissional de Educação Física coordenar, planejar, programar, supervisionar,\ndinamizar, dirigir, organizar, avaliar e executar trabalhos, programas, planos e projeto"
+        }
+      ]
+    },
+    {
+      "query": "Onde fica a sede provisória do Confef segundo a lei?",
+      "expected_doc": "Art. 4",
+      "retrieved_count": 5,
+      "recall@5": 1.0,
+      "precision@5": 1.0,
+      "mrr": 1.0,
+      "document_match": true,
+      "top_sims": [
+        0.708,
+        0.721,
+        0.743
+      ],
+      "id": "lei-08",
+      "chunks_preview": [
+        {
+          "source_ref": "data/raw/Regulatorio/L9696.html",
+          "similarity": 0.707938884742398,
+          "text": "Lei 9.696/1998 — Art. 4º\nTema: criacao_confef_cref\n\nArt. 4º Ficam\ncriados o Conselho Federal de Educação Física (Confef) e os\nConselhos Regionais de Educação Física (Crefs), dotados de\npersonalidade jurídica de direito público e de autonomi"
+        },
+        {
+          "source_ref": "data/raw/Regulatorio/L9696.html",
+          "similarity": 0.721490816981159,
+          "text": "Lei 9.696/1998 — Art. 5º-B\nTema: competencia_confef_detalhe\n\nArt. 5º-B. Compete\naos Crefs:\n(Incluído pela\nLei nº 14.386, de 2022)\nI - organizar e\npromover a eleição do Presidente e do Vice-Presidente dos Crefs;\n(Incluído pela\nLei nº 14.386,"
+        },
+        {
+          "source_ref": "data/raw/Regulatorio/L9696.html",
+          "similarity": 0.742773652076742,
+          "text": "Lei 9.696/1998 — Art. 5º-C\nTema: estrutura_confef\n\nArt. 5º-C. O Confef\nserá composto de 20 (vinte) conselheiros titulares e de 8 (oito)\nsuplentes.\n(Incluído pela\nLei nº 14.386, de 2022)\n§ 1º Os conselheiros\nserão escolhidos em eleição diret"
+        }
+      ]
+    }
+  ]
+}
