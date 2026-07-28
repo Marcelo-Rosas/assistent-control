@@ -1,0 +1,62 @@
+============================================================
+CLIMATIZAÇÃO / HVAC — ACADEMIA (sala de coletivas, musculação, spinning)
+Fonte: extrato curado de engenharia_normas_obra_projeto_ref + engenharia_dimensionamento_academia_ref
+Uso: pré-projeto GymSite. Dimensionamento final = engenheiro mecânico com ART + PMOC.
+============================================================
+
+NORMAS / LEIS
+- ABNT NBR 16401:2024 (partes 1 e 3) — projeto e qualidade do ar interior
+- Lei 13.589/2018 (PMOC) · Portaria MS 3.523/1998
+- Acústica de salas (ruído de fundo): NBR 10152 / NBR 10151
+
+LOTAÇÃO DE SALA COLETIVA (pré-dimensionamento de ocupantes)
+- Densidade de projeto: ~3,5 m² por aluno ativo na sala coletiva.
+- Exemplo: sala 100 m² → ~28 pessoas no pico (100 / 3,5).
+  · base: densidade de projeto fitness · fonte: engenharia_dimensionamento_academia_ref
+
+VAZÃO MÍNIMA DE AR EXTERIOR (NBR 16401-3:2024)
+- Fórmula: V_ef = (P_z × F_p) + (A_z × F_a)
+  P_z = ocupantes estimados da sala
+  F_p = 5,0 l/s por pessoa (locais esportivos, Nível 1)
+  A_z = área útil (m²)
+  F_a = 0,6 l/s por m² (academias)
+  · base: NBR 16401-3:2024 · fonte: norma ABNT · janela: 2024
+- Proxy operacional (mesmo corpus): ≥ 30 m³/h de ar externo por pessoa simultânea, filtro G4.
+  · base: checklist MEP · fonte: engenharia_dimensionamento_academia_ref
+- Exemplo numérico (100 m², ~28 pax):
+  V_ef ≈ (28 × 5,0) + (100 × 0,6) = 140 + 60 = 200 l/s ≈ 720 m³/h
+  Proxy 30 m³/h × 28 ≈ 840 m³/h (ordem de grandeza; projetista fecha o valor)
+
+CARGA TÉRMICA (proxy de pré-projeto — NÃO substitui memorial de carga)
+- ~350 W (≈ 1.200 BTU/h) por pessoa em atividade intensa
+- + ~0,4 kW por esteira ligada (quando aplicável)
+  · base: proxy de projeto fitness · fonte: engenharia_dimensionamento_academia_ref
+- Exemplo 28 pessoas (sem esteiras): ~9,8 kW ≈ ~33.600 BTU/h de ordem de grandeza
+  (ainda faltam envoltória, iluminação, insolação, equipamentos de áudio — o mecânico fecha)
+
+CONFORTO E EXAUSTÃO
+- Conforto alvo: 18–21 °C; umidade relativa 40–60%
+- Spinning / coletivas de alta intensidade: exaustão DEDICADA e isolada
+  · fonte: engenharia_dimensionamento_academia_ref
+
+SPLIT / JANELA SEM RENOVAÇÃO = NÃO CONFORMIDADE
+- Split High Wall e ar-condicionado de janela NÃO renovam ar (recirculação em ciclo fechado).
+- Instalá-los sem ventilação/exaustão mecânica complementar é NÃO CONFORMIDADE técnica
+  severa sob a NBR 16401.
+- Exige-se captação de ar externo com filtragem + exaustão mecânica contínua.
+  · base: NBR 16401 · fonte: engenharia_normas_obra_projeto_ref
+
+PMOC
+- PMOC obrigatório (Lei 13.589/2018 + Portaria 3.523/1998), atestado por engenheiro
+  mecânico com ART. Central ≥ 60.000 BTU/h tipicamente reforça a obrigação operacional.
+
+ACÚSTICA (sala de coletivas / dança)
+- Ruído de fundo recomendado (RLAeq): salas de dança/ginástica rítmica 35–45 dB(A)
+  · base: NBR 10152:2017 · fonte: engenharia_normas_obra_projeto_ref
+- Spinning/coletivas: drywall DUPLO com lã de rocha ≥ 50 mm / 64 kg/m³ → atenuação > 55 dB
+  · fonte: engenharia_dimensionamento_academia_ref
+
+AVISO AO USUÁRIO
+Estes números são pré-projeto com carimbo (valor · base · fonte · janela). O projeto
+executivo de refrigeração/climatização exige engenheiro mecânico habilitado (ART) e
+pode alterar vazão/carga após memorial térmico e análise de envoltória.

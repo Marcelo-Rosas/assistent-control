@@ -9,6 +9,15 @@ import { getServiceSupabase } from '../_shared/supabase.ts';
 import { callLlm, resolveLlmProvider } from '../_shared/llm.ts';
 import { embedQuery } from '../_shared/embed.ts';
 import { resolveUserCompanyIdFromJwt } from '../_shared/tenant.ts';
+import { extractQueryFilters } from '../_shared/queryFilters.ts';
+import {
+  buildRetrievalSummary,
+  buildWellhubAnswer,
+  detectAggregator,
+  resolveEffectiveModality,
+  TOTALPASS_FORMAT_RULES,
+  WELLHUB_FORMAT_RULES,
+} from '../_shared/ragAnswer.ts';
 
 type Body = {
   groupId: string;
@@ -61,9 +70,16 @@ function metaString(meta: Record<string, unknown>, key: string): string | null {
 }
 
 function metaMunicipios(meta: Record<string, unknown>): string[] {
+  const out: string[] = [];
+  const cidade = meta.cidade;
+  if (typeof cidade === 'string' && cidade.trim()) out.push(cidade.trim());
   const raw = meta.municipios_relacionados;
-  if (!Array.isArray(raw)) return [];
-  return raw.filter((m): m is string => typeof m === 'string' && m.trim().length > 0);
+  if (Array.isArray(raw)) {
+    for (const m of raw) {
+      if (typeof m === 'string' && m.trim()) out.push(m.trim());
+    }
+  }
+  return out;
 }
 
 function buildChunkBlock(chunks: MatchedChunk[]): string {
@@ -73,9 +89,11 @@ function buildChunkBlock(chunks: MatchedChunk[]): string {
       const meta = c.meta || {};
       const modalidade = metaString(meta, 'modalidade') || '';
       const academia = metaString(meta, 'nome_academia') || '';
+      const bairro = metaString(meta, 'bairro') || '';
+      const plano = metaString(meta, 'plano_minimo') || '';
       const score = simOf(c).toFixed(2);
       return [
-        `<chunk id="${escapeXml(c.chunk_id)}" score="${score}" modalidade="${escapeXml(modalidade)}" academia="${escapeXml(academia)}">`,
+        `<chunk id="${escapeXml(c.chunk_id)}" score="${score}" modalidade="${escapeXml(modalidade)}" academia="${escapeXml(academia)}" bairro="${escapeXml(bairro)}" plano="${escapeXml(plano)}">`,
         escapeXml(c.text || ''),
         `</chunk>`,
       ].join('\n');
@@ -83,18 +101,24 @@ function buildChunkBlock(chunks: MatchedChunk[]): string {
     .join('\n\n');
 }
 
-function toSources(chunks: MatchedChunk[]): Source[] {
+function toSources(chunks: MatchedChunk[], aggregator?: string): Source[] {
   return chunks.map((c) => {
     const meta = c.meta || {};
     const planos = Array.isArray(meta.planos_aceitos)
       ? meta.planos_aceitos.filter((p): p is string => typeof p === 'string')
       : [];
+    const nome = metaString(meta, 'nome_academia');
+    const chunkMod = metaString(meta, 'modalidade');
+    const modalidade =
+      aggregator === 'wellhub' && nome && chunkMod
+        ? resolveEffectiveModality(nome, chunkMod).modality
+        : chunkMod;
     return {
       chunk_id: c.chunk_id,
       score: simOf(c),
       nome_academia: metaString(meta, 'nome_academia'),
       municipios: metaMunicipios(meta),
-      modalidade: metaString(meta, 'modalidade'),
+      modalidade,
       plano_minimo: metaString(meta, 'plano_minimo') || planos[0] || null,
       warning: metaString(meta, 'warning_message'),
       source_ref:
@@ -104,8 +128,8 @@ function toSources(chunks: MatchedChunk[]): Source[] {
   });
 }
 
-/** Filtro pós-RPC: município em municipios_relacionados (RPC não tem match_municipio). */
-function filterByMunicipio(chunks: MatchedChunk[], municipio?: string): MatchedChunk[] {
+/** Filtro pós-RPC de segurança (se RPC antigo sem match_municipio). */
+function filterByMunicipio(chunks: MatchedChunk[], municipio?: string | null): MatchedChunk[] {
   const q = municipio?.trim().toLowerCase();
   if (!q) return chunks;
   return chunks.filter((c) => {
@@ -122,10 +146,30 @@ REGRAS OBRIGATÓRIAS:
 3. Nunca invente academias, endereços, preços ou planos.
 4. Se o chunk mencionar agendamento prévio / warning, INFORME isso ao usuário.
 5. Respeite plano mínimo: se o plano mínimo for TP 4, NÃO diga que funciona com TP 2.
-6. Quando listar academias, inclua: nome, município(s), endereço, modalidade e planos aceitos.
-7. Cite fontes no formato [Nome da Academia](chunk_id).
-8. Se não houver chunk relevante, diga que não encontrou no catálogo.
-9. Responda em PT-BR.`;
+6. Ao listar cada academia, use EXATAMENTE este formato (texto puro, sem markdown):
+
+1. Nome da Academia
+Município: ... | Modalidade: ...
+Endereço: ...
+Planos: ...
+
+7. NÃO inclua chunk_id, links, colchetes [], parênteses de citação, aspas, asteriscos (*) ou traços de lista (-).
+8. NÃO escreva linhas do tipo [Nome](id). Só o nome em texto simples.
+9. Se não houver chunk relevante, diga que não encontrou no catálogo.
+10. Responda em PT-BR. Uma frase curta de introdução é opcional; o foco é a lista no formato acima.`;
+
+/** Plain text only: strip markdown, citations [label](id), bullets, quotes. */
+function normalizeAnswerText(raw: string): string {
+  return raw
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+    .replace(/\*\*([^*]+)\*\*/g, '$1')
+    .replace(/(?<!\*)\*([^*\n]+)\*(?!\*)/g, '$1')
+    .replace(/^#{1,6}\s+/gm, '')
+    .replace(/^[*-]\s+/gm, '')
+    .replace(/[""''`]/g, '')
+    .replace(/\n{3,}/g, '\n\n')
+    .trim();
+}
 
 Deno.serve(async (req) => {
   if (req.method === 'OPTIONS') return json({ ok: true }, 200);
@@ -167,6 +211,13 @@ Deno.serve(async (req) => {
     return json({ error: 'no_user_message' }, 400);
   }
 
+  // Stage 1 — extract filters from query (body overrides win)
+  const filters = extractQueryFilters(lastUserMsg.content.trim(), {
+    municipio: body.municipio,
+    modalidade: body.modalidade,
+    plano_rank: body.plano_rank,
+  });
+
   let queryEmbedding: number[];
   let embedModel: string;
   try {
@@ -191,22 +242,50 @@ Deno.serve(async (req) => {
     query_embedding: queryEmbedding,
     match_group_id: body.groupId,
     match_tenant_id: userCompanyId,
-    match_modalidade: body.modalidade ?? null,
+    match_modalidade: filters.modalidade,
     match_bairro: body.bairro ?? null,
-    match_plano_rank: body.plano_rank ?? null,
+    match_plano_rank: filters.plano_rank,
+    match_municipio: filters.municipio,
     match_k: topK,
     min_similarity: minSimilarity,
+    match_query: lastUserMsg.content.trim(),
   });
 
   if (chunksErr) {
     return json({ error: 'retrieval_failed', details: chunksErr.message }, 500);
   }
 
-  const chunks = filterByMunicipio((matched || []) as MatchedChunk[], body.municipio);
+  const chunks = filterByMunicipio((matched || []) as MatchedChunk[], filters.municipio);
   const chunkBlock = buildChunkBlock(chunks);
-  const sources = toSources(chunks);
+  const sources = toSources(chunks, aggregator);
+  const aggregator = detectAggregator(chunks);
 
-  const system = agent.system_prompt || DEFAULT_SYSTEM;
+  // Wellhub: resposta determinística no servidor (LLM max_tokens=256 truncava listas)
+  if (aggregator === 'wellhub' && chunks.length > 0) {
+    const includeDebug = req.headers.get('x-rag-include-debug') === 'true';
+    const text = buildWellhubAnswer(chunks, { municipio: filters.municipio });
+    return json({
+      ok: true,
+      text,
+      provider: 'template',
+      agent_status: agent.status,
+      chunk_count: chunks.length,
+      sources,
+      embedding_model: embedModel,
+      retrieval: 'vector_hybrid',
+      filters,
+      ...(includeDebug ? { debug_prompt: chunkBlock } : {}),
+    });
+  }
+
+  const retrievalSummary = aggregator === 'wellhub' ? buildRetrievalSummary(chunks) : '';
+
+  let system = agent.system_prompt || DEFAULT_SYSTEM;
+  if (aggregator === 'wellhub') {
+    system = `${system}\n${WELLHUB_FORMAT_RULES}`;
+  } else if (aggregator === 'totalpass') {
+    system = `${system}\n${TOTALPASS_FORMAT_RULES}`;
+  }
   const history = body.messages
     .slice(-12)
     .map((m) => `${m.role}: ${m.content}`)
@@ -216,7 +295,11 @@ Deno.serve(async (req) => {
     system,
     '',
     `Agente: ${agent.name} | chunks_index=${agent.chunk_count} | retrieved=${chunks.length}`,
+    `Filtros extraídos: municipio=${filters.municipio ?? '—'} modalidade=${filters.modalidade ?? '—'} plano_rank=${filters.plano_rank ?? '—'} confidence=${filters.confidence}`,
     '',
+    ...(retrievalSummary
+      ? ['<resumo_retrieval>', retrievalSummary, '</resumo_retrieval>', '']
+      : []),
     '<context>',
     chunkBlock,
     '</context>',
@@ -233,13 +316,14 @@ Deno.serve(async (req) => {
     const includeDebug = req.headers.get('x-rag-include-debug') === 'true';
     return json({
       ok: true,
-      text: result.text,
+      text: normalizeAnswerText(result.text),
       provider: result.provider,
       agent_status: agent.status,
       chunk_count: chunks.length,
       sources,
       embedding_model: embedModel,
       retrieval: 'vector_hybrid',
+      filters,
       ...(includeDebug ? { debug_prompt: prompt } : {}),
     });
   } catch (e) {

@@ -1,0 +1,96 @@
+REFERÊNCIA DE ENGENHARIA DE OBRA E LAYOUT DE ACADEMIA
+Base de conhecimento para dimensionamento físico (área, circulação, distância entre
+equipamentos). Consolidado de fontes ABERTAS e citáveis. Cada número traz a FONTE.
+Uso: o agente Responsável Técnico deve CITAR a fonte ao aplicar estes benchmarks; eles
+são premissas de PLANEJAMENTO (projeto deve ser validado por engenheiro/arquiteto local).
+Última consolidação: 2026-06 (fontes públicas).
+
+============================================================
+1. DISTÂNCIA MÍNIMA ENTRE EQUIPAMENTOS
+============================================================
+- Musculação: distância mínima de 0,80 m (80 cm) entre aparelhos, permitindo livre
+  circulação e uso seguro.
+  FONTE: ANVISA — "Manual de Orientações para Fiscalização Sanitária em Estabelecimentos
+  Prestadores de Atividade Física e Afins", Seção VII.
+- Equipamentos cardiovasculares (esteira, elíptico, bike): área de escape mínima de
+  0,80 m nas laterais e na parte traseira (zona de saída de emergência do aparelho).
+  FONTE: ANVISA — mesmo manual.
+- Importante: medir os equipamentos em sua MAIOR AMPLITUDE (em uso), não só o gabarito
+  parado. FONTE: ANVISA (mesmo manual).
+- Faixa de folga para musculação: 0,6 m a 0,9 m entre aparelhos.
+  FONTE: NSCA — National Strength and Conditioning Association (guidelines de layout).
+
+============================================================
+2. ESPAÇO RECOMENDADO POR TIPO DE EQUIPAMENTO (footprint + acesso)
+============================================================
+- Esteira: ~4 m² por unidade (inclui área de uso + escape). FONTE: NSCA.
+- Bicicleta ergométrica: ~2 m² por unidade. FONTE: NSCA.
+- Regra geral por aparelho de musculação/cardio (footprint + acesso): 3,7 a 5,6 m²
+  (40 a 60 ft²) por equipamento, com buffer livre de ~0,90 m (3 ft) ao redor de cada um.
+  FONTE: ACSM — "Health/Fitness Facility Standards and Guidelines".
+- Espaço livre adjacente a cada aparelho (acessibilidade): mínimo 0,76 m x 1,22 m
+  (30" x 48"). FONTE: ACSM (mesma referência).
+- Observação: a recomendação específica de espaço por aparelho deve seguir o manual do
+  FABRICANTE (footprint real do catálogo) somado ao buffer de acesso. FONTE: ACSM.
+
+============================================================
+3. ÁREA POR ALUNO (SIMULTÂNEO) E ZONAS
+============================================================
+- Cardio: ~1,5 m² por aluno simultâneo. Musculação livre: ~2 m² por aluno simultâneo.
+  FONTE: consolidado SEBRAE / boas práticas do setor fitness BR.
+- Zonas típicas a prever no layout: Musculação (máquinas + peso livre), Cardiovascular
+  (esteira/elíptico/bike), Funcional (kettlebell/cordas/bolas), Alongamento/aquecimento,
+  além de recepção, vestiários e circulação.
+  FONTE: SEBRAE — "Como Montar uma Academia de Ginástica".
+- Porte de referência: microacademia a partir de ~50 m²; setups completos 150–200 m²;
+  faixa equilibrada de início 80–120 m² (20–30 alunos simultâneos).
+  FONTE: SEBRAE / guias de planejamento de academia.
+
+============================================================
+4. CIRCULAÇÃO E CORREDORES
+============================================================
+- A área de circulação deve representar aproximadamente 40% da área útil ocupada pelos
+  equipamentos (corredores principais + acesso + saída). FONTE: boas práticas de projeto
+  de academia (consolidado setorial) + lógica da ANVISA (livre circulação).
+- Corredor principal: largura mínima de 1,20 m (passagem confortável de duas pessoas).
+  FONTE: prática de projeto alinhada à NBR 9050.
+- Larguras de circulação por extensão do corredor (rota acessível):
+    * até 4,00 m de extensão: 0,90 m
+    * até 10,00 m de extensão: 1,20 m
+    * acima de 10,00 m de extensão: 1,50 m
+  FONTE: ABNT NBR 9050 (Acessibilidade a edificações, mobiliário, espaços e equipamentos
+  urbanos). [Norma ABNT é paga; valores reproduzidos de fontes públicas secundárias.]
+- Porta: largura mínima de 0,80 m. Área de giro (mudança de direção 90°): diâmetro
+  mínimo de 1,50 m. FONTE: ABNT NBR 9050.
+- Caminhos de circulação devem ser adjacentes às áreas de atividade (membros não devem
+  atravessar uma zona de treino para chegar a outra); evitar cantos cegos em circulação
+  de mão dupla. FONTE: ACSM — Health/Fitness Facility Standards and Guidelines.
+
+============================================================
+5. SALA DE GINÁSTICA COLETIVA (GROUP EXERCISE)
+============================================================
+- Reservar 3,7 a 5,6 m² (40 a 60 ft²) por aluno na sala de aula coletiva, no pico.
+  FONTE: ACSM — Health/Fitness Facility Standards and Guidelines.
+
+============================================================
+6. MÉTODO DE CÁLCULO DE CAPACIDADE (como o agente aplica)
+============================================================
+Para "quantas máquinas cabem em X m²":
+    area_util      = area_disponivel x fator_circulacao   (fator ~0,60 → ~40% p/ circulação; FONTE §4)
+    area_por_maq   = footprint_catalogo x (1 + folga)      (footprint = catálogo; folga ~0,5 → ACSM/ANVISA, §1-2)
+    n_maquinas     = piso(area_util / area_por_maq)
+- O FOOTPRINT vem SEMPRE do catálogo do fabricante (dado real, não estimado).
+- O fator de circulação (~40%) e a folga (0,80 m ANVISA / 0,90 m ACSM) são as premissas
+  com fonte acima — o agente deve declará-las e permitir ajuste.
+- Resultado é de PLANEJAMENTO; o projeto executivo deve ser assinado por
+  engenheiro/arquiteto e atender ao código de obras e à vigilância sanitária local.
+
+============================================================
+FONTES (abertas)
+============================================================
+- ANVISA — Manual de Orientações para Fiscalização Sanitária em Estabelecimentos
+  Prestadores de Atividade Física e Afins (Seção VII).
+- NSCA — National Strength and Conditioning Association (guidelines de layout/spacing).
+- ACSM — Health/Fitness Facility Standards and Guidelines.
+- ABNT NBR 9050 — Acessibilidade (valores de circulação via fontes públicas secundárias).
+- SEBRAE — Como Montar uma Academia de Ginástica (Série Como Montar / Ideias de Negócio).

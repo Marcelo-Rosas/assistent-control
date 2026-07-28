@@ -1,0 +1,273 @@
+{
+  "timestamp": "2026-07-27T22:13:49.946391",
+  "group_id": "f087bfc8-ad2b-434c-bc18-a38608be183d",
+  "domain": "engenheiro",
+  "embed_model": "mxbai-embed-large",
+  "embed_dim": 1024,
+  "min_similarity": 0.35,
+  "top_k": 5,
+  "metrics": {
+    "avg_recall@5": 1.0,
+    "avg_precision@5": 0.875,
+    "avg_mrr": 1.0,
+    "doc_match_rate": 1.0
+  },
+  "results": [
+    {
+      "query": "Qual a vazão mínima de ar exterior para sala coletiva de 100 m² pela NBR 16401?",
+      "expected_doc": "engenharia_climatizacao_academia_ref.txt",
+      "retrieved_count": 5,
+      "recall@5": 1.0,
+      "precision@5": 0.6,
+      "mrr": 1.0,
+      "document_match": true,
+      "top_sims": [
+        0.719,
+        0.711,
+        0.701
+      ],
+      "id": "eng-01",
+      "chunks_preview": [
+        {
+          "source_ref": "data/raw/engenheiro/engenharia_climatizacao_academia_ref.txt",
+          "similarity": 0.718882398671962,
+          "text": "============================================================ CLIMATIZAÇÃO / HVAC — ACADEMIA (sala de coletivas, musculação, spinning) Fonte: extrato curado de engenharia_normas_obra_projeto_ref + engenharia_dimensionamento_academia_ref Uso:"
+        },
+        {
+          "source_ref": "data/raw/engenheiro/engenharia_obra_academia_ref.txt",
+          "similarity": 0.711386838215985,
+          "text": "Quadro de distribuição em local acessível, ventilado e protegido de umidade. Condutores: 1,5 mm² (iluminação), 2,5 mm² (TUG). FONTE: ABNT NBR 5410. - Dimensionar carga/demanda pela soma das potências (cardio + climatização + iluminação + so"
+        },
+        {
+          "source_ref": "data/raw/engenheiro/engenharia_climatizacao_academia_ref.txt",
+          "similarity": 0.701111811333192,
+          "text": "· base: densidade de projeto fitness · fonte: engenharia_dimensionamento_academia_ref VAZÃO MÍNIMA DE AR EXTERIOR (NBR 16401-3:2024) - Fórmula: V_ef = (P_z × F_p) + (A_z × F_a) P_z = ocupantes estimados da sala F_p = 5,0 l/s por pessoa (loc"
+        }
+      ]
+    },
+    {
+      "query": "Split high wall sem renovação de ar é conformidade na academia?",
+      "expected_doc": "engenharia_climatizacao_academia_ref.txt",
+      "retrieved_count": 5,
+      "recall@5": 1.0,
+      "precision@5": 0.8,
+      "mrr": 1.0,
+      "document_match": true,
+      "top_sims": [
+        0.609,
+        0.686,
+        0.715
+      ],
+      "id": "eng-02",
+      "chunks_preview": [
+        {
+          "source_ref": "data/raw/engenheiro/engenharia_climatizacao_academia_ref.txt",
+          "similarity": 0.608585124440338,
+          "text": "· base: checklist MEP · fonte: engenharia_dimensionamento_academia_ref - Exemplo numérico (100 m², ~28 pax): V_ef ≈ (28 × 5,0) + (100 × 0,6) = 140 + 60 = 200 l/s ≈ 720 m³/h Proxy 30 m³/h × 28 ≈ 840 m³/h (ordem de grandeza; projetista fecha "
+        },
+        {
+          "source_ref": "data/raw/engenheiro/engenharia_climatizacao_academia_ref.txt",
+          "similarity": 0.685848353578305,
+          "text": "ciclo fechado) - Instalá-los sem ventilação/exaustão mecânica complementar é NÃO CONFORMIDADE técnica severa sob a NBR 16401. - Exige-se captação de ar externo com filtragem + exaustão mecânica contínua. · base: NBR 16401 · fonte: engenhari"
+        },
+        {
+          "source_ref": "data/raw/engenheiro/engenharia_climatizacao_academia_ref.txt",
+          "similarity": 0.715383205964188,
+          "text": "============================================================ CLIMATIZAÇÃO / HVAC — ACADEMIA (sala de coletivas, musculação, spinning) Fonte: extrato curado de engenharia_normas_obra_projeto_ref + engenharia_dimensionamento_academia_ref Uso:"
+        }
+      ]
+    },
+    {
+      "query": "Qual a densidade de projeto em m² por aluno para sala coletiva?",
+      "expected_doc": "engenharia_dimensionamento_academia_ref.txt",
+      "retrieved_count": 5,
+      "recall@5": 1.0,
+      "precision@5": 1.0,
+      "mrr": 1.0,
+      "document_match": true,
+      "top_sims": [
+        0.764,
+        0.748,
+        0.768
+      ],
+      "id": "eng-03",
+      "chunks_preview": [
+        {
+          "source_ref": "data/raw/engenheiro/engenharia_climatizacao_academia_ref.txt",
+          "similarity": 0.764415288776701,
+          "text": "============================================================ CLIMATIZAÇÃO / HVAC — ACADEMIA (sala de coletivas, musculação, spinning) Fonte: extrato curado de engenharia_normas_obra_projeto_ref + engenharia_dimensionamento_academia_ref Uso:"
+        },
+        {
+          "source_ref": "data/raw/engenheiro/engenharia_dimensionamento_academia_ref.txt",
+          "similarity": 0.74812485333543,
+          "text": "REFERÊNCIA DE DIMENSIONAMENTO DE ACADEMIA — frota, densidade, layout e MEP Premissas de PLANEJAMENTO consolidadas (RT + Arquiteto + Engenheiro). Os agentes CITAM estas premissas e usam as TOOLS de cálculo determinístico; não recitam de memó"
+        },
+        {
+          "source_ref": "data/raw/engenheiro/engenharia_layout_academia_ref.txt",
+          "similarity": 0.768026508320273,
+          "text": "- Porte de referência: microacademia a partir de ~50 m²; setups completos 150–200 m²; faixa equilibrada de início 80–120 m² (20–30 alunos simultâneos). FONTE: SEBRAE / guias de planejamento de academia. ====================================="
+        }
+      ]
+    },
+    {
+      "query": "Qual a carga dinâmica de laje recomendada para zona de peso livre?",
+      "expected_doc": "engenharia_dimensionamento_academia_ref.txt",
+      "retrieved_count": 5,
+      "recall@5": 1.0,
+      "precision@5": 0.8,
+      "mrr": 1.0,
+      "document_match": true,
+      "top_sims": [
+        0.692,
+        0.681,
+        0.604
+      ],
+      "id": "eng-04",
+      "chunks_preview": [
+        {
+          "source_ref": "data/raw/engenheiro/engenharia_dimensionamento_academia_ref.txt",
+          "similarity": 0.692145812916888,
+          "text": "Estrutura [NBR 6120]: - Carga dinâmica de laje: ≥ 500–600 kgf/m² nas zonas de peso livre e corrida (NBR 6120 academia/ginásio = 5 kN/m² ≈ 510 kgf/m²; subir p/ ~600 em peso livre por carga concentrada). Acústica / vibração [NBR 10152 / 10151"
+        },
+        {
+          "source_ref": "data/raw/engenheiro/engenharia_dimensionamento_academia_ref.txt",
+          "similarity": 0.680559003519734,
+          "text": "[ ] Suporte/árvore de anilhas a cada ~2 máquinas (evita carregar peso cruzando o salão). [ ] Periféricos (puxadores/triângulos/barras/presilhas) = 2× as saídas de cabo das polias. Arquiteto (zonificação/fluxo): [ ] Rotas de fuga livres, dim"
+        },
+        {
+          "source_ref": "data/raw/engenheiro/engenharia_obra_academia_ref.txt",
+          "similarity": 0.603818161319619,
+          "text": "1.3 AVCB (Auto de Vistoria do Corpo de Bombeiros) ou CLCB (estabelecimentos de menor risco), obtido via PPCI (projeto de prevenção). FONTE: Corpo de Bombeiros (IT 08 — Saídas de Emergência). 1.4 Licenciamento sanitário municipal (Vigilância"
+        }
+      ]
+    },
+    {
+      "query": "Qual a distância mínima entre aparelhos de musculação segundo ANVISA?",
+      "expected_doc": "engenharia_layout_academia_ref.txt",
+      "retrieved_count": 5,
+      "recall@5": 1.0,
+      "precision@5": 1.0,
+      "mrr": 1.0,
+      "document_match": true,
+      "top_sims": [
+        0.76,
+        0.749,
+        0.766
+      ],
+      "id": "eng-05",
+      "chunks_preview": [
+        {
+          "source_ref": "data/raw/engenheiro/engenharia_layout_academia_ref.txt",
+          "similarity": 0.760406829106607,
+          "text": "REFERÊNCIA DE ENGENHARIA DE OBRA E LAYOUT DE ACADEMIA Base de conhecimento para dimensionamento físico (área, circulação, distância entre equipamentos). Consolidado de fontes ABERTAS e citáveis. Cada número traz a FONTE. Uso: o agente Respo"
+        },
+        {
+          "source_ref": "data/raw/engenheiro/engenharia_dimensionamento_academia_ref.txt",
+          "similarity": 0.749452546271531,
+          "text": "- Elíptico / escada: ~3,5 m²/máquina (movimento vertical/longitudinal). - Bike ergométrica: pegada menor, sem escape traseiro → ~2,5 m²/máquina. - Distância mínima entre aparelhos de musculação: 0,80 m (ANVISA, Manual de Fiscalização Sanitá"
+        },
+        {
+          "source_ref": "data/raw/engenheiro/engenharia_layout_academia_ref.txt",
+          "similarity": 0.765969469191465,
+          "text": "- Equipamentos cardiovasculares (esteira, elíptico, bike): área de escape mínima de 0,80 m nas laterais e na parte traseira (zona de saída de emergência do aparelho). FONTE: ANVISA — mesmo manual. - Importante: medir os equipamentos em sua "
+        }
+      ]
+    },
+    {
+      "query": "Quanto de área de planejamento por esteira incluindo zona de escape?",
+      "expected_doc": "engenharia_layout_academia_ref.txt",
+      "retrieved_count": 5,
+      "recall@5": 1.0,
+      "precision@5": 1.0,
+      "mrr": 1.0,
+      "document_match": true,
+      "top_sims": [
+        0.728,
+        0.671,
+        0.692
+      ],
+      "id": "eng-06",
+      "chunks_preview": [
+        {
+          "source_ref": "data/raw/engenheiro/engenharia_layout_academia_ref.txt",
+          "similarity": 0.727642211003045,
+          "text": "- Equipamentos cardiovasculares (esteira, elíptico, bike): área de escape mínima de 0,80 m nas laterais e na parte traseira (zona de saída de emergência do aparelho). FONTE: ANVISA — mesmo manual. - Importante: medir os equipamentos em sua "
+        },
+        {
+          "source_ref": "data/raw/engenheiro/engenharia_dimensionamento_academia_ref.txt",
+          "similarity": 0.67128940313115,
+          "text": "NÃO é o default — usar só se o cliente pedir \"sem espera\". ============================================================ 3. DIMENSIONAMENTO DE MUSCULAÇÃO (revezamento saudável) ============================================================ Too"
+        },
+        {
+          "source_ref": "data/raw/engenheiro/engenharia_layout_academia_ref.txt",
+          "similarity": 0.691989178897886,
+          "text": "- Porte de referência: microacademia a partir de ~50 m²; setups completos 150–200 m²; faixa equilibrada de início 80–120 m² (20–30 alunos simultâneos). FONTE: SEBRAE / guias de planejamento de academia. ====================================="
+        }
+      ]
+    },
+    {
+      "query": "Quando a obra de academia exige ART e laudo estrutural em reforma?",
+      "expected_doc": "engenharia_obra_academia_ref.txt",
+      "retrieved_count": 5,
+      "recall@5": 1.0,
+      "precision@5": 0.8,
+      "mrr": 1.0,
+      "document_match": true,
+      "top_sims": [
+        0.667,
+        0.689,
+        0.594
+      ],
+      "id": "eng-07",
+      "chunks_preview": [
+        {
+          "source_ref": "data/raw/engenheiro/engenharia_obra_academia_ref.txt",
+          "similarity": 0.66661139328125,
+          "text": "REFERÊNCIA DE ENGENHARIA DE OBRA E PROJETO ARQUITETÔNICO DE ACADEMIA Base de conhecimento para os agentes \"Engenheiro de Obra\" e \"Arquiteto\". Cobre os dois cenários — ADAPTAÇÃO/RETROFIT de um ponto existente e CONSTRUÇÃO DO ZERO — além de l"
+        },
+        {
+          "source_ref": "data/raw/engenheiro/engenharia_obra_academia_ref.txt",
+          "similarity": 0.689361060426493,
+          "text": "- NBR 16280 (Reforma em edificações): exige controle de projeto/execução + ART/RRT e, quando a intervenção afeta a estrutura, laudo/avaliação estrutural antes de iniciar. FONTE: ABNT NBR 16280. =============================================="
+        },
+        {
+          "source_ref": "data/raw/engenheiro/engenharia_obra_academia_ref.txt",
+          "similarity": 0.594313268667279,
+          "text": "- Programa de necessidades guia o dimensionamento das zonas e fluxos (evitar cruzamento de fluxo limpo/sujo nos vestiários; recepção controla acesso; circulação não atravessa zonas de treino). ==============================================="
+        }
+      ]
+    },
+    {
+      "query": "O que é AVCB e quando a academia precisa do Corpo de Bombeiros?",
+      "expected_doc": "engenharia_obra_academia_ref.txt",
+      "retrieved_count": 5,
+      "recall@5": 1.0,
+      "precision@5": 1.0,
+      "mrr": 1.0,
+      "document_match": true,
+      "top_sims": [
+        0.748,
+        0.622,
+        0.617
+      ],
+      "id": "eng-08",
+      "chunks_preview": [
+        {
+          "source_ref": "data/raw/engenheiro/engenharia_obra_academia_ref.txt",
+          "similarity": 0.747855410363315,
+          "text": "1.3 AVCB (Auto de Vistoria do Corpo de Bombeiros) ou CLCB (estabelecimentos de menor risco), obtido via PPCI (projeto de prevenção). FONTE: Corpo de Bombeiros (IT 08 — Saídas de Emergência). 1.4 Licenciamento sanitário municipal (Vigilância"
+        },
+        {
+          "source_ref": "data/raw/engenheiro/engenharia_obra_academia_ref.txt",
+          "similarity": 0.622338518817619,
+          "text": "ACÚSTICA E VIBRAÇÃO (crítico em prédio/condomínio) ============================================================ - NBR 10152 (níveis de pressão sonora internos) + NBR 10151 (ruído de vizinhança / medição): academia em edifício é fonte forte "
+        },
+        {
+          "source_ref": "data/raw/engenheiro/engenharia_obra_academia_ref.txt",
+          "similarity": 0.617238411205109,
+          "text": "============================================================ FONTES (abertas / normativas citadas) ============================================================ - ABNT: NBR 6120 (cargas), NBR 6118 (concreto), NBR 6122 + NBR 8036 (fundações/s"
+        }
+      ]
+    }
+  ]
+}

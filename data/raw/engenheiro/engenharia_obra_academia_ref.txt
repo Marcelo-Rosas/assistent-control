@@ -1,0 +1,167 @@
+REFERÊNCIA DE ENGENHARIA DE OBRA E PROJETO ARQUITETÔNICO DE ACADEMIA
+Base de conhecimento para os agentes "Engenheiro de Obra" e "Arquiteto". Cobre os dois
+cenários — ADAPTAÇÃO/RETROFIT de um ponto existente e CONSTRUÇÃO DO ZERO — além de
+licenciamento, instalações, segurança e projeto. Cada item traz a NORMA/FONTE.
+Premissas de PLANEJAMENTO: todo projeto/obra exige profissional habilitado (ART/RRT) e
+aprovação dos órgãos locais. Consolidado de fontes abertas (2026-06).
+
+============================================================
+0. RESPONSABILIDADE TÉCNICA (vale para os 2 cenários)
+============================================================
+- ART (Anotação de Responsabilidade Técnica): emitida por ENGENHEIRO registrado no CREA.
+- RRT (Registro de Responsabilidade Técnica): emitido por ARQUITETO registrado no CAU.
+- Obrigatória para projeto, obra, reforma, laudo, vistoria ou perícia. FONTE: CREA/CAU.
+- NBR 16280 (Reforma em edificações): exige controle de projeto/execução + ART/RRT e, quando
+  a intervenção afeta a estrutura, laudo/avaliação estrutural antes de iniciar. FONTE: ABNT NBR 16280.
+
+============================================================
+1. LICENCIAMENTO E APROVAÇÕES (sequência típica)
+============================================================
+1.1 Consulta prévia de viabilidade / Termo de Consulta: verifica se a atividade "academia"
+    é permitida no LOTE pela Lei de Uso e Ocupação do Solo (LUOS / zoneamento) do município.
+    Academia pode ser barrada em zona estritamente residencial. FONTE: LUOS municipal / Prefeitura.
+1.2 Alvará de REFORMA: quando mantém parte da edificação existente (adaptação do ponto).
+    Alvará de CONSTRUÇÃO + Habite-se: para obra nova ou ampliação de área. FONTE: Código de Obras municipal.
+    - Obras de BAIXO RISCO podem ter dispensa de alvará/habite-se (varia por município). FONTE: gov.br Construa Brasil.
+1.3 AVCB (Auto de Vistoria do Corpo de Bombeiros) ou CLCB (estabelecimentos de menor risco),
+    obtido via PPCI (projeto de prevenção). FONTE: Corpo de Bombeiros (IT 08 — Saídas de Emergência).
+1.4 Licenciamento sanitário municipal (Vigilância Sanitária). FONTE: Vigilância Sanitária / ANVISA.
+1.5 Habite-se / Certidão de Conclusão (obra nova ou reforma com mudança de área). FONTE: Prefeitura.
+1.6 Alvará de Funcionamento (atesta zoneamento + segurança + uso do solo). FONTE: Prefeitura.
+
+============================================================
+2. ESTRUTURA / CARGAS (item crítico)
+============================================================
+- Carga acidental (sobrecarga) de academia/ginásio de esporte: 5 kN/m² (~500 kgf/m²),
+  uniformemente distribuída — usado no dimensionamento da laje. FONTE: ABNT NBR 6120 (itens
+  7 "salões de dança/esporte" e 19 "ginásios de esporte"). Zonas de peso livre concentram
+  carga e podem exigir verificação pontual acima desse valor.
+- RETROFIT: ANTES de instalar equipamentos pesados, fazer LAUDO DE AVALIAÇÃO ESTRUTURAL do
+  imóvel existente — engenheiro avalia fundação, pilares, vigas, lajes, fissuras e patologias,
+  e confirma se a laje suporta 5 kN/m² (ou reforço necessário). FONTE: ABNT NBR 16280 + NBR 13752
+  (vistorias) + NBR 6118 (concreto) + NBR 6120 (cargas).
+- OBRA DO ZERO: investigação geotécnica preliminar obrigatória — sondagem SPT (estratigrafia,
+  nível d'água, NSPT) antes do projeto de fundação. FONTE: ABNT NBR 6122 (fundações) + NBR 8036
+  (nº mínimo de furos de sondagem).
+
+============================================================
+3. INSTALAÇÕES ELÉTRICAS
+============================================================
+- NBR 5410 (baixa tensão): circuitos separados para iluminação, tomadas de uso geral (TUG) e
+  tomadas de uso específico (TUE). Equipamentos de maior potência (esteira, ar-condicionado,
+  motores) exigem CIRCUITO DEDICADO (TUE) dimensionado à carga. Quadro de distribuição em local
+  acessível, ventilado e protegido de umidade. Condutores: 1,5 mm² (iluminação), 2,5 mm² (TUG).
+  FONTE: ABNT NBR 5410.
+- Dimensionar carga/demanda pela soma das potências (cardio + climatização + iluminação + som);
+  prever quadro com folga e aterramento/DR. FONTE: NBR 5410.
+
+============================================================
+4. CLIMATIZAÇÃO, VENTILAÇÃO E QUALIDADE DO AR
+============================================================
+- NBR 16401: Parte 1 (projeto de ar-condicionado), Parte 2 (conforto térmico — satisfação de
+  ~80% dos ocupantes), Parte 3 (qualidade do ar interior — VAZÃO MÍNIMA de ar exterior e
+  filtragem). Atividade física eleva a demanda de renovação de ar vs. ambiente de escritório.
+  FONTE: ABNT NBR 16401-1/2/3.
+- Prever exaustão/renovação de ar suficiente para o pico de ocupação; áreas de spinning/funcional
+  e vestiários demandam exaustão específica. FONTE: NBR 16401-3.
+
+============================================================
+5. ACÚSTICA E VIBRAÇÃO (crítico em prédio/condomínio)
+============================================================
+- NBR 10152 (níveis de pressão sonora internos) + NBR 10151 (ruído de vizinhança / medição):
+  academia em edifício é fonte forte de ruído de impacto e vibração estrutural pela queda de
+  pesos. FONTE: ABNT NBR 10152:2017 + NBR 10151.
+- Mitigação: piso de absorção de impacto/vibração (pode isolar >90% da vibração estrutural) na
+  zona de peso livre/funcional; laudo de ruído de vizinhança quando há uso misto/residencial.
+  FONTE: engenharia acústica / NBR 10151.
+
+============================================================
+6. INCÊNDIO E SAÍDAS DE EMERGÊNCIA
+============================================================
+- PPCI → AVCB/CLCB. Dimensionar LOTAÇÃO e saídas de emergência conforme uso e nº de ocupantes;
+  memorial de lotação e saídas. FONTE: Corpo de Bombeiros — IT 08 (Saídas de Emergência).
+- Itens típicos: extintores, sinalização, iluminação de emergência, hidrantes (conforme porte),
+  largura de saídas pela lotação. FONTE: ITs do Corpo de Bombeiros estadual.
+
+============================================================
+7. HIDROSSANITÁRIO — SANITÁRIOS E VESTIÁRIOS POR LOTAÇÃO
+============================================================
+- Quantidade de peças sanitárias dimensionada pela LOTAÇÃO (ocupação da edificação). Regra usual
+  do Código de Obras: ~1 bacia + 1 lavatório a cada 20 pessoas (locais de reunião podem usar
+  1 a cada 50). Em sanitário masculino, até 50% das bacias podem virar mictórios. Separação por
+  gênero. FONTE: Código de Obras municipal (ex.: COE-SP LM 17.202/19).
+- Acessibilidade: no mínimo 5% das peças (mín. 1 por gênero) acessíveis. FONTE: ABNT NBR 9050.
+- Vestiário: área mínima de referência ~1,5 m²/pessoa (pico), separado por gênero, com guarda-volumes
+  e área seca/molhada. FONTE: prática de projeto / NBR 13532 (programa de necessidades).
+
+============================================================
+8. PISOS E REVESTIMENTOS
+============================================================
+- Áreas molhadas (vestiário, sanitário, entorno de bebedouro): piso ANTIDERRAPANTE com coeficiente
+  de atrito ≥ 0,4 (medido molhado); 0,4–0,7 para resistência ao escorregamento; >0,7 risco intenso.
+  Classificações DIN 51130 (R9–R13) e DIN 51097 (A/B/C, áreas de pé descalço). FONTE: ABNT (atrito) /
+  NBR 13818 / NBR 15575 / DIN 51130/51097.
+- Zona de treino: piso emborrachado (absorve impacto + antiderrapante + reduz vibração/ruído).
+  FONTE: prática de projeto fitness.
+
+============================================================
+9. ACESSIBILIDADE (NBR 9050) — vale p/ retrofit e obra nova
+============================================================
+- Rota acessível contínua ligando entrada, recepção, treino, vestiários e sanitários.
+- Estacionamento: 2% das vagas para PCD (e 5% para idosos) quando o total > 10 vagas; vaga PCD com
+  +1,20 m de circulação, vinculada à rota acessível, percurso ≤ 50 m até o acesso. FONTE: ABNT NBR 9050.
+- Sanitário e vestiário acessíveis (mín. 5% das peças). Corredores: 0,90 m (até 4 m) / 1,20 m (até
+  10 m) / 1,50 m (acima); porta 0,80 m; giro 1,50 m. FONTE: ABNT NBR 9050. (Ver também o doc de layout.)
+
+============================================================
+10. PROJETO ARQUITETÔNICO — ETAPAS E DOCUMENTAÇÃO
+============================================================
+- NBR 13532 define as etapas: levantamento de dados → programa de necessidades → estudo de
+  viabilidade → estudo preliminar → anteprojeto → projeto legal → projeto básico → projeto
+  executivo. FONTE: ABNT NBR 13532.
+- NBR 6492: representação/documentação técnica do projeto de arquitetura. FONTE: ABNT NBR 6492.
+- Programa de necessidades guia o dimensionamento das zonas e fluxos (evitar cruzamento de fluxo
+  limpo/sujo nos vestiários; recepção controla acesso; circulação não atravessa zonas de treino).
+
+============================================================
+11. CHECKLIST — ADAPTAÇÃO / RETROFIT DE PONTO EXISTENTE
+============================================================
+[ ] Consulta prévia de zoneamento (LUOS) — atividade academia permitida no lote?
+[ ] Laudo de avaliação estrutural do imóvel (laje suporta 5 kN/m²? patologias?) — NBR 16280/13752.
+[ ] Verificação de pé-direito, vãos e capacidade das instalações existentes (elétrica/hidráulica).
+[ ] Projeto de reforma + ART/RRT; alvará de reforma (Código de Obras).
+[ ] Reforço estrutural / piso anti-vibração na zona de peso livre, se necessário.
+[ ] Climatização/renovação de ar adequada ao pico (NBR 16401-3).
+[ ] Acústica: laudo de vizinhança se prédio/uso misto (NBR 10151).
+[ ] PPCI → AVCB/CLCB (saídas pela lotação, IT 08).
+[ ] Sanitários/vestiários por lotação + 5% acessível (Código de Obras + NBR 9050).
+[ ] Licença sanitária + alvará de funcionamento.
+
+============================================================
+12. CHECKLIST — CONSTRUÇÃO DO ZERO
+============================================================
+[ ] Consulta prévia de zoneamento + parâmetros urbanísticos (taxa de ocupação, recuos, gabarito).
+[ ] Sondagem SPT (NBR 6122 / NBR 8036) → projeto de fundação.
+[ ] Projeto estrutural dimensionado a 5 kN/m² (NBR 6120/6118), zonas de peso verificadas.
+[ ] Projeto arquitetônico completo (NBR 13532) — programa de necessidades, fluxos, zonas.
+[ ] Projetos complementares: elétrico (NBR 5410), hidrossanitário, climatização (NBR 16401),
+    acústico (NBR 10152/10151), PPCI (bombeiros), acessibilidade (NBR 9050).
+[ ] ART/RRT de todos os projetos e da execução.
+[ ] Alvará de construção → execução → Habite-se.
+[ ] AVCB + licença sanitária + alvará de funcionamento.
+
+============================================================
+FONTES (abertas / normativas citadas)
+============================================================
+- ABNT: NBR 6120 (cargas), NBR 6118 (concreto), NBR 6122 + NBR 8036 (fundações/sondagem),
+  NBR 16280 (reforma), NBR 13752 (vistorias), NBR 15575 (desempenho), NBR 5410 (elétrica),
+  NBR 16401 (climatização), NBR 10152 + NBR 10151 (acústica), NBR 9050 (acessibilidade),
+  NBR 13532 + NBR 6492 (projeto de arquitetura), NBR 13818 (pisos). [Normas ABNT são pagas;
+  valores reproduzidos de fontes públicas secundárias.]
+- Corpo de Bombeiros — Instrução Técnica IT 08 (Saídas de Emergência); PPCI/AVCB/CLCB.
+- Código de Obras e Edificações municipal (ex.: COE São Paulo LM 17.202/2019) — sanitários por lotação.
+- Lei de Uso e Ocupação do Solo (LUOS) municipal — zoneamento.
+- CREA (ART) / CAU (RRT) — responsabilidade técnica.
+- gov.br "Construa Brasil" — guia de alvarás / obras de baixo risco.
+- ANVISA / Vigilância Sanitária — licenciamento sanitário de estabelecimentos de atividade física.
+- DIN 51130 / DIN 51097 — resistência ao escorregamento de pisos.
