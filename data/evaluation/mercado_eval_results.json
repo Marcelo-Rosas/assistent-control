@@ -1,0 +1,272 @@
+{
+  "timestamp": "2026-07-27T19:30:10.708627",
+  "group_id": "b2bce16f-3695-4d93-94c5-4bd77bdb92d6",
+  "embed_model": "mxbai-embed-large",
+  "embed_dim": 1024,
+  "min_similarity": 0.35,
+  "top_k": 5,
+  "metrics": {
+    "avg_recall@5": 0.78125,
+    "avg_precision@5": 0.9,
+    "avg_mrr": 0.9,
+    "doc_match_rate": 1.0
+  },
+  "results": [
+    {
+      "query": "Quais são as principais tendências do mercado fitness em 2025?",
+      "expected_doc": "panorama-2025.pdf",
+      "retrieved_count": 5,
+      "recall@5": 0.75,
+      "precision@5": 1.0,
+      "mrr": 1.0,
+      "document_match": true,
+      "top_sims": [
+        0.828,
+        0.822,
+        0.819
+      ],
+      "id": "mercado-01",
+      "chunks_preview": [
+        {
+          "source_ref": "data/raw/Mercado/panorama-2025.pdf",
+          "similarity": 0.828448901865024,
+          "text": "nichados, impulsionado pela restrição imobiliária, tem se\n\nconsolidado como uma alternativa de eficiência e diversificação.\n\nO mix entre grandes unidades (big box) e studios\n\nespecializados vem redefinindo a configuração do setor,\n\nequilibr"
+        },
+        {
+          "source_ref": "data/raw/Mercado/panorama-2025.pdf",
+          "similarity": 0.822053186725754,
+          "text": "Praticantes do Panorama Setorial Fitness Brasil, que\n\nidentificou limitações físicas, inseguranças relacionadas\n\nao corpo e a falta de espaços acolhedores como\n\nprincipais barreiras à prática regular de atividades físicas.\n\n6. O futuro do m"
+        },
+        {
+          "source_ref": "data/raw/Mercado/panorama-2025.pdf",
+          "similarity": 0.818607140696511,
+          "text": "gestão, consolidação de formatos estruturados, expansão do canal corporativo via\n\nagregadores, digitalização das jornadas e busca por experiências personalizadas.\n\nAlém disso, a competição no setor exige mais do que eficiência operacional; "
+        }
+      ]
+    },
+    {
+      "query": "Quais são as principais franquias de academia no Brasil?",
+      "expected_doc": "mapeamento_franquias_academia_brasil.pdf",
+      "retrieved_count": 5,
+      "recall@5": 0.75,
+      "precision@5": 1.0,
+      "mrr": 1.0,
+      "document_match": true,
+      "top_sims": [
+        0.726,
+        0.697,
+        0.696
+      ],
+      "id": "mercado-02",
+      "chunks_preview": [
+        {
+          "source_ref": "data/raw/Mercado/mapeamento_franquias_academia_brasil.pdf",
+          "similarity": 0.725902085382628,
+          "text": "MAPEAMENTO COMPLETO: FRANQUIAS DE ACADEMIA\n\nRelatório de Inteligência Comercial para Prospecção\n\nData do levantamento: Junho de 2026 Mercado: Brasil - Segmento Fitness/Academias Fonte:\n\nPesquisa web em portais oficiais, ABF, mídia especiali"
+        },
+        {
+          "source_ref": "data/raw/Mercado/BENNY MATHIASON LEWI PRO2022.pdf",
+          "similarity": 0.697384744103208,
+          "text": "evolução do tamanho da indústria no Brasil; e (iii) o aumento do número de clientes\n\npor academias. O primeiro ponto revela uma situação de ajuste ainda pré-pandemia\n\nem um país que tinha muitas academias e poucos clientes por academia, o q"
+        },
+        {
+          "source_ref": "data/raw/Mercado/panorama-2025.pdf",
+          "similarity": 0.695778121160274,
+          "text": "algumas academias que tem esse dado não aplicável / não mensurável.\n\n** Apenas no estudo da Latam foi apresentada essa opção de resposta, já nos dados do Brasil,\n\nas opções começavam em “1 vez por semana”, por isso não há nenhuma porcentage"
+        }
+      ]
+    },
+    {
+      "query": "Quais são os benchmarks internacionais de desempenho de academias?",
+      "expected_doc": "BENNY MATHIASON LEWI PRO2022.pdf",
+      "retrieved_count": 5,
+      "recall@5": 0.25,
+      "precision@5": 0.2,
+      "mrr": 0.2,
+      "document_match": true,
+      "top_sims": [
+        0.746,
+        0.736,
+        0.723
+      ],
+      "id": "mercado-03",
+      "chunks_preview": [
+        {
+          "source_ref": "data/raw/Mercado/BENNY MATHIASON LEWI PRO2022.pdf",
+          "similarity": 0.745965145408069,
+          "text": "O que explica a assimetria entre o tamanho de mercado do setor de academias\n\nbrasileiro e o número alto de alunos e academias presentes no país, é justamente o\n\ngasto médio anual por cliente em dólar americano. Este indicador é mais de quat"
+        },
+        {
+          "source_ref": "data/raw/Mercado/panorama-2025.pdf",
+          "similarity": 0.736129901889858,
+          "text": "algumas academias que tem esse dado não aplicável / não mensurável.\n\n** Apenas no estudo da Latam foi apresentada essa opção de resposta, já nos dados do Brasil,\n\nas opções começavam em “1 vez por semana”, por isso não há nenhuma porcentage"
+        },
+        {
+          "source_ref": "data/raw/Mercado/mapeamento_franquias_academia_brasil.pdf",
+          "similarity": 0.72302826917509,
+          "text": "MAPEAMENTO COMPLETO: FRANQUIAS DE ACADEMIA\n\nRelatório de Inteligência Comercial para Prospecção\n\nData do levantamento: Junho de 2026 Mercado: Brasil - Segmento Fitness/Academias Fonte:\n\nPesquisa web em portais oficiais, ABF, mídia especiali"
+        }
+      ]
+    },
+    {
+      "query": "Qual é o tamanho do mercado fitness brasileiro e seu potencial de crescimento?",
+      "expected_doc": "panorama-2025.pdf",
+      "retrieved_count": 5,
+      "recall@5": 1.0,
+      "precision@5": 1.0,
+      "mrr": 1.0,
+      "document_match": true,
+      "top_sims": [
+        0.827,
+        0.824,
+        0.819
+      ],
+      "id": "mercado-04",
+      "chunks_preview": [
+        {
+          "source_ref": "data/raw/Mercado/panorama-2025.pdf",
+          "similarity": 0.826762301947505,
+          "text": "contato físico continua decisivo na experiência de compra.\n\nEm paralelo, cresce a percepção de que promoções táticas e\n\ndescontos agressivos, embora eficazes no curto prazo, alimentam\n\nciclos de troca frequente e reduzem a fidelização. Oper"
+        },
+        {
+          "source_ref": "data/raw/Mercado/panorama-2025.pdf",
+          "similarity": 0.824135524547697,
+          "text": "Nos últimos anos, o setor fitness brasileiro vem passando por uma expansão consistente, impulsionada pela maior\n\nconscientização da população sobre saúde, bem-estar e qualidade de vida.\n\nEsse movimento tem estimulado a abertura de novos emp"
+        },
+        {
+          "source_ref": "data/raw/Mercado/panorama-2025.pdf",
+          "similarity": 0.819322242080218,
+          "text": "gestão, consolidação de formatos estruturados, expansão do canal corporativo via\n\nagregadores, digitalização das jornadas e busca por experiências personalizadas.\n\nAlém disso, a competição no setor exige mais do que eficiência operacional; "
+        }
+      ]
+    },
+    {
+      "query": "Quais modelos de negócio de academia funcionam melhor no Brasil?",
+      "expected_doc": "mapeamento_franquias_academia_brasil.pdf",
+      "retrieved_count": 5,
+      "recall@5": 1.0,
+      "precision@5": 1.0,
+      "mrr": 1.0,
+      "document_match": true,
+      "top_sims": [
+        0.803,
+        0.76,
+        0.757
+      ],
+      "id": "mercado-05",
+      "chunks_preview": [
+        {
+          "source_ref": "data/raw/Mercado/BENNY MATHIASON LEWI PRO2022.pdf",
+          "similarity": 0.803145193678719,
+          "text": "evolução do tamanho da indústria no Brasil; e (iii) o aumento do número de clientes\n\npor academias. O primeiro ponto revela uma situação de ajuste ainda pré-pandemia\n\nem um país que tinha muitas academias e poucos clientes por academia, o q"
+        },
+        {
+          "source_ref": "data/raw/Mercado/BENNY MATHIASON LEWI PRO2022.pdf",
+          "similarity": 0.759661910614512,
+          "text": "dessa forma, foram estudados os grupos estratégicos que concorrem por fatias do\n\nmercado, bem como táticas para conquistar os consumidores no âmbito da indústria\n\nde academias como um todo e do segmento low cost em particular. Ademais,\n\napr"
+        },
+        {
+          "source_ref": "data/raw/Mercado/mapeamento_franquias_academia_brasil.pdf",
+          "similarity": 0.756768703460715,
+          "text": "MAPEAMENTO COMPLETO: FRANQUIAS DE ACADEMIA\n\nRelatório de Inteligência Comercial para Prospecção\n\nData do levantamento: Junho de 2026 Mercado: Brasil - Segmento Fitness/Academias Fonte:\n\nPesquisa web em portais oficiais, ABF, mídia especiali"
+        }
+      ]
+    },
+    {
+      "query": "Quais métricas de retenção de alunos são consideradas boas no setor?",
+      "expected_doc": "BENNY MATHIASON LEWI PRO2022.pdf",
+      "retrieved_count": 5,
+      "recall@5": 0.75,
+      "precision@5": 1.0,
+      "mrr": 1.0,
+      "document_match": true,
+      "top_sims": [
+        0.739,
+        0.734,
+        0.727
+      ],
+      "id": "mercado-06",
+      "chunks_preview": [
+        {
+          "source_ref": "data/raw/Mercado/panorama-2025.pdf",
+          "similarity": 0.738847359350166,
+          "text": "Neste ano, houve um aumento de 3% nas inscrições de\n\ncentros com mais de 2.000 alunos e crescimento de 1%\n\nentre os estabelecimentos com 1.001 a 2.000 alunos.\n\n2. Centros de atividades físicas Panorama Setorial 4ª edição\n\nAnálise dos Centro"
+        },
+        {
+          "source_ref": "data/raw/Mercado/panorama-2025.pdf",
+          "similarity": 0.734268838083558,
+          "text": "Observa-se que a proximidade entre a academia e a residência ou o local de trabalho também se mostra um fator relevante para incentivar o retorno às\n\natividades físicas. Essa motivação é mais expressiva entre os grupos de 26 a 30 anos e 41 "
+        },
+        {
+          "source_ref": "data/raw/Mercado/BENNY MATHIASON LEWI PRO2022.pdf",
+          "similarity": 0.726897532323232,
+          "text": "6.1.1 Méritos de uma transação ......................................................................... 99\n\n6.1.2 Riscos e considerações de uma transação ............................................. 100\n\n6.2 SUGESTÕES PARA FUTUROS ESTUDOS"
+        }
+      ]
+    },
+    {
+      "query": "Quais são as principais redes de academia em franquia no Brasil?",
+      "expected_doc": "mapeamento_franquias_academia_brasil.pdf",
+      "retrieved_count": 5,
+      "recall@5": 1.0,
+      "precision@5": 1.0,
+      "mrr": 1.0,
+      "document_match": true,
+      "top_sims": [
+        0.756,
+        0.723,
+        0.7
+      ],
+      "id": "mercado-07",
+      "chunks_preview": [
+        {
+          "source_ref": "data/raw/Mercado/mapeamento_franquias_academia_brasil.pdf",
+          "similarity": 0.755597123848452,
+          "text": "MAPEAMENTO COMPLETO: FRANQUIAS DE ACADEMIA\n\nRelatório de Inteligência Comercial para Prospecção\n\nData do levantamento: Junho de 2026 Mercado: Brasil - Segmento Fitness/Academias Fonte:\n\nPesquisa web em portais oficiais, ABF, mídia especiali"
+        },
+        {
+          "source_ref": "data/raw/Mercado/BENNY MATHIASON LEWI PRO2022.pdf",
+          "similarity": 0.723211531926271,
+          "text": "terceira maior rede de academias low cost do Brasil e a com melhor avaliação pelos\n\nusuários no Reclame Aqui. A empresa recebeu investimento do fundo americano de\n\nPrivate Equity H.I.G. Capital, que possui foco em empresas pequenas e médias"
+        },
+        {
+          "source_ref": "data/raw/Mercado/BENNY MATHIASON LEWI PRO2022.pdf",
+          "similarity": 0.700424161641885,
+          "text": "das companhias do segmento e se refere ao ticket mensal pago pelos alunos\n\ndas unidades de academias próprias das redes pelo direito de frequentar as\n\nunidades e usar seus serviços. Na maior parte das academias, há mais de um\n\nplano para qu"
+        }
+      ]
+    },
+    {
+      "query": "Qual é o ticket médio mensal de academias no Brasil?",
+      "expected_doc": "panorama-2025.pdf",
+      "retrieved_count": 5,
+      "recall@5": 0.75,
+      "precision@5": 1.0,
+      "mrr": 1.0,
+      "document_match": true,
+      "top_sims": [
+        0.764,
+        0.712,
+        0.709
+      ],
+      "id": "mercado-08",
+      "chunks_preview": [
+        {
+          "source_ref": "data/raw/Mercado/BENNY MATHIASON LEWI PRO2022.pdf",
+          "similarity": 0.764261989085443,
+          "text": "das companhias do segmento e se refere ao ticket mensal pago pelos alunos\n\ndas unidades de academias próprias das redes pelo direito de frequentar as\n\nunidades e usar seus serviços. Na maior parte das academias, há mais de um\n\nplano para qu"
+        },
+        {
+          "source_ref": "data/raw/Mercado/panorama-2025.pdf",
+          "similarity": 0.712245460249897,
+          "text": "algumas academias que tem esse dado não aplicável / não mensurável.\n\n** Apenas no estudo da Latam foi apresentada essa opção de resposta, já nos dados do Brasil,\n\nas opções começavam em “1 vez por semana”, por isso não há nenhuma porcentage"
+        },
+        {
+          "source_ref": "data/raw/Mercado/BENNY MATHIASON LEWI PRO2022.pdf",
+          "similarity": 0.708722303218292,
+          "text": "terceira maior rede de academias low cost do Brasil e a com melhor avaliação pelos\n\nusuários no Reclame Aqui. A empresa recebeu investimento do fundo americano de\n\nPrivate Equity H.I.G. Capital, que possui foco em empresas pequenas e médias"
+        }
+      ]
+    }
+  ]
+}

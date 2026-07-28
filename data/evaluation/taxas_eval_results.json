@@ -1,0 +1,215 @@
+{
+  "timestamp": "2026-07-27T22:32:25.709455",
+  "group_id": "b7dad505-2d2a-49a9-bbaf-d4b9c4929dea",
+  "embed_model": "mxbai-embed-large",
+  "embed_dim": 1024,
+  "min_similarity": 0.35,
+  "top_k": 5,
+  "metrics": {
+    "avg_recall@5": 1.0,
+    "avg_precision@5": 0.975,
+    "avg_mrr": 1.0,
+    "doc_match_rate": 1.0,
+    "city_match_rate": 1.0
+  },
+  "results": [
+    {
+      "query": "Qual o valor do alvará de funcionamento para academia em Fortaleza?",
+      "expected_doc": "fortaleza_ce.json",
+      "expected_cidade": "Fortaleza",
+      "retrieved_count": 1,
+      "recall@5": 1.0,
+      "precision@5": 1.0,
+      "mrr": 1.0,
+      "document_match": true,
+      "city_match": true,
+      "top_sims": [
+        0.779
+      ],
+      "id": "taxas-01",
+      "chunks_preview": [
+        {
+          "source_ref": "data/raw/Regulatorio/taxas/fortaleza_ce.json",
+          "cidade": "Fortaleza",
+          "similarity": 0.779078171692816,
+          "text": "Taxas municipais para academia — Fortaleza/CE\nDocumento: fortaleza_ce.json\nFonte: Portal SEUMA Fortaleza — manual alvará funcionamento (PDF verificado 2026-03)\nData da coleta: 2026-07-13\nStatus: curado\n\nNotas: Alvará funcionamento: taxa úni"
+        }
+      ]
+    },
+    {
+      "query": "Quanto custa a taxa de bombeiros para academia em Curitiba?",
+      "expected_doc": "curitiba_pr.json",
+      "expected_cidade": "Curitiba",
+      "retrieved_count": 1,
+      "recall@5": 1.0,
+      "precision@5": 1.0,
+      "mrr": 1.0,
+      "document_match": true,
+      "city_match": true,
+      "top_sims": [
+        0.805
+      ],
+      "id": "taxas-02",
+      "chunks_preview": [
+        {
+          "source_ref": "data/raw/Regulatorio/taxas/curitiba_pr.json",
+          "cidade": "Curitiba",
+          "similarity": 0.805339048383628,
+          "text": "Taxas municipais para academia — Curitiba/PR\nDocumento: curitiba_pr.json\nFonte: Decreto municipal Curitiba 1929/2024 + CBM-PR UPF — revalidar em prefeitura/CBM\nData da coleta: 2026-07-13\nStatus: curado\n\nNotas: Bombeiros: típico calibrado ~1"
+        }
+      ]
+    },
+    {
+      "query": "Qual a faixa de projeto arquitetônico CAU em R$/m² em São Paulo?",
+      "expected_doc": "sao_paulo_sp.json",
+      "expected_cidade": "São Paulo",
+      "retrieved_count": 1,
+      "recall@5": 1.0,
+      "precision@5": 1.0,
+      "mrr": 1.0,
+      "document_match": true,
+      "city_match": true,
+      "top_sims": [
+        0.734
+      ],
+      "id": "taxas-03",
+      "chunks_preview": [
+        {
+          "source_ref": "data/raw/Regulatorio/taxas/sao_paulo_sp.json",
+          "cidade": "São Paulo",
+          "similarity": 0.734485711413678,
+          "text": "Taxas municipais para academia — São Paulo/SP\nDocumento: sao_paulo_sp.json\nFonte: curadoria_gymsite_v1 — faixa conservadora por capital; revalidar prefeitura/CBM\nData da coleta: 2026-07-13\nStatus: revisão pendente (estimativa piloto)\n\nNotas"
+        }
+      ]
+    },
+    {
+      "query": "Qual o valor típico da vistoria sanitária para academia no Rio de Janeiro?",
+      "expected_doc": "rio_de_janeiro_rj.json",
+      "expected_cidade": "Rio de Janeiro",
+      "retrieved_count": 1,
+      "recall@5": 1.0,
+      "precision@5": 1.0,
+      "mrr": 1.0,
+      "document_match": true,
+      "city_match": true,
+      "top_sims": [
+        0.729
+      ],
+      "id": "taxas-04",
+      "chunks_preview": [
+        {
+          "source_ref": "data/raw/Regulatorio/taxas/rio_de_janeiro_rj.json",
+          "cidade": "Rio de Janeiro",
+          "similarity": 0.729368345866084,
+          "text": "Taxas municipais para academia — Rio de Janeiro/RJ\nDocumento: rio_de_janeiro_rj.json\nFonte: curadoria_gymsite_v1 — faixa conservadora por capital; revalidar prefeitura/CBM\nData da coleta: 2026-07-13\nStatus: revisão pendente (estimativa pilo"
+        }
+      ]
+    },
+    {
+      "query": "Quais os prazos típicos em meses para alvará e bombeiros de academia?",
+      "expected_doc": "fortaleza_ce.json",
+      "expected_cidade": null,
+      "retrieved_count": 5,
+      "recall@5": 1.0,
+      "precision@5": 0.8,
+      "mrr": 1.0,
+      "document_match": true,
+      "city_match": null,
+      "top_sims": [
+        0.662,
+        0.637,
+        0.636
+      ],
+      "id": "taxas-05",
+      "chunks_preview": [
+        {
+          "source_ref": "data/raw/Regulatorio/taxas/fortaleza_ce.json",
+          "cidade": "Fortaleza",
+          "similarity": 0.661522350868227,
+          "text": "Taxas municipais para academia — Fortaleza/CE\nDocumento: fortaleza_ce.json\nFonte: Portal SEUMA Fortaleza — manual alvará funcionamento (PDF verificado 2026-03)\nData da coleta: 2026-07-13\nStatus: curado\n\nNotas: Alvará funcionamento: taxa úni"
+        },
+        {
+          "source_ref": "data/raw/Regulatorio/L9696.html",
+          "cidade": null,
+          "similarity": 0.6370227606243,
+          "text": "Lei 9.696/1998 — Art. 2º\nTema: inscricao_registro_cref\n\nArt. 2o Apenas serão\ninscritos nos quadros dos Conselhos Regionais de Educação Física os seguintes\nprofissionais:\nI\n- os possuidores de diploma obtido em curso de Educação Física, ofic"
+        },
+        {
+          "source_ref": "data/raw/Regulatorio/taxas/salvador_ba.json",
+          "cidade": "Salvador",
+          "similarity": 0.636486779515744,
+          "text": "Taxas municipais para academia — Salvador/BA\nDocumento: salvador_ba.json\nFonte: curadoria_gymsite_v1 — faixa conservadora por capital; revalidar prefeitura/CBM\nData da coleta: 2026-07-13\nStatus: revisão pendente (estimativa piloto)\n\nNotas: "
+        }
+      ]
+    },
+    {
+      "query": "Taxas municipais para academia em Belo Horizonte: alvará e bombeiros",
+      "expected_doc": "belo_horizonte_mg.json",
+      "expected_cidade": "Belo Horizonte",
+      "retrieved_count": 1,
+      "recall@5": 1.0,
+      "precision@5": 1.0,
+      "mrr": 1.0,
+      "document_match": true,
+      "city_match": true,
+      "top_sims": [
+        0.792
+      ],
+      "id": "taxas-06",
+      "chunks_preview": [
+        {
+          "source_ref": "data/raw/Regulatorio/taxas/belo_horizonte_mg.json",
+          "cidade": "Belo Horizonte",
+          "similarity": 0.791732426762204,
+          "text": "Taxas municipais para academia — Belo Horizonte/MG\nDocumento: belo_horizonte_mg.json\nFonte: curadoria_gymsite_v1 — faixa conservadora por capital; revalidar prefeitura/CBM\nData da coleta: 2026-07-13\nStatus: revisão pendente (estimativa pilo"
+        }
+      ]
+    },
+    {
+      "query": "Alvará de funcionamento SEUMA Fortaleza para academia — valor único",
+      "expected_doc": "fortaleza_ce.json",
+      "expected_cidade": "Fortaleza",
+      "retrieved_count": 1,
+      "recall@5": 1.0,
+      "precision@5": 1.0,
+      "mrr": 1.0,
+      "document_match": true,
+      "city_match": true,
+      "top_sims": [
+        0.74
+      ],
+      "id": "taxas-07",
+      "chunks_preview": [
+        {
+          "source_ref": "data/raw/Regulatorio/taxas/fortaleza_ce.json",
+          "cidade": "Fortaleza",
+          "similarity": 0.739734866030968,
+          "text": "Taxas municipais para academia — Fortaleza/CE\nDocumento: fortaleza_ce.json\nFonte: Portal SEUMA Fortaleza — manual alvará funcionamento (PDF verificado 2026-03)\nData da coleta: 2026-07-13\nStatus: curado\n\nNotas: Alvará funcionamento: taxa úni"
+        }
+      ]
+    },
+    {
+      "query": "Taxa de bombeiros CBM-PR Curitiba segundo decreto municipal 1929/2024",
+      "expected_doc": "curitiba_pr.json",
+      "expected_cidade": "Curitiba",
+      "retrieved_count": 1,
+      "recall@5": 1.0,
+      "precision@5": 1.0,
+      "mrr": 1.0,
+      "document_match": true,
+      "city_match": true,
+      "top_sims": [
+        0.829
+      ],
+      "id": "taxas-08",
+      "chunks_preview": [
+        {
+          "source_ref": "data/raw/Regulatorio/taxas/curitiba_pr.json",
+          "cidade": "Curitiba",
+          "similarity": 0.828652098356378,
+          "text": "Taxas municipais para academia — Curitiba/PR\nDocumento: curitiba_pr.json\nFonte: Decreto municipal Curitiba 1929/2024 + CBM-PR UPF — revalidar em prefeitura/CBM\nData da coleta: 2026-07-13\nStatus: curado\n\nNotas: Bombeiros: típico calibrado ~1"
+        }
+      ]
+    }
+  ]
+}
