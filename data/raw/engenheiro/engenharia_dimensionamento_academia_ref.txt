@@ -1,0 +1,111 @@
+REFERÊNCIA DE DIMENSIONAMENTO DE ACADEMIA — frota, densidade, layout e MEP
+Premissas de PLANEJAMENTO consolidadas (RT + Arquiteto + Engenheiro). Os agentes CITAM
+estas premissas e usam as TOOLS de cálculo determinístico; não recitam de memória.
+Modelo de cardio padrão = TOLERA-FILA (nem todos usam no mesmo instante). Última: 2026-06.
+
+============================================================
+1. DENSIDADES POR ALUNO ATIVO (m² por aluno em treino)
+============================================================
+- Musculação: 5,5 m²/aluno ativo (biomecânica + ergonomia de fluxo)
+- Cardio (média densidade): 4,5 m²/aluno ativo (fluxo × segurança × ROI)
+- Salas coletivas: 3,5 m²/aluno ativo (raio livre p/ movimentos, colchonete/step)
+- Spinning: 2,2 m²/bike ativa (disposição compacta tipo anfiteatro)
+- Funcional/Cross: 4,0 m²/aluno ativo (área livre de máquinas fixas)
+- Eficiência de área: ~75% áreas ativas (treino) / ~25% circulação + suporte.
+
+============================================================
+2. DIMENSIONAMENTO DE CARDIO (modelo TOLERA-FILA — padrão)
+============================================================
+Tool: `dimensionar_cardio_por_pico`. Fórmula:
+    cardio_total = pico_simultâneo × %cardio × fator_fila
+    (depois divide no mix)
+- %cardio no pico: 20–25% (musculação/wellness puxa pra baixo).
+- Repartição do pico simultâneo: ~65% musculação + 20–25% cardio + ~10–15% restante
+  (funcional/cross, salas coletivas, alongamento/abdominais). Soma = 100% do público no pico.
+- fator_fila: 0,6–0,7 (nem todos no mesmo instante; tolera fila curta). [modelo TOLERA-FILA]
+- Mix do parque de cardio: esteira 45% · elíptico 20% · bike 20% · escada 15%.
+- Ex.: pico 300 → 195 musculação + cardio_total ~36–52 (esteiras ~16–24, bikes ~7–10)
+  + ~30–45 em funcional/coletivas/alongamento.
+- ALTERNATIVA "espera-zero" (premium, 1 máquina/pessoa, F_seg 1,15): pico 300 → ~69 máquinas
+  (~31 esteiras). NÃO é o default — usar só se o cliente pedir "sem espera".
+
+============================================================
+3. DIMENSIONAMENTO DE MUSCULAÇÃO (revezamento saudável)
+============================================================
+Tool: `dimensionar_musculacao`. Fórmula:
+    estações = (pico × %musculação) / fator_concorrência
+- %musculação no pico: ~65% do público.
+- fator_concorrência (alunos/máquina): 1,4 ideal. ACIMA de 1,7 = alerta de superlotação.
+- Ex.: pico 300 → 195 na musculação → 195 / 1,4 = 139 estações de força.
+
+============================================================
+4. FOOTPRINT + ÁREA DE ESCAPE POR EQUIPAMENTO (planejamento)
+============================================================
+Tool: `calcular_equipamentos_por_area` (footprint vem do catálogo; folga = premissa).
+- Esteira: ocupa ~1,6 m² físicos, MAS exige recuo traseiro 1,2–1,5 m (zona de queda) +
+  0,5 m laterais → ~4,0 m²/máquina de planejamento.
+- Elíptico / escada: ~3,5 m²/máquina (movimento vertical/longitudinal).
+- Bike ergométrica: pegada menor, sem escape traseiro → ~2,5 m²/máquina.
+- Distância mínima entre aparelhos de musculação: 0,80 m (ANVISA, Manual de Fiscalização
+  Sanitária, Seção VII); transição barra de supino ↔ máquina lateral ≥ 0,80 m.
+
+============================================================
+5. ARQUITETO — zonificação, fluxo, acessibilidade (NBR 9050)
+============================================================
+- Suporte ~25% da área: vestiários (M/F/PCD com sanitário+chuveiro+armário), recepção/
+  catracas/espera (transição ampla, sem gargalo), salas de apoio (avaliação física ~15 m²
+  cada, administração, copa, DML).
+- Acessibilidade (ABNT NBR 9050): corredor secundário/manobra ≥ 0,90 m; corredor principal
+  1,5–2,0 m; raio de giro 1,5 m em áreas críticas; rampas regulamentares.
+- Salas coletivas retangulares (ex.: 10×16 m) p/ visibilidade do instrutor.
+- Redundância sanitária: dimensionar bacias/chuveiros por lotação (tool
+  `calcular_sanitarios_por_lotacao`). Mínimo ~6 cabines femininas p/ pico de 300 simultâneos.
+- Zona de alongamento/abdominais dedicada (tatame EVA) FORA do salão de musculação.
+
+============================================================
+6. ENGENHEIRO — MEP, estrutura, acústica
+============================================================
+HVAC / renovação de ar:
+- Ar externo: ≥ 30 m³/h por pessoa simultânea (controle de CO₂/odor), filtragem G4. [NBR 16401-3]
+- Carga térmica: ~350 W (1.200 BTU/h) por pessoa em atividade intensa + ~0,4 kW por esteira ligada.
+- Conforto: 18–21 °C; umidade relativa 40–60%. Exaustão DEDICADA e isolada p/ Spinning.
+Elétrica [NBR 5410]:
+- Circuitos exclusivos 220 V, disjuntor + DPS individual, máx. 3 esteiras profissionais por
+  circuito (evita queda em cascata). Cabos em canaletas de piso (floor boxes) sob os chassis.
+Estrutura [NBR 6120]:
+- Carga dinâmica de laje: ≥ 500–600 kgf/m² nas zonas de peso livre e corrida (NBR 6120
+  academia/ginásio = 5 kN/m² ≈ 510 kgf/m²; subir p/ ~600 em peso livre por carga concentrada).
+Acústica / vibração [NBR 10152 / 10151]:
+- Spinning/coletivas: drywall DUPLO com lã de rocha ≥ 50 mm / 64 kg/m³ → atenuação > 55 dB.
+- Piso de borracha de alta densidade ≥ 15–20 mm sobre contrapiso flutuante acústico nas
+  zonas de esteira e peso livre (mitiga impacto/baixa frequência p/ pavimentos inferiores).
+
+============================================================
+7. CHECKLISTS DE VALIDAÇÃO (execução/produção)
+============================================================
+Responsável Técnico (layout/frota):
+[ ] Recuo traseiro das esteiras ≥ 1,2 m (zona de queda).
+[ ] Espaçamento lateral ≥ 0,80 m entre supino e máquinas laterais.
+[ ] Máquinas de perna de alta circulação (leg press) perto de saídas/cantos (anti-gargalo).
+[ ] Suporte/árvore de anilhas a cada ~2 máquinas (evita carregar peso cruzando o salão).
+[ ] Periféricos (puxadores/triângulos/barras/presilhas) = 2× as saídas de cabo das polias.
+Arquiteto (zonificação/fluxo):
+[ ] Rotas de fuga livres, dimensionadas p/ o pico simultâneo (Corpo de Bombeiros).
+[ ] Acessibilidade NBR 9050 (manobra, rampas, acesso autônomo a equipamento adaptado).
+[ ] Corredor principal 1,5–2,0 m nas zonas de maior fluxo.
+[ ] Sanitários/chuveiros proporcionais à capacidade instantânea.
+[ ] Zona de alongamento (EVA) fora do tráfego da musculação.
+Engenheiro de Obra (MEP/estrutura):
+[ ] Laje sob esteira/peso livre ≥ 500 kgf/m² (carga dinâmica).
+[ ] Insufladores ≥ 30 m³/h ar externo/pessoa, filtro G4 (PMOC).
+[ ] Circuitos/disjuntores independentes p/ esteiras de alta performance.
+[ ] Divisórias Spinning/coletivas: drywall duplo + lã de rocha > 55 dB.
+[ ] Piso técnico de borracha ≥ 15 mm (amortecimento de vibração estrutural).
+
+============================================================
+FONTES
+============================================================
+- ABNT: NBR 6120 (cargas), NBR 9050 (acessibilidade), NBR 16401 (climatização),
+  NBR 5410 (elétrica), NBR 10152/10151 (acústica). [normas pagas; valores de fontes públicas]
+- ANVISA — Manual de Fiscalização Sanitária (distância entre aparelhos). NSCA/ACSM (densidades/footprint).
+- Premissas de dimensionamento (densidade/fator de concorrência/mix) = boas práticas de projeto fitness.
