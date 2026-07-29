@@ -46,6 +46,7 @@
     "validate:rag-answer": "npx tsx scripts/validate-rag-answer.ts",
     "smoke:eros-chat": "npx tsx scripts/smoke-eros-chat.ts",
     "test:rag-filters": "npx tsx --test tests/smoke-rag-filters.test.ts",
+    "eval:gurupass-boost": "python scripts/eval-gurupass-city-boost.py",
     "eval:city-boost": "npx tsx scripts/eval-city-boost.ts"
   },
   "dependencies": {

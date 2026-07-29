@@ -1,0 +1,1145 @@
+{
+  "timestamp": "2026-07-29T12:53:21.040326",
+  "group_id": "4d1e2c40-217b-4a39-bc08-f9c3e90fd803",
+  "embed_model": "mxbai-embed-large",
+  "embed_dim": 1024,
+  "min_similarity": 0.35,
+  "top_k": 5,
+  "city_primary_boost": 0.08,
+  "baseline_metrics": {
+    "avg_recall@5": 1.0,
+    "avg_precision@5": 1.0,
+    "avg_mrr": 1.0,
+    "hit_rate": 1.0,
+    "doc_match_rate": 0.375,
+    "city_match_rate": 1.0,
+    "primary_at_1_rate": 0.875,
+    "primary_in_top5_rate": 1.0
+  },
+  "boosted_metrics": {
+    "avg_recall@5": 1.0,
+    "avg_precision@5": 1.0,
+    "avg_mrr": 1.0,
+    "hit_rate": 1.0,
+    "doc_match_rate": 0.375,
+    "city_match_rate": 1.0,
+    "primary_at_1_rate": 1.0,
+    "primary_in_top5_rate": 1.0
+  },
+  "delta": {
+    "avg_recall@5": 0.0,
+    "avg_precision@5": 0.0,
+    "avg_mrr": 0.0,
+    "doc_match_rate": 0.0,
+    "city_match_rate": 0.0,
+    "primary_at_1_rate": 0.125,
+    "primary_in_top5_rate": 0.0
+  },
+  "baseline_results": [
+    {
+      "id": "gp-01",
+      "query": "Academia de musculação em Arujá no GuruPass a partir de quantos créditos?",
+      "expected_doc": "b9f7b844-881f-49db-a895-c02d366cd96e",
+      "expected_cidade": "Arujá",
+      "boosted": false,
+      "retrieved_count": 5,
+      "recall@5": 1.0,
+      "precision@5": 1.0,
+      "mrr": 1.0,
+      "document_match": false,
+      "city_match": true,
+      "primary_at_1": false,
+      "primary_in_top5": true,
+      "primary_boost_count": 0,
+      "top_sims": [
+        0.879,
+        0.863,
+        0.871
+      ],
+      "top_scores": [
+        0.7,
+        0.698,
+        0.695
+      ],
+      "chunks_preview": [
+        {
+          "source_ref": "1c9da7fd-1c5a-4b7b-950e-46adc9d8553a",
+          "cidade": "Guarulhos",
+          "municipios_relacionados": [
+            "Arujá",
+            "Santa Isabel",
+            "Piracaia",
+            "Bom Jesus dos Perdões",
+            "Nazaré Paulista"
+          ],
+          "nome_academia": "Fisiko Fit Academia LTDA",
+          "similarity": 0.878590516960057,
+          "score": 0.700078656133234,
+          "_cityBoost": false,
+          "text": "Academia: Fisiko Fit Academia LTDA\nCidade: Guarulhos / SP\nBairro: Residencial e Comercial Guarulhos\nEndereço: Rua Um, Residencial e Comercial Guarulhos - Guarulhos\nModalidade: musculacao\nPlano de entr"
+        },
+        {
+          "source_ref": "cf5c3f24-c45b-45d0-88d1-5b24511cd9d7",
+          "cidade": "Cotia",
+          "municipios_relacionados": [
+            "Arujá",
+            "Santa Isabel",
+            "Piracaia",
+            "Bom Jesus dos Perdões",
+            "Nazaré Paulista"
+          ],
+          "nome_academia": "NewFit Natação e Musculação - Unidade 2",
+          "similarity": 0.862562870245495,
+          "score": 0.697572683901299,
+          "_cityBoost": false,
+          "text": "Academia: NewFit Natação e Musculação - Unidade 2\nCidade: Cotia / SP\nBairro: Jardim Isis\nEndereço: Estrada do morro grande 1937\nModalidade: musculacao\nPlano de entrada: GuruPass Créditos a partir de 2"
+        },
+        {
+          "source_ref": "15823912-6275-4ab3-aa50-13a9ea6883e2",
+          "cidade": "Poá",
+          "municipios_relacionados": [
+            "Itaquaquecetuba",
+            "Arujá",
+            "Santa Isabel"
+          ],
+          "nome_academia": "Academia Hermanos fitness",
+          "similarity": 0.871093809604651,
+          "score": 0.695062743367578,
+          "_cityBoost": false,
+          "text": "Academia: Academia Hermanos fitness\nCidade: Poá / SP\nBairro: Jardim Odete\nEndereço: Rua Santos, 187 Jardim Odete - Poá\nModalidade: musculacao\nPlano de entrada: GuruPass Créditos a partir de 20 crédito"
+        }
+      ]
+    },
+    {
+      "id": "gp-02",
+      "query": "Onde fazer musculação em São Paulo com GuruPass barato em créditos?",
+      "expected_doc": "23443b34-629e-410a-b043-b9eb7c2107f3",
+      "expected_cidade": "São Paulo",
+      "boosted": false,
+      "retrieved_count": 5,
+      "recall@5": 1.0,
+      "precision@5": 1.0,
+      "mrr": 1.0,
+      "document_match": false,
+      "city_match": true,
+      "primary_at_1": true,
+      "primary_in_top5": true,
+      "primary_boost_count": 0,
+      "top_sims": [
+        0.863,
+        0.861,
+        0.849
+      ],
+      "top_scores": [
+        0.677,
+        0.675,
+        0.667
+      ],
+      "chunks_preview": [
+        {
+          "source_ref": "118112e5-376e-4ffb-bcf7-b3de14f67c4d",
+          "cidade": "São Paulo",
+          "municipios_relacionados": [
+            "Itaquaquecetuba",
+            "Ferraz de Vasconcelos"
+          ],
+          "nome_academia": "Select Gym",
+          "similarity": 0.862506839631357,
+          "score": 0.67660535791664,
+          "_cityBoost": false,
+          "text": "Academia: Select Gym\nCidade: São Paulo / SP\nBairro: Itaim Paulista\nEndereço: Rua Tibúrcio de Sousa, 1125 Itaim Paulista - São Paulo\nModalidade: musculacao\nPlano de entrada: GuruPass Créditos a partir "
+        },
+        {
+          "source_ref": "d1df15ce-ed98-49f7-9cb1-7241834231a7",
+          "cidade": "São Paulo",
+          "municipios_relacionados": [
+            "Mairiporã"
+          ],
+          "nome_academia": "Bioforma Fitness Unidade 1",
+          "similarity": 0.860902922045842,
+          "score": 0.67523543227921,
+          "_cityBoost": false,
+          "text": "Academia: Bioforma Fitness Unidade 1\nCidade: São Paulo / SP\nBairro: Jardim Filhos da Terra\nEndereço: Rua dos Filhos da Terra, Jardim Filhos da Terra - São Paulo\nModalidade: musculacao\nPlano de entrada"
+        },
+        {
+          "source_ref": "7a60ca87-105b-41e2-b02a-28ba75690e47",
+          "cidade": "São Paulo",
+          "municipios_relacionados": [
+            "Mairiporã"
+          ],
+          "nome_academia": "Bioforma fitness Unidade 4",
+          "similarity": 0.848639199218811,
+          "score": 0.666685885028646,
+          "_cityBoost": false,
+          "text": "Academia: Bioforma fitness Unidade 4\nCidade: São Paulo / SP\nBairro: Parque Casa de Pedra\nEndereço: Rua Ushikichi Kamiya 906, Parque Casa de Pedra - São Paulo\nModalidade: musculacao\nPlano de entrada: G"
+        }
+      ]
+    },
+    {
+      "id": "gp-03",
+      "query": "Academia de boxe em Osasco que aceita GuruPass",
+      "expected_doc": "ea5dbc61-ad1c-442d-a9f5-025cc7752d2b",
+      "expected_cidade": "Osasco",
+      "boosted": false,
+      "retrieved_count": 5,
+      "recall@5": 1.0,
+      "precision@5": 1.0,
+      "mrr": 1.0,
+      "document_match": true,
+      "city_match": true,
+      "primary_at_1": true,
+      "primary_in_top5": true,
+      "primary_boost_count": 0,
+      "top_sims": [
+        0.77,
+        0.796,
+        0.825
+      ],
+      "top_scores": [
+        0.652,
+        0.648,
+        0.632
+      ],
+      "chunks_preview": [
+        {
+          "source_ref": "ea5dbc61-ad1c-442d-a9f5-025cc7752d2b",
+          "cidade": "Osasco",
+          "municipios_relacionados": [
+            "Osasco"
+          ],
+          "nome_academia": "Academia BrasCuba",
+          "similarity": 0.769526852993558,
+          "score": 0.651905547589629,
+          "_cityBoost": false,
+          "text": "Academia: Academia BrasCuba\nCidade: Osasco / SP\nBairro: Vila Osasco\nEndereço: Avenida Santo Antônio, 218, Vila Osasco - Osasco\nModalidade: boxe\nPlano de entrada: GuruPass Créditos a partir de 40 crédi"
+        },
+        {
+          "source_ref": "21d241dc-e2fc-4a91-a632-ecfb317124cc",
+          "cidade": "Osasco",
+          "municipios_relacionados": [
+            "Osasco"
+          ],
+          "nome_academia": "Workout Academia",
+          "similarity": 0.79578741839082,
+          "score": 0.64788861348099,
+          "_cityBoost": false,
+          "text": "Academia: Workout Academia\nCidade: Osasco / SP\nBairro: Vila Osasco\nEndereço: Avenida Dionysia Alves Barreto, 385, Vila Osasco - Osasco\nModalidade: musculacao\nPlano de entrada: GuruPass Créditos a part"
+        },
+        {
+          "source_ref": "4e322a6d-9557-44d8-8892-ad9cd9118b16",
+          "cidade": "Osasco",
+          "municipios_relacionados": [
+            "Osasco"
+          ],
+          "nome_academia": "Luisinho Jiu-jitsu",
+          "similarity": 0.824931523212013,
+          "score": 0.631584018766605,
+          "_cityBoost": false,
+          "text": "Academia: Luisinho Jiu-jitsu\nCidade: Osasco / SP\nBairro: Bussocaba\nEndereço: Avenida Valter Boveri, 555\nModalidade: boxe\nPlano de entrada: GuruPass Créditos a partir de 50 créditos"
+        }
+      ]
+    },
+    {
+      "id": "gp-04",
+      "query": "Jiu-jitsu em Guarulhos no GuruPass quantos créditos?",
+      "expected_doc": "24c67f72-c8e2-4975-ad39-e81b6db83502",
+      "expected_cidade": "Guarulhos",
+      "boosted": false,
+      "retrieved_count": 5,
+      "recall@5": 1.0,
+      "precision@5": 1.0,
+      "mrr": 1.0,
+      "document_match": false,
+      "city_match": true,
+      "primary_at_1": true,
+      "primary_in_top5": true,
+      "primary_boost_count": 0,
+      "top_sims": [
+        0.9,
+        0.876,
+        0.894
+      ],
+      "top_scores": [
+        0.735,
+        0.735,
+        0.734
+      ],
+      "chunks_preview": [
+        {
+          "source_ref": "9268c32e-4984-48a5-9088-34e252676cc9",
+          "cidade": "Guarulhos",
+          "municipios_relacionados": [
+            "Mairiporã"
+          ],
+          "nome_academia": "Studio Humaitá",
+          "similarity": 0.899868407857272,
+          "score": 0.735455181046315,
+          "_cityBoost": false,
+          "text": "Academia: Studio Humaitá\nCidade: Guarulhos / SP\nBairro: Vila Galvão\nEndereço: Avenida Pedro de Souza Lopes, 546\nModalidade: jiu_jitsu\nPlano de entrada: GuruPass Créditos a partir de 34 créditos"
+        },
+        {
+          "source_ref": "ca9b771c-385c-4521-8324-d6a8f2064e05",
+          "cidade": "Guarulhos",
+          "municipios_relacionados": [
+            "Arujá"
+          ],
+          "nome_academia": "CT França Thai mma",
+          "similarity": 0.875950854186647,
+          "score": 0.734966245375362,
+          "_cityBoost": false,
+          "text": "Academia: CT França Thai mma\nCidade: Guarulhos / SP\nBairro: Parque Jurema\nEndereço: Avenida Jurema, 235, Parque Jurema - Guarulhos\nModalidade: jiu_jitsu\nPlano de entrada: GuruPass Créditos a partir de"
+        },
+        {
+          "source_ref": "1cb963f8-ce3a-4216-bdd9-f3bde3f7d516",
+          "cidade": "Guarulhos",
+          "municipios_relacionados": [
+            "Arujá",
+            "Piracaia",
+            "Bom Jesus dos Perdões",
+            "Nazaré Paulista"
+          ],
+          "nome_academia": "Movimentos Cross Lavras",
+          "similarity": 0.894064504969508,
+          "score": 0.734322098080837,
+          "_cityBoost": false,
+          "text": "Academia: Movimentos Cross Lavras\nCidade: Guarulhos / SP\nBairro: Lavras\nEndereço: Avenida José Brumatti, 2992\nModalidade: jiu_jitsu\nPlano de entrada: GuruPass Créditos a partir de 30 créditos"
+        }
+      ]
+    },
+    {
+      "id": "gp-05",
+      "query": "Musculação em Curitiba via GuruPass Studio Happiness",
+      "expected_doc": "defd6c33-dba4-4ab5-933a-aa2d73fbd0f6",
+      "expected_cidade": "Curitiba",
+      "boosted": false,
+      "retrieved_count": 5,
+      "recall@5": 1.0,
+      "precision@5": 1.0,
+      "mrr": 1.0,
+      "document_match": true,
+      "city_match": true,
+      "primary_at_1": true,
+      "primary_in_top5": true,
+      "primary_boost_count": 0,
+      "top_sims": [
+        0.828,
+        0.821,
+        0.807
+      ],
+      "top_scores": [
+        0.643,
+        0.639,
+        0.629
+      ],
+      "chunks_preview": [
+        {
+          "source_ref": "defd6c33-dba4-4ab5-933a-aa2d73fbd0f6",
+          "cidade": "Curitiba",
+          "municipios_relacionados": [
+            "Curitiba",
+            "Ponta Grossa",
+            "São José dos Pinhais",
+            "Colombo",
+            "Fazenda Rio Grande"
+          ],
+          "nome_academia": "Academia Studio Happiness Centro",
+          "similarity": 0.827514420299864,
+          "score": 0.643277842513607,
+          "_cityBoost": false,
+          "text": "Academia: Academia Studio Happiness Centro\nCidade: Curitiba / PR\nBairro: Centro\nEndereço: Rua Pedro Ivo, n.548 e n.550\nModalidade: musculacao\nPlano de entrada: GuruPass Créditos a partir de 24 crédito"
+        },
+        {
+          "source_ref": "defd6c33-dba4-4ab5-933a-aa2d73fbd0f6",
+          "cidade": "Curitiba",
+          "municipios_relacionados": [
+            "Curitiba",
+            "Ponta Grossa",
+            "São José dos Pinhais",
+            "Colombo",
+            "Fazenda Rio Grande"
+          ],
+          "nome_academia": "Academia Studio Happiness Centro",
+          "similarity": 0.821458732442301,
+          "score": 0.639038861013312,
+          "_cityBoost": false,
+          "text": "Academia: Academia Studio Happiness Centro\nCidade: Curitiba / PR\nBairro: Centro\nEndereço: Rua Pedro Ivo, n.548 e n.550\nModalidade: pilates\nPlano de entrada: GuruPass Créditos a partir de 24 créditos"
+        },
+        {
+          "source_ref": "defd6c33-dba4-4ab5-933a-aa2d73fbd0f6",
+          "cidade": "Curitiba",
+          "municipios_relacionados": [
+            "Curitiba",
+            "Ponta Grossa",
+            "São José dos Pinhais",
+            "Colombo",
+            "Fazenda Rio Grande"
+          ],
+          "nome_academia": "Academia Studio Happiness Centro",
+          "similarity": 0.806589399590005,
+          "score": 0.628630328016705,
+          "_cityBoost": false,
+          "text": "Academia: Academia Studio Happiness Centro\nCidade: Curitiba / PR\nBairro: Centro\nEndereço: Rua Pedro Ivo, n.548 e n.550\nModalidade: danca\nPlano de entrada: GuruPass Créditos a partir de 24 créditos"
+        }
+      ]
+    },
+    {
+      "id": "gp-06",
+      "query": "Yoga em Campinas no GuruPass",
+      "expected_doc": "e49a473a-32c9-4014-bdc2-433afd744930",
+      "expected_cidade": "Campinas",
+      "boosted": false,
+      "retrieved_count": 5,
+      "recall@5": 1.0,
+      "precision@5": 1.0,
+      "mrr": 1.0,
+      "document_match": false,
+      "city_match": true,
+      "primary_at_1": true,
+      "primary_in_top5": true,
+      "primary_boost_count": 0,
+      "top_sims": [
+        0.865,
+        0.849,
+        0.851
+      ],
+      "top_scores": [
+        0.678,
+        0.671,
+        0.649
+      ],
+      "chunks_preview": [
+        {
+          "source_ref": "b15223eb-fb7f-4ed3-ab8b-6d3a07ca65a1",
+          "cidade": "Campinas",
+          "municipios_relacionados": [
+            "Porto Alegre",
+            "Florianópolis",
+            "Caxias do Sul",
+            "Blumenau",
+            "Canoas"
+          ],
+          "nome_academia": "Umma Yoga - Corpoo & Mente",
+          "similarity": 0.864590422559951,
+          "score": 0.677982856343452,
+          "_cityBoost": false,
+          "text": "Academia: Umma Yoga - Corpoo & Mente\nCidade: Campinas / RS\nBairro: São José\nEndereço: Avenida Marechal Castelo Branco, 65, Campinas - São José\nModalidade: yoga\nPlano de entrada: GuruPass Créditos a pa"
+        },
+        {
+          "source_ref": "bf7086fb-894c-4efc-a49a-388a5549e454",
+          "cidade": "Campinas",
+          "municipios_relacionados": [
+            "Mogi Guaçu",
+            "Paulínia",
+            "Mogi Mirim",
+            "Itapira",
+            "Amparo"
+          ],
+          "nome_academia": "Kumara espaço de Yoga",
+          "similarity": 0.849122661456769,
+          "score": 0.670591876580329,
+          "_cityBoost": false,
+          "text": "Academia: Kumara espaço de Yoga\nCidade: Campinas / SP\nBairro: Cidade Universitária\nEndereço: Rua Doutor Shigeo Mori, 1711, Cidade Universitária - Campinas\nModalidade: yoga\nPlano de entrada: GuruPass C"
+        },
+        {
+          "source_ref": "a6879965-9253-4035-990b-818c87a37e79",
+          "cidade": "Campinas",
+          "municipios_relacionados": [
+            "Campinas",
+            "Indaiatuba",
+            "Valinhos",
+            "Vinhedo"
+          ],
+          "nome_academia": "Sol e Lua Espaço Yoga",
+          "similarity": 0.851006525634966,
+          "score": 0.649463770162156,
+          "_cityBoost": false,
+          "text": "Academia: Sol e Lua Espaço Yoga\nCidade: Campinas / SP\nBairro: Jardim Nova Europa\nEndereço: Rua Nicarágua, 590\nModalidade: yoga\nPlano de entrada: GuruPass Créditos a partir de 90 créditos"
+        }
+      ]
+    },
+    {
+      "id": "gp-07",
+      "query": "Pilates em Niterói com GuruPass",
+      "expected_doc": "d6bccd92-3ed5-47cc-bce4-e6d8367c25b7",
+      "expected_cidade": "Niterói",
+      "boosted": false,
+      "retrieved_count": 5,
+      "recall@5": 1.0,
+      "precision@5": 1.0,
+      "mrr": 1.0,
+      "document_match": true,
+      "city_match": true,
+      "primary_at_1": true,
+      "primary_in_top5": true,
+      "primary_boost_count": 0,
+      "top_sims": [
+        0.864,
+        0.867,
+        0.863
+      ],
+      "top_scores": [
+        0.683,
+        0.682,
+        0.681
+      ],
+      "chunks_preview": [
+        {
+          "source_ref": "d1e92f14-6931-4cd0-bcf8-f44cd23d8905",
+          "cidade": "Niterói",
+          "municipios_relacionados": [
+            "Niterói"
+          ],
+          "nome_academia": "Ativa Pilates",
+          "similarity": 0.86372773077539,
+          "score": 0.682811815207086,
+          "_cityBoost": false,
+          "text": "Academia: Ativa Pilates\nCidade: Niterói / RJ\nBairro: Icaraí\nEndereço: Rua Doutor Tavares de Macedo, Icaraí - Niterói\nModalidade: pilates\nPlano de entrada: GuruPass Créditos a partir de 105 créditos"
+        },
+        {
+          "source_ref": "62a91467-d7d9-481d-ba56-705cf4a6e13f",
+          "cidade": "Niterói",
+          "municipios_relacionados": [
+            "Niterói"
+          ],
+          "nome_academia": "Flexor Pilates",
+          "similarity": 0.867227093311901,
+          "score": 0.682201844651946,
+          "_cityBoost": false,
+          "text": "Academia: Flexor Pilates\nCidade: Niterói / RJ\nBairro: Icaraí\nEndereço: Avenida Almirante Ary Parreiras, 296 ljs 04 e 05 Icaraí - Niterói\nModalidade: pilates\nPlano de entrada: GuruPass Créditos a parti"
+        },
+        {
+          "source_ref": "c97b15e8-2503-4eed-8b25-3a822fca2b6e",
+          "cidade": "Niterói",
+          "municipios_relacionados": [
+            "Niterói"
+          ],
+          "nome_academia": "Advance Studio Pilates",
+          "similarity": 0.863061802022248,
+          "score": 0.681195444269233,
+          "_cityBoost": false,
+          "text": "Academia: Advance Studio Pilates\nCidade: Niterói / RJ\nBairro: Icaraí\nEndereço: Rua Gavião Peixoto,124 sala : 402 Icaraí - Niterói\nModalidade: pilates\nPlano de entrada: GuruPass Créditos a partir de 80"
+        }
+      ]
+    },
+    {
+      "id": "gp-08",
+      "query": "Musculação em Santos ou São Vicente no GuruPass",
+      "expected_doc": "549fa757-31e6-487d-a4a1-79814d8f6076",
+      "expected_cidade": "Santos",
+      "boosted": false,
+      "retrieved_count": 5,
+      "recall@5": 1.0,
+      "precision@5": 1.0,
+      "mrr": 1.0,
+      "document_match": false,
+      "city_match": true,
+      "primary_at_1": true,
+      "primary_in_top5": true,
+      "primary_boost_count": 0,
+      "top_sims": [
+        0.83,
+        0.812,
+        0.802
+      ],
+      "top_scores": [
+        0.605,
+        0.592,
+        0.585
+      ],
+      "chunks_preview": [
+        {
+          "source_ref": "c8a3659d-5df0-4c0d-afb4-36a085d13f30",
+          "cidade": "Santos",
+          "municipios_relacionados": [
+            "Santos"
+          ],
+          "nome_academia": "Box Tambores santos",
+          "similarity": 0.829982697963738,
+          "score": 0.605324420667434,
+          "_cityBoost": false,
+          "text": "Academia: Box Tambores santos\nCidade: Santos / SP\nBairro: Vila Matias\nEndereço: Avenida Senador Feijó, número 568, Vila Mathias - Santos\nModalidade: crossfit\nPlano de entrada: GuruPass Créditos a part"
+        },
+        {
+          "source_ref": "c04cfdc1-8971-4a2e-8dd0-25f750cf4d87",
+          "cidade": "Santos",
+          "municipios_relacionados": [
+            "Santos",
+            "São Vicente",
+            "Cubatão"
+          ],
+          "nome_academia": "CF ZONA NOROESTE",
+          "similarity": 0.812053786630599,
+          "score": 0.592200606761239,
+          "_cityBoost": false,
+          "text": "Academia: CF ZONA NOROESTE\nCidade: Santos / SP\nBairro: Chico de Paula\nEndereço: Avenida Nossa Senhora de Fátima 532,Chico de Paula - Santos\nModalidade: crossfit\nPlano de entrada: GuruPass Créditos a p"
+        },
+        {
+          "source_ref": "0559e5ab-0f28-41bd-868b-f8ef0142f258",
+          "cidade": "Santos",
+          "municipios_relacionados": [
+            "Guarujá"
+          ],
+          "nome_academia": "Crossfit Caiçara Ponta da Praia",
+          "similarity": 0.801679718344246,
+          "score": 0.585113753605631,
+          "_cityBoost": false,
+          "text": "Academia: Crossfit Caiçara Ponta da Praia\nCidade: Santos / SP\nBairro: Ponta da Praia\nEndereço: Rua Doutor Egydio Martins, Ponta da Praia - Santos\nModalidade: fisioterapia\nPlano de entrada: GuruPass Cr"
+        }
+      ]
+    }
+  ],
+  "boosted_results": [
+    {
+      "id": "gp-01",
+      "query": "Academia de musculação em Arujá no GuruPass a partir de quantos créditos?",
+      "expected_doc": "b9f7b844-881f-49db-a895-c02d366cd96e",
+      "expected_cidade": "Arujá",
+      "boosted": true,
+      "retrieved_count": 5,
+      "recall@5": 1.0,
+      "precision@5": 1.0,
+      "mrr": 1.0,
+      "document_match": false,
+      "city_match": true,
+      "primary_at_1": true,
+      "primary_in_top5": true,
+      "primary_boost_count": 1,
+      "top_sims": [
+        0.828,
+        0.879,
+        0.863
+      ],
+      "top_scores": [
+        0.77,
+        0.7,
+        0.698
+      ],
+      "chunks_preview": [
+        {
+          "source_ref": "7a4ee85c-62ca-4519-af8a-ea613d6f9fde",
+          "cidade": "Arujá",
+          "municipios_relacionados": [
+            "Arujá",
+            "Santa Isabel",
+            "Piracaia",
+            "Nazaré Paulista"
+          ],
+          "nome_academia": "Sonner Fit",
+          "similarity": 0.827855457535713,
+          "score": 0.769928114374168,
+          "_cityBoost": true,
+          "text": "Academia: Sonner Fit\nCidade: Arujá / SP\nBairro: Centro\nEndereço: Avenida João Manoel, 1070, Centro - Arujá\nModalidade: musculacao\nPlano de entrada: GuruPass Créditos a partir de 30 créditos"
+        },
+        {
+          "source_ref": "1c9da7fd-1c5a-4b7b-950e-46adc9d8553a",
+          "cidade": "Guarulhos",
+          "municipios_relacionados": [
+            "Arujá",
+            "Santa Isabel",
+            "Piracaia",
+            "Bom Jesus dos Perdões",
+            "Nazaré Paulista"
+          ],
+          "nome_academia": "Fisiko Fit Academia LTDA",
+          "similarity": 0.878590516960057,
+          "score": 0.700078656133234,
+          "_cityBoost": false,
+          "text": "Academia: Fisiko Fit Academia LTDA\nCidade: Guarulhos / SP\nBairro: Residencial e Comercial Guarulhos\nEndereço: Rua Um, Residencial e Comercial Guarulhos - Guarulhos\nModalidade: musculacao\nPlano de entr"
+        },
+        {
+          "source_ref": "cf5c3f24-c45b-45d0-88d1-5b24511cd9d7",
+          "cidade": "Cotia",
+          "municipios_relacionados": [
+            "Arujá",
+            "Santa Isabel",
+            "Piracaia",
+            "Bom Jesus dos Perdões",
+            "Nazaré Paulista"
+          ],
+          "nome_academia": "NewFit Natação e Musculação - Unidade 2",
+          "similarity": 0.862562870245495,
+          "score": 0.697572683901299,
+          "_cityBoost": false,
+          "text": "Academia: NewFit Natação e Musculação - Unidade 2\nCidade: Cotia / SP\nBairro: Jardim Isis\nEndereço: Estrada do morro grande 1937\nModalidade: musculacao\nPlano de entrada: GuruPass Créditos a partir de 2"
+        }
+      ]
+    },
+    {
+      "id": "gp-02",
+      "query": "Onde fazer musculação em São Paulo com GuruPass barato em créditos?",
+      "expected_doc": "23443b34-629e-410a-b043-b9eb7c2107f3",
+      "expected_cidade": "São Paulo",
+      "boosted": true,
+      "retrieved_count": 5,
+      "recall@5": 1.0,
+      "precision@5": 1.0,
+      "mrr": 1.0,
+      "document_match": false,
+      "city_match": true,
+      "primary_at_1": true,
+      "primary_in_top5": true,
+      "primary_boost_count": 5,
+      "top_sims": [
+        0.863,
+        0.861,
+        0.849
+      ],
+      "top_scores": [
+        0.757,
+        0.755,
+        0.747
+      ],
+      "chunks_preview": [
+        {
+          "source_ref": "118112e5-376e-4ffb-bcf7-b3de14f67c4d",
+          "cidade": "São Paulo",
+          "municipios_relacionados": [
+            "Itaquaquecetuba",
+            "Ferraz de Vasconcelos"
+          ],
+          "nome_academia": "Select Gym",
+          "similarity": 0.862506839631357,
+          "score": 0.75660535791664,
+          "_cityBoost": true,
+          "text": "Academia: Select Gym\nCidade: São Paulo / SP\nBairro: Itaim Paulista\nEndereço: Rua Tibúrcio de Sousa, 1125 Itaim Paulista - São Paulo\nModalidade: musculacao\nPlano de entrada: GuruPass Créditos a partir "
+        },
+        {
+          "source_ref": "d1df15ce-ed98-49f7-9cb1-7241834231a7",
+          "cidade": "São Paulo",
+          "municipios_relacionados": [
+            "Mairiporã"
+          ],
+          "nome_academia": "Bioforma Fitness Unidade 1",
+          "similarity": 0.860902922045842,
+          "score": 0.75523543227921,
+          "_cityBoost": true,
+          "text": "Academia: Bioforma Fitness Unidade 1\nCidade: São Paulo / SP\nBairro: Jardim Filhos da Terra\nEndereço: Rua dos Filhos da Terra, Jardim Filhos da Terra - São Paulo\nModalidade: musculacao\nPlano de entrada"
+        },
+        {
+          "source_ref": "7a60ca87-105b-41e2-b02a-28ba75690e47",
+          "cidade": "São Paulo",
+          "municipios_relacionados": [
+            "Mairiporã"
+          ],
+          "nome_academia": "Bioforma fitness Unidade 4",
+          "similarity": 0.848639199218811,
+          "score": 0.746685885028646,
+          "_cityBoost": true,
+          "text": "Academia: Bioforma fitness Unidade 4\nCidade: São Paulo / SP\nBairro: Parque Casa de Pedra\nEndereço: Rua Ushikichi Kamiya 906, Parque Casa de Pedra - São Paulo\nModalidade: musculacao\nPlano de entrada: G"
+        }
+      ]
+    },
+    {
+      "id": "gp-03",
+      "query": "Academia de boxe em Osasco que aceita GuruPass",
+      "expected_doc": "ea5dbc61-ad1c-442d-a9f5-025cc7752d2b",
+      "expected_cidade": "Osasco",
+      "boosted": true,
+      "retrieved_count": 5,
+      "recall@5": 1.0,
+      "precision@5": 1.0,
+      "mrr": 1.0,
+      "document_match": true,
+      "city_match": true,
+      "primary_at_1": true,
+      "primary_in_top5": true,
+      "primary_boost_count": 5,
+      "top_sims": [
+        0.77,
+        0.796,
+        0.825
+      ],
+      "top_scores": [
+        0.732,
+        0.728,
+        0.712
+      ],
+      "chunks_preview": [
+        {
+          "source_ref": "ea5dbc61-ad1c-442d-a9f5-025cc7752d2b",
+          "cidade": "Osasco",
+          "municipios_relacionados": [
+            "Osasco"
+          ],
+          "nome_academia": "Academia BrasCuba",
+          "similarity": 0.769526852993558,
+          "score": 0.731905547589629,
+          "_cityBoost": true,
+          "text": "Academia: Academia BrasCuba\nCidade: Osasco / SP\nBairro: Vila Osasco\nEndereço: Avenida Santo Antônio, 218, Vila Osasco - Osasco\nModalidade: boxe\nPlano de entrada: GuruPass Créditos a partir de 40 crédi"
+        },
+        {
+          "source_ref": "21d241dc-e2fc-4a91-a632-ecfb317124cc",
+          "cidade": "Osasco",
+          "municipios_relacionados": [
+            "Osasco"
+          ],
+          "nome_academia": "Workout Academia",
+          "similarity": 0.79578741839082,
+          "score": 0.72788861348099,
+          "_cityBoost": true,
+          "text": "Academia: Workout Academia\nCidade: Osasco / SP\nBairro: Vila Osasco\nEndereço: Avenida Dionysia Alves Barreto, 385, Vila Osasco - Osasco\nModalidade: musculacao\nPlano de entrada: GuruPass Créditos a part"
+        },
+        {
+          "source_ref": "4e322a6d-9557-44d8-8892-ad9cd9118b16",
+          "cidade": "Osasco",
+          "municipios_relacionados": [
+            "Osasco"
+          ],
+          "nome_academia": "Luisinho Jiu-jitsu",
+          "similarity": 0.824931523212013,
+          "score": 0.7115840187666049,
+          "_cityBoost": true,
+          "text": "Academia: Luisinho Jiu-jitsu\nCidade: Osasco / SP\nBairro: Bussocaba\nEndereço: Avenida Valter Boveri, 555\nModalidade: boxe\nPlano de entrada: GuruPass Créditos a partir de 50 créditos"
+        }
+      ]
+    },
+    {
+      "id": "gp-04",
+      "query": "Jiu-jitsu em Guarulhos no GuruPass quantos créditos?",
+      "expected_doc": "24c67f72-c8e2-4975-ad39-e81b6db83502",
+      "expected_cidade": "Guarulhos",
+      "boosted": true,
+      "retrieved_count": 5,
+      "recall@5": 1.0,
+      "precision@5": 1.0,
+      "mrr": 1.0,
+      "document_match": false,
+      "city_match": true,
+      "primary_at_1": true,
+      "primary_in_top5": true,
+      "primary_boost_count": 5,
+      "top_sims": [
+        0.9,
+        0.876,
+        0.894
+      ],
+      "top_scores": [
+        0.815,
+        0.815,
+        0.814
+      ],
+      "chunks_preview": [
+        {
+          "source_ref": "9268c32e-4984-48a5-9088-34e252676cc9",
+          "cidade": "Guarulhos",
+          "municipios_relacionados": [
+            "Mairiporã"
+          ],
+          "nome_academia": "Studio Humaitá",
+          "similarity": 0.899868407857272,
+          "score": 0.815455181046315,
+          "_cityBoost": true,
+          "text": "Academia: Studio Humaitá\nCidade: Guarulhos / SP\nBairro: Vila Galvão\nEndereço: Avenida Pedro de Souza Lopes, 546\nModalidade: jiu_jitsu\nPlano de entrada: GuruPass Créditos a partir de 34 créditos"
+        },
+        {
+          "source_ref": "ca9b771c-385c-4521-8324-d6a8f2064e05",
+          "cidade": "Guarulhos",
+          "municipios_relacionados": [
+            "Arujá"
+          ],
+          "nome_academia": "CT França Thai mma",
+          "similarity": 0.875950854186647,
+          "score": 0.814966245375362,
+          "_cityBoost": true,
+          "text": "Academia: CT França Thai mma\nCidade: Guarulhos / SP\nBairro: Parque Jurema\nEndereço: Avenida Jurema, 235, Parque Jurema - Guarulhos\nModalidade: jiu_jitsu\nPlano de entrada: GuruPass Créditos a partir de"
+        },
+        {
+          "source_ref": "1cb963f8-ce3a-4216-bdd9-f3bde3f7d516",
+          "cidade": "Guarulhos",
+          "municipios_relacionados": [
+            "Arujá",
+            "Piracaia",
+            "Bom Jesus dos Perdões",
+            "Nazaré Paulista"
+          ],
+          "nome_academia": "Movimentos Cross Lavras",
+          "similarity": 0.894064504969508,
+          "score": 0.814322098080837,
+          "_cityBoost": true,
+          "text": "Academia: Movimentos Cross Lavras\nCidade: Guarulhos / SP\nBairro: Lavras\nEndereço: Avenida José Brumatti, 2992\nModalidade: jiu_jitsu\nPlano de entrada: GuruPass Créditos a partir de 30 créditos"
+        }
+      ]
+    },
+    {
+      "id": "gp-05",
+      "query": "Musculação em Curitiba via GuruPass Studio Happiness",
+      "expected_doc": "defd6c33-dba4-4ab5-933a-aa2d73fbd0f6",
+      "expected_cidade": "Curitiba",
+      "boosted": true,
+      "retrieved_count": 5,
+      "recall@5": 1.0,
+      "precision@5": 1.0,
+      "mrr": 1.0,
+      "document_match": true,
+      "city_match": true,
+      "primary_at_1": true,
+      "primary_in_top5": true,
+      "primary_boost_count": 5,
+      "top_sims": [
+        0.828,
+        0.821,
+        0.807
+      ],
+      "top_scores": [
+        0.723,
+        0.719,
+        0.709
+      ],
+      "chunks_preview": [
+        {
+          "source_ref": "defd6c33-dba4-4ab5-933a-aa2d73fbd0f6",
+          "cidade": "Curitiba",
+          "municipios_relacionados": [
+            "Curitiba",
+            "Ponta Grossa",
+            "São José dos Pinhais",
+            "Colombo",
+            "Fazenda Rio Grande"
+          ],
+          "nome_academia": "Academia Studio Happiness Centro",
+          "similarity": 0.827514420299864,
+          "score": 0.7232778425136069,
+          "_cityBoost": true,
+          "text": "Academia: Academia Studio Happiness Centro\nCidade: Curitiba / PR\nBairro: Centro\nEndereço: Rua Pedro Ivo, n.548 e n.550\nModalidade: musculacao\nPlano de entrada: GuruPass Créditos a partir de 24 crédito"
+        },
+        {
+          "source_ref": "defd6c33-dba4-4ab5-933a-aa2d73fbd0f6",
+          "cidade": "Curitiba",
+          "municipios_relacionados": [
+            "Curitiba",
+            "Ponta Grossa",
+            "São José dos Pinhais",
+            "Colombo",
+            "Fazenda Rio Grande"
+          ],
+          "nome_academia": "Academia Studio Happiness Centro",
+          "similarity": 0.821458732442301,
+          "score": 0.7190388610133119,
+          "_cityBoost": true,
+          "text": "Academia: Academia Studio Happiness Centro\nCidade: Curitiba / PR\nBairro: Centro\nEndereço: Rua Pedro Ivo, n.548 e n.550\nModalidade: pilates\nPlano de entrada: GuruPass Créditos a partir de 24 créditos"
+        },
+        {
+          "source_ref": "defd6c33-dba4-4ab5-933a-aa2d73fbd0f6",
+          "cidade": "Curitiba",
+          "municipios_relacionados": [
+            "Curitiba",
+            "Ponta Grossa",
+            "São José dos Pinhais",
+            "Colombo",
+            "Fazenda Rio Grande"
+          ],
+          "nome_academia": "Academia Studio Happiness Centro",
+          "similarity": 0.806589399590005,
+          "score": 0.708630328016705,
+          "_cityBoost": true,
+          "text": "Academia: Academia Studio Happiness Centro\nCidade: Curitiba / PR\nBairro: Centro\nEndereço: Rua Pedro Ivo, n.548 e n.550\nModalidade: danca\nPlano de entrada: GuruPass Créditos a partir de 24 créditos"
+        }
+      ]
+    },
+    {
+      "id": "gp-06",
+      "query": "Yoga em Campinas no GuruPass",
+      "expected_doc": "e49a473a-32c9-4014-bdc2-433afd744930",
+      "expected_cidade": "Campinas",
+      "boosted": true,
+      "retrieved_count": 5,
+      "recall@5": 1.0,
+      "precision@5": 1.0,
+      "mrr": 1.0,
+      "document_match": false,
+      "city_match": true,
+      "primary_at_1": true,
+      "primary_in_top5": true,
+      "primary_boost_count": 5,
+      "top_sims": [
+        0.865,
+        0.849,
+        0.851
+      ],
+      "top_scores": [
+        0.758,
+        0.751,
+        0.729
+      ],
+      "chunks_preview": [
+        {
+          "source_ref": "b15223eb-fb7f-4ed3-ab8b-6d3a07ca65a1",
+          "cidade": "Campinas",
+          "municipios_relacionados": [
+            "Porto Alegre",
+            "Florianópolis",
+            "Caxias do Sul",
+            "Blumenau",
+            "Canoas"
+          ],
+          "nome_academia": "Umma Yoga - Corpoo & Mente",
+          "similarity": 0.864590422559951,
+          "score": 0.757982856343452,
+          "_cityBoost": true,
+          "text": "Academia: Umma Yoga - Corpoo & Mente\nCidade: Campinas / RS\nBairro: São José\nEndereço: Avenida Marechal Castelo Branco, 65, Campinas - São José\nModalidade: yoga\nPlano de entrada: GuruPass Créditos a pa"
+        },
+        {
+          "source_ref": "bf7086fb-894c-4efc-a49a-388a5549e454",
+          "cidade": "Campinas",
+          "municipios_relacionados": [
+            "Mogi Guaçu",
+            "Paulínia",
+            "Mogi Mirim",
+            "Itapira",
+            "Amparo"
+          ],
+          "nome_academia": "Kumara espaço de Yoga",
+          "similarity": 0.849122661456769,
+          "score": 0.750591876580329,
+          "_cityBoost": true,
+          "text": "Academia: Kumara espaço de Yoga\nCidade: Campinas / SP\nBairro: Cidade Universitária\nEndereço: Rua Doutor Shigeo Mori, 1711, Cidade Universitária - Campinas\nModalidade: yoga\nPlano de entrada: GuruPass C"
+        },
+        {
+          "source_ref": "a6879965-9253-4035-990b-818c87a37e79",
+          "cidade": "Campinas",
+          "municipios_relacionados": [
+            "Campinas",
+            "Indaiatuba",
+            "Valinhos",
+            "Vinhedo"
+          ],
+          "nome_academia": "Sol e Lua Espaço Yoga",
+          "similarity": 0.851006525634966,
+          "score": 0.7294637701621559,
+          "_cityBoost": true,
+          "text": "Academia: Sol e Lua Espaço Yoga\nCidade: Campinas / SP\nBairro: Jardim Nova Europa\nEndereço: Rua Nicarágua, 590\nModalidade: yoga\nPlano de entrada: GuruPass Créditos a partir de 90 créditos"
+        }
+      ]
+    },
+    {
+      "id": "gp-07",
+      "query": "Pilates em Niterói com GuruPass",
+      "expected_doc": "d6bccd92-3ed5-47cc-bce4-e6d8367c25b7",
+      "expected_cidade": "Niterói",
+      "boosted": true,
+      "retrieved_count": 5,
+      "recall@5": 1.0,
+      "precision@5": 1.0,
+      "mrr": 1.0,
+      "document_match": true,
+      "city_match": true,
+      "primary_at_1": true,
+      "primary_in_top5": true,
+      "primary_boost_count": 5,
+      "top_sims": [
+        0.864,
+        0.867,
+        0.863
+      ],
+      "top_scores": [
+        0.763,
+        0.762,
+        0.761
+      ],
+      "chunks_preview": [
+        {
+          "source_ref": "d1e92f14-6931-4cd0-bcf8-f44cd23d8905",
+          "cidade": "Niterói",
+          "municipios_relacionados": [
+            "Niterói"
+          ],
+          "nome_academia": "Ativa Pilates",
+          "similarity": 0.86372773077539,
+          "score": 0.762811815207086,
+          "_cityBoost": true,
+          "text": "Academia: Ativa Pilates\nCidade: Niterói / RJ\nBairro: Icaraí\nEndereço: Rua Doutor Tavares de Macedo, Icaraí - Niterói\nModalidade: pilates\nPlano de entrada: GuruPass Créditos a partir de 105 créditos"
+        },
+        {
+          "source_ref": "62a91467-d7d9-481d-ba56-705cf4a6e13f",
+          "cidade": "Niterói",
+          "municipios_relacionados": [
+            "Niterói"
+          ],
+          "nome_academia": "Flexor Pilates",
+          "similarity": 0.867227093311901,
+          "score": 0.762201844651946,
+          "_cityBoost": true,
+          "text": "Academia: Flexor Pilates\nCidade: Niterói / RJ\nBairro: Icaraí\nEndereço: Avenida Almirante Ary Parreiras, 296 ljs 04 e 05 Icaraí - Niterói\nModalidade: pilates\nPlano de entrada: GuruPass Créditos a parti"
+        },
+        {
+          "source_ref": "c97b15e8-2503-4eed-8b25-3a822fca2b6e",
+          "cidade": "Niterói",
+          "municipios_relacionados": [
+            "Niterói"
+          ],
+          "nome_academia": "Advance Studio Pilates",
+          "similarity": 0.863061802022248,
+          "score": 0.7611954442692329,
+          "_cityBoost": true,
+          "text": "Academia: Advance Studio Pilates\nCidade: Niterói / RJ\nBairro: Icaraí\nEndereço: Rua Gavião Peixoto,124 sala : 402 Icaraí - Niterói\nModalidade: pilates\nPlano de entrada: GuruPass Créditos a partir de 80"
+        }
+      ]
+    },
+    {
+      "id": "gp-08",
+      "query": "Musculação em Santos ou São Vicente no GuruPass",
+      "expected_doc": "549fa757-31e6-487d-a4a1-79814d8f6076",
+      "expected_cidade": "Santos",
+      "boosted": true,
+      "retrieved_count": 5,
+      "recall@5": 1.0,
+      "precision@5": 1.0,
+      "mrr": 1.0,
+      "document_match": false,
+      "city_match": true,
+      "primary_at_1": true,
+      "primary_in_top5": true,
+      "primary_boost_count": 5,
+      "top_sims": [
+        0.83,
+        0.812,
+        0.802
+      ],
+      "top_scores": [
+        0.685,
+        0.672,
+        0.665
+      ],
+      "chunks_preview": [
+        {
+          "source_ref": "c8a3659d-5df0-4c0d-afb4-36a085d13f30",
+          "cidade": "Santos",
+          "municipios_relacionados": [
+            "Santos"
+          ],
+          "nome_academia": "Box Tambores santos",
+          "similarity": 0.829982697963738,
+          "score": 0.6853244206674339,
+          "_cityBoost": true,
+          "text": "Academia: Box Tambores santos\nCidade: Santos / SP\nBairro: Vila Matias\nEndereço: Avenida Senador Feijó, número 568, Vila Mathias - Santos\nModalidade: crossfit\nPlano de entrada: GuruPass Créditos a part"
+        },
+        {
+          "source_ref": "c04cfdc1-8971-4a2e-8dd0-25f750cf4d87",
+          "cidade": "Santos",
+          "municipios_relacionados": [
+            "Santos",
+            "São Vicente",
+            "Cubatão"
+          ],
+          "nome_academia": "CF ZONA NOROESTE",
+          "similarity": 0.812053786630599,
+          "score": 0.6722006067612389,
+          "_cityBoost": true,
+          "text": "Academia: CF ZONA NOROESTE\nCidade: Santos / SP\nBairro: Chico de Paula\nEndereço: Avenida Nossa Senhora de Fátima 532,Chico de Paula - Santos\nModalidade: crossfit\nPlano de entrada: GuruPass Créditos a p"
+        },
+        {
+          "source_ref": "0559e5ab-0f28-41bd-868b-f8ef0142f258",
+          "cidade": "Santos",
+          "municipios_relacionados": [
+            "Guarujá"
+          ],
+          "nome_academia": "Crossfit Caiçara Ponta da Praia",
+          "similarity": 0.801679718344246,
+          "score": 0.665113753605631,
+          "_cityBoost": true,
+          "text": "Academia: Crossfit Caiçara Ponta da Praia\nCidade: Santos / SP\nBairro: Ponta da Praia\nEndereço: Rua Doutor Egydio Martins, Ponta da Praia - Santos\nModalidade: fisioterapia\nPlano de entrada: GuruPass Cr"
+        }
+      ]
+    }
+  ]
+}
