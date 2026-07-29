@@ -54,9 +54,8 @@ export const erosService = {
           .eq('key', 'llm_provider')
           .is('company_id', null)
           .maybeSingle();
-        const fromConfig = normalizeProvider(
-          (data?.value_json as { provider?: string } | string | null)?.provider ?? data?.value_json,
-        );
+        const vj = data?.value_json as { provider?: string } | string | null | undefined;
+        const fromConfig = normalizeProvider(typeof vj === 'string' ? vj : vj?.provider);
         if (fromConfig) return fromConfig;
       } catch {
         // fall through to localStorage
