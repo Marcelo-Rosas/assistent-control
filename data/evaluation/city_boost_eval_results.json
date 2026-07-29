@@ -1,0 +1,2008 @@
+{
+  "timestamp": "2026-07-29T01:01:27.682Z",
+  "group_id": "4d1e2c40-217b-4a39-bc08-f9c3e90fd803",
+  "dataset": "data/samples/evaluation.json",
+  "top_k": 15,
+  "min_similarity": 0.35,
+  "summary": {
+    "n_queries": 15,
+    "n_ok": 15,
+    "CITY_PRIMARY_BOOST": 0.08,
+    "baseline": {
+      "primary_at_1": 0.9333333333333333,
+      "primary_at_3": 1,
+      "primary_at_5": 1,
+      "mrr_primary": 0.9666666666666667,
+      "keyword_hit_at_5": 1
+    },
+    "boosted": {
+      "primary_at_1": 1,
+      "primary_at_3": 1,
+      "primary_at_5": 1,
+      "mrr_primary": 1,
+      "keyword_hit_at_5": 1
+    },
+    "deltas": {
+      "primary_at_1": 0.06666666666666665,
+      "primary_at_3": 0,
+      "primary_at_5": 0,
+      "mrr_primary": 0.033333333333333326,
+      "queries_improved": 1,
+      "queries_worsened": 0,
+      "queries_unchanged": 14
+    },
+    "recommendation": "Manter CITY_PRIMARY_BOOST=0.08 (ganho claro)"
+  },
+  "results": [
+    {
+      "id": "eval_001",
+      "query": "Academia de musculação em Arujá com GuruPass",
+      "expected_municipio": "Arujá",
+      "filters": {
+        "municipio": "Arujá",
+        "modalidade": "musculacao",
+        "plano_rank": null,
+        "confidence": 0.75
+      },
+      "hits": 15,
+      "baseline": {
+        "primary_at_1": false,
+        "primary_at_3": true,
+        "primary_at_5": true,
+        "first_primary_rank": 2,
+        "mrr_primary": 0.5,
+        "keyword_hit_at_5": true,
+        "top5": [
+          {
+            "rank": 1,
+            "chunk_id": "gp-ba846642ed1afd12",
+            "cidade": "Cotia",
+            "nome": "NewFit Natação e Musculação - Unidade 2",
+            "score": 0.610223887955875,
+            "similarity": 0.833848953247094,
+            "is_primary": false,
+            "_cityBoost": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "gp-fd907ad22a20d795",
+            "cidade": "Arujá",
+            "nome": "X-Trainer Academia",
+            "score": 0.609224245517918,
+            "similarity": 0.805103206026178,
+            "is_primary": true,
+            "_cityBoost": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "gp-c54555e6bfaba4cb",
+            "cidade": "Arujá",
+            "nome": "Sonner Fit",
+            "score": 0.59460175263205,
+            "similarity": 0.781650330823626,
+            "is_primary": true,
+            "_cityBoost": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "gp-f3c9993740e23c55",
+            "cidade": "Arujá",
+            "nome": "X-trainer Mirante",
+            "score": 0.589121464860884,
+            "similarity": 0.806784712459485,
+            "is_primary": true,
+            "_cityBoost": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "gp-66e84d179f286f72",
+            "cidade": "Guarulhos",
+            "nome": "Fisiko Fit Academia LTDA",
+            "score": 0.589111728332283,
+            "similarity": 0.841254849284315,
+            "is_primary": false,
+            "_cityBoost": false
+          }
+        ]
+      },
+      "boosted": {
+        "primary_at_1": true,
+        "primary_at_3": true,
+        "primary_at_5": true,
+        "first_primary_rank": 1,
+        "mrr_primary": 1,
+        "keyword_hit_at_5": true,
+        "top5": [
+          {
+            "rank": 1,
+            "chunk_id": "gp-fd907ad22a20d795",
+            "cidade": "Arujá",
+            "nome": "X-Trainer Academia",
+            "score": 0.6892242455179179,
+            "similarity": 0.805103206026178,
+            "is_primary": true,
+            "_cityBoost": true
+          },
+          {
+            "rank": 2,
+            "chunk_id": "gp-c54555e6bfaba4cb",
+            "cidade": "Arujá",
+            "nome": "Sonner Fit",
+            "score": 0.6746017526320499,
+            "similarity": 0.781650330823626,
+            "is_primary": true,
+            "_cityBoost": true
+          },
+          {
+            "rank": 3,
+            "chunk_id": "gp-f3c9993740e23c55",
+            "cidade": "Arujá",
+            "nome": "X-trainer Mirante",
+            "score": 0.669121464860884,
+            "similarity": 0.806784712459485,
+            "is_primary": true,
+            "_cityBoost": true
+          },
+          {
+            "rank": 4,
+            "chunk_id": "gp-671836d9870d43d4",
+            "cidade": "Arujá",
+            "nome": "Studio Xtreme",
+            "score": 0.6546555885668409,
+            "similarity": 0.781291251989827,
+            "is_primary": true,
+            "_cityBoost": true
+          },
+          {
+            "rank": 5,
+            "chunk_id": "gp-ba846642ed1afd12",
+            "cidade": "Cotia",
+            "nome": "NewFit Natação e Musculação - Unidade 2",
+            "score": 0.610223887955875,
+            "similarity": 0.833848953247094,
+            "is_primary": false,
+            "_cityBoost": false
+          }
+        ]
+      },
+      "delta_primary_rank": 1,
+      "improved": true
+    },
+    {
+      "id": "eval_002",
+      "query": "Onde fazer musculação em São Paulo barato no GuruPass?",
+      "expected_municipio": "São Paulo",
+      "filters": {
+        "municipio": "São Paulo",
+        "modalidade": "musculacao",
+        "plano_rank": null,
+        "confidence": 0.75
+      },
+      "hits": 15,
+      "baseline": {
+        "primary_at_1": true,
+        "primary_at_3": true,
+        "primary_at_5": true,
+        "first_primary_rank": 1,
+        "mrr_primary": 1,
+        "keyword_hit_at_5": true,
+        "top5": [
+          {
+            "rank": 1,
+            "chunk_id": "gp-c985ee689b8a5165",
+            "cidade": "São Paulo",
+            "nome": "Academia Equilíbrio Lutas e Musculação",
+            "score": 0.607973481948655,
+            "similarity": 0.825590221689396,
+            "is_primary": true,
+            "_cityBoost": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "gp-94fac3e2cd2669b8",
+            "cidade": "São Paulo",
+            "nome": "Bioforma Fitness Unidade 1",
+            "score": 0.606832074046327,
+            "similarity": 0.83308437462171,
+            "is_primary": true,
+            "_cityBoost": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "gp-4a901dd79e7df179",
+            "cidade": "São Paulo",
+            "nome": "Select Gym",
+            "score": 0.606829998103889,
+            "similarity": 0.832702924770328,
+            "is_primary": true,
+            "_cityBoost": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "gp-935bfc52a02608e7",
+            "cidade": "São Paulo",
+            "nome": "Roma Gym Fit",
+            "score": 0.602170413996931,
+            "similarity": 0.826296368395873,
+            "is_primary": true,
+            "_cityBoost": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "gp-2a27a945efd561b8",
+            "cidade": "São Paulo",
+            "nome": "Bioforma fitness Unidade 4",
+            "score": 0.599995421463613,
+            "similarity": 0.823264079872156,
+            "is_primary": true,
+            "_cityBoost": false
+          }
+        ]
+      },
+      "boosted": {
+        "primary_at_1": true,
+        "primary_at_3": true,
+        "primary_at_5": true,
+        "first_primary_rank": 1,
+        "mrr_primary": 1,
+        "keyword_hit_at_5": true,
+        "top5": [
+          {
+            "rank": 1,
+            "chunk_id": "gp-c985ee689b8a5165",
+            "cidade": "São Paulo",
+            "nome": "Academia Equilíbrio Lutas e Musculação",
+            "score": 0.6879734819486549,
+            "similarity": 0.825590221689396,
+            "is_primary": true,
+            "_cityBoost": true
+          },
+          {
+            "rank": 2,
+            "chunk_id": "gp-94fac3e2cd2669b8",
+            "cidade": "São Paulo",
+            "nome": "Bioforma Fitness Unidade 1",
+            "score": 0.686832074046327,
+            "similarity": 0.83308437462171,
+            "is_primary": true,
+            "_cityBoost": true
+          },
+          {
+            "rank": 3,
+            "chunk_id": "gp-4a901dd79e7df179",
+            "cidade": "São Paulo",
+            "nome": "Select Gym",
+            "score": 0.686829998103889,
+            "similarity": 0.832702924770328,
+            "is_primary": true,
+            "_cityBoost": true
+          },
+          {
+            "rank": 4,
+            "chunk_id": "gp-935bfc52a02608e7",
+            "cidade": "São Paulo",
+            "nome": "Roma Gym Fit",
+            "score": 0.682170413996931,
+            "similarity": 0.826296368395873,
+            "is_primary": true,
+            "_cityBoost": true
+          },
+          {
+            "rank": 5,
+            "chunk_id": "gp-2a27a945efd561b8",
+            "cidade": "São Paulo",
+            "nome": "Bioforma fitness Unidade 4",
+            "score": 0.6799954214636129,
+            "similarity": 0.823264079872156,
+            "is_primary": true,
+            "_cityBoost": true
+          }
+        ]
+      },
+      "delta_primary_rank": 0,
+      "improved": false
+    },
+    {
+      "id": "eval_003",
+      "query": "Academia de boxe em Osasco no GuruPass",
+      "expected_municipio": "Osasco",
+      "filters": {
+        "municipio": "Osasco",
+        "modalidade": "boxe",
+        "plano_rank": null,
+        "confidence": 0.75
+      },
+      "hits": 5,
+      "baseline": {
+        "primary_at_1": true,
+        "primary_at_3": true,
+        "primary_at_5": true,
+        "first_primary_rank": 1,
+        "mrr_primary": 1,
+        "keyword_hit_at_5": true,
+        "top5": [
+          {
+            "rank": 1,
+            "chunk_id": "gp-05afac514253d6f6",
+            "cidade": "Osasco",
+            "nome": "Academia BrasCuba",
+            "score": 0.657797746516304,
+            "similarity": 0.777944280031666,
+            "is_primary": true,
+            "_cityBoost": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "gp-c594a4cc76d2633c",
+            "cidade": "Osasco",
+            "nome": "Luisinho Jiu-jitsu",
+            "score": 0.627831012755716,
+            "similarity": 0.8195700860536,
+            "is_primary": true,
+            "_cityBoost": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "gp-8aae871b4918e5e7",
+            "cidade": "Osasco",
+            "nome": "Ct Vale da Luta",
+            "score": 0.62261607774113,
+            "similarity": 0.780063847291975,
+            "is_primary": true,
+            "_cityBoost": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "gp-1170fce2633faf50",
+            "cidade": "Osasco",
+            "nome": "Centro de treinamento Athenas",
+            "score": 0.615240716295031,
+            "similarity": 0.805194962334346,
+            "is_primary": true,
+            "_cityBoost": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "gp-0a22f40ddb9b425f",
+            "cidade": "Osasco",
+            "nome": "Shogun Team Osasco",
+            "score": 0.612887367424574,
+            "similarity": 0.77855527400971,
+            "is_primary": true,
+            "_cityBoost": false
+          }
+        ]
+      },
+      "boosted": {
+        "primary_at_1": true,
+        "primary_at_3": true,
+        "primary_at_5": true,
+        "first_primary_rank": 1,
+        "mrr_primary": 1,
+        "keyword_hit_at_5": true,
+        "top5": [
+          {
+            "rank": 1,
+            "chunk_id": "gp-05afac514253d6f6",
+            "cidade": "Osasco",
+            "nome": "Academia BrasCuba",
+            "score": 0.7377977465163039,
+            "similarity": 0.777944280031666,
+            "is_primary": true,
+            "_cityBoost": true
+          },
+          {
+            "rank": 2,
+            "chunk_id": "gp-c594a4cc76d2633c",
+            "cidade": "Osasco",
+            "nome": "Luisinho Jiu-jitsu",
+            "score": 0.7078310127557159,
+            "similarity": 0.8195700860536,
+            "is_primary": true,
+            "_cityBoost": true
+          },
+          {
+            "rank": 3,
+            "chunk_id": "gp-8aae871b4918e5e7",
+            "cidade": "Osasco",
+            "nome": "Ct Vale da Luta",
+            "score": 0.70261607774113,
+            "similarity": 0.780063847291975,
+            "is_primary": true,
+            "_cityBoost": true
+          },
+          {
+            "rank": 4,
+            "chunk_id": "gp-1170fce2633faf50",
+            "cidade": "Osasco",
+            "nome": "Centro de treinamento Athenas",
+            "score": 0.6952407162950309,
+            "similarity": 0.805194962334346,
+            "is_primary": true,
+            "_cityBoost": true
+          },
+          {
+            "rank": 5,
+            "chunk_id": "gp-0a22f40ddb9b425f",
+            "cidade": "Osasco",
+            "nome": "Shogun Team Osasco",
+            "score": 0.6928873674245739,
+            "similarity": 0.77855527400971,
+            "is_primary": true,
+            "_cityBoost": true
+          }
+        ]
+      },
+      "delta_primary_rank": 0,
+      "improved": false
+    },
+    {
+      "id": "eval_004",
+      "query": "Jiu-jitsu em Guarulhos com GuruPass quantos créditos?",
+      "expected_municipio": "Guarulhos",
+      "filters": {
+        "municipio": "Guarulhos",
+        "modalidade": "jiu_jitsu",
+        "plano_rank": null,
+        "confidence": 0.75
+      },
+      "hits": 13,
+      "baseline": {
+        "primary_at_1": true,
+        "primary_at_3": true,
+        "primary_at_5": true,
+        "first_primary_rank": 1,
+        "mrr_primary": 1,
+        "keyword_hit_at_5": true,
+        "top5": [
+          {
+            "rank": 1,
+            "chunk_id": "gp-3561fc6dba6a6570",
+            "cidade": "Guarulhos",
+            "nome": "Studio Humaitá",
+            "score": 0.734301368108817,
+            "similarity": 0.898220103660847,
+            "is_primary": true,
+            "_cityBoost": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "gp-f026edfeef2a5c2f",
+            "cidade": "Guarulhos",
+            "nome": "CT França Thai mma",
+            "score": 0.734050000182859,
+            "similarity": 0.874641932483071,
+            "is_primary": true,
+            "_cityBoost": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "gp-0290f8c6c3873e7f",
+            "cidade": "Guarulhos",
+            "nome": "Movimentos Cross Lavras",
+            "score": 0.732767365398806,
+            "similarity": 0.891843458280892,
+            "is_primary": true,
+            "_cityBoost": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "gp-9e4da084fe94f8fb",
+            "cidade": "Guarulhos",
+            "nome": "Academia Trainer",
+            "score": 0.729998974573641,
+            "similarity": 0.868249426521285,
+            "is_primary": true,
+            "_cityBoost": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "gp-f2ed8348a267ee40",
+            "cidade": "Guarulhos",
+            "nome": "Centro de Treinamento Pandora - Artes Marciais",
+            "score": 0.727915733971991,
+            "similarity": 0.884912556242586,
+            "is_primary": true,
+            "_cityBoost": false
+          }
+        ]
+      },
+      "boosted": {
+        "primary_at_1": true,
+        "primary_at_3": true,
+        "primary_at_5": true,
+        "first_primary_rank": 1,
+        "mrr_primary": 1,
+        "keyword_hit_at_5": true,
+        "top5": [
+          {
+            "rank": 1,
+            "chunk_id": "gp-3561fc6dba6a6570",
+            "cidade": "Guarulhos",
+            "nome": "Studio Humaitá",
+            "score": 0.8143013681088169,
+            "similarity": 0.898220103660847,
+            "is_primary": true,
+            "_cityBoost": true
+          },
+          {
+            "rank": 2,
+            "chunk_id": "gp-f026edfeef2a5c2f",
+            "cidade": "Guarulhos",
+            "nome": "CT França Thai mma",
+            "score": 0.814050000182859,
+            "similarity": 0.874641932483071,
+            "is_primary": true,
+            "_cityBoost": true
+          },
+          {
+            "rank": 3,
+            "chunk_id": "gp-0290f8c6c3873e7f",
+            "cidade": "Guarulhos",
+            "nome": "Movimentos Cross Lavras",
+            "score": 0.812767365398806,
+            "similarity": 0.891843458280892,
+            "is_primary": true,
+            "_cityBoost": true
+          },
+          {
+            "rank": 4,
+            "chunk_id": "gp-9e4da084fe94f8fb",
+            "cidade": "Guarulhos",
+            "nome": "Academia Trainer",
+            "score": 0.809998974573641,
+            "similarity": 0.868249426521285,
+            "is_primary": true,
+            "_cityBoost": true
+          },
+          {
+            "rank": 5,
+            "chunk_id": "gp-f2ed8348a267ee40",
+            "cidade": "Guarulhos",
+            "nome": "Centro de Treinamento Pandora - Artes Marciais",
+            "score": 0.807915733971991,
+            "similarity": 0.884912556242586,
+            "is_primary": true,
+            "_cityBoost": true
+          }
+        ]
+      },
+      "delta_primary_rank": 0,
+      "improved": false
+    },
+    {
+      "id": "eval_005",
+      "query": "Musculação em Curitiba via GuruPass",
+      "expected_municipio": "Curitiba",
+      "filters": {
+        "municipio": "Curitiba",
+        "modalidade": "musculacao",
+        "plano_rank": null,
+        "confidence": 0.75
+      },
+      "hits": 15,
+      "baseline": {
+        "primary_at_1": true,
+        "primary_at_3": true,
+        "primary_at_5": true,
+        "first_primary_rank": 1,
+        "mrr_primary": 1,
+        "keyword_hit_at_5": true,
+        "top5": [
+          {
+            "rank": 1,
+            "chunk_id": "gp-9266d5d53c7e3433",
+            "cidade": "Curitiba",
+            "nome": "World Gym Curitiba",
+            "score": 0.618907526836983,
+            "similarity": 0.848960789852297,
+            "is_primary": true,
+            "_cityBoost": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "gp-a367dd11dd6900f5",
+            "cidade": "Curitiba",
+            "nome": "GP Trainer Fitness",
+            "score": 0.618424045353273,
+            "similarity": 0.848386558601851,
+            "is_primary": true,
+            "_cityBoost": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "gp-a1990cc2871299d6",
+            "cidade": "Curitiba",
+            "nome": "Academia Zoom Fitness",
+            "score": 0.609385501834925,
+            "similarity": 0.836150686282025,
+            "is_primary": true,
+            "_cityBoost": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "gp-2b7a4e554791ba61",
+            "cidade": "Curitiba",
+            "nome": "Tribe Studio Personalizado Fitness",
+            "score": 0.605708354864744,
+            "similarity": 0.830897619181766,
+            "is_primary": true,
+            "_cityBoost": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "gp-7d9d03ad522ededc",
+            "cidade": "Curitiba",
+            "nome": "Moon Fit",
+            "score": 0.599979486057279,
+            "similarity": 0.822037188179003,
+            "is_primary": true,
+            "_cityBoost": false
+          }
+        ]
+      },
+      "boosted": {
+        "primary_at_1": true,
+        "primary_at_3": true,
+        "primary_at_5": true,
+        "first_primary_rank": 1,
+        "mrr_primary": 1,
+        "keyword_hit_at_5": true,
+        "top5": [
+          {
+            "rank": 1,
+            "chunk_id": "gp-9266d5d53c7e3433",
+            "cidade": "Curitiba",
+            "nome": "World Gym Curitiba",
+            "score": 0.698907526836983,
+            "similarity": 0.848960789852297,
+            "is_primary": true,
+            "_cityBoost": true
+          },
+          {
+            "rank": 2,
+            "chunk_id": "gp-a367dd11dd6900f5",
+            "cidade": "Curitiba",
+            "nome": "GP Trainer Fitness",
+            "score": 0.698424045353273,
+            "similarity": 0.848386558601851,
+            "is_primary": true,
+            "_cityBoost": true
+          },
+          {
+            "rank": 3,
+            "chunk_id": "gp-a1990cc2871299d6",
+            "cidade": "Curitiba",
+            "nome": "Academia Zoom Fitness",
+            "score": 0.689385501834925,
+            "similarity": 0.836150686282025,
+            "is_primary": true,
+            "_cityBoost": true
+          },
+          {
+            "rank": 4,
+            "chunk_id": "gp-2b7a4e554791ba61",
+            "cidade": "Curitiba",
+            "nome": "Tribe Studio Personalizado Fitness",
+            "score": 0.6857083548647439,
+            "similarity": 0.830897619181766,
+            "is_primary": true,
+            "_cityBoost": true
+          },
+          {
+            "rank": 5,
+            "chunk_id": "gp-7d9d03ad522ededc",
+            "cidade": "Curitiba",
+            "nome": "Moon Fit",
+            "score": 0.679979486057279,
+            "similarity": 0.822037188179003,
+            "is_primary": true,
+            "_cityBoost": true
+          }
+        ]
+      },
+      "delta_primary_rank": 0,
+      "improved": false
+    },
+    {
+      "id": "eval_006",
+      "query": "Yoga em Campinas no GuruPass",
+      "expected_municipio": "Campinas",
+      "filters": {
+        "municipio": "Campinas",
+        "modalidade": "yoga",
+        "plano_rank": null,
+        "confidence": 0.75
+      },
+      "hits": 8,
+      "baseline": {
+        "primary_at_1": true,
+        "primary_at_3": true,
+        "primary_at_5": true,
+        "first_primary_rank": 1,
+        "mrr_primary": 1,
+        "keyword_hit_at_5": true,
+        "top5": [
+          {
+            "rank": 1,
+            "chunk_id": "gp-e582aec2db8c54d3",
+            "cidade": "Campinas",
+            "nome": "Umma Yoga - Corpoo & Mente",
+            "score": 0.677982856343452,
+            "similarity": 0.864590422559951,
+            "is_primary": true,
+            "_cityBoost": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "gp-04c2f7523eb14c06",
+            "cidade": "Campinas",
+            "nome": "Kumara espaço de Yoga",
+            "score": 0.670591876580329,
+            "similarity": 0.849122661456769,
+            "is_primary": true,
+            "_cityBoost": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "gp-45878b33f493bc0f",
+            "cidade": "Campinas",
+            "nome": "Sol e Lua Espaço Yoga",
+            "score": 0.649463770162156,
+            "similarity": 0.851006525634966,
+            "is_primary": true,
+            "_cityBoost": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "gp-83d087920cf7f3a6",
+            "cidade": "Campinas",
+            "nome": "Kora Prince - Terapia, Yoga e Autoconhecimento",
+            "score": 0.643995936580546,
+            "similarity": 0.813106702586438,
+            "is_primary": true,
+            "_cityBoost": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "gp-1bc795d94b05e96d",
+            "cidade": "Campinas",
+            "nome": "Casa Mauna - Yôga e Terapias",
+            "score": 0.630560513813866,
+            "similarity": 0.858952436696908,
+            "is_primary": true,
+            "_cityBoost": false
+          }
+        ]
+      },
+      "boosted": {
+        "primary_at_1": true,
+        "primary_at_3": true,
+        "primary_at_5": true,
+        "first_primary_rank": 1,
+        "mrr_primary": 1,
+        "keyword_hit_at_5": true,
+        "top5": [
+          {
+            "rank": 1,
+            "chunk_id": "gp-e582aec2db8c54d3",
+            "cidade": "Campinas",
+            "nome": "Umma Yoga - Corpoo & Mente",
+            "score": 0.757982856343452,
+            "similarity": 0.864590422559951,
+            "is_primary": true,
+            "_cityBoost": true
+          },
+          {
+            "rank": 2,
+            "chunk_id": "gp-04c2f7523eb14c06",
+            "cidade": "Campinas",
+            "nome": "Kumara espaço de Yoga",
+            "score": 0.750591876580329,
+            "similarity": 0.849122661456769,
+            "is_primary": true,
+            "_cityBoost": true
+          },
+          {
+            "rank": 3,
+            "chunk_id": "gp-45878b33f493bc0f",
+            "cidade": "Campinas",
+            "nome": "Sol e Lua Espaço Yoga",
+            "score": 0.7294637701621559,
+            "similarity": 0.851006525634966,
+            "is_primary": true,
+            "_cityBoost": true
+          },
+          {
+            "rank": 4,
+            "chunk_id": "gp-83d087920cf7f3a6",
+            "cidade": "Campinas",
+            "nome": "Kora Prince - Terapia, Yoga e Autoconhecimento",
+            "score": 0.723995936580546,
+            "similarity": 0.813106702586438,
+            "is_primary": true,
+            "_cityBoost": true
+          },
+          {
+            "rank": 5,
+            "chunk_id": "gp-1bc795d94b05e96d",
+            "cidade": "Campinas",
+            "nome": "Casa Mauna - Yôga e Terapias",
+            "score": 0.710560513813866,
+            "similarity": 0.858952436696908,
+            "is_primary": true,
+            "_cityBoost": true
+          }
+        ]
+      },
+      "delta_primary_rank": 0,
+      "improved": false
+    },
+    {
+      "id": "eval_007",
+      "query": "Pilates em Niterói com GuruPass",
+      "expected_municipio": "Niterói",
+      "filters": {
+        "municipio": "Niterói",
+        "modalidade": "pilates",
+        "plano_rank": null,
+        "confidence": 0.75
+      },
+      "hits": 15,
+      "baseline": {
+        "primary_at_1": true,
+        "primary_at_3": true,
+        "primary_at_5": true,
+        "first_primary_rank": 1,
+        "mrr_primary": 1,
+        "keyword_hit_at_5": true,
+        "top5": [
+          {
+            "rank": 1,
+            "chunk_id": "gp-c75fb9227584a549",
+            "cidade": "Niterói",
+            "nome": "Ativa Pilates",
+            "score": 0.682811815207086,
+            "similarity": 0.86372773077539,
+            "is_primary": true,
+            "_cityBoost": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "gp-025be53d24786b8b",
+            "cidade": "Niterói",
+            "nome": "Flexor Pilates",
+            "score": 0.682201844651946,
+            "similarity": 0.867227093311901,
+            "is_primary": true,
+            "_cityBoost": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "gp-714b8f8325af5688",
+            "cidade": "Niterói",
+            "nome": "Advance Studio Pilates",
+            "score": 0.681195444269233,
+            "similarity": 0.863061802022248,
+            "is_primary": true,
+            "_cityBoost": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "gp-3bfc0f3bf53e9062",
+            "cidade": "Niterói",
+            "nome": "Espaço Saúde Fisioterapia e Pilates",
+            "score": 0.674943855918991,
+            "similarity": 0.850289481843778,
+            "is_primary": true,
+            "_cityBoost": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "gp-a6d985b9b3ab419f",
+            "cidade": "Niterói",
+            "nome": "Pilates São Francisco",
+            "score": 0.674035165141576,
+            "similarity": 0.853084224094847,
+            "is_primary": true,
+            "_cityBoost": false
+          }
+        ]
+      },
+      "boosted": {
+        "primary_at_1": true,
+        "primary_at_3": true,
+        "primary_at_5": true,
+        "first_primary_rank": 1,
+        "mrr_primary": 1,
+        "keyword_hit_at_5": true,
+        "top5": [
+          {
+            "rank": 1,
+            "chunk_id": "gp-c75fb9227584a549",
+            "cidade": "Niterói",
+            "nome": "Ativa Pilates",
+            "score": 0.762811815207086,
+            "similarity": 0.86372773077539,
+            "is_primary": true,
+            "_cityBoost": true
+          },
+          {
+            "rank": 2,
+            "chunk_id": "gp-025be53d24786b8b",
+            "cidade": "Niterói",
+            "nome": "Flexor Pilates",
+            "score": 0.762201844651946,
+            "similarity": 0.867227093311901,
+            "is_primary": true,
+            "_cityBoost": true
+          },
+          {
+            "rank": 3,
+            "chunk_id": "gp-714b8f8325af5688",
+            "cidade": "Niterói",
+            "nome": "Advance Studio Pilates",
+            "score": 0.7611954442692329,
+            "similarity": 0.863061802022248,
+            "is_primary": true,
+            "_cityBoost": true
+          },
+          {
+            "rank": 4,
+            "chunk_id": "gp-3bfc0f3bf53e9062",
+            "cidade": "Niterói",
+            "nome": "Espaço Saúde Fisioterapia e Pilates",
+            "score": 0.7549438559189909,
+            "similarity": 0.850289481843778,
+            "is_primary": true,
+            "_cityBoost": true
+          },
+          {
+            "rank": 5,
+            "chunk_id": "gp-a6d985b9b3ab419f",
+            "cidade": "Niterói",
+            "nome": "Pilates São Francisco",
+            "score": 0.754035165141576,
+            "similarity": 0.853084224094847,
+            "is_primary": true,
+            "_cityBoost": true
+          }
+        ]
+      },
+      "delta_primary_rank": 0,
+      "improved": false
+    },
+    {
+      "id": "eval_008",
+      "query": "Musculação em Santos no GuruPass",
+      "expected_municipio": "Santos",
+      "filters": {
+        "municipio": "Santos",
+        "modalidade": "musculacao",
+        "plano_rank": null,
+        "confidence": 0.75
+      },
+      "hits": 8,
+      "baseline": {
+        "primary_at_1": true,
+        "primary_at_3": true,
+        "primary_at_5": true,
+        "first_primary_rank": 1,
+        "mrr_primary": 1,
+        "keyword_hit_at_5": true,
+        "top5": [
+          {
+            "rank": 1,
+            "chunk_id": "gp-5fcfad0d49794fd0",
+            "cidade": "Santos",
+            "nome": "Fisiocardio Personal Studio",
+            "score": 0.576231731599045,
+            "similarity": 0.78756489006345,
+            "is_primary": true,
+            "_cityBoost": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "gp-b444c54961df81e8",
+            "cidade": "Santos",
+            "nome": "Bulo CrossFit",
+            "score": 0.568088403077382,
+            "similarity": 0.806742177786331,
+            "is_primary": true,
+            "_cityBoost": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "gp-cebeb817c3a55d46",
+            "cidade": "Santos",
+            "nome": "C6 Fitness",
+            "score": 0.555915989975137,
+            "similarity": 0.789353016211696,
+            "is_primary": true,
+            "_cityBoost": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "gp-f024757ecee2b360",
+            "cidade": "Santos",
+            "nome": "Espaço Família Saúde e Bem -Estar",
+            "score": 0.553345870552587,
+            "similarity": 0.74310495164844,
+            "is_primary": true,
+            "_cityBoost": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "gp-a9b083de0d5d2d3b",
+            "cidade": "Santos",
+            "nome": "Centro de Treinamento Embaré",
+            "score": 0.536366559874968,
+            "similarity": 0.762767618482211,
+            "is_primary": true,
+            "_cityBoost": false
+          }
+        ]
+      },
+      "boosted": {
+        "primary_at_1": true,
+        "primary_at_3": true,
+        "primary_at_5": true,
+        "first_primary_rank": 1,
+        "mrr_primary": 1,
+        "keyword_hit_at_5": true,
+        "top5": [
+          {
+            "rank": 1,
+            "chunk_id": "gp-5fcfad0d49794fd0",
+            "cidade": "Santos",
+            "nome": "Fisiocardio Personal Studio",
+            "score": 0.6562317315990449,
+            "similarity": 0.78756489006345,
+            "is_primary": true,
+            "_cityBoost": true
+          },
+          {
+            "rank": 2,
+            "chunk_id": "gp-b444c54961df81e8",
+            "cidade": "Santos",
+            "nome": "Bulo CrossFit",
+            "score": 0.6480884030773819,
+            "similarity": 0.806742177786331,
+            "is_primary": true,
+            "_cityBoost": true
+          },
+          {
+            "rank": 3,
+            "chunk_id": "gp-cebeb817c3a55d46",
+            "cidade": "Santos",
+            "nome": "C6 Fitness",
+            "score": 0.635915989975137,
+            "similarity": 0.789353016211696,
+            "is_primary": true,
+            "_cityBoost": true
+          },
+          {
+            "rank": 4,
+            "chunk_id": "gp-f024757ecee2b360",
+            "cidade": "Santos",
+            "nome": "Espaço Família Saúde e Bem -Estar",
+            "score": 0.633345870552587,
+            "similarity": 0.74310495164844,
+            "is_primary": true,
+            "_cityBoost": true
+          },
+          {
+            "rank": 5,
+            "chunk_id": "gp-a9b083de0d5d2d3b",
+            "cidade": "Santos",
+            "nome": "Centro de Treinamento Embaré",
+            "score": 0.6163665598749679,
+            "similarity": 0.762767618482211,
+            "is_primary": true,
+            "_cityBoost": true
+          }
+        ]
+      },
+      "delta_primary_rank": 0,
+      "improved": false
+    },
+    {
+      "id": "eval_009",
+      "query": "Academias de musculação em Mauá GuruPass",
+      "expected_municipio": "Mauá",
+      "filters": {
+        "municipio": "Mauá",
+        "modalidade": "musculacao",
+        "plano_rank": null,
+        "confidence": 0.75
+      },
+      "hits": 15,
+      "baseline": {
+        "primary_at_1": true,
+        "primary_at_3": true,
+        "primary_at_5": true,
+        "first_primary_rank": 1,
+        "mrr_primary": 1,
+        "keyword_hit_at_5": true,
+        "top5": [
+          {
+            "rank": 1,
+            "chunk_id": "gp-c1b8c7eca396e5f6",
+            "cidade": "Mauá",
+            "nome": "Academia Clart Fitness",
+            "score": 0.644911682754982,
+            "similarity": 0.830896631536836,
+            "is_primary": true,
+            "_cityBoost": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "gp-2b1fa1e1e74884d7",
+            "cidade": "Mauá",
+            "nome": "Academia Ellite",
+            "score": 0.636236008464931,
+            "similarity": 0.802381491235298,
+            "is_primary": true,
+            "_cityBoost": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "gp-1b1520e7d80ed70c",
+            "cidade": "Mauá",
+            "nome": "Academia Evoque - Unidade Guapituba",
+            "score": 0.635230707976932,
+            "similarity": 0.820039385545473,
+            "is_primary": true,
+            "_cityBoost": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "gp-ac95e5e3723dc3b6",
+            "cidade": "Mauá",
+            "nome": "Nova Gym Fit",
+            "score": 0.62953078341324,
+            "similarity": 0.835364281404895,
+            "is_primary": true,
+            "_cityBoost": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "gp-463898a937e6e8ad",
+            "cidade": "Mauá",
+            "nome": "Evoque Academia - Unidade Shopping Mauá",
+            "score": 0.628978489411833,
+            "similarity": 0.794905914697939,
+            "is_primary": true,
+            "_cityBoost": false
+          }
+        ]
+      },
+      "boosted": {
+        "primary_at_1": true,
+        "primary_at_3": true,
+        "primary_at_5": true,
+        "first_primary_rank": 1,
+        "mrr_primary": 1,
+        "keyword_hit_at_5": true,
+        "top5": [
+          {
+            "rank": 1,
+            "chunk_id": "gp-c1b8c7eca396e5f6",
+            "cidade": "Mauá",
+            "nome": "Academia Clart Fitness",
+            "score": 0.724911682754982,
+            "similarity": 0.830896631536836,
+            "is_primary": true,
+            "_cityBoost": true
+          },
+          {
+            "rank": 2,
+            "chunk_id": "gp-2b1fa1e1e74884d7",
+            "cidade": "Mauá",
+            "nome": "Academia Ellite",
+            "score": 0.716236008464931,
+            "similarity": 0.802381491235298,
+            "is_primary": true,
+            "_cityBoost": true
+          },
+          {
+            "rank": 3,
+            "chunk_id": "gp-1b1520e7d80ed70c",
+            "cidade": "Mauá",
+            "nome": "Academia Evoque - Unidade Guapituba",
+            "score": 0.715230707976932,
+            "similarity": 0.820039385545473,
+            "is_primary": true,
+            "_cityBoost": true
+          },
+          {
+            "rank": 4,
+            "chunk_id": "gp-ac95e5e3723dc3b6",
+            "cidade": "Mauá",
+            "nome": "Nova Gym Fit",
+            "score": 0.7095307834132399,
+            "similarity": 0.835364281404895,
+            "is_primary": true,
+            "_cityBoost": true
+          },
+          {
+            "rank": 5,
+            "chunk_id": "gp-463898a937e6e8ad",
+            "cidade": "Mauá",
+            "nome": "Evoque Academia - Unidade Shopping Mauá",
+            "score": 0.708978489411833,
+            "similarity": 0.794905914697939,
+            "is_primary": true,
+            "_cityBoost": true
+          }
+        ]
+      },
+      "delta_primary_rank": 0,
+      "improved": false
+    },
+    {
+      "id": "eval_010",
+      "query": "Crossfit ou cross training em São Bernardo do Campo GuruPass",
+      "expected_municipio": "São Bernardo do Campo",
+      "filters": {
+        "municipio": "São Bernardo do Campo",
+        "modalidade": "crossfit",
+        "plano_rank": null,
+        "confidence": 0.75
+      },
+      "hits": 4,
+      "baseline": {
+        "primary_at_1": true,
+        "primary_at_3": true,
+        "primary_at_5": true,
+        "first_primary_rank": 1,
+        "mrr_primary": 1,
+        "keyword_hit_at_5": true,
+        "top5": [
+          {
+            "rank": 1,
+            "chunk_id": "gp-339b6a9f0933495e",
+            "cidade": "São Bernardo do Campo",
+            "nome": "SOREN CROSSFIT",
+            "score": 0.725671132798269,
+            "similarity": 0.88005494356483,
+            "is_primary": true,
+            "_cityBoost": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "gp-a5276e713deb82d6",
+            "cidade": "São Bernardo do Campo",
+            "nome": "Cross Experience Taboão",
+            "score": 0.702979553053359,
+            "similarity": 0.884092562442576,
+            "is_primary": true,
+            "_cityBoost": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "gp-00ef7342bcd2df4a",
+            "cidade": "São Bernardo do Campo",
+            "nome": "Point Box Baeta Neves",
+            "score": 0.638585663968665,
+            "similarity": 0.831946362969064,
+            "is_primary": true,
+            "_cityBoost": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "gp-b6cf3da8ed51251e",
+            "cidade": "São Bernardo do Campo",
+            "nome": "Point Box Vivaldi",
+            "score": 0.62397047719695,
+            "similarity": 0.806507897958866,
+            "is_primary": true,
+            "_cityBoost": false
+          }
+        ]
+      },
+      "boosted": {
+        "primary_at_1": true,
+        "primary_at_3": true,
+        "primary_at_5": true,
+        "first_primary_rank": 1,
+        "mrr_primary": 1,
+        "keyword_hit_at_5": true,
+        "top5": [
+          {
+            "rank": 1,
+            "chunk_id": "gp-339b6a9f0933495e",
+            "cidade": "São Bernardo do Campo",
+            "nome": "SOREN CROSSFIT",
+            "score": 0.805671132798269,
+            "similarity": 0.88005494356483,
+            "is_primary": true,
+            "_cityBoost": true
+          },
+          {
+            "rank": 2,
+            "chunk_id": "gp-a5276e713deb82d6",
+            "cidade": "São Bernardo do Campo",
+            "nome": "Cross Experience Taboão",
+            "score": 0.782979553053359,
+            "similarity": 0.884092562442576,
+            "is_primary": true,
+            "_cityBoost": true
+          },
+          {
+            "rank": 3,
+            "chunk_id": "gp-00ef7342bcd2df4a",
+            "cidade": "São Bernardo do Campo",
+            "nome": "Point Box Baeta Neves",
+            "score": 0.718585663968665,
+            "similarity": 0.831946362969064,
+            "is_primary": true,
+            "_cityBoost": true
+          },
+          {
+            "rank": 4,
+            "chunk_id": "gp-b6cf3da8ed51251e",
+            "cidade": "São Bernardo do Campo",
+            "nome": "Point Box Vivaldi",
+            "score": 0.7039704771969499,
+            "similarity": 0.806507897958866,
+            "is_primary": true,
+            "_cityBoost": true
+          }
+        ]
+      },
+      "delta_primary_rank": 0,
+      "improved": false
+    },
+    {
+      "id": "eval_011",
+      "query": "Funcional em Sorocaba no GuruPass",
+      "expected_municipio": "Sorocaba",
+      "filters": {
+        "municipio": "Sorocaba",
+        "modalidade": "funcional",
+        "plano_rank": null,
+        "confidence": 0.75
+      },
+      "hits": 11,
+      "baseline": {
+        "primary_at_1": true,
+        "primary_at_3": true,
+        "primary_at_5": true,
+        "first_primary_rank": 1,
+        "mrr_primary": 1,
+        "keyword_hit_at_5": true,
+        "top5": [
+          {
+            "rank": 1,
+            "chunk_id": "gp-dd198a10ddffb39d",
+            "cidade": "Sorocaba",
+            "nome": "Bioharmonia Estúdio de Atividades Físicas",
+            "score": 0.621630723023762,
+            "similarity": 0.795759179230218,
+            "is_primary": true,
+            "_cityBoost": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "gp-a06cf8bcad835fc4",
+            "cidade": "Sorocaba",
+            "nome": "Zenfitness",
+            "score": 0.616440961407181,
+            "similarity": 0.793068234283835,
+            "is_primary": true,
+            "_cityBoost": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "gp-519d8372cbb613bf",
+            "cidade": "Sorocaba",
+            "nome": "Studio Consciência",
+            "score": 0.608378035028494,
+            "similarity": 0.781246051194255,
+            "is_primary": true,
+            "_cityBoost": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "gp-fc12b0714df5fc80",
+            "cidade": "Sorocaba",
+            "nome": "Acessível Fisioterapia",
+            "score": 0.605236687562855,
+            "similarity": 0.775751207455601,
+            "is_primary": true,
+            "_cityBoost": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "gp-c141629091dcc821",
+            "cidade": "Sorocaba",
+            "nome": "Studio Fabiana Karen",
+            "score": 0.591719635728144,
+            "similarity": 0.755633440236235,
+            "is_primary": true,
+            "_cityBoost": false
+          }
+        ]
+      },
+      "boosted": {
+        "primary_at_1": true,
+        "primary_at_3": true,
+        "primary_at_5": true,
+        "first_primary_rank": 1,
+        "mrr_primary": 1,
+        "keyword_hit_at_5": true,
+        "top5": [
+          {
+            "rank": 1,
+            "chunk_id": "gp-dd198a10ddffb39d",
+            "cidade": "Sorocaba",
+            "nome": "Bioharmonia Estúdio de Atividades Físicas",
+            "score": 0.701630723023762,
+            "similarity": 0.795759179230218,
+            "is_primary": true,
+            "_cityBoost": true
+          },
+          {
+            "rank": 2,
+            "chunk_id": "gp-a06cf8bcad835fc4",
+            "cidade": "Sorocaba",
+            "nome": "Zenfitness",
+            "score": 0.6964409614071809,
+            "similarity": 0.793068234283835,
+            "is_primary": true,
+            "_cityBoost": true
+          },
+          {
+            "rank": 3,
+            "chunk_id": "gp-519d8372cbb613bf",
+            "cidade": "Sorocaba",
+            "nome": "Studio Consciência",
+            "score": 0.6883780350284939,
+            "similarity": 0.781246051194255,
+            "is_primary": true,
+            "_cityBoost": true
+          },
+          {
+            "rank": 4,
+            "chunk_id": "gp-fc12b0714df5fc80",
+            "cidade": "Sorocaba",
+            "nome": "Acessível Fisioterapia",
+            "score": 0.6852366875628549,
+            "similarity": 0.775751207455601,
+            "is_primary": true,
+            "_cityBoost": true
+          },
+          {
+            "rank": 5,
+            "chunk_id": "gp-c141629091dcc821",
+            "cidade": "Sorocaba",
+            "nome": "Studio Fabiana Karen",
+            "score": 0.671719635728144,
+            "similarity": 0.755633440236235,
+            "is_primary": true,
+            "_cityBoost": true
+          }
+        ]
+      },
+      "delta_primary_rank": 0,
+      "improved": false
+    },
+    {
+      "id": "eval_012",
+      "query": "Natação em Campinas com GuruPass",
+      "expected_municipio": "Campinas",
+      "filters": {
+        "municipio": "Campinas",
+        "modalidade": "natacao",
+        "plano_rank": null,
+        "confidence": 0.75
+      },
+      "hits": 4,
+      "baseline": {
+        "primary_at_1": true,
+        "primary_at_3": true,
+        "primary_at_5": true,
+        "first_primary_rank": 1,
+        "mrr_primary": 1,
+        "keyword_hit_at_5": true,
+        "top5": [
+          {
+            "rank": 1,
+            "chunk_id": "gp-73b5944a8a3122cf",
+            "cidade": "Campinas",
+            "nome": "Academia Movimentos",
+            "score": 0.572646427660998,
+            "similarity": 0.784014844418015,
+            "is_primary": true,
+            "_cityBoost": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "gp-3e400e3332ef5845",
+            "cidade": "Campinas",
+            "nome": "Studio SupriMed",
+            "score": 0.557977520697739,
+            "similarity": 0.762710713228903,
+            "is_primary": true,
+            "_cityBoost": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "gp-a654f95888c92881",
+            "cidade": "Campinas",
+            "nome": "Training Academia",
+            "score": 0.535004389775689,
+            "similarity": 0.762498804554237,
+            "is_primary": true,
+            "_cityBoost": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "gp-eb432808294402e3",
+            "cidade": "Campinas",
+            "nome": "Studio Fits You",
+            "score": 0.51167965105814,
+            "similarity": 0.730047800241479,
+            "is_primary": true,
+            "_cityBoost": false
+          }
+        ]
+      },
+      "boosted": {
+        "primary_at_1": true,
+        "primary_at_3": true,
+        "primary_at_5": true,
+        "first_primary_rank": 1,
+        "mrr_primary": 1,
+        "keyword_hit_at_5": true,
+        "top5": [
+          {
+            "rank": 1,
+            "chunk_id": "gp-73b5944a8a3122cf",
+            "cidade": "Campinas",
+            "nome": "Academia Movimentos",
+            "score": 0.652646427660998,
+            "similarity": 0.784014844418015,
+            "is_primary": true,
+            "_cityBoost": true
+          },
+          {
+            "rank": 2,
+            "chunk_id": "gp-3e400e3332ef5845",
+            "cidade": "Campinas",
+            "nome": "Studio SupriMed",
+            "score": 0.6379775206977389,
+            "similarity": 0.762710713228903,
+            "is_primary": true,
+            "_cityBoost": true
+          },
+          {
+            "rank": 3,
+            "chunk_id": "gp-a654f95888c92881",
+            "cidade": "Campinas",
+            "nome": "Training Academia",
+            "score": 0.6150043897756889,
+            "similarity": 0.762498804554237,
+            "is_primary": true,
+            "_cityBoost": true
+          },
+          {
+            "rank": 4,
+            "chunk_id": "gp-eb432808294402e3",
+            "cidade": "Campinas",
+            "nome": "Studio Fits You",
+            "score": 0.5916796510581399,
+            "similarity": 0.730047800241479,
+            "is_primary": true,
+            "_cityBoost": true
+          }
+        ]
+      },
+      "delta_primary_rank": 0,
+      "improved": false
+    },
+    {
+      "id": "eval_013",
+      "query": "Academia barata em Poá GuruPass musculação",
+      "expected_municipio": "Poá",
+      "filters": {
+        "municipio": "Poá",
+        "modalidade": "musculacao",
+        "plano_rank": null,
+        "confidence": 0.75
+      },
+      "hits": 15,
+      "baseline": {
+        "primary_at_1": true,
+        "primary_at_3": true,
+        "primary_at_5": true,
+        "first_primary_rank": 1,
+        "mrr_primary": 1,
+        "keyword_hit_at_5": true,
+        "top5": [
+          {
+            "rank": 1,
+            "chunk_id": "gp-672df6267238f1c9",
+            "cidade": "Poá",
+            "nome": "Evoque Academia Poá",
+            "score": 0.645038929427911,
+            "similarity": 0.812999000876934,
+            "is_primary": true,
+            "_cityBoost": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "gp-a2cd9077444ca4d9",
+            "cidade": "Poá",
+            "nome": "Academia Acquamil Fitness Unidade 1",
+            "score": 0.635504127885076,
+            "similarity": 0.823389747546887,
+            "is_primary": true,
+            "_cityBoost": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "gp-19b6d64f2527733e",
+            "cidade": "Poá",
+            "nome": "Academia Hermanos fitness",
+            "score": 0.628092525680171,
+            "similarity": 0.807989287852615,
+            "is_primary": true,
+            "_cityBoost": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "gp-82682ac5426a59fb",
+            "cidade": "Poá",
+            "nome": "Academia Acquamil Fitness Unidade 2",
+            "score": 0.62680104001425,
+            "similarity": 0.810956764874278,
+            "is_primary": true,
+            "_cityBoost": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "gp-f65ea3a68bfdb6f1",
+            "cidade": "Poá",
+            "nome": "Academia Fama Poá",
+            "score": 0.617436127797951,
+            "similarity": 0.772875176243507,
+            "is_primary": true,
+            "_cityBoost": false
+          }
+        ]
+      },
+      "boosted": {
+        "primary_at_1": true,
+        "primary_at_3": true,
+        "primary_at_5": true,
+        "first_primary_rank": 1,
+        "mrr_primary": 1,
+        "keyword_hit_at_5": true,
+        "top5": [
+          {
+            "rank": 1,
+            "chunk_id": "gp-672df6267238f1c9",
+            "cidade": "Poá",
+            "nome": "Evoque Academia Poá",
+            "score": 0.7250389294279109,
+            "similarity": 0.812999000876934,
+            "is_primary": true,
+            "_cityBoost": true
+          },
+          {
+            "rank": 2,
+            "chunk_id": "gp-a2cd9077444ca4d9",
+            "cidade": "Poá",
+            "nome": "Academia Acquamil Fitness Unidade 1",
+            "score": 0.715504127885076,
+            "similarity": 0.823389747546887,
+            "is_primary": true,
+            "_cityBoost": true
+          },
+          {
+            "rank": 3,
+            "chunk_id": "gp-19b6d64f2527733e",
+            "cidade": "Poá",
+            "nome": "Academia Hermanos fitness",
+            "score": 0.708092525680171,
+            "similarity": 0.807989287852615,
+            "is_primary": true,
+            "_cityBoost": true
+          },
+          {
+            "rank": 4,
+            "chunk_id": "gp-82682ac5426a59fb",
+            "cidade": "Poá",
+            "nome": "Academia Acquamil Fitness Unidade 2",
+            "score": 0.7068010400142499,
+            "similarity": 0.810956764874278,
+            "is_primary": true,
+            "_cityBoost": true
+          },
+          {
+            "rank": 5,
+            "chunk_id": "gp-f65ea3a68bfdb6f1",
+            "cidade": "Poá",
+            "nome": "Academia Fama Poá",
+            "score": 0.6974361277979509,
+            "similarity": 0.772875176243507,
+            "is_primary": true,
+            "_cityBoost": true
+          }
+        ]
+      },
+      "delta_primary_rank": 0,
+      "improved": false
+    },
+    {
+      "id": "eval_014",
+      "query": "Dança ou zumba em Santo André GuruPass",
+      "expected_municipio": "Santo André",
+      "filters": {
+        "municipio": "Santo André",
+        "modalidade": "danca",
+        "plano_rank": null,
+        "confidence": 0.75
+      },
+      "hits": 15,
+      "baseline": {
+        "primary_at_1": true,
+        "primary_at_3": true,
+        "primary_at_5": true,
+        "first_primary_rank": 1,
+        "mrr_primary": 1,
+        "keyword_hit_at_5": true,
+        "top5": [
+          {
+            "rank": 1,
+            "chunk_id": "gp-a120fd6943178793",
+            "cidade": "Santo André",
+            "nome": "Cross You Fit",
+            "score": 0.659130532448907,
+            "similarity": 0.79495322854722,
+            "is_primary": true,
+            "_cityBoost": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "gp-861c169b182f9a5a",
+            "cidade": "Santo André",
+            "nome": "Bio Ritmo Santo André - Shopping ABC",
+            "score": 0.645386986276382,
+            "similarity": 0.788049629199616,
+            "is_primary": true,
+            "_cityBoost": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "gp-1f9c38d3f17562a7",
+            "cidade": "Santo André",
+            "nome": "Evolution Training Utinga",
+            "score": 0.642007025631719,
+            "similarity": 0.766555007325431,
+            "is_primary": true,
+            "_cityBoost": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "gp-41c278d5419dd841",
+            "cidade": "Santo André",
+            "nome": "Studio de Dança Renato Mota",
+            "score": 0.636722602640907,
+            "similarity": 0.792976560301626,
+            "is_primary": true,
+            "_cityBoost": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "gp-17daacc22d5071da",
+            "cidade": "Santo André",
+            "nome": "Academia Chronos Força e Superação",
+            "score": 0.634225405419516,
+            "similarity": 0.761621202842764,
+            "is_primary": true,
+            "_cityBoost": false
+          }
+        ]
+      },
+      "boosted": {
+        "primary_at_1": true,
+        "primary_at_3": true,
+        "primary_at_5": true,
+        "first_primary_rank": 1,
+        "mrr_primary": 1,
+        "keyword_hit_at_5": true,
+        "top5": [
+          {
+            "rank": 1,
+            "chunk_id": "gp-a120fd6943178793",
+            "cidade": "Santo André",
+            "nome": "Cross You Fit",
+            "score": 0.7391305324489069,
+            "similarity": 0.79495322854722,
+            "is_primary": true,
+            "_cityBoost": true
+          },
+          {
+            "rank": 2,
+            "chunk_id": "gp-861c169b182f9a5a",
+            "cidade": "Santo André",
+            "nome": "Bio Ritmo Santo André - Shopping ABC",
+            "score": 0.725386986276382,
+            "similarity": 0.788049629199616,
+            "is_primary": true,
+            "_cityBoost": true
+          },
+          {
+            "rank": 3,
+            "chunk_id": "gp-1f9c38d3f17562a7",
+            "cidade": "Santo André",
+            "nome": "Evolution Training Utinga",
+            "score": 0.7220070256317189,
+            "similarity": 0.766555007325431,
+            "is_primary": true,
+            "_cityBoost": true
+          },
+          {
+            "rank": 4,
+            "chunk_id": "gp-41c278d5419dd841",
+            "cidade": "Santo André",
+            "nome": "Studio de Dança Renato Mota",
+            "score": 0.7167226026409069,
+            "similarity": 0.792976560301626,
+            "is_primary": true,
+            "_cityBoost": true
+          },
+          {
+            "rank": 5,
+            "chunk_id": "gp-17daacc22d5071da",
+            "cidade": "Santo André",
+            "nome": "Academia Chronos Força e Superação",
+            "score": 0.714225405419516,
+            "similarity": 0.761621202842764,
+            "is_primary": true,
+            "_cityBoost": true
+          }
+        ]
+      },
+      "delta_primary_rank": 0,
+      "improved": false
+    },
+    {
+      "id": "eval_015",
+      "query": "Musculação no Rio de Janeiro GuruPass créditos",
+      "expected_municipio": "Rio de Janeiro",
+      "filters": {
+        "municipio": "Rio de Janeiro",
+        "modalidade": "musculacao",
+        "plano_rank": null,
+        "confidence": 0.75
+      },
+      "hits": 15,
+      "baseline": {
+        "primary_at_1": true,
+        "primary_at_3": true,
+        "primary_at_5": true,
+        "first_primary_rank": 1,
+        "mrr_primary": 1,
+        "keyword_hit_at_5": true,
+        "top5": [
+          {
+            "rank": 1,
+            "chunk_id": "gp-aa49daaaef2e75ef",
+            "cidade": "Rio de Janeiro",
+            "nome": "Centro de Treinamento Integrado Respire Pilates",
+            "score": 0.705386047638059,
+            "similarity": 0.859270248587127,
+            "is_primary": true,
+            "_cityBoost": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "gp-50f330199501d7fd",
+            "cidade": "Rio de Janeiro",
+            "nome": "Academia Yesfit ltda",
+            "score": 0.703160212190954,
+            "similarity": 0.853710524185009,
+            "is_primary": true,
+            "_cityBoost": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "gp-7dd02b620f541b70",
+            "cidade": "Rio de Janeiro",
+            "nome": "Seabra fitness",
+            "score": 0.69907011285409,
+            "similarity": 0.847867525132347,
+            "is_primary": true,
+            "_cityBoost": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "gp-2f67901b36314c2f",
+            "cidade": "Rio de Janeiro",
+            "nome": "Ctmetamorfose",
+            "score": 0.697356768657669,
+            "similarity": 0.843772100278147,
+            "is_primary": true,
+            "_cityBoost": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "gp-3f4775a47c2451f1",
+            "cidade": "Rio de Janeiro",
+            "nome": "New Corpore Praça do Carmo",
+            "score": 0.69699931459814,
+            "similarity": 0.849060043972755,
+            "is_primary": true,
+            "_cityBoost": false
+          }
+        ]
+      },
+      "boosted": {
+        "primary_at_1": true,
+        "primary_at_3": true,
+        "primary_at_5": true,
+        "first_primary_rank": 1,
+        "mrr_primary": 1,
+        "keyword_hit_at_5": true,
+        "top5": [
+          {
+            "rank": 1,
+            "chunk_id": "gp-aa49daaaef2e75ef",
+            "cidade": "Rio de Janeiro",
+            "nome": "Centro de Treinamento Integrado Respire Pilates",
+            "score": 0.785386047638059,
+            "similarity": 0.859270248587127,
+            "is_primary": true,
+            "_cityBoost": true
+          },
+          {
+            "rank": 2,
+            "chunk_id": "gp-50f330199501d7fd",
+            "cidade": "Rio de Janeiro",
+            "nome": "Academia Yesfit ltda",
+            "score": 0.783160212190954,
+            "similarity": 0.853710524185009,
+            "is_primary": true,
+            "_cityBoost": true
+          },
+          {
+            "rank": 3,
+            "chunk_id": "gp-7dd02b620f541b70",
+            "cidade": "Rio de Janeiro",
+            "nome": "Seabra fitness",
+            "score": 0.77907011285409,
+            "similarity": 0.847867525132347,
+            "is_primary": true,
+            "_cityBoost": true
+          },
+          {
+            "rank": 4,
+            "chunk_id": "gp-2f67901b36314c2f",
+            "cidade": "Rio de Janeiro",
+            "nome": "Ctmetamorfose",
+            "score": 0.777356768657669,
+            "similarity": 0.843772100278147,
+            "is_primary": true,
+            "_cityBoost": true
+          },
+          {
+            "rank": 5,
+            "chunk_id": "gp-3f4775a47c2451f1",
+            "cidade": "Rio de Janeiro",
+            "nome": "New Corpore Praça do Carmo",
+            "score": 0.77699931459814,
+            "similarity": 0.849060043972755,
+            "is_primary": true,
+            "_cityBoost": true
+          }
+        ]
+      },
+      "delta_primary_rank": 0,
+      "improved": false
+    }
+  ]
+}

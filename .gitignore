@@ -1,7 +1,18 @@
 node_modules
 dist
+.venv
 .env
 .env.local
 .env.production
 .env.*.local
 .wrangler
+
+# Receita Federal CNPJ dumps (huge)
+data/raw/Receita/*.zip
+data/raw/Receita/*.ESTABELE
+data/raw/Receita/_*.xml
+data/raw/Receita/_*.log
+data/raw/Receita/_*.html
+data/raw/Receita/*.headers.txt
+data/processed/receita-cnae-*.csv
+data/processed/receita-cnae-*.json

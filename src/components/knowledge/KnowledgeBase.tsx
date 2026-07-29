@@ -46,6 +46,8 @@ export const KnowledgeBase: React.FC = () => {
   const [typing, setTyping] = useState(false);
   const [training, setTraining] = useState(false);
   const [published, setPublished] = useState<PublishedAgent | null>(null);
+  const [filterMunicipio, setFilterMunicipio] = useState('');
+  const [filterModalidade, setFilterModalidade] = useState('');
   const endRef = useRef<HTMLDivElement>(null);
   const fileRef = useRef<HTMLInputElement>(null);
 
@@ -118,7 +120,7 @@ export const KnowledgeBase: React.FC = () => {
       });
       setPublished(agent);
       setToast(
-        `Publicado: ${agent.chunk_count} chunks · domínios: ${(agent.domains || []).join(', ') || '?'} · fontes: ${agent.source_refs.join(', ')}${
+        `Publicado: ${agent.chunk_count} chunks · embed: ${agent.embedding_model || 'local-only'} · domínios: ${(agent.domains || []).join(', ') || '?'} · fontes: ${agent.source_refs.join(', ')}${
           agent.last_error ? ` · aviso: ${agent.last_error}` : ''
         }`,
       );
@@ -360,6 +362,29 @@ export const KnowledgeBase: React.FC = () => {
 
         <div className="flex-1 bg-slate-900/40 border border-slate-800 rounded-2xl p-4 flex flex-col min-h-[320px]">
           <h2 className="text-sm font-bold text-white mb-2">Teste do agente</h2>
+          <div className="flex gap-2 mb-2">
+            <input
+              value={filterMunicipio}
+              onChange={(e) => setFilterMunicipio(e.target.value)}
+              disabled={!canChat}
+              placeholder="Município (ex: Arujá)"
+              className="flex-1 bg-slate-950 border border-slate-700 rounded-lg px-2 py-1 text-[11px]"
+            />
+            <select
+              value={filterModalidade}
+              onChange={(e) => setFilterModalidade(e.target.value)}
+              disabled={!canChat}
+              className="flex-1 bg-slate-950 border border-slate-700 rounded-lg px-2 py-1 text-[11px] text-slate-300"
+            >
+              <option value="">Modalidade (auto)</option>
+              <option value="musculacao">musculacao</option>
+              <option value="pilates">pilates</option>
+              <option value="yoga">yoga</option>
+              <option value="boxe">boxe</option>
+              <option value="jiu_jitsu">jiu_jitsu</option>
+              <option value="crossfit">crossfit</option>
+            </select>
+          </div>
           <div className="flex-1 overflow-y-auto space-y-2 mb-3">
             {chat.map((m) => (
               <div key={m.id} className="space-y-1">
@@ -436,7 +461,12 @@ export const KnowledgeBase: React.FC = () => {
                   role: m.role === 'user' ? 'user' : 'assistant',
                   content: m.text,
                 }));
-                const res = await knowledgeService.ask({ groupId, messages: history });
+                const res = await knowledgeService.ask({
+                  groupId,
+                  messages: history,
+                  municipio: filterMunicipio.trim() || undefined,
+                  modalidade: filterModalidade.trim() || undefined,
+                });
                 setChat((prev) => [
                   ...prev,
                   {

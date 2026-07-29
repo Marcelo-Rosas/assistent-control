@@ -78,10 +78,24 @@ Deno.serve(async (req) => {
     );
   }
 
+  if (embeddings.length !== body.chunks.length) {
+    return json(
+      {
+        error: 'embed_count_mismatch',
+        details: `expected_${body.chunks.length}_got_${embeddings.length}`,
+      },
+      502,
+    );
+  }
+
   const rows = [];
   for (let i = 0; i < body.chunks.length; i++) {
     const c = body.chunks[i];
-    const hash = await contentHash(body.groupId, c.chunk_type || 'text', c.text);
+    const chunkType = c.chunk_type || 'text';
+    const hash = await contentHash(body.groupId, chunkType, c.text);
+    const sectionPath =
+      c.section_path ||
+      (typeof c.meta?.section_path === 'string' ? c.meta.section_path : null);
     rows.push({
       group_id: body.groupId,
       document_id: null,
@@ -89,10 +103,10 @@ Deno.serve(async (req) => {
       source_kind: c.source_kind || String(c.meta?.domain || 'generic'),
       source_ref: c.source_ref ?? body.sourceRefs?.[0] ?? null,
       chunk_id: c.chunk_id,
-      chunk_type: c.chunk_type || 'text',
+      chunk_type: chunkType,
       text: c.text,
       meta: { ...(c.meta || {}), chunking: 'chunking-v1' },
-      section_path: c.section_path || null,
+      section_path: sectionPath,
       content_hash: hash,
       embedding_model: `${embedConfig.provider}:${embedConfig.model}`,
       embedding_version: embedConfig.version,
@@ -109,8 +123,20 @@ Deno.serve(async (req) => {
     return true;
   });
 
-  const { error: insErr } = await supabase.from('eros_knowledge_chunks').insert(uniqueRows);
-  if (insErr) return json({ error: 'chunk_insert_failed', details: insErr.message }, 500);
+  // Upsert batches — content_hash unique (group_id, content_hash)
+  const BATCH = 50;
+  for (let i = 0; i < uniqueRows.length; i += BATCH) {
+    const batch = uniqueRows.slice(i, i + BATCH);
+    const { error: insErr } = await supabase.from('eros_knowledge_chunks').upsert(batch, {
+      onConflict: 'group_id,content_hash',
+    });
+    if (insErr) {
+      return json(
+        { error: 'chunk_insert_failed', details: insErr.message, batch: Math.floor(i / BATCH) },
+        500,
+      );
+    }
+  }
 
   const { error: agentErr } = await supabase.from('eros_knowledge_agents').upsert(
     {
