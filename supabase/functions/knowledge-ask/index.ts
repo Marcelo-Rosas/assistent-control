@@ -24,6 +24,10 @@ import {
   TOTALPASS_FORMAT_RULES,
   WELLHUB_FORMAT_RULES,
 } from '../_shared/ragAnswer.ts';
+import {
+  extractTargetYear,
+  isAggregationQuery,
+} from '../_shared/aggregationIntent.ts';
 
 type Body = {
   groupId: string;
@@ -207,6 +211,89 @@ Deno.serve(async (req) => {
     plano_rank: body.plano_rank,
   });
 
+  // Agregação determinística (Receita census) — SEM embed / match_chunks
+  if (isAggregationQuery(lastUserMsg.content)) {
+    const targetYear = extractTargetYear(lastUserMsg.content);
+    const municipio = filters.municipio || body.municipio || null;
+
+    const { data: byBairro, error: aggError } = await supabase.rpc(
+      'aggregate_academies_by_neighborhood',
+      {
+        p_group_id: body.groupId,
+        p_municipio_nome: municipio,
+        p_target_year: targetYear,
+      },
+    );
+    if (aggError) {
+      return json({ error: 'aggregation_failed', details: aggError.message }, 500);
+    }
+
+    const { data: summaryRows, error: sumError } = await supabase.rpc(
+      'aggregate_academies_summary',
+      {
+        p_group_id: body.groupId,
+        p_municipio_nome: municipio,
+        p_target_year: targetYear,
+      },
+    );
+    if (sumError) {
+      return json({ error: 'aggregation_summary_failed', details: sumError.message }, 500);
+    }
+
+    const summary = Array.isArray(summaryRows) ? summaryRows[0] : summaryRows;
+    const rows = Array.isArray(byBairro) ? byBairro : [];
+    const aggregatedPayload = {
+      filtros: { municipio, ano: targetYear },
+      resumo: summary,
+      por_bairro: rows,
+    };
+
+    let system = agent.system_prompt || DEFAULT_SYSTEM;
+    system = `${system}
+
+MODO AGREGAÇÃO (obrigatório):
+- Os números abaixo vieram de SQL GROUP BY no banco. NÃO invente, NÃO arredonde, NÃO omita totais.
+- Use apenas o JSON. Se vazio, diga que não há registros para os filtros.
+- Responda em PT-BR com: totais de abertura/fechamento/saldo, depois comparação por bairro (top movimentos).`;
+
+    const prompt = [
+      system,
+      '',
+      'DADOS AGREGADOS (JSON canônico):',
+      JSON.stringify(aggregatedPayload, null, 2),
+      '',
+      `Pergunta do usuário: ${lastUserMsg.content}`,
+      '',
+      'Responda em PT-BR, apenas com o texto da resposta.',
+    ].join('\n');
+
+    try {
+      const provider = await resolveLlmProvider(supabase);
+      const result = await callLlm(prompt, provider);
+      const includeDebug = req.headers.get('x-rag-include-debug') === 'true';
+      const totalEventos =
+        Number(summary?.aberturas || 0) + Number(summary?.fechamentos || 0);
+      return json({
+        ok: true,
+        text: normalizeAnswerText(result.text),
+        provider: result.provider,
+        mode: 'aggregation',
+        agent_status: agent.status,
+        chunk_count: totalEventos,
+        sources: [],
+        aggregation: aggregatedPayload,
+        filters,
+        retrieval: 'sql_aggregate',
+        ...(includeDebug ? { debug_prompt: prompt } : {}),
+      });
+    } catch (e) {
+      return json(
+        { error: 'llm_failed', details: e instanceof Error ? e.message : String(e) },
+        502,
+      );
+    }
+  }
+
   let queryEmbedding: number[];
   let embedModel: string;
   try {
@@ -246,7 +333,14 @@ Deno.serve(async (req) => {
   }
 
   // Soft-rank: meta.cidade primary sobe (+0.08); related-only permanece abaixo
-  const chunks: BoostedMatchChunk[] = boostByCityPrimary(matched, filters.municipio);
+  const boosted: BoostedMatchChunk[] = boostByCityPrimary(matched, filters.municipio);
+  // Dedupe por chunk_id (mantém 1ª ocorrência) antes de prompt / sources / log
+  const seenChunkIds = new Set<string>();
+  const chunks: BoostedMatchChunk[] = boosted.filter((c) => {
+    if (seenChunkIds.has(c.chunk_id)) return false;
+    seenChunkIds.add(c.chunk_id);
+    return true;
+  });
   const primaryN = chunks.filter((c) => c._cityBoost).length;
   console.log(
     `[city_boost] municipio=${filters.municipio ?? '—'} primary=${primaryN}/${chunks.length}`,
@@ -309,6 +403,19 @@ Deno.serve(async (req) => {
 
   try {
     const provider = await resolveLlmProvider(supabase);
+    // Observabilidade RAG (log estruturado; não altera o retorno da API)
+    console.log(
+      JSON.stringify({
+        event: 'rag_retrieval',
+        group_id: body.groupId,
+        tenant_id: userCompanyId,
+        query: lastUserMsg.content,
+        filters,
+        retrieved_count: chunks.length,
+        top_score: chunks.length ? simOf(chunks[0]) : 0,
+        provider,
+      }),
+    );
     const result = await callLlm(prompt, provider);
     const includeDebug = req.headers.get('x-rag-include-debug') === 'true';
     return json({

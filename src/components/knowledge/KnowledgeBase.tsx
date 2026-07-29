@@ -24,6 +24,10 @@ type ChatMsg = {
   sources?: Array<{
     chunk_id: string;
     score: number;
+    nome_academia?: string | null;
+    modalidade?: string | null;
+    plano_minimo?: string | null;
+    municipios?: string[];
     url?: string | null;
     section?: string | null;
   }>;
@@ -398,37 +402,19 @@ export const KnowledgeBase: React.FC = () => {
                   {m.text}
                 </div>
                 {m.role === 'assistant' && m.sources && m.sources.length > 0 && (
-                  <div className="mr-4 flex flex-wrap gap-1.5 pl-1">
-                    <span className="text-[10px] uppercase tracking-wider text-slate-500 self-center">
-                      Fontes
-                    </span>
-                    {m.sources.map((s) => {
-                      const label = `${s.chunk_id.slice(0, 24)}${s.chunk_id.length > 24 ? '…' : ''} · ${s.score.toFixed(2)}`;
-                      if (s.url) {
-                        return (
-                          <a
-                            key={`${m.id}-${s.chunk_id}`}
-                            href={s.url}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="text-[10px] px-2 py-0.5 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-200 hover:bg-cyan-500/20"
-                            title={s.section || s.chunk_id}
-                          >
-                            {label}
-                          </a>
-                        );
-                      }
-                      return (
-                        <span
-                          key={`${m.id}-${s.chunk_id}`}
-                          className="text-[10px] px-2 py-0.5 rounded-full border border-slate-700 bg-slate-900/60 text-slate-300"
-                          title={s.section || s.chunk_id}
-                        >
-                          {label}
-                        </span>
-                      );
-                    })}
-                  </div>
+                  <details className="mr-4 text-[10px] text-slate-500 mt-2 border-t border-slate-800 pt-2">
+                    <summary className="cursor-pointer select-none text-slate-400">
+                      Fontes consultadas ({m.sources.length})
+                    </summary>
+                    <ul className="mt-1 space-y-0.5 pl-1">
+                      {m.sources.map((s, i) => (
+                        <li key={`${m.id}-${s.chunk_id}-${i}`} title={s.chunk_id}>
+                          {s.nome_academia || s.chunk_id}
+                          {s.modalidade ? ` (${s.modalidade})` : ''} - Score: {s.score.toFixed(2)}
+                        </li>
+                      ))}
+                    </ul>
+                  </details>
                 )}
               </div>
             ))}

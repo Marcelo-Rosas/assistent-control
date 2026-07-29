@@ -1,17 +1,25 @@
 import React, { useEffect, useState } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
-import { Heart, LayoutDashboard, MessageSquare, Kanban, Users, Search, FileText, Sparkles } from 'lucide-react';
+import { Heart, LayoutDashboard, MessageSquare, Kanban, Users, Search, FileText, Sparkles, type LucideIcon } from 'lucide-react';
 import { useRoles } from '../../context/RoleContext';
 import { erosService, LlmProviderOption } from '../../services/erosService';
 
-const tabs = [
+type ErosTab = {
+  to: string;
+  label: string;
+  icon: LucideIcon;
+  end?: boolean;
+  badge?: string;
+};
+
+const tabs: ErosTab[] = [
   { to: '/eros', label: 'Visão geral', icon: LayoutDashboard, end: true },
   { to: '/eros/chat', label: 'Chat', icon: MessageSquare, badge: 'SPIN' },
   { to: '/eros/kanban', label: 'Pipeline', icon: Kanban },
   { to: '/eros/contacts', label: 'Contatos', icon: Users },
   { to: '/eros/prospection', label: 'Prospecção', icon: Search },
   { to: '/eros/content', label: 'Conteúdo', icon: FileText },
-] as const;
+];
 
 const LLM_OPTIONS: Array<{ value: LlmProviderOption; label: string }> = [
   { value: 'sakana', label: 'Sakana (Fugu)' },
