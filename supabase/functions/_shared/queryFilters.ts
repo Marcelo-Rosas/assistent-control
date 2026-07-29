@@ -26,6 +26,7 @@ const MUNICIPIOS: Array<{ alias: string; label: string; wholeWord?: boolean }> =
   { alias: 'ribeirao preto', label: 'Ribeirão Preto' },
   { alias: 'sao paulo', label: 'São Paulo' },
   { alias: 'sao luis', label: 'São Luís' },
+  { alias: 'sao vicente', label: 'São Vicente' },
   { alias: 'florianopolis', label: 'Florianópolis' },
   { alias: 'campinas', label: 'Campinas' },
   { alias: 'curitiba', label: 'Curitiba' },
@@ -51,6 +52,13 @@ const MUNICIPIOS: Array<{ alias: string; label: string; wholeWord?: boolean }> =
   { alias: 'piracicaba', label: 'Piracicaba' },
   { alias: 'bauru', label: 'Bauru' },
   { alias: 'jundiai', label: 'Jundiaí' },
+  { alias: 'niteroi', label: 'Niterói' },
+  { alias: 'aruja', label: 'Arujá' },
+  { alias: 'cotia', label: 'Cotia' },
+  { alias: 'ferraz de vasconcelos', label: 'Ferraz de Vasconcelos' },
+  { alias: 'itaquaquecetuba', label: 'Itaquaquecetuba' },
+  { alias: 'mairipora', label: 'Mairiporã' },
+  { alias: 'embu das artes', label: 'Embu das Artes' },
   { alias: 'sampa', label: 'São Paulo' },
   { alias: 'floripa', label: 'Florianópolis' },
   // Short aliases — whole word only
@@ -145,13 +153,19 @@ export function extractQueryFilters(
   if (!municipio) {
     const interiorUf = /\binterior\s+de\s+(sp|rj|mg|pr|rs|ba|pe|ce|go|df)\b/.test(q);
 
+    // Primeira cidade pela posição na query (ex: "Santos ou São Vicente" → Santos)
+    let bestPos = Infinity;
+    let bestLabel: string | null = null;
     for (const { alias, label, wholeWord } of MUNICIPIOS) {
       if (interiorUf && (alias === 'sp' || alias === 'rj')) continue;
-      if (hasAlias(q, alias, wholeWord)) {
-        municipio = label;
-        break;
+      if (!hasAlias(q, alias, wholeWord)) continue;
+      const pos = q.indexOf(alias);
+      if (pos >= 0 && pos < bestPos) {
+        bestPos = pos;
+        bestLabel = label;
       }
     }
+    municipio = bestLabel;
 
     if (!municipio && /\bcapital\b/.test(q)) {
       if (/\bsp\b/.test(q) || /sao paulo/.test(q) || !/\b[a-z]{2}\b/.test(q.replace(/capital/g, ''))) {

@@ -13,6 +13,10 @@ export type KnowledgeChunk = {
   chunk_type: string;
   text: string;
   meta?: Record<string, unknown>;
+  /** Path / seção no doc origem — persistido em eros_knowledge_chunks.section_path */
+  section_path?: string | null;
+  source_kind?: string;
+  source_ref?: string | null;
 };
 
 export const GLOBAL_SYSTEM = `Tu és agente GymSite Intelligence (viabilidade de academias).

@@ -70,6 +70,17 @@ export async function embedQuery(text: string, supabase: any): Promise<{
   return { embedding, config };
 }
 
+/** Alias ingest: 1 doc → vector(1024). Nunca retorna zeros. */
+export async function getEmbedding(text: string, supabase: any): Promise<number[]> {
+  const { embeddings } = await embedDocuments([text], supabase);
+  return embeddings[0];
+}
+
+/** Alias: metadados do modelo ativo (eros_config + env). */
+export async function getEmbeddingMetadata(supabase: any): Promise<EmbeddingConfig> {
+  return resolveEmbeddingConfig(supabase);
+}
+
 /** Batch document embeddings for ingest (Voyage input_type=document). */
 export async function embedDocuments(
   texts: string[],

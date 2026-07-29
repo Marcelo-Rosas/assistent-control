@@ -11,6 +11,12 @@ import { embedQuery } from '../_shared/embed.ts';
 import { resolveUserCompanyIdFromJwt } from '../_shared/tenant.ts';
 import { extractQueryFilters } from '../_shared/queryFilters.ts';
 import {
+  callMatchChunks,
+  boostByCityPrimary,
+  type BoostedMatchChunk,
+  type MatchChunkResult,
+} from '../_shared/matchChunks.ts';
+import {
   buildRetrievalSummary,
   buildWellhubAnswer,
   detectAggregator,
@@ -30,16 +36,8 @@ type Body = {
   plano_rank?: number;
 };
 
-type MatchedChunk = {
-  chunk_id: string;
-  chunk_type: string;
-  text: string;
-  meta: Record<string, unknown> | null;
-  section_path?: string | null;
-  source_ref?: string | null;
-  similarity?: number;
-  score?: number;
-};
+/** Alias — retorno canônico de match_chunks */
+type MatchedChunk = MatchChunkResult;
 
 type Source = {
   chunk_id: string;
@@ -61,7 +59,8 @@ function escapeXml(s: string): string {
 }
 
 function simOf(c: MatchedChunk): number {
-  return Number(c.similarity ?? c.score ?? 0);
+  // Prefer score (pode incluir city boost) sobre similarity bruta
+  return Number(c.score ?? c.similarity ?? 0);
 }
 
 function metaString(meta: Record<string, unknown>, key: string): string | null {
@@ -125,16 +124,6 @@ function toSources(chunks: MatchedChunk[], aggregator?: string): Source[] {
         metaString(meta, 'source_ref') ||
         (typeof c.source_ref === 'string' ? c.source_ref : null),
     };
-  });
-}
-
-/** Filtro pós-RPC de segurança (se RPC antigo sem match_municipio). */
-function filterByMunicipio(chunks: MatchedChunk[], municipio?: string | null): MatchedChunk[] {
-  const q = municipio?.trim().toLowerCase();
-  if (!q) return chunks;
-  return chunks.filter((c) => {
-    const list = metaMunicipios(c.meta || {}).map((m) => m.toLowerCase());
-    return list.some((m) => m.includes(q) || q.includes(m));
   });
 }
 
@@ -238,7 +227,8 @@ Deno.serve(async (req) => {
   const topK = Math.min(50, Math.max(1, Number(body.top_k) || Number(Deno.env.get('RAG_TOP_K') || 15)));
   const minSimilarity = Number(body.min_similarity ?? Deno.env.get('RAG_MIN_SIMILARITY') ?? 0.6);
 
-  const { data: matched, error: chunksErr } = await supabase.rpc('match_chunks', {
+  // service_role bypasses RLS; match_tenant_id mirrors JWT company_id (nullable = global)
+  const { data: matched, error: chunksErr } = await callMatchChunks(supabase, {
     query_embedding: queryEmbedding,
     match_group_id: body.groupId,
     match_tenant_id: userCompanyId,
@@ -252,13 +242,18 @@ Deno.serve(async (req) => {
   });
 
   if (chunksErr) {
-    return json({ error: 'retrieval_failed', details: chunksErr.message }, 500);
+    return json({ error: 'retrieval_failed', details: chunksErr }, 500);
   }
 
-  const chunks = filterByMunicipio((matched || []) as MatchedChunk[], filters.municipio);
+  // Soft-rank: meta.cidade primary sobe (+0.08); related-only permanece abaixo
+  const chunks: BoostedMatchChunk[] = boostByCityPrimary(matched, filters.municipio);
+  const primaryN = chunks.filter((c) => c._cityBoost).length;
+  console.log(
+    `[city_boost] municipio=${filters.municipio ?? '—'} primary=${primaryN}/${chunks.length}`,
+  );
+  const aggregator = detectAggregator(chunks);
   const chunkBlock = buildChunkBlock(chunks);
   const sources = toSources(chunks, aggregator);
-  const aggregator = detectAggregator(chunks);
 
   // Wellhub: resposta determinística no servidor (LLM max_tokens=256 truncava listas)
   if (aggregator === 'wellhub' && chunks.length > 0) {
@@ -274,6 +269,7 @@ Deno.serve(async (req) => {
       embedding_model: embedModel,
       retrieval: 'vector_hybrid',
       filters,
+      city_boost: { primary: primaryN, total: chunks.length, boost: 0.08 },
       ...(includeDebug ? { debug_prompt: chunkBlock } : {}),
     });
   }
@@ -296,6 +292,7 @@ Deno.serve(async (req) => {
     '',
     `Agente: ${agent.name} | chunks_index=${agent.chunk_count} | retrieved=${chunks.length}`,
     `Filtros extraídos: municipio=${filters.municipio ?? '—'} modalidade=${filters.modalidade ?? '—'} plano_rank=${filters.plano_rank ?? '—'} confidence=${filters.confidence}`,
+    `Boost cidade: ${primaryN}/${chunks.length} chunks primários`,
     '',
     ...(retrievalSummary
       ? ['<resumo_retrieval>', retrievalSummary, '</resumo_retrieval>', '']
@@ -324,6 +321,7 @@ Deno.serve(async (req) => {
       embedding_model: embedModel,
       retrieval: 'vector_hybrid',
       filters,
+      city_boost: { primary: primaryN, total: chunks.length, boost: 0.08 },
       ...(includeDebug ? { debug_prompt: prompt } : {}),
     });
   } catch (e) {

@@ -23,6 +23,8 @@ export type PublishedAgent = {
   chunks: KnowledgeChunk[];
   source_refs: string[];
   domains: string[];
+  /** Preenchido após sync Edge (eros-knowledge-ingest) — ex: ollama:mxbai-embed-large@1 */
+  embedding_model?: string | null;
 };
 
 function lsKey(groupId: string) {
@@ -162,7 +164,11 @@ export async function trainAndPublish(input: {
 
   if (isSupabaseConfigured) {
     try {
-      await syncAgentToSupabase(agent);
+      const sync = await syncAgentToSupabase(agent);
+      agent.chunk_count = sync.chunk_count ?? agent.chunk_count;
+      agent.embedding_model = sync.embedding_model ?? null;
+      agent.last_error = null;
+      saveLocalAgent(agent);
     } catch (e) {
       agent.last_error = `supabase_sync_failed: ${e instanceof Error ? e.message : String(e)}`;
       saveLocalAgent(agent);
@@ -172,7 +178,15 @@ export async function trainAndPublish(input: {
   return agent;
 }
 
-async function syncAgentToSupabase(agent: PublishedAgent) {
+/**
+ * Sync remoto: Edge `eros-knowledge-ingest` faz wipe → embedDocuments(1024) →
+ * content_hash + embedding + embedding_model/version → insert + publish agent.
+ * Browser NÃO gera embedding (sem service_role / sem VOYAGE no client).
+ */
+async function syncAgentToSupabase(agent: PublishedAgent): Promise<{
+  chunk_count?: number;
+  embedding_model?: string | null;
+}> {
   const supabase = getSupabaseClient();
   const { data, error } = await supabase.functions.invoke('eros-knowledge-ingest', {
     body: {
@@ -185,8 +199,11 @@ async function syncAgentToSupabase(agent: PublishedAgent) {
         chunk_type: c.chunk_type,
         text: c.text,
         meta: c.meta || {},
-        source_kind: String(c.meta?.domain || 'generic'),
-        source_ref: agent.source_refs[0] || null,
+        source_kind: c.source_kind || String(c.meta?.domain || 'generic'),
+        source_ref: c.source_ref ?? agent.source_refs[0] ?? null,
+        section_path:
+          c.section_path ??
+          (typeof c.meta?.section_path === 'string' ? c.meta.section_path : null),
       })),
     },
   });
@@ -194,6 +211,10 @@ async function syncAgentToSupabase(agent: PublishedAgent) {
   if (data?.error) {
     throw new Error(`${data.error}${data.details ? `: ${data.details}` : ''}`);
   }
+  return {
+    chunk_count: typeof data?.chunk_count === 'number' ? data.chunk_count : undefined,
+    embedding_model: typeof data?.embedding_model === 'string' ? data.embedding_model : null,
+  };
 }
 
 export function askPublishedAgent(
