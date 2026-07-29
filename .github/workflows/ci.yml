@@ -40,10 +40,7 @@ jobs:
   deploy:
     name: Deploy Workers
     needs: build-and-test
-    if: >
-      github.ref == 'refs/heads/main' &&
-      github.event_name == 'push' &&
-      vars.ENABLE_CF_DEPLOY == 'true'
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -58,6 +55,16 @@ jobs:
 
       - name: Build
         run: npm run build
+
+      - name: Require Cloudflare secrets
+        env:
+          TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          ACCOUNT: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          if [ -z "$TOKEN" ] || [ -z "$ACCOUNT" ]; then
+            echo "::error::Missing CLOUDFLARE_API_TOKEN or CLOUDFLARE_ACCOUNT_ID. Set repo secrets then re-run."
+            exit 1
+          fi
 
       - name: Deploy (wrangler)
         uses: cloudflare/wrangler-action@v3
