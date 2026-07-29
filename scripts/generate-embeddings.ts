@@ -283,7 +283,8 @@ async function fetchPendingChunks(
       .select('id, chunk_id, text, embedding_model')
       .eq('group_id', groupId)
       .or('embedding.is.null,embedding_model.eq.pending')
-      .order('created_at', { ascending: true })
+      // id is unique — avoids skip/dup when many rows share created_at
+      .order('id', { ascending: true })
       .range(from, to);
 
     if (error) throw new Error(`fetch_pending: ${error.message}`);
