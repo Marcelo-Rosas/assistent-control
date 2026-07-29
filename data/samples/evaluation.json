@@ -1,0 +1,122 @@
+[
+  {
+    "id": "eval_001",
+    "query": "Academia de musculação em Arujá com GuruPass",
+    "expected_municipio": "Arujá",
+    "expected_modalidade": "musculacao",
+    "expected_academia_keywords": ["Arujá", "Studio", "Xtreme", "Summer"],
+    "description": "Deve priorizar academias cuja meta.cidade seja exatamente Arujá"
+  },
+  {
+    "id": "eval_002",
+    "query": "Onde fazer musculação em São Paulo barato no GuruPass?",
+    "expected_municipio": "São Paulo",
+    "expected_modalidade": "musculacao",
+    "expected_academia_keywords": ["São Paulo", "Evoque", "créditos"],
+    "description": "Primary city SP deve subir acima de related-only do ABC"
+  },
+  {
+    "id": "eval_003",
+    "query": "Academia de boxe em Osasco no GuruPass",
+    "expected_municipio": "Osasco",
+    "expected_modalidade": "boxe",
+    "expected_academia_keywords": ["Osasco", "BrasCuba", "boxe"],
+    "description": "Boost deve favorecer meta.cidade=Osasco"
+  },
+  {
+    "id": "eval_004",
+    "query": "Jiu-jitsu em Guarulhos com GuruPass quantos créditos?",
+    "expected_municipio": "Guarulhos",
+    "expected_modalidade": "jiu_jitsu",
+    "expected_academia_keywords": ["Guarulhos", "jiu", "Cabapuã"],
+    "description": "Primary Guarulhos vs related Mairiporã"
+  },
+  {
+    "id": "eval_005",
+    "query": "Musculação em Curitiba via GuruPass",
+    "expected_municipio": "Curitiba",
+    "expected_modalidade": "musculacao",
+    "expected_academia_keywords": ["Curitiba", "Happiness", "musculação"],
+    "description": "Cidade PR — primary Curitiba no topo"
+  },
+  {
+    "id": "eval_006",
+    "query": "Yoga em Campinas no GuruPass",
+    "expected_municipio": "Campinas",
+    "expected_modalidade": "yoga",
+    "expected_academia_keywords": ["Campinas", "yoga"],
+    "description": "Modalidade yoga + cidade Campinas"
+  },
+  {
+    "id": "eval_007",
+    "query": "Pilates em Niterói com GuruPass",
+    "expected_municipio": "Niterói",
+    "expected_modalidade": "pilates",
+    "expected_academia_keywords": ["Niterói", "pilates"],
+    "description": "Primary Niterói vs related São Gonçalo"
+  },
+  {
+    "id": "eval_008",
+    "query": "Musculação em Santos no GuruPass",
+    "expected_municipio": "Santos",
+    "expected_modalidade": "musculacao",
+    "expected_academia_keywords": ["Santos", "musculação"],
+    "description": "Baixada — primary Santos acima de São Vicente related"
+  },
+  {
+    "id": "eval_009",
+    "query": "Academias de musculação em Mauá GuruPass",
+    "expected_municipio": "Mauá",
+    "expected_modalidade": "musculacao",
+    "expected_academia_keywords": ["Mauá", "musculação"],
+    "description": "Cidade ABC — meta.cidade Mauá primeiro"
+  },
+  {
+    "id": "eval_010",
+    "query": "Crossfit ou cross training em São Bernardo do Campo GuruPass",
+    "expected_municipio": "São Bernardo do Campo",
+    "expected_modalidade": "crossfit",
+    "expected_academia_keywords": ["São Bernardo", "cross"],
+    "description": "Nome longo de município + modalidade"
+  },
+  {
+    "id": "eval_011",
+    "query": "Funcional em Sorocaba no GuruPass",
+    "expected_municipio": "Sorocaba",
+    "expected_modalidade": "funcional",
+    "expected_academia_keywords": ["Sorocaba", "funcional"],
+    "description": "Interior SP — primary Sorocaba"
+  },
+  {
+    "id": "eval_012",
+    "query": "Natação em Campinas com GuruPass",
+    "expected_municipio": "Campinas",
+    "expected_modalidade": "natacao",
+    "expected_academia_keywords": ["Campinas", "nata"],
+    "description": "Modalidade natação + Campinas"
+  },
+  {
+    "id": "eval_013",
+    "query": "Academia barata em Poá GuruPass musculação",
+    "expected_municipio": "Poá",
+    "expected_modalidade": "musculacao",
+    "expected_academia_keywords": ["Poá", "musculação"],
+    "description": "Cidade pequena — related-only de Arujá não deve ganhar de Poá primary"
+  },
+  {
+    "id": "eval_014",
+    "query": "Dança ou zumba em Santo André GuruPass",
+    "expected_municipio": "Santo André",
+    "expected_modalidade": "danca",
+    "expected_academia_keywords": ["Santo André", "dança", "zumba"],
+    "description": "ABC — primary Santo André"
+  },
+  {
+    "id": "eval_015",
+    "query": "Musculação no Rio de Janeiro GuruPass créditos",
+    "expected_municipio": "Rio de Janeiro",
+    "expected_modalidade": "musculacao",
+    "expected_academia_keywords": ["Rio de Janeiro", "musculação", "créditos"],
+    "description": "Capital RJ — primary RJ vs Niterói related"
+  }
+]
