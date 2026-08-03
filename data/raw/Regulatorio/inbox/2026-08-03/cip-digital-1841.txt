@@ -1,0 +1,8 @@
+---
+source_url: https://www.confef.org.br/comunicacao/noticias/1841
+fetched_at: 2026-08-03T18:25:00Z
+tema: cip_digital
+decision: ingest
+---
+
+CIP digital via app e-CIP Sistema CONFEF/CREFs (Android/iOS). Quem já tem cartão novo: Adicionar Carteira no app. Renovação pelo app entre 30–90 dias do vencimento. Fonte notícia 1841.

@@ -1,0 +1,627 @@
+<!DOCTYPE html><html lang="pt-br" class="sr"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONFEF</title>
+
+    <!--FONT-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400..800&amp;display=swap" rel="stylesheet">
+
+    <!--ICON-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.min.css" rel="stylesheet">
+
+
+
+    <!--CSS-->
+    <link rel="stylesheet" href="/src/css/style.css">
+
+    <!-- DataTables CSS -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+
+    <!-- DataTables Bootstrap4 CSS -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap4.min.css">
+
+
+
+
+    <title>CONFEF</title>
+    <style>
+        /* Define uma altura fixa para as imagens */
+        #noticiasTable .image-container {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        #noticiasTable .image-container img {
+            height: 100%;
+            width: auto;
+            object-fit: cover;
+        }
+
+        /* Define uma largura fixa para a coluna de imagens */
+        #noticiasTable tbody td:first-child {
+            width: 250px;
+            /* Ajuste conforme necessário */
+        }
+
+        /* Garante que as informações ocupem o restante do espaço */
+        #noticiasTable tbody td:nth-child(2) {
+            width: calc(100% - 200px);
+            /* Ajuste conforme necessário */
+        }
+
+        /* Ocultar o cabeçalho da tabela */
+        #noticiasTable thead {
+            display: none;
+        }
+
+        /* Ocultar as setas de ordenação */
+        table.dataTable thead .sorting,
+        table.dataTable thead .sorting_asc,
+        table.dataTable thead .sorting_desc,
+        table.dataTable thead .sorting_asc_disabled,
+        table.dataTable thead .sorting_desc_disabled {
+            background: none;
+        }
+
+        /* Ocultar o seletor de itens por página */
+        .dataTables_length {
+            display: none;
+        }
+    </style>
+</head>
+
+<body style="height: 100%;">
+    <div class="body-container">
+        <!--HEADER-->
+        <header>
+            <div class="header-wrapper container mx-auto flex justify-between items-center px-8">
+  <div class="header-logo"> <a href="https://www.confef.org.br/"><img src="/src/assets/images/logo-confef.png" alt="Logo confef" srcset=""></a> </div>
+  <div class="header-wrapper-menu">
+    <button class="header-wrapper-menu-toggle"> <i class="ri-more-2-line"></i> </button>
+    <button class="header-wrapper-search-toggle" onclick="openSearchModal()"> <i class="ri-search-line"></i> </button>
+    <ul>
+      <!-- 1) <li> com o logo -->
+      <li class="info-logo-li text-nav_color hover:text-nav_color/80">
+        <a href="https://transparencia.confef.org.br/spw/PortalTransparencia/Consulta.aspx?CS=BRLJV7mtpFc=">
+          <img src="/src/assets/images/logo_informacao.png" style="width:100px; height:45px; object-fit:contain;">
+        </a>
+      </li>
+
+      <!-- 2) <li> com o texto, começa oculto -->
+      <li class="info-text-li text-nav_color font-bold hover:text-nav_color/80" style="display:none;">
+        <a href="https://transparencia.confef.org.br/spw/PortalTransparencia/Consulta.aspx?CS=BRLJV7mtpFc=">
+          Acesso à Informação
+        </a>
+      </li>
+
+      <!-- restante do menu mantém igual -->
+      <li class="text-nav_color font-bold hover:text-nav_color/80"><a href="/conselho/">Conselho</a></li>
+      <li class="text-nav_color font-bold hover:text-nav_color/80"><a href="/registro/">Registro</a></li>
+      <li class="text-nav_color font-bold hover:text-nav_color/80"><a href="/crefs/">CREFs</a></li>
+      <li class="text-nav_color font-bold hover:text-nav_color/80"><a href="/fale-conosco/">Fale Conosco</a></li>
+      <li class="text-nav_color font-bold hover:text-nav_color/80"><a href="/conteudo/2316">Antidopagem</a></li>
+      <li class="text-nav_color font-bold hover:text-nav_color/80 search-icon" onclick="openSearchModal()">
+        <a href="javascript:void(0);"><i class="ri-search-line"></i></a>
+      </li>
+    </ul>
+  </div>
+
+
+</div>
+<div class="header-main">
+  <div class="header-content-container">
+    <div class="header-extra flex items-center space-x-4">
+      <div class="header-hamburger">
+        <div class="header-hamburger-line"></div>
+        <div class="header-hamburger-line"></div>
+        <div class="header-hamburger-line"></div>
+      </div>
+      <div class="header-logo-sticky">
+        <a href="https://www.confef.org.br">
+          <img src="/src/assets/images/logo-confef.png" alt="Logo confef">
+        </a>
+      </div>
+    </div>
+
+    <div class="header-main-search">
+      <script language="javascript">
+        function validaBuscaRegistrados() {
+          if (document.form_busca_registrados.s.value == "") {
+            alert("Por gentileza informe algum termo para a busca.");
+            return false;
+          }
+        }
+      </script>
+      <form action="/registrados/" method="post" id="form-busca" name="form_busca_registrados" onsubmit="return validaBuscaRegistrados();" class="flex">
+
+        <input id="input-busca-registrados" name="s" class="placeholder:text-sm" placeholder="Buscar por registrados..." type="text">
+        <button class="h-fit w-fit text-center rounded-full text-nav_color"><i class="ri-arrow-right-s-fill text-4xl"></i></button>
+      </form>
+    </div>
+  </div>
+
+</div>
+<nav class="header-menu">
+  <div class="header-content-container">
+    <ul>
+      <li> <a href="/">Home</a> </li>
+      <li class="submenu"> <a href="#!">Conselho <i class="ri-arrow-down-s-fill"></i> </a>
+        <ul style="background-color:#ededed ">
+          <li><a href="/conteudo/16">História</a></li>
+          <li><a href="/conteudo/656">Regimento interno</a></li>
+          <li><a href="/conteudo/45">Missão</a></li>
+          <li><a href="/conselheiros">Conselheiros</a></li>
+          <li><a href="/conteudo/17">Câmaras</a></li>
+          <li><a href="/conteudo/1963">Eleições CONFEF 2020</a></li>
+          <li><a href="/conteudo/2209">Eleições CONFEF 2024</a></li>
+          <li><a href="/conteudo/2305">Eleições CONFEF 2024 - Complementares</a></li>
+          <li><a href="/conteudo/2371">Novos CREFs</a></li>
+        </ul>
+      </li>
+      <li class="submenu"> <a href="#!">Legislação <i class="ri-arrow-down-s-fill"></i> </a>
+        <ul style="background-color:#ededed">
+          <li><a href="/arquivos/Lei_9.696.pdf" target="_blank">Lei nº 9696/1998</a></li>
+          <li><a href="/resolucoes/">Resoluções</a></li>
+          <li><a href="/conteudo/2320">Enunciados</a></li>
+          <li><a href="/conteudo/1641">Notas Técnicas</a></li>
+          <li><a href="/legislacao">Legislação de outros órgãos</a></li>
+        </ul>
+      </li>
+      <li class="submenu"> <a href="#!">CREFs <i class="ri-arrow-down-s-fill"></i> </a>
+        <ul style="background-color:#ededed">
+          <li><a href="/crefs/">Informações</a></li>
+          <li><a href="/conteudo/2191">Regimentos</a></li>
+          <li><a href="/crefs/fundo/">Fundo de Desenvolvimento</a></li>
+
+        </ul>
+      </li>
+      <li class="submenu"> <a href="#!">Comunicação <i class="ri-arrow-down-s-fill"></i> </a>
+        <ul style="background-color:#ededed">
+          <li><a href="/comunicacao/revistaef/">Revista Educação Física</a></li>
+          <li><a href="/comunicacao/noticias/">Notícias</a></li>
+          <!-- <li><a href="/comunicacao/boletim/">Boletim Eletrônico</a></li> -->
+          <li class="submenu"> <a href="#!">Publicações <i class="ri-arrow-down-s-fill"></i> </a>
+            <ul style="background-color:#ededed">
+              <li><a href="/comunicacao/publicacoes/">Publicações Sistema CONFEF/CREFs</a></li>
+              <li><a href="/comunicacao/teses/">Teses e Dissertações</a></li>
+              <li><a href="/comunicacao/ideias/">Banco de Idéias</a></li>
+            </ul>
+          </li>
+          <li><a href="https://www.confef.org.br/biblioteca">Biblioteca</a></li>
+          <li><a href="/comunicacao/cursos">Cursos e Eventos</a></li>
+          <li><a href="/conteudo/2356">Política de uso das Redes Sociais</a></li>
+        </ul>
+      </li>
+      <li class="submenu"> <a href="#!">Serviços <i class="ri-arrow-down-s-fill"></i> </a>
+        <ul style="background-color:#ededed">
+          <li><a href="https://transparencia.confef.org.br/spw/PortalTransparencia/Arquivos/CONFEF/_ArquivoPortalTransparencia_0bd82dce-29ef-4e44-a16a-957386cea447.pdf" target="_blank">Carta de Serviços</a></li>
+          <li><a href="/chamamentos">Chamamento Público</a></li>
+          <li><a href="/licitacoes">Licitações</a></li>
+          <li><a href="/conteudo/2113">LGPD</a></li>
+          <li><a href="/links">Links</a></li>
+          <li><a href="/parcerias">Parcerias</a></li>
+          <li><a href="http://faq.confef.org.br/faq/">Perguntas e Respostas</a></li>
+          <li><a href="/selecao">Seleção Pública</a></li>
+          <li><a href="https://app.powerbi.com/view?r=eyJrIjoiOWM0NjJjMmItMDE4My00OTFiLTg1NjUtZjhlYWExZjkwNzNjIiwidCI6ImUwNmU5ZjAwLTNjMWUtNDM0Yy1iZWI5LTY4MDgxZTdhZTcwNiJ9" target="_blank">Plataforma Educação Física em Dados</a></li>
+
+        </ul>
+      </li>
+      <li class="submenu"> <a href="#!">Registro <i class="ri-arrow-down-s-fill"></i> </a>
+        <ul style="background-color:#ededed">
+          <li><a href="/conteudo/1681">Inscrição Pessoa Física</a></li>
+          <li><a href="/conteudo/1682">Inscrição Pessoa Jurídica</a></li>
+          <li><a href="/conteudo/1655">Registro Secundário</a></li>
+          <li><a href="/registrados">Pesquisa de Registrados</a></li>
+          <li><a href="/registradospj">Pesquisa de PJ Registradas</a></li>
+          <li><a href="/conteudo/2272">Especialidades</a></li>
+        </ul>
+      </li>
+      <li><a href="/fale-conosco/">Fale Conosco</a></li>
+      <li><a href="/ouvidoria/">Ouvidoria</a></li>
+
+      <!--<div class="search-box px-8 py-2">
+          <form id="searchForm" action="search_results.php" method="POST">
+            <button class="btn-search" type="button">
+              <i class="
+                            text-black text-sm ri-search-line"></i></button>
+            <input type="text" placeholder="Digite sua busca e aperte o enter" class="input-search" id="searchInput" onkeypress="checkEnter(event)">
+          </form>
+        </div> -->
+
+    </ul>
+  </div>
+</nav>
+
+<div id="searchModal" class="modal">
+  <div class="modal-content animacao-modal">
+    <span class="close-modal" onclick="closeSearchModal()">×</span>
+    <form action="/busca/index.php" method="POST" class="modal-search-form">
+      <input type="text" name="query" placeholder="Digite sua busca e aperte o enter" class="modal-input-search">
+    </form>
+  </div>
+</div>        </header>
+
+        <!--CONTEUDO PRINCIPAL-->
+        <main>
+            <div class="titulo">
+                <div class="grafia"></div>
+                <h1>Notícias</h1>
+            </div>
+            <section class="section-default noticias">
+                <div class="grid sm:grid-cols-3 items-center sm:grid-rows-1 grid-rows-3 gap-4 w-full sm:w-auto my-4 px-8">
+                    <input id="customSearchInput" type="text" class="border p-2 focus:outline-none" placeholder="Pesquisa.....">
+                    <select name="type" id="type" class="filter border p-2 focus:outline-none">
+                        <option selected="">Selecione uma ordenação</option>
+                        <option data-orderby="desc" data-column="4">Ordenar por data (Decrescente)</option>
+                        <option data-orderby="asc" data-column="4">Ordenar por data (Crescente)</option>
+                        <option data-orderby="asc" data-column="2">Ordenar por título (A-Z)</option>
+                        <option data-orderby="desc" data-column="2">Ordenar por título (Z-A)</option>
+                        <option data-orderby="asc" data-column="3">Ordenar por autor (A-Z)</option>
+                        <option data-orderby="desc" data-column="3">Ordenar por autor (Z-A)</option>
+                    </select>
+                    <select id="filterTag" class="border p-2 focus:outline-none"><option value="">Filtrar por tag</option><option value="18">#jogolimpo</option><option value="6">Abril Verde</option><option value="7">anuidade</option><option value="10">CIP</option><option value="21">congresso</option><option value="11">Educação Física Escolar</option><option value="20">esporte</option><option value="19">esteroides</option><option value="14">eventos</option><option value="16">legislação</option><option value="12">lgpd</option><option value="13">proteção de dados</option><option value="17">resolução</option><option value="15">Reunião Plenária</option><option value="9">Transparência</option><option value="22">treinamento</option></select>
+                </div>
+
+                <div id="noticiasTable_wrapper" class="dataTables_wrapper no-footer"><table id="noticiasTable" class="display dataTable no-footer" style="width: 100%;">
+                    <thead>
+                        <tr><th class="sorting" tabindex="0" aria-controls="noticiasTable" rowspan="1" colspan="1" aria-label="Imagem: Ordenar colunas de forma ascendente" style="width: 56px;">Imagem</th><th class="sorting" tabindex="0" aria-controls="noticiasTable" rowspan="1" colspan="1" aria-label="Informações: Ordenar colunas de forma ascendente" style="width: 827px;">Informações</th></tr>
+                    </thead>
+                    <tbody>
+                    <tr class="odd"><td><div class="image-container"><img class="sm:rounded-xl w-full object-cover" src="https://www.confef.org.br/confef/img/topo-noticias.jpg" alt="Presidente da Câmara de Educação Física Escolar do CONFEF comenta resultados da Pesquisa Nacional de Saúde do Escolar (PeNSE 2024)"></div></td><td>
+                        <div class="info-container">
+						<a href="1846">
+                            <h2 class="post-titulo font-extrabold md:text-lg text-[#105D4D]">Presidente da Câmara de Educação Física Escolar do CONFEF comenta resultados da Pesquisa Nacional de Saúde do Escolar (PeNSE 2024)</h2>
+                            <p class="mt-4 text-"><span class="font-bold">Autor:</span> Comunicação - CONFEF</p>
+                            <p class="mt-4"><span class="font-bold">Publicação:</span> 31/07/2026</p>
+						</a>
+                        </div>
+                    </td></tr><tr class="even"><td><div class="image-container"><img class="sm:rounded-xl w-full object-cover" src="https://www.confef.org.br/confef/img/topo-noticias.jpg" alt="Encontro reúne Contadores e Gestores de regionais no CONFEF"></div></td><td>
+                        <div class="info-container">
+						<a href="1845">
+                            <h2 class="post-titulo font-extrabold md:text-lg text-[#105D4D]">Encontro reúne Contadores e Gestores de regionais no CONFEF</h2>
+                            <p class="mt-4 text-"><span class="font-bold">Autor:</span> Comunicação - CONFEF</p>
+                            <p class="mt-4"><span class="font-bold">Publicação:</span> 30/07/2026</p>
+						</a>
+                        </div>
+                    </td></tr><tr class="odd"><td><div class="image-container"><img class="sm:rounded-xl w-full object-cover" src="https://www.confef.org.br/confef/img/noticias/1844.webp" alt="Departamentos de Registro reúnem-se em encontro no CONFEF"></div></td><td>
+                        <div class="info-container">
+						<a href="1844">
+                            <h2 class="post-titulo font-extrabold md:text-lg text-[#105D4D]">Departamentos de Registro reúnem-se em encontro no CONFEF</h2>
+                            <p class="mt-4 text-"><span class="font-bold">Autor:</span> Comunicação - CONFEF</p>
+                            <p class="mt-4"><span class="font-bold">Publicação:</span> 28/07/2026</p>
+						</a>
+                        </div>
+                    </td></tr><tr class="even"><td><div class="image-container"><img class="sm:rounded-xl w-full object-cover" src="https://www.confef.org.br/confef/img/noticias/1843.jpeg" alt="Seminário debate Copa do Mundo Feminina em POA"></div></td><td>
+                        <div class="info-container">
+						<a href="1843">
+                            <h2 class="post-titulo font-extrabold md:text-lg text-[#105D4D]">Seminário debate Copa do Mundo Feminina em POA</h2>
+                            <p class="mt-4 text-"><span class="font-bold">Autor:</span> Comunicação - CONFEF</p>
+                            <p class="mt-4"><span class="font-bold">Publicação:</span> 23/07/2026</p>
+						</a>
+                        </div>
+                    </td></tr><tr class="odd"><td><div class="image-container"><img class="sm:rounded-xl w-full object-cover" src="https://www.confef.org.br/confef/img/noticias/1842.webp" alt="Conselheiros Federais passam por palestra contra assédio"></div></td><td>
+                        <div class="info-container">
+						<a href="1842">
+                            <h2 class="post-titulo font-extrabold md:text-lg text-[#105D4D]">Conselheiros Federais passam por palestra contra assédio</h2>
+                            <p class="mt-4 text-"><span class="font-bold">Autor:</span> Comunicação - CONFEF</p>
+                            <p class="mt-4"><span class="font-bold">Publicação:</span> 07/07/2026</p>
+						</a>
+                        </div>
+                    </td></tr><tr class="even"><td><div class="image-container"><img class="sm:rounded-xl w-full object-cover" src="https://www.confef.org.br/confef/img/noticias/1841.jpeg" alt="Carteira de Identidade Profissional agora também está disponível na versão digital"></div></td><td>
+                        <div class="info-container">
+						<a href="1841">
+                            <h2 class="post-titulo font-extrabold md:text-lg text-[#105D4D]">Carteira de Identidade Profissional agora também está disponível na versão digital</h2>
+                            <p class="mt-4 text-"><span class="font-bold">Autor:</span> Comunicação - CONFEF</p>
+                            <p class="mt-4"><span class="font-bold">Publicação:</span> 24/06/2026</p>
+						</a>
+                        </div>
+                    </td></tr><tr class="odd"><td><div class="image-container"><img class="sm:rounded-xl w-full object-cover" src="https://www.confef.org.br/confef/img/noticias/1840.jpeg" alt="III Simpósio de Fiscalização em Educação Física padroniza protocolos"></div></td><td>
+                        <div class="info-container">
+						<a href="1840">
+                            <h2 class="post-titulo font-extrabold md:text-lg text-[#105D4D]">III Simpósio de Fiscalização em Educação Física padroniza protocolos</h2>
+                            <p class="mt-4 text-"><span class="font-bold">Autor:</span> Comunicação - CONFEF</p>
+                            <p class="mt-4"><span class="font-bold">Publicação:</span> 22/06/2026</p>
+						</a>
+                        </div>
+                    </td></tr><tr class="even"><td><div class="image-container"><img class="sm:rounded-xl w-full object-cover" src="https://www.confef.org.br/confef/img/noticias/1839.jpeg" alt="Presidente do CONFEF participa de reunião com presidente da Comissão de Educação da Câmara"></div></td><td>
+                        <div class="info-container">
+						<a href="1839">
+                            <h2 class="post-titulo font-extrabold md:text-lg text-[#105D4D]">Presidente do CONFEF participa de reunião com presidente da Comissão de Educação da Câmara</h2>
+                            <p class="mt-4 text-"><span class="font-bold">Autor:</span> Comunicação - CONFEF</p>
+                            <p class="mt-4"><span class="font-bold">Publicação:</span> 18/06/2026</p>
+						</a>
+                        </div>
+                    </td></tr><tr class="odd"><td><div class="image-container"><img class="sm:rounded-xl w-full object-cover" src="https://www.confef.org.br/confef/img/noticias/1837.jpg" alt="Cinco novos CREFs são criados"></div></td><td>
+                        <div class="info-container">
+						<a href="1837">
+                            <h2 class="post-titulo font-extrabold md:text-lg text-[#105D4D]">Cinco novos CREFs são criados</h2>
+                            <p class="mt-4 text-"><span class="font-bold">Autor:</span> Comunicação - CONFEF</p>
+                            <p class="mt-4"><span class="font-bold">Publicação:</span> 13/06/2026</p>
+						</a>
+                        </div>
+                    </td></tr><tr class="even"><td><div class="image-container"><img class="sm:rounded-xl w-full object-cover" src="https://www.confef.org.br/confef/img/noticias/1836.webp" alt="Sistema CONFEF/CREFs lança pesquisa para definir prioridades do legado da Copa do Mundo Feminina"></div></td><td>
+                        <div class="info-container">
+						<a href="1836">
+                            <h2 class="post-titulo font-extrabold md:text-lg text-[#105D4D]">Sistema CONFEF/CREFs lança pesquisa para definir prioridades do legado da Copa do Mundo Feminina</h2>
+                            <p class="mt-4 text-"><span class="font-bold">Autor:</span> Comunicação - CONFEF</p>
+                            <p class="mt-4"><span class="font-bold">Publicação:</span> 12/06/2026</p>
+						</a>
+                        </div>
+                    </td></tr></tbody>
+                </table><div class="dataTables_paginate paging_simple_numbers" id="noticiasTable_paginate"><a class="paginate_button previous disabled" aria-controls="noticiasTable" data-dt-idx="0" tabindex="-1" id="noticiasTable_previous">Anterior</a><span><a class="paginate_button current" aria-controls="noticiasTable" data-dt-idx="1" tabindex="0">1</a><a class="paginate_button " aria-controls="noticiasTable" data-dt-idx="2" tabindex="0">2</a><a class="paginate_button " aria-controls="noticiasTable" data-dt-idx="3" tabindex="0">3</a><a class="paginate_button " aria-controls="noticiasTable" data-dt-idx="4" tabindex="0">4</a><a class="paginate_button " aria-controls="noticiasTable" data-dt-idx="5" tabindex="0">5</a><span class="ellipsis">…</span><a class="paginate_button " aria-controls="noticiasTable" data-dt-idx="6" tabindex="0">168</a></span><a class="paginate_button next" aria-controls="noticiasTable" data-dt-idx="7" tabindex="0" id="noticiasTable_next">Próximo</a></div></div>
+
+            </section>
+        </main>
+
+        <!--FOOTER-->
+        <footer>
+            <div class="">
+  <div class="footer-conheca">
+    <div class="footer-conhece-filtro"></div>
+    <div class="footer-conhece-content">
+      <h3>Conheça um pouco mais do CONFEF</h3>
+      <div class="text-center">
+        <!-- Utilizando a tag <a> com o atributo href definindo o endereço -->
+        <a href="/conteudo/16" class="btn">Clique Aqui</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-nav">
+    <div class="footer-nav-content">
+      <div class="logo"> <img class="h-20 w-20" src="/src/assets/images/EF.png" alt="" style="margin-top: 40px;">
+        <div class="social">
+          <a href="https://www.facebook.com/confef/" target="_blank"><i class="ri-facebook-circle-fill"></i></a>
+          <a href="https://www.instagram.com/confef/" target="_blank"><i class="ri-instagram-line"></i></a>
+          <a href="https://www.youtube.com/user/SistemaCONFEFCREFs" target="_blank"><i class="ri-youtube-line"></i></a>
+        </div>
+        <div class="transparency-logo">
+          <a href="https://transparencia.confef.org.br" target="_blank">
+            <img src="/src/assets/images/icons/selo_acesso_horizontal.png" alt="Transparência" style="width: 110px; margin-top: 15px ;">
+          </a>
+        </div>
+      </div>
+      <div class="footer-nav-menu">
+        <h2 class="title">Conselho</h2>
+        <ul>
+          <!-- Usando os mesmos links da seção "Conselho" do header -->
+          <li><a href="/conteudo/16">História</a></li>
+          <li><a href="/conteudo/656">Regimento interno</a></li>
+          <li><a href="/conteudo/45">Missão</a></li>
+          <li><a href="/conselheiros">Conselheiros</a></li>
+          <li><a href="/conteudo/17">Câmaras</a></li>
+          <li><a href="/conteudo/1963">Eleições CONFEF 2020</a></li>
+          <li><a href="/conteudo/2209">Eleições CONFEF 2024</a></li>
+          <li><a href="/conteudo/2305">Eleições CONFEF 2024 - Complementares</a></li>
+          <li><a href="/conteudo/2371">Novos CREFs</a></li>
+        </ul>
+      </div>
+      <div class="footer-nav-menu">
+        <h2 class="title">Legislação</h2>
+        <ul>
+          <li><a href="/arquivos/Lei_9.696.pdf" target="_blank">Lei nº 9696/1998</a></li>
+          <li><a href="/resolucoes/">Resoluções</a></li>
+          <li><a href="/conteudo/2320">Enunciados</a></li>
+          <li><a href="/conteudo/1641">Notas Técnicas</a></li>
+          <li><a href="/legislacao">Legislação de outros órgãos</a></li>
+        </ul>
+      </div>
+      <div class="footer-nav-menu">
+        <h2 class="title">CREFs</h2>
+        <ul>
+          <!-- Usando os mesmos links da seção "CREFs" do header -->
+          <li><a href="/crefs/">Informações</a></li>
+          <li><a href="/conteudo/2191">Regimentos</a></li>
+        </ul>
+      </div>
+      <div class="footer-nav-menu">
+        <h2 class="title">Comunicação</h2>
+        <ul>
+          <!-- Usando os mesmos links da seção "Comunicação" do header -->
+          <li><a href="/comunicacao/revistaef/">Revista Educação Física</a></li>
+          <li><a href="/comunicacao/noticias/">Notícias</a></li>
+          <!-- <li><a href="/comunicacao/boletim/">Boletim Eletrônico</a></li> -->
+          <li class="footer-submenu-title">Publicações
+            <ul class="footer-submenu">
+              <li><a href="/comunicacao/publicacoes/">Publicações Sistema CONFEF/CREFs</a></li>
+              <li><a href="/comunicacao/teses/">Teses e Dissertações</a></li>
+              <li><a href="/comunicacao/ideias/">Banco de Idéias</a></li>
+            </ul>
+          </li>
+          <li><a href="https://www.confef.org.br/biblioteca">Biblioteca</a></li>
+          <li><a href="/comunicacao/cursos">Cursos e Eventos</a></li>
+          <li><a href="/conteudo/2356">Política de uso das Redes Sociais</a></li>
+        </ul>
+      </div>
+      <div class="footer-nav-menu">
+        <h2 class="title">Serviços</h2>
+        <ul>
+          <!-- Usando os mesmos links da seção "Serviços" do header -->
+          <li><a href="https://transparencia.confef.org.br/spw/PortalTransparencia/Arquivos/CONFEF/_ArquivoPortalTransparencia_0bd82dce-29ef-4e44-a16a-957386cea447.pdf" target="_blank">Carta de Serviços</a></li>
+          <li><a href="/chamamentos">Chamamento Público</a></li>
+          <li><a href="/licitacoes">Licitações</a></li>
+          <li><a href="/conteudo/2113">LGPD</a></li>
+          <li><a href="/links">Links</a></li>
+          <li><a href="/parcerias">Parcerias</a></li>
+          <li><a href="http://faq.confef.org.br/faq/">Perguntas e Respostas</a></li>
+          <li><a href="/selecao">Seleção Pública</a></li>
+          <li><a href="https://app.powerbi.com/view?r=eyJrIjoiOWM0NjJjMmItMDE4My00OTFiLTg1NjUtZjhlYWExZjkwNzNjIiwidCI6ImUwNmU5ZjAwLTNjMWUtNDM0Yy1iZWI5LTY4MDgxZTdhZTcwNiJ9" target="_blank">Plataforma Educação Física em Dados</a></li>
+
+        </ul>
+      </div>
+      <div class="footer-nav-menu">
+        <h2 class="title">Registro</h2>
+        <ul>
+          <!-- Usando os mesmos links da seção "Registro" do header -->
+          <li><a href="/conteudo/1681">Inscrição Pessoa Física</a></li>
+          <li><a href="/conteudo/1682">Inscrição Pessoa Jurídica</a></li>
+          <li><a href="/conteudo/1655">Registro Secundário</a></li>
+          <li><a href="/registrados">Pesquisa de Registrados</a></li>
+          <li><a href="/registradospj">Pesquisa de Pessoas Jurídicas Registradas</a></li>
+          <li><a href="/conteudo/2272">Especialidades</a></li>
+        </ul>
+      </div>
+      <!-- Adicionando o link "Fale Conosco" do header ao footer -->
+      <div class="footer-nav-menu">
+        <h2 class="title">Contato</h2>
+        <ul>
+          <li><a href="/fale-conosco/">Fale Conosco</a></li>
+          <li><a href="/ouvidoria/">Ouvidoria</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-endereco text-center">
+      <div class="footer-line"></div>
+      <p>
+        Av. República do Chile, 230 - 19º andar, Rio de Janeiro - RJ - CEP: 20031-170 <br>
+        CNPJ: 03.101.148/0001-00 - Email: confef@confef.org.br <br>
+        Telefone: (21) 2252-6275
+      </p>
+    </div>
+
+  </div>
+</div>
+
+</footer></div>        
+    
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- DataTables JS -->
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+
+
+    <!--SCROOL REVEAL-->
+    <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js"></script>
+
+    <!--JS-->
+    <script src="/src/js/main.js" defer=""></script>
+
+    <script>
+        /* CARREGAR TAGS NO SELECT */
+        $.ajax({
+            url: '/includes/api/comunicacao/tag_list.php',
+            type: 'GET',
+            dataType: 'json',
+            success: function(tags) {
+
+                let options = '<option value="">Filtrar por tag</option>';
+
+                tags.forEach(tag => {
+                    options += `<option value="${tag.id}">${tag.nome}</option>`;
+                });
+
+                $('#filterTag').html(options);
+
+                // 🔥 Verifica se existe parâmetro 'tag' na URL e aplica ao select
+                const urlParams = new URLSearchParams(window.location.search);
+                const tagId = urlParams.get('tag');
+                if (tagId) {
+                    $('#filterTag').val(tagId);
+                    // O trigger('change') será pego pelo listener dentro do document.ready se já estiver pronto,
+                    // ou podemos chamar table.draw() lá dentro.
+                    $('#filterTag').trigger('change');
+                }
+            }
+        });
+
+        $(document).ready(function() {
+            var table = $('#noticiasTable').DataTable({
+                "processing": true,
+                "serverSide": true,
+                "ajax": {
+                    "url": "/includes/api/comunicacao/ssp.noticias.php",
+                    "type": "GET",
+                    "data": function(d) {
+
+                        d.columns[0].data = 'nm_imagem';
+                        d.columns[1].data = null;
+                        d.columns[2].data = 'nm_titulo';
+                        d.columns[3].data = 'nm_autor';
+                        d.columns[4].data = 'dt_inclusao';
+                        d.columns[5].data = 'id';
+
+                        d.search.value = $('#customSearchInput').val();
+
+                        // 🔥 NOVO FILTRO
+                        d.tag = $('#filterTag').val();
+
+                        var orderColumn = $('#type option:selected').attr('data-column');
+                        var orderDir = $('#type option:selected').attr('data-orderBy');
+
+                        if (orderColumn && orderDir) {
+                            d.order = [{
+                                column: table.column(orderColumn).index(),
+                                dir: orderDir
+                            }];
+                        }
+                    }
+
+                },
+                "columns": [{
+                        "data": "nm_imagem",
+                        "render": function(data, type, row) {
+                            let imgSrc = data ? `https://www.confef.org.br/confef/img/noticias/${data}` : "https://www.confef.org.br/confef/img/topo-noticias.jpg";
+                            return `<div class="image-container"><img class="sm:rounded-xl w-full object-cover" src="${imgSrc}" alt="${row.nm_titulo}"></div>`;
+                        }
+                    },
+                    {
+                        "data": null,
+                        "render": function(data, type, row) {
+                            return `
+                        <div class="info-container">
+						<a href="${row.id}">
+                            <h2 class="post-titulo font-extrabold md:text-lg text-[#105D4D]">${row.nm_titulo}</h2>
+                            <p class="mt-4 text-"><span class="font-bold">Autor:</span> ${row.nm_autor}</p>
+                            <p class="mt-4"><span class="font-bold">Publicação:</span> ${row.dt_inclusao}</p>
+						</a>
+                        </div>
+                    `;
+                        }
+                    },
+                    {
+                        "data": "nm_titulo",
+                        "visible": false
+                    },
+                    {
+                        "data": "nm_autor",
+                        "visible": false
+                    },
+                    {
+                        "data": "dt_inclusao",
+                        "visible": false
+                    },
+                    {
+                        "data": "id",
+                        "visible": false
+                    }
+                ],
+                "order": [
+                    [5, 'desc']
+                ], // Ordenar pela coluna "dt_inclusao" por padrão
+                "language": {
+                    "url": "https://cdn.datatables.net/plug-ins/1.10.20/i18n/Portuguese-Brasil.json"
+                },
+                "pagingType": "simple_numbers",
+                "pageLength": 10,
+                "dom": 'tp'
+            });
+
+            $('#filterTag').change(function() {
+                table.draw();
+            });
+
+            $('#customSearchInput').keyup(function() {
+                table.draw();
+            });
+
+            $('#type').change(function() {
+                // Redesenhe a tabela quando o filtro de ordenação for alterado
+                table.draw();
+            });
+        });
+    </script>
+
+
+</body></html>
