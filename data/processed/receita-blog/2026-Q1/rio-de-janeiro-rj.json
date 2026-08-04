@@ -1,0 +1,93 @@
+{
+  "generated_at": "2026-08-04T17:03:28.507Z",
+  "quarter": "2026-Q1",
+  "city_key": "RJ|Rio de Janeiro",
+  "city_label": "Rio de Janeiro/RJ",
+  "uf": "RJ",
+  "ibge": "3304557",
+  "rankings": {
+    "crescimento": {
+      "rank": 3,
+      "saldo": 40
+    }
+  },
+  "movimento": {
+    "ativos": 1136,
+    "entrantes": 49,
+    "baixados": 9,
+    "saldo": 40
+  },
+  "vida_baixados": {
+    "n": 9,
+    "median_years": 9.286789869952088,
+    "faixas": {
+      "lt_1y": 1,
+      "y1_3": 0,
+      "y3_5": 0,
+      "y5_plus": 8
+    },
+    "faixas_pct": {
+      "lt_1y": 11.11111111111111,
+      "y1_3": 0,
+      "y3_5": 0,
+      "y5_plus": 88.88888888888889
+    }
+  },
+  "bairros_fechamento": [
+    {
+      "bairro": "PORTUGUESA",
+      "n": 2,
+      "median_years": 5.444216290212183
+    }
+  ],
+  "onda": {
+    "lookback_months": 3,
+    "baixados_por_mes": [
+      {
+        "month": "2026-01",
+        "n": 3
+      },
+      {
+        "month": "2026-02",
+        "n": 3
+      },
+      {
+        "month": "2026-03",
+        "n": 3
+      }
+    ]
+  },
+  "gymsite": {
+    "status": "ok",
+    "pib": {
+      "populacao": 6730729,
+      "pib_reais": 418462360000,
+      "pib_per_capita": 62171.92,
+      "ano": 2023,
+      "fonte": "BigQuery basedosdados (br_ibge_pib + br_ibge_populacao)"
+    },
+    "renda": {
+      "n_bairros": 162,
+      "renda_pc_mediana": 1215.185,
+      "top3": [
+        {
+          "bairro": "Lagoa",
+          "renda_pc": 7957.79
+        },
+        {
+          "bairro": "Leblon",
+          "renda_pc": 7802.06
+        },
+        {
+          "bairro": "Ipanema",
+          "renda_pc": 6947.49
+        }
+      ],
+      "fonte": "renda_bairro (GymSite / IBGE Censo 2022)"
+    }
+  },
+  "fontes": [
+    "Receita Federal CNAE 9313100 (CSV processado)",
+    "GymSite municipio_pib + renda_bairro (IBGE)"
+  ]
+}

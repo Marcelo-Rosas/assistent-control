@@ -1,0 +1,45 @@
+{
+  "generated_at": "2026-08-04T17:03:28.755Z",
+  "quarter": "2026-Q1",
+  "n": 3,
+  "months": [
+    "2026-01",
+    "2026-02",
+    "2026-03"
+  ],
+  "end_month": "2026-03",
+  "onda_months": 3,
+  "skip_enrich": false,
+  "fichas": [
+    {
+      "path": "data/processed/receita-blog/2026-Q1/fortaleza-ce.json",
+      "city_key": "CE|Fortaleza",
+      "angle": "mortalidade",
+      "gymsite": "ok"
+    },
+    {
+      "path": "data/processed/receita-blog/2026-Q1/brasilia-df.json",
+      "city_key": "DF|Brasília",
+      "angle": "mortalidade",
+      "gymsite": "ok"
+    },
+    {
+      "path": "data/processed/receita-blog/2026-Q1/belo-horizonte-mg.json",
+      "city_key": "MG|Belo Horizonte",
+      "angle": "crescimento",
+      "gymsite": "ok"
+    },
+    {
+      "path": "data/processed/receita-blog/2026-Q1/rio-de-janeiro-rj.json",
+      "city_key": "RJ|Rio de Janeiro",
+      "angle": "crescimento",
+      "gymsite": "ok"
+    },
+    {
+      "path": "data/processed/receita-blog/2026-Q1/sao-paulo-sp.json",
+      "city_key": "SP|São Paulo",
+      "angle": "ambos",
+      "gymsite": "ok"
+    }
+  ]
+}

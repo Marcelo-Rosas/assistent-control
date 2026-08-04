@@ -1,0 +1,93 @@
+{
+  "generated_at": "2026-08-04T17:03:27.776Z",
+  "quarter": "2026-Q1",
+  "city_key": "CE|Fortaleza",
+  "city_label": "Fortaleza/CE",
+  "uf": "CE",
+  "ibge": "2304400",
+  "rankings": {
+    "mortalidade": {
+      "rank": 3,
+      "baixados": 14
+    }
+  },
+  "movimento": {
+    "ativos": 432,
+    "entrantes": 17,
+    "baixados": 14,
+    "saldo": 3
+  },
+  "vida_baixados": {
+    "n": 14,
+    "median_years": 6.195756331279945,
+    "faixas": {
+      "lt_1y": 2,
+      "y1_3": 1,
+      "y3_5": 0,
+      "y5_plus": 11
+    },
+    "faixas_pct": {
+      "lt_1y": 14.285714285714285,
+      "y1_3": 7.142857142857142,
+      "y3_5": 0,
+      "y5_plus": 78.57142857142857
+    }
+  },
+  "bairros_fechamento": [
+    {
+      "bairro": "ITAPERI",
+      "n": 2,
+      "median_years": 9.731690622861054
+    }
+  ],
+  "onda": {
+    "lookback_months": 3,
+    "baixados_por_mes": [
+      {
+        "month": "2026-01",
+        "n": 6
+      },
+      {
+        "month": "2026-02",
+        "n": 3
+      },
+      {
+        "month": "2026-03",
+        "n": 5
+      }
+    ]
+  },
+  "gymsite": {
+    "status": "ok",
+    "pib": {
+      "populacao": 2578483,
+      "pib_reais": 86939832000,
+      "pib_per_capita": 33717.43,
+      "ano": 2023,
+      "fonte": "BigQuery basedosdados (br_ibge_pib + br_ibge_populacao)"
+    },
+    "renda": {
+      "n_bairros": 121,
+      "renda_pc_mediana": 783.93,
+      "top3": [
+        {
+          "bairro": "Guararapes",
+          "renda_pc": 5184.28
+        },
+        {
+          "bairro": "Meireles",
+          "renda_pc": 5125.78
+        },
+        {
+          "bairro": "Cocó",
+          "renda_pc": 4952.75
+        }
+      ],
+      "fonte": "renda_bairro (GymSite / IBGE Censo 2022)"
+    }
+  },
+  "fontes": [
+    "Receita Federal CNAE 9313100 (CSV processado)",
+    "GymSite municipio_pib + renda_bairro (IBGE)"
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "generated_at": "2026-08-04T17:03:28.177Z",
+  "quarter": "2026-Q1",
+  "city_key": "DF|Brasília",
+  "city_label": "Brasília/DF",
+  "uf": "DF",
+  "ibge": "5300108",
+  "rankings": {
+    "mortalidade": {
+      "rank": 2,
+      "baixados": 17
+    }
+  },
+  "movimento": {
+    "ativos": 636,
+    "entrantes": 31,
+    "baixados": 17,
+    "saldo": 14
+  },
+  "vida_baixados": {
+    "n": 17,
+    "median_years": 5.136208076659822,
+    "faixas": {
+      "lt_1y": 1,
+      "y1_3": 4,
+      "y3_5": 3,
+      "y5_plus": 9
+    },
+    "faixas_pct": {
+      "lt_1y": 5.88235294117647,
+      "y1_3": 23.52941176470588,
+      "y3_5": 17.647058823529413,
+      "y5_plus": 52.94117647058824
+    }
+  },
+  "bairros_fechamento": [
+    {
+      "bairro": "ASA NORTE",
+      "n": 2,
+      "median_years": 4.084873374401095
+    },
+    {
+      "bairro": "SAMAMBAIA SUL (SAMAMBAIA)",
+      "n": 2,
+      "median_years": 7.195071868583162
+    }
+  ],
+  "onda": {
+    "lookback_months": 3,
+    "baixados_por_mes": [
+      {
+        "month": "2026-01",
+        "n": 6
+      },
+      {
+        "month": "2026-02",
+        "n": 6
+      },
+      {
+        "month": "2026-03",
+        "n": 5
+      }
+    ]
+  },
+  "gymsite": {
+    "status": "ok",
+    "pib": {
+      "populacao": 2996899,
+      "pib_reais": 365669108000,
+      "pib_per_capita": 122015.83,
+      "ano": 2023,
+      "fonte": "BigQuery basedosdados (br_ibge_pib + br_ibge_populacao)"
+    },
+    "renda": {
+      "n_bairros": 1,
+      "renda_pc_mediana": 2043.93,
+      "top3": [
+        {
+          "bairro": "Brasília",
+          "renda_pc": 2043.93
+        }
+      ],
+      "fonte": "renda_bairro (GymSite / IBGE Censo 2022)"
+    }
+  },
+  "fontes": [
+    "Receita Federal CNAE 9313100 (CSV processado)",
+    "GymSite municipio_pib + renda_bairro (IBGE)"
+  ]
+}
