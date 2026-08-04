@@ -1,0 +1,87 @@
+{
+  "generated_at": "2026-08-04T17:03:28.352Z",
+  "quarter": "2026-Q1",
+  "city_key": "MG|Belo Horizonte",
+  "city_label": "Belo Horizonte/MG",
+  "uf": "MG",
+  "ibge": "3106200",
+  "rankings": {
+    "crescimento": {
+      "rank": 2,
+      "saldo": 51
+    }
+  },
+  "movimento": {
+    "ativos": 596,
+    "entrantes": 61,
+    "baixados": 10,
+    "saldo": 51
+  },
+  "vida_baixados": {
+    "n": 10,
+    "median_years": 2.269678302532512,
+    "faixas": {
+      "lt_1y": 4,
+      "y1_3": 2,
+      "y3_5": 1,
+      "y5_plus": 3
+    },
+    "faixas_pct": {
+      "lt_1y": 40,
+      "y1_3": 20,
+      "y3_5": 10,
+      "y5_plus": 30
+    }
+  },
+  "bairros_fechamento": [],
+  "onda": {
+    "lookback_months": 3,
+    "baixados_por_mes": [
+      {
+        "month": "2026-01",
+        "n": 2
+      },
+      {
+        "month": "2026-02",
+        "n": 4
+      },
+      {
+        "month": "2026-03",
+        "n": 4
+      }
+    ]
+  },
+  "gymsite": {
+    "status": "ok",
+    "pib": {
+      "populacao": 2415872,
+      "pib_reais": 130197671000,
+      "pib_per_capita": 53892.62,
+      "ano": 2023,
+      "fonte": "BigQuery basedosdados (br_ibge_pib + br_ibge_populacao)"
+    },
+    "renda": {
+      "n_bairros": 471,
+      "renda_pc_mediana": 834.18,
+      "top3": [
+        {
+          "bairro": "Senhor dos Passos",
+          "renda_pc": 13735.7
+        },
+        {
+          "bairro": "Belvedere",
+          "renda_pc": 8301.65
+        },
+        {
+          "bairro": "Savassi",
+          "renda_pc": 6914.31
+        }
+      ],
+      "fonte": "renda_bairro (GymSite / IBGE Censo 2022)"
+    }
+  },
+  "fontes": [
+    "Receita Federal CNAE 9313100 (CSV processado)",
+    "GymSite municipio_pib + renda_bairro (IBGE)"
+  ]
+}

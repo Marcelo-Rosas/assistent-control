@@ -20,6 +20,7 @@ import { FuguPlayground } from './components/playground/FuguPlayground';
 import { KnowledgeBase } from './components/knowledge/KnowledgeBase';
 import { RagPlayground } from './components/RagPlayground';
 import { PipelineLlmBar } from './components/PipelineLlmBar';
+import ReceitaMercadoDashboard from './components/ReceitaMercadoDashboard';
 
 const AppLayout: React.FC = () => {
   const { currentRole, setCurrentRole } = useRoles();
@@ -112,6 +113,7 @@ const App: React.FC = () => {
             <Route path="/content" element={<ErosContentQueue />} />
             <Route path="/knowledge" element={<KnowledgeBase />} />
             <Route path="/rag" element={<RagPlayground />} />
+            <Route path="/receita" element={<ReceitaMercadoDashboard />} />
             <Route path="/scheduling" element={<Scheduling />} />
             <Route path="/playground" element={<FuguPlayground />} />
             <Route path="/team" element={<Team />} />
