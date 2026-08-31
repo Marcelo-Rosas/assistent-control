@@ -242,8 +242,22 @@ async function main(): Promise<void> {
     CityMovimento & { meta: ReturnType<typeof resolveCityMeta> }
   >();
 
+  // Memoize by (uf|municipio): resolveCityMeta does padRfb + two lookups +
+  // template strings, and it is otherwise recomputed for every row inside the
+  // per-city loops below — O(cities x rows) redundant work on a full CSV.
+  const metaCache = new Map<string, ReturnType<typeof resolveCityMeta>>();
+  const cityMeta = (uf: string, municipio: string) => {
+    const ck = `${uf}|${municipio}`;
+    let m = metaCache.get(ck);
+    if (!m) {
+      m = resolveCityMeta(uf, municipio);
+      metaCache.set(ck, m);
+    }
+    return m;
+  };
+
   const ensure = (row: CnpjRow) => {
-    const meta = resolveCityMeta(row.uf, row.municipio);
+    const meta = cityMeta(row.uf, row.municipio);
     let cur = byCity.get(meta.key);
     if (!cur) {
       cur = {
@@ -263,15 +277,20 @@ async function main(): Promise<void> {
   };
 
   for (const row of ativosRaw) {
-    if (row.situacao_cadastral !== '02') continue;
-    ensure(row).ativos += 1;
-  }
-
-  for (const row of baixadaRaw) {
+    if (row.situacao_cadastral === '02') {
+      ensure(row).ativos += 1;
+    }
+    // Entrantes must use the same source/rule as scout-kpis
+    // (filterEntrantes over the ativos CSV): companies opened in-quarter that
+    // are still active live only in the ativos CSV, so deriving entrantes from
+    // baixadaRaw undercounts them and diverges from the KPI dashboard.
     const inicio = parseRfDate(row.data_inicio_atividade);
     if (inicio && monthSet.has(monthOf(inicio))) {
       ensure(row).entrantes += 1;
     }
+  }
+
+  for (const row of baixadaRaw) {
     if (row.situacao_cadastral === '08') {
       const baixa = parseRfDate(row.data_situacao_cadastral);
       if (baixa && monthSet.has(monthOf(baixa))) {
@@ -299,7 +318,7 @@ async function main(): Promise<void> {
   const { mortalidade, crescimento } = rankTopN(cities, args.n);
   const merged = mergeRankedCities(mortalidade, crescimento);
 
-  const resolveKey = (row: CnpjRow) => resolveCityMeta(row.uf, row.municipio).key;
+  const resolveKey = (row: CnpjRow) => cityMeta(row.uf, row.municipio).key;
 
   const baixadosQuarter = baixadaRaw.filter((row) => {
     if (row.situacao_cadastral !== '08') return false;
