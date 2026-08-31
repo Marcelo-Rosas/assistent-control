@@ -193,4 +193,62 @@ describe('buildKpiTree', () => {
     assert.equal(sp.ativos, 1);
     assert.equal(sp.diff_novos, 0);
   });
+
+  const sumTree = (nodes: { diff_novos: number; diff_baixados: number }[]) =>
+    nodes.reduce(
+      (acc, n) => {
+        acc.novos += n.diff_novos;
+        acc.baixados += n.diff_baixados;
+        return acc;
+      },
+      { novos: 0, baixados: 0 },
+    );
+
+  it('reconciles totals with drill-down when a diff CNPJ is only in diffRowLookup', () => {
+    const ativosRows = FIXTURE.filter((r) => r.situacao_cadastral === '02');
+    // 66666… exists only in the current snapshot (diffRowLookup), not in
+    // ativos/entrantes/baixados — the exact case that used to be dropped.
+    const extra: CnpjRow = {
+      cnpj: '66666666000166',
+      situacao_cadastral: '08',
+      data_inicio_atividade: '20210101',
+      data_situacao_cadastral: '20250110',
+      uf: 'CE',
+      municipio: '1389',
+      bairro: 'Meireles',
+      nome_fantasia: 'Só no snapshot',
+    };
+    const kpis = buildKpiTree({
+      month: '2025-01',
+      ativosRows,
+      entrantes: [],
+      baixados: [],
+      diffNovosCnpjs: ['22222222000122', '66666666000166'],
+      diffBaixadosCnpjs: [],
+      diffRowLookup: new Map([[extra.cnpj, extra]]),
+      resolveCity,
+      source: { ativos_csv: 'a', ativo_baixada_csv: 'b', snapshot_prev: null },
+    });
+    assert.equal(kpis.totals.diff_novos, 2);
+    assert.equal(sumTree(kpis.by_uf).novos, kpis.totals.diff_novos);
+  });
+
+  it('routes unlocatable diff CNPJs to a ?? bucket so totals still reconcile', () => {
+    const ativosRows = FIXTURE.filter((r) => r.situacao_cadastral === '02');
+    const kpis = buildKpiTree({
+      month: '2025-01',
+      ativosRows,
+      entrantes: [],
+      baixados: [],
+      diffNovosCnpjs: ['99999999000199'], // absent everywhere
+      diffBaixadosCnpjs: [],
+      resolveCity,
+      source: { ativos_csv: 'a', ativo_baixada_csv: 'b', snapshot_prev: null },
+    });
+    assert.equal(kpis.totals.diff_novos, 1);
+    assert.equal(sumTree(kpis.by_uf).novos, 1);
+    const unknown = kpis.by_uf.find((n) => n.key === '??');
+    assert.ok(unknown);
+    assert.equal(unknown.diff_novos, 1);
+  });
 });

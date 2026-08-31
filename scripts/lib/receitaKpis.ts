@@ -137,11 +137,12 @@ function emptyMetrics(): GeoMetrics {
 }
 
 function addMetrics(target: GeoMetrics, delta: Partial<GeoMetrics>): void {
-  if (delta.ativos) target.ativos += delta.ativos;
-  if (delta.entrantes_mes) target.entrantes_mes += delta.entrantes_mes;
-  if (delta.baixados_mes) target.baixados_mes += delta.baixados_mes;
-  if (delta.diff_novos) target.diff_novos += delta.diff_novos;
-  if (delta.diff_baixados) target.diff_baixados += delta.diff_baixados;
+  // Test presence, not truthiness — a legitimate 0 delta must not be skipped.
+  if (delta.ativos !== undefined) target.ativos += delta.ativos;
+  if (delta.entrantes_mes !== undefined) target.entrantes_mes += delta.entrantes_mes;
+  if (delta.baixados_mes !== undefined) target.baixados_mes += delta.baixados_mes;
+  if (delta.diff_novos !== undefined) target.diff_novos += delta.diff_novos;
+  if (delta.diff_baixados !== undefined) target.diff_baixados += delta.diff_baixados;
 }
 
 function bairroLabel(raw: string): string {
@@ -271,7 +272,29 @@ export type BuildKpiTreeParams = {
   resolveCity: (uf: string, municipioCode: string) => string;
   source: ReceitaKpisFile['source'];
   generatedAt?: string;
+  /**
+   * Optional full CNPJ→row map (e.g. the current-snapshot rows) so every diff
+   * CNPJ can be geo-located. Without it, diff CNPJs absent from
+   * ativos/entrantes/baixados would be dropped from the tree while still
+   * counted in the headline totals, so the cards would not reconcile with the
+   * drill-down sums.
+   */
+  diffRowLookup?: Map<string, CnpjRow>;
 };
+
+/** Synthetic row for a diff CNPJ we couldn't geo-locate, so it still counts. */
+function unknownGeoRow(cnpj: string): CnpjRow {
+  return {
+    cnpj,
+    situacao_cadastral: '',
+    data_inicio_atividade: '',
+    data_situacao_cadastral: '',
+    uf: '??',
+    municipio: '',
+    bairro: '',
+    nome_fantasia: '',
+  };
+}
 
 export function buildKpiTree(params: BuildKpiTreeParams): ReceitaKpisFile {
   const {
@@ -284,10 +307,16 @@ export function buildKpiTree(params: BuildKpiTreeParams): ReceitaKpisFile {
     resolveCity,
     source,
     generatedAt = new Date().toISOString(),
+    diffRowLookup,
   } = params;
 
   const tree = new Map<string, UfBucket>();
   const rowLookup = buildRowLookup([...ativosRows, ...entrantes, ...baixados]);
+  if (diffRowLookup) {
+    for (const [cnpj, row] of diffRowLookup) {
+      if (!rowLookup.has(cnpj)) rowLookup.set(cnpj, row);
+    }
+  }
 
   for (const row of ativosRows) {
     if (row.situacao_cadastral !== '02') continue;
@@ -302,14 +331,16 @@ export function buildKpiTree(params: BuildKpiTreeParams): ReceitaKpisFile {
     applyRowMetrics(tree, row, resolveCity, { baixados_mes: 1 });
   }
 
+  // Every diff CNPJ must land in the tree so the headline totals reconcile with
+  // the drill-down sums; unlocatable ones go to a synthetic '??' bucket.
   for (const cnpj of diffNovosCnpjs) {
-    const row = rowLookup.get(cnpj);
-    if (row) applyRowMetrics(tree, row, resolveCity, { diff_novos: 1 });
+    const row = rowLookup.get(cnpj) ?? unknownGeoRow(cnpj);
+    applyRowMetrics(tree, row, resolveCity, { diff_novos: 1 });
   }
 
   for (const cnpj of diffBaixadosCnpjs) {
-    const row = rowLookup.get(cnpj);
-    if (row) applyRowMetrics(tree, row, resolveCity, { diff_baixados: 1 });
+    const row = rowLookup.get(cnpj) ?? unknownGeoRow(cnpj);
+    applyRowMetrics(tree, row, resolveCity, { diff_baixados: 1 });
   }
 
   const aggregated = sumTreeMetrics(tree);
@@ -324,8 +355,8 @@ export function buildKpiTree(params: BuildKpiTreeParams): ReceitaKpisFile {
       entrantes_mes: aggregated.entrantes_mes,
       baixados_mes: aggregated.baixados_mes,
       saldo_mes: aggregated.entrantes_mes - aggregated.baixados_mes,
-      diff_novos: diffNovosCnpjs.length,
-      diff_baixados: diffBaixadosCnpjs.length,
+      diff_novos: aggregated.diff_novos,
+      diff_baixados: aggregated.diff_baixados,
     },
     by_uf: treeToNodes(tree),
   };

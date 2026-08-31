@@ -163,6 +163,62 @@ function resolveCity(uf: string, municipioCode: string): string {
   return `RFB:${code}`;
 }
 
+/** Per-month snapshot filename derived from the base snapshot path. */
+function monthSnapshotPath(basePath: string, month: string): string {
+  return path.join(path.dirname(basePath), `receita-cnpj-snapshot-${month}.json`);
+}
+
+/** Month recorded inside a snapshot file, or null. */
+function snapshotMonth(file: string): string | null {
+  if (!fs.existsSync(file)) return null;
+  try {
+    const raw = JSON.parse(fs.readFileSync(file, 'utf-8')) as { month?: string };
+    return typeof raw.month === 'string' && /^\d{4}-\d{2}$/.test(raw.month)
+      ? raw.month
+      : null;
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * Load the chronologically-previous snapshot for `month`, so re-running the
+ * same month diffs against the prior month (not itself) and running months out
+ * of order never corrupts a neighbour's baseline. Prefers per-month history
+ * files; falls back to the legacy pointer only when its month is strictly
+ * before `month`.
+ */
+function loadPrevSnapshot(
+  basePath: string,
+  month: string,
+): { map: Map<string, string>; month: string | null; fromLegacy: boolean } {
+  const dir = path.dirname(basePath);
+  const re = /^receita-cnpj-snapshot-(\d{4}-\d{2})\.json$/;
+  let bestMonth: string | null = null;
+  let bestFile: string | null = null;
+  try {
+    for (const f of fs.readdirSync(dir)) {
+      const m = re.exec(f);
+      if (!m) continue;
+      const mm = m[1];
+      if (mm < month && (!bestMonth || mm > bestMonth)) {
+        bestMonth = mm;
+        bestFile = path.join(dir, f);
+      }
+    }
+  } catch {
+    /* dir ausente */
+  }
+  if (bestFile) {
+    return { map: loadSnapshot(bestFile), month: bestMonth, fromLegacy: false };
+  }
+  const legacyMonth = snapshotMonth(basePath);
+  if (legacyMonth && legacyMonth < month) {
+    return { map: loadSnapshot(basePath), month: legacyMonth, fromLegacy: true };
+  }
+  return { map: new Map(), month: null, fromLegacy: false };
+}
+
 function loadSnapshot(file: string): Map<string, string> {
   const map = new Map<string, string>();
   if (!fs.existsSync(file)) return map;
@@ -207,7 +263,16 @@ function main(): void {
   const baixadaRaw = parseCsv(fs.readFileSync(args.baixadaCsv, 'utf-8'));
   const baixadaRows = baixadaRaw.map(toCnpjRow).filter((r) => r.cnpj);
 
-  const prev = loadSnapshot(args.snapshot);
+  const prevSnap = loadPrevSnapshot(args.snapshot, args.month);
+  const prev = prevSnap.map;
+  // Migrate a legacy-pointer predecessor into its own per-month history file so
+  // future re-runs (which advance the pointer past it) still find the baseline.
+  if (prevSnap.fromLegacy && prevSnap.month) {
+    const predFile = monthSnapshotPath(args.snapshot, prevSnap.month);
+    if (!fs.existsSync(predFile)) {
+      fs.copyFileSync(args.snapshot, predFile);
+    }
+  }
   const curr = new Map<string, string>();
   const lookup = new Map<string, CnpjRow>();
   for (const r of baixadaRows) {
@@ -226,14 +291,17 @@ function main(): void {
     baixados,
     diffNovosCnpjs: diff.novos,
     diffBaixadosCnpjs: diff.baixados,
+    diffRowLookup: lookup,
     resolveCity,
     source: {
       ativos_csv: path.relative(ROOT, args.ativosCsv).replace(/\\/g, '/'),
       ativo_baixada_csv: path
         .relative(ROOT, args.baixadaCsv)
         .replace(/\\/g, '/'),
-      snapshot_prev: fs.existsSync(args.snapshot)
-        ? path.relative(ROOT, args.snapshot).replace(/\\/g, '/')
+      snapshot_prev: prevSnap.month
+        ? path
+            .relative(ROOT, monthSnapshotPath(args.snapshot, prevSnap.month))
+            .replace(/\\/g, '/')
         : null,
     },
   });
@@ -324,20 +392,25 @@ function main(): void {
 
   const snapObj: Record<string, string> = {};
   for (const [cnpj, sit] of curr) snapObj[cnpj] = sit;
-  fs.writeFileSync(
-    args.snapshot,
-    JSON.stringify(
-      {
-        generated_at: kpis.generated_at,
-        month: args.month,
-        cnpjs: snapObj,
-      },
-      null,
-      0,
-    ),
-    'utf-8',
+  const snapPayload = JSON.stringify(
+    {
+      generated_at: kpis.generated_at,
+      month: args.month,
+      cnpjs: snapObj,
+    },
+    null,
+    0,
   );
-  paths.snapshot = path.relative(ROOT, args.snapshot).replace(/\\/g, '/');
+  // History source of truth: one snapshot per month, so re-runs are idempotent
+  // and out-of-order months never overwrite a neighbour's baseline.
+  const monthSnap = monthSnapshotPath(args.snapshot, args.month);
+  fs.writeFileSync(monthSnap, snapPayload, 'utf-8');
+  // Legacy pointer: only advance it forward to the newest month seen.
+  const legacyMonth = snapshotMonth(args.snapshot);
+  if (!legacyMonth || args.month >= legacyMonth) {
+    fs.writeFileSync(args.snapshot, snapPayload, 'utf-8');
+  }
+  paths.snapshot = path.relative(ROOT, monthSnap).replace(/\\/g, '/');
 
   console.log(
     JSON.stringify(
