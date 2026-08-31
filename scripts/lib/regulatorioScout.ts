@@ -63,11 +63,10 @@ export function parseNoticiasHtml(
     } catch {
       continue;
     }
-    if (!/confef\.org\.br$/i.test(parsed.hostname.replace(/^www\./, '')) &&
-        !parsed.hostname.toLowerCase().endsWith('.confef.org.br')) {
-      // allow www.confef.org.br
-      if (!parsed.hostname.toLowerCase().endsWith('confef.org.br')) continue;
-    }
+    // Require a dot boundary so lookalikes (evilconfef.org.br) são rejeitados;
+    // aceita confef.org.br, www.confef.org.br e qualquer *.confef.org.br.
+    const host = parsed.hostname.toLowerCase().replace(/^www\./, '');
+    if (host !== 'confef.org.br' && !host.endsWith('.confef.org.br')) continue;
     const path = parsed.pathname.replace(/\/+$/, '');
     if (!/\/comunicacao\/noticias\//i.test(path)) continue;
     // listing itself
