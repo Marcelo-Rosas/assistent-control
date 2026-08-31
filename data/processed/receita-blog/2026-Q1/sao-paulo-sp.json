@@ -1,0 +1,117 @@
+{
+  "generated_at": "2026-08-04T17:03:28.635Z",
+  "quarter": "2026-Q1",
+  "city_key": "SP|São Paulo",
+  "city_label": "São Paulo/SP",
+  "uf": "SP",
+  "ibge": "3550308",
+  "rankings": {
+    "mortalidade": {
+      "rank": 1,
+      "baixados": 32
+    },
+    "crescimento": {
+      "rank": 1,
+      "saldo": 87
+    }
+  },
+  "movimento": {
+    "ativos": 2499,
+    "entrantes": 119,
+    "baixados": 32,
+    "saldo": 87
+  },
+  "vida_baixados": {
+    "n": 32,
+    "median_years": 8.542094455852157,
+    "faixas": {
+      "lt_1y": 3,
+      "y1_3": 8,
+      "y3_5": 1,
+      "y5_plus": 20
+    },
+    "faixas_pct": {
+      "lt_1y": 9.375,
+      "y1_3": 25,
+      "y3_5": 3.125,
+      "y5_plus": 62.5
+    }
+  },
+  "bairros_fechamento": [
+    {
+      "bairro": "BELA VISTA",
+      "n": 4,
+      "median_years": 1.5195071868583163
+    },
+    {
+      "bairro": "PERDIZES",
+      "n": 4,
+      "median_years": 10.93908281998631
+    },
+    {
+      "bairro": "JARDIM MONTE KEMEL",
+      "n": 2,
+      "median_years": 1.946611909650924
+    },
+    {
+      "bairro": "PINHEIROS",
+      "n": 2,
+      "median_years": 0.9281314168377823
+    },
+    {
+      "bairro": "SANTANA",
+      "n": 2,
+      "median_years": 9.869952087611225
+    }
+  ],
+  "onda": {
+    "lookback_months": 3,
+    "baixados_por_mes": [
+      {
+        "month": "2026-01",
+        "n": 8
+      },
+      {
+        "month": "2026-02",
+        "n": 9
+      },
+      {
+        "month": "2026-03",
+        "n": 15
+      }
+    ]
+  },
+  "gymsite": {
+    "status": "ok",
+    "pib": {
+      "populacao": 11904961,
+      "pib_reais": 1066825105000,
+      "pib_per_capita": 89611.81,
+      "ano": 2023,
+      "fonte": "BigQuery basedosdados (br_ibge_pib + br_ibge_populacao)"
+    },
+    "renda": {
+      "n_bairros": 96,
+      "renda_pc_mediana": 1567.08,
+      "top3": [
+        {
+          "bairro": "Itaim Bibi",
+          "renda_pc": 7672.13
+        },
+        {
+          "bairro": "Moema",
+          "renda_pc": 7482.81
+        },
+        {
+          "bairro": "Jardim Paulista",
+          "renda_pc": 7253.21
+        }
+      ],
+      "fonte": "renda_bairro (GymSite / IBGE Censo 2022)"
+    }
+  },
+  "fontes": [
+    "Receita Federal CNAE 9313100 (CSV processado)",
+    "GymSite municipio_pib + renda_bairro (IBGE)"
+  ]
+}

@@ -1,0 +1,8 @@
+---
+source_url: https://www.confef.org.br/comunicacao/noticias/1840
+fetched_at: 2026-08-03T18:25:00Z
+tema: fiscalizacao_protocolos
+decision: ingest
+---
+
+III Simpósio Fiscalização 19/06/2026 — padroniza docs PF/PJ; Acórdão TCU 309/2026. Docs finalizados; aguarda aprovação Plenário CONFEF antes de vigência plena. Fonte notícia 1840.
