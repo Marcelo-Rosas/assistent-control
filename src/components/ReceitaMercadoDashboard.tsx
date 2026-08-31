@@ -79,13 +79,22 @@ export const ReceitaMercadoDashboard: React.FC = () => {
     setError(null);
     try {
       const r = await fetch(`/receita/kpis-${m}.json`);
-      if (!r.ok) {
+      let file: ReceitaKpisFile;
+      if (r.ok) {
+        file = (await r.json()) as ReceitaKpisFile;
+      } else {
+        // Fall back to latest ONLY when it actually is the requested month;
+        // otherwise we'd render another month's numbers under this month's
+        // selector, silently misleading the reader.
         const latest = await fetch('/receita/kpis-latest.json');
         if (!latest.ok) throw new Error(`KPI ${m} não encontrado`);
-        setData((await latest.json()) as ReceitaKpisFile);
-      } else {
-        setData((await r.json()) as ReceitaKpisFile);
+        const latestFile = (await latest.json()) as ReceitaKpisFile;
+        if (latestFile.month !== m) {
+          throw new Error(`KPI ${m} não encontrado`);
+        }
+        file = latestFile;
       }
+      setData(file);
       setUfKey(null);
       setCityKey(null);
     } catch (e) {
