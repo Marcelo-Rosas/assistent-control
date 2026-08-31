@@ -24,6 +24,12 @@ describe('parseNoticiasHtml', () => {
     assert.ok(c.some((x) => x.url.includes('/1846')));
     assert.ok(c.some((x) => /CREFs/i.test(x.title)));
   });
+  it('rejects lookalike host without dot boundary', () => {
+    const html =
+      '<a href="https://evilconfef.org.br/comunicacao/noticias/9">spoof</a>';
+    const c = parseNoticiasHtml(html, CONFEF_NOTICIAS_URL, '2026-08-03');
+    assert.equal(c.length, 0);
+  });
 });
 
 describe('filterNewCandidates', () => {

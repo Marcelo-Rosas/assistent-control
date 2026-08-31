@@ -90,11 +90,18 @@ export function assertAllowlistedUrl(url: string): string {
     throw new Error(`protocolo inválido: ${parsed.protocol}`);
   }
   const host = parsed.hostname.toLowerCase();
-  const ok =
-    host === 'confef.org.br' ||
-    host.endsWith('.confef.org.br') ||
-    /cref/i.test(host);
-  if (!ok) throw new Error(`URL fora allowlist CONFEF/CREF: ${host}`);
+  const labels = host.split('.');
+  const isConfef =
+    host === 'confef.org.br' || host.endsWith('.confef.org.br');
+  // CREF regional councils: registrable domain <cref…>.org.br (optionally
+  // with subdomains). Match the registrable label exactly — never a substring
+  // of the host — so cref.evil.com, micref.io e evilcref.org.br são rejeitados.
+  const registrableLabel = labels.length >= 3 ? labels[labels.length - 3] : '';
+  const isCref =
+    host.endsWith('.org.br') && /^cref[a-z0-9-]*$/.test(registrableLabel);
+  if (!isConfef && !isCref) {
+    throw new Error(`URL fora allowlist CONFEF/CREF: ${host}`);
+  }
   return parsed.toString();
 }
 

@@ -62,6 +62,11 @@ describe('assertAllowlistedUrl', () => {
   it('rejects random host', () => {
     assert.throws(() => assertAllowlistedUrl('https://evil.example/x'));
   });
+  it('rejects substring-lookalike hosts', () => {
+    assert.throws(() => assertAllowlistedUrl('https://cref.evil.com/x'));
+    assert.throws(() => assertAllowlistedUrl('https://micref.io/x'));
+    assert.throws(() => assertAllowlistedUrl('https://evilcref.org.br/x'));
+  });
   it('rejects invalid URL', () => {
     assert.throws(() => assertAllowlistedUrl('not-a-url'));
   });
