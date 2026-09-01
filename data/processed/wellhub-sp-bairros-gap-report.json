@@ -1,5 +1,5 @@
 {
-  "ran_at": "2026-09-01T13:44:03.409Z",
+  "ran_at": "2026-09-01T21:31:44.909Z",
   "slugs": [
     "cachoeirinha",
     "carrao",
@@ -9,15 +9,15 @@
     "ponte-rasa",
     "sao-rafael"
   ],
-  "before_gyms": 44163,
-  "after_gyms": 44170,
-  "delta": 7,
+  "before_gyms": 44498,
+  "after_gyms": 44498,
+  "delta": 0,
   "rows": [
     {
       "bairro": "Lajeado",
       "slug": "lajeado",
       "scraped": 100,
-      "new_gyms": 2,
+      "new_gyms": 0,
       "tagged": 100
     },
     {
@@ -31,7 +31,7 @@
       "bairro": "Cachoeirinha",
       "slug": "cachoeirinha",
       "scraped": 100,
-      "new_gyms": 4,
+      "new_gyms": 0,
       "tagged": 100
     },
     {
@@ -52,7 +52,7 @@
       "bairro": "Carrão",
       "slug": "carrao",
       "scraped": 100,
-      "new_gyms": 1,
+      "new_gyms": 0,
       "tagged": 100
     },
     {

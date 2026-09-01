@@ -1,66 +1,52 @@
 {
-  "cities": 6,
-  "total_gyms_before": 44113,
-  "total_gyms_after": 44163,
-  "net_new": 50,
+  "cities": 1,
+  "total_gyms_before": 44498,
+  "total_gyms_after": 44551,
+  "net_new": 53,
+  "formula": {
+    "floor_ms": 180000,
+    "city_pass_ms": 10000,
+    "bairro_count": 50,
+    "per_bairro_ms": 6500,
+    "bairros_ms": 325000,
+    "geo_points": 8,
+    "geo_point_ms": 6500,
+    "geo_ms": 52000,
+    "buffer_ms": 120000,
+    "subtotal_ms": 507000,
+    "timeout_ms": 507000,
+    "rule": "max(180000, 10000 + 50×6500 + 8×6500 + 120000) [heuristic_cap]"
+  },
   "rows": [
     {
-      "key": "Fortaleza-CE",
-      "before": 609,
-      "scraped": 516,
-      "after": 622,
-      "new_gyms": 13,
-      "timeout_ms": 507000,
-      "elapsed_ms": 247778,
-      "partial": true
-    },
-    {
-      "key": "Salvador-BA",
-      "before": 1095,
-      "scraped": 1030,
-      "after": 1114,
-      "new_gyms": 19,
-      "timeout_ms": 507000,
-      "elapsed_ms": 233027,
-      "partial": true
-    },
-    {
-      "key": "Manaus-AM",
-      "before": 193,
-      "scraped": 195,
-      "after": 197,
-      "new_gyms": 4,
-      "timeout_ms": 507000,
-      "elapsed_ms": 256121
-    },
-    {
-      "key": "São Luís-MA",
-      "before": 254,
-      "scraped": 261,
-      "after": 262,
-      "new_gyms": 8,
-      "timeout_ms": 507000,
-      "elapsed_ms": 281574
-    },
-    {
-      "key": "Campo Grande-MS",
-      "before": 453,
-      "scraped": 456,
-      "after": 459,
-      "new_gyms": 6,
-      "timeout_ms": 507000,
-      "elapsed_ms": 203412
-    },
-    {
-      "key": "Novo Santo Antônio-PI",
-      "before": 0,
-      "scraped": 0,
-      "after": 0,
-      "new_gyms": 0,
-      "timeout_ms": 507000,
-      "elapsed_ms": 100905,
-      "error": "sem academias em https://wellhub.com/pt-br/search/pi/novo-santo-antonio/?map=1"
+      "key": "Belo Horizonte-MG",
+      "before": 1118,
+      "scraped": 1946,
+      "after": 1952,
+      "new_gyms": 834,
+      "timeout_ms": 3386500,
+      "timeout_rule": "max(180000, 10000 + 493×6500 + 8×6500 + 120000)",
+      "timeout_breakdown": {
+        "floor_ms": 180000,
+        "city_pass_ms": 10000,
+        "bairro_count": 493,
+        "per_bairro_ms": 6500,
+        "bairros_ms": 3204500,
+        "geo_points": 8,
+        "geo_point_ms": 6500,
+        "geo_ms": 52000,
+        "buffer_ms": 120000,
+        "subtotal_ms": 3386500,
+        "timeout_ms": 3386500,
+        "rule": "max(180000, 10000 + 493×6500 + 8×6500 + 120000)"
+      },
+      "elapsed_ms": 1795410,
+      "outcome": "COMPLETE",
+      "bairros_planned": 493,
+      "bairros_done": 493,
+      "bairros_completion_pct": 100,
+      "timed_out": false
     }
   ],
-  "timestamp": "2026-08-31T13:04:00.514Z"
+  "timestamp": "2026-09-01T22:45:28.772Z"
 }

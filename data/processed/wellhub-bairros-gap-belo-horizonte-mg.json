@@ -1,0 +1,124 @@
+{
+  "ran_at": "2026-09-01T22:52:05.842Z",
+  "cidade": "Belo Horizonte",
+  "uf": "MG",
+  "slugs": [
+    "biquinhas",
+    "braunas",
+    "cristo-rei",
+    "delta",
+    "dom-silverio",
+    "jardim-liberdade",
+    "jardinopolis",
+    "minas-brasil",
+    "olaria",
+    "parque-sao-pedro",
+    "santa-margarida",
+    "tres-marias",
+    "vila-tiradentes",
+    "vila-viveiro"
+  ],
+  "before_gyms": 44551,
+  "after_gyms": 44551,
+  "delta": 0,
+  "rows": [
+    {
+      "bairro": "Biquinhas",
+      "slug": "biquinhas",
+      "scraped": 2,
+      "new_gyms": 0,
+      "tagged": 2
+    },
+    {
+      "bairro": "Braúnas",
+      "slug": "braunas",
+      "scraped": 0,
+      "new_gyms": 0,
+      "tagged": 0
+    },
+    {
+      "bairro": "Cristo Rei",
+      "slug": "cristo-rei",
+      "scraped": 33,
+      "new_gyms": 0,
+      "tagged": 33
+    },
+    {
+      "bairro": "Delta",
+      "slug": "delta",
+      "scraped": 8,
+      "new_gyms": 0,
+      "tagged": 8
+    },
+    {
+      "bairro": "Dom Silvério",
+      "slug": "dom-silverio",
+      "scraped": 4,
+      "new_gyms": 0,
+      "tagged": 4
+    },
+    {
+      "bairro": "Jardim Liberdade",
+      "slug": "jardim-liberdade",
+      "scraped": 4,
+      "new_gyms": 0,
+      "tagged": 4
+    },
+    {
+      "bairro": "Jardinópolis",
+      "slug": "jardinopolis",
+      "scraped": 100,
+      "new_gyms": 0,
+      "tagged": 100
+    },
+    {
+      "bairro": "Minas Brasil",
+      "slug": "minas-brasil",
+      "scraped": 0,
+      "new_gyms": 0,
+      "tagged": 0
+    },
+    {
+      "bairro": "Olaria",
+      "slug": "olaria",
+      "scraped": 2,
+      "new_gyms": 0,
+      "tagged": 2
+    },
+    {
+      "bairro": "Parque São Pedro",
+      "slug": "parque-sao-pedro",
+      "scraped": 4,
+      "new_gyms": 0,
+      "tagged": 4
+    },
+    {
+      "bairro": "Santa Margarida",
+      "slug": "santa-margarida",
+      "scraped": 7,
+      "new_gyms": 0,
+      "tagged": 7
+    },
+    {
+      "bairro": "Três Marias",
+      "slug": "tres-marias",
+      "scraped": 4,
+      "new_gyms": 0,
+      "tagged": 4
+    },
+    {
+      "bairro": "Vila Tiradentes",
+      "slug": "vila-tiradentes",
+      "scraped": 0,
+      "new_gyms": 0,
+      "tagged": 0
+    },
+    {
+      "bairro": "Vila Viveiro",
+      "slug": "vila-viveiro",
+      "scraped": 0,
+      "new_gyms": 0,
+      "tagged": 0
+    }
+  ]
+}

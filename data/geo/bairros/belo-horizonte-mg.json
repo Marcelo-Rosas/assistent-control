@@ -1,0 +1,2998 @@
+{
+  "cidade": "Belo Horizonte",
+  "uf": "MG",
+  "ibge": "3106200",
+  "fonte": "Prefeitura de Belo Horizonte — Dados Abertos PBH, dataset bairro-popular (Lei municipal 11.490/2023); CSV 20240902_bairro_popular",
+  "bairros": [
+    {
+      "slug": "aarao-reis",
+      "bairro": "Aarão Reis",
+      "area_ha": 35,
+      "match_slugs": []
+    },
+    {
+      "slug": "acaba-mundo",
+      "bairro": "Acaba Mundo",
+      "area_ha": 4,
+      "match_slugs": []
+    },
+    {
+      "slug": "acaiaca",
+      "bairro": "Acaiaca",
+      "area_ha": 38,
+      "match_slugs": []
+    },
+    {
+      "slug": "ademar-maldonado",
+      "bairro": "Ademar Maldonado",
+      "area_ha": 16,
+      "match_slugs": []
+    },
+    {
+      "slug": "aeroporto",
+      "bairro": "Aeroporto",
+      "area_ha": 233,
+      "match_slugs": []
+    },
+    {
+      "slug": "aguas-claras",
+      "bairro": "Águas Claras",
+      "area_ha": 15,
+      "match_slugs": []
+    },
+    {
+      "slug": "alipio-de-melo",
+      "bairro": "Alípio de Melo",
+      "area_ha": 118,
+      "match_slugs": []
+    },
+    {
+      "slug": "alpes",
+      "bairro": "Alpes",
+      "area_ha": 21,
+      "match_slugs": []
+    },
+    {
+      "slug": "alta-tensao",
+      "bairro": "Alta Tensão",
+      "area_ha": 1,
+      "match_slugs": []
+    },
+    {
+      "slug": "alta-tensao-i",
+      "bairro": "Alta Tensão I",
+      "area_ha": 8,
+      "match_slugs": []
+    },
+    {
+      "slug": "alto-barroca",
+      "bairro": "Alto Barroca",
+      "area_ha": 32,
+      "match_slugs": []
+    },
+    {
+      "slug": "alto-caicaras",
+      "bairro": "Alto Caiçaras",
+      "area_ha": 106,
+      "match_slugs": []
+    },
+    {
+      "slug": "alto-das-antenas",
+      "bairro": "Alto das Antenas",
+      "area_ha": 16,
+      "match_slugs": []
+    },
+    {
+      "slug": "alto-dos-pinheiros",
+      "bairro": "Alto dos Pinheiros",
+      "area_ha": 41,
+      "match_slugs": []
+    },
+    {
+      "slug": "alto-vera-cruz",
+      "bairro": "Alto Vera Cruz",
+      "area_ha": 87,
+      "match_slugs": []
+    },
+    {
+      "slug": "alvaro-camargos",
+      "bairro": "Álvaro Camargos",
+      "area_ha": 21,
+      "match_slugs": []
+    },
+    {
+      "slug": "ambrosina",
+      "bairro": "Ambrosina",
+      "area_ha": 6,
+      "match_slugs": []
+    },
+    {
+      "slug": "anchieta",
+      "bairro": "Anchieta",
+      "area_ha": 70,
+      "match_slugs": []
+    },
+    {
+      "slug": "andiroba",
+      "bairro": "Andiroba",
+      "area_ha": 3,
+      "match_slugs": []
+    },
+    {
+      "slug": "antonio-ribeiro-de-abreu",
+      "bairro": "Antônio Ribeiro de Abreu",
+      "area_ha": 3,
+      "match_slugs": []
+    },
+    {
+      "slug": "aparecida",
+      "bairro": "Aparecida",
+      "area_ha": 92,
+      "match_slugs": [
+        "aparecida-setima-secao"
+      ]
+    },
+    {
+      "slug": "aparecida-setima-secao",
+      "bairro": "Aparecida Sétima Seção",
+      "area_ha": 49,
+      "match_slugs": []
+    },
+    {
+      "slug": "apolonia",
+      "bairro": "Apolônia",
+      "area_ha": 20,
+      "match_slugs": []
+    },
+    {
+      "slug": "araguaia",
+      "bairro": "Araguaia",
+      "area_ha": 134,
+      "match_slugs": []
+    },
+    {
+      "slug": "atila-de-paiva",
+      "bairro": "Átila de Paiva",
+      "area_ha": 13,
+      "match_slugs": []
+    },
+    {
+      "slug": "bacurau",
+      "bairro": "Bacurau",
+      "area_ha": 1,
+      "match_slugs": []
+    },
+    {
+      "slug": "bairro-das-industrias-i",
+      "bairro": "Bairro das Indústrias I",
+      "area_ha": 366,
+      "match_slugs": []
+    },
+    {
+      "slug": "bairro-das-industrias-ii",
+      "bairro": "Bairro das Indústrias II",
+      "area_ha": 20,
+      "match_slugs": []
+    },
+    {
+      "slug": "bairro-novo-das-industrias",
+      "bairro": "Bairro Novo das Indústrias",
+      "area_ha": 75,
+      "match_slugs": []
+    },
+    {
+      "slug": "baleia",
+      "bairro": "Baleia",
+      "area_ha": 362,
+      "match_slugs": []
+    },
+    {
+      "slug": "bandeirantes",
+      "bairro": "Bandeirantes",
+      "area_ha": 478,
+      "match_slugs": []
+    },
+    {
+      "slug": "barao-homem-de-melo-i",
+      "bairro": "Barão Homem de Melo I",
+      "area_ha": 1,
+      "match_slugs": []
+    },
+    {
+      "slug": "barao-homem-de-melo-iii",
+      "bairro": "Barão Homem de Melo III",
+      "area_ha": 1,
+      "match_slugs": []
+    },
+    {
+      "slug": "barao-homem-de-melo-iv",
+      "bairro": "Barão Homem de Melo IV",
+      "area_ha": 5,
+      "match_slugs": []
+    },
+    {
+      "slug": "barreiro",
+      "bairro": "Barreiro",
+      "area_ha": 158,
+      "match_slugs": [
+        "solar-do-barreiro-barreiro",
+        "cardoso-barreiro"
+      ]
+    },
+    {
+      "slug": "barro-preto",
+      "bairro": "Barro Preto",
+      "area_ha": 116,
+      "match_slugs": []
+    },
+    {
+      "slug": "barroca",
+      "bairro": "Barroca",
+      "area_ha": 24,
+      "match_slugs": []
+    },
+    {
+      "slug": "beija-flor",
+      "bairro": "Beija Flor",
+      "area_ha": 93,
+      "match_slugs": []
+    },
+    {
+      "slug": "beira-linha",
+      "bairro": "Beira-Linha",
+      "area_ha": 23,
+      "match_slugs": []
+    },
+    {
+      "slug": "bela-vitoria",
+      "bairro": "Bela Vitória",
+      "area_ha": 7,
+      "match_slugs": []
+    },
+    {
+      "slug": "belem",
+      "bairro": "Belém",
+      "area_ha": 1,
+      "match_slugs": []
+    },
+    {
+      "slug": "belmonte",
+      "bairro": "Belmonte",
+      "area_ha": 48,
+      "match_slugs": []
+    },
+    {
+      "slug": "belvedere",
+      "bairro": "Belvedere",
+      "area_ha": 292,
+      "match_slugs": []
+    },
+    {
+      "slug": "bernadete",
+      "bairro": "Bernadete",
+      "area_ha": 8,
+      "match_slugs": []
+    },
+    {
+      "slug": "betania",
+      "bairro": "Betânia",
+      "area_ha": 131,
+      "match_slugs": []
+    },
+    {
+      "slug": "biquinhas",
+      "bairro": "Biquinhas",
+      "area_ha": 6,
+      "match_slugs": []
+    },
+    {
+      "slug": "bispo-de-maura",
+      "bairro": "Bispo de Maura",
+      "area_ha": 2,
+      "match_slugs": []
+    },
+    {
+      "slug": "boa-esperanca",
+      "bairro": "Boa Esperança",
+      "area_ha": 2,
+      "match_slugs": []
+    },
+    {
+      "slug": "boa-uniao-i",
+      "bairro": "Boa União I",
+      "area_ha": 1,
+      "match_slugs": []
+    },
+    {
+      "slug": "boa-uniao-ii",
+      "bairro": "Boa União II",
+      "area_ha": 2,
+      "match_slugs": []
+    },
+    {
+      "slug": "boa-viagem",
+      "bairro": "Boa Viagem",
+      "area_ha": 24,
+      "match_slugs": []
+    },
+    {
+      "slug": "boa-vista",
+      "bairro": "Boa Vista",
+      "area_ha": 125,
+      "match_slugs": []
+    },
+    {
+      "slug": "bom-jesus",
+      "bairro": "Bom Jesus",
+      "area_ha": 28,
+      "match_slugs": []
+    },
+    {
+      "slug": "bonfim",
+      "bairro": "Bonfim",
+      "area_ha": 88,
+      "match_slugs": []
+    },
+    {
+      "slug": "bonsucesso",
+      "bairro": "Bonsucesso",
+      "area_ha": 282,
+      "match_slugs": []
+    },
+    {
+      "slug": "brasil-industrial",
+      "bairro": "Brasil Industrial",
+      "area_ha": 63,
+      "match_slugs": []
+    },
+    {
+      "slug": "braunas",
+      "bairro": "Braúnas",
+      "area_ha": 200,
+      "match_slugs": [],
+      "wellhub_absent": true
+    },
+    {
+      "slug": "buritis",
+      "bairro": "Buritis",
+      "area_ha": 381,
+      "match_slugs": []
+    },
+    {
+      "slug": "cabana-do-pai-tomas",
+      "bairro": "Cabana do Pai Tomás",
+      "area_ha": 50,
+      "match_slugs": []
+    },
+    {
+      "slug": "cachoeirinha",
+      "bairro": "Cachoeirinha",
+      "area_ha": 130,
+      "match_slugs": []
+    },
+    {
+      "slug": "caetano-furquim",
+      "bairro": "Caetano Furquim",
+      "area_ha": 2,
+      "match_slugs": []
+    },
+    {
+      "slug": "caicara-adelaide",
+      "bairro": "Caiçara-Adelaide",
+      "area_ha": 78,
+      "match_slugs": []
+    },
+    {
+      "slug": "caicaras",
+      "bairro": "Caiçaras",
+      "area_ha": 225,
+      "match_slugs": []
+    },
+    {
+      "slug": "calafate",
+      "bairro": "Calafate",
+      "area_ha": 104,
+      "match_slugs": []
+    },
+    {
+      "slug": "california",
+      "bairro": "Califórnia",
+      "area_ha": 341,
+      "match_slugs": [
+        "conjunto-california-i"
+      ]
+    },
+    {
+      "slug": "camargos",
+      "bairro": "Camargos",
+      "area_ha": 185,
+      "match_slugs": []
+    },
+    {
+      "slug": "camilo-torres",
+      "bairro": "Camilo Torres",
+      "area_ha": 2,
+      "match_slugs": []
+    },
+    {
+      "slug": "campo-alegre",
+      "bairro": "Campo Alegre",
+      "area_ha": 22,
+      "match_slugs": []
+    },
+    {
+      "slug": "campus-ufmg",
+      "bairro": "Campus UFMG",
+      "area_ha": 385,
+      "match_slugs": []
+    },
+    {
+      "slug": "canaa",
+      "bairro": "Canaã",
+      "area_ha": 48,
+      "match_slugs": []
+    },
+    {
+      "slug": "canada",
+      "bairro": "Canadá",
+      "area_ha": 9,
+      "match_slugs": []
+    },
+    {
+      "slug": "candelaria",
+      "bairro": "Candelária",
+      "area_ha": 102,
+      "match_slugs": []
+    },
+    {
+      "slug": "capitao-eduardo",
+      "bairro": "Capitão Eduardo",
+      "area_ha": 341,
+      "match_slugs": [
+        "conjunto-capitao-eduardo"
+      ]
+    },
+    {
+      "slug": "cardoso",
+      "bairro": "Cardoso",
+      "area_ha": 95,
+      "match_slugs": []
+    },
+    {
+      "slug": "carlos-prates",
+      "bairro": "Carlos Prates",
+      "area_ha": 177,
+      "match_slugs": []
+    },
+    {
+      "slug": "carmo",
+      "bairro": "Carmo",
+      "area_ha": 31,
+      "match_slugs": []
+    },
+    {
+      "slug": "casa-branca",
+      "bairro": "Casa Branca",
+      "area_ha": 67,
+      "match_slugs": []
+    },
+    {
+      "slug": "castanheira",
+      "bairro": "Castanheira",
+      "area_ha": 40,
+      "match_slugs": []
+    },
+    {
+      "slug": "castelo",
+      "bairro": "Castelo",
+      "area_ha": 241,
+      "match_slugs": []
+    },
+    {
+      "slug": "cdi-jatoba",
+      "bairro": "CDI Jatobá",
+      "area_ha": 88,
+      "match_slugs": []
+    },
+    {
+      "slug": "cenaculo",
+      "bairro": "Cenáculo",
+      "area_ha": 33,
+      "match_slugs": []
+    },
+    {
+      "slug": "centro",
+      "bairro": "Centro",
+      "area_ha": 202,
+      "match_slugs": []
+    },
+    {
+      "slug": "ceu-azul",
+      "bairro": "Céu Azul",
+      "area_ha": 275,
+      "match_slugs": []
+    },
+    {
+      "slug": "chacara-leonina",
+      "bairro": "Chácara Leonina",
+      "area_ha": 2,
+      "match_slugs": []
+    },
+    {
+      "slug": "cidade-jardim",
+      "bairro": "Cidade Jardim",
+      "area_ha": 51,
+      "match_slugs": []
+    },
+    {
+      "slug": "cidade-jardim-taquaril",
+      "bairro": "Cidade Jardim Taquaril",
+      "area_ha": 208,
+      "match_slugs": []
+    },
+    {
+      "slug": "cidade-nova",
+      "bairro": "Cidade Nova",
+      "area_ha": 91,
+      "match_slugs": []
+    },
+    {
+      "slug": "cinquentenario",
+      "bairro": "Cinquentenário",
+      "area_ha": 69,
+      "match_slugs": []
+    },
+    {
+      "slug": "colegio-batista",
+      "bairro": "Colégio Batista",
+      "area_ha": 78,
+      "match_slugs": []
+    },
+    {
+      "slug": "comiteco",
+      "bairro": "Comiteco",
+      "area_ha": 77,
+      "match_slugs": []
+    },
+    {
+      "slug": "concordia",
+      "bairro": "Concórdia",
+      "area_ha": 92,
+      "match_slugs": []
+    },
+    {
+      "slug": "conego-pinheiro",
+      "bairro": "Cônego Pinheiro",
+      "area_ha": 2,
+      "match_slugs": []
+    },
+    {
+      "slug": "conego-pinheiro-a",
+      "bairro": "Cônego Pinheiro A",
+      "area_ha": 1,
+      "match_slugs": []
+    },
+    {
+      "slug": "confisco",
+      "bairro": "Confisco",
+      "area_ha": 28,
+      "match_slugs": []
+    },
+    {
+      "slug": "conjunto-bonsucesso",
+      "bairro": "Conjunto Bonsucesso",
+      "area_ha": 5,
+      "match_slugs": []
+    },
+    {
+      "slug": "conjunto-california-i",
+      "bairro": "Conjunto Califórnia I",
+      "area_ha": 30,
+      "match_slugs": []
+    },
+    {
+      "slug": "conjunto-california-ii",
+      "bairro": "Conjunto Califórnia II",
+      "area_ha": 11,
+      "match_slugs": []
+    },
+    {
+      "slug": "conjunto-capitao-eduardo",
+      "bairro": "Conjunto Capitão Eduardo",
+      "area_ha": 17,
+      "match_slugs": []
+    },
+    {
+      "slug": "conjunto-celso-machado",
+      "bairro": "Conjunto Celso Machado",
+      "area_ha": 33,
+      "match_slugs": []
+    },
+    {
+      "slug": "conjunto-floramar",
+      "bairro": "Conjunto Floramar",
+      "area_ha": 2,
+      "match_slugs": []
+    },
+    {
+      "slug": "conjunto-jardim-filadelfia",
+      "bairro": "Conjunto Jardim Filadélfia",
+      "area_ha": 11,
+      "match_slugs": []
+    },
+    {
+      "slug": "conjunto-jatoba",
+      "bairro": "Conjunto Jatobá",
+      "area_ha": 14,
+      "match_slugs": []
+    },
+    {
+      "slug": "conjunto-lagoa",
+      "bairro": "Conjunto Lagoa",
+      "area_ha": 7,
+      "match_slugs": []
+    },
+    {
+      "slug": "conjunto-minascaixa",
+      "bairro": "Conjunto Minascaixa",
+      "area_ha": 21,
+      "match_slugs": []
+    },
+    {
+      "slug": "conjunto-novo-dom-bosco",
+      "bairro": "Conjunto Novo Dom Bosco",
+      "area_ha": 2,
+      "match_slugs": []
+    },
+    {
+      "slug": "conjunto-paulo-vi",
+      "bairro": "Conjunto Paulo VI",
+      "area_ha": 21,
+      "match_slugs": []
+    },
+    {
+      "slug": "conjunto-providencia",
+      "bairro": "Conjunto Providência",
+      "area_ha": 1,
+      "match_slugs": []
+    },
+    {
+      "slug": "conjunto-santa-maria",
+      "bairro": "Conjunto Santa Maria",
+      "area_ha": 8,
+      "match_slugs": []
+    },
+    {
+      "slug": "conjunto-sao-francisco-de-assis",
+      "bairro": "Conjunto São Francisco de Assis",
+      "area_ha": 1,
+      "match_slugs": []
+    },
+    {
+      "slug": "conjunto-serra-verde",
+      "bairro": "Conjunto Serra Verde",
+      "area_ha": 2,
+      "match_slugs": []
+    },
+    {
+      "slug": "conjunto-taquaril",
+      "bairro": "Conjunto Taquaril",
+      "area_ha": 110,
+      "match_slugs": []
+    },
+    {
+      "slug": "copacabana",
+      "bairro": "Copacabana",
+      "area_ha": 144,
+      "match_slugs": []
+    },
+    {
+      "slug": "coqueiros",
+      "bairro": "Coqueiros",
+      "area_ha": 68,
+      "match_slugs": []
+    },
+    {
+      "slug": "coracao-de-jesus",
+      "bairro": "Coração de Jesus",
+      "area_ha": 28,
+      "match_slugs": []
+    },
+    {
+      "slug": "coracao-eucaristico",
+      "bairro": "Coração Eucarístico",
+      "area_ha": 104,
+      "match_slugs": []
+    },
+    {
+      "slug": "corumbiara",
+      "bairro": "Corumbiara",
+      "area_ha": 5,
+      "match_slugs": []
+    },
+    {
+      "slug": "cristo-rei",
+      "bairro": "Cristo Rei",
+      "area_ha": 1,
+      "match_slugs": []
+    },
+    {
+      "slug": "cruzeiro",
+      "bairro": "Cruzeiro",
+      "area_ha": 53,
+      "match_slugs": []
+    },
+    {
+      "slug": "custodinha",
+      "bairro": "Custodinha",
+      "area_ha": 1,
+      "match_slugs": []
+    },
+    {
+      "slug": "dandara",
+      "bairro": "Dandara",
+      "area_ha": 26,
+      "match_slugs": []
+    },
+    {
+      "slug": "delta",
+      "bairro": "Delta",
+      "area_ha": 5,
+      "match_slugs": [],
+      "wellhub_absent": true
+    },
+    {
+      "slug": "diamante",
+      "bairro": "Diamante",
+      "area_ha": 183,
+      "match_slugs": []
+    },
+    {
+      "slug": "distrito-industrial-do-jatoba",
+      "bairro": "Distrito Industrial do Jatobá",
+      "area_ha": 91,
+      "match_slugs": []
+    },
+    {
+      "slug": "dom-bosco",
+      "bairro": "Dom Bosco",
+      "area_ha": 112,
+      "match_slugs": []
+    },
+    {
+      "slug": "dom-cabral",
+      "bairro": "Dom Cabral",
+      "area_ha": 54,
+      "match_slugs": []
+    },
+    {
+      "slug": "dom-joaquim",
+      "bairro": "Dom Joaquim",
+      "area_ha": 45,
+      "match_slugs": []
+    },
+    {
+      "slug": "dom-silverio",
+      "bairro": "Dom Silvério",
+      "area_ha": 50,
+      "match_slugs": []
+    },
+    {
+      "slug": "dona-clara",
+      "bairro": "Dona Clara",
+      "area_ha": 79,
+      "match_slugs": []
+    },
+    {
+      "slug": "eliana-silva",
+      "bairro": "Eliana Silva",
+      "area_ha": 4,
+      "match_slugs": []
+    },
+    {
+      "slug": "engenho-nogueira",
+      "bairro": "Engenho Nogueira",
+      "area_ha": 199,
+      "match_slugs": []
+    },
+    {
+      "slug": "ermelinda",
+      "bairro": "Ermelinda",
+      "area_ha": 38,
+      "match_slugs": []
+    },
+    {
+      "slug": "ernesto-do-nascimento",
+      "bairro": "Ernesto do Nascimento",
+      "area_ha": 18,
+      "match_slugs": []
+    },
+    {
+      "slug": "esperanca",
+      "bairro": "Esperança",
+      "area_ha": 8,
+      "match_slugs": []
+    },
+    {
+      "slug": "esplanada",
+      "bairro": "Esplanada",
+      "area_ha": 83,
+      "match_slugs": []
+    },
+    {
+      "slug": "estoril",
+      "bairro": "Estoril",
+      "area_ha": 170,
+      "match_slugs": []
+    },
+    {
+      "slug": "estrela",
+      "bairro": "Estrela",
+      "area_ha": 7,
+      "match_slugs": [
+        "estrela-do-oriente"
+      ]
+    },
+    {
+      "slug": "estrela-do-oriente",
+      "bairro": "Estrela do Oriente",
+      "area_ha": 101,
+      "match_slugs": []
+    },
+    {
+      "slug": "etelvina-carneiro",
+      "bairro": "Etelvina Carneiro",
+      "area_ha": 31,
+      "match_slugs": []
+    },
+    {
+      "slug": "europa",
+      "bairro": "Europa",
+      "area_ha": 94,
+      "match_slugs": []
+    },
+    {
+      "slug": "eymard",
+      "bairro": "Eymard",
+      "area_ha": 59,
+      "match_slugs": []
+    },
+    {
+      "slug": "fazendinha",
+      "bairro": "Fazendinha",
+      "area_ha": 21,
+      "match_slugs": []
+    },
+    {
+      "slug": "fernao-dias",
+      "bairro": "Fernão Dias",
+      "area_ha": 51,
+      "match_slugs": []
+    },
+    {
+      "slug": "flamengo",
+      "bairro": "Flamengo",
+      "area_ha": 1,
+      "match_slugs": []
+    },
+    {
+      "slug": "flavio-de-oliveira",
+      "bairro": "Flávio de Oliveira",
+      "area_ha": 11,
+      "match_slugs": []
+    },
+    {
+      "slug": "flavio-marques-lisboa",
+      "bairro": "Flávio Marques Lisboa",
+      "area_ha": 124,
+      "match_slugs": []
+    },
+    {
+      "slug": "floramar",
+      "bairro": "Floramar",
+      "area_ha": 106,
+      "match_slugs": []
+    },
+    {
+      "slug": "floresta",
+      "bairro": "Floresta",
+      "area_ha": 109,
+      "match_slugs": [
+        "nova-floresta"
+      ]
+    },
+    {
+      "slug": "frei-leopoldo",
+      "bairro": "Frei Leopoldo",
+      "area_ha": 25,
+      "match_slugs": []
+    },
+    {
+      "slug": "funcionarios",
+      "bairro": "Funcionários",
+      "area_ha": 67,
+      "match_slugs": []
+    },
+    {
+      "slug": "gameleira",
+      "bairro": "Gameleira",
+      "area_ha": 102,
+      "match_slugs": [
+        "nova-gameleira"
+      ]
+    },
+    {
+      "slug": "garcas",
+      "bairro": "Garças",
+      "area_ha": 125,
+      "match_slugs": []
+    },
+    {
+      "slug": "gloria",
+      "bairro": "Glória",
+      "area_ha": 165,
+      "match_slugs": []
+    },
+    {
+      "slug": "goiania",
+      "bairro": "Goiânia",
+      "area_ha": 195,
+      "match_slugs": []
+    },
+    {
+      "slug": "graca",
+      "bairro": "Graça",
+      "area_ha": 43,
+      "match_slugs": []
+    },
+    {
+      "slug": "grajau",
+      "bairro": "Grajaú",
+      "area_ha": 43,
+      "match_slugs": []
+    },
+    {
+      "slug": "granja-de-freitas",
+      "bairro": "Granja de Freitas",
+      "area_ha": 86,
+      "match_slugs": []
+    },
+    {
+      "slug": "granja-werneck",
+      "bairro": "Granja Werneck",
+      "area_ha": 921,
+      "match_slugs": []
+    },
+    {
+      "slug": "grota",
+      "bairro": "Grota",
+      "area_ha": 1,
+      "match_slugs": []
+    },
+    {
+      "slug": "grotinha",
+      "bairro": "Grotinha",
+      "area_ha": 1,
+      "match_slugs": []
+    },
+    {
+      "slug": "guanabara",
+      "bairro": "Guanabara",
+      "area_ha": 1,
+      "match_slugs": [
+        "jardim-guanabara"
+      ]
+    },
+    {
+      "slug": "guarani",
+      "bairro": "Guarani",
+      "area_ha": 73,
+      "match_slugs": []
+    },
+    {
+      "slug": "guarata",
+      "bairro": "Guaratã",
+      "area_ha": 10,
+      "match_slugs": []
+    },
+    {
+      "slug": "gutierrez",
+      "bairro": "Gutierrez",
+      "area_ha": 125,
+      "match_slugs": []
+    },
+    {
+      "slug": "havai",
+      "bairro": "Havaí",
+      "area_ha": 158,
+      "match_slugs": []
+    },
+    {
+      "slug": "heliopolis",
+      "bairro": "Heliópolis",
+      "area_ha": 66,
+      "match_slugs": []
+    },
+    {
+      "slug": "horto",
+      "bairro": "Horto",
+      "area_ha": 38,
+      "match_slugs": [
+        "horto-florestal"
+      ]
+    },
+    {
+      "slug": "horto-florestal",
+      "bairro": "Horto Florestal",
+      "area_ha": 204,
+      "match_slugs": []
+    },
+    {
+      "slug": "imbaubas",
+      "bairro": "Imbaúbas",
+      "area_ha": 5,
+      "match_slugs": []
+    },
+    {
+      "slug": "inconfidencia",
+      "bairro": "Inconfidência",
+      "area_ha": 35,
+      "match_slugs": []
+    },
+    {
+      "slug": "indaia",
+      "bairro": "Indaiá",
+      "area_ha": 44,
+      "match_slugs": []
+    },
+    {
+      "slug": "independencia",
+      "bairro": "Independência",
+      "area_ha": 79,
+      "match_slugs": []
+    },
+    {
+      "slug": "ipe",
+      "bairro": "Ipê",
+      "area_ha": 49,
+      "match_slugs": []
+    },
+    {
+      "slug": "ipiranga",
+      "bairro": "Ipiranga",
+      "area_ha": 89,
+      "match_slugs": []
+    },
+    {
+      "slug": "irma-dorothy",
+      "bairro": "Irmã Dorothy",
+      "area_ha": 2,
+      "match_slugs": []
+    },
+    {
+      "slug": "itaipu",
+      "bairro": "Itaipu",
+      "area_ha": 68,
+      "match_slugs": []
+    },
+    {
+      "slug": "itapoa",
+      "bairro": "Itapoã",
+      "area_ha": 163,
+      "match_slugs": []
+    },
+    {
+      "slug": "itatiaia",
+      "bairro": "Itatiaia",
+      "area_ha": 19,
+      "match_slugs": []
+    },
+    {
+      "slug": "jaqueline",
+      "bairro": "Jaqueline",
+      "area_ha": 295,
+      "match_slugs": []
+    },
+    {
+      "slug": "jaragua",
+      "bairro": "Jaraguá",
+      "area_ha": 51,
+      "match_slugs": []
+    },
+    {
+      "slug": "jardim-alvorada",
+      "bairro": "Jardim Alvorada",
+      "area_ha": 88,
+      "match_slugs": []
+    },
+    {
+      "slug": "jardim-america",
+      "bairro": "Jardim América",
+      "area_ha": 93,
+      "match_slugs": []
+    },
+    {
+      "slug": "jardim-atlantico",
+      "bairro": "Jardim Atlântico",
+      "area_ha": 113,
+      "match_slugs": []
+    },
+    {
+      "slug": "jardim-do-vale",
+      "bairro": "Jardim do Vale",
+      "area_ha": 5,
+      "match_slugs": []
+    },
+    {
+      "slug": "jardim-dos-comerciarios",
+      "bairro": "Jardim dos Comerciários",
+      "area_ha": 202,
+      "match_slugs": []
+    },
+    {
+      "slug": "jardim-felicidade",
+      "bairro": "Jardim Felicidade",
+      "area_ha": 81,
+      "match_slugs": []
+    },
+    {
+      "slug": "jardim-getsemani",
+      "bairro": "Jardim Getsemani",
+      "area_ha": 36,
+      "match_slugs": []
+    },
+    {
+      "slug": "jardim-guanabara",
+      "bairro": "Jardim Guanabara",
+      "area_ha": 115,
+      "match_slugs": []
+    },
+    {
+      "slug": "jardim-leblon",
+      "bairro": "Jardim Leblon",
+      "area_ha": 74,
+      "match_slugs": []
+    },
+    {
+      "slug": "jardim-liberdade",
+      "bairro": "Jardim Liberdade",
+      "area_ha": 53,
+      "match_slugs": []
+    },
+    {
+      "slug": "jardim-montanhes",
+      "bairro": "Jardim Montanhês",
+      "area_ha": 60,
+      "match_slugs": []
+    },
+    {
+      "slug": "jardim-sao-jose",
+      "bairro": "Jardim São José",
+      "area_ha": 79,
+      "match_slugs": []
+    },
+    {
+      "slug": "jardim-vitoria",
+      "bairro": "Jardim Vitória",
+      "area_ha": 542,
+      "match_slugs": []
+    },
+    {
+      "slug": "jardinopolis",
+      "bairro": "Jardinópolis",
+      "area_ha": 45,
+      "match_slugs": []
+    },
+    {
+      "slug": "jatoba",
+      "bairro": "Jatobá",
+      "area_ha": 36,
+      "match_slugs": [
+        "vale-do-jatoba"
+      ]
+    },
+    {
+      "slug": "joao-alfredo",
+      "bairro": "João Alfredo",
+      "area_ha": 2,
+      "match_slugs": []
+    },
+    {
+      "slug": "joao-paulo-ii",
+      "bairro": "João Paulo II",
+      "area_ha": 17,
+      "match_slugs": []
+    },
+    {
+      "slug": "joao-pinheiro",
+      "bairro": "João Pinheiro",
+      "area_ha": 85,
+      "match_slugs": []
+    },
+    {
+      "slug": "jonas-veiga",
+      "bairro": "Jonas Veiga",
+      "area_ha": 52,
+      "match_slugs": []
+    },
+    {
+      "slug": "juliana",
+      "bairro": "Juliana",
+      "area_ha": 90,
+      "match_slugs": []
+    },
+    {
+      "slug": "lagoa",
+      "bairro": "Lagoa",
+      "area_ha": 63,
+      "match_slugs": []
+    },
+    {
+      "slug": "lagoa-da-pampulha",
+      "bairro": "Lagoa da Pampulha",
+      "area_ha": 314,
+      "match_slugs": []
+    },
+    {
+      "slug": "lagoinha",
+      "bairro": "Lagoinha",
+      "area_ha": 56,
+      "match_slugs": [
+        "lagoinha-leblon"
+      ]
+    },
+    {
+      "slug": "lagoinha-leblon",
+      "bairro": "Lagoinha Leblon",
+      "area_ha": 52,
+      "match_slugs": []
+    },
+    {
+      "slug": "lajedo",
+      "bairro": "Lajedo",
+      "area_ha": 52,
+      "match_slugs": []
+    },
+    {
+      "slug": "leonina",
+      "bairro": "Leonina",
+      "area_ha": 17,
+      "match_slugs": []
+    },
+    {
+      "slug": "leticia",
+      "bairro": "Letícia",
+      "area_ha": 78,
+      "match_slugs": []
+    },
+    {
+      "slug": "liberdade",
+      "bairro": "Liberdade",
+      "area_ha": 46,
+      "match_slugs": []
+    },
+    {
+      "slug": "lindeia",
+      "bairro": "Lindéia",
+      "area_ha": 201,
+      "match_slugs": []
+    },
+    {
+      "slug": "lorena",
+      "bairro": "Lorena",
+      "area_ha": 1,
+      "match_slugs": []
+    },
+    {
+      "slug": "lourdes",
+      "bairro": "Lourdes",
+      "area_ha": 126,
+      "match_slugs": []
+    },
+    {
+      "slug": "luxemburgo",
+      "bairro": "Luxemburgo",
+      "area_ha": 62,
+      "match_slugs": []
+    },
+    {
+      "slug": "madre-gertrudes",
+      "bairro": "Madre Gertrudes",
+      "area_ha": 54,
+      "match_slugs": []
+    },
+    {
+      "slug": "madri",
+      "bairro": "Madri",
+      "area_ha": 15,
+      "match_slugs": []
+    },
+    {
+      "slug": "mala-e-cuia",
+      "bairro": "Mala e Cuia",
+      "area_ha": 1,
+      "match_slugs": []
+    },
+    {
+      "slug": "manacas",
+      "bairro": "Manacás",
+      "area_ha": 73,
+      "match_slugs": []
+    },
+    {
+      "slug": "mangabeiras",
+      "bairro": "Mangabeiras",
+      "area_ha": 619,
+      "match_slugs": []
+    },
+    {
+      "slug": "mangueiras",
+      "bairro": "Mangueiras",
+      "area_ha": 38,
+      "match_slugs": []
+    },
+    {
+      "slug": "mantiqueira",
+      "bairro": "Mantiqueira",
+      "area_ha": 293,
+      "match_slugs": []
+    },
+    {
+      "slug": "marajo",
+      "bairro": "Marajó",
+      "area_ha": 27,
+      "match_slugs": []
+    },
+    {
+      "slug": "maravilha",
+      "bairro": "Maravilha",
+      "area_ha": 1,
+      "match_slugs": []
+    },
+    {
+      "slug": "marcola",
+      "bairro": "Marçola",
+      "area_ha": 25,
+      "match_slugs": []
+    },
+    {
+      "slug": "maria-goretti",
+      "bairro": "Maria Goretti",
+      "area_ha": 78,
+      "match_slugs": []
+    },
+    {
+      "slug": "maria-helena",
+      "bairro": "Maria Helena",
+      "area_ha": 73,
+      "match_slugs": []
+    },
+    {
+      "slug": "maria-teresa",
+      "bairro": "Maria Teresa",
+      "area_ha": 89,
+      "match_slugs": []
+    },
+    {
+      "slug": "maria-virginia",
+      "bairro": "Maria Virgínia",
+      "area_ha": 57,
+      "match_slugs": []
+    },
+    {
+      "slug": "mariano-de-abreu",
+      "bairro": "Mariano de Abreu",
+      "area_ha": 17,
+      "match_slugs": []
+    },
+    {
+      "slug": "marieta-i",
+      "bairro": "Marieta I",
+      "area_ha": 5,
+      "match_slugs": []
+    },
+    {
+      "slug": "marieta-ii",
+      "bairro": "Marieta II",
+      "area_ha": 1,
+      "match_slugs": []
+    },
+    {
+      "slug": "marilandia",
+      "bairro": "Marilândia",
+      "area_ha": 16,
+      "match_slugs": []
+    },
+    {
+      "slug": "mariquinhas",
+      "bairro": "Mariquinhas",
+      "area_ha": 15,
+      "match_slugs": []
+    },
+    {
+      "slug": "marmiteiros",
+      "bairro": "Marmiteiros",
+      "area_ha": 3,
+      "match_slugs": []
+    },
+    {
+      "slug": "milionarios",
+      "bairro": "Milionários",
+      "area_ha": 132,
+      "match_slugs": []
+    },
+    {
+      "slug": "minas-brasil",
+      "bairro": "Minas Brasil",
+      "area_ha": 33,
+      "match_slugs": [],
+      "wellhub_absent": true
+    },
+    {
+      "slug": "minascaixa",
+      "bairro": "Minascaixa",
+      "area_ha": 98,
+      "match_slugs": []
+    },
+    {
+      "slug": "minaslandia",
+      "bairro": "Minaslândia",
+      "area_ha": 79,
+      "match_slugs": []
+    },
+    {
+      "slug": "mineirao",
+      "bairro": "Mineirão",
+      "area_ha": 39,
+      "match_slugs": []
+    },
+    {
+      "slug": "miramar",
+      "bairro": "Miramar",
+      "area_ha": 64,
+      "match_slugs": []
+    },
+    {
+      "slug": "mirante",
+      "bairro": "Mirante",
+      "area_ha": 1,
+      "match_slugs": []
+    },
+    {
+      "slug": "mirtes",
+      "bairro": "Mirtes",
+      "area_ha": 1,
+      "match_slugs": []
+    },
+    {
+      "slug": "monsenhor-messias",
+      "bairro": "Monsenhor Messias",
+      "area_ha": 35,
+      "match_slugs": []
+    },
+    {
+      "slug": "monte-azul",
+      "bairro": "Monte Azul",
+      "area_ha": 59,
+      "match_slugs": []
+    },
+    {
+      "slug": "monte-sao-jose",
+      "bairro": "Monte São José",
+      "area_ha": 4,
+      "match_slugs": []
+    },
+    {
+      "slug": "montes-claros",
+      "bairro": "Montes Claros",
+      "area_ha": 69,
+      "match_slugs": []
+    },
+    {
+      "slug": "morro-dos-macacos",
+      "bairro": "Morro dos Macacos",
+      "area_ha": 2,
+      "match_slugs": []
+    },
+    {
+      "slug": "nazare",
+      "bairro": "Nazaré",
+      "area_ha": 78,
+      "match_slugs": []
+    },
+    {
+      "slug": "nossa-senhora-da-aparecida",
+      "bairro": "Nossa Senhora da Aparecida",
+      "area_ha": 13,
+      "match_slugs": []
+    },
+    {
+      "slug": "nossa-senhora-da-conceicao",
+      "bairro": "Nossa Senhora da Conceição",
+      "area_ha": 20,
+      "match_slugs": []
+    },
+    {
+      "slug": "nossa-senhora-de-fatima",
+      "bairro": "Nossa Senhora de Fátima",
+      "area_ha": 62,
+      "match_slugs": []
+    },
+    {
+      "slug": "nossa-senhora-do-rosario",
+      "bairro": "Nossa Senhora do Rosário",
+      "area_ha": 18,
+      "match_slugs": []
+    },
+    {
+      "slug": "nova-america",
+      "bairro": "Nova América",
+      "area_ha": 1,
+      "match_slugs": []
+    },
+    {
+      "slug": "nova-cachoeirinha",
+      "bairro": "Nova Cachoeirinha",
+      "area_ha": 55,
+      "match_slugs": []
+    },
+    {
+      "slug": "nova-cintra",
+      "bairro": "Nova Cintra",
+      "area_ha": 73,
+      "match_slugs": []
+    },
+    {
+      "slug": "nova-esperanca",
+      "bairro": "Nova Esperança",
+      "area_ha": 44,
+      "match_slugs": []
+    },
+    {
+      "slug": "nova-floresta",
+      "bairro": "Nova Floresta",
+      "area_ha": 43,
+      "match_slugs": []
+    },
+    {
+      "slug": "nova-gameleira",
+      "bairro": "Nova Gameleira",
+      "area_ha": 117,
+      "match_slugs": []
+    },
+    {
+      "slug": "nova-granada",
+      "bairro": "Nova Granada",
+      "area_ha": 62,
+      "match_slugs": []
+    },
+    {
+      "slug": "nova-pampulha",
+      "bairro": "Nova Pampulha",
+      "area_ha": 4,
+      "match_slugs": []
+    },
+    {
+      "slug": "nova-suissa",
+      "bairro": "Nova Suissa",
+      "area_ha": 125,
+      "match_slugs": []
+    },
+    {
+      "slug": "nova-vista",
+      "bairro": "Nova Vista",
+      "area_ha": 69,
+      "match_slugs": []
+    },
+    {
+      "slug": "novo-aarao-reis",
+      "bairro": "Novo Aarão Reis",
+      "area_ha": 55,
+      "match_slugs": []
+    },
+    {
+      "slug": "novo-gloria",
+      "bairro": "Novo Glória",
+      "area_ha": 71,
+      "match_slugs": []
+    },
+    {
+      "slug": "novo-lajedo",
+      "bairro": "Novo Lajedo",
+      "area_ha": 40,
+      "match_slugs": []
+    },
+    {
+      "slug": "novo-ouro-preto",
+      "bairro": "Novo Ouro Preto",
+      "area_ha": 3,
+      "match_slugs": []
+    },
+    {
+      "slug": "novo-santa-cecilia",
+      "bairro": "Novo Santa Cecília",
+      "area_ha": 23,
+      "match_slugs": []
+    },
+    {
+      "slug": "novo-sao-lucas",
+      "bairro": "Novo São Lucas",
+      "area_ha": 28,
+      "match_slugs": []
+    },
+    {
+      "slug": "novo-tupi",
+      "bairro": "Novo Tupi",
+      "area_ha": 31,
+      "match_slugs": []
+    },
+    {
+      "slug": "oeste",
+      "bairro": "Oeste",
+      "area_ha": 79,
+      "match_slugs": []
+    },
+    {
+      "slug": "olaria",
+      "bairro": "Olaria",
+      "area_ha": 63,
+      "match_slugs": []
+    },
+    {
+      "slug": "olhos-d-agua",
+      "bairro": "Olhos d'Água",
+      "area_ha": 366,
+      "match_slugs": []
+    },
+    {
+      "slug": "ouro-minas",
+      "bairro": "Ouro Minas",
+      "area_ha": 53,
+      "match_slugs": []
+    },
+    {
+      "slug": "ouro-preto",
+      "bairro": "Ouro Preto",
+      "area_ha": 237,
+      "match_slugs": []
+    },
+    {
+      "slug": "padre-eustaquio",
+      "bairro": "Padre Eustáquio",
+      "area_ha": 297,
+      "match_slugs": []
+    },
+    {
+      "slug": "palmares",
+      "bairro": "Palmares",
+      "area_ha": 70,
+      "match_slugs": []
+    },
+    {
+      "slug": "palmeiras",
+      "bairro": "Palmeiras",
+      "area_ha": 145,
+      "match_slugs": []
+    },
+    {
+      "slug": "pantanal",
+      "bairro": "Pantanal",
+      "area_ha": 5,
+      "match_slugs": []
+    },
+    {
+      "slug": "paqueta",
+      "bairro": "Paquetá",
+      "area_ha": 146,
+      "match_slugs": []
+    },
+    {
+      "slug": "paraiso",
+      "bairro": "Paraíso",
+      "area_ha": 134,
+      "match_slugs": []
+    },
+    {
+      "slug": "parque-sao-jose",
+      "bairro": "Parque São José",
+      "area_ha": 34,
+      "match_slugs": []
+    },
+    {
+      "slug": "parque-sao-pedro",
+      "bairro": "Parque São Pedro",
+      "area_ha": 40,
+      "match_slugs": []
+    },
+    {
+      "slug": "paulo-vi",
+      "bairro": "Paulo VI",
+      "area_ha": 129,
+      "match_slugs": []
+    },
+    {
+      "slug": "pedreira-prado-lopes",
+      "bairro": "Pedreira Prado Lopes",
+      "area_ha": 15,
+      "match_slugs": []
+    },
+    {
+      "slug": "penha",
+      "bairro": "Penha",
+      "area_ha": 21,
+      "match_slugs": []
+    },
+    {
+      "slug": "petropolis",
+      "bairro": "Petrópolis",
+      "area_ha": 30,
+      "match_slugs": []
+    },
+    {
+      "slug": "pilar",
+      "bairro": "Pilar",
+      "area_ha": 109,
+      "match_slugs": []
+    },
+    {
+      "slug": "pindorama",
+      "bairro": "Pindorama",
+      "area_ha": 161,
+      "match_slugs": []
+    },
+    {
+      "slug": "pindura-saia",
+      "bairro": "Pindura Saia",
+      "area_ha": 1,
+      "match_slugs": []
+    },
+    {
+      "slug": "piraja",
+      "bairro": "Pirajá",
+      "area_ha": 25,
+      "match_slugs": []
+    },
+    {
+      "slug": "piratininga",
+      "bairro": "Piratininga",
+      "area_ha": 170,
+      "match_slugs": []
+    },
+    {
+      "slug": "pirineus",
+      "bairro": "Pirineus",
+      "area_ha": 52,
+      "match_slugs": []
+    },
+    {
+      "slug": "planalto",
+      "bairro": "Planalto",
+      "area_ha": 252,
+      "match_slugs": []
+    },
+    {
+      "slug": "pompeia",
+      "bairro": "Pompéia",
+      "area_ha": 59,
+      "match_slugs": []
+    },
+    {
+      "slug": "pongelupe",
+      "bairro": "Pongelupe",
+      "area_ha": 24,
+      "match_slugs": []
+    },
+    {
+      "slug": "pousada-santo-antonio",
+      "bairro": "Pousada Santo Antônio",
+      "area_ha": 39,
+      "match_slugs": []
+    },
+    {
+      "slug": "prado",
+      "bairro": "Prado",
+      "area_ha": 158,
+      "match_slugs": []
+    },
+    {
+      "slug": "primeiro-de-maio",
+      "bairro": "Primeiro de Maio",
+      "area_ha": 18,
+      "match_slugs": []
+    },
+    {
+      "slug": "providencia",
+      "bairro": "Providência",
+      "area_ha": 71,
+      "match_slugs": []
+    },
+    {
+      "slug": "renascenca",
+      "bairro": "Renascença",
+      "area_ha": 86,
+      "match_slugs": []
+    },
+    {
+      "slug": "ribeiro-de-abreu",
+      "bairro": "Ribeiro de Abreu",
+      "area_ha": 214,
+      "match_slugs": []
+    },
+    {
+      "slug": "rio-branco",
+      "bairro": "Rio Branco",
+      "area_ha": 134,
+      "match_slugs": []
+    },
+    {
+      "slug": "sagrada-familia",
+      "bairro": "Sagrada Família",
+      "area_ha": 229,
+      "match_slugs": []
+    },
+    {
+      "slug": "salgado-filho",
+      "bairro": "Salgado Filho",
+      "area_ha": 145,
+      "match_slugs": []
+    },
+    {
+      "slug": "santa-amelia",
+      "bairro": "Santa Amélia",
+      "area_ha": 222,
+      "match_slugs": []
+    },
+    {
+      "slug": "santa-branca",
+      "bairro": "Santa Branca",
+      "area_ha": 87,
+      "match_slugs": []
+    },
+    {
+      "slug": "santa-cecilia",
+      "bairro": "Santa Cecília",
+      "area_ha": 35,
+      "match_slugs": []
+    },
+    {
+      "slug": "santa-cruz",
+      "bairro": "Santa Cruz",
+      "area_ha": 174,
+      "match_slugs": []
+    },
+    {
+      "slug": "santa-efigenia",
+      "bairro": "Santa Efigênia",
+      "area_ha": 215,
+      "match_slugs": []
+    },
+    {
+      "slug": "santa-helena",
+      "bairro": "Santa Helena",
+      "area_ha": 59,
+      "match_slugs": []
+    },
+    {
+      "slug": "santa-ines",
+      "bairro": "Santa Inês",
+      "area_ha": 113,
+      "match_slugs": []
+    },
+    {
+      "slug": "santa-isabel",
+      "bairro": "Santa Isabel",
+      "area_ha": 1,
+      "match_slugs": []
+    },
+    {
+      "slug": "santa-lucia",
+      "bairro": "Santa Lúcia",
+      "area_ha": 210,
+      "match_slugs": []
+    },
+    {
+      "slug": "santa-margarida",
+      "bairro": "Santa Margarida",
+      "area_ha": 25,
+      "match_slugs": []
+    },
+    {
+      "slug": "santa-maria",
+      "bairro": "Santa Maria",
+      "area_ha": 73,
+      "match_slugs": []
+    },
+    {
+      "slug": "santa-monica",
+      "bairro": "Santa Mônica",
+      "area_ha": 219,
+      "match_slugs": []
+    },
+    {
+      "slug": "santa-rita",
+      "bairro": "Santa Rita",
+      "area_ha": 12,
+      "match_slugs": []
+    },
+    {
+      "slug": "santa-rita-de-cassia",
+      "bairro": "Santa Rita de Cássia",
+      "area_ha": 16,
+      "match_slugs": []
+    },
+    {
+      "slug": "santa-rosa",
+      "bairro": "Santa Rosa",
+      "area_ha": 69,
+      "match_slugs": []
+    },
+    {
+      "slug": "santa-sofia",
+      "bairro": "Santa Sofia",
+      "area_ha": 13,
+      "match_slugs": []
+    },
+    {
+      "slug": "santa-tereza",
+      "bairro": "Santa Tereza",
+      "area_ha": 156,
+      "match_slugs": []
+    },
+    {
+      "slug": "santa-terezinha",
+      "bairro": "Santa Terezinha",
+      "area_ha": 148,
+      "match_slugs": []
+    },
+    {
+      "slug": "santana-do-cafezal",
+      "bairro": "Santana do Cafezal",
+      "area_ha": 18,
+      "match_slugs": []
+    },
+    {
+      "slug": "santo-agostinho",
+      "bairro": "Santo Agostinho",
+      "area_ha": 83,
+      "match_slugs": []
+    },
+    {
+      "slug": "santo-andre",
+      "bairro": "Santo André",
+      "area_ha": 61,
+      "match_slugs": []
+    },
+    {
+      "slug": "santo-antonio",
+      "bairro": "Santo Antônio",
+      "area_ha": 131,
+      "match_slugs": []
+    },
+    {
+      "slug": "sao-benedito",
+      "bairro": "São Benedito",
+      "area_ha": 4,
+      "match_slugs": []
+    },
+    {
+      "slug": "sao-bento",
+      "bairro": "São Bento",
+      "area_ha": 98,
+      "match_slugs": []
+    },
+    {
+      "slug": "sao-bernardo",
+      "bairro": "São Bernardo",
+      "area_ha": 94,
+      "match_slugs": []
+    },
+    {
+      "slug": "sao-cristovao",
+      "bairro": "São Cristóvão",
+      "area_ha": 32,
+      "match_slugs": []
+    },
+    {
+      "slug": "sao-damiao",
+      "bairro": "São Damião",
+      "area_ha": 22,
+      "match_slugs": []
+    },
+    {
+      "slug": "sao-francisco",
+      "bairro": "São Francisco",
+      "area_ha": 143,
+      "match_slugs": []
+    },
+    {
+      "slug": "sao-francisco-das-chagas",
+      "bairro": "São Francisco das Chagas",
+      "area_ha": 3,
+      "match_slugs": []
+    },
+    {
+      "slug": "sao-gabriel",
+      "bairro": "São Gabriel",
+      "area_ha": 200,
+      "match_slugs": []
+    },
+    {
+      "slug": "sao-geraldo",
+      "bairro": "São Geraldo",
+      "area_ha": 133,
+      "match_slugs": []
+    },
+    {
+      "slug": "sao-goncalo",
+      "bairro": "São Gonçalo",
+      "area_ha": 24,
+      "match_slugs": []
+    },
+    {
+      "slug": "sao-joao",
+      "bairro": "São João",
+      "area_ha": 6,
+      "match_slugs": [
+        "sao-joao-batista"
+      ]
+    },
+    {
+      "slug": "sao-joao-batista",
+      "bairro": "São João Batista",
+      "area_ha": 185,
+      "match_slugs": []
+    },
+    {
+      "slug": "sao-jorge-i",
+      "bairro": "São Jorge I",
+      "area_ha": 8,
+      "match_slugs": []
+    },
+    {
+      "slug": "sao-jorge-ii",
+      "bairro": "São Jorge II",
+      "area_ha": 16,
+      "match_slugs": []
+    },
+    {
+      "slug": "sao-jorge-iii",
+      "bairro": "São Jorge III",
+      "area_ha": 22,
+      "match_slugs": []
+    },
+    {
+      "slug": "sao-jose",
+      "bairro": "São José",
+      "area_ha": 31,
+      "match_slugs": []
+    },
+    {
+      "slug": "sao-judas-tadeu",
+      "bairro": "São Judas Tadeu",
+      "area_ha": 3,
+      "match_slugs": []
+    },
+    {
+      "slug": "sao-lucas",
+      "bairro": "São Lucas",
+      "area_ha": 29,
+      "match_slugs": []
+    },
+    {
+      "slug": "sao-luiz",
+      "bairro": "São Luíz",
+      "area_ha": 277,
+      "match_slugs": []
+    },
+    {
+      "slug": "sao-marcos",
+      "bairro": "São Marcos",
+      "area_ha": 58,
+      "match_slugs": []
+    },
+    {
+      "slug": "sao-paulo",
+      "bairro": "São Paulo",
+      "area_ha": 50,
+      "match_slugs": []
+    },
+    {
+      "slug": "sao-pedro",
+      "bairro": "São Pedro",
+      "area_ha": 58,
+      "match_slugs": []
+    },
+    {
+      "slug": "sao-salvador",
+      "bairro": "São Salvador",
+      "area_ha": 59,
+      "match_slugs": []
+    },
+    {
+      "slug": "sao-sebastiao",
+      "bairro": "São Sebastião",
+      "area_ha": 2,
+      "match_slugs": []
+    },
+    {
+      "slug": "sao-tomaz",
+      "bairro": "São Tomáz",
+      "area_ha": 19,
+      "match_slugs": []
+    },
+    {
+      "slug": "sao-vicente",
+      "bairro": "São Vicente",
+      "area_ha": 2,
+      "match_slugs": []
+    },
+    {
+      "slug": "satelite",
+      "bairro": "Satélite",
+      "area_ha": 14,
+      "match_slugs": []
+    },
+    {
+      "slug": "saudade",
+      "bairro": "Saudade",
+      "area_ha": 60,
+      "match_slugs": []
+    },
+    {
+      "slug": "savassi",
+      "bairro": "Savassi",
+      "area_ha": 119,
+      "match_slugs": []
+    },
+    {
+      "slug": "senhor-dos-passos",
+      "bairro": "Senhor dos Passos",
+      "area_ha": 13,
+      "match_slugs": []
+    },
+    {
+      "slug": "serra",
+      "bairro": "Serra",
+      "area_ha": 153,
+      "match_slugs": []
+    },
+    {
+      "slug": "serra-do-curral",
+      "bairro": "Serra do Curral",
+      "area_ha": 1738,
+      "match_slugs": []
+    },
+    {
+      "slug": "serra-verde",
+      "bairro": "Serra Verde",
+      "area_ha": 404,
+      "match_slugs": []
+    },
+    {
+      "slug": "serrano",
+      "bairro": "Serrano",
+      "area_ha": 108,
+      "match_slugs": []
+    },
+    {
+      "slug": "silveira",
+      "bairro": "Silveira",
+      "area_ha": 34,
+      "match_slugs": []
+    },
+    {
+      "slug": "sion",
+      "bairro": "Sion",
+      "area_ha": 120,
+      "match_slugs": []
+    },
+    {
+      "slug": "solar-do-barreiro",
+      "bairro": "Solar do Barreiro",
+      "area_ha": 75,
+      "match_slugs": []
+    },
+    {
+      "slug": "solimoes",
+      "bairro": "Solimões",
+      "area_ha": 29,
+      "match_slugs": []
+    },
+    {
+      "slug": "sport-club",
+      "bairro": "Sport Club",
+      "area_ha": 6,
+      "match_slugs": []
+    },
+    {
+      "slug": "sumare",
+      "bairro": "Sumaré",
+      "area_ha": 16,
+      "match_slugs": [
+        "vila-sumare"
+      ]
+    },
+    {
+      "slug": "suzana",
+      "bairro": "Suzana",
+      "area_ha": 45,
+      "match_slugs": []
+    },
+    {
+      "slug": "taquaril",
+      "bairro": "Taquaril",
+      "area_ha": 42,
+      "match_slugs": []
+    },
+    {
+      "slug": "teixeira-dias",
+      "bairro": "Teixeira Dias",
+      "area_ha": 73,
+      "match_slugs": []
+    },
+    {
+      "slug": "tiradentes",
+      "bairro": "Tiradentes",
+      "area_ha": 68,
+      "match_slugs": []
+    },
+    {
+      "slug": "tirol",
+      "bairro": "Tirol",
+      "area_ha": 176,
+      "match_slugs": []
+    },
+    {
+      "slug": "tres-marias",
+      "bairro": "Três Marias",
+      "area_ha": 4,
+      "match_slugs": []
+    },
+    {
+      "slug": "trevo",
+      "bairro": "Trevo",
+      "area_ha": 164,
+      "match_slugs": []
+    },
+    {
+      "slug": "tunel-de-ibirite",
+      "bairro": "Túnel de Ibirité",
+      "area_ha": 19,
+      "match_slugs": []
+    },
+    {
+      "slug": "tupi-a",
+      "bairro": "Tupi A",
+      "area_ha": 91,
+      "match_slugs": []
+    },
+    {
+      "slug": "tupi-b",
+      "bairro": "Tupi B",
+      "area_ha": 131,
+      "match_slugs": []
+    },
+    {
+      "slug": "uniao",
+      "bairro": "União",
+      "area_ha": 154,
+      "match_slugs": []
+    },
+    {
+      "slug": "universitario",
+      "bairro": "Universitário",
+      "area_ha": 50,
+      "match_slugs": []
+    },
+    {
+      "slug": "universo",
+      "bairro": "Universo",
+      "area_ha": 5,
+      "match_slugs": []
+    },
+    {
+      "slug": "urca",
+      "bairro": "Urca",
+      "area_ha": 29,
+      "match_slugs": []
+    },
+    {
+      "slug": "vale-do-jatoba",
+      "bairro": "Vale do Jatobá",
+      "area_ha": 64,
+      "match_slugs": []
+    },
+    {
+      "slug": "varzea-da-palma",
+      "bairro": "Várzea da Palma",
+      "area_ha": 1,
+      "match_slugs": []
+    },
+    {
+      "slug": "venda-nova",
+      "bairro": "Venda Nova",
+      "area_ha": 77,
+      "match_slugs": []
+    },
+    {
+      "slug": "ventosa",
+      "bairro": "Ventosa",
+      "area_ha": 22,
+      "match_slugs": []
+    },
+    {
+      "slug": "vera-cruz",
+      "bairro": "Vera Cruz",
+      "area_ha": 45,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-aeroporto",
+      "bairro": "Vila Aeroporto",
+      "area_ha": 8,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-aeroporto-jaragua",
+      "bairro": "Vila Aeroporto Jaraguá",
+      "area_ha": 1,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-alto-dos-pinheiros",
+      "bairro": "Vila Alto dos Pinheiros",
+      "area_ha": 1,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-antena",
+      "bairro": "Vila Antena",
+      "area_ha": 6,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-antena-montanhes",
+      "bairro": "Vila Antena Montanhês",
+      "area_ha": 3,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-atila-de-paiva",
+      "bairro": "Vila Átila de Paiva",
+      "area_ha": 5,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-bandeirantes",
+      "bairro": "Vila Bandeirantes",
+      "area_ha": 2,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-barragem-santa-lucia",
+      "bairro": "Vila Barragem Santa Lúcia",
+      "area_ha": 28,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-batik",
+      "bairro": "Vila Batik",
+      "area_ha": 1,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-boa-vista",
+      "bairro": "Vila Boa Vista",
+      "area_ha": 3,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-calafate",
+      "bairro": "Vila Calafate",
+      "area_ha": 2,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-california",
+      "bairro": "Vila Califórnia",
+      "area_ha": 11,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-canto-do-sabia",
+      "bairro": "Vila Canto do Sabiá",
+      "area_ha": 1,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-cemig",
+      "bairro": "Vila CEMIG",
+      "area_ha": 30,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-cloris",
+      "bairro": "Vila Clóris",
+      "area_ha": 88,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-copacabana",
+      "bairro": "Vila Copacabana",
+      "area_ha": 2,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-copasa",
+      "bairro": "Vila COPASA",
+      "area_ha": 1,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-coqueiral",
+      "bairro": "Vila Coqueiral",
+      "area_ha": 6,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-da-amizade",
+      "bairro": "Vila da Amizade",
+      "area_ha": 2,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-da-luz",
+      "bairro": "Vila da Luz",
+      "area_ha": 7,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-da-paz",
+      "bairro": "Vila da Paz",
+      "area_ha": 2,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-de-sa",
+      "bairro": "Vila de Sá",
+      "area_ha": 2,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-dias",
+      "bairro": "Vila Dias",
+      "area_ha": 3,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-do-pombal",
+      "bairro": "Vila do Pombal",
+      "area_ha": 1,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-dos-anjos",
+      "bairro": "Vila dos Anjos",
+      "area_ha": 3,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-ecologica",
+      "bairro": "Vila Ecológica",
+      "area_ha": 24,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-engenho-nogueira",
+      "bairro": "Vila Engenho Nogueira",
+      "area_ha": 2,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-esplanada",
+      "bairro": "Vila Esplanada",
+      "area_ha": 4,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-formosa",
+      "bairro": "Vila Formosa",
+      "area_ha": 4,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-fumec",
+      "bairro": "Vila FUMEC",
+      "area_ha": 1,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-havai",
+      "bairro": "Vila Havaí",
+      "area_ha": 1,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-horto-florestal",
+      "bairro": "Vila Horto Florestal",
+      "area_ha": 1,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-independencia-i",
+      "bairro": "Vila Independência I",
+      "area_ha": 14,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-independencia-ii",
+      "bairro": "Vila Independência II",
+      "area_ha": 8,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-independencia-iv",
+      "bairro": "Vila Independência IV",
+      "area_ha": 4,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-inestan",
+      "bairro": "Vila Inestan",
+      "area_ha": 2,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-ipiranga",
+      "bairro": "Vila Ipiranga",
+      "area_ha": 1,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-jardim-alvorada",
+      "bairro": "Vila Jardim Alvorada",
+      "area_ha": 23,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-jardim-leblon",
+      "bairro": "Vila Jardim Leblon",
+      "area_ha": 1,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-jardim-montanhes",
+      "bairro": "Vila Jardim Montanhês",
+      "area_ha": 3,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-madre-gertrudes-i",
+      "bairro": "Vila Madre Gertrudes I",
+      "area_ha": 6,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-madre-gertrudes-ii",
+      "bairro": "Vila Madre Gertrudes II",
+      "area_ha": 1,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-madre-gertrudes-iii",
+      "bairro": "Vila Madre Gertrudes III",
+      "area_ha": 2,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-madre-gertrudes-v",
+      "bairro": "Vila Madre Gertrudes V",
+      "area_ha": 2,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-maloca",
+      "bairro": "Vila Maloca",
+      "area_ha": 2,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-mangueiras",
+      "bairro": "Vila Mangueiras",
+      "area_ha": 9,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-mantiqueira",
+      "bairro": "Vila Mantiqueira",
+      "area_ha": 3,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-maria",
+      "bairro": "Vila Maria",
+      "area_ha": 12,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-minaslandia",
+      "bairro": "Vila Minaslândia",
+      "area_ha": 4,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-nossa-senhora-aparecida",
+      "bairro": "Vila Nossa Senhora Aparecida",
+      "area_ha": 7,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-nossa-senhora-do-rosario",
+      "bairro": "Vila Nossa Senhora do Rosário",
+      "area_ha": 2,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-nova",
+      "bairro": "Vila Nova",
+      "area_ha": 2,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-nova-cachoeirinha-i",
+      "bairro": "Vila Nova Cachoeirinha I",
+      "area_ha": 6,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-nova-cachoeirinha-ii",
+      "bairro": "Vila Nova Cachoeirinha II",
+      "area_ha": 1,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-nova-cachoeirinha-iv",
+      "bairro": "Vila Nova Cachoeirinha IV",
+      "area_ha": 2,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-nova-cintra",
+      "bairro": "Vila Nova Cintra",
+      "area_ha": 1,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-nova-dos-milionarios",
+      "bairro": "Vila Nova dos Milionários",
+      "area_ha": 1,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-nova-gameleira-i",
+      "bairro": "Vila Nova Gameleira I",
+      "area_ha": 2,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-nova-gameleira-ii",
+      "bairro": "Vila Nova Gameleira II",
+      "area_ha": 6,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-nova-gameleira-iii",
+      "bairro": "Vila Nova Gameleira III",
+      "area_ha": 2,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-nova-paraiso",
+      "bairro": "Vila Nova Paraíso",
+      "area_ha": 3,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-novo-sao-lucas",
+      "bairro": "Vila Novo São Lucas",
+      "area_ha": 14,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-oeste",
+      "bairro": "Vila Oeste",
+      "area_ha": 5,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-ouro-minas",
+      "bairro": "Vila Ouro Minas",
+      "area_ha": 4,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-paqueta",
+      "bairro": "Vila Paquetá",
+      "area_ha": 1,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-paraiso",
+      "bairro": "Vila Paraíso",
+      "area_ha": 2,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-paris",
+      "bairro": "Vila Paris",
+      "area_ha": 30,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-petropolis",
+      "bairro": "Vila Petrópolis",
+      "area_ha": 1,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-pinho",
+      "bairro": "Vila Pinho",
+      "area_ha": 36,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-piratininga",
+      "bairro": "Vila Piratininga",
+      "area_ha": 7,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-piratininga-venda-nova",
+      "bairro": "Vila Piratininga Venda Nova",
+      "area_ha": 1,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-primeiro-de-maio",
+      "bairro": "Vila Primeiro de Maio",
+      "area_ha": 16,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-puc",
+      "bairro": "Vila PUC",
+      "area_ha": 1,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-real-i",
+      "bairro": "Vila Real I",
+      "area_ha": 1,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-real-ii",
+      "bairro": "Vila Real II",
+      "area_ha": 2,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-rica",
+      "bairro": "Vila Rica",
+      "area_ha": 3,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-santa-monica",
+      "bairro": "Vila Santa Mônica",
+      "area_ha": 6,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-santa-rosa",
+      "bairro": "Vila Santa Rosa",
+      "area_ha": 3,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-santo-antonio",
+      "bairro": "Vila Santo Antônio",
+      "area_ha": 1,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-santo-antonio-barroquinha",
+      "bairro": "Vila Santo Antônio Barroquinha",
+      "area_ha": 3,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-sao-dimas",
+      "bairro": "Vila São Dimas",
+      "area_ha": 1,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-sao-francisco",
+      "bairro": "Vila São Francisco",
+      "area_ha": 1,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-sao-gabriel",
+      "bairro": "Vila São Gabriel",
+      "area_ha": 2,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-sao-geraldo",
+      "bairro": "Vila São Geraldo",
+      "area_ha": 1,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-sao-joao-batista",
+      "bairro": "Vila São João Batista",
+      "area_ha": 9,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-sao-paulo",
+      "bairro": "Vila São Paulo",
+      "area_ha": 7,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-sao-rafael",
+      "bairro": "Vila São Rafael",
+      "area_ha": 3,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-sao-tomaz",
+      "bairro": "Vila São Tomáz",
+      "area_ha": 21,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-satelite",
+      "bairro": "Vila Satélite",
+      "area_ha": 1,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-sesc",
+      "bairro": "Vila SESC",
+      "area_ha": 2,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-sumare",
+      "bairro": "Vila Sumaré",
+      "area_ha": 7,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-suzana-i",
+      "bairro": "Vila Suzana I",
+      "area_ha": 7,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-suzana-ii",
+      "bairro": "Vila Suzana II",
+      "area_ha": 1,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-tiradentes",
+      "bairro": "Vila Tiradentes",
+      "area_ha": 5,
+      "match_slugs": [],
+      "wellhub_absent": true
+    },
+    {
+      "slug": "vila-tirol",
+      "bairro": "Vila Tirol",
+      "area_ha": 1,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-trevo",
+      "bairro": "Vila Trevo",
+      "area_ha": 1,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-trinta-e-um-de-marco",
+      "bairro": "Vila Trinta e Um de Março",
+      "area_ha": 6,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-uniao",
+      "bairro": "Vila União",
+      "area_ha": 1,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-vera-cruz-i",
+      "bairro": "Vila Vera Cruz I",
+      "area_ha": 1,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-vera-cruz-ii",
+      "bairro": "Vila Vera Cruz II",
+      "area_ha": 1,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-verde",
+      "bairro": "Vila Verde",
+      "area_ha": 1,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-vista-alegre",
+      "bairro": "Vila Vista Alegre",
+      "area_ha": 37,
+      "match_slugs": []
+    },
+    {
+      "slug": "vila-viveiro",
+      "bairro": "Vila Viveiro",
+      "area_ha": 7,
+      "match_slugs": [],
+      "wellhub_absent": true
+    },
+    {
+      "slug": "virginia",
+      "bairro": "Virgínia",
+      "area_ha": 6,
+      "match_slugs": []
+    },
+    {
+      "slug": "vista-alegre",
+      "bairro": "Vista Alegre",
+      "area_ha": 46,
+      "match_slugs": []
+    },
+    {
+      "slug": "vista-do-sol",
+      "bairro": "Vista do Sol",
+      "area_ha": 32,
+      "match_slugs": []
+    },
+    {
+      "slug": "vitoria",
+      "bairro": "Vitória",
+      "area_ha": 41,
+      "match_slugs": []
+    },
+    {
+      "slug": "vitoria-da-conquista",
+      "bairro": "Vitória da Conquista",
+      "area_ha": 10,
+      "match_slugs": []
+    },
+    {
+      "slug": "xangri-la",
+      "bairro": "Xangri-lá",
+      "area_ha": 53,
+      "match_slugs": []
+    },
+    {
+      "slug": "xodo-marize",
+      "bairro": "Xodó-Marize",
+      "area_ha": 49,
+      "match_slugs": []
+    },
+    {
+      "slug": "zilah-sposito",
+      "bairro": "Zilah Spósito",
+      "area_ha": 9,
+      "match_slugs": []
+    }
+  ]
+}

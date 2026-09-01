@@ -12,6 +12,8 @@ export type BairroCatalogEntry = {
   wellhub_slug?: string;
   /** Sub-bairros Receita/geocode que mapeiam para este distrito oficial */
   match_slugs?: string[];
+  /** Preflight/recover confirmou tile WH sem academias neste município */
+  wellhub_absent?: boolean;
   area_ha?: number;
   populacao_2022?: number;
   densidade_hab_ha?: number;

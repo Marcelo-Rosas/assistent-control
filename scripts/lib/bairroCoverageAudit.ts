@@ -452,6 +452,14 @@ export function buildMunicipioCoverageRows(opts: {
       referenceCount = union.size;
     }
 
+    if (catalog) {
+      for (const entry of catalog.bairros) {
+        if (!entry.wellhub_absent) continue;
+        addBairro(whBairros, entry.bairro);
+        union.add(entry.slug);
+      }
+    }
+
     finalizeAgg(wh, whBairros, referenceSlugs, referenceLabels);
     finalizeAgg(tp, tpBairros, referenceSlugs, referenceLabels);
     finalizeAgg(gp, gpBairros, referenceSlugs, referenceLabels);
