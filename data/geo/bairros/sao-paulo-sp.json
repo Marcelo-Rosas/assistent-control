@@ -1,0 +1,680 @@
+{
+  "cidade": "São Paulo",
+  "uf": "SP",
+  "ibge": "3550308",
+  "fonte": "Prefeitura de São Paulo — Lei municipal 11.220/1992 (96 distritos) / IBGE Censo 2022 (população por distrito)",
+  "bairros": [
+    {
+      "slug": "grajau",
+      "bairro": "Grajaú",
+      "populacao_2022": 384873,
+      "area_ha": 9200,
+      "densidade_hab_ha": 41.8
+    },
+    {
+      "slug": "jardim-angela",
+      "bairro": "Jardim Ângela",
+      "populacao_2022": 311432,
+      "area_ha": 3700,
+      "densidade_hab_ha": 84.2
+    },
+    {
+      "slug": "capao-redondo",
+      "bairro": "Capão Redondo",
+      "populacao_2022": 270767,
+      "area_ha": 1377,
+      "densidade_hab_ha": 196.6
+    },
+    {
+      "slug": "sapopemba",
+      "bairro": "Sapopemba",
+      "populacao_2022": 266715,
+      "area_ha": 1340,
+      "densidade_hab_ha": 199
+    },
+    {
+      "slug": "sacoma",
+      "bairro": "Sacomã",
+      "populacao_2022": 261436,
+      "area_ha": 1400,
+      "densidade_hab_ha": 186.7
+    },
+    {
+      "slug": "jardim-sao-luis",
+      "bairro": "Jardim São Luís",
+      "populacao_2022": 259377,
+      "area_ha": 2400,
+      "densidade_hab_ha": 108.1
+    },
+    {
+      "slug": "cidade-ademar",
+      "bairro": "Cidade Ademar",
+      "populacao_2022": 249218,
+      "area_ha": 1200,
+      "densidade_hab_ha": 207.7
+    },
+    {
+      "slug": "brasilandia",
+      "bairro": "Brasilândia",
+      "populacao_2022": 243273,
+      "area_ha": 2100,
+      "densidade_hab_ha": 115.8
+    },
+    {
+      "slug": "campo-limpo",
+      "bairro": "Campo Limpo",
+      "populacao_2022": 236162,
+      "area_ha": 1260,
+      "densidade_hab_ha": 187.4
+    },
+    {
+      "slug": "jabaquara",
+      "bairro": "Jabaquara",
+      "populacao_2022": 214982,
+      "area_ha": 1410,
+      "densidade_hab_ha": 152.5
+    },
+    {
+      "slug": "jaragua",
+      "bairro": "Jaraguá",
+      "populacao_2022": 211617,
+      "area_ha": 2760,
+      "densidade_hab_ha": 76.7
+    },
+    {
+      "slug": "itaquera",
+      "bairro": "Itaquera",
+      "populacao_2022": 210960,
+      "area_ha": 1400,
+      "densidade_hab_ha": 150.7
+    },
+    {
+      "slug": "itaim-paulista",
+      "bairro": "Itaim Paulista",
+      "populacao_2022": 205295,
+      "area_ha": 1500,
+      "densidade_hab_ha": 136.9
+    },
+    {
+      "slug": "tremembe",
+      "bairro": "Tremembé",
+      "populacao_2022": 196563,
+      "area_ha": 5630,
+      "densidade_hab_ha": 34.9
+    },
+    {
+      "slug": "cidade-tiradentes",
+      "bairro": "Cidade Tiradentes",
+      "populacao_2022": 194177,
+      "area_ha": 1500,
+      "densidade_hab_ha": 129.5
+    },
+    {
+      "slug": "cidade-dutra",
+      "bairro": "Cidade Dutra",
+      "populacao_2022": 182459,
+      "area_ha": 2930,
+      "densidade_hab_ha": 62.3
+    },
+    {
+      "slug": "pirituba",
+      "bairro": "Pirituba",
+      "populacao_2022": 179724,
+      "area_ha": 1710,
+      "densidade_hab_ha": 105.1
+    },
+    {
+      "slug": "vila-andrade",
+      "bairro": "Vila Andrade",
+      "populacao_2022": 168669,
+      "area_ha": 1031,
+      "densidade_hab_ha": 163.6
+    },
+    {
+      "slug": "lajeado",
+      "bairro": "Lajeado",
+      "populacao_2022": 164391,
+      "area_ha": 920,
+      "densidade_hab_ha": 178.7
+    },
+    {
+      "slug": "pedreira",
+      "bairro": "Pedreira",
+      "populacao_2022": 163586,
+      "area_ha": 1870,
+      "densidade_hab_ha": 87.5
+    },
+    {
+      "slug": "sao-mateus",
+      "bairro": "São Mateus",
+      "populacao_2022": 155682,
+      "area_ha": 1300,
+      "densidade_hab_ha": 119.8
+    },
+    {
+      "slug": "parelheiros",
+      "bairro": "Parelheiros",
+      "populacao_2022": 153687,
+      "area_ha": 15300,
+      "densidade_hab_ha": 10
+    },
+    {
+      "slug": "iguatemi",
+      "bairro": "Iguatemi",
+      "populacao_2022": 149700,
+      "area_ha": 1960,
+      "densidade_hab_ha": 76.4
+    },
+    {
+      "slug": "sao-rafael",
+      "bairro": "São Rafael",
+      "populacao_2022": 148145,
+      "area_ha": 1320,
+      "densidade_hab_ha": 112.2
+    },
+    {
+      "slug": "cachoeirinha",
+      "bairro": "Cachoeirinha",
+      "populacao_2022": 143366,
+      "area_ha": 1330,
+      "densidade_hab_ha": 107.8
+    },
+    {
+      "slug": "cangaiba",
+      "bairro": "Cangaíba",
+      "populacao_2022": 141172,
+      "area_ha": 1600,
+      "densidade_hab_ha": 88.2
+    },
+    {
+      "slug": "vila-curuca",
+      "bairro": "Vila Curuçá",
+      "populacao_2022": 140673,
+      "area_ha": 970,
+      "densidade_hab_ha": 145
+    },
+    {
+      "slug": "sao-lucas",
+      "bairro": "São Lucas",
+      "populacao_2022": 138038,
+      "area_ha": 990,
+      "densidade_hab_ha": 139.4
+    },
+    {
+      "slug": "freguesia-do-o",
+      "bairro": "Freguesia do Ó",
+      "populacao_2022": 137240,
+      "area_ha": 1050,
+      "densidade_hab_ha": 130.7
+    },
+    {
+      "slug": "cidade-lider",
+      "bairro": "Cidade Líder",
+      "populacao_2022": 136660,
+      "area_ha": 1020,
+      "densidade_hab_ha": 134
+    },
+    {
+      "slug": "vila-jacui",
+      "bairro": "Vila Jacuí",
+      "populacao_2022": 134189,
+      "area_ha": 770,
+      "densidade_hab_ha": 174.3
+    },
+    {
+      "slug": "penha",
+      "bairro": "Penha",
+      "populacao_2022": 132452,
+      "area_ha": 1130,
+      "densidade_hab_ha": 117.2
+    },
+    {
+      "slug": "rio-pequeno",
+      "bairro": "Rio Pequeno",
+      "populacao_2022": 131631,
+      "area_ha": 970,
+      "densidade_hab_ha": 135.7
+    },
+    {
+      "slug": "jardim-helena",
+      "bairro": "Jardim Helena",
+      "populacao_2022": 129409,
+      "area_ha": 910,
+      "densidade_hab_ha": 142.2
+    },
+    {
+      "slug": "saude",
+      "bairro": "Saúde",
+      "populacao_2022": 128469,
+      "area_ha": 890,
+      "densidade_hab_ha": 144.3
+    },
+    {
+      "slug": "jose-bonifacio",
+      "bairro": "José Bonifácio",
+      "populacao_2022": 128243,
+      "area_ha": 1410,
+      "densidade_hab_ha": 91
+    },
+    {
+      "slug": "vila-mariana",
+      "bairro": "Vila Mariana",
+      "populacao_2022": 127286,
+      "area_ha": 860,
+      "densidade_hab_ha": 148
+    },
+    {
+      "slug": "vila-sonia",
+      "bairro": "Vila Sônia",
+      "populacao_2022": 123748,
+      "area_ha": 990,
+      "densidade_hab_ha": 125
+    },
+    {
+      "slug": "raposo-tavares",
+      "bairro": "Raposo Tavares",
+      "populacao_2022": 117738,
+      "area_ha": 1260,
+      "densidade_hab_ha": 93.4
+    },
+    {
+      "slug": "ipiranga",
+      "bairro": "Ipiranga",
+      "populacao_2022": 116271,
+      "area_ha": 1050,
+      "densidade_hab_ha": 110.7
+    },
+    {
+      "slug": "campo-grande",
+      "bairro": "Campo Grande",
+      "populacao_2022": 115925,
+      "area_ha": 1310,
+      "densidade_hab_ha": 88.5
+    },
+    {
+      "slug": "santana",
+      "bairro": "Santana",
+      "populacao_2022": 115689,
+      "area_ha": 1314,
+      "densidade_hab_ha": 88
+    },
+    {
+      "slug": "vila-medeiros",
+      "bairro": "Vila Medeiros",
+      "populacao_2022": 114939,
+      "area_ha": 770,
+      "densidade_hab_ha": 149.3
+    },
+    {
+      "slug": "ermelino-matarazzo",
+      "bairro": "Ermelino Matarazzo",
+      "populacao_2022": 112333,
+      "area_ha": 870,
+      "densidade_hab_ha": 129.1
+    },
+    {
+      "slug": "guaianases",
+      "bairro": "Guaianases",
+      "populacao_2022": 109316,
+      "area_ha": 860,
+      "densidade_hab_ha": 127.1
+    },
+    {
+      "slug": "vila-maria",
+      "bairro": "Vila Maria",
+      "populacao_2022": 108543,
+      "area_ha": 1180,
+      "densidade_hab_ha": 92
+    },
+    {
+      "slug": "vila-prudente",
+      "bairro": "Vila Prudente",
+      "populacao_2022": 105690,
+      "area_ha": 990,
+      "densidade_hab_ha": 106.8
+    },
+    {
+      "slug": "mandaqui",
+      "bairro": "Mandaqui",
+      "populacao_2022": 103665,
+      "area_ha": 1323,
+      "densidade_hab_ha": 78.4
+    },
+    {
+      "slug": "vila-matilde",
+      "bairro": "Vila Matilde",
+      "populacao_2022": 103558,
+      "area_ha": 890,
+      "densidade_hab_ha": 116.4
+    },
+    {
+      "slug": "cursino",
+      "bairro": "Cursino",
+      "populacao_2022": 103171,
+      "area_ha": 1280,
+      "densidade_hab_ha": 80.6
+    },
+    {
+      "slug": "perdizes",
+      "bairro": "Perdizes",
+      "populacao_2022": 102391,
+      "area_ha": 630,
+      "densidade_hab_ha": 162.5
+    },
+    {
+      "slug": "itaim-bibi",
+      "bairro": "Itaim Bibi",
+      "populacao_2022": 101452,
+      "area_ha": 990,
+      "densidade_hab_ha": 102.5
+    },
+    {
+      "slug": "tucuruvi",
+      "bairro": "Tucuruvi",
+      "populacao_2022": 99559,
+      "area_ha": 944,
+      "densidade_hab_ha": 105.5
+    },
+    {
+      "slug": "tatuape",
+      "bairro": "Tatuapé",
+      "populacao_2022": 98601,
+      "area_ha": 820,
+      "densidade_hab_ha": 120.2
+    },
+    {
+      "slug": "artur-alvim",
+      "bairro": "Artur Alvim",
+      "populacao_2022": 95575,
+      "area_ha": 660,
+      "densidade_hab_ha": 144.8
+    },
+    {
+      "slug": "vila-formosa",
+      "bairro": "Vila Formosa",
+      "populacao_2022": 92186,
+      "area_ha": 740,
+      "densidade_hab_ha": 124.6
+    },
+    {
+      "slug": "ponte-rasa",
+      "bairro": "Ponte Rasa",
+      "populacao_2022": 89881,
+      "area_ha": 700,
+      "densidade_hab_ha": 128.4
+    },
+    {
+      "slug": "aricanduva",
+      "bairro": "Aricanduva",
+      "populacao_2022": 89574,
+      "area_ha": 660,
+      "densidade_hab_ha": 135.7
+    },
+    {
+      "slug": "sao-domingos",
+      "bairro": "São Domingos",
+      "populacao_2022": 88884,
+      "area_ha": 1000,
+      "densidade_hab_ha": 88.9
+    },
+    {
+      "slug": "perus",
+      "bairro": "Perus",
+      "populacao_2022": 87716,
+      "area_ha": 2390,
+      "densidade_hab_ha": 36.7
+    },
+    {
+      "slug": "jacana",
+      "bairro": "Jaçanã",
+      "populacao_2022": 87329,
+      "area_ha": 780,
+      "densidade_hab_ha": 112
+    },
+    {
+      "slug": "agua-rasa",
+      "bairro": "Água Rasa",
+      "populacao_2022": 85788,
+      "area_ha": 690,
+      "densidade_hab_ha": 124.3
+    },
+    {
+      "slug": "santo-amaro",
+      "bairro": "Santo Amaro",
+      "populacao_2022": 85349,
+      "area_ha": 1570,
+      "densidade_hab_ha": 54.4
+    },
+    {
+      "slug": "carrao",
+      "bairro": "Carrão",
+      "populacao_2022": 84397,
+      "area_ha": 750,
+      "densidade_hab_ha": 112.5
+    },
+    {
+      "slug": "limao",
+      "bairro": "Limão",
+      "populacao_2022": 82373,
+      "area_ha": 630,
+      "densidade_hab_ha": 130.8
+    },
+    {
+      "slug": "moema",
+      "bairro": "Moema",
+      "populacao_2022": 81899,
+      "area_ha": 900,
+      "densidade_hab_ha": 91
+    },
+    {
+      "slug": "jardim-paulista",
+      "bairro": "Jardim Paulista",
+      "populacao_2022": 81859,
+      "area_ha": 610,
+      "densidade_hab_ha": 134.2
+    },
+    {
+      "slug": "sao-miguel-paulista",
+      "bairro": "São Miguel Paulista",
+      "populacao_2022": 81011,
+      "area_ha": 750,
+      "densidade_hab_ha": 108
+    },
+    {
+      "slug": "santa-cecilia",
+      "bairro": "Santa Cecília",
+      "populacao_2022": 80972,
+      "area_ha": 390,
+      "densidade_hab_ha": 207.6
+    },
+    {
+      "slug": "mooca",
+      "bairro": "Mooca",
+      "populacao_2022": 80880,
+      "area_ha": 770,
+      "densidade_hab_ha": 105
+    },
+    {
+      "slug": "casa-verde",
+      "bairro": "Casa Verde",
+      "populacao_2022": 80536,
+      "area_ha": 710,
+      "densidade_hab_ha": 113.4
+    },
+    {
+      "slug": "lapa",
+      "bairro": "Lapa",
+      "populacao_2022": 75533,
+      "area_ha": 1000,
+      "densidade_hab_ha": 75.5
+    },
+    {
+      "slug": "anhanguera",
+      "bairro": "Anhanguera",
+      "populacao_2022": 75360,
+      "area_ha": 3330,
+      "densidade_hab_ha": 22.6
+    },
+    {
+      "slug": "parque-do-carmo",
+      "bairro": "Parque do Carmo",
+      "populacao_2022": 74677,
+      "area_ha": 1540,
+      "densidade_hab_ha": 48.5
+    },
+    {
+      "slug": "campo-belo",
+      "bairro": "Campo Belo",
+      "populacao_2022": 71034,
+      "area_ha": 879,
+      "densidade_hab_ha": 80.8
+    },
+    {
+      "slug": "liberdade",
+      "bairro": "Liberdade",
+      "populacao_2022": 66056,
+      "area_ha": 370,
+      "densidade_hab_ha": 178.5
+    },
+    {
+      "slug": "pinheiros",
+      "bairro": "Pinheiros",
+      "populacao_2022": 65145,
+      "area_ha": 800,
+      "densidade_hab_ha": 81.4
+    },
+    {
+      "slug": "republica",
+      "bairro": "República",
+      "populacao_2022": 60825,
+      "area_ha": 230,
+      "densidade_hab_ha": 264.5
+    },
+    {
+      "slug": "bela-vista",
+      "bairro": "Bela Vista",
+      "populacao_2022": 60024,
+      "area_ha": 260,
+      "densidade_hab_ha": 230.9
+    },
+    {
+      "slug": "belem",
+      "bairro": "Belém",
+      "populacao_2022": 55785,
+      "area_ha": 600,
+      "densidade_hab_ha": 93
+    },
+    {
+      "slug": "jaguare",
+      "bairro": "Jaguaré",
+      "populacao_2022": 55382,
+      "area_ha": 660,
+      "densidade_hab_ha": 83.9
+    },
+    {
+      "slug": "consolacao",
+      "bairro": "Consolação",
+      "populacao_2022": 53144,
+      "area_ha": 370,
+      "densidade_hab_ha": 143.6
+    },
+    {
+      "slug": "vila-guilherme",
+      "bairro": "Vila Guilherme",
+      "populacao_2022": 52587,
+      "area_ha": 690,
+      "densidade_hab_ha": 76.2
+    },
+    {
+      "slug": "butanta",
+      "bairro": "Butantã",
+      "populacao_2022": 51715,
+      "area_ha": 1290,
+      "densidade_hab_ha": 40.1
+    },
+    {
+      "slug": "vila-leopoldina",
+      "bairro": "Vila Leopoldina",
+      "populacao_2022": 46875,
+      "area_ha": 720,
+      "densidade_hab_ha": 65.1
+    },
+    {
+      "slug": "cambuci",
+      "bairro": "Cambuci",
+      "populacao_2022": 45163,
+      "area_ha": 390,
+      "densidade_hab_ha": 115.8
+    },
+    {
+      "slug": "morumbi",
+      "bairro": "Morumbi",
+      "populacao_2022": 43690,
+      "area_ha": 1140,
+      "densidade_hab_ha": 38.3
+    },
+    {
+      "slug": "bras",
+      "bairro": "Brás",
+      "populacao_2022": 38750,
+      "area_ha": 350,
+      "densidade_hab_ha": 110.7
+    },
+    {
+      "slug": "socorro",
+      "bairro": "Socorro",
+      "populacao_2022": 38051,
+      "area_ha": 1290,
+      "densidade_hab_ha": 29.5
+    },
+    {
+      "slug": "alto-de-pinheiros",
+      "bairro": "Alto de Pinheiros",
+      "populacao_2022": 37359,
+      "area_ha": 770,
+      "densidade_hab_ha": 48.5
+    },
+    {
+      "slug": "bom-retiro",
+      "bairro": "Bom Retiro",
+      "populacao_2022": 33520,
+      "area_ha": 400,
+      "densidade_hab_ha": 83.8
+    },
+    {
+      "slug": "barra-funda",
+      "bairro": "Barra Funda",
+      "populacao_2022": 33436,
+      "area_ha": 560,
+      "densidade_hab_ha": 59.7
+    },
+    {
+      "slug": "jaguara",
+      "bairro": "Jaguara",
+      "populacao_2022": 24730,
+      "area_ha": 460,
+      "densidade_hab_ha": 53.8
+    },
+    {
+      "slug": "se",
+      "bairro": "Sé",
+      "populacao_2022": 23832,
+      "area_ha": 210,
+      "densidade_hab_ha": 113.5
+    },
+    {
+      "slug": "pari",
+      "bairro": "Pari",
+      "populacao_2022": 17359,
+      "area_ha": 290,
+      "densidade_hab_ha": 59.9
+    },
+    {
+      "slug": "marsilac",
+      "bairro": "Marsilac",
+      "populacao_2022": 11451,
+      "area_ha": 20000,
+      "densidade_hab_ha": 0.6
+    }
+  ]
+}
