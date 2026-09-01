@@ -1,0 +1,66 @@
+{
+  "ran_at": "2026-09-01T13:44:03.409Z",
+  "slugs": [
+    "cachoeirinha",
+    "carrao",
+    "jose-bonifacio",
+    "lajeado",
+    "marsilac",
+    "ponte-rasa",
+    "sao-rafael"
+  ],
+  "before_gyms": 44163,
+  "after_gyms": 44170,
+  "delta": 7,
+  "rows": [
+    {
+      "bairro": "Lajeado",
+      "slug": "lajeado",
+      "scraped": 100,
+      "new_gyms": 2,
+      "tagged": 100
+    },
+    {
+      "bairro": "São Rafael",
+      "slug": "sao-rafael",
+      "scraped": 100,
+      "new_gyms": 0,
+      "tagged": 100
+    },
+    {
+      "bairro": "Cachoeirinha",
+      "slug": "cachoeirinha",
+      "scraped": 100,
+      "new_gyms": 4,
+      "tagged": 100
+    },
+    {
+      "bairro": "José Bonifácio",
+      "slug": "jose-bonifacio",
+      "scraped": 3,
+      "new_gyms": 0,
+      "tagged": 3
+    },
+    {
+      "bairro": "Ponte Rasa",
+      "slug": "ponte-rasa",
+      "scraped": 100,
+      "new_gyms": 0,
+      "tagged": 100
+    },
+    {
+      "bairro": "Carrão",
+      "slug": "carrao",
+      "scraped": 100,
+      "new_gyms": 1,
+      "tagged": 100
+    },
+    {
+      "bairro": "Marsilac",
+      "slug": "marsilac",
+      "scraped": 74,
+      "new_gyms": 0,
+      "tagged": 74
+    }
+  ]
+}

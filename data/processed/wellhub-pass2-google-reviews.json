@@ -1,0 +1,99 @@
+{
+  "wellhub_gym_id": "CXzlnnF9orYbwAPwdUNDMIp5faQRn38KmdHpbGrm81kmNMemxPUUK7YUJl5S5TGL",
+  "wellhub_name": "Perfect Body - Cassino",
+  "google_place": {
+    "place_id": "ChIJQy2AvuzfmwARP5T2npZCSIc",
+    "data_id": "0x9bdfecbe802d43:0x874842969ef6943f",
+    "title": "Academia Perfect Body",
+    "address": "R. Fonseca, 534 - Bangu, Rio de Janeiro - RJ, 21820-005",
+    "phone": "+55 21 2401-6067",
+    "rating": 4.8,
+    "reviews_total": 606,
+    "gps": { "lat": -22.880262, "lng": -43.4660089 }
+  },
+  "source": "searchapi google_maps_reviews",
+  "fetched_at": "2026-08-31T14:20:00.000Z",
+  "sort_by": "newest",
+  "topics": [
+    { "keyword": "teachers", "reviews": 37 },
+    { "keyword": "swimming", "reviews": 23 },
+    { "keyword": "new equipment", "reviews": 23 },
+    { "keyword": "weight training", "reviews": 14 },
+    { "keyword": "pool", "reviews": 10 }
+  ],
+  "reviews": [
+    {
+      "review_id": "Ci9DQUlRQUNvZENodHljRjlvT2pnNE5FWTVaVUpFV1Raa09HRk1SRzlyZUdONk9XYxAB",
+      "user": "Bruno Tavares",
+      "rating": 2,
+      "iso_date": "2026-08-30T14:20:22Z",
+      "text": null
+    },
+    {
+      "review_id": "Ci9DQUlRQUNvZENodHljRjlvT2w5M2JEZHFTWHByWVhCc05GTkxNR2xpV0VwTVZHYxAB",
+      "user": "Sandra Elena",
+      "rating": 5,
+      "iso_date": "2026-08-06T23:46:47Z",
+      "text": null
+    },
+    {
+      "review_id": "Ci9DQUlRQUNvZENodHljRjlvT21wZmFXSnRWMWhuTVhaMmMzbDRaSE51YW1ReVYzYxAB",
+      "user": "Edinea Rosa",
+      "rating": 3,
+      "iso_date": "2026-07-19T17:07:52Z",
+      "text": "A academia e boa os aparelhos são novos, mas tem coisas que deixam a desejar primeiro o professor só fica no telefone a música também não gostei pois tem que ser ritmo de academia e só tocava pagode parecia que eu estava em um bar ."
+    },
+    {
+      "review_id": "Ci9DQUlRQUNvZENodHljRjlvT21Wck9XSTFRbUozU0Zkc1JGSnNWR1pYTld4T01uYxAB",
+      "user": "Jaqueline Carvalho",
+      "rating": 5,
+      "iso_date": "2026-07-03T22:26:00Z",
+      "text": null
+    },
+    {
+      "review_id": "ChdDSUhNMG9nS0VJQ0FnSUNCdmJYTW1BRRAB",
+      "user": "Luiz Augusto Henrique",
+      "rating": 5,
+      "iso_date": "2026-06-22T11:55:49Z",
+      "text": "Boa"
+    },
+    {
+      "review_id": "Ci9DQUlRQUNvZENodHljRjlvT2pSRVZXeDZaell5TlhOZmNsbFBVM1JrTjBGUVRIYxAB",
+      "user": "paula soares",
+      "rating": 5,
+      "iso_date": "2026-06-09T16:52:41Z",
+      "text": "Academia muito boa!! Todos funcionários super simpáticos e prestativos"
+    },
+    {
+      "review_id": "Ci9DQUlRQUNvZENodHljRjlvT2xGU2RVUmxOMnB0VDFWRE5YaERRMFJQZEhCMVVYYxAB",
+      "user": "Mayara Marques",
+      "rating": 5,
+      "iso_date": "2026-06-09T15:26:14Z",
+      "text": null
+    },
+    {
+      "review_id": "Ci9DQUlRQUNvZENodHljRjlvT2xsa01HMVBOVXRsVWtwSU5IRkJkM2RmY2w4MVNHYxAB",
+      "user": "Evellyn Souza",
+      "rating": 5,
+      "iso_date": "2026-06-09T11:48:55Z",
+      "text": null
+    },
+    {
+      "review_id": "Ci9DQUlRQUNvZENodHljRjlvT2t4MlZrUk5Xa3hsZFVReFdIaFFaa2RRVjIxNmRsRRAB",
+      "user": "Andressa Oliveira",
+      "rating": 5,
+      "iso_date": "2026-06-08T22:54:57Z",
+      "text": "Após quase um ano de gympass, testando todas as academias da região, cancelei o plano silver e fechei o plano anual da Perfect.\nOs instrutores do salão e os estagiários são extremamente atenciosos e pacientes. As aulas coletivas sempre muito boas. Aparelhos funcionando perfeitamente. Playlists impecáveis! Vale destacar as instrutoras: Renata, Mayra, Yasmin, Karol e o Sérgio!\nE a simpatia e atenção das meninas da recepção e do Jackson."
+    },
+    {
+      "review_id": "Ci9DQUlRQUNvZENodHljRjlvT2xWWGNXSk9OVkp5ZVhaallVbEJabDlyWlZwRU9XYxAB",
+      "user": "Joyce Celestino",
+      "rating": 5,
+      "iso_date": "2026-06-08T22:44:32Z",
+      "text": null
+    }
+  ],
+  "pagination": {
+    "next_page_token": "Ci8IARInCgoAP72GFWl0mU__EhAskqwXdiC37rcvl-8AAAAAGgf_AmFWl0mUGAAiAA"
+  }
+}

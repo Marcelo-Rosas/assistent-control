@@ -1,0 +1,26 @@
+{
+  "include": ["notebooks", "scripts"],
+  "exclude": ["**/node_modules", "data"],
+  "venvPath": ".",
+  "venv": ".venv",
+  "pythonVersion": "3.12",
+  "pythonPlatform": "Windows",
+  "typeCheckingMode": "basic",
+  "useLibraryCodeForTypes": true,
+  "reportMissingImports": "warning",
+  "reportAttributeAccessIssue": "warning",
+  "executionEnvironments": [
+    {
+      "root": "notebooks",
+      "pythonVersion": "3.12",
+      "pythonPlatform": "Windows",
+      "extraPaths": [".venv/Lib/site-packages"]
+    },
+    {
+      "root": "scripts",
+      "pythonVersion": "3.12",
+      "pythonPlatform": "Windows",
+      "extraPaths": [".venv/Lib/site-packages"]
+    }
+  ]
+}

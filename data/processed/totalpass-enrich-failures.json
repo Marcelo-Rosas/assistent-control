@@ -1,0 +1,18 @@
+{
+  "updated_at": "2026-08-31T19:29:55.542Z",
+  "summary": {
+    "total_gyms": 30706,
+    "completed": 21102,
+    "failed": 1,
+    "pending": 9603,
+    "pct_complete": "68.7%"
+  },
+  "failures": [
+    {
+      "gym_id": "16bc5e3f-3055-4e87-ad7d-08e17f82b342",
+      "slug": "buddha-spa-college-ltda",
+      "url": "https://totalpass.com/br/academias/buddha-spa-college-ltda/",
+      "error": "HTTP 502 em https://totalpass.com/br/academias/buddha-spa-college-ltda/"
+    }
+  ]
+}

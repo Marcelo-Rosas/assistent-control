@@ -20,6 +20,8 @@ import {
   FileText,
   Bug,
   Building2,
+  MapPin,
+  Brain,
 } from 'lucide-react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useRoles } from '../context/RoleContext';
@@ -40,6 +42,8 @@ const Sidebar: React.FC = () => {
     { id: 'knowledge', label: 'Base de Conhecimento', icon: Database, permission: 'manage_knowledge' },
     { id: 'rag', label: 'RAG Playground', icon: Bug, permission: 'manage_knowledge' },
     { id: 'receita', label: 'Receita CNAE', icon: Building2, permission: 'read_dashboard' },
+    { id: 'coverage/bairros', label: 'Cobertura Bairros', icon: MapPin, permission: 'read_dashboard' },
+    { id: 'ml/train', label: 'Lab ML Agregadores', icon: Brain, permission: 'manage_knowledge' },
     { id: 'scheduling', label: 'Agendamentos', icon: Calendar, permission: 'manage_appointments' },
     { id: 'playground', label: 'Playground', icon: Sparkles, permission: 'manage_settings' },
     { id: 'team', label: 'Equipe', icon: ShieldCheck, permission: 'manage_team' },
@@ -74,11 +78,10 @@ const Sidebar: React.FC = () => {
   };
 
   const profile = getUserProfile();
-  const pathSeg = location.pathname.replace(/^\//, '').split('/')[0] || 'dashboard';
 
   return (
     <div
-      className={`flex flex-col bg-slate-950/50 backdrop-blur-xl h-full transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] relative border-r border-slate-800/50 z-50
+      className={`flex flex-col bg-slate-950/50 backdrop-blur-xl h-full transition-all duration-300 ease-in-out relative border-r border-slate-800/50 z-50
         ${isExpanded ? 'w-20 lg:w-64' : 'w-20'}
       `}
     >
@@ -113,7 +116,8 @@ const Sidebar: React.FC = () => {
       <nav className="flex-1 py-6 px-3 space-y-1.5 overflow-x-hidden overflow-y-auto">
         {menuItems.map((item) => {
           const Icon = item.icon;
-          const isActive = pathSeg === item.id;
+          const isActive =
+            location.pathname === `/${item.id}` || location.pathname.startsWith(`/${item.id}/`);
           const hasItemPermission = hasPermission(item.permission);
 
           return (

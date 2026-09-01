@@ -65,7 +65,7 @@ async function callGemini(prompt: string): Promise<CallLlmResult> {
   const apiKey = Deno.env.get('GEMINI_API_KEY');
   if (!apiKey) throw new Error('GEMINI_API_KEY not set');
 
-  const model = Deno.env.get('GEMINI_MODEL') || 'gemini-2.5-flash';
+  const model = Deno.env.get('GEMINI_MODEL') || 'gemini-3.6-flash';
   const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
 
   const resp = await fetch(url, {

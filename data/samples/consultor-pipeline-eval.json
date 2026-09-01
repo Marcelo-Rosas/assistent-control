@@ -1,0 +1,490 @@
+{
+  "version": 1,
+  "purpose": "Golden do CONSULTOR LOGADO — pipeline completo (5 especialistas + tools + RAG Eros). Agregadores são UMA faixa, não o dataset inteiro.",
+  "consumer": "Hermes cron / eval. Entrada: export gymsite-consultor-*.json OU POST knowledge-ask / tools do consultor_engine.",
+  "export_schema": {
+    "file": "gymsite-consultor-{projetoId}-{date}.json",
+    "fields": ["exportedAt", "projetoId", "projeto.pesquisas_realizadas", "messages[].role", "messages[].content", "messages[].agenteId", "messages[].acoes", "messages[].citacoes"]
+  },
+  "pipeline": {
+    "especialistas": ["mercado", "tecnico", "regulatorio", "arquiteto", "engenheiro"],
+    "pesquisas_mercado": [
+      "mercado",
+      "demografia",
+      "concorrentes",
+      "reviews",
+      "oferta_concorrentes",
+      "pontos_comerciais",
+      "investimento"
+    ],
+    "tools_por_agente": {
+      "mercado": [
+        "pesquisar_contexto_mercado",
+        "analisar_demografia",
+        "pesquisar_concorrentes",
+        "analisar_reviews_e_dores",
+        "mapear_oferta_e_servicos",
+        "buscar_pontos_comerciais",
+        "estimar_investimento",
+        "consultar_base_conhecimento",
+        "consultar_base_mercado",
+        "consultar_eros_wellhub",
+        "consultar_eros_totalpass",
+        "consultar_eros_gurupass",
+        "consultar_share_agregadores",
+        "gerar_relatorio_formal"
+      ],
+      "tecnico": [
+        "consultar_catalogos_equipamentos",
+        "dimensionar_cardio_por_pico",
+        "dimensionar_musculacao",
+        "calcular_equipamentos_por_area",
+        "consultar_base_conhecimento"
+      ],
+      "regulatorio": [
+        "resolver_cref_por_uf",
+        "consultar_anuidade_pj_cref",
+        "consultar_base_conhecimento",
+        "consultar_eros_regulatorio"
+      ],
+      "arquiteto": [
+        "consultar_engenharia_obra",
+        "calcular_sanitarios_municipio",
+        "calcular_sanitarios_por_lotacao"
+      ],
+      "engenheiro": ["consultar_engenharia_obra", "consultar_eros_engenharia"]
+    },
+    "eros_groups": {
+      "mercado": "MERCADO_GROUP_ID",
+      "regulatorio": "REGULATORIO_GROUP_ID",
+      "engenheiro": "ENGENHEIRO_GROUP_ID",
+      "wellhub": "WELLHUB_GROUP_ID",
+      "totalpass": "TOTALPASS_GROUP_ID",
+      "gurupass": "GURUPASS_GROUP_ID"
+    },
+    "rubrica": {
+      "tool_vazia": "acoes.status sucesso + citacoes=[] + texto genérico = FALHA (não inventar)",
+      "raio_vs_municipio": "0 no raio ≠ 0 no município; deve citar recorte e escalar TP/WH/GP",
+      "handoff": "dúvida de outro especialista deve passar bastão (agenteId muda)",
+      "citacoes": "carimbo valor·base·fonte·janela quando citar número/norma",
+      "relatorio": "gerar_relatorio_formal só se o usuário pedir explicitamente",
+      "markdown": "consultor: texto puro (sem * markdown) se regra de produto valer"
+    }
+  },
+  "cases": [
+    {
+      "id": "pipe-viab-001",
+      "lane": "pipeline_viabilidade",
+      "agente": "mercado",
+      "query": "Quais análises são necessárias para viabilidade de um município e bairro?",
+      "tools_esperadas": ["consultar_base_conhecimento", "consultar_base_mercado"],
+      "pesquisas_que_devem_aparecer": [
+        "mercado",
+        "demografia",
+        "concorrentes",
+        "reviews",
+        "oferta_concorrentes",
+        "pontos_comerciais",
+        "investimento"
+      ],
+      "nao_pode": ["admitir que a base não recuperou e inventar lista genérica sem citacao"],
+      "deve": ["listar as 7 pesquisas", "oferecer rodar no bairro informado"],
+      "source": "export 2026-08-12 turno 2 — consultar_base_mercado sucesso vazio"
+    },
+    {
+      "id": "pipe-viab-002",
+      "lane": "pipeline_viabilidade",
+      "agente": "mercado",
+      "query": "Quero uma análise do município de Tianguá no estado do CE — bairro Coração de Jesus",
+      "tools_esperadas": [
+        "pesquisar_concorrentes",
+        "analisar_demografia",
+        "pesquisar_contexto_mercado"
+      ],
+      "tools_recomendadas_depois_de_zero_no_raio": [
+        "consultar_eros_totalpass",
+        "consultar_eros_wellhub",
+        "consultar_share_agregadores"
+      ],
+      "expected_municipio": "Tianguá",
+      "expected_uf": "CE",
+      "expected_bairro": "Coração de Jesus",
+      "expected_pop": 86137,
+      "ground_truth_catalogo": {
+        "tp_min": 8,
+        "wh_min": 6,
+        "gp": 0,
+        "nota": "Município NÃO é deserto. GP sim está vazio."
+      },
+      "nao_pode": [
+        "afirmar que não existe academia no município",
+        "chamar 0 no raio de 1000 m de saturação baixa sem recorte",
+        "pular demografia e mercado"
+      ],
+      "deve": [
+        "declarar raio usado",
+        "se 0 no bairro, escalar para município + agregadores",
+        "mencionar que TP/WH têm unidades em Tianguá",
+        "não marcar pesquisas só concorrentes"
+      ],
+      "source": "export gymsite-consultor-1feffc0e-…-2026-08-12.json"
+    },
+    {
+      "id": "pipe-viab-003",
+      "lane": "pipeline_viabilidade",
+      "agente": "mercado",
+      "query": "Não existe nenhuma academia no bairro?",
+      "contexto": "Tianguá-CE / Coração de Jesus após buscar_concorrentes=0",
+      "tools_esperadas": ["pesquisar_concorrentes", "consultar_eros_totalpass", "consultar_eros_wellhub"],
+      "nao_pode": ["repetir a mesma tool e confirmar zero absoluto"],
+      "deve": ["distinguir bairro vs município", "citar TP/WH municipal"]
+    },
+    {
+      "id": "pipe-viab-004",
+      "lane": "pipeline_viabilidade",
+      "agente": "mercado",
+      "query": "Gera o relatório formal de viabilidade",
+      "tools_esperadas": ["gerar_relatorio_formal"],
+      "precondicao": "usuário pediu EXPLICITAMENTE relatório/PDF",
+      "nao_pode": ["disparar gerar_relatorio_formal sem pedido explícito"]
+    },
+    {
+      "id": "mercado-tool-001",
+      "lane": "mercado_tools",
+      "agente": "mercado",
+      "query": "Quantas academias tem no Cocó, Fortaleza?",
+      "tools_esperadas": ["pesquisar_concorrentes"],
+      "expected_municipio": "Fortaleza",
+      "expected_uf": "CE",
+      "expected_bairro": "Cocó",
+      "deve": ["lista nome+endereço", "declarar raio", "citacoes se houver fonte"]
+    },
+    {
+      "id": "mercado-tool-002",
+      "lane": "mercado_tools",
+      "agente": "mercado",
+      "query": "Quem mora no bairro? Qual o público potencial fitness?",
+      "tools_esperadas": ["analisar_demografia"],
+      "deve": ["IBGE/faixa etária/renda ou transparência se sem cobertura"]
+    },
+    {
+      "id": "mercado-tool-003",
+      "lane": "mercado_tools",
+      "agente": "mercado",
+      "query": "Como está o mercado fitness e a renda nesse bairro?",
+      "tools_esperadas": ["pesquisar_contexto_mercado"],
+      "marca_pesquisa": "mercado"
+    },
+    {
+      "id": "mercado-tool-004",
+      "lane": "mercado_tools",
+      "agente": "mercado",
+      "query": "O que os alunos reclamam no Google dos concorrentes?",
+      "tools_esperadas": ["analisar_reviews_e_dores"],
+      "precondicao": "pesquisar_concorrentes já rodou",
+      "marca_pesquisa": "reviews"
+    },
+    {
+      "id": "mercado-tool-005",
+      "lane": "mercado_tools",
+      "agente": "mercado",
+      "query": "Quais serviços e preços os concorrentes oferecem?",
+      "tools_esperadas": ["mapear_oferta_e_servicos"],
+      "precondicao": "pesquisar_concorrentes já rodou",
+      "marca_pesquisa": "oferta_concorrentes"
+    },
+    {
+      "id": "mercado-tool-006",
+      "lane": "mercado_tools",
+      "agente": "mercado",
+      "query": "Tem imóvel comercial bom para academia nesse bairro?",
+      "tools_esperadas": ["buscar_pontos_comerciais"],
+      "marca_pesquisa": "pontos_comerciais"
+    },
+    {
+      "id": "mercado-tool-007",
+      "lane": "mercado_tools",
+      "agente": "mercado",
+      "query": "Quanto custa abrir e qual o payback?",
+      "tools_esperadas": ["estimar_investimento"],
+      "marca_pesquisa": "investimento",
+      "nao_pode": ["inventar CAPEX/OPEX sem tool"]
+    },
+    {
+      "id": "mercado-rag-01",
+      "lane": "eros_mercado",
+      "agente": "mercado",
+      "eros_group": "MERCADO_GROUP_ID",
+      "query": "Quais são as principais tendências do mercado fitness em 2025?",
+      "expected_doc": "panorama-2025.pdf",
+      "tools_esperadas": ["consultar_base_conhecimento", "consultar_eros_mercado"]
+    },
+    {
+      "id": "mercado-rag-02",
+      "lane": "eros_mercado",
+      "agente": "mercado",
+      "eros_group": "MERCADO_GROUP_ID",
+      "query": "Quais são as principais franquias de academia no Brasil?",
+      "expected_doc": "mapeamento_franquias_academia_brasil.pdf"
+    },
+    {
+      "id": "mercado-rag-03",
+      "lane": "eros_mercado",
+      "agente": "mercado",
+      "eros_group": "MERCADO_GROUP_ID",
+      "query": "Qual é o ticket médio mensal de academias no Brasil?",
+      "expected_doc": "panorama-2025.pdf",
+      "nao_pode": ["chutar ticket sem fonte"]
+    },
+    {
+      "id": "mercado-rag-04",
+      "lane": "eros_mercado",
+      "agente": "mercado",
+      "eros_group": "MERCADO_GROUP_ID",
+      "query": "Quais métricas de retenção de alunos são consideradas boas no setor?",
+      "expected_doc": "BENNY MATHIASON LEWI PRO2022.pdf"
+    },
+    {
+      "id": "reg-001",
+      "lane": "regulatorio",
+      "agente": "regulatorio",
+      "query": "Preciso de registro no CREF para abrir academia?",
+      "tools_esperadas": ["consultar_base_conhecimento", "consultar_eros_regulatorio"],
+      "deve": ["CREF PJ / registro", "não responder só com achismo"]
+    },
+    {
+      "id": "reg-002",
+      "lane": "regulatorio",
+      "agente": "regulatorio",
+      "query": "Qual CREF cobre o Ceará?",
+      "tools_esperadas": ["resolver_cref_por_uf"],
+      "expected_uf": "CE",
+      "nao_pode": ["chutar CREF sem lookup"]
+    },
+    {
+      "id": "reg-003",
+      "lane": "regulatorio",
+      "agente": "regulatorio",
+      "query": "Qual a anuidade/processo CREF PJ 2026?",
+      "tools_esperadas": ["consultar_anuidade_pj_cref"],
+      "deve": ["Res. CONFEF 596/2025 ou transparência", "confirmar no regional"]
+    },
+    {
+      "id": "reg-004",
+      "lane": "regulatorio",
+      "agente": "regulatorio",
+      "eros_group": "REGULATORIO_GROUP_ID",
+      "query": "Quem pode exercer atividades de Educação Física segundo a Lei 9.696?",
+      "expected_doc": "Art. 1",
+      "tools_esperadas": ["consultar_base_conhecimento"]
+    },
+    {
+      "id": "reg-005",
+      "lane": "regulatorio",
+      "agente": "regulatorio",
+      "eros_group": "REGULATORIO_GROUP_ID",
+      "query": "A Lei 9.696 cria quais conselhos de Educação Física?",
+      "expected_doc": "Art. 4"
+    },
+    {
+      "id": "reg-006",
+      "lane": "regulatorio_taxas",
+      "agente": "regulatorio",
+      "eros_group": "REGULATORIO_GROUP_ID",
+      "query": "Qual o valor do alvará de funcionamento para academia em Fortaleza?",
+      "expected_doc": "fortaleza_ce.json",
+      "expected_municipio": "Fortaleza",
+      "deve": ["cidade certa", "não misturar UF"]
+    },
+    {
+      "id": "reg-007",
+      "lane": "regulatorio_taxas",
+      "agente": "regulatorio",
+      "eros_group": "REGULATORIO_GROUP_ID",
+      "query": "Quanto custa a taxa de bombeiros para academia em Curitiba?",
+      "expected_doc": "curitiba_pr.json",
+      "expected_municipio": "Curitiba"
+    },
+    {
+      "id": "arq-001",
+      "lane": "arquiteto",
+      "agente": "arquiteto",
+      "query": "Quantos banheiros para 200 alunos em São Paulo?",
+      "tools_esperadas": ["calcular_sanitarios_municipio"],
+      "expected_municipio": "São Paulo",
+      "nao_pode": ["usar só regra genérica 50/50 se a cidade tem COE curado"]
+    },
+    {
+      "id": "arq-002",
+      "lane": "arquiteto",
+      "agente": "arquiteto",
+      "query": "Quantos sanitários em João Pessoa para academia com 180 m² de treino?",
+      "tools_esperadas": ["calcular_sanitarios_municipio"],
+      "expected_municipio": "João Pessoa",
+      "deve": ["pedir/usar area_treino_m2 (Lei 1.347/1971)"]
+    },
+    {
+      "id": "arq-003",
+      "lane": "arquiteto",
+      "agente": "arquiteto",
+      "query": "Qual a distância mínima entre aparelhos de musculação segundo ANVISA?",
+      "tools_esperadas": ["consultar_engenharia_obra"],
+      "eros_group": "ENGENHEIRO_GROUP_ID",
+      "expected_doc": "engenharia_layout_academia_ref.txt"
+    },
+    {
+      "id": "eng-001",
+      "lane": "engenheiro",
+      "agente": "engenheiro",
+      "query": "A laje aguenta peso livre?",
+      "tools_esperadas": ["consultar_engenharia_obra"],
+      "deve": ["perguntar retrofit vs obra nova", "NBR 6120 / carga", "ART/laudo em reforma"],
+      "nao_pode": ["afirmar carga sem consultar_engenharia_obra"]
+    },
+    {
+      "id": "eng-002",
+      "lane": "engenheiro",
+      "agente": "engenheiro",
+      "eros_group": "ENGENHEIRO_GROUP_ID",
+      "query": "Qual a vazão mínima de ar exterior para sala coletiva de 100 m² pela NBR 16401?",
+      "expected_doc": "engenharia_climatizacao_academia_ref.txt",
+      "tools_esperadas": ["consultar_engenharia_obra"]
+    },
+    {
+      "id": "eng-003",
+      "lane": "engenheiro",
+      "agente": "engenheiro",
+      "eros_group": "ENGENHEIRO_GROUP_ID",
+      "query": "Split high wall sem renovação de ar é conformidade na academia?",
+      "expected_doc": "engenharia_climatizacao_academia_ref.txt",
+      "deve": ["não conformidade / NBR 16401"]
+    },
+    {
+      "id": "eng-004",
+      "lane": "engenheiro",
+      "agente": "engenheiro",
+      "eros_group": "ENGENHEIRO_GROUP_ID",
+      "query": "O que é AVCB e quando a academia precisa do Corpo de Bombeiros?",
+      "expected_doc": "engenharia_obra_academia_ref.txt"
+    },
+    {
+      "id": "eng-005",
+      "lane": "engenheiro",
+      "agente": "engenheiro",
+      "eros_group": "ENGENHEIRO_GROUP_ID",
+      "query": "Quando a obra de academia exige ART e laudo estrutural em reforma?",
+      "expected_doc": "engenharia_obra_academia_ref.txt"
+    },
+    {
+      "id": "tec-001",
+      "lane": "tecnico",
+      "agente": "tecnico",
+      "query": "Que mix de equipamentos para 300 m² de musculação?",
+      "tools_esperadas": ["consultar_catalogos_equipamentos", "calcular_equipamentos_por_area"],
+      "deve": ["citar fornecedor/catálogo", "preço sob consulta se não houver valor"]
+    },
+    {
+      "id": "tec-002",
+      "lane": "tecnico",
+      "agente": "tecnico",
+      "query": "Quantas esteiras para pico de 40 alunos simultâneos?",
+      "tools_esperadas": ["dimensionar_cardio_por_pico"],
+      "nao_pode": ["calcular de cabeça"]
+    },
+    {
+      "id": "tec-003",
+      "lane": "tecnico",
+      "agente": "tecnico",
+      "query": "Quantas estações de musculação para pico de 50?",
+      "tools_esperadas": ["dimensionar_musculacao"],
+      "nao_pode": ["calcular de cabeça"]
+    },
+    {
+      "id": "tec-004",
+      "lane": "tecnico",
+      "agente": "tecnico",
+      "query": "Tenho 180 m² de cardio, quantas esteiras cabem?",
+      "tools_esperadas": ["consultar_catalogos_equipamentos", "calcular_equipamentos_por_area"],
+      "deve": ["footprint do catálogo"]
+    },
+    {
+      "id": "handoff-001",
+      "lane": "handoff",
+      "agente_inicial": "mercado",
+      "agente_esperado": "regulatorio",
+      "query": "Além da saturação, preciso de registro CREF PJ no Ceará e anuidade",
+      "tools_esperadas": ["resolver_cref_por_uf", "consultar_anuidade_pj_cref"],
+      "deve": ["passar bastão mercado → regulatorio"]
+    },
+    {
+      "id": "handoff-002",
+      "lane": "handoff",
+      "agente_inicial": "mercado",
+      "agente_esperado": "engenheiro",
+      "query": "O ponto é retrofit. A laje aguenta peso livre e precisa de AVCB?",
+      "tools_esperadas": ["consultar_engenharia_obra"],
+      "deve": ["passar bastão → engenheiro"]
+    },
+    {
+      "id": "handoff-003",
+      "lane": "handoff",
+      "agente_inicial": "arquiteto",
+      "agente_esperado": "tecnico",
+      "query": "Depois do layout, que máquinas da Movement entram na sala de 300 m²?",
+      "tools_esperadas": ["consultar_catalogos_equipamentos"],
+      "deve": ["passar bastão → tecnico"]
+    },
+    {
+      "id": "agg-001",
+      "lane": "agregadores",
+      "agente": "mercado",
+      "eros_group": "GURUPASS_GROUP_ID",
+      "query": "Academia de musculação em Arujá com GuruPass",
+      "expected_municipio": "Arujá",
+      "expected_modalidade": "musculacao",
+      "tools_esperadas": ["consultar_eros_gurupass"],
+      "source": "data/samples/evaluation.json eval_001"
+    },
+    {
+      "id": "agg-002",
+      "lane": "agregadores",
+      "agente": "mercado",
+      "eros_group": "TOTALPASS_GROUP_ID",
+      "query": "Quais academias TotalPass em Tianguá-CE?",
+      "expected_municipio": "Tianguá",
+      "expected_uf": "CE",
+      "expected_tp_min": 1,
+      "nao_pode": ["dizer que TP não cobre Tianguá"]
+    },
+    {
+      "id": "agg-003",
+      "lane": "agregadores",
+      "agente": "mercado",
+      "eros_group": "WELLHUB_GROUP_ID",
+      "query": "Tem Wellhub em Bragança-PA?",
+      "expected_municipio": "Bragança",
+      "expected_uf": "PA",
+      "expected_wh": 0,
+      "deve": ["admitir gap WH", "não inventar unidades", "opcional: Maps/prospecção"],
+      "source": "pop-x-gap deserto 131k"
+    },
+    {
+      "id": "agg-004",
+      "lane": "agregadores",
+      "agente": "mercado",
+      "query": "Comparar share Wellhub vs TotalPass vs GuruPass em São Paulo capital",
+      "tools_esperadas": ["consultar_share_agregadores"],
+      "expected_municipio": "São Paulo"
+    },
+    {
+      "id": "base-001",
+      "lane": "meta",
+      "agente": "mercado",
+      "query": "Qual a sua base de conteúdo?",
+      "tools_esperadas": [],
+      "tools_opcionais": ["consultar_base_conhecimento"],
+      "nao_pode": ["prometer Eros/agregadores sem conseguir citar fonte", "markdown *"],
+      "deve": ["listar especialistas + 7 pesquisas + Eros por domínio sem inventar cobertura"]
+    }
+  ]
+}

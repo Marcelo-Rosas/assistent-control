@@ -1,0 +1,204 @@
+{
+  "pass1": {
+    "id": "CXzlnnF9orYbwAPwdUNDMIp5faQRn38KmdHpbGrm81kmNMemxPUUK7YUJl5S5TGL",
+    "imageUrl": "https://images.partners.gympass.com/image/filename/2599260/logo_TdLlF1K8hzTgfqsPChoxJ3txK6xC4oen.jpeg",
+    "location": {
+      "lat": -22.8799453,
+      "lon": -43.4658923
+    },
+    "name": "Perfect Body - Cassino",
+    "fullAddress": "Rua Fonseca, 534 - Bangu, Rio de Janeiro - RJ, 21820-005, Brasil",
+    "activities": [
+      "Musculação",
+      "Natação",
+      "Muay Thai",
+      "Tai Dance",
+      "Jiu-jitsu",
+      "Jump",
+      "Capoeira",
+      "Zumba",
+      "Bike Indoor",
+      "Localizada"
+    ],
+    "workHours": [
+      "06:00 - 23:59"
+    ],
+    "distance": "184 m",
+    "starterPlan": {
+      "id": "FGnE4ryoC9F8hcDmTABe_HkHoL2jXLQ9GCbOKWlxdGInsOzkLHd6IFS5uBDJtoeL",
+      "name": "Basic+",
+      "price": "99.99",
+      "currency": "R$",
+      "formattedPrice": "R$ 99,99",
+      "locale": "pt-br",
+      "bigNumbers": {
+        "total_gyms": 22477,
+        "total_wellness": 64,
+        "one_one_session": true
+      }
+    },
+    "exclusivity": false,
+    "newPartner": false,
+    "hasOffPeakProducts": true,
+    "offPeakPlan": {
+      "id": "FGnE4ryoC9F8hcDmTABe_HkHoL2jXLQ9GCbOKWlxdGInsOzkLHd6IFS5uBDJtoeL",
+      "name": "Basic+",
+      "price": "99.99",
+      "currency": "R$",
+      "formattedPrice": "R$ 99,99",
+      "locale": "pt-br",
+      "bigNumbers": {
+        "total_gyms": 22477,
+        "total_wellness": 64,
+        "one_one_session": true
+      }
+    },
+    "detailsImageSrc": "https://assets-cdn.wellhub.com/images/?su=https://images.partners.gympass.com/image/filename/2596291/lg_1lYt6SrDZ03S116sP7phe44z5sRaH6kN.jpg",
+    "uf": "RJ",
+    "municipios_busca": [
+      "Rio de Janeiro",
+      "São Gonçalo",
+      "Petrópolis"
+    ]
+  },
+  "pass2": {
+    "gym_id": "CXzlnnF9orYbwAPwdUNDMIp5faQRn38KmdHpbGrm81kmNMemxPUUK7YUJl5S5TGL",
+    "detail_url": "https://wellhub.com/pt-br/search/partners/CXzlnnF9orYbwAPwdUNDMIp5faQRn38KmdHpbGrm81kmNMemxPUUK7YUJl5S5TGL",
+    "nome": "Perfect Body - Cassino",
+    "avaliacao": {
+      "nota": 4.77,
+      "total_avaliacoes": 466
+    },
+    "sobre": "Perfect Body - Cassino A Perfect Body Cassino está localizada na Rua Fonseca, 534. Frente ao Bangu Shopping , é o local ide... A Perfect Body Cassino está localizada na Rua Fonseca, 534. Frente ao Bangu Shopping , é o local ideal para Musculação, Lutas, Crossfit, Natação, Bike Indoor, Jump. A academia conta com estrutura ampla com grande variedade de ambientes, espaço com equipamentos de musculação, arena de Crossfit, centro de lutas, sala para demais atividades e espaço kids . Durante a sua primeira visita, nossos funcionários irão te instruir sobre as instalações, serviços e atividades incluídas no seu plano. Não se preocupe com movimento 5mil m2.",
+    "endereco_completo": "Rua Fonseca, 534 - Bangu, Rio de Janeiro - RJ, 21820-005, Brasil",
+    "endereco_json_ld": {
+      "@type": "PostalAddress",
+      "streetAddress": "Rua Fonseca",
+      "addressLocality": "Rio de Janeiro",
+      "addressRegion": "RJ",
+      "postalCode": "21820-005",
+      "addressCountry": "BR"
+    },
+    "contato": {
+      "telefone": "(21) 2401-6067",
+      "facebook": "https://facebook.com/perfectbodyacademia",
+      "instagram": null,
+      "website": null
+    },
+    "comodidades": [
+      "Ar condicionado",
+      "Armários",
+      "Loja de artigos esportivos",
+      "Mini bar",
+      "Vestiário",
+      "Wi-Fi"
+    ],
+    "horarios": [
+      {
+        "plano": "Basic+",
+        "titulo": "Segunda-feira",
+        "dias": {
+          "Segunda-feira": "11:00 - 16:00",
+          "Terça-feira": "11:00 - 16:00",
+          "Quarta-feira": "11:00 - 16:00",
+          "Quinta-feira": "11:00 - 16:00",
+          "Sexta-feira": "11:00 - 16:00",
+          "Sábado": "11:00 - 16:00",
+          "Domingo": "11:00 - 16:00"
+        }
+      },
+      {
+        "plano": "Silver",
+        "titulo": "Segunda-feira",
+        "dias": {
+          "Segunda-feira": "06:00 - 23:59",
+          "Terça-feira": "06:00 - 23:59",
+          "Quarta-feira": "06:00 - 23:59",
+          "Quinta-feira": "06:00 - 23:59",
+          "Sexta-feira": "06:00 - 23:59",
+          "Sábado": "08:00 - 20:00",
+          "Domingo": "09:00 - 13:00"
+        }
+      }
+    ],
+    "horarios_json_ld": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Sunday"
+        ],
+        "opens": "09:00",
+        "closes": "13:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "06:00",
+        "closes": "23:59"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Saturday"
+        ],
+        "opens": "08:00",
+        "closes": "20:00"
+      }
+    ],
+    "atividades": {
+      "inclusas_horario_especifico": [
+        "Aeróbico",
+        "Arte marcial",
+        "Aulas / Atividades Anaeróbicas",
+        "Aulas de Bike",
+        "Aulas de Dança",
+        "Aulas Especiais"
+      ],
+      "outras": [
+        "Capoeira",
+        "Dança tailandesa",
+        "Fisiculturismo",
+        "Indoor bike",
+        "Jiu-jitsu",
+        "Jump"
+      ]
+    },
+    "planos_pagina": [
+      {
+        "nome": "Basic",
+        "preco": "R$ 69,99 / mês"
+      },
+      {
+        "nome": "Basic+",
+        "preco": "R$ 99,99 / mês"
+      },
+      {
+        "nome": "Silver",
+        "preco": "R$ 149,99 / mês"
+      }
+    ],
+    "planos_acesso": [
+      {
+        "plano": "Basic+",
+        "descricao": "Horários específicos",
+        "preco": "R$99,99/mês"
+      },
+      {
+        "plano": "Silver",
+        "descricao": "Todos os horários",
+        "preco": "R$149,99/mês"
+      }
+    ],
+    "fotos": [
+      "https://assets-cdn.wellhub.com/images/?su=https://images.partners.gympass.com/image/filename/2599260/lg_TdLlF1K8hzTgfqsPChoxJ3txK6xC4oen.jpeg"
+    ],
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=Rua%20Fonseca%2C%20534%20-%20Bangu%2C%20Rio%20de%20Janeiro%20-%20RJ%2C%2021820-005%2C%20Brasil"
+  },
+  "enriched_at": "2026-08-31T14:07:24.672Z"
+}

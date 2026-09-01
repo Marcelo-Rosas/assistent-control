@@ -1,0 +1,30 @@
+﻿modalities idx 40573
+\"modalities\":[{\"id\":\"32\",\"type\":\"modality\",\"attributes\":{\"title\":\"Condicionamento F├¡┬¡sico\",\"name\":\"Condicionamento F├¡┬¡sico\",\"translated_name\":\"Condicionamento F├¡┬¡sico\"}},{\"id\":\"235\",\"type\":\"modality\",\"attributes\":{\"title\":\"Personal Training\",\"name\":\"Personal Training\",\"translated_name\":\"Personal\"}},{\"id\":\"63\",\"type\":\"modality\",\"attributes\":{\"title\":\"Fit Dance\",\"name\":\"Fit Dance\",\"translated_name\":\"Fit Dance\"}},{\"id\":\"53\",\"type\":\"modality\",\"attributes\":{\"title\":\"Dan├ºa Pop\",\"name\":\"Dan├ºa Pop\",\"translated_name\":\"Dan├ºa Pop\"}},{\"id\":\"244\",\"type\":\"modality\",\"attributes\":{\"title\":\"Pilates Solo\",\"name\":\"Pilates Solo\",\"translated_name\":\"Pilates Solo\"}},{\"id\":\"106\",\"type\":\"modality\",\"attributes\":{\"title\":\"Muscula├º├úo\",\"name\":\"Muscula├º├úo\",\"translated_name\":\"Muscula├º├úo\"}},{\"id\":\"5\",\"type\":\"modality\",\"attributes\":{\"title\":\"Alongamento\",\"name\":\"Alongamento\",\"translated_name\":\"Alongamento\"}},{\"id\":\"1\",\"type\":\"modality\",\"attributes\":{\"title\":\"Abdominais\",\"name\":\"Abdominais\",\"translated_name\":\"Abdominais\"}},{\"id\":\"88\",\"type\":\"modality\",\"attributes\":{\"title\":\"Jump\",\"name\":\"Jump\",\"translated_name\":\"Jump\"}},{\"id\":\"144\",\"type\":\"modality\",\"attributes\":{\"title\":\"Step\",\"name\":\"Step\",\"translated_name\":\"Step\"}},{\"id\":\"30\",\"type\":\"modality\",\"attributes\":{\"title\":\"Circuito Funcional\",\"name\":\"Circuito Funcional\",\"translated_name\":\"Circuito Funcional\"}},{\"id\":\"23\",\"type\":\"modality\",\"attributes\":{\"title\":\"Boxe\",\"name\":\"Boxe\",\"translated_name\":\"Boxe\"}},{\"id\":\"105\",\"type\":\"modality\",\"attributes\":{\"title\":\"Muay Thai\",\"name\":\"Muay Thai\",\"translated_name\":\"Muay Thai\"}}]}],\"$L1b\",\"$L1c\",\"\",\"$L1d\",\"$L1e\",\"$L1f\",\"$L20\"]}],\"$L21\"]}],\"$L22\"]}],\"$L23\",\"$L24\"]\n"])</script><script>self.__next_f.push([1,"25:I[771694,[\"/_next/static/chunks/e8aca3dc08f2877e.js\",\"/_next/static/chunks/9db875a8cd4c319f.js\",\"/_next/static/chunks/4a3d4af28634464e.js\",\"/_next/static/chunks/3be1d4d5caed27d7.js\",\"/_next/static/chunks/8226e5e41ed9f4e8.js\",\"/_next/static/chunks/575bb2f838785c52.js\",\"/_next/static/chunks/d0fe86be5ed5af40.js\",\"/_next/static/chunks/eab9ce7b67da8feb.js\",\"/_next/static/chunks/21a98b77cc1c8671.js\"],\"SliderGyms\"]\n26:I[80313,[\"/_next/static/chunks/e8aca3dc08f2877e.js\",\"/_next/static/chunks/9db875a8cd4c319f.js\",\"/_next/static/chunks/4a3d4af28634464e.js\",\"/_next/static/chunks/3be1d4d5caed27d7.js\",\"/_next/static/chunks/8226e5e41ed9f4e8.js\",\"/_next/static/chunks/575bb2f838785c52.js\",\"/_next/static/chunks/d0fe86be5ed5af40.js\",\"/_next/static/chunks/eab9ce7b67da8feb.js\",\"/_next/static/chunks/21a98b77cc1c8671.js\"],\"OpenHour\"]\n27:I[143765,[\"/_next/static/chunks/e8aca3dc08f2877e.js\",\"/_next/static/chunks/9db875a8cd4c319f.js\",\"/_next/static/chunks/4a3d4af28634464e.js\",\"/_next/static/chunks/3be1d4d5caed27d7.js\",\"/_next/static/chunks/8226e5e41ed9f4e8.js\",\"/_next/static/chunks/575bb2f838785c52.js\",\"/_next/static/chunks/d0fe86be5ed5af40.js\",\"/_next/static/chunks/eab9ce7b67da8feb.js\",\"/_next/static/chunks/21a98b77cc1c8671.js\"],\"ModalitiesAndPlans\"]\n28:I[723309,[\"/_next/static/chunks/e8aca3dc08f2877e.js\",\"/_next/static/chunks/9db875a8cd4c319f.js\",\"/_next/static/chunks/4a3d4af28634464e.js\",\"/_next/static/chunks/3be1d4d5caed27d7.
+
+category text idx 53235
+{\"id\":\"144\",\"type\":\"modality\"}]}}}}]\n"])</script><script>self.__next_f.push([1,"1d:[\"$\",\"$L27\",null,{\"data\":{\"data\":[{\"id\":\"6618\",\"type\":\"gym_plan\",\"attributes\":{\"name\":\"Muscula├º├úo + Aulas\",\"observation\":\"Livre\",\"minimum_company_plan_price\":115,\"accessible_from_standard_plan\":{\"name\":\"TP 1+\",\"kind\":null,\"code\":\"plan_tp1_plus\",\"active\":true,\"price\":149.9,\"gym_max_plan_price\":149.9}},\"relationships\":{\"modalities\":{\"data\":[{\"id\":\"5\",\"type\":\"modality\"},{\"id\":\"144\",\"type\":\"modality\"},{\"id\":\"53\",\"type\":\"modality\"},{
+
+TP 1+ count 3
+
+status idx 11965
+lass="before:bg-primary-40 flex items-center font-semibold text-sm before:mr-2 before:h-3 before:w-3 before:rounded-full before:content-&quot;&quot;">Aberta agora</p><p class="ml-5 text-xs">06:00 ├ás 22:00</p></div><button class="justify-center transition my-1 flex content-center items-center rounded-3xl border-none bg-white px-4 py-1 font-semibold 
+
+mod+plan pairs 0
+
+translated_names [
+  'Condicionamento F├¡┬¡sico',
+  'Personal',
+  'Fit Dance',
+  'Dan├ºa Pop',
+  'Pilates Solo',
+  'Muscula├º├úo',
+  'Alongamento',
+  'Abdominais',
+  'Jump',
+  'Step',
+  'Circuito Funcional',
+  'Boxe',
+  'Muay Thai'
+]
+
+mod+category 0

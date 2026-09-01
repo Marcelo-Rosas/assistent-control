@@ -1,0 +1,86 @@
+{
+  "place_id": "ChIJQy2AvuzfmwARP5T2npZCSIc",
+  "title": "Academia Perfect Body — Cassino Bangu",
+  "filters": {
+    "rating": "1-3",
+    "date_gate": "iso_date >= 2025-08-31",
+    "reference_date": "2026-08-31"
+  },
+  "fetched_at": "2026-08-31T15:01:22.869Z",
+  "google_reviews_total": 606,
+  "pagination_meta": {
+    "lowest_rating": {
+      "pages": 8,
+      "count": 152
+    },
+    "newest": {
+      "pages": 3,
+      "count": 60,
+      "stoppedEarly": true
+    },
+    "most_relevant": {
+      "pages": 3,
+      "count": 60
+    }
+  },
+  "unique_reviews_fetched": 194,
+  "count_negative_in_gate": 7,
+  "reviews_negative_in_gate": [
+    {
+      "review_id": "Ci9DQUlRQUNvZENodHljRjlvT2pnNE5FWTVaVUpFV1Raa09HRk1SRzlyZUdONk9XYxAB",
+      "user": "Bruno Tavares",
+      "rating": 2,
+      "iso_date": "2026-08-30T14:20:22Z",
+      "text": null,
+      "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pnNE5FWTVaVUpFV1Raa09HRk1SRzlyZUdONk9XYxAB!2m1!1s0x0:0x874842969ef6943f!3m1!1s2@1:CAIQACodChtycF9oOjg4NEY5ZUJEWTZkOGFMRG9reGN6OWc%7C%7C?hl=pt-BR"
+    },
+    {
+      "review_id": "Ci9DQUlRQUNvZENodHljRjlvT21wZmFXSnRWMWhuTVhaMmMzbDRaSE51YW1ReVYzYxAB",
+      "user": "Edinea Rosa",
+      "rating": 3,
+      "iso_date": "2026-07-19T17:07:52Z",
+      "text": "A academia e boa os aparelhos são novos, mas tem coisas que deixam a desejar primeiro o professor só fica no telefone a música também não gostei pois tem que ser ritmo de academia e só tocava pagode parecia que eu estava em um bar .",
+      "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21wZmFXSnRWMWhuTVhaMmMzbDRaSE51YW1ReVYzYxAB!2m1!1s0x0:0x874842969ef6943f!3m1!1s2@1:CAIQACodChtycF9oOmpfaWJtV1hnMXZ2c3l4ZHNuamQyV3c%7C%7C?hl=pt-BR"
+    },
+    {
+      "review_id": "Ci9DQUlRQUNvZENodHljRjlvT2s1TWNubzRTVXhmTVRjMlNuQlRNblpqWkRGdWQyYxAB",
+      "user": "Renato Carvalho",
+      "rating": 3,
+      "iso_date": "2026-06-03T23:13:45Z",
+      "text": null,
+      "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2s1TWNubzRTVXhmTVRjMlNuQlRNblpqWkRGdWQyYxAB!2m1!1s0x0:0x874842969ef6943f!3m1!1s2@1:CAIQACodChtycF9oOk5Mcno4SUxfMTc2SnBTMnZjZDFud2c%7C%7C?hl=pt-BR"
+    },
+    {
+      "review_id": "Ci9DQUlRQUNvZENodHljRjlvT21SelluVXhRMEpvU21OdU1UTXhPRkZ5U1UxSGFXYxAB",
+      "user": "Ana Clara Torres",
+      "rating": 2,
+      "iso_date": "2026-03-14T01:16:18Z",
+      "text": "Academia informa que aceita Gympass para aulas coletivas, mas, na hora de participar, exige o pagamento de uma “taxa de avaliação física” de R$ 60 para liberar o acesso ao aplicativo interno e permitir a participação nas aulas.\n\nEssa informação não é divulgada de forma clara previamente e só é informada quando o aluno já está no local, o que induz o consumidor ao erro e demonstra falta de transparência. Muito decepcionante.",
+      "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21SelluVXhRMEpvU21OdU1UTXhPRkZ5U1UxSGFXYxAB!2m1!1s0x0:0x874842969ef6943f!3m1!1s2@1:CAIQACodChtycF9oOmRzYnUxQ0JoSmNuMTMxOFFySU1HaWc%7C%7C?hl=pt-BR"
+    },
+    {
+      "review_id": "Ci9DQUlRQUNvZENodHljRjlvT2t0TVdIazVhV1F6UTNORWFHVktNM0ZLY2psaGQzYxAB",
+      "user": "RITA CAMPOS",
+      "rating": 2,
+      "iso_date": "2026-02-25T22:54:59Z",
+      "text": "Na hidroginástica e na natação não podemos usar o chuveiro, caso queira temos que no segundo andar (escada)passando com roupa molhada arriscando a escorregar pois o clube não permite usarmos o chuveiro e o banheiro, além do banho livre ter acabado no intervalo entre a hidro e a natação não podemos permanecer na piscina.\nNão tem estacionamento  próximo grátis como anuncia. Estão perdendo aluno pois a aula TB da hidro é fraca.",
+      "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2t0TVdIazVhV1F6UTNORWFHVktNM0ZLY2psaGQzYxAB!2m1!1s0x0:0x874842969ef6943f!3m1!1s2@1:CAIQACodChtycF9oOktMWHk5aWQzQ3NEaGVKM3FKcjlhd3c%7C%7C?hl=pt-BR"
+    },
+    {
+      "review_id": "Ci9DQUlRQUNvZENodHljRjlvT21aVldWZEVORGR5WnpCUFdVY3hXVWxWUWtwek5GRRAB",
+      "user": "ABarq",
+      "rating": 3,
+      "iso_date": "2025-10-09T21:27:46Z",
+      "text": "Uma pena não disponibilizarem natação separado da musculação e demais atividades que a academia oferece.",
+      "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21aVldWZEVORGR5WnpCUFdVY3hXVWxWUWtwek5GRRAB!2m1!1s0x0:0x874842969ef6943f!3m1!1s2@1:CAIQACodChtycF9oOmZVWVdENDdyZzBPWUcxWUlVQkpzNFE%7C%7C?hl=pt-BR"
+    },
+    {
+      "review_id": "Ci9DQUlRQUNvZENodHljRjlvT20xUlVTMVNXWGhrY1dwMU1Ea3pZbkJDT0dORlFXYxAB",
+      "user": "Vê Cerqueira",
+      "rating": 1,
+      "iso_date": "2025-09-20T14:12:29Z",
+      "text": "Muita cara a mensalidade.",
+      "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT20xUlVTMVNXWGhrY1dwMU1Ea3pZbkJDT0dORlFXYxAB!2m1!1s0x0:0x874842969ef6943f!3m1!1s2@1:CAIQACodChtycF9oOm1RUS1SWXhkcWp1MDkzYnBCOGNFQWc%7C%7C?hl=pt-BR"
+    }
+  ]
+}

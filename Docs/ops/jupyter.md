@@ -64,7 +64,8 @@ RAG_TOP_K=5
 
 - **Sempre** `SUPABASE_SERVICE_ROLE_KEY` nos notebooks (RPC `match_chunks` = service_role only)
 - Não colar `'[...]'` como embedding no SQL — usar `embed_query()` no notebook
-- `gurupass-normalized.json` = lista real; `gurupass-progress.json` = checkpoint (não é lista)
+- `gurupass-normalized.json` = lista real; `gurupass-progress.json` = checkpoint slim (`completed`/`failed` only — gyms em `gurupass-brasil-all.json`)
+- Liberar disco após scrape: `npm run prune:scrape-disk` (ou `MINIFY_ALL=1`)
 - Kernel Python do `.venv`, não MU Editor solto
 
 ## Troubleshooting

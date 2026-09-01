@@ -1,0 +1,102 @@
+﻿status 200 bytes 61175
+
+=== JSON-LD keys === [
+  '@context',
+  '@type',
+  'name',
+  'image',
+  'address',
+  'geo',
+  'url',
+  'telephone',
+  'openingHours'
+]
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Central fitness",
+  "image": "https://images.totalpass.com/public/1280x720/czM6Ly90cC1pbWFnZS1hZG1pbi1wcm9kL2d5bXMvZXkxa2liMnZmejNwanZteG9nYWR2dTRpdHhraGUydmlvYWxyZGN2dm1vb2dwdGZ0ejNyNzlsdXBhYmoz",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "rua pedro angelli, 155",
+    "addressLocality": "POA",
+    "addressRegion": "SP",
+    "postalCode": "08560170",
+    "addressCountry": "BR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -23.5235694,
+    "longitude": -46.3425497
+  },
+  "url": "https://totalpass.com/br/academias/central-fitness-72f760e3-3d0c-412d-b1de-4f6fefceb0bf/",
+  "telephone": "11993502478",
+  "openingHours": {
+    "sunday": [
+      {
+        "open": "06:00",
+        "close": "22:00"
+      },
+      {
+        "open": "10:00",
+        "close": "13:00"
+      }
+    ],
+    "monday": [
+      {
+        "open": "06:00",
+        "close": "22:00"
+      }
+    ],
+    "tuesday": [
+      {
+        "open": "06:00",
+        "close": "22:00"
+      }
+    ],
+    "wednesday": [
+      {
+        "open": "06:00",
+        "close": "22:00"
+      }
+    ],
+    "thursday": [
+      {
+        "open": "06:00",
+        "close": "22:00"
+      }
+    ],
+    "friday": [
+      {
+        "open": "06:00",
+        "close": "22:00"
+      }
+    ],
+    "saturday": [
+      {
+        "open": "06:00",
+        "close": "22:00"
+      },
+      {
+        "open": "09:00",
+        "close": "14:00"
+      }
+    ]
+  }
+}
+
+=== Escaped payload key counts ===
+structures 2
+modalities 3
+accessible_on_plans 1
+warning_message 1
+email 1
+website 1
+closed 1
+translated_name 13
+
+=== structures raw ===
+\"Arm├írios\",\"Bebedouro\",\"Espa├ºo Kids\",\"Ventilador\",\"Wi-fi\"
+
+=== visible status hints === { aberta: true }
+hoje snippet undefined

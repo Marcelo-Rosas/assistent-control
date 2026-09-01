@@ -1,0 +1,66 @@
+{
+  "cities": 6,
+  "total_gyms_before": 44113,
+  "total_gyms_after": 44163,
+  "net_new": 50,
+  "rows": [
+    {
+      "key": "Fortaleza-CE",
+      "before": 609,
+      "scraped": 516,
+      "after": 622,
+      "new_gyms": 13,
+      "timeout_ms": 507000,
+      "elapsed_ms": 247778,
+      "partial": true
+    },
+    {
+      "key": "Salvador-BA",
+      "before": 1095,
+      "scraped": 1030,
+      "after": 1114,
+      "new_gyms": 19,
+      "timeout_ms": 507000,
+      "elapsed_ms": 233027,
+      "partial": true
+    },
+    {
+      "key": "Manaus-AM",
+      "before": 193,
+      "scraped": 195,
+      "after": 197,
+      "new_gyms": 4,
+      "timeout_ms": 507000,
+      "elapsed_ms": 256121
+    },
+    {
+      "key": "São Luís-MA",
+      "before": 254,
+      "scraped": 261,
+      "after": 262,
+      "new_gyms": 8,
+      "timeout_ms": 507000,
+      "elapsed_ms": 281574
+    },
+    {
+      "key": "Campo Grande-MS",
+      "before": 453,
+      "scraped": 456,
+      "after": 459,
+      "new_gyms": 6,
+      "timeout_ms": 507000,
+      "elapsed_ms": 203412
+    },
+    {
+      "key": "Novo Santo Antônio-PI",
+      "before": 0,
+      "scraped": 0,
+      "after": 0,
+      "new_gyms": 0,
+      "timeout_ms": 507000,
+      "elapsed_ms": 100905,
+      "error": "sem academias em https://wellhub.com/pt-br/search/pi/novo-santo-antonio/?map=1"
+    }
+  ],
+  "timestamp": "2026-08-31T13:04:00.514Z"
+}

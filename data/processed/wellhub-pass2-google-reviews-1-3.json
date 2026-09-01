@@ -1,0 +1,109 @@
+{
+  "place_id": "ChIJQy2AvuzfmwARP5T2npZCSIc",
+  "title": "Academia Perfect Body — Cassino Bangu",
+  "filters": {
+    "rating": "1-3",
+    "date_gate": "iso_date >= 2025-08-31",
+    "reference_date": "2026-08-31"
+  },
+  "fetched_at": "2026-08-31T15:00:00.000Z",
+  "pages_scanned": 4,
+  "count_all_1_3_in_gate": 8,
+  "count_piso_trigger": 0,
+  "count_piso_adjacent": 1,
+  "reviews_1_3_in_gate": [
+    {
+      "user": "Bruno Tavares",
+      "rating": 2,
+      "iso_date": "2026-08-30T14:20:22Z",
+      "text": null,
+      "piso_relevant": false
+    },
+    {
+      "user": "Edinea Rosa",
+      "rating": 3,
+      "iso_date": "2026-07-19T17:07:52Z",
+      "text": "A academia e boa os aparelhos são novos, mas tem coisas que deixam a desejar primeiro o professor só fica no telefone a música também não gostei pois tem que ser ritmo de academia e só tocava pagode parecia que eu estava em um bar .",
+      "piso_relevant": false
+    },
+    {
+      "user": "Renato Carvalho",
+      "rating": 3,
+      "iso_date": "2026-06-03T23:13:45Z",
+      "text": null,
+      "piso_relevant": false
+    },
+    {
+      "user": "Ana Clara Torres",
+      "rating": 2,
+      "iso_date": "2026-03-14T01:16:18Z",
+      "text": "Academia informa que aceita Gympass para aulas coletivas, mas, na hora de participar, exige o pagamento de uma \"taxa de avaliação física\" de R$ 60...",
+      "piso_relevant": false
+    },
+    {
+      "user": "RITA CAMPOS",
+      "rating": 2,
+      "iso_date": "2026-02-25T22:54:59Z",
+      "text": "Na hidroginástica e na natação não podemos usar o chuveiro, caso queira temos que no segundo andar (escada)passando com roupa molhada arriscando a escorregar pois o clube não permite usermos o chuveiro e o banheiro...",
+      "piso_relevant": "adjacent",
+      "piso_keywords_matched": ["escorregar"],
+      "area": "piscina → escada → vestiário"
+    },
+    {
+      "user": "ABarq",
+      "rating": 3,
+      "iso_date": "2025-10-09T21:27:46Z",
+      "text": "Uma pena não disponibilizarem natação separado da musculação e demais atividades que a academia oferece.",
+      "piso_relevant": false
+    },
+    {
+      "user": "Vê Cerqueira",
+      "rating": 1,
+      "iso_date": "2025-09-20T14:12:29Z",
+      "text": "Muita cara a mensalidade.",
+      "piso_relevant": false
+    }
+  ],
+  "excluded_by_date_gate": [
+    {
+      "user": "Thais Nogueira",
+      "rating": 1,
+      "iso_date": "2025-06-13T15:16:04Z",
+      "reason": "before 2025-08-31"
+    },
+    {
+      "user": "Letícia Nascimento",
+      "rating": 3,
+      "iso_date": "2025-08-12T11:50:06Z",
+      "reason": "before 2025-08-31"
+    },
+    {
+      "user": "Bianca Barcelos",
+      "rating": 3,
+      "iso_date": "2025-04-09T00:42:00Z",
+      "reason": "before 2025-08-31",
+      "note": "halteres gastos — equipamento, não piso"
+    },
+    {
+      "user": "Thaina Padilha",
+      "rating": 2,
+      "iso_date": "2024-10-16T22:53:55Z",
+      "reason": "before 2025-08-31",
+      "note": "cross desgaste + tinta áspera"
+    },
+    {
+      "user": "Gustavo Lima",
+      "rating": 1,
+      "iso_date": "2024-05-21T11:32:10Z",
+      "reason": "before 2025-08-31",
+      "note": "review mais completo sobre piso — fora do gate"
+    },
+    {
+      "user": "Vinicius Muniz",
+      "rating": 2,
+      "iso_date": "2022-03-30T00:44:35Z",
+      "reason": "before 2025-08-31",
+      "note": "chão amassado buraco"
+    }
+  ]
+}

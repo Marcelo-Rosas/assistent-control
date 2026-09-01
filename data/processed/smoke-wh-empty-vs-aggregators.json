@@ -1,0 +1,176 @@
+{
+  "generated_at": "2026-08-11T01:33:37.450Z",
+  "wh_failed_total": 454,
+  "sample": [
+    {
+      "region": "SE",
+      "cidade": "Santa Maria de Jetibá",
+      "uf": "ES",
+      "pop": 45062,
+      "tp_raw": 2,
+      "gp_raw": 0,
+      "wh_live": 0,
+      "wh_retries": 3,
+      "pattern": "WH+GP vazios (TP tem)"
+    },
+    {
+      "region": "SE",
+      "cidade": "São Gabriel da Palha",
+      "uf": "ES",
+      "pop": 34210,
+      "tp_raw": 0,
+      "gp_raw": 0,
+      "wh_live": 0,
+      "wh_retries": 3,
+      "pattern": "NENHUM agregador"
+    },
+    {
+      "region": "SE",
+      "cidade": "Afonso Cláudio",
+      "uf": "ES",
+      "pop": 32446,
+      "tp_raw": 0,
+      "gp_raw": 0,
+      "wh_live": 0,
+      "wh_retries": 3,
+      "pattern": "NENHUM agregador"
+    },
+    {
+      "region": "N",
+      "cidade": "Bragança",
+      "uf": "PA",
+      "pop": 131679,
+      "tp_raw": 0,
+      "gp_raw": 0,
+      "wh_live": 0,
+      "wh_retries": 3,
+      "pattern": "NENHUM agregador"
+    },
+    {
+      "region": "N",
+      "cidade": "Itacoatiara",
+      "uf": "AM",
+      "pop": 112520,
+      "tp_raw": 0,
+      "gp_raw": 0,
+      "wh_live": 0,
+      "wh_retries": 3,
+      "pattern": "NENHUM agregador"
+    },
+    {
+      "region": "N",
+      "cidade": "Manacapuru",
+      "uf": "AM",
+      "pop": 110691,
+      "tp_raw": 0,
+      "gp_raw": 0,
+      "wh_live": 0,
+      "wh_retries": 3,
+      "pattern": "NENHUM agregador"
+    },
+    {
+      "region": "NE",
+      "cidade": "Canindé",
+      "uf": "CE",
+      "pop": 77207,
+      "tp_raw": 2,
+      "gp_raw": 0,
+      "wh_live": 0,
+      "wh_retries": 3,
+      "pattern": "WH+GP vazios (TP tem)"
+    },
+    {
+      "region": "NE",
+      "cidade": "Casa Nova",
+      "uf": "BA",
+      "pop": 75815,
+      "tp_raw": 0,
+      "gp_raw": 0,
+      "wh_live": 0,
+      "wh_retries": 3,
+      "pattern": "NENHUM agregador"
+    },
+    {
+      "region": "NE",
+      "cidade": "Russas",
+      "uf": "CE",
+      "pop": 74582,
+      "tp_raw": 2,
+      "gp_raw": 0,
+      "wh_live": 0,
+      "wh_retries": 3,
+      "pattern": "WH+GP vazios (TP tem)"
+    },
+    {
+      "region": "CO",
+      "cidade": "Padre Bernardo",
+      "uf": "GO",
+      "pop": 36692,
+      "tp_raw": 0,
+      "gp_raw": 0,
+      "wh_live": 0,
+      "wh_retries": 3,
+      "pattern": "NENHUM agregador"
+    },
+    {
+      "region": "CO",
+      "cidade": "Coxim",
+      "uf": "MS",
+      "pop": 33390,
+      "tp_raw": 0,
+      "gp_raw": 0,
+      "wh_live": 0,
+      "wh_retries": 3,
+      "pattern": "NENHUM agregador"
+    },
+    {
+      "region": "CO",
+      "cidade": "Poconé",
+      "uf": "MT",
+      "pop": 31269,
+      "tp_raw": 0,
+      "gp_raw": 0,
+      "wh_live": 0,
+      "wh_retries": 3,
+      "pattern": "NENHUM agregador"
+    },
+    {
+      "region": "S",
+      "cidade": "Rosário do Sul",
+      "uf": "RS",
+      "pop": 37700,
+      "tp_raw": 0,
+      "gp_raw": 0,
+      "wh_live": 0,
+      "wh_retries": 3,
+      "pattern": "NENHUM agregador"
+    },
+    {
+      "region": "S",
+      "cidade": "São Luiz Gonzaga",
+      "uf": "RS",
+      "pop": 35858,
+      "tp_raw": 1,
+      "gp_raw": 0,
+      "wh_live": 0,
+      "wh_retries": 3,
+      "pattern": "WH+GP vazios (TP tem)"
+    },
+    {
+      "region": "S",
+      "cidade": "Rio Pardo",
+      "uf": "RS",
+      "pop": 35666,
+      "tp_raw": 0,
+      "gp_raw": 0,
+      "wh_live": 0,
+      "wh_retries": 3,
+      "pattern": "NENHUM agregador"
+    }
+  ],
+  "tally": {
+    "WH+GP vazios (TP tem)": 4,
+    "NENHUM agregador": 11
+  },
+  "note": "WH_live = re-fetch Playwright com retries; TP/GP = raw scrape (não Eros DB)."
+}

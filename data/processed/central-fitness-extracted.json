@@ -1,0 +1,110 @@
+﻿{
+  "academia": "Central fitness",
+  "url": "https://totalpass.com/br/academias/central-fitness-72f760e3-3d0c-412d-b1de-4f6fefceb0bf/",
+  "endereco": "rua pedro angelli, 155",
+  "status_atual": "Aberta agora",
+  "horario_hoje": "06:00 ├ás 22:00",
+  "contato": {
+    "telefone": "11993502478",
+    "instagram": "https://www.instagram.com/centralfitnes.s/",
+    "email": "centralfitnessacademia@outlook.com"
+  },
+  "modalidades": [
+    "Condicionamento F├¡┬¡sico",
+    "Personal",
+    "Fit Dance",
+    "Dan├ºa Pop",
+    "Pilates Solo",
+    "Muscula├º├úo",
+    "Alongamento",
+    "Abdominais",
+    "Jump",
+    "Step",
+    "Circuito Funcional",
+    "Boxe",
+    "Muay Thai"
+  ],
+  "modalidades_e_planos": [
+    {
+      "modalidade": "Alongamento",
+      "categoria": "Muscula├º├úo + Aulas",
+      "plano_minimo": "TP 1+"
+    },
+    {
+      "modalidade": "Step",
+      "categoria": "Muscula├º├úo + Aulas",
+      "plano_minimo": "TP 1+"
+    },
+    {
+      "modalidade": "Dan├ºa Pop",
+      "categoria": "Muscula├º├úo + Aulas",
+      "plano_minimo": "TP 1+"
+    },
+    {
+      "modalidade": "Condicionamento F├¡┬¡sico",
+      "categoria": "Muscula├º├úo + Aulas",
+      "plano_minimo": "TP 1+"
+    },
+    {
+      "modalidade": "Muscula├º├úo",
+      "categoria": "Muscula├º├úo + Aulas",
+      "plano_minimo": "TP 1+"
+    },
+    {
+      "modalidade": "Muay Thai",
+      "categoria": "Muscula├º├úo + Aulas",
+      "plano_minimo": "TP 1+"
+    },
+    {
+      "modalidade": "Jump",
+      "categoria": "Muscula├º├úo + Aulas",
+      "plano_minimo": "TP 1+"
+    },
+    {
+      "modalidade": "Circuito Funcional",
+      "categoria": "Muscula├º├úo + Aulas",
+      "plano_minimo": "TP 1+"
+    },
+    {
+      "modalidade": "Fit Dance",
+      "categoria": "Muscula├º├úo + Aulas",
+      "plano_minimo": "TP 1+"
+    },
+    {
+      "modalidade": "Boxe",
+      "categoria": "Muscula├º├úo + Aulas",
+      "plano_minimo": "TP 1+"
+    },
+    {
+      "modalidade": "Abdominais",
+      "categoria": "Muscula├º├úo + Aulas",
+      "plano_minimo": "TP 1+"
+    },
+    {
+      "modalidade": "Pilates Solo",
+      "categoria": "Muscula├º├úo + Aulas",
+      "plano_minimo": "TP 1+"
+    },
+    {
+      "modalidade": "Personal",
+      "categoria": "Muscula├º├úo + Aulas",
+      "plano_minimo": "TP 1+"
+    }
+  ],
+  "horarios_academia": {
+    "domingo": "06:00 ├ás 22:00 / 10:00 ├ás 13:00",
+    "segunda-feira": "06:00 ├ás 22:00",
+    "terca-feira": "06:00 ├ás 22:00",
+    "quarta-feira": "06:00 ├ás 22:00",
+    "quinta-feira": "06:00 ├ás 22:00",
+    "sexta-feira": "06:00 ├ás 22:00",
+    "sabado": "06:00 ├ás 22:00 / 09:00 ├ás 14:00"
+  },
+  "comodidades": [
+    "Arm├írios",
+    "Bebedouro",
+    "Espa├ºo Kids",
+    "Ventilador",
+    "Wi-fi"
+  ]
+}

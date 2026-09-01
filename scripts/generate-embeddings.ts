@@ -398,9 +398,15 @@ async function main(): Promise<void> {
     }
   }
 
-  // Reconta pending neste grupo
-  const stillPending = await fetchPendingChunks(supabase, groupId, pageSize, 0);
-  const allDone = stillPending.length === 0;
+  // Reconta pending neste grupo (count, sem puxar rows — evita timeout)
+  const { count: stillPendingCount, error: pendingCountErr } = await supabase
+    .from('eros_knowledge_chunks')
+    .select('id', { count: 'exact', head: true })
+    .eq('group_id', groupId)
+    .or('embedding.is.null,embedding_model.eq.pending');
+  if (pendingCountErr) throw new Error(`count_pending: ${pendingCountErr.message}`);
+  const stillPendingLen = stillPendingCount ?? 0;
+  const allDone = stillPendingLen === 0;
 
   const { count } = await supabase
     .from('eros_knowledge_chunks')
@@ -421,7 +427,7 @@ async function main(): Promise<void> {
   console.log('\n=== Estatísticas ===');
   console.log(`OK: ${success}`);
   console.log(`Falhas: ${failed}`);
-  console.log(`Ainda pending: ${stillPending.length}`);
+  console.log(`Ainda pending: ${stillPendingLen}`);
   console.log(`Agente: ${allDone ? 'published' : 'training'}`);
   if (errors.length) {
     console.log('Erros (até 8):');

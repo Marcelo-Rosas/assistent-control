@@ -1,0 +1,182 @@
+{
+  "generated_at": "2026-08-31T11:17:45.374Z",
+  "config": {
+    "short_ms": 10000,
+    "normal_ms": 600000
+  },
+  "cities": [
+    {
+      "key": "São Paulo-SP",
+      "nome": "São Paulo",
+      "uf": "SP",
+      "url": "https://wellhub.com/pt-br/search/sp/sao-paulo/?map=1",
+      "catalog_bairros": null,
+      "baseline_count": 4967,
+      "runs": [
+        {
+          "mode": "short",
+          "timeout_ms": 10000,
+          "ok": false,
+          "error": "timeout 10000ms: São Paulo-SP",
+          "count": 0,
+          "missing_vs_baseline": 4967,
+          "pct_of_baseline": 0,
+          "missing_vs_baseline_sample": [
+            "rPJZJj3POhqD7seYA5U8_GH5Ik_4KgT_u9mikoQ71km7WTfYvd1CC0yfwBk11_ik",
+            "q1AKdFQ0Qxvc2xugLYSsjdGnIzeX3rOK4I-jnVM1hxkxJOT5p5VRaC-n0uTyp47X",
+            "oonH14yLEit7Pi7uIoQzmWxRfbzT4PqXmYPgx_6GAwbSngohEBJf1NRjthUILq-x",
+            "nE58Ps0iUi7HzO-oASISUgfIVCJUjLdKMugo5RQYJK4-SUsXkrD-AaXQJM6ECHpc",
+            "R3VEhpbGHLUrjPqFoMfFNJPLknU-WCzHqZ30-alETmKyjCIJUDoQ84opivLBalOf",
+            "3a7pV6ilgBNspaA9Z4o3cVFTlFs3_Vvc8fzeRXHXtNk0lbJlgNnM6vADsg4GhXBa",
+            "R4YYmBWRTS-moDeqGN4q8nIBh5VZb_cB6_K5jYsBfypEaOocZQIibBMciHEaBt1E",
+            "vtAJ7fiN5eRxRgSE_bvbcXDc5CXcQQIar_RbBiStA9Hxs_L4-R7bZx-ZaeQ2tLei",
+            "1YMLlGQgxUZfRFdt4nGTOR9kiQqEKbGEZe9ChExgyJ6T656_0M42CcW81cvVdSwL",
+            "5KelrNYKSeSpYjTMaAvvVIVE_qFgOjwT40tLqYzVpJIJj1SYZyIMfbz-GSM00BpZ",
+            "Ibe-ezLB2KIRIRRgzj-w0nyXRvnR_DxHBuiYtbp3leTM1AHjeKluBceolgu71Sc1",
+            "Zu94PloUYbGEB8QC4U8PKcIA4auPwFeGCsp1KpPYIYB_Icu_O2jVlC3r9BPVaRsg",
+            "0V0KposynJGzpFGa5HOGrla7bvn1PKSc8vvQYG8tSY8ZNUl7xohjsGUxBdmtgJo5",
+            "vCyliIDHnHcn4KkuZn2aS8Wz5leo5b_HcYUUu3G_20m50tX1Wc7o_syOMeZlXFRn",
+            "1qQCj0lou6WjG_xLOvryHAwUOXEXi6gQNEXpSQ_hOChxjYh8SnPZthU0CbHEGTzf"
+          ]
+        },
+        {
+          "mode": "normal",
+          "timeout_ms": 600000,
+          "ok": true,
+          "count": 3155,
+          "missing_vs_baseline": 1880,
+          "pct_of_baseline": 63.5,
+          "missing_vs_baseline_sample": [
+            "R3VEhpbGHLUrjPqFoMfFNJPLknU-WCzHqZ30-alETmKyjCIJUDoQ84opivLBalOf",
+            "69ooJuu7A_ri9XsEqOw6fsamCzKTASXwNpoDvstS-t32sSEBDwzaZZeoCNMB20wH",
+            "IvVGkHnrG4QVs9Il6n5BQNpEQ5z1Y_Bq85joA6MDBG8ZxisrZSrX1GdwnYjLAwme",
+            "MqTpbDJ79o_QTTH8ykZW0Ro7d-1DukXmbsTVSYzz3noD9PkoPE-5EkNQVj9hl8EN",
+            "KR1U_KQW3xJCATSCvbRXK2LOgsyHAOz8joUBhZKmU_916Mc1p5MpM_yQ0rMm0MmI",
+            "Px2qKyVHjtKEVlpE2yQ8lHoroMZXtDPylmYR-pYhfrGXxNXovaJvRtuJYn-E5VAz",
+            "X0YfxPSmsMG8tzes1Rs0q6pIdOceVId2z3O9x_pFwOeRpfeU2gtNzcXk2Ic5HWpb",
+            "aW1nx266SYZ-dS9yPMQ3ZItlTMTBS5TWxxw30XiNy-D7eAYWL3QyXXcyXQaNE3dj",
+            "OHInKwI-GFATS8ZcbD4WJf3W53zg4fd2c_9lbGj3iUiRDk5-YQVz8pWaMTowC3Js",
+            "IgL4U8qKxOFQBg_-FRFd5MVlxbenSr_hLPnezHgrwPl5RChrwpydYzWstS7oRvkL",
+            "NxeuwufKtS6POGdRQ_jT7G41Oe2kJD7sIAa7FnQT3dc_22hS1OtQHPO1sueKsY4l",
+            "Dqi5nJzNsqmJSRgBjGl3mmDajLSQS19PvOEaK8xPNtG0SdVvSqGJEEjV7vtZqgbU",
+            "kpkYr6PtvtSXr_HYt_tR9Uaa6Kjx1us1lt8wOTVwN5tivuBTLSa-6PnDWqXXIfcK",
+            "r8JJo0FIDtzRx7wNkCnfyBw2MJQL7rX_U37i-11NYZ_Xr4fTVYeW_J2HLjhT-YQm",
+            "aXWc_85xfkq2eEr7tkdfXetxsszUOe6b1PQ0_4VeVxWsSvA1JwPAVCMJ6Y7gfZEP"
+          ]
+        }
+      ],
+      "verdict": "WARN: normal também abaixo baseline — revisar matcher ou drift"
+    },
+    {
+      "key": "Porto Alegre-RS",
+      "nome": "Porto Alegre",
+      "uf": "RS",
+      "url": "https://wellhub.com/pt-br/search/rs/porto-alegre/?map=1",
+      "catalog_bairros": 94,
+      "baseline_count": 802,
+      "runs": [
+        {
+          "mode": "short",
+          "timeout_ms": 10000,
+          "ok": false,
+          "error": "timeout 10000ms: Porto Alegre-RS",
+          "count": 0,
+          "missing_vs_baseline": 802,
+          "pct_of_baseline": 0,
+          "missing_vs_baseline_sample": [
+            "kKHloI2K17yeyQSISCjUJhMR-WkC1sBeYOS4JBiC_AnvYPorLGz-qrPBj-HVtoAt",
+            "7vKEMgaHTnZRh9BBaoKqPM22NE07oKM9ovuwOJrUib5ngnsyIASOh3Jls0TJwxVN",
+            "DiCAIzaMtQDmiORhzWjyQxDp2naE-vIDK0MsCLLO3xy-MW2esuG6ctkfFjtuHXej",
+            "Cub8r2l_GTmwVO0CyeEHe5QiVLepuu9F5pxKTvhlQKjZLA3qGyACTqOTIONkLw70",
+            "BuMdsbQH-lXhxjfQHj2cgUzlX92UpaOvuT3b7w7uB39nTqc5hLCRLrlcvT0LKxze",
+            "xhTTaba9m5y5rJDVYIHMJj0yAPgaz_xAGbTGpVhbsdmEmq1YDQtTClQohh61Z2sG",
+            "VZWovWgStj4BDWLgi6KsbS5CuYY5E5ZjXGCTMpa3LR6F2yP9qDfh5T7gOVVD8oW0",
+            "WlRbUnunELxIKIdZ2ysRw3Y_PZW-iF_LAQe_AXpbo5ps9NKvgf3VsI1520FiRCfw",
+            "36pQgCJlRFpW9Zaon7q04nmziMwFzd834NmRZmUqEH3M2LsaLnnqyDRqrtPeD-LG",
+            "LS4VqeqTo0NMguKI7Z5HFaqEaX_0c1eMHQKLJ0EzrKUr1BRCx0hHF2P5oPeX1DkU",
+            "4IWCVU84qq5ymKQXOcwpelJZ0UGcHSXBycyd1XeNcOBCbDHKTmLgRzQR7Tw6Mp3I",
+            "1qfEek8x-scYEof1hDvb-F1ZzKNo959rKg2umembuaIydxHFTsFPgHFdR5Be7dXW",
+            "Bo_tR_FFB2WQVxWmPdYJKvvSG1OIaCLazckivayGWZVgxxNing-juIinirJbS9qp",
+            "N-hmoyLVV2-6TRJvpbH8XJ9s_5g5JqHjjGoc3HQ2aoBSnRkxROK7Qvrc34QnVzDL",
+            "gd18HO-BezumSN9R2Jo1KIMRjAH_Hvtbft5v5USX_x_CzA_tjCi6IVcbbSwLAu4m"
+          ]
+        },
+        {
+          "mode": "normal",
+          "timeout_ms": 600000,
+          "ok": true,
+          "count": 1177,
+          "missing_vs_baseline": 2,
+          "pct_of_baseline": 146.8,
+          "missing_vs_baseline_sample": [
+            "fkQxDNxc2Bie53PsMUCcDMH2B7sIRqGNGOV254MpAJX5EjFM7nt8c18EvFQj13FY",
+            "TTb6ga0Opp40uKMwPNJwfvkD_7O0yZyZQQPlUPI3cfonOgB7mvOl32LtazIjHgn-"
+          ]
+        }
+      ],
+      "verdict": "TIMEOUT_LOSS: curto << baseline; normal ~baseline"
+    },
+    {
+      "key": "Rio de Janeiro-RJ",
+      "nome": "Rio de Janeiro",
+      "uf": "RJ",
+      "url": "https://wellhub.com/pt-br/search/rj/rio-de-janeiro/?map=1",
+      "catalog_bairros": null,
+      "baseline_count": 2292,
+      "runs": [
+        {
+          "mode": "short",
+          "timeout_ms": 10000,
+          "ok": false,
+          "error": "timeout 10000ms: Rio de Janeiro-RJ",
+          "count": 0,
+          "missing_vs_baseline": 2292,
+          "pct_of_baseline": 0,
+          "missing_vs_baseline_sample": [
+            "U9pP388B36gTuDrBDCkaBqKO2vcQ-086BQt7sCNDZkKit5DEWiDQYHyVyocuCSuH",
+            "9R7RXWwWUyNUiHoVVhWzReAyx5EpT59MdxtnumQXjJvde3UASu5T0haPrUO0xoIL",
+            "fGxUnT55eVdtrICo-ugFH8T35RaQTZGPaj7uE_mPS67F08jwf7eHn_VWfzq8ugrS",
+            "TafCFJwNpddo_aCaeJ16wr02LOywqX6GQrPPjYa_H8QKa6zaoDniV1dnaJGvtw-z",
+            "BP0_F6lYALzGhtz-xNvAUwEyg0DkFlMV6Kl7pRVACb2pii1tTH4_FTSu3_bI2ITJ",
+            "tcUh_ix6EWFSFREZWFMVVcegvvh-rcFaxyZvdsApHnZcB-97TqfdNHdv9WlYItlz",
+            "t4qub2xVL-TP2hu2e5v584KAYQytxEOTb9PP2HhbVQz9KKpmGYgeDE9wmg79NWpL",
+            "DMIVEPBiGCOG-6HXphoiIq7MmolA1Q5X_sww4oWVvTK7tK8FRMwXK1DQhzEs7VCi",
+            "8TvuBf7XhiHTy-DIzcF1YAs3GvQdj3YYIPljDCYc1BykSJAJOoNrpCeua7TsNeK5",
+            "gFAPoWldWGhTOS8qWV_HRfXOTiD4u4_YRby2ZkSKgxS2YfEQczWovMZP17OHDH9S",
+            "LqcvgVM-1I9jkxVI6H-tX8nqh2PcKB0Gods6XiGLychqicgVSEJnZA9dk8VFMg_I",
+            "Mjvw2be1cwYH_3BfZJkuHczbj_gcJRnUN09BV-GeFMiHX4XjWRKMvbrYhc3ptqET",
+            "plFLG-f_7T_K-CFzeEztOop2MdIF--o5i-ZlqPwcgoro4KXA-5JYF_Eshmn8_Z8d",
+            "MrIVbB_aNFobCpXcUkpZD8RAEwUWVIx1UDnbOv7Q2mIS1cCj4djIvZDKlcvmCFF8",
+            "hpk9hRLAl2qusGxBgrWSK-RZG_70cF0CfmhNhMyCZD4a6i9sLbMYhdleBumqlA5j"
+          ]
+        },
+        {
+          "mode": "normal",
+          "timeout_ms": 600000,
+          "ok": true,
+          "count": 1620,
+          "missing_vs_baseline": 700,
+          "pct_of_baseline": 70.7,
+          "missing_vs_baseline_sample": [
+            "3gPkYBdSlBJwjY979QZ44QbDkG4pdp3U5tnCVl680_zqmyY9Ntmrxyb-F85AuG6u",
+            "UcgUxqIKLTf0v7__Ge6Yx_-eY1S-4YsSA07_XGM-ydsPQcPAotLPY_KQsEpLPLAd",
+            "gVeoLgtK7giThnoiS1CCB4OYtpRaK2G419L5bn7DHcKdLWAhGwG3VpLAWcqeKWbk",
+            "u7ps7GAJNCVxhrvnSIj_1eYp-X-pDqP-E8VTWAhOWwJpl1Q4wLw6YEwxZ_bgVgIE",
+            "TCPQ3_lrSulOvLqFzEkggiz-vN9a-jCfcZSCBDzPLxJOmrJgJEdAMFUaYVTdA0zg",
+            "nt_hzfi7iubv56-3aHTFuR54QeUNpLtdJ3LVfrXcK9iRbbqxN2037Y1zi8BH_7OJ",
+            "U7HGtLjQKdIPytu1Ux8Z3K2IIvrycFGaN-1l79tN-U641n1hVdeL_7-fx-lfQXcQ",
+            "Rd6d5CdtTSyLNPoG0FwqNw7cFuiZMRDm1I1Sa7Sgbb-Aot0vd-c6YLBL_bGGuXWY",
+            "ONxrBU776VEZxpJdxKgpYsdlTzVrhsLE1QKoAnyR5dOCdpmkwKEEOCgcl6tADzas",
+            "WUVno9YoqubW2gXCQuqEotTcKa1U5TIW14nGSJ4UtNP029sBndgXtf8uc-aEUSDT",
+            "7Etx4FJL8prrPChh42wM9WwGC23GJwKdXL0FPSnq7ZhIF2HBoTEKhkkqWuAryzcB",
+            "ocmMnGIIlfDiQhKI_6syUnfHS6IrePypAvEqqMS91jMQI4mE1qmNIoQoZda_R2zf",
+            "CuyLkdYeIQK017104jz89X7wbIprOeFp18ZPR08_GLjuCjfGdavHRNo-QUT9AzuK",
+            "JYymOpDsu6t9kBV6VdChEIkJw8GneW0pvCHe2EFLOGyr1rh2JYbLT_SZif5Rg9xB",
+            "hnp2NO_lxEffz6YeIHnLYF1l1x5HwCnjE9d0G9rvzsVoCQC5rKX4n-XIRyevlk5_"
+          ]
+        }
+      ],
+      "verdict": "WARN: normal também abaixo baseline — revisar matcher ou drift"
+    }
+  ]
+}

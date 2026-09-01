@@ -1,0 +1,5 @@
+  retry 1/3: HTTP 502 em https://totalpass.com/br/academias/buddha-spa-college-ltda/ wait=1000ms
+  retry 2/3: HTTP 502 em https://totalpass.com/br/academias/buddha-spa-college-ltda/ wait=2000ms
+  ERRO: HTTP 502 em https://totalpass.com/br/academias/buddha-spa-college-ltda/
+  ERRO: ENOSPC: no space left on device, write
+  ERRO: ENOSPC: no space left on device, write

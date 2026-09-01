@@ -1,0 +1,773 @@
+{
+  "cidade": "Porto Alegre",
+  "uf": "RS",
+  "ibge": "4314902",
+  "fonte": "Prefeitura Porto Alegre / IBGE Censo 2022",
+  "bairros": [
+    {
+      "slug": "aberta-dos-morros",
+      "bairro": "Aberta dos Morros",
+      "area_ha": 376,
+      "populacao_2022": 9854,
+      "densidade_hab_ha": 26.2,
+      "renda_media_sm": 2.95
+    },
+    {
+      "slug": "agronomia",
+      "bairro": "Agronomia",
+      "area_ha": 886,
+      "populacao_2022": 2677,
+      "densidade_hab_ha": 3,
+      "renda_media_sm": 2.59
+    },
+    {
+      "slug": "anchieta",
+      "bairro": "Anchieta",
+      "area_ha": 917,
+      "populacao_2022": 791,
+      "densidade_hab_ha": 0.9,
+      "renda_media_sm": 1.49
+    },
+    {
+      "slug": "arquipelago",
+      "bairro": "Arquipélago",
+      "area_ha": 4402,
+      "populacao_2022": 6411,
+      "densidade_hab_ha": 1.5,
+      "renda_media_sm": 1.85
+    },
+    {
+      "slug": "auxiliadora",
+      "bairro": "Auxiliadora",
+      "area_ha": 84,
+      "populacao_2022": 8909,
+      "densidade_hab_ha": 106.1,
+      "renda_media_sm": 8.89
+    },
+    {
+      "slug": "azenha",
+      "bairro": "Azenha",
+      "area_ha": 139,
+      "populacao_2022": 12064,
+      "densidade_hab_ha": 86.8,
+      "renda_media_sm": 5.34
+    },
+    {
+      "slug": "bela-vista",
+      "bairro": "Bela Vista",
+      "area_ha": 102,
+      "populacao_2022": 11819,
+      "densidade_hab_ha": 115.9,
+      "renda_media_sm": 15.8
+    },
+    {
+      "slug": "belem-novo",
+      "bairro": "Belém Novo",
+      "area_ha": 1486,
+      "populacao_2022": 9851,
+      "densidade_hab_ha": 6.6,
+      "renda_media_sm": 3.86
+    },
+    {
+      "slug": "belem-velho",
+      "bairro": "Belém Velho",
+      "area_ha": 1486,
+      "populacao_2022": 10893,
+      "densidade_hab_ha": 7.3,
+      "renda_media_sm": 2.1
+    },
+    {
+      "slug": "boa-vista",
+      "bairro": "Boa Vista",
+      "area_ha": 169,
+      "populacao_2022": 9254,
+      "densidade_hab_ha": 54.8,
+      "renda_media_sm": 11.08
+    },
+    {
+      "slug": "boa-vista-do-sul",
+      "bairro": "Boa Vista do Sul",
+      "wellhub_slug": "boa-vista-sul",
+      "area_ha": 2437,
+      "populacao_2022": 2703,
+      "densidade_hab_ha": 1.1,
+      "renda_media_sm": 2.28
+    },
+    {
+      "slug": "bom-jesus",
+      "bairro": "Bom Jesus",
+      "wellhub_slug": "bom-jesus-porto-alegre",
+      "area_ha": 210,
+      "populacao_2022": 24589,
+      "densidade_hab_ha": 117.1,
+      "renda_media_sm": 2.45
+    },
+    {
+      "slug": "bom-fim",
+      "bairro": "Bom Fim",
+      "wellhub_slug": "bomfim",
+      "area_ha": 50,
+      "populacao_2022": 10160,
+      "densidade_hab_ha": 203.2,
+      "renda_media_sm": 7.2
+    },
+    {
+      "slug": "camaqua",
+      "bairro": "Camaquã",
+      "area_ha": 190,
+      "populacao_2022": 17935,
+      "densidade_hab_ha": 94.4,
+      "renda_media_sm": 3.65
+    },
+    {
+      "slug": "campo-novo",
+      "bairro": "Campo Novo",
+      "wellhub_slug": "campo-novo-porto-alegre",
+      "area_ha": 360,
+      "populacao_2022": 8743,
+      "densidade_hab_ha": 24.3,
+      "renda_media_sm": 2.04
+    },
+    {
+      "slug": "cascata",
+      "bairro": "Cascata",
+      "area_ha": 535,
+      "populacao_2022": 9234,
+      "densidade_hab_ha": 17.3,
+      "renda_media_sm": 1.77
+    },
+    {
+      "slug": "cavalhada",
+      "bairro": "Cavalhada",
+      "area_ha": 376,
+      "populacao_2022": 25209,
+      "densidade_hab_ha": 67.1,
+      "renda_media_sm": 3.88
+    },
+    {
+      "slug": "centro",
+      "bairro": "Centro",
+      "area_ha": 244,
+      "populacao_2022": 30569,
+      "densidade_hab_ha": 125.3,
+      "renda_media_sm": 5.85
+    },
+    {
+      "slug": "chacara-das-pedras",
+      "bairro": "Chácara das Pedras",
+      "area_ha": 109,
+      "populacao_2022": 5639,
+      "densidade_hab_ha": 51.7,
+      "renda_media_sm": 11.55
+    },
+    {
+      "slug": "chapeu-do-sol",
+      "bairro": "Chapéu do Sol",
+      "area_ha": 599,
+      "populacao_2022": 5547,
+      "densidade_hab_ha": 9.3,
+      "renda_media_sm": 1.88
+    },
+    {
+      "slug": "cidade-baixa",
+      "bairro": "Cidade Baixa",
+      "area_ha": 76,
+      "populacao_2022": 13014,
+      "densidade_hab_ha": 171.2,
+      "renda_media_sm": 5.3
+    },
+    {
+      "slug": "coronel-aparicio-borges",
+      "bairro": "Coronel Aparício Borges",
+      "area_ha": 285,
+      "populacao_2022": 18966,
+      "densidade_hab_ha": 66.5,
+      "renda_media_sm": 2.11
+    },
+    {
+      "slug": "costa-e-silva",
+      "bairro": "Costa e Silva",
+      "wellhub_slug": "costa-e-silva-porto-alegre",
+      "area_ha": 179,
+      "populacao_2022": 13585,
+      "densidade_hab_ha": 75.9,
+      "renda_media_sm": 2.03
+    },
+    {
+      "slug": "cristal",
+      "bairro": "Cristal",
+      "wellhub_slug": "cristal-porto-alegre",
+      "area_ha": 407,
+      "populacao_2022": 24851,
+      "densidade_hab_ha": 61.1,
+      "renda_media_sm": 4.26
+    },
+    {
+      "slug": "cristo-redentor",
+      "bairro": "Cristo Redentor",
+      "area_ha": 143,
+      "populacao_2022": 15144,
+      "densidade_hab_ha": 105.9,
+      "renda_media_sm": 5.26
+    },
+    {
+      "slug": "espirito-santo",
+      "bairro": "Espírito Santo",
+      "area_ha": 159,
+      "populacao_2022": 4953,
+      "densidade_hab_ha": 31.2,
+      "renda_media_sm": 5.8
+    },
+    {
+      "slug": "extrema",
+      "bairro": "Extrema",
+      "wellhub_slug": "extrema-porto-alegre",
+      "area_ha": 2160,
+      "populacao_2022": 2360,
+      "densidade_hab_ha": 1.1,
+      "renda_media_sm": 1.73
+    },
+    {
+      "slug": "farrapos",
+      "bairro": "Farrapos",
+      "area_ha": 227,
+      "populacao_2022": 17591,
+      "densidade_hab_ha": 77.5,
+      "renda_media_sm": 1.85
+    },
+    {
+      "slug": "farroupilha",
+      "bairro": "Farroupilha",
+      "area_ha": 59,
+      "populacao_2022": 774,
+      "densidade_hab_ha": 13.1,
+      "renda_media_sm": 8.1
+    },
+    {
+      "slug": "floresta",
+      "bairro": "Floresta",
+      "area_ha": 187,
+      "populacao_2022": 8798,
+      "densidade_hab_ha": 47,
+      "renda_media_sm": 4.82
+    },
+    {
+      "slug": "gloria",
+      "bairro": "Glória",
+      "area_ha": 335,
+      "populacao_2022": 15248,
+      "densidade_hab_ha": 45.5,
+      "renda_media_sm": 3.06
+    },
+    {
+      "slug": "guaruja",
+      "bairro": "Guarujá",
+      "area_ha": 169,
+      "populacao_2022": 6145,
+      "densidade_hab_ha": 36.3,
+      "renda_media_sm": 5.24
+    },
+    {
+      "slug": "higienopolis",
+      "bairro": "Higienópolis",
+      "area_ha": 106,
+      "populacao_2022": 10284,
+      "densidade_hab_ha": 97,
+      "renda_media_sm": 9.78
+    },
+    {
+      "slug": "hipica",
+      "bairro": "Hípica",
+      "area_ha": 1033,
+      "populacao_2022": 28643,
+      "densidade_hab_ha": 27.7,
+      "renda_media_sm": 3.06
+    },
+    {
+      "slug": "humaita",
+      "bairro": "Humaitá",
+      "area_ha": 362,
+      "populacao_2022": 12744,
+      "densidade_hab_ha": 35.2,
+      "renda_media_sm": 3.55
+    },
+    {
+      "slug": "independencia",
+      "bairro": "Independência",
+      "area_ha": 44,
+      "populacao_2022": 6885,
+      "densidade_hab_ha": 156.5,
+      "renda_media_sm": 8.69
+    },
+    {
+      "slug": "ipanema",
+      "bairro": "Ipanema",
+      "area_ha": 380,
+      "populacao_2022": 13403,
+      "densidade_hab_ha": 35.2,
+      "renda_media_sm": 6.94
+    },
+    {
+      "slug": "jardim-botanico",
+      "bairro": "Jardim Botânico",
+      "area_ha": 204,
+      "populacao_2022": 11349,
+      "densidade_hab_ha": 55.6,
+      "renda_media_sm": 6.78
+    },
+    {
+      "slug": "jardim-carvalho",
+      "bairro": "Jardim Carvalho",
+      "area_ha": 392,
+      "populacao_2022": 23405,
+      "densidade_hab_ha": 59.7,
+      "renda_media_sm": 3.24
+    },
+    {
+      "slug": "jardim-leopoldina",
+      "bairro": "Jardim Leopoldina",
+      "area_ha": 130,
+      "populacao_2022": 16151,
+      "densidade_hab_ha": 124.2,
+      "renda_media_sm": 2.65
+    },
+    {
+      "slug": "jardim-floresta",
+      "bairro": "Jardim Floresta",
+      "area_ha": 72,
+      "populacao_2022": 2228,
+      "densidade_hab_ha": 30.9,
+      "renda_media_sm": 3.16
+    },
+    {
+      "slug": "jardim-isabel",
+      "bairro": "Jardim Isabel",
+      "area_ha": 71,
+      "populacao_2022": 2592,
+      "densidade_hab_ha": 36.5,
+      "renda_media_sm": 13.27
+    },
+    {
+      "slug": "jardim-europa",
+      "bairro": "Jardim Europa",
+      "area_ha": 76,
+      "populacao_2022": 4372,
+      "densidade_hab_ha": 57.5,
+      "renda_media_sm": 12.84
+    },
+    {
+      "slug": "jardim-itu",
+      "bairro": "Jardim Itu",
+      "area_ha": 256,
+      "populacao_2022": 17565,
+      "densidade_hab_ha": 68.6,
+      "renda_media_sm": 5.42
+    },
+    {
+      "slug": "jardim-sabara",
+      "bairro": "Jardim Sabará",
+      "area_ha": 208,
+      "populacao_2022": 11270,
+      "densidade_hab_ha": 54.2,
+      "renda_media_sm": 3.97
+    },
+    {
+      "slug": "jardim-lindoia",
+      "bairro": "Jardim Lindóia",
+      "area_ha": 88,
+      "populacao_2022": 7587,
+      "densidade_hab_ha": 86.2,
+      "renda_media_sm": 8.85
+    },
+    {
+      "slug": "jardim-do-salso",
+      "bairro": "Jardim do Salso",
+      "area_ha": 86,
+      "populacao_2022": 6576,
+      "densidade_hab_ha": 76.5,
+      "renda_media_sm": 5.96
+    },
+    {
+      "slug": "jardim-sao-pedro",
+      "bairro": "Jardim São Pedro",
+      "area_ha": 103,
+      "populacao_2022": 3320,
+      "densidade_hab_ha": 32.2,
+      "renda_media_sm": 5.04
+    },
+    {
+      "slug": "lageado",
+      "bairro": "Lageado",
+      "area_ha": 2277,
+      "populacao_2022": 5676,
+      "densidade_hab_ha": 2.5,
+      "renda_media_sm": 2.24
+    },
+    {
+      "slug": "lami",
+      "bairro": "Lami",
+      "area_ha": 1749,
+      "populacao_2022": 6677,
+      "densidade_hab_ha": 3.8,
+      "renda_media_sm": 1.87
+    },
+    {
+      "slug": "lomba-do-pinheiro",
+      "bairro": "Lomba do Pinheiro",
+      "area_ha": 2975,
+      "populacao_2022": 59200,
+      "densidade_hab_ha": 19.9,
+      "renda_media_sm": 1.81
+    },
+    {
+      "slug": "mario-quintana",
+      "bairro": "Mário Quintana",
+      "area_ha": 750,
+      "populacao_2022": 44068,
+      "densidade_hab_ha": 58.7,
+      "renda_media_sm": 1.54
+    },
+    {
+      "slug": "medianeira",
+      "bairro": "Medianeira",
+      "wellhub_slug": "medianeira-porto-alegre",
+      "area_ha": 140,
+      "populacao_2022": 8749,
+      "densidade_hab_ha": 62.5,
+      "renda_media_sm": 4.68
+    },
+    {
+      "slug": "menino-deus",
+      "bairro": "Menino Deus",
+      "area_ha": 230,
+      "populacao_2022": 27961,
+      "densidade_hab_ha": 121.5,
+      "renda_media_sm": 7.95
+    },
+    {
+      "slug": "moinhos-de-vento",
+      "bairro": "Moinhos de Vento",
+      "area_ha": 131,
+      "populacao_2022": 9995,
+      "densidade_hab_ha": 76.3,
+      "renda_media_sm": 12.03
+    },
+    {
+      "slug": "mont-serrat",
+      "bairro": "Mont'Serrat",
+      "area_ha": 79,
+      "populacao_2022": 10357,
+      "densidade_hab_ha": 131.1,
+      "renda_media_sm": 11.38
+    },
+    {
+      "slug": "morro-santana",
+      "bairro": "Morro Santana",
+      "area_ha": 574,
+      "populacao_2022": 21640,
+      "densidade_hab_ha": 37.7,
+      "renda_media_sm": 3.09
+    },
+    {
+      "slug": "navegantes",
+      "bairro": "Navegantes",
+      "area_ha": 226,
+      "populacao_2022": 3315,
+      "densidade_hab_ha": 14.6,
+      "renda_media_sm": 3.22
+    },
+    {
+      "slug": "nonoai",
+      "bairro": "Nonoai",
+      "area_ha": 446,
+      "populacao_2022": 20766,
+      "densidade_hab_ha": 46.5,
+      "renda_media_sm": 4.18
+    },
+    {
+      "slug": "parque-santa-fe",
+      "bairro": "Parque Santa Fé",
+      "area_ha": 173,
+      "populacao_2022": 6673,
+      "densidade_hab_ha": 38.5,
+      "renda_media_sm": 4.63
+    },
+    {
+      "slug": "partenon",
+      "bairro": "Partenon",
+      "area_ha": 640,
+      "populacao_2022": 43587,
+      "densidade_hab_ha": 68.1,
+      "renda_media_sm": 4.01
+    },
+    {
+      "slug": "passo-d-areia",
+      "bairro": "Passo D'Areia",
+      "wellhub_slug": "passo-de-areia",
+      "area_ha": 209,
+      "populacao_2022": 22530,
+      "densidade_hab_ha": 107.7,
+      "renda_media_sm": 4.73
+    },
+    {
+      "slug": "passo-das-pedras",
+      "bairro": "Passo das Pedras",
+      "area_ha": 230,
+      "populacao_2022": 14435,
+      "densidade_hab_ha": 62.7,
+      "renda_media_sm": 1.76
+    },
+    {
+      "slug": "pedra-redonda",
+      "bairro": "Pedra Redonda",
+      "area_ha": 67,
+      "populacao_2022": 570,
+      "densidade_hab_ha": 8.5,
+      "renda_media_sm": 16.61
+    },
+    {
+      "slug": "petropolis",
+      "bairro": "Petrópolis",
+      "area_ha": 337,
+      "populacao_2022": 37613,
+      "densidade_hab_ha": 111.6,
+      "renda_media_sm": 9.69
+    },
+    {
+      "slug": "pitinga",
+      "bairro": "Pitinga",
+      "area_ha": 870,
+      "populacao_2022": 7012,
+      "densidade_hab_ha": 8,
+      "renda_media_sm": 1.92
+    },
+    {
+      "slug": "ponta-grossa",
+      "bairro": "Ponta Grossa",
+      "area_ha": 1064,
+      "populacao_2022": 8939,
+      "densidade_hab_ha": 8.4,
+      "renda_media_sm": 2.27
+    },
+    {
+      "slug": "praia-de-belas",
+      "bairro": "Praia de Belas",
+      "area_ha": 257,
+      "populacao_2022": 1522,
+      "densidade_hab_ha": 5.9,
+      "renda_media_sm": 6.24
+    },
+    {
+      "slug": "restinga",
+      "bairro": "Restinga",
+      "area_ha": 2010,
+      "populacao_2022": 62448,
+      "densidade_hab_ha": 31,
+      "renda_media_sm": 1.76
+    },
+    {
+      "slug": "rio-branco",
+      "bairro": "Rio Branco",
+      "area_ha": 134,
+      "populacao_2022": 15710,
+      "densidade_hab_ha": 117.2,
+      "renda_media_sm": 10.9
+    },
+    {
+      "slug": "rubem-berta",
+      "bairro": "Rubem Berta",
+      "area_ha": 269,
+      "populacao_2022": 27930,
+      "densidade_hab_ha": 103.8,
+      "renda_media_sm": 2.16
+    },
+    {
+      "slug": "santa-cecilia",
+      "bairro": "Santa Cecília",
+      "area_ha": 68,
+      "populacao_2022": 4640,
+      "densidade_hab_ha": 68.2,
+      "renda_media_sm": 6.92
+    },
+    {
+      "slug": "santa-maria-goretti",
+      "bairro": "Santa Maria Goretti",
+      "area_ha": 78,
+      "populacao_2022": 3035,
+      "densidade_hab_ha": 38.9,
+      "renda_media_sm": 4.01
+    },
+    {
+      "slug": "santa-rosa-de-lima",
+      "bairro": "Santa Rosa de Lima",
+      "area_ha": 548,
+      "populacao_2022": 34627,
+      "densidade_hab_ha": 63.2,
+      "renda_media_sm": 1.88
+    },
+    {
+      "slug": "santa-tereza",
+      "bairro": "Santa Tereza",
+      "area_ha": 452,
+      "populacao_2022": 31358,
+      "densidade_hab_ha": 69.4,
+      "renda_media_sm": 3.35
+    },
+    {
+      "slug": "santana",
+      "bairro": "Santana",
+      "wellhub_slug": "santana-porto-alegre",
+      "area_ha": 153,
+      "populacao_2022": 17794,
+      "densidade_hab_ha": 116.3,
+      "renda_media_sm": 6.63
+    },
+    {
+      "slug": "santo-antonio",
+      "bairro": "Santo Antônio",
+      "area_ha": 137,
+      "populacao_2022": 13105,
+      "densidade_hab_ha": 95.6,
+      "renda_media_sm": 4.72
+    },
+    {
+      "slug": "sao-caetano",
+      "bairro": "São Caetano",
+      "wellhub_slug": "sao-caetano-porto-alegre",
+      "area_ha": 830,
+      "populacao_2022": 733,
+      "densidade_hab_ha": 0.9,
+      "renda_media_sm": 2.37
+    },
+    {
+      "slug": "sao-geraldo",
+      "bairro": "São Geraldo",
+      "area_ha": 174,
+      "populacao_2022": 6948,
+      "densidade_hab_ha": 39.9,
+      "renda_media_sm": 3.97
+    },
+    {
+      "slug": "sao-joao",
+      "bairro": "São João",
+      "area_ha": 159,
+      "populacao_2022": 10621,
+      "densidade_hab_ha": 66.8,
+      "renda_media_sm": 6.56
+    },
+    {
+      "slug": "sao-sebastiao",
+      "bairro": "São Sebastião",
+      "wellhub_slug": "sao-sebastiao-porto-alegre",
+      "area_ha": 106,
+      "populacao_2022": 7514,
+      "densidade_hab_ha": 70.9,
+      "renda_media_sm": 4.78
+    },
+    {
+      "slug": "sarandi",
+      "bairro": "Sarandi",
+      "area_ha": 2457,
+      "populacao_2022": 51539,
+      "densidade_hab_ha": 20.9,
+      "renda_media_sm": 3.08
+    },
+    {
+      "slug": "serraria",
+      "bairro": "Serraria",
+      "area_ha": 323,
+      "populacao_2022": 4385,
+      "densidade_hab_ha": 13.5,
+      "renda_media_sm": 2.5
+    },
+    {
+      "slug": "setimo-ceu",
+      "bairro": "Sétimo Céu",
+      "area_ha": 154,
+      "populacao_2022": 1166,
+      "densidade_hab_ha": 7.6,
+      "renda_media_sm": 10.91
+    },
+    {
+      "slug": "teresopolis",
+      "bairro": "Teresópolis",
+      "area_ha": 386,
+      "populacao_2022": 13072,
+      "densidade_hab_ha": 33.8,
+      "renda_media_sm": 5.29
+    },
+    {
+      "slug": "tres-figueiras",
+      "bairro": "Três Figueiras",
+      "area_ha": 133,
+      "populacao_2022": 4016,
+      "densidade_hab_ha": 30.2,
+      "renda_media_sm": 16.1
+    },
+    {
+      "slug": "tristeza",
+      "bairro": "Tristeza",
+      "area_ha": 261,
+      "populacao_2022": 17201,
+      "densidade_hab_ha": 65.9,
+      "renda_media_sm": 7.88
+    },
+    {
+      "slug": "vila-assuncao",
+      "bairro": "Vila Assunção",
+      "area_ha": 136,
+      "populacao_2022": 3974,
+      "densidade_hab_ha": 29.2,
+      "renda_media_sm": 10.14
+    },
+    {
+      "slug": "vila-conceicao",
+      "bairro": "Vila Conceição",
+      "wellhub_slug": "vila-conceicao-porto-alegre",
+      "area_ha": 37,
+      "populacao_2022": 969,
+      "densidade_hab_ha": 26.2,
+      "renda_media_sm": 7.93
+    },
+    {
+      "slug": "vila-ipiranga",
+      "bairro": "Vila Ipiranga",
+      "area_ha": 182,
+      "populacao_2022": 18041,
+      "densidade_hab_ha": 99.1,
+      "renda_media_sm": 4.6
+    },
+    {
+      "slug": "vila-jardim",
+      "bairro": "Vila Jardim",
+      "area_ha": 147,
+      "populacao_2022": 11411,
+      "densidade_hab_ha": 77.6,
+      "renda_media_sm": 3.53
+    },
+    {
+      "slug": "vila-joao-pessoa",
+      "bairro": "Vila João Pessoa",
+      "area_ha": 112,
+      "populacao_2022": 10431,
+      "densidade_hab_ha": 93.1,
+      "renda_media_sm": 2.88
+    },
+    {
+      "slug": "vila-nova",
+      "bairro": "Vila Nova",
+      "area_ha": 1203,
+      "populacao_2022": 32217,
+      "densidade_hab_ha": 26.8,
+      "renda_media_sm": 3.14
+    },
+    {
+      "slug": "vila-sao-jose",
+      "bairro": "Vila São José",
+      "area_ha": 304,
+      "populacao_2022": 24011,
+      "densidade_hab_ha": 78.9,
+      "renda_media_sm": 2.09
+    }
+  ]
+}

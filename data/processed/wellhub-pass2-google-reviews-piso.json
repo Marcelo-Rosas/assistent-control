@@ -1,0 +1,147 @@
+{
+  "place_id": "ChIJQy2AvuzfmwARP5T2npZCSIc",
+  "title": "Academia Perfect Body — Cassino Bangu",
+  "reference_date": "2026-08-31",
+  "fetched_at": "2026-08-31T15:10:00.000Z",
+  "scope": "todas as ratings · busca ampliada piso/troca/reforma · sem gate temporal para keywords piso",
+  "keywords": {
+    "complaint": ["piso", "pisos", "chão", "chao", "encardid", "amassad", "buraco", "desgast", "nunca é limpo", "chega a ser preto", "sujeira"],
+    "request_troca": ["trocar", "troca", "precisa trocar", "antiderrapante", "placa antiderrap"],
+    "partial_fix": ["tinta áspera", "tinta aspera", "compraram", "investiram", "substituindo", "esteiras novas"],
+    "resolution": ["piso novo", "novo piso", "trocaram o piso", "reformaram", "reforma do piso", "melhorou o piso", "pisos novos"]
+  },
+  "resolution_audit": {
+    "piso_trocado_confirmado_em_review": false,
+    "menção_explicita_resolução_piso": 0,
+    "última_reclamação_piso_direta": "2024-05-21 (Gustavo Lima ★1)",
+    "reclamação_adjacente_mais_recente": "2026-02-25 (RITA CAMPOS ★2 — escorregar molhado)",
+    "interpretação_dados": "Nenhuma review confirma troca/reforma de piso. Investimentos citados referem equipamentos (esteiras, crossfit, aparelhos). Gambiarra parcial: tinta áspera na barra cross (out/2024). Pedido antiderrapante (mar/2023) seguido de reclamação pior (mai/2024) sugere não resolvido na época. Pós-mai/2024: silêncio em piso direto — inconclusivo (pode ter sido resolvido OU deixou de ser tema)."
+  },
+  "timeline": [
+    {
+      "iso_date": "2022-03-30",
+      "user": "Vinicius Muniz",
+      "rating": 2,
+      "type": "complaint",
+      "area": "musculação",
+      "quote": "até o chão em alguns pontos está amassado como se fosse um buraco"
+    },
+    {
+      "iso_date": "2023-03-18",
+      "user": "Nere Mere",
+      "rating": 4,
+      "type": "request_troca",
+      "area": "geral + leg 45",
+      "quote": "precisa trocar todo piso para antiderrapante e também colocar placa antiderrapante no leg 45"
+    },
+    {
+      "iso_date": "2023-08-15",
+      "user": "Luiza Jacovazzo",
+      "rating": 4,
+      "type": "partial_fix",
+      "area": "crossfit / equipamentos",
+      "quote": "investiram em esteiras novas… começaram a trocar diversos equipamentos [crossfit 3º andar]… substituindo por outros mais modernos e SEGUROS",
+      "note": "equipamento, não piso"
+    },
+    {
+      "iso_date": "2023-11-15",
+      "user": "Julinho Filho",
+      "rating": 5,
+      "type": "neutral_photo",
+      "area": "musculação",
+      "quote": "Área para pisa nos treinos",
+      "note": "caption foto — elogio área treino, não menciona troca"
+    },
+    {
+      "iso_date": "2024-05-21",
+      "user": "Gustavo Lima",
+      "rating": 1,
+      "type": "complaint",
+      "area": "geral + banheiro + natação externa",
+      "quote": "Desde o piso ao teto… desgastado… pisos brancos encardidos… área natação piso nunca limpo, chega preto… pé descalço na sujeira"
+    },
+    {
+      "iso_date": "2024-10-16",
+      "user": "Thaina Padilha",
+      "rating": 2,
+      "type": "partial_fix",
+      "area": "crossfit — barra",
+      "quote": "barra Crossfit desgastada caiu… resolveram comprar a tinta áspera",
+      "note": "superfície barra, não piso"
+    },
+    {
+      "iso_date": "2025-03-15",
+      "user": "kely miranda",
+      "rating": 5,
+      "type": "complaint_adjacent",
+      "area": "piscina",
+      "quote": "Minha única crítica é sobre a limpeza da piscina, pode melhorar!",
+      "note": "água, não piso"
+    },
+    {
+      "iso_date": "2025-04-09",
+      "user": "Bianca Barcelos",
+      "rating": 3,
+      "type": "complaint_adjacent",
+      "area": "musculação",
+      "quote": "halteres bem gastos… A academia é limpa",
+      "note": "equipamento + limpeza geral positiva, sem piso"
+    },
+    {
+      "iso_date": "2025-08-02",
+      "user": "Alexandre Vaccari",
+      "rating": 4,
+      "type": "partial_fix",
+      "area": "geral",
+      "quote": "Aparelhos novos, bom preço…",
+      "note": "equipamento"
+    },
+    {
+      "iso_date": "2025-08-04",
+      "user": "Saulo Matte",
+      "rating": 5,
+      "type": "partial_fix",
+      "area": "geral",
+      "quote": "equipamentos limpos ou novos",
+      "note": "equipamento"
+    },
+    {
+      "iso_date": "2026-02-25",
+      "user": "RITA CAMPOS",
+      "rating": 2,
+      "type": "complaint_adjacent",
+      "area": "piscina → escada",
+      "quote": "passando com roupa molhada arriscando a escorregar"
+    },
+    {
+      "iso_date": "2026-07-19",
+      "user": "Edinea Rosa",
+      "rating": 3,
+      "type": "partial_fix",
+      "area": "musculação",
+      "quote": "aparelhos são novos",
+      "note": "equipamento"
+    }
+  ],
+  "gate_12m_1_3_star": {
+    "date_gate": "iso_date >= 2025-08-31",
+    "count_all": 7,
+    "piso_direct": 0,
+    "piso_adjacent": 1,
+    "hits": [
+      {
+        "user": "RITA CAMPOS",
+        "rating": 2,
+        "iso_date": "2026-02-25",
+        "type": "complaint_adjacent",
+        "quote": "arriscando a escorregar"
+      }
+    ]
+  },
+  "google_topics_relevant": {
+    "new_equipment": 23,
+    "new_treadmills": 2,
+    "floor_rubber_pool_maintenance": "nenhum topic clusterizado"
+  },
+  "pages_scanned": "~80 reviews via SearchAPI (lowest_rating + newest + most_relevant paginado)"
+}

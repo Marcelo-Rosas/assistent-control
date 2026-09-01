@@ -1,0 +1,775 @@
+{
+  "cidade": "Porto Alegre",
+  "uf": "RS",
+  "catalog_file": "porto-alegre-rs.json",
+  "tested_at": "2026-08-28T17:37:03.930Z",
+  "city_pass": {
+    "bairro": "Porto Alegre",
+    "slug": "porto-alegre",
+    "url": "https://wellhub.com/pt-br/search/rs/porto-alegre/?map=1",
+    "http_status": 200,
+    "count": 100,
+    "hit_cap": true
+  },
+  "bairros": [
+    {
+      "bairro": "Aberta dos Morros",
+      "slug": "aberta-dos-morros",
+      "url": "https://wellhub.com/pt-br/search/rs/aberta-dos-morros/?map=1",
+      "http_status": 200,
+      "count": 100,
+      "hit_cap": true
+    },
+    {
+      "bairro": "Agronomia",
+      "slug": "agronomia",
+      "url": "https://wellhub.com/pt-br/search/rs/agronomia/?map=1",
+      "http_status": 200,
+      "count": 100,
+      "hit_cap": true
+    },
+    {
+      "bairro": "Anchieta",
+      "slug": "anchieta",
+      "url": "https://wellhub.com/pt-br/search/rs/anchieta/?map=1",
+      "http_status": 200,
+      "count": 100,
+      "hit_cap": true
+    },
+    {
+      "bairro": "Arquipélago",
+      "slug": "arquipelago",
+      "url": "https://wellhub.com/pt-br/search/rs/arquipelago/?map=1",
+      "http_status": 200,
+      "count": 100,
+      "hit_cap": true
+    },
+    {
+      "bairro": "Auxiliadora",
+      "slug": "auxiliadora",
+      "url": "https://wellhub.com/pt-br/search/rs/auxiliadora/?map=1",
+      "http_status": 200,
+      "count": 26,
+      "hit_cap": false
+    },
+    {
+      "bairro": "Azenha",
+      "slug": "azenha",
+      "url": "https://wellhub.com/pt-br/search/rs/azenha/?map=1",
+      "http_status": 200,
+      "count": 100,
+      "hit_cap": true
+    },
+    {
+      "bairro": "Bela Vista",
+      "slug": "bela-vista",
+      "url": "https://wellhub.com/pt-br/search/rs/bela-vista/?map=1",
+      "http_status": 200,
+      "count": 21,
+      "hit_cap": false
+    },
+    {
+      "bairro": "Belém Novo",
+      "slug": "belem-novo",
+      "url": "https://wellhub.com/pt-br/search/rs/belem-novo/?map=1",
+      "http_status": 200,
+      "count": 100,
+      "hit_cap": true
+    },
+    {
+      "bairro": "Belém Velho",
+      "slug": "belem-velho",
+      "url": "https://wellhub.com/pt-br/search/rs/belem-velho/?map=1",
+      "http_status": 200,
+      "count": 100,
+      "hit_cap": true
+    },
+    {
+      "bairro": "Boa Vista",
+      "slug": "boa-vista",
+      "url": "https://wellhub.com/pt-br/search/rs/boa-vista/?map=1",
+      "http_status": 200,
+      "count": 3,
+      "hit_cap": false
+    },
+    {
+      "bairro": "Boa Vista do Sul",
+      "slug": "boa-vista-sul",
+      "url": "https://wellhub.com/pt-br/search/rs/boa-vista-sul/?map=1",
+      "http_status": 200,
+      "count": 3,
+      "hit_cap": false
+    },
+    {
+      "bairro": "Bom Jesus",
+      "slug": "bom-jesus-porto-alegre",
+      "url": "https://wellhub.com/pt-br/search/rs/bom-jesus-porto-alegre/?map=1",
+      "http_status": 200,
+      "count": 100,
+      "hit_cap": true
+    },
+    {
+      "bairro": "Bom Fim",
+      "slug": "bomfim",
+      "url": "https://wellhub.com/pt-br/search/rs/bomfim/?map=1",
+      "http_status": 200,
+      "count": 100,
+      "hit_cap": true
+    },
+    {
+      "bairro": "Camaquã",
+      "slug": "camaqua",
+      "url": "https://wellhub.com/pt-br/search/rs/camaqua/?map=1",
+      "http_status": 200,
+      "count": 19,
+      "hit_cap": false
+    },
+    {
+      "bairro": "Campo Novo",
+      "slug": "campo-novo-porto-alegre",
+      "url": "https://wellhub.com/pt-br/search/rs/campo-novo-porto-alegre/?map=1",
+      "http_status": 200,
+      "count": 100,
+      "hit_cap": true
+    },
+    {
+      "bairro": "Cascata",
+      "slug": "cascata",
+      "url": "https://wellhub.com/pt-br/search/rs/cascata/?map=1",
+      "http_status": 200,
+      "count": 21,
+      "hit_cap": false
+    },
+    {
+      "bairro": "Cavalhada",
+      "slug": "cavalhada",
+      "url": "https://wellhub.com/pt-br/search/rs/cavalhada/?map=1",
+      "http_status": 200,
+      "count": 100,
+      "hit_cap": true
+    },
+    {
+      "bairro": "Centro",
+      "slug": "centro",
+      "url": "https://wellhub.com/pt-br/search/rs/centro/?map=1",
+      "http_status": 200,
+      "count": 85,
+      "hit_cap": false
+    },
+    {
+      "bairro": "Chácara das Pedras",
+      "slug": "chacara-das-pedras",
+      "url": "https://wellhub.com/pt-br/search/rs/chacara-das-pedras/?map=1",
+      "http_status": 200,
+      "count": 100,
+      "hit_cap": true
+    },
+    {
+      "bairro": "Chapéu do Sol",
+      "slug": "chapeu-do-sol",
+      "url": "https://wellhub.com/pt-br/search/rs/chapeu-do-sol/?map=1",
+      "http_status": 200,
+      "count": 100,
+      "hit_cap": true
+    },
+    {
+      "bairro": "Cidade Baixa",
+      "slug": "cidade-baixa",
+      "url": "https://wellhub.com/pt-br/search/rs/cidade-baixa/?map=1",
+      "http_status": 200,
+      "count": 2,
+      "hit_cap": false
+    },
+    {
+      "bairro": "Coronel Aparício Borges",
+      "slug": "coronel-aparicio-borges",
+      "url": "https://wellhub.com/pt-br/search/rs/coronel-aparicio-borges/?map=1",
+      "http_status": 200,
+      "count": 100,
+      "hit_cap": true
+    },
+    {
+      "bairro": "Costa e Silva",
+      "slug": "costa-e-silva-porto-alegre",
+      "url": "https://wellhub.com/pt-br/search/rs/costa-e-silva-porto-alegre/?map=1",
+      "http_status": 200,
+      "count": 100,
+      "hit_cap": true
+    },
+    {
+      "bairro": "Cristal",
+      "slug": "cristal-porto-alegre",
+      "url": "https://wellhub.com/pt-br/search/rs/cristal-porto-alegre/?map=1",
+      "http_status": 200,
+      "count": 100,
+      "hit_cap": true
+    },
+    {
+      "bairro": "Cristo Redentor",
+      "slug": "cristo-redentor",
+      "url": "https://wellhub.com/pt-br/search/rs/cristo-redentor/?map=1",
+      "http_status": 200,
+      "count": 100,
+      "hit_cap": true
+    },
+    {
+      "bairro": "Espírito Santo",
+      "slug": "espirito-santo",
+      "url": "https://wellhub.com/pt-br/search/rs/espirito-santo/?map=1",
+      "http_status": 200,
+      "count": 18,
+      "hit_cap": false
+    },
+    {
+      "bairro": "Extrema",
+      "slug": "extrema-porto-alegre",
+      "url": "https://wellhub.com/pt-br/search/rs/extrema-porto-alegre/?map=1",
+      "http_status": 200,
+      "count": 36,
+      "hit_cap": false
+    },
+    {
+      "bairro": "Farrapos",
+      "slug": "farrapos",
+      "url": "https://wellhub.com/pt-br/search/rs/farrapos/?map=1",
+      "http_status": 200,
+      "count": 100,
+      "hit_cap": true
+    },
+    {
+      "bairro": "Farroupilha",
+      "slug": "farroupilha",
+      "url": "https://wellhub.com/pt-br/search/rs/farroupilha/?map=1",
+      "http_status": 200,
+      "count": 39,
+      "hit_cap": false
+    },
+    {
+      "bairro": "Floresta",
+      "slug": "floresta",
+      "url": "https://wellhub.com/pt-br/search/rs/floresta/?map=1",
+      "http_status": 200,
+      "count": 19,
+      "hit_cap": false
+    },
+    {
+      "bairro": "Glória",
+      "slug": "gloria",
+      "url": "https://wellhub.com/pt-br/search/rs/gloria/?map=1",
+      "http_status": 200,
+      "count": 31,
+      "hit_cap": false
+    },
+    {
+      "bairro": "Guarujá",
+      "slug": "guaruja",
+      "url": "https://wellhub.com/pt-br/search/rs/guaruja/?map=1",
+      "http_status": 200,
+      "count": 100,
+      "hit_cap": true
+    },
+    {
+      "bairro": "Higienópolis",
+      "slug": "higienopolis",
+      "url": "https://wellhub.com/pt-br/search/rs/higienopolis/?map=1",
+      "http_status": 200,
+      "count": 100,
+      "hit_cap": true
+    },
+    {
+      "bairro": "Hípica",
+      "slug": "hipica",
+      "url": "https://wellhub.com/pt-br/search/rs/hipica/?map=1",
+      "http_status": 200,
+      "count": 100,
+      "hit_cap": true
+    },
+    {
+      "bairro": "Humaitá",
+      "slug": "humaita",
+      "url": "https://wellhub.com/pt-br/search/rs/humaita/?map=1",
+      "http_status": 200,
+      "count": 10,
+      "hit_cap": false
+    },
+    {
+      "bairro": "Independência",
+      "slug": "independencia",
+      "url": "https://wellhub.com/pt-br/search/rs/independencia/?map=1",
+      "http_status": 200,
+      "count": 2,
+      "hit_cap": false
+    },
+    {
+      "bairro": "Ipanema",
+      "slug": "ipanema",
+      "url": "https://wellhub.com/pt-br/search/rs/ipanema/?map=1",
+      "http_status": 200,
+      "count": 98,
+      "hit_cap": false
+    },
+    {
+      "bairro": "Jardim Botânico",
+      "slug": "jardim-botanico",
+      "url": "https://wellhub.com/pt-br/search/rs/jardim-botanico/?map=1",
+      "http_status": 200,
+      "count": 100,
+      "hit_cap": true
+    },
+    {
+      "bairro": "Jardim Carvalho",
+      "slug": "jardim-carvalho",
+      "url": "https://wellhub.com/pt-br/search/rs/jardim-carvalho/?map=1",
+      "http_status": 200,
+      "count": 100,
+      "hit_cap": true
+    },
+    {
+      "bairro": "Jardim Leopoldina",
+      "slug": "jardim-leopoldina",
+      "url": "https://wellhub.com/pt-br/search/rs/jardim-leopoldina/?map=1",
+      "http_status": 200,
+      "count": 100,
+      "hit_cap": true
+    },
+    {
+      "bairro": "Jardim Floresta",
+      "slug": "jardim-floresta",
+      "url": "https://wellhub.com/pt-br/search/rs/jardim-floresta/?map=1",
+      "http_status": 200,
+      "count": 100,
+      "hit_cap": true
+    },
+    {
+      "bairro": "Jardim Isabel",
+      "slug": "jardim-isabel",
+      "url": "https://wellhub.com/pt-br/search/rs/jardim-isabel/?map=1",
+      "http_status": 200,
+      "count": 100,
+      "hit_cap": true
+    },
+    {
+      "bairro": "Jardim Europa",
+      "slug": "jardim-europa",
+      "url": "https://wellhub.com/pt-br/search/rs/jardim-europa/?map=1",
+      "http_status": 200,
+      "count": 56,
+      "hit_cap": false
+    },
+    {
+      "bairro": "Jardim Itu",
+      "slug": "jardim-itu",
+      "url": "https://wellhub.com/pt-br/search/rs/jardim-itu/?map=1",
+      "http_status": 200,
+      "count": 100,
+      "hit_cap": true
+    },
+    {
+      "bairro": "Jardim Sabará",
+      "slug": "jardim-sabara",
+      "url": "https://wellhub.com/pt-br/search/rs/jardim-sabara/?map=1",
+      "http_status": 200,
+      "count": 100,
+      "hit_cap": true
+    },
+    {
+      "bairro": "Jardim Lindóia",
+      "slug": "jardim-lindoia",
+      "url": "https://wellhub.com/pt-br/search/rs/jardim-lindoia/?map=1",
+      "http_status": 200,
+      "count": 100,
+      "hit_cap": true
+    },
+    {
+      "bairro": "Jardim do Salso",
+      "slug": "jardim-do-salso",
+      "url": "https://wellhub.com/pt-br/search/rs/jardim-do-salso/?map=1",
+      "http_status": 200,
+      "count": 100,
+      "hit_cap": true
+    },
+    {
+      "bairro": "Jardim São Pedro",
+      "slug": "jardim-sao-pedro",
+      "url": "https://wellhub.com/pt-br/search/rs/jardim-sao-pedro/?map=1",
+      "http_status": 200,
+      "count": 100,
+      "hit_cap": true
+    },
+    {
+      "bairro": "Lageado",
+      "slug": "lageado",
+      "url": "https://wellhub.com/pt-br/search/rs/lageado/?map=1",
+      "http_status": 200,
+      "count": 100,
+      "hit_cap": true
+    },
+    {
+      "bairro": "Lami",
+      "slug": "lami",
+      "url": "https://wellhub.com/pt-br/search/rs/lami/?map=1",
+      "http_status": 200,
+      "count": 18,
+      "hit_cap": false
+    },
+    {
+      "bairro": "Lomba do Pinheiro",
+      "slug": "lomba-do-pinheiro",
+      "url": "https://wellhub.com/pt-br/search/rs/lomba-do-pinheiro/?map=1",
+      "http_status": 200,
+      "count": 100,
+      "hit_cap": true
+    },
+    {
+      "bairro": "Mário Quintana",
+      "slug": "mario-quintana",
+      "url": "https://wellhub.com/pt-br/search/rs/mario-quintana/?map=1",
+      "http_status": 200,
+      "count": 100,
+      "hit_cap": true
+    },
+    {
+      "bairro": "Medianeira",
+      "slug": "medianeira-porto-alegre",
+      "url": "https://wellhub.com/pt-br/search/rs/medianeira-porto-alegre/?map=1",
+      "http_status": 200,
+      "count": 100,
+      "hit_cap": true
+    },
+    {
+      "bairro": "Menino Deus",
+      "slug": "menino-deus",
+      "url": "https://wellhub.com/pt-br/search/rs/menino-deus/?map=1",
+      "http_status": 200,
+      "count": 100,
+      "hit_cap": true
+    },
+    {
+      "bairro": "Moinhos de Vento",
+      "slug": "moinhos-de-vento",
+      "url": "https://wellhub.com/pt-br/search/rs/moinhos-de-vento/?map=1",
+      "http_status": 200,
+      "count": 100,
+      "hit_cap": true
+    },
+    {
+      "bairro": "Mont'Serrat",
+      "slug": "mont-serrat",
+      "url": "https://wellhub.com/pt-br/search/rs/mont-serrat/?map=1",
+      "http_status": 200,
+      "count": 100,
+      "hit_cap": true
+    },
+    {
+      "bairro": "Morro Santana",
+      "slug": "morro-santana",
+      "url": "https://wellhub.com/pt-br/search/rs/morro-santana/?map=1",
+      "http_status": 200,
+      "count": 100,
+      "hit_cap": true
+    },
+    {
+      "bairro": "Navegantes",
+      "slug": "navegantes",
+      "url": "https://wellhub.com/pt-br/search/rs/navegantes/?map=1",
+      "http_status": 200,
+      "count": 1,
+      "hit_cap": false
+    },
+    {
+      "bairro": "Nonoai",
+      "slug": "nonoai",
+      "url": "https://wellhub.com/pt-br/search/rs/nonoai/?map=1",
+      "http_status": 200,
+      "count": 1,
+      "hit_cap": false
+    },
+    {
+      "bairro": "Parque Santa Fé",
+      "slug": "parque-santa-fe",
+      "url": "https://wellhub.com/pt-br/search/rs/parque-santa-fe/?map=1",
+      "http_status": 200,
+      "count": 22,
+      "hit_cap": false
+    },
+    {
+      "bairro": "Partenon",
+      "slug": "partenon",
+      "url": "https://wellhub.com/pt-br/search/rs/partenon/?map=1",
+      "http_status": 200,
+      "count": 100,
+      "hit_cap": true
+    },
+    {
+      "bairro": "Passo D'Areia",
+      "slug": "passo-de-areia",
+      "url": "https://wellhub.com/pt-br/search/rs/passo-de-areia/?map=1",
+      "http_status": 200,
+      "count": 27,
+      "hit_cap": false
+    },
+    {
+      "bairro": "Passo das Pedras",
+      "slug": "passo-das-pedras",
+      "url": "https://wellhub.com/pt-br/search/rs/passo-das-pedras/?map=1",
+      "http_status": 200,
+      "count": 100,
+      "hit_cap": true
+    },
+    {
+      "bairro": "Pedra Redonda",
+      "slug": "pedra-redonda",
+      "url": "https://wellhub.com/pt-br/search/rs/pedra-redonda/?map=1",
+      "http_status": 200,
+      "count": 100,
+      "hit_cap": true
+    },
+    {
+      "bairro": "Petrópolis",
+      "slug": "petropolis",
+      "url": "https://wellhub.com/pt-br/search/rs/petropolis/?map=1",
+      "http_status": 200,
+      "count": 100,
+      "hit_cap": true
+    },
+    {
+      "bairro": "Pitinga",
+      "slug": "pitinga",
+      "url": "https://wellhub.com/pt-br/search/rs/pitinga/?map=1",
+      "http_status": 200,
+      "count": 100,
+      "hit_cap": true
+    },
+    {
+      "bairro": "Ponta Grossa",
+      "slug": "ponta-grossa",
+      "url": "https://wellhub.com/pt-br/search/rs/ponta-grossa/?map=1",
+      "http_status": 200,
+      "count": 100,
+      "hit_cap": true
+    },
+    {
+      "bairro": "Praia de Belas",
+      "slug": "praia-de-belas",
+      "url": "https://wellhub.com/pt-br/search/rs/praia-de-belas/?map=1",
+      "http_status": 200,
+      "count": 100,
+      "hit_cap": true
+    },
+    {
+      "bairro": "Restinga",
+      "slug": "restinga",
+      "url": "https://wellhub.com/pt-br/search/rs/restinga/?map=1",
+      "http_status": 200,
+      "count": 3,
+      "hit_cap": false
+    },
+    {
+      "bairro": "Rio Branco",
+      "slug": "rio-branco",
+      "url": "https://wellhub.com/pt-br/search/rs/rio-branco/?map=1",
+      "http_status": 200,
+      "count": 100,
+      "hit_cap": true
+    },
+    {
+      "bairro": "Rubem Berta",
+      "slug": "rubem-berta",
+      "url": "https://wellhub.com/pt-br/search/rs/rubem-berta/?map=1",
+      "http_status": 200,
+      "count": 100,
+      "hit_cap": true
+    },
+    {
+      "bairro": "Santa Cecília",
+      "slug": "santa-cecilia",
+      "url": "https://wellhub.com/pt-br/search/rs/santa-cecilia/?map=1",
+      "http_status": 200,
+      "count": 100,
+      "hit_cap": true
+    },
+    {
+      "bairro": "Santa Maria Goretti",
+      "slug": "santa-maria-goretti",
+      "url": "https://wellhub.com/pt-br/search/rs/santa-maria-goretti/?map=1",
+      "http_status": 200,
+      "count": 100,
+      "hit_cap": true
+    },
+    {
+      "bairro": "Santa Rosa de Lima",
+      "slug": "santa-rosa-de-lima",
+      "url": "https://wellhub.com/pt-br/search/rs/santa-rosa-de-lima/?map=1",
+      "http_status": 200,
+      "count": 100,
+      "hit_cap": true
+    },
+    {
+      "bairro": "Santa Tereza",
+      "slug": "santa-tereza",
+      "url": "https://wellhub.com/pt-br/search/rs/santa-tereza/?map=1",
+      "http_status": 200,
+      "count": 2,
+      "hit_cap": false
+    },
+    {
+      "bairro": "Santana",
+      "slug": "santana-porto-alegre",
+      "url": "https://wellhub.com/pt-br/search/rs/santana-porto-alegre/?map=1",
+      "http_status": 200,
+      "count": 100,
+      "hit_cap": true
+    },
+    {
+      "bairro": "Santo Antônio",
+      "slug": "santo-antonio",
+      "url": "https://wellhub.com/pt-br/search/rs/santo-antonio/?map=1",
+      "http_status": 200,
+      "count": 3,
+      "hit_cap": false
+    },
+    {
+      "bairro": "São Caetano",
+      "slug": "sao-caetano-porto-alegre",
+      "url": "https://wellhub.com/pt-br/search/rs/sao-caetano-porto-alegre/?map=1",
+      "http_status": 200,
+      "count": 62,
+      "hit_cap": false
+    },
+    {
+      "bairro": "São Geraldo",
+      "slug": "sao-geraldo",
+      "url": "https://wellhub.com/pt-br/search/rs/sao-geraldo/?map=1",
+      "http_status": 200,
+      "count": 13,
+      "hit_cap": false
+    },
+    {
+      "bairro": "São João",
+      "slug": "sao-joao",
+      "url": "https://wellhub.com/pt-br/search/rs/sao-joao/?map=1",
+      "http_status": 200,
+      "count": 3,
+      "hit_cap": false
+    },
+    {
+      "bairro": "São Sebastião",
+      "slug": "sao-sebastiao-porto-alegre",
+      "url": "https://wellhub.com/pt-br/search/rs/sao-sebastiao-porto-alegre/?map=1",
+      "http_status": 200,
+      "count": 100,
+      "hit_cap": true
+    },
+    {
+      "bairro": "Sarandi",
+      "slug": "sarandi",
+      "url": "https://wellhub.com/pt-br/search/rs/sarandi/?map=1",
+      "http_status": 200,
+      "count": 2,
+      "hit_cap": false
+    },
+    {
+      "bairro": "Serraria",
+      "slug": "serraria",
+      "url": "https://wellhub.com/pt-br/search/rs/serraria/?map=1",
+      "http_status": 200,
+      "count": 100,
+      "hit_cap": true
+    },
+    {
+      "bairro": "Sétimo Céu",
+      "slug": "setimo-ceu",
+      "url": "https://wellhub.com/pt-br/search/rs/setimo-ceu/?map=1",
+      "http_status": 200,
+      "count": 100,
+      "hit_cap": true
+    },
+    {
+      "bairro": "Teresópolis",
+      "slug": "teresopolis",
+      "url": "https://wellhub.com/pt-br/search/rs/teresopolis/?map=1",
+      "http_status": 200,
+      "count": 100,
+      "hit_cap": true
+    },
+    {
+      "bairro": "Três Figueiras",
+      "slug": "tres-figueiras",
+      "url": "https://wellhub.com/pt-br/search/rs/tres-figueiras/?map=1",
+      "http_status": 200,
+      "count": 100,
+      "hit_cap": true
+    },
+    {
+      "bairro": "Tristeza",
+      "slug": "tristeza",
+      "url": "https://wellhub.com/pt-br/search/rs/tristeza/?map=1",
+      "http_status": 200,
+      "count": 100,
+      "hit_cap": true
+    },
+    {
+      "bairro": "Vila Assunção",
+      "slug": "vila-assuncao",
+      "url": "https://wellhub.com/pt-br/search/rs/vila-assuncao/?map=1",
+      "http_status": 200,
+      "count": 100,
+      "hit_cap": true
+    },
+    {
+      "bairro": "Vila Conceição",
+      "slug": "vila-conceicao-porto-alegre",
+      "url": "https://wellhub.com/pt-br/search/rs/vila-conceicao-porto-alegre/?map=1",
+      "http_status": 200,
+      "count": 100,
+      "hit_cap": true
+    },
+    {
+      "bairro": "Vila Ipiranga",
+      "slug": "vila-ipiranga",
+      "url": "https://wellhub.com/pt-br/search/rs/vila-ipiranga/?map=1",
+      "http_status": 200,
+      "count": 100,
+      "hit_cap": true
+    },
+    {
+      "bairro": "Vila Jardim",
+      "slug": "vila-jardim",
+      "url": "https://wellhub.com/pt-br/search/rs/vila-jardim/?map=1",
+      "http_status": 200,
+      "count": 9,
+      "hit_cap": false
+    },
+    {
+      "bairro": "Vila João Pessoa",
+      "slug": "vila-joao-pessoa",
+      "url": "https://wellhub.com/pt-br/search/rs/vila-joao-pessoa/?map=1",
+      "http_status": 200,
+      "count": 100,
+      "hit_cap": true
+    },
+    {
+      "bairro": "Vila Nova",
+      "slug": "vila-nova",
+      "url": "https://wellhub.com/pt-br/search/rs/vila-nova/?map=1",
+      "http_status": 200,
+      "count": 3,
+      "hit_cap": false
+    },
+    {
+      "bairro": "Vila São José",
+      "slug": "vila-sao-jose",
+      "url": "https://wellhub.com/pt-br/search/rs/vila-sao-jose/?map=1",
+      "http_status": 200,
+      "count": 100,
+      "hit_cap": true
+    }
+  ],
+  "summary": {
+    "total_bairros": 94,
+    "ok": 95,
+    "empty": 0,
+    "errors": 0,
+    "hit_cap": 64
+  }
+}

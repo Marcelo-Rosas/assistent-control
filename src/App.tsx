@@ -21,6 +21,8 @@ import { KnowledgeBase } from './components/knowledge/KnowledgeBase';
 import { RagPlayground } from './components/RagPlayground';
 import { PipelineLlmBar } from './components/PipelineLlmBar';
 import ReceitaMercadoDashboard from './components/ReceitaMercadoDashboard';
+import { BairroCoverageDashboard } from './components/coverage/BairroCoverageDashboard';
+import { AggregatorTrainLab } from './components/ml/AggregatorTrainLab';
 
 const AppLayout: React.FC = () => {
   const { currentRole, setCurrentRole } = useRoles();
@@ -114,6 +116,8 @@ const App: React.FC = () => {
             <Route path="/knowledge" element={<KnowledgeBase />} />
             <Route path="/rag" element={<RagPlayground />} />
             <Route path="/receita" element={<ReceitaMercadoDashboard />} />
+            <Route path="/coverage/bairros" element={<BairroCoverageDashboard />} />
+            <Route path="/ml/train" element={<AggregatorTrainLab />} />
             <Route path="/scheduling" element={<Scheduling />} />
             <Route path="/playground" element={<FuguPlayground />} />
             <Route path="/team" element={<Team />} />

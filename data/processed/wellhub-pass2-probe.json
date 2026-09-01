@@ -1,0 +1,265 @@
+{
+  "gym_id": "CXzlnnF9orYbwAPwdUNDMIp5faQRn38KmdHpbGrm81kmNMemxPUUK7YUJl5S5TGL",
+  "detail_url": "https://wellhub.com/pt-br/search/partners/CXzlnnF9orYbwAPwdUNDMIp5faQRn38KmdHpbGrm81kmNMemxPUUK7YUJl5S5TGL",
+  "visible": {
+    "title": "Perfect Body - Cassino - Bangu",
+    "h1": "Perfect Body - Cassino",
+    "snippet": "Login\nBR\nProcurar academias e apps\nPlanos e preços\nPara empresas\nPara colaboradores\nPara parceiros\nRecursos\nComeçar\nVoltar\nPerfect Body - Cassino\n\n4.77\n\n(466 Avaliações)\n\nA partir do plano Basic+\nHorários específicos com Basic+ • R$99,99/mês\nTodos os horários com Silver • R$149,99/mês\n\nTenha acesso a esta e mais de 22.712 outras opções de bem-estar por apenas R$ 99,99/mês\n\nVerificar elegibilidade\nSaiba mais sobre o plano Basic+\nVer mais\n\nSobre Perfect Body - Cassino\n\nA Perfect Body Cassino está localizada na Rua Fonseca, 534. Frente ao Bangu Shopping , é o local ide...\n\nA Perfect Body Cassino está localizada na Rua Fonseca, 534. Frente ao Bangu Shopping , é o local ideal para Musculação, Lutas, Crossfit, Natação, Bike Indoor, Jump. A academia conta com estrutura ampla com grande variedade de ambientes, espaço com equipamentos de musculação, arena de Crossfit, centro de lutas, sala para demais atividades e espaço kids . \n\nDurante a sua primeira visita, nossos funcionários irão te instruir sobre as instalações, serviços e atividades incluídas no seu plano. Não se preocupe com movimento 5mil m2.\n\nComodidades\n\nO que este parceiro oferece\n\nAr condicionado\n\nArmários\n\nLoja de artigos esportivos\n\nMini bar\n\nVestiário\n\nWi-Fi\n\nHorário de funcionamento\n\nHorários disponíveis\n\nHorário específico\nMusculação + Aulas + Piscina\nA partir do plano Basic+\n\nSegunda-feira\n\n11:00 - 16:00\n\nTerça-feira\n\n11:00 - 16:00\n\nQuarta-feira\n\n11:00 - 16:00\n\nQuinta-feira\n\n11:00 - 16:00\n\nSexta-feira\n\n11:00 - 16:00\n\nSábado\n\n11:00 - 16:00\n\nDomingo\n\n11:00 - 16:00\n\nTodos os horários de funcionamento\nA partir do plano Silver\n\nSegunda-feira\n\n06:00 - 23:59\n\nTerça-feira\n\n06:00 - 23:59\n\nQuarta-feira\n\n06:00 - 23:59\n\nQuinta-feira\n\n06:00 - 23:59\n\nSexta-feira\n\n06:00 - 23:59\n\nSábado\n\n08:00 - 20:00\n\nDomingo\n\n09:00 - 13:00\n\nOs horários de funcionamento podem mudar em feriados locais e nacionais. Entre em contato com o parceiro para mais informações.\n\nO que você pode fazer\n\nIncluso em horários específicos\nAeróbico\nArte marcial\nAulas / Atividades Anaeróbicas\nAulas de Bike\nAulas de Dança\nAulas Especiais\nMostrar mais\n\nOutras atividades\n\nCapoeira\nDança tailandesa\nFisiculturismo\nIndoor bike\nJiu-jitsu\nJump\nMostrar mais\n\nInformações de contato\n\nhttps://facebook.com/perfectbodyacademia\n\n(21) 2401-6067\n\nComo chegar\n\nRua Fonseca, 534 - Bangu, Rio de Janeiro - RJ, 21820-005, Brasil\n\nAbrir no Google Maps\n\nDescubra o plano ideal para o seu estilo de vida e orçamento\n\nBasic\n\nR$ 69,99 / mês\n\n13.906+ academias e estúdios\n\n59 a"
+  },
+  "json_ld": {
+    "@context": "https://schema.org",
+    "@type": "SportsActivityLocation",
+    "name": "Perfect Body - Cassino",
+    "image": "https://assets-cdn.wellhub.com/images/?su=https://images.partners.gympass.com/image/filename/2599260/lg_TdLlF1K8hzTgfqsPChoxJ3txK6xC4oen.jpeg",
+    "url": "https://wellhub.com/pt-br/search/partners/perfect-body-cassino-bangu-rio-de-janeiro-rj/",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Rua Fonseca",
+      "addressLocality": "Rio de Janeiro",
+      "addressRegion": "RJ",
+      "postalCode": "21820-005",
+      "addressCountry": "BR"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Sunday"
+        ],
+        "opens": "09:00",
+        "closes": "13:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "06:00",
+        "closes": "23:59"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Saturday"
+        ],
+        "opens": "08:00",
+        "closes": "20:00"
+      }
+    ],
+    "amenityFeature": [
+      {
+        "@type": "LocationFeatureSpecification",
+        "name": "Ar condicionado",
+        "value": true
+      },
+      {
+        "@type": "LocationFeatureSpecification",
+        "name": "Armários",
+        "value": true
+      },
+      {
+        "@type": "LocationFeatureSpecification",
+        "name": "Loja de artigos esportivos",
+        "value": true
+      },
+      {
+        "@type": "LocationFeatureSpecification",
+        "name": "Mini bar",
+        "value": true
+      },
+      {
+        "@type": "LocationFeatureSpecification",
+        "name": "Vestiário",
+        "value": true
+      },
+      {
+        "@type": "LocationFeatureSpecification",
+        "name": "Wi-Fi",
+        "value": true
+      }
+    ],
+    "knowsLanguage": "pt-br"
+  },
+  "next_keys_sample": [
+    "EmptyStateImage",
+    "G",
+    "P",
+    "S",
+    "SelectOptions",
+    "__component",
+    "__html",
+    "about",
+    "activities",
+    "activitiesBreakdown",
+    "address",
+    "addressCountry",
+    "addressLocality",
+    "addressRegion",
+    "afterSubmitMessage",
+    "align",
+    "alignItems",
+    "allHoursTagLabel",
+    "allOpeningHoursTitle",
+    "alt",
+    "alternateLanguages",
+    "alternativeText",
+    "amenityFeature",
+    "anchor",
+    "appsLabel",
+    "as",
+    "availability",
+    "b",
+    "background",
+    "backgroundColor",
+    "backgroundRepeat",
+    "backgroundSize",
+    "bigNumbers",
+    "blockedExclusivityLocales",
+    "borderColor",
+    "borderRadius",
+    "buttonType",
+    "buttons",
+    "c",
+    "canonical",
+    "caption",
+    "cards",
+    "charSet",
+    "children",
+    "city",
+    "cityAndNeighborhood",
+    "className",
+    "closeButton",
+    "closedDayLabel",
+    "closes",
+    "code",
+    "color",
+    "complement",
+    "componentPosition",
+    "components",
+    "consumers",
+    "content",
+    "copyText",
+    "country",
+    "countryName",
+    "countrySwitch",
+    "country_code",
+    "createdAt",
+    "created_at",
+    "crossOrigin",
+    "cta",
+    "currencies",
+    "currency",
+    "currentLang",
+    "dangerouslySetInnerHTML",
+    "datasetId",
+    "dayOfWeek",
+    "defaultLocations",
+    "description",
+    "destinationUrl",
+    "digest",
+    "disclaimer",
+    "display",
+    "displayReclameAqui",
+    "distance",
+    "district",
+    "documentId",
+    "dynamicFormLead",
+    "ebook_downloaded",
+    "enrichedTitle",
+    "error",
+    "errorScripts",
+    "errorStyles",
+    "eventCategory",
+    "eventPageName",
+    "eventsData",
+    "eventsInfo",
+    "exclusiveLabel",
+    "exclusivity",
+    "ext",
+    "f",
+    "facilities",
+    "fallback",
+    "fields",
+    "fill",
+    "flexDirection",
+    "fluid",
+    "focalPoint",
+    "folderName",
+    "folderPath",
+    "fontFamily",
+    "fontSize",
+    "fontWeight",
+    "footer",
+    "forbidden",
+    "formGroup",
+    "formId",
+    "formName",
+    "formUniqueId",
+    "formats",
+    "formattedPrice",
+    "formatted_address",
+    "formerlyGympassDisclaimer",
+    "friday",
+    "full"
+  ],
+  "api_responses": [
+    {
+      "url": "https://tracking.wellhub.com/v1/projects/5ORw7tYdM9f9XQGpqC3y1sOYyFE1HBX3/integrations",
+      "json": [
+        {
+          "name": "Google Tag Manager",
+          "creationName": "Google Tag Manager",
+          "description": "Google Tag Manager lets you add or update your website tags, easily and for free.",
+          "website": "https://www.google.com/analytics/tag-manager/",
+          "category": "Tag Managers"
+        },
+        {
+          "name": "Optimizely Web",
+          "creationName": "Optimizely",
+          "description": "Optimizely is a dead-simple A/B testing tool that lets your marketing team test changes on your website in a WYSIWYG editor without having to write any code. Segment will pass events and traits to Optimizely, and send experiment variations to other tools.",
+          "website": "http://optimizely.com",
+          "category": "A/B Testing"
+        },
+        {
+          "name": "Hubspot Form Destination Track V2 (Gympass [Martech])",
+          "creationName": "Hubspot Form Destination Track V2 (Gympass [Martech])",
+          "description": "This destination sent events of Form Submitted to Hubspot when you send a track to the Segment. You will need to create the form on Hubspot before use this Destination.\n\nThe V2 includes the new authorization demanded by Hubspot called private app key",
+          "website": "https://www.segment.com",
+          "category": "Other"
+        },
+        {
+          "name": "Hubspot Form Destination Track V2 (Gympass [Martech])",
+          "creationName": "Hubspot Form Destination Track V2 (Gympass [Martech])",
+          "description": "This destination sent events of Form Submitted to Hubspot when you send a track to the Segment. You will need to create the form on Hubspot before use this Destination.\n\nThe V2 includes the new authorization demanded by Hubspot called private app key",
+          "website": "https://www.segment.com",
+          "category": "Other"
+        },
+        {
+          "name": "Repeater",
+          "creationName": "Repeater",
+          "description": "The Segment repeater integration repeats a source stream to one or multiple other sources. ",
+          "website": "https://segment.com",
+          "category": "Raw Data"
+        },
+        {
+          "name": "Amplitude (Actions)",
+          "creationName": "Actions Amplitude",
+          "description": "Amplitude is an event tracking and segmentation platform for your web and mobile apps. By analyzing the actions your users perform, you can gain a better understanding to drive retention, engagement, and conversion.",
+          "website": "https://amplitude.com",
+          "category": "Analytics"
+        }
+      ]
+    },
+    {
+      "url": "https://tracking.wellhub.com/api/s/page",
+      "json": {
+        "ok": true
+      }
+    }
+  ],
+  "html_len": 526618
+}

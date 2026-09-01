@@ -1,0 +1,1684 @@
+{
+  "generated_at": "2026-08-28T21:47:53.008Z",
+  "month": "2026-07",
+  "counts": {
+    "entrantes_mes": 172,
+    "baixados_mes": 66,
+    "diff_novos": 0,
+    "diff_baixados": 0
+  },
+  "samples": {
+    "entrantes_mes": [
+      {
+        "cnpj": "67773189000126",
+        "nome_fantasia": "VENTUS CENTRO DE TREINAMENTO E PERFORMANCE",
+        "uf": "SC",
+        "cidade": "Guaramirim",
+        "bairro": "AMIZADE"
+      },
+      {
+        "cnpj": "67791862000150",
+        "nome_fantasia": "VNK",
+        "uf": "PB",
+        "cidade": "João Pessoa",
+        "bairro": "ALTO DO MATEUS"
+      },
+      {
+        "cnpj": "67793363000100",
+        "nome_fantasia": "GARCIA TEAM",
+        "uf": "DF",
+        "cidade": "Brasília",
+        "bairro": "ASA SUL"
+      },
+      {
+        "cnpj": "67794240000186",
+        "nome_fantasia": "VERTEX PERFORMANCE",
+        "uf": "RJ",
+        "cidade": "Rio de Janeiro",
+        "bairro": "BARRA OLIMPICA"
+      },
+      {
+        "cnpj": "67796295000125",
+        "nome_fantasia": "EDUARDO ESTEVES FITNESS",
+        "uf": "RS",
+        "cidade": "Canoas",
+        "bairro": "MARECHAL RONDON"
+      },
+      {
+        "cnpj": "55380009000248",
+        "nome_fantasia": "",
+        "uf": "CE",
+        "cidade": "Aratuba",
+        "bairro": "PAI JOAO"
+      },
+      {
+        "cnpj": "58264608000294",
+        "nome_fantasia": "CROSS FZ",
+        "uf": "PR",
+        "cidade": "Foz do Iguaçu",
+        "bairro": "VILA A"
+      },
+      {
+        "cnpj": "07594978094725",
+        "nome_fantasia": "",
+        "uf": "MG",
+        "cidade": "Belo Horizonte",
+        "bairro": "CEU AZUL"
+      },
+      {
+        "cnpj": "07594978094806",
+        "nome_fantasia": "",
+        "uf": "SP",
+        "cidade": "São Paulo",
+        "bairro": "JARDIM GUARUJA"
+      },
+      {
+        "cnpj": "67813770000124",
+        "nome_fantasia": "PROPOSITO FITNESS",
+        "uf": "PE",
+        "cidade": "Bezerros",
+        "bairro": "ENCRUZILHADA DE SAO JOAO"
+      },
+      {
+        "cnpj": "67817021000175",
+        "nome_fantasia": "STUDIO FUTURO FITNESS",
+        "uf": "RJ",
+        "cidade": "Campos dos Goytacazes",
+        "bairro": "GOITACAZES"
+      },
+      {
+        "cnpj": "67817960000110",
+        "nome_fantasia": "DS - CENTRO DE TREINAMENTO",
+        "uf": "BA",
+        "cidade": "Vitória da Conquista",
+        "bairro": "IBIRAPUERA"
+      },
+      {
+        "cnpj": "67824534000103",
+        "nome_fantasia": "ACADEMIA MAXIMUS CLUB FITNESS",
+        "uf": "BA",
+        "cidade": "Mata de São João",
+        "bairro": "ACU DA TORRE"
+      },
+      {
+        "cnpj": "67827101000101",
+        "nome_fantasia": "SKYFIT CODO",
+        "uf": "MA",
+        "cidade": "Codó",
+        "bairro": "SÃO FRANCISCO"
+      },
+      {
+        "cnpj": "67835325000165",
+        "nome_fantasia": "",
+        "uf": "RJ",
+        "cidade": "Niterói",
+        "bairro": "ITAIPU"
+      },
+      {
+        "cnpj": "67850193000140",
+        "nome_fantasia": "VH2 FITINES",
+        "uf": "BA",
+        "cidade": "Caldeirão Grande",
+        "bairro": "CENTRO"
+      },
+      {
+        "cnpj": "13236004000387",
+        "nome_fantasia": "",
+        "uf": "MS",
+        "cidade": "Angélica",
+        "bairro": "INDUSTRIAL"
+      },
+      {
+        "cnpj": "67860097000183",
+        "nome_fantasia": "",
+        "uf": "MG",
+        "cidade": "Belo Horizonte",
+        "bairro": "ALTO BARROCA"
+      },
+      {
+        "cnpj": "67881365000143",
+        "nome_fantasia": "BIOPILATES MAIS",
+        "uf": "RJ",
+        "cidade": "São João de Meriti",
+        "bairro": "VILA JURANDIR"
+      },
+      {
+        "cnpj": "67882855000164",
+        "nome_fantasia": "CT FIGHT GYN",
+        "uf": "GO",
+        "cidade": "Aparecida de Goiânia",
+        "bairro": "JARDIM CRISTALINO"
+      },
+      {
+        "cnpj": "67883161000141",
+        "nome_fantasia": "",
+        "uf": "SP",
+        "cidade": "Pirapozinho",
+        "bairro": "VILA SANTA ROSA"
+      },
+      {
+        "cnpj": "58243150001005",
+        "nome_fantasia": "PH.D SPORTS GUARUJA",
+        "uf": "SC",
+        "cidade": "Lages",
+        "bairro": "GUARUJA"
+      },
+      {
+        "cnpj": "67884011000152",
+        "nome_fantasia": "STUDIO AQUATICO CARLOS ALBUQUERQUE",
+        "uf": "BA",
+        "cidade": "Vitória da Conquista",
+        "bairro": "ALTO MARON"
+      },
+      {
+        "cnpj": "67884707000189",
+        "nome_fantasia": "PERSONAL TAIS ARROJO",
+        "uf": "RS",
+        "cidade": "Esteio",
+        "bairro": "CENTRO"
+      },
+      {
+        "cnpj": "67894086000114",
+        "nome_fantasia": "OLYMPIA",
+        "uf": "RS",
+        "cidade": "Charqueadas",
+        "bairro": "CENTRO"
+      },
+      {
+        "cnpj": "67895683000163",
+        "nome_fantasia": "BIO & RITMO ACADEMIA JACUI",
+        "uf": "MG",
+        "cidade": "Jacuí",
+        "bairro": "CENTR"
+      },
+      {
+        "cnpj": "67897369000110",
+        "nome_fantasia": "",
+        "uf": "SP",
+        "cidade": "São Paulo",
+        "bairro": "VILA ITAIM"
+      },
+      {
+        "cnpj": "67897674000101",
+        "nome_fantasia": "",
+        "uf": "SP",
+        "cidade": "São Paulo",
+        "bairro": "BELA VISTA"
+      },
+      {
+        "cnpj": "67897952000120",
+        "nome_fantasia": "FIX GYM",
+        "uf": "PE",
+        "cidade": "Caruaru",
+        "bairro": "UNIVERSITARIO"
+      },
+      {
+        "cnpj": "67907265000149",
+        "nome_fantasia": "",
+        "uf": "AM",
+        "cidade": "Manaus",
+        "bairro": "CIDADE NOVA"
+      },
+      {
+        "cnpj": "67911499000160",
+        "nome_fantasia": "",
+        "uf": "MG",
+        "cidade": "Barbacena",
+        "bairro": "IPANEMA"
+      },
+      {
+        "cnpj": "58243150000963",
+        "nome_fantasia": "PH.D SPORTS CORREIA PINTO",
+        "uf": "SC",
+        "cidade": "Correia Pinto",
+        "bairro": "SAO JOAO"
+      },
+      {
+        "cnpj": "67928565000104",
+        "nome_fantasia": "FILIPE BRAGA PERSONAL",
+        "uf": "MG",
+        "cidade": "Contagem",
+        "bairro": "RIACHO DAS PEDRAS"
+      },
+      {
+        "cnpj": "67939591000138",
+        "nome_fantasia": "PERFORMANCE CENTRO DE TREINAMENTO",
+        "uf": "SP",
+        "cidade": "Arandu",
+        "bairro": "CENTRO"
+      },
+      {
+        "cnpj": "67941065000102",
+        "nome_fantasia": "ACADEMIA AD3 CURITIBA UNIDADE 64",
+        "uf": "PR",
+        "cidade": "Curitiba",
+        "bairro": "REBOUÇAS"
+      },
+      {
+        "cnpj": "67944898000127",
+        "nome_fantasia": "TATIANA BRAGA - PERSONAL TRAINER",
+        "uf": "SP",
+        "cidade": "São Paulo",
+        "bairro": "SANTA CECILIA"
+      },
+      {
+        "cnpj": "67945712000154",
+        "nome_fantasia": "T.A.T.U CROSS",
+        "uf": "BA",
+        "cidade": "Jequié",
+        "bairro": "SAO JUDAS TADEU"
+      },
+      {
+        "cnpj": "67955110000188",
+        "nome_fantasia": "THE METHOD CLUB TERESINA",
+        "uf": "SP",
+        "cidade": "São Paulo",
+        "bairro": "VILA BERTIOGA"
+      },
+      {
+        "cnpj": "67771231000170",
+        "nome_fantasia": "STUDIO L.A",
+        "uf": "RJ",
+        "cidade": "Resende",
+        "bairro": "JARDIM BRASILIA"
+      },
+      {
+        "cnpj": "67791884000110",
+        "nome_fantasia": "PRIMEFIT ACADEMIA",
+        "uf": "RS",
+        "cidade": "Pinhal Grande",
+        "bairro": "LIMEIRA"
+      },
+      {
+        "cnpj": "67793066000157",
+        "nome_fantasia": "STRON SAUDE & PERFORMACE",
+        "uf": "SP",
+        "cidade": "Poá",
+        "bairro": "VILA BANDEIRANTES"
+      },
+      {
+        "cnpj": "67796662000190",
+        "nome_fantasia": "CR FIT",
+        "uf": "AL",
+        "cidade": "Maceió",
+        "bairro": "BENEDITO BENTES"
+      },
+      {
+        "cnpj": "67797663000150",
+        "nome_fantasia": "TEAM NOBILE",
+        "uf": "MA",
+        "cidade": "São Luís",
+        "bairro": "OLHO D' AGUA"
+      },
+      {
+        "cnpj": "67799966000101",
+        "nome_fantasia": "",
+        "uf": "RJ",
+        "cidade": "Rio de Janeiro",
+        "bairro": "COPACABANA"
+      },
+      {
+        "cnpj": "67804501000100",
+        "nome_fantasia": "STUDIO DE YOGA E HOT YOGA HIKARI",
+        "uf": "PR",
+        "cidade": "Londrina",
+        "bairro": "CENTRO"
+      },
+      {
+        "cnpj": "67805250000170",
+        "nome_fantasia": "FLUXO9 TREINAMENTO PERSONALIZADO",
+        "uf": "RS",
+        "cidade": "Novo Hamburgo",
+        "bairro": "HAMBURGO VELHO"
+      },
+      {
+        "cnpj": "07594978094644",
+        "nome_fantasia": "",
+        "uf": "MG",
+        "cidade": "Belo Horizonte",
+        "bairro": "BONFIM"
+      },
+      {
+        "cnpj": "67815008000187",
+        "nome_fantasia": "SENCIA ESTETICA E PILATES LTDA",
+        "uf": "PR",
+        "cidade": "Curitiba",
+        "bairro": "CENTRO"
+      },
+      {
+        "cnpj": "67818098000160",
+        "nome_fantasia": "CENTRO DE TREINAMENTO IMPERIO 27",
+        "uf": "MT",
+        "cidade": "Feliz Natal",
+        "bairro": "CENTRO"
+      },
+      {
+        "cnpj": "67819921000151",
+        "nome_fantasia": "",
+        "uf": "CE",
+        "cidade": "Juazeiro do Norte",
+        "bairro": "PEDRINHAS"
+      },
+      {
+        "cnpj": "67827306000197",
+        "nome_fantasia": "",
+        "uf": "CE",
+        "cidade": "Itarema",
+        "bairro": "CENTRO"
+      },
+      {
+        "cnpj": "24921465018352",
+        "nome_fantasia": "",
+        "uf": "SP",
+        "cidade": "São Paulo",
+        "bairro": "CIDADE MONCOES"
+      },
+      {
+        "cnpj": "67851219000175",
+        "nome_fantasia": "TRAMA",
+        "uf": "PR",
+        "cidade": "Cascavel",
+        "bairro": "MARIA LUIZA"
+      },
+      {
+        "cnpj": "67852360000192",
+        "nome_fantasia": "CORRE DBOA - ASSESSORIA ESPORTIVA",
+        "uf": "SP",
+        "cidade": "São Vicente",
+        "bairro": "CENTRO"
+      },
+      {
+        "cnpj": "67853839000143",
+        "nome_fantasia": "MS CONSULTORIA ESPORTIVA",
+        "uf": "MG",
+        "cidade": "Três Marias",
+        "bairro": "PARQUE DIADORIM"
+      },
+      {
+        "cnpj": "63736737000278",
+        "nome_fantasia": "A ACADEMY PHISICAL CENTER",
+        "uf": "AP",
+        "cidade": "Macapá",
+        "bairro": "JESUS DE NAZARE"
+      },
+      {
+        "cnpj": "67879265000182",
+        "nome_fantasia": "SILVA ACADEMIA",
+        "uf": "PA",
+        "cidade": "Nova Timboteua",
+        "bairro": "MARAMBAIA"
+      },
+      {
+        "cnpj": "67887796000117",
+        "nome_fantasia": "B - FITNESS ACADEMIA",
+        "uf": "MS",
+        "cidade": "Campo Grande",
+        "bairro": "COOPHAVILA II"
+      },
+      {
+        "cnpj": "51745050000481",
+        "nome_fantasia": "",
+        "uf": "RJ",
+        "cidade": "Campos dos Goytacazes",
+        "bairro": "CENTRO"
+      },
+      {
+        "cnpj": "67897350000173",
+        "nome_fantasia": "ACADEMIA COLISEU",
+        "uf": "RS",
+        "cidade": "Bagé",
+        "bairro": "CENTRO"
+      },
+      {
+        "cnpj": "67906840000199",
+        "nome_fantasia": "FRAN PILATES",
+        "uf": "MS",
+        "cidade": "São Gabriel do Oeste",
+        "bairro": "CENTRO"
+      },
+      {
+        "cnpj": "67908067000108",
+        "nome_fantasia": "",
+        "uf": "PR",
+        "cidade": "Irati",
+        "bairro": "CENTRO"
+      },
+      {
+        "cnpj": "67908431000121",
+        "nome_fantasia": "ALTUS BOX TRAINING",
+        "uf": "BA",
+        "cidade": "Salvador",
+        "bairro": "BOCA DO RIO"
+      },
+      {
+        "cnpj": "67913527000188",
+        "nome_fantasia": "",
+        "uf": "MG",
+        "cidade": "Juiz de Fora",
+        "bairro": "SANTA TEREZINHA"
+      },
+      {
+        "cnpj": "67918711000110",
+        "nome_fantasia": "",
+        "uf": "RJ",
+        "cidade": "Saquarema",
+        "bairro": "BACAXA (BACAXA)"
+      },
+      {
+        "cnpj": "67925849000147",
+        "nome_fantasia": "ALPHA FITNESS ACADEMIA",
+        "uf": "RJ",
+        "cidade": "Campos dos Goytacazes",
+        "bairro": "GOYTACAZES"
+      },
+      {
+        "cnpj": "67929152000144",
+        "nome_fantasia": "",
+        "uf": "RJ",
+        "cidade": "Niterói",
+        "bairro": "CENTRO"
+      },
+      {
+        "cnpj": "67929466000147",
+        "nome_fantasia": "KINETICS REABILITACAO ESPORTIVA",
+        "uf": "MG",
+        "cidade": "Belo Horizonte",
+        "bairro": "SAO LUIZ"
+      },
+      {
+        "cnpj": "67937673000143",
+        "nome_fantasia": "DP RUNNERS",
+        "uf": "RS",
+        "cidade": "Dom Pedrito",
+        "bairro": "SANTA MARIA"
+      },
+      {
+        "cnpj": "67944466000116",
+        "nome_fantasia": "",
+        "uf": "SP",
+        "cidade": "Tatuí",
+        "bairro": "JARDIM TATUI"
+      },
+      {
+        "cnpj": "67946730000150",
+        "nome_fantasia": "STUDIO BRUNA ELICHER",
+        "uf": "MS",
+        "cidade": "Dourados",
+        "bairro": "VILA PLANALTO"
+      },
+      {
+        "cnpj": "67947206000102",
+        "nome_fantasia": "",
+        "uf": "PR",
+        "cidade": "Maringá",
+        "bairro": "ZONA 03"
+      },
+      {
+        "cnpj": "67553092000299",
+        "nome_fantasia": "",
+        "uf": "SP",
+        "cidade": "Mococa",
+        "bairro": "PARQUE DAS CANOAS"
+      },
+      {
+        "cnpj": "67771126000130",
+        "nome_fantasia": "ESPACO VIVA SAUDE E PERFORMANCE",
+        "uf": "MG",
+        "cidade": "Rio Pomba",
+        "bairro": "CENTRO"
+      },
+      {
+        "cnpj": "67785207000190",
+        "nome_fantasia": "STUDIO VITTA",
+        "uf": "CE",
+        "cidade": "Aquiraz",
+        "bairro": "CENTRO"
+      },
+      {
+        "cnpj": "42656318000256",
+        "nome_fantasia": "",
+        "uf": "RS",
+        "cidade": "Porto Alegre",
+        "bairro": "MONT SERRAT"
+      },
+      {
+        "cnpj": "67801839000108",
+        "nome_fantasia": "",
+        "uf": "CE",
+        "cidade": "Fortaleza",
+        "bairro": "SAPIRANGA-COITE"
+      },
+      {
+        "cnpj": "67807260000144",
+        "nome_fantasia": "TRIADE PRIME",
+        "uf": "MG",
+        "cidade": "Uberlândia",
+        "bairro": "TUBALINA"
+      },
+      {
+        "cnpj": "07594978095020",
+        "nome_fantasia": "",
+        "uf": "AL",
+        "cidade": "Maceió",
+        "bairro": "CIDADE UNIVERSITARIA"
+      },
+      {
+        "cnpj": "67815200000173",
+        "nome_fantasia": "YELLOW GYM",
+        "uf": "RS",
+        "cidade": "Viamão",
+        "bairro": "SANTA ISABEL"
+      },
+      {
+        "cnpj": "67815663000135",
+        "nome_fantasia": "SIMETRIA STUDIO DE PILATES E FISIOTERAPIA",
+        "uf": "MG",
+        "cidade": "Poços de Caldas",
+        "bairro": "JARDIM CASCATINHA"
+      },
+      {
+        "cnpj": "67819073000180",
+        "nome_fantasia": "",
+        "uf": "PR",
+        "cidade": "Maringá",
+        "bairro": "JARDIM BETTY"
+      },
+      {
+        "cnpj": "67822501000124",
+        "nome_fantasia": "A ELITE FITNESS",
+        "uf": "SP",
+        "cidade": "Mesópolis",
+        "bairro": "CENTRO"
+      },
+      {
+        "cnpj": "67822895000110",
+        "nome_fantasia": "",
+        "uf": "RS",
+        "cidade": "Porto Alegre",
+        "bairro": "PARQUE STA FE"
+      },
+      {
+        "cnpj": "67829365000102",
+        "nome_fantasia": "TH PERSONAL",
+        "uf": "SP",
+        "cidade": "São Paulo",
+        "bairro": "PINHEIROS"
+      },
+      {
+        "cnpj": "67831490000149",
+        "nome_fantasia": "MET TREINAMENTO FISICO FUNCIONAL",
+        "uf": "PR",
+        "cidade": "Campo Largo",
+        "bairro": "CENTRO"
+      },
+      {
+        "cnpj": "67832671000190",
+        "nome_fantasia": "",
+        "uf": "SC",
+        "cidade": "Chapecó",
+        "bairro": "JARDIM ITALIA"
+      },
+      {
+        "cnpj": "67802493000154",
+        "nome_fantasia": "FORMA FIT ESTUDIO FUNCIONAL",
+        "uf": "PB",
+        "cidade": "Juazeirinho",
+        "bairro": "CENTRO"
+      },
+      {
+        "cnpj": "67851060000199",
+        "nome_fantasia": "",
+        "uf": "MG",
+        "cidade": "Belo Horizonte",
+        "bairro": "BRAUNAS"
+      },
+      {
+        "cnpj": "67852272000190",
+        "nome_fantasia": "BILD ACADEMIA",
+        "uf": "PE",
+        "cidade": "São Bento do Una",
+        "bairro": "CENTRO"
+      },
+      {
+        "cnpj": "67853948000160",
+        "nome_fantasia": "AQUALITA PREMIUM",
+        "uf": "MG",
+        "cidade": "Belo Horizonte",
+        "bairro": "ITAPOA"
+      },
+      {
+        "cnpj": "67858117000181",
+        "nome_fantasia": "REI GUARA",
+        "uf": "ES",
+        "cidade": "Guarapari",
+        "bairro": "MUQUIÇABA"
+      },
+      {
+        "cnpj": "67860845000128",
+        "nome_fantasia": "POWER PULSE TIJUCAS",
+        "uf": "SC",
+        "cidade": "Tijucas",
+        "bairro": "JOAIA"
+      },
+      {
+        "cnpj": "67868668000126",
+        "nome_fantasia": "",
+        "uf": "MG",
+        "cidade": "Muriaé",
+        "bairro": "JOSE CIRILO"
+      },
+      {
+        "cnpj": "67878514000115",
+        "nome_fantasia": "CORPOREFIT ACADEMIAS",
+        "uf": "PE",
+        "cidade": "Recife",
+        "bairro": "ZUMBI"
+      },
+      {
+        "cnpj": "67883599000120",
+        "nome_fantasia": "ATIVA SOLUCOES ESPORTIVAS",
+        "uf": "PE",
+        "cidade": "Arcoverde",
+        "bairro": "CENTRO"
+      },
+      {
+        "cnpj": "58243150000882",
+        "nome_fantasia": "PH.D SPORTS CAMPOS NOVOS",
+        "uf": "SC",
+        "cidade": "Campos Novos",
+        "bairro": "CENTRO"
+      },
+      {
+        "cnpj": "58243150001188",
+        "nome_fantasia": "PH.D SPORTS LAURO MULLER",
+        "uf": "SC",
+        "cidade": "Lages",
+        "bairro": "CENTRO"
+      },
+      {
+        "cnpj": "67887015000194",
+        "nome_fantasia": "DANI NERY SAUDE INTEGRADA",
+        "uf": "SP",
+        "cidade": "São Paulo",
+        "bairro": "BELA VISTA"
+      },
+      {
+        "cnpj": "67898992000197",
+        "nome_fantasia": "OLI PILATES",
+        "uf": "SP",
+        "cidade": "São Paulo",
+        "bairro": "JARDIM AURORA (ZONA LESTE)"
+      },
+      {
+        "cnpj": "67902136000168",
+        "nome_fantasia": "",
+        "uf": "SC",
+        "cidade": "Camboriú",
+        "bairro": "TABULEIRO (MONTE ALEGRE)"
+      },
+      {
+        "cnpj": "67909684000110",
+        "nome_fantasia": "CR VANGUARD PERFORMANCE TRAINING COMPANY",
+        "uf": "SC",
+        "cidade": "Joinville",
+        "bairro": "MORRO DO MEIO"
+      },
+      {
+        "cnpj": "67912336000100",
+        "nome_fantasia": "ZION CROSSTRANING",
+        "uf": "RJ",
+        "cidade": "Rio de Janeiro",
+        "bairro": "BENTO RIBEIRO"
+      },
+      {
+        "cnpj": "67920162000119",
+        "nome_fantasia": "EVOLUTION CENTRO DE TREINAMENTO",
+        "uf": "PR",
+        "cidade": "Santa Terezinha de Itaipu",
+        "bairro": "CENTRO, ESQ. C/ RUA PADRE BERNARDO"
+      },
+      {
+        "cnpj": "67923087000140",
+        "nome_fantasia": "MOVFIT ITAITUBA",
+        "uf": "PA",
+        "cidade": "Itaituba",
+        "bairro": "NOVA ITAITUBA"
+      },
+      {
+        "cnpj": "67927531000103",
+        "nome_fantasia": "ACADEMIA IMPULSE FITNESS",
+        "uf": "PB",
+        "cidade": "João Pessoa",
+        "bairro": "TAMBIÁ"
+      },
+      {
+        "cnpj": "67930512000128",
+        "nome_fantasia": "CENTRO DE MOVIMENTO CLARA MARIAN",
+        "uf": "GO",
+        "cidade": "Catalão",
+        "bairro": "BAIRRO DAS AMÉRICAS"
+      },
+      {
+        "cnpj": "67938367000121",
+        "nome_fantasia": "NIX STUDIO DE PILATES",
+        "uf": "PR",
+        "cidade": "Curitiba",
+        "bairro": "PORTÃO"
+      },
+      {
+        "cnpj": "67939083000150",
+        "nome_fantasia": "ENRICO PERFORMANCE",
+        "uf": "SP",
+        "cidade": "Santo André",
+        "bairro": "JARDIM"
+      },
+      {
+        "cnpj": "67767994000147",
+        "nome_fantasia": "RBC SOLUCOES INTEGRADA",
+        "uf": "RS",
+        "cidade": "Porto Alegre",
+        "bairro": "PASSO DA AREIA"
+      },
+      {
+        "cnpj": "67796181000185",
+        "nome_fantasia": "ACADEMIA FISIOKORPUS MANAIRA",
+        "uf": "PB",
+        "cidade": "Manaíra",
+        "bairro": "CENTRO"
+      },
+      {
+        "cnpj": "67804452000105",
+        "nome_fantasia": "",
+        "uf": "RJ",
+        "cidade": "Rio de Janeiro",
+        "bairro": "CASCADURA"
+      },
+      {
+        "cnpj": "67808653000172",
+        "nome_fantasia": "",
+        "uf": "RJ",
+        "cidade": "Rio de Janeiro",
+        "bairro": "BARRA DA TIJUCA"
+      },
+      {
+        "cnpj": "07594978094997",
+        "nome_fantasia": "",
+        "uf": "SP",
+        "cidade": "São Paulo",
+        "bairro": "JARDIM IGUATEMI"
+      },
+      {
+        "cnpj": "67819824000169",
+        "nome_fantasia": "",
+        "uf": "CE",
+        "cidade": "Canindé",
+        "bairro": "BELA VISTA"
+      },
+      {
+        "cnpj": "67822854000124",
+        "nome_fantasia": "TUPA RIO DO OURO",
+        "uf": "RJ",
+        "cidade": "São Gonçalo",
+        "bairro": "RIO DO OURO"
+      },
+      {
+        "cnpj": "67825474000143",
+        "nome_fantasia": "",
+        "uf": "MS",
+        "cidade": "Campo Grande",
+        "bairro": "CENTRO"
+      },
+      {
+        "cnpj": "67825696000166",
+        "nome_fantasia": "",
+        "uf": "SP",
+        "cidade": "São Paulo",
+        "bairro": "PARAISO DO MORUMBI"
+      },
+      {
+        "cnpj": "67829321000174",
+        "nome_fantasia": "ENDUREX",
+        "uf": "RJ",
+        "cidade": "Rio de Janeiro",
+        "bairro": "GARDENIA AZUL"
+      },
+      {
+        "cnpj": "67859094000120",
+        "nome_fantasia": "ACQUACLIN",
+        "uf": "MG",
+        "cidade": "Manhuaçu",
+        "bairro": "PINHEIRO"
+      },
+      {
+        "cnpj": "67869915000109",
+        "nome_fantasia": "LOOP FIT",
+        "uf": "PB",
+        "cidade": "João Pessoa",
+        "bairro": "TAMBIÁ"
+      },
+      {
+        "cnpj": "67874630000166",
+        "nome_fantasia": "JP TRAINING & PERFORMANCE",
+        "uf": "TO",
+        "cidade": "Paraíso do Tocantins",
+        "bairro": "OESTE"
+      },
+      {
+        "cnpj": "67876418000138",
+        "nome_fantasia": "",
+        "uf": "PR",
+        "cidade": "Londrina",
+        "bairro": "JARDIM VALE DO CEDRO"
+      },
+      {
+        "cnpj": "67878666000118",
+        "nome_fantasia": "ALPHAFIT",
+        "uf": "RS",
+        "cidade": "Gramado",
+        "bairro": "VARZEA GRANDE 1O DE MAIO"
+      },
+      {
+        "cnpj": "67888046000160",
+        "nome_fantasia": "MISTER BARBA ACADEMIA",
+        "uf": "MA",
+        "cidade": "Codó",
+        "bairro": "SANTA TEREZINHA"
+      },
+      {
+        "cnpj": "67894649000174",
+        "nome_fantasia": "STUDIO FITNESS JEANNY NUNES",
+        "uf": "MA",
+        "cidade": "Codó",
+        "bairro": "SÃO RAIMUNO"
+      },
+      {
+        "cnpj": "67896049000145",
+        "nome_fantasia": "",
+        "uf": "RS",
+        "cidade": "Fazenda Vilanova",
+        "bairro": "CENTRO"
+      },
+      {
+        "cnpj": "59310139000427",
+        "nome_fantasia": "ACADEMIA AD3 GASPAR UNIDADE 70",
+        "uf": "SC",
+        "cidade": "Gaspar",
+        "bairro": "SANTA TEREZINHA"
+      },
+      {
+        "cnpj": "67910318000180",
+        "nome_fantasia": "ESTUDIO BRUNA PILATES",
+        "uf": "MG",
+        "cidade": "Uberlândia",
+        "bairro": "TIBERY"
+      },
+      {
+        "cnpj": "67910744000114",
+        "nome_fantasia": "STUDIO ORTHOS",
+        "uf": "SP",
+        "cidade": "Rio das Pedras",
+        "bairro": "JARDIM SANTO ANTONIO"
+      },
+      {
+        "cnpj": "67911217000124",
+        "nome_fantasia": "C. T. AGUIA",
+        "uf": "SP",
+        "cidade": "Parapuã",
+        "bairro": "CENTRO"
+      },
+      {
+        "cnpj": "67914347000110",
+        "nome_fantasia": "",
+        "uf": "PE",
+        "cidade": "Recife",
+        "bairro": "BOA VIAGEM"
+      },
+      {
+        "cnpj": "67918057000145",
+        "nome_fantasia": "HELPFIT ACADEMIA",
+        "uf": "PE",
+        "cidade": "Santa Filomena",
+        "bairro": "POV.SOCORRO"
+      },
+      {
+        "cnpj": "67920086000141",
+        "nome_fantasia": "ACADEMIA FORMA LIVRE",
+        "uf": "MA",
+        "cidade": "Paço do Lumiar",
+        "bairro": "MERCES"
+      },
+      {
+        "cnpj": "67924875000150",
+        "nome_fantasia": "V C FITNESS",
+        "uf": "RN",
+        "cidade": "Mossoró",
+        "bairro": "REDENÇÃO"
+      },
+      {
+        "cnpj": "67926638000129",
+        "nome_fantasia": "FIT CENTER",
+        "uf": "MG",
+        "cidade": "Ervália",
+        "bairro": "VALE DO SOL"
+      },
+      {
+        "cnpj": "67937210000181",
+        "nome_fantasia": "TRANSFORMAR STUDIO DE PILATES MARY SANTHOS LTDA",
+        "uf": "BA",
+        "cidade": "Jequié",
+        "bairro": "CENTRO"
+      },
+      {
+        "cnpj": "67940753000158",
+        "nome_fantasia": "",
+        "uf": "PE",
+        "cidade": "Jaboatão dos Guararapes",
+        "bairro": "PIEDADE"
+      },
+      {
+        "cnpj": "67942371000163",
+        "nome_fantasia": "ANCORA GYM",
+        "uf": "RN",
+        "cidade": "Natal",
+        "bairro": "LAGOA AZUL"
+      },
+      {
+        "cnpj": "61284296003804",
+        "nome_fantasia": "",
+        "uf": "RS",
+        "cidade": "Canoas",
+        "bairro": "MARECHAL RONDON"
+      },
+      {
+        "cnpj": "67950690000110",
+        "nome_fantasia": "",
+        "uf": "RS",
+        "cidade": "Marau",
+        "bairro": "LOTEAMENTO VILA BELLA"
+      },
+      {
+        "cnpj": "67781501000123",
+        "nome_fantasia": "LEGACY ACADEMIA",
+        "uf": "BA",
+        "cidade": "Lajedão",
+        "bairro": "CENTRO"
+      },
+      {
+        "cnpj": "67786009000140",
+        "nome_fantasia": "MIP ESTUDIO DE PILATES",
+        "uf": "MG",
+        "cidade": "Belo Horizonte",
+        "bairro": "SAGRADA FAMILIA"
+      },
+      {
+        "cnpj": "67791776000148",
+        "nome_fantasia": "",
+        "uf": "MG",
+        "cidade": "Belo Horizonte",
+        "bairro": "NOVA SUISSA"
+      },
+      {
+        "cnpj": "67802937000151",
+        "nome_fantasia": "IRON LIFTING CLUB SETUBAL",
+        "uf": "PE",
+        "cidade": "Recife",
+        "bairro": "BOA VIAGEM"
+      },
+      {
+        "cnpj": "67806812000108",
+        "nome_fantasia": "CALISTENIAVALE",
+        "uf": "MG",
+        "cidade": "Diamantina",
+        "bairro": "VILA OPERARIA"
+      },
+      {
+        "cnpj": "67806833000115",
+        "nome_fantasia": "",
+        "uf": "SP",
+        "cidade": "São Paulo",
+        "bairro": "TATUAPE"
+      },
+      {
+        "cnpj": "67807760000186",
+        "nome_fantasia": "",
+        "uf": "MS",
+        "cidade": "Campo Grande",
+        "bairro": "VILA PALMIRA"
+      },
+      {
+        "cnpj": "67845547000169",
+        "nome_fantasia": "",
+        "uf": "SP",
+        "cidade": "São José dos Campos",
+        "bairro": "JARDIM SATELITE"
+      },
+      {
+        "cnpj": "67849616000102",
+        "nome_fantasia": "ZAPPAROLLI PERSONAL FITNESS",
+        "uf": "SP",
+        "cidade": "Assis",
+        "bairro": "JARDIM EUROPA"
+      },
+      {
+        "cnpj": "67851243000104",
+        "nome_fantasia": "BRUTTUS B V",
+        "uf": "CE",
+        "cidade": "Sobral",
+        "bairro": "BELCHIOR"
+      },
+      {
+        "cnpj": "67853018000107",
+        "nome_fantasia": "VITA PILATES",
+        "uf": "RS",
+        "cidade": "Canoas",
+        "bairro": "IGARA"
+      },
+      {
+        "cnpj": "67859542000195",
+        "nome_fantasia": "EH_FIT ORLANDIA",
+        "uf": "SP",
+        "cidade": "Orlândia",
+        "bairro": "CENTRO"
+      },
+      {
+        "cnpj": "67862590000132",
+        "nome_fantasia": "PH.D SPORTS BC - BARRA NORTE",
+        "uf": "SC",
+        "cidade": "Balneário Camboriú",
+        "bairro": "DOS PIONEIROS"
+      },
+      {
+        "cnpj": "67863085000102",
+        "nome_fantasia": "STUDIO B PILATES E LPF",
+        "uf": "PR",
+        "cidade": "Marechal Cândido Rondon",
+        "bairro": "CENTRO"
+      },
+      {
+        "cnpj": "67872025000156",
+        "nome_fantasia": "",
+        "uf": "SP",
+        "cidade": "Ribeirão Preto",
+        "bairro": "NOVA ALIANCA"
+      },
+      {
+        "cnpj": "67872046000171",
+        "nome_fantasia": "STUDIO DELAS PILATES",
+        "uf": "CE",
+        "cidade": "Fortaleza",
+        "bairro": "MONDUBIM"
+      },
+      {
+        "cnpj": "67875193000103",
+        "nome_fantasia": "INSPIRE PILATES ALTO DA MOOCA",
+        "uf": "SP",
+        "cidade": "São Paulo",
+        "bairro": "VILA CLAUDIA"
+      },
+      {
+        "cnpj": "67878890000100",
+        "nome_fantasia": "RJ TRAINING",
+        "uf": "RJ",
+        "cidade": "Maricá",
+        "bairro": "SAO JOSE DO IMBASSAI"
+      },
+      {
+        "cnpj": "67881547000114",
+        "nome_fantasia": "ACADEMIA MEGA FITNESS",
+        "uf": "PB",
+        "cidade": "Cajazeiras",
+        "bairro": "AREA RURAL"
+      },
+      {
+        "cnpj": "67884367000196",
+        "nome_fantasia": "ARENA FITNESS ACADEMIA",
+        "uf": "PA",
+        "cidade": "Ourilândia do Norte",
+        "bairro": "BELA VISTA"
+      },
+      {
+        "cnpj": "67885451000124",
+        "nome_fantasia": "ELITE FITNESS",
+        "uf": "SE",
+        "cidade": "Cristinápolis",
+        "bairro": "CENTRO"
+      },
+      {
+        "cnpj": "67894487000174",
+        "nome_fantasia": "BRAVUS CT ITUVERAVA",
+        "uf": "SP",
+        "cidade": "Ituverava",
+        "bairro": "JARDIM JOSINA ALVES MENDONCA"
+      },
+      {
+        "cnpj": "67899315000193",
+        "nome_fantasia": "",
+        "uf": "RN",
+        "cidade": "Natal",
+        "bairro": "PONTA NEGRA"
+      },
+      {
+        "cnpj": "67903752000133",
+        "nome_fantasia": "CAROL HANNA",
+        "uf": "MS",
+        "cidade": "Campo Grande",
+        "bairro": "JARDIM DOS ESTADOS"
+      },
+      {
+        "cnpj": "67907414000170",
+        "nome_fantasia": "HENZO FITNESS ACADEMIA",
+        "uf": "PB",
+        "cidade": "Solânea",
+        "bairro": "CENTRO"
+      },
+      {
+        "cnpj": "67920663000103",
+        "nome_fantasia": "ESPACO LA SANTE",
+        "uf": "PR",
+        "cidade": "Curitiba",
+        "bairro": "FAZENDINHA"
+      },
+      {
+        "cnpj": "67926348000185",
+        "nome_fantasia": "",
+        "uf": "RS",
+        "cidade": "Tapejara",
+        "bairro": "CENTRO"
+      },
+      {
+        "cnpj": "67929690000139",
+        "nome_fantasia": "MGM FITNESS",
+        "uf": "PR",
+        "cidade": "São Sebastião da Amoreira",
+        "bairro": "RESIDENCIAL MENDES GONCALVES I"
+      },
+      {
+        "cnpj": "67939313000180",
+        "nome_fantasia": "STATUS FIT",
+        "uf": "MG",
+        "cidade": "Nepomuceno",
+        "bairro": "CENTRO"
+      },
+      {
+        "cnpj": "67949670000120",
+        "nome_fantasia": "",
+        "uf": "RS",
+        "cidade": "Jaguari",
+        "bairro": "CENTRO"
+      },
+      {
+        "cnpj": "67952859000171",
+        "nome_fantasia": "CENTRO REVIVER",
+        "uf": "RS",
+        "cidade": "Tramandaí",
+        "bairro": "ZONA NOVA"
+      }
+    ],
+    "baixados_mes": [
+      {
+        "cnpj": "54455391000168",
+        "nome_fantasia": "ACADEMIA NEW FITNESS",
+        "uf": "SP",
+        "cidade": "Jacareí",
+        "bairro": "PARQUE IMPERIAL"
+      },
+      {
+        "cnpj": "64933029000109",
+        "nome_fantasia": "INDIANA PERFORMANCE - NOVO MUNDO",
+        "uf": "MG",
+        "cidade": "Uberlândia",
+        "bairro": "NOVO MUNDO"
+      },
+      {
+        "cnpj": "66522831000131",
+        "nome_fantasia": "EDUARDA CRISTINA - PERSONAL TRAINER",
+        "uf": "SC",
+        "cidade": "Chapecó",
+        "bairro": "CENTRO"
+      },
+      {
+        "cnpj": "10957311000105",
+        "nome_fantasia": "",
+        "uf": "SP",
+        "cidade": "São Paulo",
+        "bairro": "JARDIM BRASIL (ZONA NORTE)"
+      },
+      {
+        "cnpj": "24371108000159",
+        "nome_fantasia": "V3 TRAINER",
+        "uf": "RJ",
+        "cidade": "São Gonçalo",
+        "bairro": "JOQUEI CLUBE"
+      },
+      {
+        "cnpj": "24816173000140",
+        "nome_fantasia": "PRO COMBATE",
+        "uf": "BA",
+        "cidade": "Feira de Santana",
+        "bairro": "GABRIELA"
+      },
+      {
+        "cnpj": "08322242000103",
+        "nome_fantasia": "BELLA FITNESS ACADEMIA",
+        "uf": "SP",
+        "cidade": "Mogi Mirim",
+        "bairro": "JARDIM SANTA HELENA"
+      },
+      {
+        "cnpj": "20876334000130",
+        "nome_fantasia": "ACADEMIA FOCUS",
+        "uf": "MG",
+        "cidade": "Belo Horizonte",
+        "bairro": "SANTA MARIA"
+      },
+      {
+        "cnpj": "31552305000130",
+        "nome_fantasia": "IMPERIO BODYBUILDING CENTER",
+        "uf": "RS",
+        "cidade": "Passo Fundo",
+        "bairro": "CENTRO"
+      },
+      {
+        "cnpj": "38028276000150",
+        "nome_fantasia": "FORMA FIT ACADEMIA",
+        "uf": "PA",
+        "cidade": "Santarém",
+        "bairro": "ALDEIA"
+      },
+      {
+        "cnpj": "45731230000169",
+        "nome_fantasia": "ALFA STUDIO FUNCIONAL",
+        "uf": "MG",
+        "cidade": "Santa Luzia",
+        "bairro": "SAO BENEDITO"
+      },
+      {
+        "cnpj": "48648882000122",
+        "nome_fantasia": "MFIT ACADEMIA",
+        "uf": "PE",
+        "cidade": "Petrolina",
+        "bairro": "VALE GRANDE RIO"
+      },
+      {
+        "cnpj": "52128723000174",
+        "nome_fantasia": "ESPACO FIT ACADEMIA",
+        "uf": "PI",
+        "cidade": "Bela Vista do Piauí",
+        "bairro": "CENTRO"
+      },
+      {
+        "cnpj": "57822350000150",
+        "nome_fantasia": "CLINICA SOLE FISIOTERAPIA E PILATES",
+        "uf": "SP",
+        "cidade": "Osasco",
+        "bairro": "UMUARAMA"
+      },
+      {
+        "cnpj": "55125581000260",
+        "nome_fantasia": "FUNCIONAL MAROMBETES",
+        "uf": "PA",
+        "cidade": "Parauapebas",
+        "bairro": "NOVA VIDA"
+      },
+      {
+        "cnpj": "53014289000164",
+        "nome_fantasia": "PESSOA CUIDADO INTEGRADO",
+        "uf": "BA",
+        "cidade": "Salvador",
+        "bairro": "ALPHAVILLE I"
+      },
+      {
+        "cnpj": "62013323000177",
+        "nome_fantasia": "TIME FITNESS",
+        "uf": "PE",
+        "cidade": "Jaboatão dos Guararapes",
+        "bairro": "PRAZERES"
+      },
+      {
+        "cnpj": "14288793000109",
+        "nome_fantasia": "RIO FITNESS",
+        "uf": "RJ",
+        "cidade": "Rio de Janeiro",
+        "bairro": "GRAJAU"
+      },
+      {
+        "cnpj": "22176508000188",
+        "nome_fantasia": "LML PERSONAL TRAINER",
+        "uf": "RJ",
+        "cidade": "Rio de Janeiro",
+        "bairro": "TAQUARA"
+      },
+      {
+        "cnpj": "23844395000104",
+        "nome_fantasia": "TOP FITNESS",
+        "uf": "PE",
+        "cidade": "Petrolina",
+        "bairro": "ZONA RURAL"
+      },
+      {
+        "cnpj": "24078288000185",
+        "nome_fantasia": "CENTRO DE TREINAMENTO DINGO FIGHT",
+        "uf": "RJ",
+        "cidade": "Volta Redonda",
+        "bairro": "VILA RICA"
+      },
+      {
+        "cnpj": "17325902000109",
+        "nome_fantasia": "",
+        "uf": "PR",
+        "cidade": "Curitiba",
+        "bairro": "BATEL"
+      },
+      {
+        "cnpj": "26278869000196",
+        "nome_fantasia": "",
+        "uf": "SP",
+        "cidade": "Botucatu",
+        "bairro": "VILA PADOVAN"
+      },
+      {
+        "cnpj": "39374496000107",
+        "nome_fantasia": "7D FIT CENTRO DE TREINAMENTO",
+        "uf": "MG",
+        "cidade": "Curvelo",
+        "bairro": "CENTRO"
+      },
+      {
+        "cnpj": "43146203000101",
+        "nome_fantasia": "FUSION FIT ACADEMIA",
+        "uf": "MG",
+        "cidade": "Juiz de Fora",
+        "bairro": "NOVA CALIFORNIA"
+      },
+      {
+        "cnpj": "43959466000121",
+        "nome_fantasia": "STUDIO ALFA TREINAMENTO PERSONALIZADO",
+        "uf": "SC",
+        "cidade": "Araranguá",
+        "bairro": "MATO ALTO"
+      },
+      {
+        "cnpj": "45906706000155",
+        "nome_fantasia": "",
+        "uf": "PR",
+        "cidade": "Nova Laranjeiras",
+        "bairro": "CENTRO"
+      },
+      {
+        "cnpj": "47803165000165",
+        "nome_fantasia": "DEKELL CROSSTRAING",
+        "uf": "SP",
+        "cidade": "Cajamar",
+        "bairro": "IPES (POLVILHO)"
+      },
+      {
+        "cnpj": "48061408000108",
+        "nome_fantasia": "ACADEMIA DO JOSIAS",
+        "uf": "BA",
+        "cidade": "Teixeira de Freitas",
+        "bairro": "ARUTEF"
+      },
+      {
+        "cnpj": "51910589000104",
+        "nome_fantasia": "QG PESO PESADO",
+        "uf": "SP",
+        "cidade": "São Paulo",
+        "bairro": "SAUDE"
+      },
+      {
+        "cnpj": "67641384000100",
+        "nome_fantasia": "FZB PERSONAL TRAINER",
+        "uf": "RS",
+        "cidade": "Lagoa Vermelha",
+        "bairro": "ALTO PEDREGAL"
+      },
+      {
+        "cnpj": "17074161000122",
+        "nome_fantasia": "ACADEMIA VIDA ATIVA",
+        "uf": "MT",
+        "cidade": "Guarantã do Norte",
+        "bairro": "CENTRO"
+      },
+      {
+        "cnpj": "26409332000118",
+        "nome_fantasia": "STUDIO PILATES SUZANA COSTA",
+        "uf": "RJ",
+        "cidade": "Belford Roxo",
+        "bairro": "BOM PASTOR"
+      },
+      {
+        "cnpj": "26887568000160",
+        "nome_fantasia": "CROSSHAMMER",
+        "uf": "SP",
+        "cidade": "Presidente Prudente",
+        "bairro": "JARDIM PETROPOLIS"
+      },
+      {
+        "cnpj": "31329488000129",
+        "nome_fantasia": "LEONARDO PENA ATIVIDADE FISICA E LAZER",
+        "uf": "MG",
+        "cidade": "Coronel Fabriciano",
+        "bairro": "CALADINHO"
+      },
+      {
+        "cnpj": "33331964000171",
+        "nome_fantasia": "AGIFIT",
+        "uf": "RS",
+        "cidade": "Ijuí",
+        "bairro": "CENTRO"
+      },
+      {
+        "cnpj": "43527119000120",
+        "nome_fantasia": "ESTUDIO VERUS",
+        "uf": "RJ",
+        "cidade": "Teresópolis",
+        "bairro": "VARZEA"
+      },
+      {
+        "cnpj": "43831606000181",
+        "nome_fantasia": "",
+        "uf": "MG",
+        "cidade": "Belo Horizonte",
+        "bairro": "FLORESTA"
+      },
+      {
+        "cnpj": "44534454000118",
+        "nome_fantasia": "PINK BALANCE",
+        "uf": "DF",
+        "cidade": "Brasília",
+        "bairro": "TAGUATINGA SUL (TAGUATINGA)"
+      },
+      {
+        "cnpj": "49215427000104",
+        "nome_fantasia": "POWER LIFE ACADEMIA",
+        "uf": "PR",
+        "cidade": "Sabáudia",
+        "bairro": "CENTRO"
+      },
+      {
+        "cnpj": "51698444000183",
+        "nome_fantasia": "PRIME17 - SAUDE E BEM ESTAR",
+        "uf": "RS",
+        "cidade": "Novo Hamburgo",
+        "bairro": "RONDONIA"
+      },
+      {
+        "cnpj": "51828923000177",
+        "nome_fantasia": "",
+        "uf": "PR",
+        "cidade": "Ponta Grossa",
+        "bairro": "CENTRO"
+      },
+      {
+        "cnpj": "53545269000110",
+        "nome_fantasia": "",
+        "uf": "MG",
+        "cidade": "União de Minas",
+        "bairro": "CENTRO"
+      },
+      {
+        "cnpj": "57112828000159",
+        "nome_fantasia": "",
+        "uf": "BA",
+        "cidade": "Alagoinhas",
+        "bairro": "CAVADA"
+      },
+      {
+        "cnpj": "59269248000103",
+        "nome_fantasia": "ACADEMIA BEM ESTAR 2",
+        "uf": "SE",
+        "cidade": "Lagarto",
+        "bairro": "ALDEMAR DE CARVALHO"
+      },
+      {
+        "cnpj": "60316113000122",
+        "nome_fantasia": "",
+        "uf": "MG",
+        "cidade": "Três Corações",
+        "bairro": "CHACARA DAS ROSAS"
+      },
+      {
+        "cnpj": "61071559000105",
+        "nome_fantasia": "",
+        "uf": "MG",
+        "cidade": "Belo Horizonte",
+        "bairro": "TUPI B"
+      },
+      {
+        "cnpj": "62089607000147",
+        "nome_fantasia": "ACADEMIA GULA DA SAUDE",
+        "uf": "SC",
+        "cidade": "Criciúma",
+        "bairro": "MINA DO MATO"
+      },
+      {
+        "cnpj": "63278558000153",
+        "nome_fantasia": "FITGYM ACADEMIA",
+        "uf": "GO",
+        "cidade": "Aparecida de Goiânia",
+        "bairro": "JARDIM TROPICAL"
+      },
+      {
+        "cnpj": "55907311000201",
+        "nome_fantasia": "HD FIT",
+        "uf": "PB",
+        "cidade": "João Pessoa",
+        "bairro": "DOS ESTADOS"
+      },
+      {
+        "cnpj": "07063289000137",
+        "nome_fantasia": "",
+        "uf": "RS",
+        "cidade": "Jaguari",
+        "bairro": "CENTRO"
+      },
+      {
+        "cnpj": "11603093000165",
+        "nome_fantasia": "VIVA FITNESS",
+        "uf": "SC",
+        "cidade": "Blumenau",
+        "bairro": "VILA NOVA"
+      },
+      {
+        "cnpj": "13602077000183",
+        "nome_fantasia": "VIBE FITNESS ACADEMIA",
+        "uf": "PE",
+        "cidade": "Recife",
+        "bairro": "VARZEA"
+      },
+      {
+        "cnpj": "23472973000129",
+        "nome_fantasia": "ATLAS ACADEMIA",
+        "uf": "MG",
+        "cidade": "Nova Serrana",
+        "bairro": "CENTRO"
+      },
+      {
+        "cnpj": "26913280000112",
+        "nome_fantasia": "LSA SPORTS",
+        "uf": "GO",
+        "cidade": "Goiânia",
+        "bairro": "CONJUNTO GUADALAJARA"
+      },
+      {
+        "cnpj": "27945320000170",
+        "nome_fantasia": "LETE PERSONAL",
+        "uf": "PR",
+        "cidade": "Curitiba",
+        "bairro": "GUAIRA"
+      },
+      {
+        "cnpj": "28741004000140",
+        "nome_fantasia": "RAPTORS TRAINING CENTER",
+        "uf": "SC",
+        "cidade": "Tijucas",
+        "bairro": "JOAIA"
+      },
+      {
+        "cnpj": "40030479000123",
+        "nome_fantasia": "BOX I9",
+        "uf": "PE",
+        "cidade": "Ipojuca",
+        "bairro": "NOSSA SENHORA DO O - CENTRO"
+      },
+      {
+        "cnpj": "35017522000180",
+        "nome_fantasia": "ACAMEMY",
+        "uf": "RN",
+        "cidade": "Natal",
+        "bairro": "PONTA NEGRA"
+      },
+      {
+        "cnpj": "42479153000103",
+        "nome_fantasia": "CX COQUEIRAL",
+        "uf": "MG",
+        "cidade": "Coqueiral",
+        "bairro": "LASMAR"
+      },
+      {
+        "cnpj": "35826366000107",
+        "nome_fantasia": "DFITNESS",
+        "uf": "PB",
+        "cidade": "Santa Rita",
+        "bairro": "LOTEAMENTO SOLAR DO TIBIRI"
+      },
+      {
+        "cnpj": "26146716000195",
+        "nome_fantasia": "",
+        "uf": "RJ",
+        "cidade": "Rio de Janeiro",
+        "bairro": "IRAJA"
+      },
+      {
+        "cnpj": "32175954000121",
+        "nome_fantasia": "CM FITNESS",
+        "uf": "RJ",
+        "cidade": "Nova Iguaçu",
+        "bairro": "COMENDADOR SOARES"
+      },
+      {
+        "cnpj": "50927795000156",
+        "nome_fantasia": "ALPHAFIT ACADEMIA",
+        "uf": "PE",
+        "cidade": "Abreu e Lima",
+        "bairro": "JARDIM CAETES"
+      },
+      {
+        "cnpj": "55033667000182",
+        "nome_fantasia": "PEDAL INDOOR",
+        "uf": "MS",
+        "cidade": "Campo Grande",
+        "bairro": "CHACARA CACHOEIRA"
+      },
+      {
+        "cnpj": "67058044000143",
+        "nome_fantasia": "STUDIO APARECIDA LOPES PILATES E FISIOTERAPIA",
+        "uf": "SP",
+        "cidade": "São Paulo",
+        "bairro": "PINHEIROS"
+      }
+    ],
+    "diff_novos": [],
+    "diff_baixados": []
+  }
+}

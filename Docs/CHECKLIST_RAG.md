@@ -22,7 +22,8 @@ Doc detalhada de métricas: [`EVAL_RAG.md`](./EVAL_RAG.md).
 
 | Arquivo | Função |
 |---------|--------|
-| `data/samples/evaluation.json` | Dataset 15 queries GuruPass |
+| `data/samples/evaluation.json` | Dataset 15 queries GuruPass (retrieval city-boost) |
+| `data/samples/consultor-pipeline-eval.json` | Golden consultor logado — 5 especialistas + tools + Eros + agregadores |
 | `scripts/eval-city-boost.ts` | A/B sem boost vs `boostByCityPrimary` |
 | `data/evaluation/city_boost_eval_results.json` | Relatório empírico |
 | `Docs/EVAL_RAG.md` | Métricas + como re-rodar |

@@ -1,0 +1,2112 @@
+
+> gymsite-pipeline@0.0.0 audit:wh-timeout-all
+> npx tsx scripts/audit-wellhub-timeout-all.ts
+
+Audit Wellhub timeout ÔÇö TODAS as cidades
+
+MODES=short,normal SHORT=10000 NORMAL=cityTimeoutMs
+Baseline dump: 44113 gyms
+Pendentes: 5571/5571 (j├í auditadas: 0)
+
+[1/5571] S├úo Paulo-SP baseline=3138 cat=0
+  teto 100 ÔåÆ 46 bairros (seed=32 extraidos=14)
+  tiling heur├¡stico: 46 bairro(s)
+    pinheiros: +100 new=100 ├║nicas=200 [teto]
+    tatuape: +100 new=100 ├║nicas=300 [teto]
+  [short] 10005ms n=0 miss=3138 err=timeout 10000ms: S├úo Paulo-SP
+    morumbi (Morumbi) falhou: page.content: Target page, context or browser has been closed
+    santana (Santana) falhou: page.goto: Target page, context or browser has been closed
+    vila-mariana (Vila Mariana) falhou: page.goto: Target page, context or browser has been closed
+    ipiranga (Ipiranga) falhou: page.goto: Target page, context or browser has been closed
+  teto 100 ÔåÆ 46 bairros (seed=32 extraidos=14)
+  tiling heur├¡stico: 46 bairro(s)
+    lapa (Lapa) falhou: page.goto: Target page, context or browser has been closed
+    moema (Moema) falhou: page.goto: Target page, context or browser has been closed
+    brooklin (Brooklin) falhou: page.goto: Target page, context or browser has been closed
+    tucuruvi (Tucuruvi) falhou: page.goto: Target page, context or browser has been closed
+    jabaquara (Jabaquara) falhou: page.goto: Target page, context or browser has been closed
+    pinheiros: +100 new=100 ├║nicas=200 [teto]
+    butanta (Butant├ú) falhou: page.goto: Target page, context or browser has been closed
+    penha (Penha) falhou: page.goto: Target page, context or browser has been closed
+    itaim-bibi (Itaim Bibi) falhou: page.goto: Target page, context or browser has been closed
+    vila-madalena (Vila Madalena) falhou: page.goto: Target page, context or browser has been closed
+    santo-amaro (Santo Amaro) falhou: page.goto: Target page, context or browser has been closed
+    pirituba (Pirituba) falhou: page.goto: Target page, context or browser has been closed
+    tatuape: +100 new=100 ├║nicas=300 [teto]
+    casa-verde (Casa Verde) falhou: page.goto: Target page, context or browser has been closed
+    sapopemba (Sapopemba) falhou: page.goto: Target page, context or browser has been closed
+    campo-limpo (Campo Limpo) falhou: page.goto: Target page, context or browser has been closed
+    capao-redondo (Cap├úo Redondo) falhou: page.goto: Target page, context or browser has been closed
+    interlagos (Interlagos) falhou: page.goto: Target page, context or browser has been closed
+    itaquera (Itaquera) falhou: page.goto: Target page, context or browser has been closed
+    morumbi: +100 new=99 ├║nicas=399 [teto]
+    mooca (Mooca) falhou: page.goto: Target page, context or browser has been closed
+    barra-funda (Barra Funda) falhou: page.goto: Target page, context or browser has been closed
+    perdizes (Perdizes) falhou: page.goto: Target page, context or browser has been closed
+    saude (Sa├║de) falhou: page.goto: Target page, context or browser has been closed
+    analia-franco (An├ília Franco) falhou: page.goto: Target page, context or browser has been closed
+    santana: +100 new=100 ├║nicas=499 [teto]
+    vila-leopoldina (Vila Leopoldina) falhou: page.goto: Target page, context or browser has been closed
+    cidade-ademar (Cidade Ademar) falhou: page.goto: Target page, context or browser has been closed
+    grajau (Graja├║) falhou: page.goto: Target page, context or browser has been closed
+    jaragua (Jaragu├í) falhou: page.goto: Target page, context or browser has been closed
+    republica (Rep├║blica) falhou: page.goto: Target page, context or browser has been closed
+    bela-vista (Bela Vista) falhou: page.goto: Target page, context or browser has been closed
+    vila-mariana: +100 new=100 ├║nicas=599 [teto]
+    centro-historico-de-sao-paulo (Centro Hist├│rico de S├úo Paulo) falhou: page.goto: Target page, context or browser has been closed
+    liberdade (Liberdade) falhou: page.goto: Target page, context or browser has been closed
+    consolacao (Consola├º├úo) falhou: page.goto: Target page, context or browser has been closed
+    higienopolis (Higien├│polis) falhou: page.goto: Target page, context or browser has been closed
+    campos-eliseos (Campos El├¡seos) falhou: page.goto: Target page, context or browser has been closed
+    vila-buarque (Vila Buarque) falhou: page.goto: Target page, context or browser has been closed
+    bras (Br├ís) falhou: page.goto: Target page, context or browser has been closed
+    ipiranga: +100 new=100 ├║nicas=699 [teto]
+    jardim-paulista (Jardim Paulista) falhou: page.goto: Target page, context or browser has been closed
+    cerqueira-cesar (Cerqueira C├®sar) falhou: page.goto: Target page, context or browser has been closed
+    aclimacao (Aclima├º├úo) falhou: page.goto: Target page, context or browser has been closed
+    cambuci (Cambuci) falhou: page.goto: Target page, context or browser has been closed
+    santa-cecilia (Santa Cecilia) falhou: page.goto: Target page, context or browser has been closed
+    lapa: +100 new=100 ├║nicas=799 [teto]
+    moema: +100 new=100 ├║nicas=899 [teto]
+    brooklin: +100 new=82 ├║nicas=981 [teto]
+    tucuruvi: +100 new=97 ├║nicas=1078 [teto]
+    jabaquara: +100 new=100 ├║nicas=1178 [teto]
+    butanta: +100 new=33 ├║nicas=1211 [teto]
+    penha: +100 new=62 ├║nicas=1273 [teto]
+    itaim-bibi: +100 new=100 ├║nicas=1373 [teto]
+    vila-madalena: +100 new=40 ├║nicas=1413 [teto]
+    santo-amaro: +100 new=100 ├║nicas=1513 [teto]
+    pirituba: +100 new=95 ├║nicas=1608 [teto]
+    casa-verde: +100 new=92 ├║nicas=1700 [teto]
+    sapopemba: +100 new=100 ├║nicas=1800 [teto]
+    campo-limpo: +100 new=100 ├║nicas=1900 [teto]
+    capao-redondo: +100 new=100 ├║nicas=2000 [teto]
+    interlagos: +100 new=97 ├║nicas=2097 [teto]
+    itaquera: +100 new=100 ├║nicas=2197 [teto]
+    mooca: +100 new=100 ├║nicas=2297 [teto]
+    barra-funda: +100 new=61 ├║nicas=2358 [teto]
+    perdizes: +100 new=52 ├║nicas=2410 [teto]
+    saude: +100 new=80 ├║nicas=2490 [teto]
+    analia-franco: +100 new=66 ├║nicas=2556 [teto]
+    vila-leopoldina: +100 new=77 ├║nicas=2633 [teto]
+    cidade-ademar: +100 new=90 ├║nicas=2723 [teto]
+    grajau: +100 new=77 ├║nicas=2800 [teto]
+    jaragua: +100 new=72 ├║nicas=2872 [teto]
+    republica: +100 new=25 ├║nicas=2897 [teto]
+    bela-vista: +100 new=86 ├║nicas=2983 [teto]
+    centro-historico-de-sao-paulo: +100 new=11 ├║nicas=2994 [teto]
+    liberdade: +100 new=14 ├║nicas=3008 [teto]
+    consolacao: +100 new=37 ├║nicas=3045 [teto]
+    higienopolis: +100 new=8 ├║nicas=3053 [teto]
+    campos-eliseos: +100 new=3 ├║nicas=3056 [teto]
+    vila-buarque: +100 new=0 ├║nicas=3056 [teto]
+    bras: +100 new=19 ├║nicas=3075 [teto]
+    jardim-paulista: +100 new=30 ├║nicas=3105 [teto]
+    cerqueira-cesar: +5 new=5 ├║nicas=3110
+    aclimacao: +100 new=34 ├║nicas=3144 [teto]
+    cambuci: +100 new=11 ├║nicas=3155 [teto]
+    santa-cecilia: +100 new=0 ├║nicas=3155 [teto]
+  [normal] 146387ms n=3155 miss=54
+[2/5571] Rio de Janeiro-RJ baseline=1618 cat=0
+  teto 100 ÔåÆ 25 bairros (seed=18 extraidos=9)
+  tiling heur├¡stico: 25 bairro(s)
+    copacabana: +100 new=100 ├║nicas=200 [teto]
+    ipanema: +100 new=100 ├║nicas=300 [teto]
+  [short] 10008ms n=0 miss=1618 err=timeout 10000ms: Rio de Janeiro-RJ
+    botafogo (Botafogo) falhou: page.content: Target page, context or browser has been closed
+    tijuca (Tijuca) falhou: page.goto: Target page, context or browser has been closed
+    barra-da-tijuca (Barra da Tijuca) falhou: page.goto: Target page, context or browser has been closed
+  teto 100 ÔåÆ 25 bairros (seed=18 extraidos=9)
+  tiling heur├¡stico: 25 bairro(s)
+    recreio-dos-bandeirantes (Recreio dos Bandeirantes) falhou: page.goto: Target page, context or browser has been closed
+    madureira (Madureira) falhou: page.goto: Target page, context or browser has been closed
+    campo-grande (Campo Grande) falhou: page.goto: Target page, context or browser has been closed
+    bangu (Bangu) falhou: page.goto: Target page, context or browser has been closed
+    flamengo (Flamengo) falhou: page.goto: Target page, context or browser has been closed
+    leblon (Leblon) falhou: page.goto: Target page, context or browser has been closed
+    copacabana: +100 new=100 ├║nicas=200 [teto]
+    meier (M├®ier) falhou: page.goto: Target page, context or browser has been closed
+    penha (Penha) falhou: page.goto: Target page, context or browser has been closed
+    ilha-do-governador (Ilha do Governador) falhou: page.goto: Target page, context or browser has been closed
+    jacarepagua (Jacarepagu├í) falhou: page.goto: Target page, context or browser has been closed
+    santa-cruz (Santa Cruz) falhou: page.goto: Target page, context or browser has been closed
+    ipanema: +100 new=100 ├║nicas=300 [teto]
+    laranjeiras (Laranjeiras) falhou: page.goto: Target page, context or browser has been closed
+    centro (Centro) falhou: page.goto: Target page, context or browser has been closed
+    saude (Sa├║de) falhou: page.goto: Target page, context or browser has been closed
+    lapa (lapa) falhou: page.goto: Target page, context or browser has been closed
+    gamboa (Gamboa) falhou: page.goto: Target page, context or browser has been closed
+    gloria (Gl├│ria) falhou: page.goto: Target page, context or browser has been closed
+    botafogo: +100 new=71 ├║nicas=371 [teto]
+    santo-cristo (Santo Cristo) falhou: page.goto: Target page, context or browser has been closed
+    catumbi (Catumbi) falhou: page.goto: Target page, context or browser has been closed
+    catete (Catete) falhou: page.goto: Target page, context or browser has been closed
+    tijuca: +100 new=100 ├║nicas=471 [teto]
+    barra-da-tijuca: +100 new=100 ├║nicas=571 [teto]
+    recreio-dos-bandeirantes: +100 new=100 ├║nicas=671 [teto]
+    madureira: +100 new=100 ├║nicas=771 [teto]
+    campo-grande: +100 new=100 ├║nicas=871 [teto]
+    bangu: +100 new=100 ├║nicas=971 [teto]
+    flamengo: +100 new=74 ├║nicas=1045 [teto]
+    leblon: +100 new=38 ├║nicas=1083 [teto]
+    meier: +100 new=100 ├║nicas=1183 [teto]
+    penha: +100 new=100 ├║nicas=1283 [teto]
+    ilha-do-governador: +100 new=60 ├║nicas=1343 [teto]
+    jacarepagua: +100 new=100 ├║nicas=1443 [teto]
+    santa-cruz: +100 new=100 ├║nicas=1543 [teto]
+    laranjeiras: +100 new=3 ├║nicas=1546 [teto]
+    centro: +100 new=1 ├║nicas=1547 [teto]
+    saude: +100 new=0 ├║nicas=1547 [teto]
+    lapa: +100 new=8 ├║nicas=1555 [teto]
+    gamboa: +100 new=11 ├║nicas=1566 [teto]
+    gloria: +100 new=6 ├║nicas=1572 [teto]
+    santo-cristo: +100 new=41 ├║nicas=1613 [teto]
+    catumbi: +100 new=7 ├║nicas=1620 [teto]
+    catete: +100 new=0 ├║nicas=1620 [teto]
+  [normal] 82560ms n=1620 miss=26
+[3/5571] Bras├¡lia-DF baseline=708 cat=0
+  teto 100 ÔåÆ 21 bairros (seed=9 extraidos=16)
+  tiling heur├¡stico: 21 bairro(s)
+    asa-sul: +100 new=75 ├║nicas=175 [teto]
+  [short] 10001ms n=0 miss=708 err=timeout 10000ms: Bras├¡lia-DF
+    asa-norte (Asa Norte) falhou: page.content: Target page, context or browser has been closed
+    lago-sul (Lago Sul) falhou: page.goto: Target page, context or browser has been closed
+  teto 100 ÔåÆ 21 bairros (seed=9 extraidos=16)
+  tiling heur├¡stico: 21 bairro(s)
+    lago-norte (Lago Norte) falhou: page.goto: Target page, context or browser has been closed
+    taguatinga (Taguatinga) falhou: page.goto: Target page, context or browser has been closed
+    ceilandia (Ceil├óndia) falhou: page.goto: Target page, context or browser has been closed
+    aguas-claras (├üguas Claras) falhou: page.goto: Target page, context or browser has been closed
+    guara (Guar├í) falhou: page.goto: Target page, context or browser has been closed
+    asa-sul: +100 new=75 ├║nicas=175 [teto]
+    sudoeste (Sudoeste) falhou: page.goto: Target page, context or browser has been closed
+    plano-piloto (Plano Piloto) falhou: page.goto: Target page, context or browser has been closed
+    cruzeiro-sudoeste-octogonal (Cruzeiro / Sudoeste / Octogonal) falhou: page.goto: Target page, context or browser has been closed
+    sudoeste-octogonal (Sudoeste/Octogonal) falhou: page.goto: Target page, context or browser has been closed
+    cruzeiro-velho (Cruzeiro Velho) falhou: page.goto: Target page, context or browser has been closed
+    cruzeiro (Cruzeiro) falhou: page.goto: Target page, context or browser has been closed
+    asa-norte: +100 new=87 ├║nicas=262 [teto]
+    brasilia (BRASILIA) falhou: page.goto: Target page, context or browser has been closed
+    st-sudoeste (St. Sudoeste) falhou: page.goto: Target page, context or browser has been closed
+    cruzeiro-novo (Cruzeiro Novo) falhou: page.goto: Target page, context or browser has been closed
+    zona-industrial (Zona Industrial) falhou: page.goto: Target page, context or browser has been closed
+    noroeste (Noroeste) falhou: page.goto: Target page, context or browser has been closed
+    octogonal (Octogonal) falhou: page.goto: Target page, context or browser has been closed
+    setor-noroeste (Setor Noroeste) falhou: page.goto: Target page, context or browser has been closed
+    lago-sul: +100 new=56 ├║nicas=318 [teto]
+    lago-norte: +100 new=44 ├║nicas=362 [teto]
+    taguatinga: +100 new=100 ├║nicas=462 [teto]
+    ceilandia: +100 new=69 ├║nicas=531 [teto]
+    aguas-claras: +100 new=83 ├║nicas=614 [teto]
+    guara: +100 new=56 ├║nicas=670 [teto]
+    sudoeste: +100 new=0 ├║nicas=670 [teto]
+    plano-piloto: +100 new=6 ├║nicas=676 [teto]
+    cruzeiro-sudoeste-octogonal: +100 new=0 ├║nicas=676 [teto]
+    sudoeste-octogonal: +100 new=0 ├║nicas=676 [teto]
+    cruzeiro-velho: +100 new=0 ├║nicas=676 [teto]
+    cruzeiro: +100 new=0 ├║nicas=676 [teto]
+    brasilia: +100 new=0 ├║nicas=676 [teto]
+    st-sudoeste: +100 new=0 ├║nicas=676 [teto]
+    cruzeiro-novo: +100 new=0 ├║nicas=676 [teto]
+    zona-industrial: +100 new=44 ├║nicas=720 [teto]
+    noroeste: +100 new=0 ├║nicas=720 [teto]
+    octogonal: +100 new=0 ├║nicas=720 [teto]
+    setor-noroeste: +100 new=0 ├║nicas=720 [teto]
+  [normal] 90882ms n=720 miss=9
+[4/5571] Fortaleza-CE baseline=511 cat=0
+  teto 100 ÔåÆ 38 bairros (seed=8 extraidos=32)
+  tiling heur├¡stico: 38 bairro(s)
+    aldeota: +2 new=2 ├║nicas=102
+  [short] 10016ms n=0 miss=511 err=timeout 10000ms: Fortaleza-CE
+    meireles (Meireles) falhou: page.content: Target page, context or browser has been closed
+    coco (Coc├│) falhou: page.goto: Target page, context or browser has been closed
+    papicu (Papicu) falhou: page.goto: Target page, context or browser has been closed
+  teto 100 ÔåÆ 38 bairros (seed=8 extraidos=32)
+  tiling heur├¡stico: 38 bairro(s)
+    varjota (Varjota) falhou: page.goto: Target page, context or browser has been closed
+    mucuripe (Mucuripe) falhou: page.goto: Target page, context or browser has been closed
+    dionisio-torres (Dion├¡sio Torres) falhou: page.goto: Target page, context or browser has been closed
+    jose-de-alencar (Jos├® de Alencar) falhou: page.goto: Target page, context or browser has been closed
+    aldeota: +2 new=2 ├║nicas=102
+    moura-brasil (Moura Brasil) falhou: page.goto: Target page, context or browser has been closed
+    messejana (Messejana) falhou: page.goto: Target page, context or browser has been closed
+    carlito-pamplona (Carlito Pamplona) falhou: page.goto: Target page, context or browser has been closed
+    monte-castelo (Monte Castelo) falhou: page.goto: Target page, context or browser has been closed
+    farias-brito (Farias Brito) falhou: page.goto: Target page, context or browser has been closed
+    alagadico-sao-gerardo (Alagadico Sao Gerardo) falhou: page.goto: Target page, context or browser has been closed
+    jacarecanga (Jacarecanga) falhou: page.goto: Target page, context or browser has been closed
+    meireles: +100 new=76 ├║nicas=178 [teto]
+    cristo-redentor (Cristo Redentor) falhou: page.goto: Target page, context or browser has been closed
+    bairro-ellery (Bairro Ellery) falhou: page.goto: Target page, context or browser has been closed
+    zone-1 (Zone 1) falhou: page.goto: Target page, context or browser has been closed
+    alvaro-weyne (├ülvaro Weyne) falhou: page.goto: Target page, context or browser has been closed
+    sao-gerardo (S├úo Gerardo) falhou: page.goto: Target page, context or browser has been closed
+    benfica (Benfica) falhou: page.goto: Target page, context or browser has been closed
+    parquelandia (Parquel├óndia) falhou: page.goto: Target page, context or browser has been closed
+    barra-do-ceara (Barra do Cear├í) falhou: page.goto: Target page, context or browser has been closed
+    coco: +100 new=42 ├║nicas=220 [teto]
+    ellery (Ellery) falhou: page.goto: Target page, context or browser has been closed
+    praia-de-iracema (Praia de Iracema) falhou: page.goto: Target page, context or browser has been closed
+    amadeu-furtado (Amadeu Furtado) falhou: page.goto: Target page, context or browser has been closed
+    centro (Centro) falhou: page.goto: Target page, context or browser has been closed
+    damas (Damas) falhou: page.goto: Target page, context or browser has been closed
+    pres-kennedy (Pres. Kennedy) falhou: page.goto: Target page, context or browser has been closed
+    presidente-kennedy (Presidente Kennedy) falhou: page.goto: Target page, context or browser has been closed
+    fatima (F├ítima) falhou: page.goto: Target page, context or browser has been closed
+    rodolfo-teofilo (Rodolfo Te├│filo) falhou: page.goto: Target page, context or browser has been closed
+    papicu: +100 new=2 ├║nicas=222 [teto]
+    jose-bonifacio (Jos├® Bonifacio) falhou: page.goto: Target page, context or browser has been closed
+    joaquim-tavora-fortaleza (Joaquim T├ívora (Fortaleza)) falhou: page.goto: Target page, context or browser has been closed
+    joaquim-tavora (Joaquim T├ívora) falhou: page.goto: Target page, context or browser has been closed
+    pici (Pici) falhou: page.goto: Target page, context or browser has been closed
+    floresta (Floresta) falhou: page.goto: Target page, context or browser has been closed
+    bela-vista (Bela Vista) falhou: page.goto: Target page, context or browser has been closed
+  fallback geo grid @ -3.7185,-38.5417
+    varjota: +1 new=1 ├║nicas=223
+    mucuripe: +100 new=1 ├║nicas=224 [teto]
+    dionisio-torres: +100 new=18 ├║nicas=242 [teto]
+    jose-de-alencar: +4 new=4 ├║nicas=246
+    moura-brasil: +100 new=1 ├║nicas=247 [teto]
+    messejana: +100 new=100 ├║nicas=347 [teto]
+    carlito-pamplona: +100 new=23 ├║nicas=370 [teto]
+    monte-castelo: +100 new=2 ├║nicas=372 [teto]
+    farias-brito (Farias Brito) falhou: sem academias em https://wellhub.com/pt-br/search/ce/farias-brito/?map=1
+    alagadico-sao-gerardo: +100 new=12 ├║nicas=384 [teto]
+    jacarecanga: +100 new=0 ├║nicas=384 [teto]
+    cristo-redentor: +100 new=3 ├║nicas=387 [teto]
+    bairro-ellery: +100 new=0 ├║nicas=387 [teto]
+    zone-1: +100 new=12 ├║nicas=399 [teto]
+    alvaro-weyne: +100 new=1 ├║nicas=400 [teto]
+    sao-gerardo: +100 new=81 ├║nicas=481 [teto]
+    benfica: +100 new=6 ├║nicas=487 [teto]
+    parquelandia: +100 new=3 ├║nicas=490 [teto]
+    barra-do-ceara: +100 new=3 ├║nicas=493 [teto]
+    ellery: +100 new=0 ├║nicas=493 [teto]
+    praia-de-iracema: +100 new=0 ├║nicas=493 [teto]
+    amadeu-furtado: +100 new=9 ├║nicas=502 [teto]
+    centro: +2 new=0 ├║nicas=502
+    damas: +100 new=4 ├║nicas=506 [teto]
+    pres-kennedy: +100 new=0 ├║nicas=506 [teto]
+    presidente-kennedy: +100 new=0 ├║nicas=506 [teto]
+  [normal] 180013ms n=0 miss=511 err=timeout 180000ms: Fortaleza-CE
+[5/5571] Salvador-BA baseline=1022 cat=0
+    fatima (F├ítima) falhou: page.content: Target page, context or browser has been closed
+    rodolfo-teofilo (Rodolfo Te├│filo) falhou: page.goto: Target page, context or browser has been closed
+    jose-bonifacio (Jos├® Bonifacio) falhou: page.goto: Target page, context or browser has been closed
+    joaquim-tavora-fortaleza (Joaquim T├ívora (Fortaleza)) falhou: page.goto: Target page, context or browser has been closed
+  teto 100 ÔåÆ 38 bairros (seed=8 extraidos=32)
+  tiling heur├¡stico: 38 bairro(s)
+    joaquim-tavora (Joaquim T├ívora) falhou: page.goto: Target page, context or browser has been closed
+    pici (Pici) falhou: page.goto: Target page, context or browser has been closed
+    floresta (Floresta) falhou: page.goto: Target page, context or browser has been closed
+    bela-vista (Bela Vista) falhou: page.goto: Target page, context or browser has been closed
+  [short] 10005ms n=0 miss=1022 err=timeout 10000ms: Salvador-BA
+    pituba (Pituba) falhou: page.content: Target page, context or browser has been closed
+  teto 100 ÔåÆ 38 bairros (seed=8 extraidos=32)
+  tiling heur├¡stico: 38 bairro(s)
+    barra (Barra) falhou: page.goto: Target page, context or browser has been closed
+    itapua (Itapu├ú) falhou: page.goto: Target page, context or browser has been closed
+    caminho-das-arvores (Caminho das ├ürvores) falhou: page.goto: Target page, context or browser has been closed
+    itaigara (Itaigara) falhou: page.goto: Target page, context or browser has been closed
+    rio-vermelho (Rio Vermelho) falhou: page.goto: Target page, context or browser has been closed
+    stella-maris (Stella Maris) falhou: page.goto: Target page, context or browser has been closed
+    imbui (Imbu├¡) falhou: page.goto: Target page, context or browser has been closed
+    barbalho (Barbalho) falhou: page.goto: Target page, context or browser has been closed
+    baixa-dos-sapateiros (Baixa dos Sapateiros) falhou: page.goto: Target page, context or browser has been closed
+    nazare (Nazar├®) falhou: page.goto: Target page, context or browser has been closed
+    liberdade (Liberdade) falhou: page.goto: Target page, context or browser has been closed
+    saude (Sa├║de) falhou: page.goto: Target page, context or browser has been closed
+    centro-historico (Centro Hist├│rico) falhou: page.goto: Target page, context or browser has been closed
+    caixa-d-agua (Caixa D┬┤├ígua) falhou: page.goto: Target page, context or browser has been closed
+    comercio (Com├®rcio) falhou: page.goto: Target page, context or browser has been closed
+    baixa-de-quintas (Baixa de Quintas) falhou: page.goto: Target page, context or browser has been closed
+    matatu (Matatu) falhou: page.goto: Target page, context or browser has been closed
+    centro (Centro) falhou: page.goto: Target page, context or browser has been closed
+    vila-laura (Vila Laura) falhou: page.goto: Target page, context or browser has been closed
+    brotas (Brotas) falhou: page.goto: Target page, context or browser has been closed
+    tororo (Toror├│) falhou: page.goto: Target page, context or browser has been closed
+    boa-vista-de-brotas (Boa Vista de Brotas) falhou: page.goto: Target page, context or browser has been closed
+    cidade-nova (Cidade Nova) falhou: page.goto: Target page, context or browser has been closed
+    engenho-velho-de-brotas (Engenho Velho de Brotas) falhou: page.goto: Target page, context or browser has been closed
+    iapi (Iapi) falhou: page.goto: Target page, context or browser has been closed
+    pero-vaz (Pero Vaz) falhou: page.goto: Target page, context or browser has been closed
+    barris (Barris) falhou: page.goto: Target page, context or browser has been closed
+    contorno (Contorno) falhou: page.goto: Target page, context or browser has been closed
+    pau-miudo (Pau Mi├║do) falhou: page.goto: Target page, context or browser has been closed
+    dois-de-julho (Dois de Julho) falhou: page.goto: Target page, context or browser has been closed
+    luiz-anselmo (Luiz Anselmo) falhou: page.goto: Target page, context or browser has been closed
+    merces (Merc├¬s) falhou: page.goto: Target page, context or browser has been closed
+    santa-teresa (Santa Teresa) falhou: page.goto: Target page, context or browser has been closed
+    roma (Roma) falhou: page.goto: Target page, context or browser has been closed
+    luis-anselmo (Lu├¡s Anselmo) falhou: page.goto: Target page, context or browser has been closed
+    uruguai (Uruguai) falhou: page.goto: Target page, context or browser has been closed
+    acupe (Acupe) falhou: page.goto: Target page, context or browser has been closed
+  fallback geo grid @ -12.9642,-38.5058
+    pituba (Pituba) falhou: sem academias em https://wellhub.com/pt-br/search/ba/pituba/?map=1
+    barra (Barra) falhou: sem academias em https://wellhub.com/pt-br/search/ba/barra/?map=1
+    itapua: +100 new=100 ├║nicas=200 [teto]
+    caminho-das-arvores: +100 new=100 ├║nicas=300 [teto]
+    itaigara: +100 new=100 ├║nicas=400 [teto]
+    rio-vermelho: +100 new=85 ├║nicas=485 [teto]
+    stella-maris: +100 new=46 ├║nicas=531 [teto]
+    imbui: +100 new=100 ├║nicas=631 [teto]
+    barbalho: +100 new=0 ├║nicas=631 [teto]
+    baixa-dos-sapateiros: +100 new=9 ├║nicas=640 [teto]
+    nazare: +2 new=2 ├║nicas=642
+    liberdade: +100 new=49 ├║nicas=691 [teto]
+    saude (Sa├║de) falhou: sem academias em https://wellhub.com/pt-br/search/ba/saude/?map=1
+    centro-historico: +100 new=100 ├║nicas=791 [teto]
+    caixa-d-agua: +39 new=39 ├║nicas=830
+    comercio: +100 new=0 ├║nicas=830 [teto]
+    baixa-de-quintas: +100 new=17 ├║nicas=847 [teto]
+    matatu: +100 new=0 ├║nicas=847 [teto]
+    centro: +100 new=0 ├║nicas=847 [teto]
+    vila-laura: +100 new=0 ├║nicas=847 [teto]
+  [normal] 180012ms n=0 miss=1022 err=timeout 180000ms: Salvador-BA
+[6/5571] Belo Horizonte-MG baseline=683 cat=0
+    brotas (Brotas) falhou: page.goto: net::ERR_ABORTED; maybe frame was detached?
+Call log:
+  - navigating to "https://wellhub.com/pt-br/search/ba/brotas/?map=1", waiting until "domcontentloaded"
+
+    tororo (Toror├│) falhou: page.goto: Target page, context or browser has been closed
+    boa-vista-de-brotas (Boa Vista de Brotas) falhou: page.goto: Target page, context or browser has been closed
+    cidade-nova (Cidade Nova) falhou: page.goto: Target page, context or browser has been closed
+    engenho-velho-de-brotas (Engenho Velho de Brotas) falhou: page.goto: Target page, context or browser has been closed
+    iapi (Iapi) falhou: page.goto: Target page, context or browser has been closed
+    pero-vaz (Pero Vaz) falhou: page.goto: Target page, context or browser has been closed
+    barris (Barris) falhou: page.goto: Target page, context or browser has been closed
+    contorno (Contorno) falhou: page.goto: Target page, context or browser has been closed
+  teto 100 ÔåÆ 20 bairros (seed=9 extraidos=15)
+  tiling heur├¡stico: 20 bairro(s)
+    pau-miudo (Pau Mi├║do) falhou: page.goto: Target page, context or browser has been closed
+    dois-de-julho (Dois de Julho) falhou: page.goto: Target page, context or browser has been closed
+    luiz-anselmo (Luiz Anselmo) falhou: page.goto: Target page, context or browser has been closed
+    merces (Merc├¬s) falhou: page.goto: Target page, context or browser has been closed
+    santa-teresa (Santa Teresa) falhou: page.goto: Target page, context or browser has been closed
+    roma (Roma) falhou: page.goto: Target page, context or browser has been closed
+    luis-anselmo (Lu├¡s Anselmo) falhou: page.goto: Target page, context or browser has been closed
+    uruguai (Uruguai) falhou: page.goto: Target page, context or browser has been closed
+    savassi: +100 new=58 ├║nicas=158 [teto]
+    acupe (Acupe) falhou: page.goto: Target page, context or browser has been closed
+  [short] 10008ms n=0 miss=683 err=timeout 10000ms: Belo Horizonte-MG
+    pampulha (Pampulha) falhou: page.goto: net::ERR_ABORTED; maybe frame was detached?
+Call log:
+  - navigating to "https://wellhub.com/pt-br/search/mg/pampulha/?map=1", waiting until "domcontentloaded"
+
+    belvedere (Belvedere) falhou: page.goto: Target page, context or browser has been closed
+    buritis (Buritis) falhou: page.goto: Target page, context or browser has been closed
+    lourdes (Lourdes) falhou: page.goto: Target page, context or browser has been closed
+    funcionarios (Funcion├írios) falhou: page.goto: Target page, context or browser has been closed
+    venda-nova (Venda Nova) falhou: page.goto: Target page, context or browser has been closed
+    barreiro (Barreiro) falhou: page.goto: Target page, context or browser has been closed
+    santa-efigenia (Santa Efig├¬nia) falhou: page.goto: Target page, context or browser has been closed
+    centro (Centro) falhou: page.goto: Target page, context or browser has been closed
+    floresta (Floresta) falhou: page.goto: Target page, context or browser has been closed
+    boa-viagem (Boa Viagem) falhou: page.goto: Target page, context or browser has been closed
+  teto 100 ÔåÆ 20 bairros (seed=9 extraidos=15)
+  tiling heur├¡stico: 20 bairro(s)
+    santa-tereza (Santa Tereza) falhou: page.goto: Target page, context or browser has been closed
+    barro-preto (Barro Preto) falhou: page.goto: Target page, context or browser has been closed
+    carlos-prates (Carlos Prates) falhou: page.goto: Target page, context or browser has been closed
+    colegio-batista (Col├®gio Batista) falhou: page.goto: Target page, context or browser has been closed
+    sagrada-familia (Sagrada Fam├¡lia) falhou: page.goto: Target page, context or browser has been closed
+    savassi: +100 new=58 ├║nicas=158 [teto]
+    santa-teresa (Santa Teresa) falhou: page.goto: Target page, context or browser has been closed
+    santo-agostinho (Santo Agostinho) falhou: page.goto: Target page, context or browser has been closed
+    sao-cristovao (S├úo Crist├│v├úo) falhou: page.goto: Target page, context or browser has been closed
+    pampulha: +100 new=100 ├║nicas=258 [teto]
+    belvedere: +100 new=100 ├║nicas=358 [teto]
+    buritis: +3 new=3 ├║nicas=361
+    lourdes: +100 new=23 ├║nicas=384 [teto]
+    funcionarios: +100 new=27 ├║nicas=411 [teto]
+    venda-nova: +100 new=69 ├║nicas=480 [teto]
+    barreiro: +70 new=70 ├║nicas=550
+    santa-efigenia: +100 new=14 ├║nicas=564 [teto]
+    centro: +70 new=0 ├║nicas=564
+    floresta: +100 new=0 ├║nicas=564 [teto]
+    boa-viagem: +100 new=0 ├║nicas=564 [teto]
+    santa-tereza: +100 new=4 ├║nicas=568 [teto]
+    barro-preto: +100 new=22 ├║nicas=590 [teto]
+    carlos-prates: +100 new=47 ├║nicas=637 [teto]
+    colegio-batista: +100 new=14 ├║nicas=651 [teto]
+    sagrada-familia: +70 new=0 ├║nicas=651
+    santa-teresa: +4 new=4 ├║nicas=655
+    santo-agostinho: +100 new=5 ├║nicas=660 [teto]
+    sao-cristovao: +70 new=0 ├║nicas=660
+  [normal] 96893ms n=660 miss=41
+[7/5571] Manaus-AM baseline=191 cat=0
+  teto 100 ÔåÆ 22 bairros (seed=7 extraidos=21)
+  tiling heur├¡stico: 22 bairro(s)
+    adrianopolis: +100 new=9 ├║nicas=109 [teto]
+  [short] 10012ms n=0 miss=191 err=timeout 10000ms: Manaus-AM
+    vieiralves (Vieiralves) falhou: page.content: Target page, context or browser has been closed
+    centro (Centro) falhou: page.goto: Target page, context or browser has been closed
+    aleixo (Aleixo) falhou: page.goto: Target page, context or browser has been closed
+  teto 100 ÔåÆ 22 bairros (seed=7 extraidos=21)
+  tiling heur├¡stico: 22 bairro(s)
+    parque-10 (Parque 10) falhou: page.goto: Target page, context or browser has been closed
+    flores (Flores) falhou: page.goto: Target page, context or browser has been closed
+    ponta-negra (Ponta Negra) falhou: page.goto: Target page, context or browser has been closed
+    sao-geraldo (S├úo Geraldo) falhou: page.goto: Target page, context or browser has been closed
+    nossa-sra-das-gracas (Nossa Sra. das Gracas) falhou: page.goto: Target page, context or browser has been closed
+    adrianopolis: +100 new=9 ├║nicas=109 [teto]
+    sao-jorge (S├úo Jorge) falhou: page.goto: Target page, context or browser has been closed
+    chapada (Chapada) falhou: page.goto: Target page, context or browser has been closed
+    betania (Bet├ónia) falhou: page.goto: Target page, context or browser has been closed
+    praca-14-de-janeiro (Pra├ºa 14 de Janeiro) falhou: page.goto: Target page, context or browser has been closed
+    parque-dez-de-novembro (Parque Dez de Novembro) falhou: page.goto: Target page, context or browser has been closed
+    sao-francisco (S├úo Francisco) falhou: page.goto: Target page, context or browser has been closed
+    vieiralves: +100 new=61 ├║nicas=170 [teto]
+    dom-pedro (Dom Pedro) falhou: page.goto: Target page, context or browser has been closed
+    cachoeirinha (Cachoeirinha) falhou: page.goto: Target page, context or browser has been closed
+    vxw3-g5-vila-da-prata (VXW3+G5 Vila da Prata) falhou: page.goto: Target page, context or browser has been closed
+    parque-10-de-novembro (Parque 10 de Novembro) falhou: page.goto: Target page, context or browser has been closed
+    santo-antonio (Santo Ant├┤nio) falhou: page.goto: Target page, context or browser has been closed
+    compensa (Compensa) falhou: page.goto: Target page, context or browser has been closed
+    petropolis (Petr├│polis) falhou: page.goto: Target page, context or browser has been closed
+  fallback geo grid @ -3.1064,-60.0263
+    centro (Centro) falhou: sem academias em https://wellhub.com/pt-br/search/am/centro/?map=1
+    aleixo: +100 new=0 ├║nicas=170 [teto]
+    parque-10 (Parque 10) falhou: sem academias em https://wellhub.com/pt-br/search/am/parque-10/?map=1
+    flores: +100 new=12 ├║nicas=182 [teto]
+    ponta-negra: +100 new=12 ├║nicas=194 [teto]
+    sao-geraldo: +100 new=0 ├║nicas=194 [teto]
+    nossa-sra-das-gracas: +100 new=0 ├║nicas=194 [teto]
+    sao-jorge (S├úo Jorge) falhou: sem academias em https://wellhub.com/pt-br/search/am/sao-jorge/?map=1
+    chapada: +100 new=0 ├║nicas=194 [teto]
+    betania: +100 new=1 ├║nicas=195 [teto]
+    praca-14-de-janeiro (Pra├ºa 14 de Janeiro) falhou: sem academias em https://wellhub.com/pt-br/search/am/praca-14-de-janeiro/?map=1
+    parque-dez-de-novembro: +100 new=0 ├║nicas=195 [teto]
+  [normal] 180009ms n=0 miss=191 err=timeout 180000ms: Manaus-AM
+[8/5571] Curitiba-PR baseline=619 cat=0
+    sao-francisco (S├úo Francisco) falhou: page.content: Target page, context or browser has been closed
+    dom-pedro (Dom Pedro) falhou: page.goto: Target page, context or browser has been closed
+    cachoeirinha (Cachoeirinha) falhou: page.goto: Target page, context or browser has been closed
+    vxw3-g5-vila-da-prata (VXW3+G5 Vila da Prata) falhou: page.goto: Target page, context or browser has been closed
+  teto 100 ÔåÆ 16 bairros (seed=8 extraidos=11)
+  tiling heur├¡stico: 16 bairro(s)
+    parque-10-de-novembro (Parque 10 de Novembro) falhou: page.goto: Target page, context or browser has been closed
+    santo-antonio (Santo Ant├┤nio) falhou: page.goto: Target page, context or browser has been closed
+    compensa (Compensa) falhou: page.goto: Target page, context or browser has been closed
+    petropolis (Petr├│polis) falhou: page.goto: Target page, context or browser has been closed
+    batel: +100 new=71 ├║nicas=171 [teto]
+  [short] 10002ms n=0 miss=619 err=timeout 10000ms: Curitiba-PR
+    agua-verde (├ügua Verde) falhou: page.content: Target page, context or browser has been closed
+    centro (Centro) falhou: page.goto: Target page, context or browser has been closed
+    bigorrilho (Bigorrilho) falhou: page.goto: Target page, context or browser has been closed
+    portao (Port├úo) falhou: page.goto: Target page, context or browser has been closed
+  teto 100 ÔåÆ 16 bairros (seed=8 extraidos=11)
+  tiling heur├¡stico: 16 bairro(s)
+    santa-felicidade (Santa Felicidade) falhou: page.goto: Target page, context or browser has been closed
+    cristo-rei (Cristo Rei) falhou: page.goto: Target page, context or browser has been closed
+    cabral (Cabral) falhou: page.goto: Target page, context or browser has been closed
+    centro-matriz (Centro, Matriz) falhou: page.goto: Target page, context or browser has been closed
+    sao-francisco (S├úo Francisco) falhou: page.goto: Target page, context or browser has been closed
+    batel: +100 new=71 ├║nicas=171 [teto]
+    centro-civico (Centro C├¡vico) falhou: page.goto: Target page, context or browser has been closed
+    merces (Merc├¬s) falhou: page.goto: Target page, context or browser has been closed
+    bom-retiro (Bom Retiro) falhou: page.goto: Target page, context or browser has been closed
+    alto-da-gloria (Alto da Gl├│ria) falhou: page.goto: Target page, context or browser has been closed
+    reboucas (Rebou├ºas) falhou: page.goto: Target page, context or browser has been closed
+    alto-da-xv (Alto da XV) falhou: page.goto: Target page, context or browser has been closed
+    agua-verde: +100 new=56 ├║nicas=227 [teto]
+    centro: +4 new=4 ├║nicas=231
+    bigorrilho: +100 new=38 ├║nicas=269 [teto]
+    portao: +100 new=73 ├║nicas=342 [teto]
+    santa-felicidade: +69 new=69 ├║nicas=411
+    cristo-rei: +8 new=8 ├║nicas=419
+    cabral: +100 new=100 ├║nicas=519 [teto]
+    centro-matriz: +3 new=3 ├║nicas=522
+    sao-francisco: +4 new=0 ├║nicas=522
+    centro-civico: +100 new=22 ├║nicas=544 [teto]
+    merces: +100 new=2 ├║nicas=546 [teto]
+    bom-retiro: +100 new=8 ├║nicas=554 [teto]
+    alto-da-gloria: +100 new=12 ├║nicas=566 [teto]
+    reboucas: +7 new=7 ├║nicas=573
+    alto-da-xv: +53 new=53 ├║nicas=626
+  [normal] 65435ms n=626 miss=7
+[9/5571] Recife-PE baseline=436 cat=0
+  teto 100 ÔåÆ 25 bairros (seed=8 extraidos=23)
+  tiling heur├¡stico: 25 bairro(s)
+    boa-viagem: +100 new=93 ├║nicas=193 [teto]
+  [short] 10001ms n=0 miss=436 err=timeout 10000ms: Recife-PE
+    casa-forte (Casa Forte) falhou: page.content: Target page, context or browser has been closed
+    espinheiro (Espinheiro) falhou: page.goto: Target page, context or browser has been closed
+  teto 100 ÔåÆ 25 bairros (seed=8 extraidos=23)
+  tiling heur├¡stico: 25 bairro(s)
+    gracas (Gra├ºas) falhou: page.goto: Target page, context or browser has been closed
+    pina (Pina) falhou: page.goto: Target page, context or browser has been closed
+    madalena (Madalena) falhou: page.goto: Target page, context or browser has been closed
+    boa-vista (Boa Vista) falhou: page.goto: Target page, context or browser has been closed
+    derby (Derby) falhou: page.goto: Target page, context or browser has been closed
+    santo-amaro (Santo Amaro) falhou: page.goto: Target page, context or browser has been closed
+    soledade (Soledade) falhou: page.goto: Target page, context or browser has been closed
+    boa-viagem: +100 new=93 ├║nicas=193 [teto]
+    campo-grande (Campo Grande) falhou: page.goto: Target page, context or browser has been closed
+    ilha-do-leite (Ilha do Leite) falhou: page.goto: Target page, context or browser has been closed
+    paissandu (Paissandu) falhou: page.goto: Target page, context or browser has been closed
+    hipodromo (Hip├│dromo) falhou: page.goto: Target page, context or browser has been closed
+    encruzilhada (Encruzilhada) falhou: page.goto: Target page, context or browser has been closed
+    casa-forte: +100 new=73 ├║nicas=266 [teto]
+    aflitos (Aflitos) falhou: page.goto: Target page, context or browser has been closed
+    beberibe (Beberibe) falhou: page.goto: Target page, context or browser has been closed
+    ilha-do-retiro (Ilha do Retiro) falhou: page.goto: Target page, context or browser has been closed
+    rosarinho (Rosarinho) falhou: page.goto: Target page, context or browser has been closed
+    arruda (Arruda) falhou: page.goto: Target page, context or browser has been closed
+    tamarineira (Tamarineira) falhou: page.goto: Target page, context or browser has been closed
+    torre (Torre) falhou: page.goto: Target page, context or browser has been closed
+    av-rui-barbosa-1860 (Av. Rui Barbosa, 1860) falhou: page.goto: Target page, context or browser has been closed
+    espinheiro: +42 new=42 ├║nicas=308
+    fundao (Fund├úo) falhou: page.goto: Target page, context or browser has been closed
+    prado (Prado) falhou: page.goto: Target page, context or browser has been closed
+    gracas: +100 new=1 ├║nicas=309 [teto]
+    pina: +100 new=6 ├║nicas=315 [teto]
+    madalena: +100 new=6 ├║nicas=321 [teto]
+    boa-vista: +4 new=4 ├║nicas=325
+    derby: +100 new=0 ├║nicas=325 [teto]
+    santo-amaro: +1 new=1 ├║nicas=326
+    soledade: +100 new=0 ├║nicas=326 [teto]
+    campo-grande: +100 new=5 ├║nicas=331 [teto]
+    ilha-do-leite: +100 new=1 ├║nicas=332 [teto]
+    paissandu: +100 new=0 ├║nicas=332 [teto]
+    hipodromo: +100 new=0 ├║nicas=332 [teto]
+    encruzilhada: +100 new=0 ├║nicas=332 [teto]
+    aflitos: +100 new=0 ├║nicas=332 [teto]
+    beberibe: +100 new=15 ├║nicas=347 [teto]
+    ilha-do-retiro: +100 new=3 ├║nicas=350 [teto]
+    rosarinho: +100 new=0 ├║nicas=350 [teto]
+    arruda: +100 new=0 ├║nicas=350 [teto]
+    tamarineira: +100 new=0 ├║nicas=350 [teto]
+    torre: +100 new=0 ├║nicas=350 [teto]
+    av-rui-barbosa-1860: +100 new=58 ├║nicas=408 [teto]
+    fundao: +100 new=0 ├║nicas=408 [teto]
+    prado: +4 new=4 ├║nicas=412
+  [normal] 107964ms n=412 miss=33
+[10/5571] Goi├ónia-GO baseline=465 cat=0
+  teto 100 ÔåÆ 27 bairros (seed=6 extraidos=23)
+  tiling heur├¡stico: 27 bairro(s)
+    setor-bueno: +100 new=52 ├║nicas=152 [teto]
+  [short] 10003ms n=0 miss=465 err=timeout 10000ms: Goi├ónia-GO
+    setor-marista (Setor Marista) falhou: page.goto: Target page, context or browser has been closed
+Call log:
+  - navigating to "https://wellhub.com/pt-br/search/go/setor-marista/?map=1", waiting until "domcontentloaded"
+
+    setor-oeste (Setor Oeste) falhou: page.goto: Target page, context or browser has been closed
+    jardim-goias (Jardim Goi├ís) falhou: page.goto: Target page, context or browser has been closed
+    setor-sul (Setor Sul) falhou: page.goto: Target page, context or browser has been closed
+    nova-suica (Nova Su├¡├ºa) falhou: page.goto: Target page, context or browser has been closed
+  teto 100 ÔåÆ 27 bairros (seed=6 extraidos=23)
+  tiling heur├¡stico: 27 bairro(s)
+    st-central (St. Central) falhou: page.goto: Target page, context or browser has been closed
+    st-sul (St. Sul) falhou: page.goto: Target page, context or browser has been closed
+    st-oeste (St. Oeste) falhou: page.goto: Target page, context or browser has been closed
+    setor-leste-universitario (Setor Leste Universit├írio) falhou: page.goto: Target page, context or browser has been closed
+    st-aeroporto (St. Aeroporto) falhou: page.goto: Target page, context or browser has been closed
+    st-marista (St. Marista) falhou: page.goto: Target page, context or browser has been closed
+    setor-bueno: +100 new=52 ├║nicas=152 [teto]
+    st-leste-vila-nova (St. Leste Vila Nova) falhou: page.goto: Target page, context or browser has been closed
+    centro (Centro) falhou: page.goto: Target page, context or browser has been closed
+    vila-colemar-natal-e-silva (Vila Colemar Natal e Silva) falhou: page.goto: Target page, context or browser has been closed
+    st-dos-funcionarios (St. dos Funcion├írios) falhou: page.goto: Target page, context or browser has been closed
+    vila-uniao (Vila Uniao) falhou: page.goto: Target page, context or browser has been closed
+    st-bueno (St. Bueno) falhou: page.goto: Target page, context or browser has been closed
+    setor-marista: +100 new=5 ├║nicas=157 [teto]
+    vila-nova (Vila Nova) falhou: page.goto: Target page, context or browser has been closed
+    st-mal-rondon (St. Mal. Rondon) falhou: page.goto: Target page, context or browser has been closed
+    centro-oeste (Centro Oeste) falhou: page.goto: Target page, context or browser has been closed
+    coimbra (Coimbra) falhou: page.goto: Target page, context or browser has been closed
+    jardim-novo-mundo (Jardim Novo Mundo) falhou: page.goto: Target page, context or browser has been closed
+    setor-negrao-de-lima (Setor Negr├úo de Lima) falhou: page.goto: Target page, context or browser has been closed
+    st-pedro-ludovico (St. Pedro Ludovico) falhou: page.goto: Target page, context or browser has been closed
+    vila-monticelli (Vila Monticelli) falhou: page.goto: Target page, context or browser has been closed
+    av-eng-correia-lima (Av. Eng. Correia Lima) falhou: page.goto: Target page, context or browser has been closed
+    setor-oeste: +100 new=5 ├║nicas=162 [teto]
+    jardim-goias: +100 new=15 ├║nicas=177 [teto]
+    setor-sul: +100 new=0 ├║nicas=177 [teto]
+    nova-suica: +95 new=95 ├║nicas=272
+    st-central: +95 new=0 ├║nicas=272
+    st-sul: +100 new=0 ├║nicas=272 [teto]
+    st-oeste: +100 new=0 ├║nicas=272 [teto]
+    setor-leste-universitario: +100 new=8 ├║nicas=280 [teto]
+    st-aeroporto: +100 new=9 ├║nicas=289 [teto]
+    st-marista: +100 new=0 ├║nicas=289 [teto]
+    st-leste-vila-nova: +100 new=7 ├║nicas=296 [teto]
+    centro: +19 new=19 ├║nicas=315
+    vila-colemar-natal-e-silva: +100 new=4 ├║nicas=319 [teto]
+    st-dos-funcionarios: +100 new=7 ├║nicas=326 [teto]
+    vila-uniao: +95 new=0 ├║nicas=326
+    st-bueno: +100 new=0 ├║nicas=326 [teto]
+    vila-nova: +41 new=41 ├║nicas=367
+    st-mal-rondon: +100 new=5 ├║nicas=372 [teto]
+    centro-oeste: +9 new=9 ├║nicas=381
+    coimbra: +59 new=59 ├║nicas=440
+    jardim-novo-mundo: +100 new=5 ├║nicas=445 [teto]
+    setor-negrao-de-lima: +100 new=12 ├║nicas=457 [teto]
+    st-pedro-ludovico: +100 new=9 ├║nicas=466 [teto]
+    vila-monticelli: +100 new=2 ├║nicas=468 [teto]
+    av-eng-correia-lima: +100 new=0 ├║nicas=468 [teto]
+  [normal] 118917ms n=468 miss=9
+  ­ƒÆ¥ checkpoint 10 loss_timeout=3
+[11/5571] Bel├®m-PA baseline=183 cat=0
+  teto 100 ÔåÆ 18 bairros (seed=6 extraidos=18)
+  tiling heur├¡stico: 18 bairro(s)
+    nazare: +100 new=2 ├║nicas=102 [teto]
+  [short] 10007ms n=0 miss=183 err=timeout 10000ms: Bel├®m-PA
+    umarizal (Umarizal) falhou: page.content: Target page, context or browser has been closed
+    batista-campos (Batista Campos) falhou: page.goto: Target page, context or browser has been closed
+  teto 100 ÔåÆ 18 bairros (seed=6 extraidos=18)
+  tiling heur├¡stico: 18 bairro(s)
+    reduto (Reduto) falhou: page.goto: Target page, context or browser has been closed
+    marco (Marco) falhou: page.goto: Target page, context or browser has been closed
+    sacramenta (Sacramenta) falhou: page.goto: Target page, context or browser has been closed
+    cidade-velha (Cidade Velha) falhou: page.goto: Target page, context or browser has been closed
+    campina (Campina) falhou: page.goto: Target page, context or browser has been closed
+    jurunas (Jurunas) falhou: page.goto: Target page, context or browser has been closed
+    nazare: +100 new=2 ├║nicas=102 [teto]
+    parque-verde (Parque Verde) falhou: page.goto: Target page, context or browser has been closed
+    cremacao (Crema├º├úo) falhou: page.goto: Target page, context or browser has been closed
+    sao-bras (S├úo Br├ís) falhou: page.goto: Target page, context or browser has been closed
+    condor (Condor) falhou: page.goto: Target page, context or browser has been closed
+    guama (Guam├í) falhou: page.goto: Target page, context or browser has been closed
+    telegrafo (Tel├®grafo) falhou: page.goto: Target page, context or browser has been closed
+    umarizal: +100 new=11 ├║nicas=113 [teto]
+    pedreira (Pedreira) falhou: page.goto: Target page, context or browser has been closed
+    fatima (F├ítima) falhou: page.goto: Target page, context or browser has been closed
+    canudos (Canudos) falhou: page.goto: Target page, context or browser has been closed
+  fallback geo grid @ -1.4550,-48.5023
+    batista-campos: +100 new=0 ├║nicas=113 [teto]
+    reduto: +100 new=0 ├║nicas=113 [teto]
+    marco: +100 new=10 ├║nicas=123 [teto]
+    sacramenta: +100 new=8 ├║nicas=131 [teto]
+    cidade-velha: +100 new=0 ├║nicas=131 [teto]
+    campina (Campina) falhou: sem academias em https://wellhub.com/pt-br/search/pa/campina/?map=1
+    jurunas: +100 new=0 ├║nicas=131 [teto]
+    parque-verde: +100 new=50 ├║nicas=181 [teto]
+    cremacao: +100 new=0 ├║nicas=181 [teto]
+    sao-bras: +100 new=0 ├║nicas=181 [teto]
+    condor: +100 new=0 ├║nicas=181 [teto]
+    guama: +100 new=0 ├║nicas=181 [teto]
+    telegrafo: +100 new=0 ├║nicas=181 [teto]
+    pedreira: +100 new=0 ├║nicas=181 [teto]
+    fatima: +100 new=0 ├║nicas=181 [teto]
+    canudos: +100 new=0 ├║nicas=181 [teto]
+  [normal] 107018ms n=181 miss=7
+[12/5571] Porto Alegre-RS baseline=647 cat=94
+  cat├ílogo 94 bairros ┬À passo cidade=100 ├║nicas=100
+  tiling exaustivo: 94 bairro(s)
+    aberta-dos-morros: +100 new=100 ├║nicas=200 [teto]
+    agronomia: +100 new=83 ├║nicas=283 [teto]
+  [short] 10003ms n=0 miss=647 err=timeout 10000ms: Porto Alegre-RS
+    anchieta (Anchieta) falhou: page.content: Target page, context or browser has been closed
+  cat├ílogo 94 bairros ┬À passo cidade=100 ├║nicas=100
+  tiling exaustivo: 94 bairro(s)
+    arquipelago (Arquip├®lago) falhou: page.goto: Target page, context or browser has been closed
+    auxiliadora (Auxiliadora) falhou: page.goto: Target page, context or browser has been closed
+    azenha (Azenha) falhou: page.goto: Target page, context or browser has been closed
+    bela-vista (Bela Vista) falhou: page.goto: Target page, context or browser has been closed
+    belem-novo (Bel├®m Novo) falhou: page.goto: Target page, context or browser has been closed
+    belem-velho (Bel├®m Velho) falhou: page.goto: Target page, context or browser has been closed
+    aberta-dos-morros: +100 new=100 ├║nicas=200 [teto]
+    boa-vista (Boa Vista) falhou: page.goto: Target page, context or browser has been closed
+    boa-vista-sul (Boa Vista do Sul) falhou: page.goto: Target page, context or browser has been closed
+    bom-jesus-porto-alegre (Bom Jesus) falhou: page.goto: Target page, context or browser has been closed
+    bomfim (Bom Fim) falhou: page.goto: Target page, context or browser has been closed
+    camaqua (Camaqu├ú) falhou: page.goto: Target page, context or browser has been closed
+    campo-novo-porto-alegre (Campo Novo) falhou: page.goto: Target page, context or browser has been closed
+    agronomia: +100 new=83 ├║nicas=283 [teto]
+    cascata (Cascata) falhou: page.goto: Target page, context or browser has been closed
+    cavalhada (Cavalhada) falhou: page.goto: Target page, context or browser has been closed
+    centro (Centro) falhou: page.goto: Target page, context or browser has been closed
+    chacara-das-pedras (Ch├ícara das Pedras) falhou: page.goto: Target page, context or browser has been closed
+    chapeu-do-sol (Chap├®u do Sol) falhou: page.goto: Target page, context or browser has been closed
+    cidade-baixa (Cidade Baixa) falhou: page.goto: Target page, context or browser has been closed
+    coronel-aparicio-borges (Coronel Apar├¡cio Borges) falhou: page.goto: Target page, context or browser has been closed
+    costa-e-silva-porto-alegre (Costa e Silva) falhou: page.goto: Target page, context or browser has been closed
+    cristal-porto-alegre (Cristal) falhou: page.goto: Target page, context or browser has been closed
+    anchieta: +100 new=100 ├║nicas=383 [teto]
+    cristo-redentor (Cristo Redentor) falhou: page.goto: Target page, context or browser has been closed
+    espirito-santo (Esp├¡rito Santo) falhou: page.goto: Target page, context or browser has been closed
+    extrema-porto-alegre (Extrema) falhou: page.goto: Target page, context or browser has been closed
+    farrapos (Farrapos) falhou: page.goto: Target page, context or browser has been closed
+    farroupilha (Farroupilha) falhou: page.goto: Target page, context or browser has been closed
+    floresta (Floresta) falhou: page.goto: Target page, context or browser has been closed
+    arquipelago: +100 new=31 ├║nicas=414 [teto]
+    gloria (Gl├│ria) falhou: page.goto: Target page, context or browser has been closed
+    guaruja (Guaruj├í) falhou: page.goto: Target page, context or browser has been closed
+    higienopolis (Higien├│polis) falhou: page.goto: Target page, context or browser has been closed
+    hipica (H├¡pica) falhou: page.goto: Target page, context or browser has been closed
+    humaita (Humait├í) falhou: page.goto: Target page, context or browser has been closed
+    independencia (Independ├¬ncia) falhou: page.goto: Target page, context or browser has been closed
+    auxiliadora: +26 new=26 ├║nicas=440
+    ipanema (Ipanema) falhou: page.goto: Target page, context or browser has been closed
+    jardim-botanico (Jardim Bot├ónico) falhou: page.goto: Target page, context or browser has been closed
+    jardim-carvalho (Jardim Carvalho) falhou: page.goto: Target page, context or browser has been closed
+    jardim-leopoldina (Jardim Leopoldina) falhou: page.goto: Target page, context or browser has been closed
+    jardim-floresta (Jardim Floresta) falhou: page.goto: Target page, context or browser has been closed
+    jardim-isabel (Jardim Isabel) falhou: page.goto: Target page, context or browser has been closed
+    azenha: +100 new=55 ├║nicas=495 [teto]
+    jardim-europa (Jardim Europa) falhou: page.goto: Target page, context or browser has been closed
+    jardim-itu (Jardim Itu) falhou: page.goto: Target page, context or browser has been closed
+    jardim-sabara (Jardim Sabar├í) falhou: page.goto: Target page, context or browser has been closed
+    jardim-lindoia (Jardim Lind├│ia) falhou: page.goto: Target page, context or browser has been closed
+    jardim-do-salso (Jardim do Salso) falhou: page.goto: Target page, context or browser has been closed
+    jardim-sao-pedro (Jardim S├úo Pedro) falhou: page.goto: Target page, context or browser has been closed
+    bela-vista: +21 new=0 ├║nicas=495
+    lageado (Lageado) falhou: page.goto: Target page, context or browser has been closed
+    lami (Lami) falhou: page.goto: Target page, context or browser has been closed
+    lomba-do-pinheiro (Lomba do Pinheiro) falhou: page.goto: Target page, context or browser has been closed
+    mario-quintana (M├írio Quintana) falhou: page.goto: Target page, context or browser has been closed
+    medianeira-porto-alegre (Medianeira) falhou: page.goto: Target page, context or browser has been closed
+    menino-deus (Menino Deus) falhou: page.goto: Target page, context or browser has been closed
+    moinhos-de-vento (Moinhos de Vento) falhou: page.goto: Target page, context or browser has been closed
+    mont-serrat (Mont'Serrat) falhou: page.goto: Target page, context or browser has been closed
+    morro-santana (Morro Santana) falhou: page.goto: Target page, context or browser has been closed
+    navegantes (Navegantes) falhou: page.goto: Target page, context or browser has been closed
+    belem-novo: +100 new=7 ├║nicas=502 [teto]
+    nonoai (Nonoai) falhou: page.goto: Target page, context or browser has been closed
+    parque-santa-fe (Parque Santa F├®) falhou: page.goto: Target page, context or browser has been closed
+    partenon (Partenon) falhou: page.goto: Target page, context or browser has been closed
+    passo-de-areia (Passo D'Areia) falhou: page.goto: Target page, context or browser has been closed
+    passo-das-pedras (Passo das Pedras) falhou: page.goto: Target page, context or browser has been closed
+    pedra-redonda (Pedra Redonda) falhou: page.goto: Target page, context or browser has been closed
+    belem-velho: +100 new=0 ├║nicas=502 [teto]
+    petropolis (Petr├│polis) falhou: page.goto: Target page, context or browser has been closed
+    pitinga (Pitinga) falhou: page.goto: Target page, context or browser has been closed
+    ponta-grossa (Ponta Grossa) falhou: page.goto: Target page, context or browser has been closed
+    praia-de-belas (Praia de Belas) falhou: page.goto: Target page, context or browser has been closed
+    restinga (Restinga) falhou: page.goto: Target page, context or browser has been closed
+    rio-branco (Rio Branco) falhou: page.goto: Target page, context or browser has been closed
+    boa-vista: +3 new=3 ├║nicas=505
+    rubem-berta (Rubem Berta) falhou: page.goto: Target page, context or browser has been closed
+    santa-cecilia (Santa Cec├¡lia) falhou: page.goto: Target page, context or browser has been closed
+    santa-maria-goretti (Santa Maria Goretti) falhou: page.goto: Target page, context or browser has been closed
+    santa-rosa-de-lima (Santa Rosa de Lima) falhou: page.goto: Target page, context or browser has been closed
+    santa-tereza (Santa Tereza) falhou: page.goto: Target page, context or browser has been closed
+    boa-vista-sul: +3 new=0 ├║nicas=505
+    santana-porto-alegre (Santana) falhou: page.goto: Target page, context or browser has been closed
+    santo-antonio (Santo Ant├┤nio) falhou: page.goto: Target page, context or browser has been closed
+    sao-caetano-porto-alegre (S├úo Caetano) falhou: page.goto: Target page, context or browser has been closed
+    sao-geraldo (S├úo Geraldo) falhou: page.goto: Target page, context or browser has been closed
+    sao-joao (S├úo Jo├úo) falhou: page.goto: Target page, context or browser has been closed
+    sao-sebastiao-porto-alegre (S├úo Sebasti├úo) falhou: page.goto: Target page, context or browser has been closed
+    sarandi (Sarandi) falhou: page.goto: Target page, context or browser has been closed
+    bom-jesus-porto-alegre: +100 new=32 ├║nicas=537 [teto]
+    serraria (Serraria) falhou: page.goto: Target page, context or browser has been closed
+    setimo-ceu (S├®timo C├®u) falhou: page.goto: Target page, context or browser has been closed
+    teresopolis (Teres├│polis) falhou: page.goto: Target page, context or browser has been closed
+    tres-figueiras (Tr├¬s Figueiras) falhou: page.goto: Target page, context or browser has been closed
+    tristeza (Tristeza) falhou: page.goto: Target page, context or browser has been closed
+    vila-assuncao (Vila Assun├º├úo) falhou: page.goto: Target page, context or browser has been closed
+    bomfim: +100 new=5 ├║nicas=542 [teto]
+    vila-conceicao-porto-alegre (Vila Concei├º├úo) falhou: page.goto: Target page, context or browser has been closed
+    vila-ipiranga (Vila Ipiranga) falhou: page.goto: Target page, context or browser has been closed
+    vila-jardim (Vila Jardim) falhou: page.goto: Target page, context or browser has been closed
+    vila-joao-pessoa (Vila Jo├úo Pessoa) falhou: page.goto: Target page, context or browser has been closed
+    vila-nova (Vila Nova) falhou: page.goto: Target page, context or browser has been closed
+    vila-sao-jose (Vila S├úo Jos├®) falhou: page.goto: Target page, context or browser has been closed
+    camaqua: +19 new=19 ├║nicas=561
+  2 bairro(s) no teto 100 ÔÇö considere sub-grid local
+    campo-novo-porto-alegre: +100 new=2 ├║nicas=563 [teto]
+    cascata: +21 new=0 ├║nicas=563
+    cavalhada: +100 new=0 ├║nicas=563 [teto]
+    centro: +85 new=85 ├║nicas=648
+    chacara-das-pedras: +100 new=22 ├║nicas=670 [teto]
+    chapeu-do-sol: +100 new=0 ├║nicas=670 [teto]
+    cidade-baixa: +2 new=1 ├║nicas=671
+    coronel-aparicio-borges: +100 new=0 ├║nicas=671 [teto]
+    costa-e-silva-porto-alegre: +100 new=24 ├║nicas=695 [teto]
+    cristal-porto-alegre: +100 new=0 ├║nicas=695 [teto]
+    cristo-redentor: +100 new=100 ├║nicas=795 [teto]
+    espirito-santo: +18 new=18 ├║nicas=813
+    extrema-porto-alegre: +36 new=8 ├║nicas=821
+    farrapos: +100 new=42 ├║nicas=863 [teto]
+    farroupilha: +39 new=19 ├║nicas=882
+    floresta: +19 new=0 ├║nicas=882
+    gloria: +31 new=25 ├║nicas=907
+    guaruja: +100 new=0 ├║nicas=907 [teto]
+    higienopolis: +100 new=4 ├║nicas=911 [teto]
+    hipica: +100 new=0 ├║nicas=911 [teto]
+    humaita: +10 new=10 ├║nicas=921
+    independencia: +2 new=2 ├║nicas=923
+    ipanema: +98 new=0 ├║nicas=923
+    jardim-botanico: +100 new=0 ├║nicas=923 [teto]
+    jardim-carvalho: +100 new=0 ├║nicas=923 [teto]
+    jardim-leopoldina: +100 new=59 ├║nicas=982 [teto]
+    jardim-floresta: +100 new=2 ├║nicas=984 [teto]
+    jardim-isabel: +100 new=0 ├║nicas=984 [teto]
+    jardim-europa: +55 new=55 ├║nicas=1039
+    jardim-itu: +100 new=14 ├║nicas=1053 [teto]
+    jardim-sabara: +100 new=0 ├║nicas=1053 [teto]
+    jardim-lindoia: +100 new=0 ├║nicas=1053 [teto]
+    jardim-do-salso: +100 new=0 ├║nicas=1053 [teto]
+    jardim-sao-pedro: +100 new=0 ├║nicas=1053 [teto]
+    lageado: +100 new=0 ├║nicas=1053 [teto]
+    lami: +18 new=0 ├║nicas=1053
+    lomba-do-pinheiro: +100 new=0 ├║nicas=1053 [teto]
+    mario-quintana: +100 new=0 ├║nicas=1053 [teto]
+    medianeira-porto-alegre: +100 new=0 ├║nicas=1053 [teto]
+    menino-deus: +100 new=0 ├║nicas=1053 [teto]
+    moinhos-de-vento: +100 new=0 ├║nicas=1053 [teto]
+    mont-serrat: +100 new=0 ├║nicas=1053 [teto]
+    morro-santana: +100 new=47 ├║nicas=1100 [teto]
+    navegantes: +1 new=1 ├║nicas=1101
+    nonoai: +1 new=1 ├║nicas=1102
+    parque-santa-fe: +22 new=22 ├║nicas=1124
+    partenon: +100 new=0 ├║nicas=1124 [teto]
+    passo-de-areia: +27 new=8 ├║nicas=1132
+    passo-das-pedras: +100 new=0 ├║nicas=1132 [teto]
+    pedra-redonda: +100 new=0 ├║nicas=1132 [teto]
+    petropolis: +100 new=1 ├║nicas=1133 [teto]
+    pitinga: +100 new=0 ├║nicas=1133 [teto]
+    ponta-grossa: +100 new=0 ├║nicas=1133 [teto]
+    praia-de-belas: +100 new=0 ├║nicas=1133 [teto]
+    restinga: +3 new=0 ├║nicas=1133
+    rio-branco: +100 new=17 ├║nicas=1150 [teto]
+    rubem-berta: +100 new=0 ├║nicas=1150 [teto]
+    santa-cecilia: +100 new=0 ├║nicas=1150 [teto]
+    santa-maria-goretti: +100 new=0 ├║nicas=1150 [teto]
+    santa-rosa-de-lima: +100 new=0 ├║nicas=1150 [teto]
+    santa-tereza: +2 new=2 ├║nicas=1152
+    santana-porto-alegre: +100 new=0 ├║nicas=1152 [teto]
+    santo-antonio: +3 new=0 ├║nicas=1152
+    sao-caetano-porto-alegre: +62 new=1 ├║nicas=1153
+    sao-geraldo: +13 new=13 ├║nicas=1166
+    sao-joao: +3 new=0 ├║nicas=1166
+    sao-sebastiao-porto-alegre: +100 new=0 ├║nicas=1166 [teto]
+    sarandi: +2 new=1 ├║nicas=1167
+    serraria: +100 new=0 ├║nicas=1167 [teto]
+    setimo-ceu: +100 new=0 ├║nicas=1167 [teto]
+    teresopolis: +100 new=0 ├║nicas=1167 [teto]
+    tres-figueiras: +100 new=0 ├║nicas=1167 [teto]
+    tristeza: +100 new=0 ├║nicas=1167 [teto]
+    vila-assuncao: +100 new=0 ├║nicas=1167 [teto]
+    vila-conceicao-porto-alegre: +100 new=0 ├║nicas=1167 [teto]
+    vila-ipiranga: +100 new=0 ├║nicas=1167 [teto]
+    vila-jardim: +9 new=9 ├║nicas=1176
+    vila-joao-pessoa: +100 new=0 ├║nicas=1176 [teto]
+    vila-nova: +3 new=0 ├║nicas=1176
+    vila-sao-jose: +100 new=0 ├║nicas=1176 [teto]
+  63 bairro(s) no teto 100 ÔÇö considere sub-grid local
+  [normal] 304417ms n=1176 miss=1
+[13/5571] Guarulhos-SP baseline=2365 cat=0
+  teto 100 ÔåÆ 35 bairros (seed=0 extraidos=35)
+  tiling heur├¡stico: 35 bairro(s)
+    centro: +100 new=100 ├║nicas=200 [teto]
+  [short] 10004ms n=0 miss=2365 err=timeout 10000ms: Guarulhos-SP
+    jardim-zaira (Jardim Zaira) falhou: page.content: Target page, context or browser has been closed
+    jardim-maia (Jardim Maia) falhou: page.goto: Target page, context or browser has been closed
+    jardim-gumercindo (Jardim Gumercindo) falhou: page.goto: Target page, context or browser has been closed
+    jardim-guarulhos (Jardim Guarulhos) falhou: page.goto: Target page, context or browser has been closed
+    jardim-sao-paulo (Jardim S├úo Paulo) falhou: page.goto: Target page, context or browser has been closed
+    vila-progresso (Vila Progresso) falhou: page.goto: Target page, context or browser has been closed
+  teto 100 ÔåÆ 35 bairros (seed=0 extraidos=35)
+  tiling heur├¡stico: 35 bairro(s)
+    macedo (Macedo) falhou: page.goto: Target page, context or browser has been closed
+    vila-hulda (Vila Hulda) falhou: page.goto: Target page, context or browser has been closed
+    vila-tijuco (Vila Tijuco) falhou: page.goto: Target page, context or browser has been closed
+    r-nadir-92 (R. Nadir, 92) falhou: page.goto: Target page, context or browser has been closed
+    vila-pedro-moreira (Vila Pedro Moreira) falhou: page.goto: Target page, context or browser has been closed
+    jardim-pinhal (Jardim Pinhal) falhou: page.goto: Target page, context or browser has been closed
+    jardim-paraventi (Jardim Paraventi) falhou: page.goto: Target page, context or browser has been closed
+    centro: +100 new=100 ├║nicas=200 [teto]
+    vila-moreira (Vila Moreira) falhou: page.goto: Target page, context or browser has been closed
+    gopouva (Gopouva) falhou: page.goto: Target page, context or browser has been closed
+    jardim-vila-galvao (Jardim Vila Galvao) falhou: page.goto: Target page, context or browser has been closed
+    jardim-madeirense (Jardim Madeirense) falhou: page.goto: Target page, context or browser has been closed
+    vila-sao-jorge (Vila Sao Jorge) falhou: page.goto: Target page, context or browser has been closed
+    parque-renato-maia (Parque Renato Maia) falhou: page.goto: Target page, context or browser has been closed
+    jardim-zaira: +100 new=100 ├║nicas=300 [teto]
+    vila-rachid (Vila Rachid) falhou: page.goto: Target page, context or browser has been closed
+    jardim-santa-edwirges (Jardim Santa Edwirges) falhou: page.goto: Target page, context or browser has been closed
+    vila-camargos (Vila Camargos) falhou: page.goto: Target page, context or browser has been closed
+    vila-das-palmeiras (Vila das Palmeiras) falhou: page.goto: Target page, context or browser has been closed
+    jardim-santa-mena (Jardim Santa Mena) falhou: page.goto: Target page, context or browser has been closed
+    vila-ristori (Vila Ristori) falhou: page.goto: Target page, context or browser has been closed
+    vila-maria-tereza (Vila Maria Tereza) falhou: page.goto: Target page, context or browser has been closed
+    jardim-santa-francisca (Jardim Santa Francisca) falhou: page.goto: Target page, context or browser has been closed
+    vila-sirena (Vila Sirena) falhou: page.goto: Target page, context or browser has been closed
+    jardim-maia: +100 new=100 ├║nicas=400 [teto]
+    jardim-sao-roberto (Jardim Sao Roberto) falhou: page.goto: Target page, context or browser has been closed
+    jardim-aida (Jardim Aida) falhou: page.goto: Target page, context or browser has been closed
+    vila-augusta (Vila Augusta) falhou: page.goto: Target page, context or browser has been closed
+    vila-leonor (Vila Leonor) falhou: page.goto: Target page, context or browser has been closed
+    jardim-santa-clara (Jardim Santa Clara) falhou: page.goto: Target page, context or browser has been closed
+    jardim-testae (Jardim Testae) falhou: page.goto: Target page, context or browser has been closed
+    jardim-gumercindo: +2 new=2 ├║nicas=402
+    jardim-guarulhos: +100 new=64 ├║nicas=466 [teto]
+    jardim-sao-paulo: +100 new=100 ├║nicas=566 [teto]
+    vila-progresso: +100 new=57 ├║nicas=623 [teto]
+    macedo: +100 new=33 ├║nicas=656 [teto]
+    vila-hulda: +100 new=100 ├║nicas=756 [teto]
+    vila-tijuco: +100 new=100 ├║nicas=856 [teto]
+    r-nadir-92: +100 new=22 ├║nicas=878 [teto]
+    vila-pedro-moreira: +100 new=100 ├║nicas=978 [teto]
+    jardim-pinhal: +100 new=33 ├║nicas=1011 [teto]
+    jardim-paraventi: +1 new=1 ├║nicas=1012
+    vila-moreira: +100 new=100 ├║nicas=1112 [teto]
+    gopouva: +100 new=7 ├║nicas=1119 [teto]
+    jardim-vila-galvao: +100 new=25 ├║nicas=1144 [teto]
+    jardim-madeirense: +100 new=100 ├║nicas=1244 [teto]
+    vila-sao-jorge: +45 new=45 ├║nicas=1289
+    parque-renato-maia: +100 new=94 ├║nicas=1383 [teto]
+    vila-rachid: +100 new=100 ├║nicas=1483 [teto]
+    jardim-santa-edwirges: +100 new=100 ├║nicas=1583 [teto]
+    vila-camargos: +100 new=100 ├║nicas=1683 [teto]
+    vila-das-palmeiras: +100 new=100 ├║nicas=1783 [teto]
+    jardim-santa-mena: +100 new=46 ├║nicas=1829 [teto]
+    vila-ristori: +100 new=4 ├║nicas=1833 [teto]
+    vila-maria-tereza: +2 new=2 ├║nicas=1835
+    jardim-santa-francisca: +100 new=100 ├║nicas=1935 [teto]
+    vila-sirena: +100 new=99 ├║nicas=2034 [teto]
+    jardim-sao-roberto: +100 new=100 ├║nicas=2134 [teto]
+    jardim-aida: +100 new=4 ├║nicas=2138 [teto]
+    vila-augusta: +100 new=0 ├║nicas=2138 [teto]
+    vila-leonor: +100 new=99 ├║nicas=2237 [teto]
+    jardim-santa-clara: +84 new=84 ├║nicas=2321
+    jardim-testae: +100 new=31 ├║nicas=2352 [teto]
+  [normal] 153816ms n=2352 miss=51
+[14/5571] Campinas-SP baseline=1525 cat=0
+  teto 100 ÔåÆ 24 bairros (seed=7 extraidos=20)
+  tiling heur├¡stico: 24 bairro(s)
+    cambui: +100 new=41 ├║nicas=141 [teto]
+  [short] 10000ms n=0 miss=1525 err=timeout 10000ms: Campinas-SP
+    nova-campinas (Nova Campinas) falhou: page.content: Target page, context or browser has been closed
+  teto 100 ÔåÆ 24 bairros (seed=7 extraidos=20)
+  tiling heur├¡stico: 24 bairro(s)
+    taquaral (Taquaral) falhou: page.goto: Target page, context or browser has been closed
+    barao-geraldo (Bar├úo Geraldo) falhou: page.goto: Target page, context or browser has been closed
+    centro (Centro) falhou: page.goto: Target page, context or browser has been closed
+    guanabara (Guanabara) falhou: page.goto: Target page, context or browser has been closed
+    jardim-aurelia (Jardim Aur├®lia) falhou: page.goto: Target page, context or browser has been closed
+    vila-industrial (Vila Industrial) falhou: page.goto: Target page, context or browser has been closed
+    cambui: +100 new=41 ├║nicas=141 [teto]
+    vila-industrial-campinas (Vila Industrial (Campinas)) falhou: page.goto: Target page, context or browser has been closed
+    conceicao (Conceicao) falhou: page.goto: Target page, context or browser has been closed
+    vila-joao-jorge (Vila Joao Jorge) falhou: page.goto: Target page, context or browser has been closed
+    vila-itapura (Vila Itapura) falhou: page.goto: Target page, context or browser has been closed
+    botafogo (Botafogo) falhou: page.goto: Target page, context or browser has been closed
+    vila-lidia (Vila Lidia) falhou: page.goto: Target page, context or browser has been closed
+    nova-campinas: +100 new=29 ├║nicas=170 [teto]
+    bosque (Bosque) falhou: page.goto: Target page, context or browser has been closed
+    pte-preta (Pte. Preta) falhou: page.goto: Target page, context or browser has been closed
+    jardim-guanabara (Jardim Guanabara) falhou: page.goto: Target page, context or browser has been closed
+    jardim-primavera (Jardim Primavera) falhou: page.goto: Target page, context or browser has been closed
+    ponte-preta (Ponte Preta) falhou: page.goto: Target page, context or browser has been closed
+    vila-andrade-neves (Vila Andrade Neves) falhou: page.goto: Target page, context or browser has been closed
+    jardim-leonor (Jardim Leonor) falhou: page.goto: Target page, context or browser has been closed
+    vila-angelino-rossi (Vila Angelino Rossi) falhou: page.goto: Target page, context or browser has been closed
+    taquaral: +11 new=11 ├║nicas=181
+    vila-marieta (Vila Marieta) falhou: page.goto: Target page, context or browser has been closed
+    vila-maria (Vila Maria) falhou: page.goto: Target page, context or browser has been closed
+    barao-geraldo: +100 new=100 ├║nicas=281 [teto]
+    centro: +100 new=100 ├║nicas=381 [teto]
+    guanabara: +94 new=94 ├║nicas=475
+    jardim-aurelia: +100 new=91 ├║nicas=566 [teto]
+    vila-industrial: +100 new=100 ├║nicas=666 [teto]
+    vila-industrial-campinas: +100 new=3 ├║nicas=669 [teto]
+    conceicao: +100 new=100 ├║nicas=769 [teto]
+    vila-joao-jorge: +99 new=16 ├║nicas=785
+    vila-itapura: +100 new=16 ├║nicas=801 [teto]
+    botafogo: +100 new=3 ├║nicas=804 [teto]
+    vila-lidia: +100 new=18 ├║nicas=822 [teto]
+    bosque: +100 new=0 ├║nicas=822 [teto]
+    pte-preta: +100 new=100 ├║nicas=922 [teto]
+    jardim-guanabara: +100 new=100 ├║nicas=1022 [teto]
+    jardim-primavera: +100 new=100 ├║nicas=1122 [teto]
+    ponte-preta: +100 new=10 ├║nicas=1132 [teto]
+    vila-andrade-neves: +100 new=6 ├║nicas=1138 [teto]
+    jardim-leonor: +100 new=100 ├║nicas=1238 [teto]
+    vila-angelino-rossi: +100 new=100 ├║nicas=1338 [teto]
+    vila-marieta: +100 new=100 ├║nicas=1438 [teto]
+    vila-maria: +100 new=99 ├║nicas=1537 [teto]
+  [normal] 104205ms n=1537 miss=22
+[15/5571] S├úo Lu├¡s-MA baseline=253 cat=0
+  teto 100 ÔåÆ 45 bairros (seed=0 extraidos=47)
+  tiling heur├¡stico: 45 bairro(s)
+  [short] 10007ms n=0 miss=253 err=timeout 10000ms: S├úo Lu├¡s-MA
+    centro (Centro) falhou: page.content: Target page, context or browser has been closed
+  teto 100 ÔåÆ 45 bairros (seed=0 extraidos=47)
+  tiling heur├¡stico: 45 bairro(s)
+    belira (Belira) falhou: page.goto: Target page, context or browser has been closed
+    jardim-sao-francisco (Jardim Sao Francisco) falhou: page.goto: Target page, context or browser has been closed
+    fatima (Fatima) falhou: page.goto: Target page, context or browser has been closed
+    vila-maranhao (Vila Maranh├úo) falhou: page.goto: Target page, context or browser has been closed
+    jardim-renascenca (Jardim Renascenca) falhou: page.goto: Target page, context or browser has been closed
+    sao-francisco (S├úo Francisco) falhou: page.goto: Target page, context or browser has been closed
+    jaracaty (Jaracaty) falhou: page.goto: Target page, context or browser has been closed
+    monte-castelo (Monte Castelo) falhou: page.goto: Target page, context or browser has been closed
+    ponta-d-areia (Ponta D'areia) falhou: page.goto: Target page, context or browser has been closed
+    vila-ivar-saldanha (Vila Ivar Saldanha) falhou: page.goto: Target page, context or browser has been closed
+    recanto-dos-vinhais (Recanto dos Vinhais) falhou: page.goto: Target page, context or browser has been closed
+    alemanha (Alemanha) falhou: page.goto: Target page, context or browser has been closed
+    recanto-vinhais (Recanto Vinhais) falhou: page.goto: Target page, context or browser has been closed
+    coroado (Coroado) falhou: page.goto: Target page, context or browser has been closed
+    renascenca-ii (Renascen├ºa II) falhou: page.goto: Target page, context or browser has been closed
+    sao-raimundo (S├úo Raimundo) falhou: page.goto: Target page, context or browser has been closed
+    alto-do-calhau (Alto do Calhau) falhou: page.goto: Target page, context or browser has been closed
+    cohafuma (Cohafuma) falhou: page.goto: Target page, context or browser has been closed
+    av-dos-holandeses-qda-32 (Av. dos Holandeses, QDA.32) falhou: page.goto: Target page, context or browser has been closed
+    vila-palmeira (Vila Palmeira) falhou: page.goto: Target page, context or browser has been closed
+    calhau (Calhau) falhou: page.goto: Target page, context or browser has been closed
+    vinhais (Vinhais) falhou: page.goto: Target page, context or browser has been closed
+    cohama (Cohama) falhou: page.goto: Target page, context or browser has been closed
+    planalto-vinhais-i (Planalto Vinhais I) falhou: page.goto: Target page, context or browser has been closed
+    anjo-da-guarda (Anjo da Guarda) falhou: page.goto: Target page, context or browser has been closed
+    bequimao (Bequim├úo) falhou: page.goto: Target page, context or browser has been closed
+    radional (Radional) falhou: page.goto: Target page, context or browser has been closed
+    sacavem (Sacav├®m) falhou: page.goto: Target page, context or browser has been closed
+    salina-do-sacavem (Salina do Sacav├®m) falhou: page.goto: Target page, context or browser has been closed
+    cutim-anil (Cutim Anil) falhou: page.goto: Target page, context or browser has been closed
+    ltm-rec-nobres (Ltm Rec Nobres) falhou: page.goto: Target page, context or browser has been closed
+    cohaserma-ii (Cohaserma II) falhou: page.goto: Target page, context or browser has been closed
+    cantinho-do-ceu (Cantinho do C├®u) falhou: page.goto: Target page, context or browser has been closed
+    parque-athenas (Parque Athenas) falhou: page.goto: Target page, context or browser has been closed
+    quintas-do-calhau (Quintas do Calhau) falhou: page.goto: Target page, context or browser has been closed
+    angelim (Angelim) falhou: page.goto: Target page, context or browser has been closed
+    parque-atlantico (Parque Atlantico) falhou: page.goto: Target page, context or browser has been closed
+    vila-vicente-fialho (Vila Vicente Fialho) falhou: page.goto: Target page, context or browser has been closed
+    cohajap (Cohajap) falhou: page.goto: Target page, context or browser has been closed
+    parque-shalon (Parque Shalon) falhou: page.goto: Target page, context or browser has been closed
+    olho-d-agua (Olho D'agua) falhou: page.goto: Target page, context or browser has been closed
+    jardim-eldorado (Jardim Eldorado) falhou: page.goto: Target page, context or browser has been closed
+    joao-de-deus (Jo├úo de Deus) falhou: page.goto: Target page, context or browser has been closed
+    turu (Turu) falhou: page.goto: Target page, context or browser has been closed
+  fallback geo grid @ -2.5295,-44.2969
+    centro (Centro) falhou: sem academias em https://wellhub.com/pt-br/search/ma/centro/?map=1
+    belira: +100 new=72 ├║nicas=172 [teto]
+    jardim-sao-francisco: +21 new=21 ├║nicas=193
+    fatima: +100 new=5 ├║nicas=198 [teto]
+    vila-maranhao: +100 new=18 ├║nicas=216 [teto]
+    jardim-renascenca: +55 new=2 ├║nicas=218
+    sao-francisco: +100 new=0 ├║nicas=218 [teto]
+    jaracaty: +100 new=0 ├║nicas=218 [teto]
+    monte-castelo: +100 new=0 ├║nicas=218 [teto]
+    ponta-d-areia: +100 new=0 ├║nicas=218 [teto]
+    vila-ivar-saldanha: +3 new=3 ├║nicas=221
+    recanto-dos-vinhais: +100 new=0 ├║nicas=221 [teto]
+    alemanha: +100 new=0 ├║nicas=221 [teto]
+    recanto-vinhais: +100 new=0 ├║nicas=221 [teto]
+    coroado: +100 new=0 ├║nicas=221 [teto]
+    renascenca-ii: +100 new=0 ├║nicas=221 [teto]
+    sao-raimundo: +100 new=0 ├║nicas=221 [teto]
+    alto-do-calhau: +100 new=0 ├║nicas=221 [teto]
+    cohafuma: +100 new=0 ├║nicas=221 [teto]
+    av-dos-holandeses-qda-32: +100 new=0 ├║nicas=221 [teto]
+    vila-palmeira: +100 new=0 ├║nicas=221 [teto]
+    calhau: +100 new=0 ├║nicas=221 [teto]
+    vinhais: +100 new=0 ├║nicas=221 [teto]
+    cohama: +100 new=0 ├║nicas=221 [teto]
+    planalto-vinhais-i: +100 new=0 ├║nicas=221 [teto]
+    anjo-da-guarda: +100 new=0 ├║nicas=221 [teto]
+    bequimao (Bequim├úo) falhou: sem academias em https://wellhub.com/pt-br/search/ma/bequimao/?map=1
+  [normal] 180000ms n=0 miss=253 err=timeout 180000ms: S├úo Lu├¡s-MA
+[16/5571] Macei├│-AL baseline=147 cat=0
+    radional (Radional) falhou: page.content: Target page, context or browser has been closed
+    sacavem (Sacav├®m) falhou: page.goto: Target page, context or browser has been closed
+    salina-do-sacavem (Salina do Sacav├®m) falhou: page.goto: Target page, context or browser has been closed
+    cutim-anil (Cutim Anil) falhou: page.goto: Target page, context or browser has been closed
+    ltm-rec-nobres (Ltm Rec Nobres) falhou: page.goto: Target page, context or browser has been closed
+    cohaserma-ii (Cohaserma II) falhou: page.goto: Target page, context or browser has been closed
+    cantinho-do-ceu (Cantinho do C├®u) falhou: page.goto: Target page, context or browser has been closed
+    parque-athenas (Parque Athenas) falhou: page.goto: Target page, context or browser has been closed
+  teto 100 ÔåÆ 23 bairros (seed=0 extraidos=24)
+  tiling heur├¡stico: 23 bairro(s)
+    quintas-do-calhau (Quintas do Calhau) falhou: page.goto: Target page, context or browser has been closed
+    angelim (Angelim) falhou: page.goto: Target page, context or browser has been closed
+    parque-atlantico (Parque Atlantico) falhou: page.goto: Target page, context or browser has been closed
+    vila-vicente-fialho (Vila Vicente Fialho) falhou: page.goto: Target page, context or browser has been closed
+    cohajap (Cohajap) falhou: page.goto: Target page, context or browser has been closed
+    parque-shalon (Parque Shalon) falhou: page.goto: Target page, context or browser has been closed
+    olho-d-agua (Olho D'agua) falhou: page.goto: Target page, context or browser has been closed
+    farol: +100 new=2 ├║nicas=102 [teto]
+    jardim-eldorado (Jardim Eldorado) falhou: page.goto: Target page, context or browser has been closed
+    joao-de-deus (Jo├úo de Deus) falhou: page.goto: Target page, context or browser has been closed
+    turu (Turu) falhou: page.goto: Target page, context or browser has been closed
+  [short] 10002ms n=0 miss=147 err=timeout 10000ms: Macei├│-AL
+    jaragua (Jaragu├í) falhou: page.content: Target page, context or browser has been closed
+    poco (Po├ºo) falhou: page.goto: Target page, context or browser has been closed
+  teto 100 ÔåÆ 23 bairros (seed=0 extraidos=24)
+  tiling heur├¡stico: 23 bairro(s)
+    levada (Levada) falhou: page.goto: Target page, context or browser has been closed
+    prado (Prado) falhou: page.goto: Target page, context or browser has been closed
+    ponta-grossa (Ponta Grossa) falhou: page.goto: Target page, context or browser has been closed
+    ponta-da-terra (Ponta da Terra) falhou: page.goto: Target page, context or browser has been closed
+    pajucara (Paju├ºara) falhou: page.goto: Target page, context or browser has been closed
+    garca-torta (Gar├ºa Torta) falhou: page.goto: Target page, context or browser has been closed
+    trapiche-da-barra (Trapiche da Barra) falhou: page.goto: Target page, context or browser has been closed
+    farol: +100 new=2 ├║nicas=102 [teto]
+    jatiuca (Jati├║ca) falhou: page.goto: Target page, context or browser has been closed
+    av-dr-antonio-gouveia (Av. Dr. Ant├┤nio Gouveia) falhou: page.goto: Target page, context or browser has been closed
+    feitosa (Feitosa) falhou: page.goto: Target page, context or browser has been closed
+    jacintinho (Jacintinho) falhou: page.goto: Target page, context or browser has been closed
+    ponta-verde (Ponta Verde) falhou: page.goto: Target page, context or browser has been closed
+    mangabeiras (Mangabeiras) falhou: page.goto: Target page, context or browser has been closed
+    jaragua: +100 new=1 ├║nicas=103 [teto]
+    pitanguinha (Pitanguinha) falhou: page.goto: Target page, context or browser has been closed
+    gruta-de-lourdes (Gruta de Lourdes) falhou: page.goto: Target page, context or browser has been closed
+    barro-duro (Barro Duro) falhou: page.goto: Target page, context or browser has been closed
+    cruz-das-almas (Cruz das Almas) falhou: page.goto: Target page, context or browser has been closed
+    cha-de-bebedouro (Ch├ú de Bebedouro) falhou: page.goto: Target page, context or browser has been closed
+    serraria (Serraria) falhou: page.goto: Target page, context or browser has been closed
+    sao-jorge (S├úo Jorge) falhou: page.goto: Target page, context or browser has been closed
+  fallback geo grid @ -9.6652,-35.7357
+    poco: +100 new=0 ├║nicas=103 [teto]
+    levada: +100 new=2 ├║nicas=105 [teto]
+    prado: +100 new=0 ├║nicas=105 [teto]
+    ponta-grossa: +100 new=0 ├║nicas=105 [teto]
+    ponta-da-terra: +100 new=0 ├║nicas=105 [teto]
+    pajucara: +100 new=0 ├║nicas=105 [teto]
+    garca-torta: +100 new=21 ├║nicas=126 [teto]
+    trapiche-da-barra: +100 new=1 ├║nicas=127 [teto]
+    jatiuca: +100 new=0 ├║nicas=127 [teto]
+    av-dr-antonio-gouveia: +100 new=0 ├║nicas=127 [teto]
+    feitosa: +100 new=0 ├║nicas=127 [teto]
+    jacintinho: +100 new=0 ├║nicas=127 [teto]
+    ponta-verde: +100 new=0 ├║nicas=127 [teto]
+    mangabeiras: +100 new=0 ├║nicas=127 [teto]
+    pitanguinha: +100 new=0 ├║nicas=127 [teto]
+    gruta-de-lourdes: +100 new=14 ├║nicas=141 [teto]
+    barro-duro: +100 new=0 ├║nicas=141 [teto]
+    cruz-das-almas: +100 new=0 ├║nicas=141 [teto]
+    cha-de-bebedouro: +100 new=7 ├║nicas=148 [teto]
+    serraria: +100 new=0 ├║nicas=148 [teto]
+    sao-jorge: +100 new=0 ├║nicas=148 [teto]
+  [normal] 101952ms n=148 miss=0
+[17/5571] S├úo Gon├ºalo-RJ baseline=869 cat=0
+  teto 100 ÔåÆ 31 bairros (seed=0 extraidos=31)
+  tiling heur├¡stico: 31 bairro(s)
+    porto-da-pedra: +100 new=5 ├║nicas=105 [teto]
+  [short] 10009ms n=0 miss=869 err=timeout 10000ms: S├úo Gon├ºalo-RJ
+    camarao (Camar├úo) falhou: page.content: Target page, context or browser has been closed
+    centro (Centro) falhou: page.goto: Target page, context or browser has been closed
+  teto 100 ÔåÆ 31 bairros (seed=0 extraidos=31)
+  tiling heur├¡stico: 31 bairro(s)
+    parada-40 (Parada 40) falhou: page.goto: Target page, context or browser has been closed
+    boacu (Boa├ºu) falhou: page.goto: Target page, context or browser has been closed
+    patronato (Patronato) falhou: page.goto: Target page, context or browser has been closed
+    parada-quarenta (Parada Quarenta) falhou: page.goto: Target page, context or browser has been closed
+    porto-da-pedra: +100 new=5 ├║nicas=105 [teto]
+    porto-novo (Porto Novo) falhou: page.goto: Target page, context or browser has been closed
+    boa-vista (Boa Vista) falhou: page.goto: Target page, context or browser has been closed
+    neves (Neves) falhou: page.goto: Target page, context or browser has been closed
+    lindo-parque (Lindo Parque) falhou: page.goto: Target page, context or browser has been closed
+    santa-catarina (Santa Catarina) falhou: page.goto: Target page, context or browser has been closed
+    barro-vermelho (Barro Vermelho) falhou: page.goto: Target page, context or browser has been closed
+    camarao: +100 new=1 ├║nicas=106 [teto]
+    estrela-do-norte (Estrela do Norte) falhou: page.goto: Target page, context or browser has been closed
+    mutua (Mutua) falhou: page.goto: Target page, context or browser has been closed
+    rocha (Rocha) falhou: page.goto: Target page, context or browser has been closed
+    sao-miguel (S├úo Miguel) falhou: page.goto: Target page, context or browser has been closed
+    paraiso (Para├¡so) falhou: page.goto: Target page, context or browser has been closed
+    centro: +100 new=100 ├║nicas=206 [teto]
+    gradim (Gradim) falhou: page.goto: Target page, context or browser has been closed
+    galo-branco (Galo Branco) falhou: page.goto: Target page, context or browser has been closed
+    porto-do-rosa (Porto do Rosa) falhou: page.goto: Target page, context or browser has been closed
+    porto-velho (Porto Velho) falhou: page.goto: Target page, context or browser has been closed
+    mutuapira (Mutuapira) falhou: page.goto: Target page, context or browser has been closed
+    nova-cidade (Nova Cidade) falhou: page.goto: Target page, context or browser has been closed
+    mutondo (Mutondo) falhou: page.goto: Target page, context or browser has been closed
+    piao (Pi├úo) falhou: page.goto: Target page, context or browser has been closed
+    sete-pontes (Sete Pontes) falhou: page.goto: Target page, context or browser has been closed
+    parada-40: +100 new=100 ├║nicas=306 [teto]
+    trindade (Trindade) falhou: page.goto: Target page, context or browser has been closed
+    itauna (Ita├║na) falhou: page.goto: Target page, context or browser has been closed
+    colubande (Coluband├¬) falhou: page.goto: Target page, context or browser has been closed
+    covanca (Covanca) falhou: page.goto: Target page, context or browser has been closed
+  fallback geo grid @ -22.8235,-43.0589
+    boacu: +100 new=15 ├║nicas=321 [teto]
+    patronato: +100 new=11 ├║nicas=332 [teto]
+    parada-quarenta: +100 new=0 ├║nicas=332 [teto]
+    porto-novo: +100 new=0 ├║nicas=332 [teto]
+    boa-vista: +23 new=23 ├║nicas=355
+    neves: +100 new=45 ├║nicas=400 [teto]
+    lindo-parque: +100 new=8 ├║nicas=408 [teto]
+    santa-catarina: +100 new=100 ├║nicas=508 [teto]
+    barro-vermelho: +100 new=0 ├║nicas=508 [teto]
+    estrela-do-norte: +100 new=10 ├║nicas=518 [teto]
+    mutua: +100 new=0 ├║nicas=518 [teto]
+    rocha: +100 new=100 ├║nicas=618 [teto]
+    sao-miguel: +100 new=100 ├║nicas=718 [teto]
+    paraiso: +10 new=10 ├║nicas=728
+    gradim: +100 new=0 ├║nicas=728 [teto]
+    galo-branco: +100 new=6 ├║nicas=734 [teto]
+    porto-do-rosa: +100 new=6 ├║nicas=740 [teto]
+    porto-velho: +100 new=0 ├║nicas=740 [teto]
+    mutuapira: +100 new=6 ├║nicas=746 [teto]
+    nova-cidade: +93 new=1 ├║nicas=747
+    mutondo: +100 new=16 ├║nicas=763 [teto]
+    piao: +100 new=100 ├║nicas=863 [teto]
+    sete-pontes: +100 new=4 ├║nicas=867 [teto]
+    trindade: +100 new=0 ├║nicas=867 [teto]
+    itauna: +100 new=0 ├║nicas=867 [teto]
+    colubande: +100 new=3 ├║nicas=870 [teto]
+    covanca: +100 new=2 ├║nicas=872 [teto]
+  [normal] 130067ms n=872 miss=15
+[18/5571] Campo Grande-MS baseline=453 cat=0
+  teto 100 ÔåÆ 44 bairros (seed=0 extraidos=44)
+  tiling heur├¡stico: 44 bairro(s)
+    vila-alba: +47 new=47 ├║nicas=147
+  [short] 10006ms n=0 miss=453 err=timeout 10000ms: Campo Grande-MS
+    jardim-ima (Jardim Ima) falhou: page.content: Target page, context or browser has been closed
+    vila-palmira (Vila Palmira) falhou: page.goto: Target page, context or browser has been closed
+    santo-antonio (Santo Antonio) falhou: page.goto: Target page, context or browser has been closed
+  teto 100 ÔåÆ 44 bairros (seed=0 extraidos=44)
+  tiling heur├¡stico: 44 bairro(s)
+    vila-almeida (Vila Almeida) falhou: page.goto: Target page, context or browser has been closed
+    vila-planalto (Vila Planalto) falhou: page.goto: Target page, context or browser has been closed
+    vila-sobrinho (Vila Sobrinho) falhou: page.goto: Target page, context or browser has been closed
+    sao-francisco (S├úo Francisco) falhou: page.goto: Target page, context or browser has been closed
+    coophasul (Coophasul) falhou: page.goto: Target page, context or browser has been closed
+    vila-alba: +47 new=47 ├║nicas=147
+    amambai (Amambai) falhou: page.goto: Target page, context or browser has been closed
+    centro (Centro) falhou: page.goto: Target page, context or browser has been closed
+    barbosa-3027 (Barbosa 3027) falhou: page.goto: Target page, context or browser has been closed
+    vila-taveiropolis (Vila Taveiropolis) falhou: page.goto: Target page, context or browser has been closed
+    vila-carvalho (Vila Carvalho) falhou: page.goto: Target page, context or browser has been closed
+    vila-nasser (Vila Nasser) falhou: page.goto: Target page, context or browser has been closed
+    monte-castelo (Monte Castelo) falhou: page.goto: Target page, context or browser has been closed
+    vila-rosa-pires (Vila Rosa Pires) falhou: page.goto: Target page, context or browser has been closed
+    jardim-ima: +7 new=7 ├║nicas=154
+    vila-bandeirante (Vila Bandeirante) falhou: page.goto: Target page, context or browser has been closed
+    vila-nova-campo-grande (Vila Nova Campo Grande) falhou: page.goto: Target page, context or browser has been closed
+    res-oliveira (Res. Oliveira) falhou: page.goto: Target page, context or browser has been closed
+    cruzeiro (Cruzeiro) falhou: page.goto: Target page, context or browser has been closed
+    parque-res-uniao (Parque Res. Uniao) falhou: page.goto: Target page, context or browser has been closed
+    jardim-dos-estados (Jardim dos Estados) falhou: page.goto: Target page, context or browser has been closed
+    cel-antonino (Cel. Antonino) falhou: page.goto: Target page, context or browser has been closed
+    vila-gloria (Vila Gloria) falhou: page.goto: Target page, context or browser has been closed
+    vila-rica (Vila Rica) falhou: page.goto: Target page, context or browser has been closed
+    vila-palmira: +100 new=8 ├║nicas=162 [teto]
+    vila-celia (Vila C├®lia) falhou: page.goto: Target page, context or browser has been closed
+    jardim-sao-bento (Jardim Sao Bento) falhou: page.goto: Target page, context or browser has been closed
+    vila-antonio-vendas (Vila Antonio Vendas) falhou: page.goto: Target page, context or browser has been closed
+    guanandi (Guanandi) falhou: page.goto: Target page, context or browser has been closed
+    jardim-jacy (Jardim Jacy) falhou: page.goto: Target page, context or browser has been closed
+    monte-libano (Monte L├¡bano) falhou: page.goto: Target page, context or browser has been closed
+    itanhanga-park (Itanhang├í Park) falhou: page.goto: Target page, context or browser has been closed
+    vila-gomes (Vila Gomes) falhou: page.goto: Target page, context or browser has been closed
+    jardim-joquei-club (Jardim Joquei Club) falhou: page.goto: Target page, context or browser has been closed
+    santo-antonio: +100 new=7 ├║nicas=169 [teto]
+    nucleo-hab-buriti (Nucleo Hab. Buriti) falhou: page.goto: Target page, context or browser has been closed
+    autonomista (Autonomista) falhou: page.goto: Target page, context or browser has been closed
+    vila-santa-dorotheia (Vila Santa Dorotheia) falhou: page.goto: Target page, context or browser has been closed
+    jardim-monte-libano (Jardim Monte Libano) falhou: page.goto: Target page, context or browser has been closed
+    vila-piratininga (Vila Piratininga) falhou: page.goto: Target page, context or browser has been closed
+    jardim-paulista (Jardim Paulista) falhou: page.goto: Target page, context or browser has been closed
+    santa-fe (Santa Fe) falhou: page.goto: Target page, context or browser has been closed
+    jardim-autonomista (Jardim Autonomista) falhou: page.goto: Target page, context or browser has been closed
+    vila-manoel-da-costa-lima (Vila Manoel da Costa Lima) falhou: page.goto: Target page, context or browser has been closed
+    vila-almeida: +45 new=0 ├║nicas=169
+    vila-planalto: +47 new=0 ├║nicas=169
+    vila-sobrinho: +2 new=2 ├║nicas=171
+    sao-francisco: +100 new=20 ├║nicas=191 [teto]
+    coophasul: +100 new=5 ├║nicas=196 [teto]
+    amambai: +8 new=8 ├║nicas=204
+    centro (Centro) falhou: sem academias em https://wellhub.com/pt-br/search/ms/centro/?map=1
+    barbosa-3027: +100 new=8 ├║nicas=212 [teto]
+    vila-taveiropolis: +100 new=6 ├║nicas=218 [teto]
+    vila-carvalho: +100 new=9 ├║nicas=227 [teto]
+    vila-nasser: +100 new=1 ├║nicas=228 [teto]
+    monte-castelo: +100 new=7 ├║nicas=235 [teto]
+    vila-rosa-pires: +100 new=4 ├║nicas=239 [teto]
+    vila-bandeirante: +10 new=10 ├║nicas=249
+    vila-nova-campo-grande: +100 new=11 ├║nicas=260 [teto]
+    res-oliveira: +2 new=2 ├║nicas=262
+    cruzeiro: +100 new=0 ├║nicas=262 [teto]
+    parque-res-uniao: +100 new=100 ├║nicas=362 [teto]
+    jardim-dos-estados: +100 new=0 ├║nicas=362 [teto]
+    cel-antonino: +100 new=0 ├║nicas=362 [teto]
+    vila-gloria: +1 new=1 ├║nicas=363
+    vila-rica: +2 new=0 ├║nicas=363
+    vila-celia: +6 new=6 ├║nicas=369
+    jardim-sao-bento: +19 new=0 ├║nicas=369
+    vila-antonio-vendas: +100 new=6 ├║nicas=375 [teto]
+    guanandi: +100 new=27 ├║nicas=402 [teto]
+    jardim-jacy: +5 new=5 ├║nicas=407
+    monte-libano: +100 new=0 ├║nicas=407 [teto]
+    itanhanga-park: +100 new=0 ├║nicas=407 [teto]
+    vila-gomes: +49 new=49 ├║nicas=456
+    jardim-joquei-club: +45 new=0 ├║nicas=456
+  [normal] 180011ms n=0 miss=453 err=timeout 180000ms: Campo Grande-MS
+[19/5571] Teresina-PI baseline=84 cat=0
+    nucleo-hab-buriti (Nucleo Hab. Buriti) falhou: page.goto: net::ERR_ABORTED; maybe frame was detached?
+Call log:
+  - navigating to "https://wellhub.com/pt-br/search/ms/nucleo-hab-buriti/?map=1", waiting until "domcontentloaded"
+
+    autonomista (Autonomista) falhou: page.goto: Target page, context or browser has been closed
+    vila-santa-dorotheia (Vila Santa Dorotheia) falhou: page.goto: Target page, context or browser has been closed
+    jardim-monte-libano (Jardim Monte Libano) falhou: page.goto: Target page, context or browser has been closed
+    vila-piratininga (Vila Piratininga) falhou: page.goto: Target page, context or browser has been closed
+    jardim-paulista (Jardim Paulista) falhou: page.goto: Target page, context or browser has been closed
+    santa-fe (Santa Fe) falhou: page.goto: Target page, context or browser has been closed
+    jardim-autonomista (Jardim Autonomista) falhou: page.goto: Target page, context or browser has been closed
+  [short] 3652ms n=86 miss=1
+    vila-manoel-da-costa-lima (Vila Manoel da Costa Lima) falhou: page.goto: Target page, context or browser has been closed
+  [normal] 2224ms n=86 miss=1
+[20/5571] Jo├úo Pessoa-PB baseline=351 cat=0
+  teto 100 ÔåÆ 26 bairros (seed=0 extraidos=26)
+  tiling heur├¡stico: 26 bairro(s)
+  [short] 10010ms n=0 miss=351 err=timeout 10000ms: Jo├úo Pessoa-PB
+    estados (Estados) falhou: page.content: Target page, context or browser has been closed
+  teto 100 ÔåÆ 26 bairros (seed=0 extraidos=26)
+  tiling heur├¡stico: 26 bairro(s)
+    expedicionarios (Expedicion├írios) falhou: page.goto: Target page, context or browser has been closed
+    lot-da-propriedade-veado-sobradinho (Lot. da Propriedade Veado Sobradinho) falhou: page.goto: Target page, context or browser has been closed
+    torre (Torre) falhou: page.goto: Target page, context or browser has been closed
+    mandacaru (Mandacaru) falhou: page.goto: Target page, context or browser has been closed
+    bairro-dos-ipes (Bairro dos Ip├¬s) falhou: page.goto: Target page, context or browser has been closed
+    tambauzinho (Tambauzinho) falhou: page.goto: Target page, context or browser has been closed
+    pedro-gondim (Pedro Gondim) falhou: page.goto: Target page, context or browser has been closed
+    brisamar (Brisamar) falhou: page.goto: Target page, context or browser has been closed
+    roger (Roger) falhou: page.goto: Target page, context or browser has been closed
+    conj-pres-castelo-branco-ii (Conj. Pres. Castelo Branco II) falhou: page.goto: Target page, context or browser has been closed
+    castelo-branco (Castelo Branco) falhou: page.goto: Target page, context or browser has been closed
+    manaira (Mana├¡ra) falhou: page.goto: Target page, context or browser has been closed
+    centro (Centro) falhou: page.goto: Target page, context or browser has been closed
+    miramar (Miramar) falhou: page.goto: Target page, context or browser has been closed
+    jardim-oceania (Jardim Oceania) falhou: page.goto: Target page, context or browser has been closed
+    oceania (Oceania) falhou: page.goto: Target page, context or browser has been closed
+    bancarios (Banc├írios) falhou: page.goto: Target page, context or browser has been closed
+    tambau (Tamba├║) falhou: page.goto: Target page, context or browser has been closed
+    jardim-sao-paulo (Jardim Sao Paulo) falhou: page.goto: Target page, context or browser has been closed
+    cruz-das-armas (Cruz das Armas) falhou: page.goto: Target page, context or browser has been closed
+    ilha-do-bpo (Ilha do Bpo.) falhou: page.goto: Target page, context or browser has been closed
+    aeroclube (Aeroclube) falhou: page.goto: Target page, context or browser has been closed
+    cabo-branco (Cabo Branco) falhou: page.goto: Target page, context or browser has been closed
+    varjao (Varj├úo) falhou: page.goto: Target page, context or browser has been closed
+    altiplano-cabo-branco (Altiplano Cabo Branco) falhou: page.goto: Target page, context or browser has been closed
+  fallback geo grid @ -7.1152,-34.8611
+    estados (Estados) falhou: sem academias em https://wellhub.com/pt-br/search/pb/estados/?map=1
+    expedicionarios: +100 new=9 ├║nicas=109 [teto]
+    lot-da-propriedade-veado-sobradinho: +3 new=3 ├║nicas=112
+    torre: +100 new=4 ├║nicas=116 [teto]
+    mandacaru: +100 new=12 ├║nicas=128 [teto]
+    bairro-dos-ipes: +100 new=0 ├║nicas=128 [teto]
+    tambauzinho: +100 new=0 ├║nicas=128 [teto]
+    pedro-gondim: +100 new=0 ├║nicas=128 [teto]
+    brisamar: +100 new=0 ├║nicas=128 [teto]
+    roger: +100 new=8 ├║nicas=136 [teto]
+    conj-pres-castelo-branco-ii: +7 new=7 ├║nicas=143
+    castelo-branco: +88 new=88 ├║nicas=231
+    manaira: +1 new=1 ├║nicas=232
+    centro: +66 new=7 ├║nicas=239
+    miramar: +100 new=0 ├║nicas=239 [teto]
+    jardim-oceania: +100 new=0 ├║nicas=239 [teto]
+    oceania: +56 new=56 ├║nicas=295
+    bancarios: +100 new=24 ├║nicas=319 [teto]
+    tambau: +100 new=0 ├║nicas=319 [teto]
+    jardim-sao-paulo: +100 new=7 ├║nicas=326 [teto]
+    cruz-das-armas: +100 new=28 ├║nicas=354 [teto]
+    ilha-do-bpo: +6 new=6 ├║nicas=360
+    aeroclube: +100 new=0 ├║nicas=360 [teto]
+    cabo-branco: +100 new=0 ├║nicas=360 [teto]
+    varjao: +100 new=0 ├║nicas=360 [teto]
+    altiplano-cabo-branco: +100 new=0 ├║nicas=360 [teto]
+  [normal] 144859ms n=360 miss=4
+  ­ƒÆ¥ checkpoint 20 loss_timeout=5
+[21/5571] Duque de Caxias-RJ baseline=615 cat=0
+  teto 100 ÔåÆ 20 bairros (seed=0 extraidos=21)
+  tiling heur├¡stico: 20 bairro(s)
+    jardim-vinte-e-cinco-de-agosto: +100 new=12 ├║nicas=112 [teto]
+  [short] 10006ms n=0 miss=615 err=timeout 10000ms: Duque de Caxias-RJ
+    centro (Centro) falhou: page.content: Target page, context or browser has been closed
+    parque-sr-do-bonfim (Parque Sr. do Bonfim) falhou: page.goto: Target page, context or browser has been closed
+    circular (Circular) falhou: page.goto: Target page, context or browser has been closed
+  teto 100 ÔåÆ 20 bairros (seed=0 extraidos=21)
+  tiling heur├¡stico: 20 bairro(s)
+    engenho-do-porto (Engenho do Porto) falhou: page.goto: Target page, context or browser has been closed
+    vila-campanaro (Vila Campanaro) falhou: page.goto: Target page, context or browser has been closed
+    vila-centenario (Vila Centenario) falhou: page.goto: Target page, context or browser has been closed
+    parque-lafaiete (Parque Lafaiete) falhou: page.goto: Target page, context or browser has been closed
+    parque-pauliceia (Parque Pauliceia) falhou: page.goto: Target page, context or browser has been closed
+    jardim-vinte-e-cinco-de-agosto: +100 new=12 ├║nicas=112 [teto]
+    itatiaia (Itatiaia) falhou: page.goto: Target page, context or browser has been closed
+    vila-itamarati (Vila Itamarati) falhou: page.goto: Target page, context or browser has been closed
+    vila-sao-luis (Vila S├úo Luis) falhou: page.goto: Target page, context or browser has been closed
+    dr-laureano (Dr. Laureano) falhou: page.goto: Target page, context or browser has been closed
+    jardim-olavo-bilac (Jardim Olavo Bilac) falhou: page.goto: Target page, context or browser has been closed
+    vila-constanca-de-calvos (Vila Constanca de Calvos) falhou: page.goto: Target page, context or browser has been closed
+    vila-leopoldina (Vila Leopoldina) falhou: page.goto: Target page, context or browser has been closed
+    centro: +100 new=100 ├║nicas=212 [teto]
+    vila-guanabara (Vila Guanabara) falhou: page.goto: Target page, context or browser has been closed
+    parque-duque (Parque Duque) falhou: page.goto: Target page, context or browser has been closed
+    gramacho (Gramacho) falhou: page.goto: Target page, context or browser has been closed
+    jardim-gramacho (Jardim Gramacho) falhou: page.goto: Target page, context or browser has been closed
+  fallback geo grid @ -22.7859,-43.3132
+    parque-sr-do-bonfim: +100 new=6 ├║nicas=218 [teto]
+    circular: +100 new=6 ├║nicas=224 [teto]
+    engenho-do-porto: +100 new=22 ├║nicas=246 [teto]
+    vila-campanaro (Vila Campanaro) falhou: HTTP 503 em https://wellhub.com/pt-br/search/rj/vila-campanaro/?map=1
+    vila-centenario: +100 new=1 ├║nicas=247 [teto]
+    parque-lafaiete: +100 new=9 ├║nicas=256 [teto]
+    parque-pauliceia: +100 new=0 ├║nicas=256 [teto]
+    itatiaia: +59 new=59 ├║nicas=315
+    vila-itamarati: +100 new=2 ├║nicas=317 [teto]
+    vila-sao-luis: +100 new=100 ├║nicas=417 [teto]
+    dr-laureano: +100 new=3 ├║nicas=420 [teto]
+    jardim-olavo-bilac: +100 new=8 ├║nicas=428 [teto]
+    vila-constanca-de-calvos: +100 new=100 ├║nicas=528 [teto]
+    vila-leopoldina: +100 new=5 ├║nicas=533 [teto]
+    vila-guanabara: +100 new=0 ├║nicas=533 [teto]
+    parque-duque: +100 new=7 ├║nicas=540 [teto]
+    gramacho: +100 new=1 ├║nicas=541 [teto]
+    jardim-gramacho: +100 new=0 ├║nicas=541 [teto]
+  [normal] 85067ms n=541 miss=82
+[22/5571] Nova Igua├ºu-RJ baseline=995 cat=0
+  teto 100 ÔåÆ 29 bairros (seed=0 extraidos=29)
+  tiling heur├¡stico: 29 bairro(s)
+    centro: +100 new=100 ├║nicas=200 [teto]
+    luz: +100 new=28 ├║nicas=228 [teto]
+  [short] 10013ms n=0 miss=995 err=timeout 10000ms: Nova Igua├ºu-RJ
+    parque-horizonte (Parque Horizonte) falhou: page.goto: Target page, context or browser has been closed
+    caonze (Caonze) falhou: page.goto: Target page, context or browser has been closed
+    chacrinha (Chacrinha) falhou: page.goto: Target page, context or browser has been closed
+    moqueta (Moquet├í) falhou: page.goto: Target page, context or browser has been closed
+  teto 100 ÔåÆ 29 bairros (seed=0 extraidos=29)
+  tiling heur├¡stico: 29 bairro(s)
+    santa-eugenia (Santa Eugenia) falhou: page.goto: Target page, context or browser has been closed
+    california (Calif├│rnia) falhou: page.goto: Target page, context or browser has been closed
+    rancho-novo (Rancho Novo) falhou: page.goto: Target page, context or browser has been closed
+    essolandia (Essol├óndia) falhou: page.goto: Target page, context or browser has been closed
+    maria-da-luz (Maria da Luz) falhou: page.goto: Target page, context or browser has been closed
+    centro: +100 new=100 ├║nicas=200 [teto]
+    parque-res-guadalajara (Parque Res. Guadalajara) falhou: page.goto: Target page, context or browser has been closed
+    vila-nova (Vila Nova) falhou: page.goto: Target page, context or browser has been closed
+    prata (Prata) falhou: page.goto: Target page, context or browser has been closed
+    vila-sao-jorge (Vila Sao Jorge) falhou: page.goto: Target page, context or browser has been closed
+    silvania (Silv├ónia) falhou: page.goto: Target page, context or browser has been closed
+    viga (Viga) falhou: page.goto: Target page, context or browser has been closed
+    luz: +100 new=28 ├║nicas=228 [teto]
+    kennedy (Kennedy) falhou: page.goto: Target page, context or browser has been closed
+    vila-iracema (Vila Iracema) falhou: page.goto: Target page, context or browser has been closed
+    parque-ulisses (Parque Ulisses) falhou: page.goto: Target page, context or browser has been closed
+    ceramica (Cer├ómica) falhou: page.goto: Target page, context or browser has been closed
+    vila-sao-luis (Vila S├úo Lu├¡s) falhou: page.goto: Target page, context or browser has been closed
+    dom-rodrigo (Dom Rodrigo) falhou: page.goto: Target page, context or browser has been closed
+    cruzeiro-do-sul (Cruzeiro do Sul) falhou: page.goto: Target page, context or browser has been closed
+    jardim-alvorada (Jardim Alvorada) falhou: page.goto: Target page, context or browser has been closed
+    parque-horizonte: +11 new=11 ├║nicas=239
+    brasil (Brasil) falhou: page.goto: Target page, context or browser has been closed
+    imperador (Imperador) falhou: page.goto: Target page, context or browser has been closed
+    jardim-iguacu (Jardim Igua├ºu) falhou: page.goto: Target page, context or browser has been closed
+    posse (Posse) falhou: page.goto: Target page, context or browser has been closed
+    caonze: +100 new=15 ├║nicas=254 [teto]
+    chacrinha: +100 new=100 ├║nicas=354 [teto]
+    moqueta: +100 new=11 ├║nicas=365 [teto]
+    santa-eugenia: +100 new=2 ├║nicas=367 [teto]
+    california: +100 new=100 ├║nicas=467 [teto]
+    rancho-novo: +100 new=70 ├║nicas=537 [teto]
+    essolandia: +57 new=57 ├║nicas=594
+    maria-da-luz: +100 new=20 ├║nicas=614 [teto]
+    parque-res-guadalajara: +100 new=1 ├║nicas=615 [teto]
+    vila-nova: +100 new=100 ├║nicas=715 [teto]
+    prata: +100 new=32 ├║nicas=747 [teto]
+    vila-sao-jorge: +100 new=89 ├║nicas=836 [teto]
+    silvania: +100 new=3 ├║nicas=839 [teto]
+    viga: +100 new=0 ├║nicas=839 [teto]
+    kennedy: +100 new=0 ├║nicas=839 [teto]
+    vila-iracema: +67 new=67 ├║nicas=906
+    parque-ulisses: +100 new=0 ├║nicas=906 [teto]
+    ceramica: +100 new=1 ├║nicas=907 [teto]
+    vila-sao-luis: +100 new=0 ├║nicas=907 [teto]
+    dom-rodrigo: +100 new=0 ├║nicas=907 [teto]
+    cruzeiro-do-sul: +100 new=100 ├║nicas=1007 [teto]
+    jardim-alvorada: +100 new=0 ├║nicas=1007 [teto]
+    brasil: +100 new=2 ├║nicas=1009 [teto]
+    imperador: +100 new=1 ├║nicas=1010 [teto]
+    jardim-iguacu: +100 new=0 ├║nicas=1010 [teto]
+    posse: +5 new=5 ├║nicas=1015
+  [normal] 122619ms n=1015 miss=10
+[23/5571] S├úo Bernardo do Campo-SP baseline=1303 cat=0
+  teto 100 ÔåÆ 24 bairros (seed=0 extraidos=24)
+  tiling heur├¡stico: 24 bairro(s)
+  [short] 10012ms n=0 miss=1303 err=timeout 10000ms: S├úo Bernardo do Campo-SP
+    planalto (Planalto) falhou: page.content: Target page, context or browser has been closed
+  teto 100 ÔåÆ 24 bairros (seed=0 extraidos=24)
+  tiling heur├¡stico: 24 bairro(s)
+    vila-euclides (Vila Euclides) falhou: page.goto: Target page, context or browser has been closed
+    centro (Centro) falhou: page.goto: Target page, context or browser has been closed
+    jardim-calux (Jardim Calux) falhou: page.goto: Target page, context or browser has been closed
+    vila-jupiter (Vila Jupiter) falhou: page.goto: Target page, context or browser has been closed
+    quadras-de-areia (Quadras de Areia) falhou: page.goto: Target page, context or browser has been closed
+    jardim-gagliardi (Jardim Gagliardi) falhou: page.goto: Target page, context or browser has been closed
+    jardim-chacara-inglesa (Jardim Ch├ícara Inglesa) falhou: page.goto: Target page, context or browser has been closed
+    jardim-do-mar (Jardim do Mar) falhou: page.goto: Target page, context or browser has been closed
+    jordanopolis (Jordan├│polis) falhou: page.goto: Target page, context or browser has been closed
+    jardim-olavo-bilac (Jardim Olavo Bilac) falhou: page.goto: Target page, context or browser has been closed
+    vila-marlene (Vila Marlene) falhou: page.goto: Target page, context or browser has been closed
+    vila-planalto (Vila Planalto) falhou: page.goto: Target page, context or browser has been closed
+    independencia (Independ├¬ncia) falhou: page.goto: Target page, context or browser has been closed
+    vila-margarida (Vila Margarida) falhou: page.goto: Target page, context or browser has been closed
+    vila-dayse (Vila Dayse) falhou: page.goto: Target page, context or browser has been closed
+    jardim-vera-cruz (Jardim Vera Cruz) falhou: page.goto: Target page, context or browser has been closed
+    anchieta (Anchieta) falhou: page.goto: Target page, context or browser has been closed
+    vila-jordanopolis (Vila Jordanopolis) falhou: page.goto: Target page, context or browser has been closed
+    nova-petropolis (Nova Petr├│polis) falhou: page.goto: Target page, context or browser has been closed
+    baeta-neves (Baeta Neves) falhou: page.goto: Target page, context or browser has been closed
+    jardim-embare (Jardim Embar├®) falhou: page.goto: Target page, context or browser has been closed
+    rudge-ramos (Rudge Ramos) falhou: page.goto: Target page, context or browser has been closed
+    vila-euro (Vila Euro) falhou: page.goto: Target page, context or browser has been closed
+  fallback geo grid @ -23.6914,-46.5646
+    planalto (Planalto) falhou: sem academias em https://wellhub.com/pt-br/search/sp/planalto/?map=1
+    vila-euclides: +43 new=43 ├║nicas=143
+    centro: +100 new=100 ├║nicas=243 [teto]
+    jardim-calux: +100 new=35 ├║nicas=278 [teto]
+    vila-jupiter: +100 new=100 ├║nicas=378 [teto]
+    quadras-de-areia: +100 new=100 ├║nicas=478 [teto]
+    jardim-gagliardi: +40 new=40 ├║nicas=518
+    jardim-chacara-inglesa: +100 new=100 ├║nicas=618 [teto]
+    jardim-do-mar (Jardim do Mar) falhou: sem academias em https://wellhub.com/pt-br/search/sp/jardim-do-mar/?map=1
+    jordanopolis: +100 new=100 ├║nicas=718 [teto]
+    jardim-olavo-bilac: +9 new=9 ├║nicas=727
+    vila-marlene: +100 new=100 ├║nicas=827 [teto]
+    vila-planalto: +100 new=38 ├║nicas=865 [teto]
+    independencia: +100 new=46 ├║nicas=911 [teto]
+    vila-margarida: +100 new=100 ├║nicas=1011 [teto]
+    vila-dayse: +23 new=23 ├║nicas=1034
+    jardim-vera-cruz: +100 new=37 ├║nicas=1071 [teto]
+    anchieta: +100 new=49 ├║nicas=1120 [teto]
+    vila-jordanopolis: +100 new=0 ├║nicas=1120 [teto]
+    nova-petropolis: +100 new=58 ├║nicas=1178 [teto]
+    baeta-neves: +100 new=30 ├║nicas=1208 [teto]
+    jardim-embare: +86 new=86 ├║nicas=1294
+    rudge-ramos: +100 new=18 ├║nicas=1312 [teto]
+    vila-euro: +23 new=0 ├║nicas=1312
+  [normal] 164811ms n=1312 miss=17
+[24/5571] Natal-RN baseline=212 cat=0
+  teto 100 ÔåÆ 16 bairros (seed=0 extraidos=16)
+  tiling heur├¡stico: 16 bairro(s)
+    alecrim: +100 new=6 ├║nicas=106 [teto]
+  [short] 10005ms n=0 miss=212 err=timeout 10000ms: Natal-RN
+    barro-vermelho (Barro Vermelho) falhou: page.content: Target page, context or browser has been closed
+    tirol (Tirol) falhou: page.goto: Target page, context or browser has been closed
+    lagoa-seca (Lagoa Seca) falhou: page.goto: Target page, context or browser has been closed
+    cidade-alta (Cidade Alta) falhou: page.goto: Target page, context or browser has been closed
+  teto 100 ÔåÆ 16 bairros (seed=0 extraidos=16)
+  tiling heur├¡stico: 16 bairro(s)
+    petropolis (Petr├│polis) falhou: page.goto: Target page, context or browser has been closed
+    lagoa-nova (Lagoa Nova) falhou: page.goto: Target page, context or browser has been closed
+    dix-sept-rosado (Dix-Sept Rosado) falhou: page.goto: Target page, context or browser has been closed
+    quintas (Quintas) falhou: page.goto: Target page, context or browser has been closed
+    praia-dos-artistas (Praia dos artistas) falhou: page.goto: Target page, context or browser has been closed
+    ribeira (Ribeira) falhou: page.goto: Target page, context or browser has been closed
+    alecrim: +100 new=6 ├║nicas=106 [teto]
+    nova-descoberta (Nova Descoberta) falhou: page.goto: Target page, context or browser has been closed
+    nossa-sra-de-nazare (Nossa Sra. de Nazar├®) falhou: page.goto: Target page, context or browser has been closed
+    santos-reis (Santos Reis) falhou: page.goto: Target page, context or browser has been closed
+    nordeste (Nordeste) falhou: page.goto: Target page, context or browser has been closed
+    candelaria (Candel├íria) falhou: page.goto: Target page, context or browser has been closed
+  fallback geo grid @ -5.7946,-35.2104
+    barro-vermelho: +11 new=11 ├║nicas=117
+    tirol: +100 new=12 ├║nicas=129 [teto]
+    lagoa-seca: +100 new=1 ├║nicas=130 [teto]
+    cidade-alta: +100 new=3 ├║nicas=133 [teto]
+    petropolis (Petr├│polis) falhou: sem academias em https://wellhub.com/pt-br/search/rn/petropolis/?map=1
+    lagoa-nova: +2 new=2 ├║nicas=135
+    dix-sept-rosado: +2 new=2 ├║nicas=137
+    quintas: +100 new=10 ├║nicas=147 [teto]
+    praia-dos-artistas: +100 new=3 ├║nicas=150 [teto]
+    ribeira: +100 new=7 ├║nicas=157 [teto]
+    nova-descoberta: +100 new=24 ├║nicas=181 [teto]
+    nossa-sra-de-nazare: +100 new=3 ├║nicas=184 [teto]
+    santos-reis: +100 new=11 ├║nicas=195 [teto]
+    nordeste: +100 new=11 ├║nicas=206 [teto]
+    candelaria: +100 new=8 ├║nicas=214 [teto]
+  [normal] 103420ms n=214 miss=2
+[25/5571] Santo Andr├®-SP baseline=1034 cat=0
+  teto 100 ÔåÆ 16 bairros (seed=0 extraidos=16)
+  tiling heur├¡stico: 16 bairro(s)
+    jardim-bela-vista: +100 new=100 ├║nicas=200 [teto]
+  [short] 10002ms n=0 miss=1034 err=timeout 10000ms: Santo Andr├®-SP
+    vila-assuncao (Vila Assun├º├úo) falhou: page.content: Target page, context or browser has been closed
+    vila-gilda (Vila Gilda) falhou: page.goto: Target page, context or browser has been closed
+  teto 100 ÔåÆ 16 bairros (seed=0 extraidos=16)
+  tiling heur├¡stico: 16 bairro(s)
+    centro (Centro) falhou: page.goto: Target page, context or browser has been closed
+    vila-bastos (Vila Bastos) falhou: page.goto: Target page, context or browser has been closed
+    vila-santa-teresa (Vila Santa Teresa) falhou: page.goto: Target page, context or browser has been closed
+    bairro-paraiso (Bairro Para├¡so) falhou: page.goto: Target page, context or browser has been closed
+    paraiso (Para├¡so) falhou: page.goto: Target page, context or browser has been closed
+    vila-floresta (Vila Floresta) falhou: page.goto: Target page, context or browser has been closed
+    jardim-bela-vista: +100 new=100 ├║nicas=200 [teto]
+    vila-valparaiso (Vila Valpara├¡so) falhou: page.goto: Target page, context or browser has been closed
+    vila-lilica (Vila Lilica) falhou: page.goto: Target page, context or browser has been closed
+    vila-alzira (Vila Alzira) falhou: page.goto: Target page, context or browser has been closed
+    casa-branca (Casa Branca) falhou: page.goto: Target page, context or browser has been closed
+    vila-eldizia (Vila Eldizia) falhou: page.goto: Target page, context or browser has been closed
+    vila-leopoldina (Vila Leopoldina) falhou: page.goto: Target page, context or browser has been closed
+    vila-assuncao: +100 new=16 ├║nicas=216 [teto]
+    vila-marina (Vila Marina) falhou: page.goto: Target page, context or browser has been closed
+    vila-gilda: +100 new=16 ├║nicas=232 [teto]
+    centro: +100 new=100 ├║nicas=332 [teto]
+    vila-bastos: +100 new=37 ├║nicas=369 [teto]
+    vila-santa-teresa: +100 new=100 ├║nicas=469 [teto]
+    bairro-paraiso: +100 new=4 ├║nicas=473 [teto]
+    paraiso: +11 new=11 ├║nicas=484
+    vila-floresta: +100 new=25 ├║nicas=509 [teto]
+    vila-valparaiso: +100 new=3 ├║nicas=512 [teto]
+    vila-lilica: +100 new=100 ├║nicas=612 [teto]
+    vila-alzira: +100 new=36 ├║nicas=648 [teto]
+    casa-branca: +4 new=4 ├║nicas=652
+    vila-eldizia: +100 new=100 ├║nicas=752 [teto]
+    vila-leopoldina: +100 new=100 ├║nicas=852 [teto]
+    vila-marina: +100 new=100 ├║nicas=952 [teto]
+  [normal] 68202ms n=952 miss=98
+[26/5571] Sorocaba-SP baseline=1522 cat=0
+  teto 100 ÔåÆ 25 bairros (seed=0 extraidos=25)
+  tiling heur├¡stico: 25 bairro(s)
+    centro: +100 new=100 ├║nicas=200 [teto]
+  [short] 10002ms n=0 miss=1522 err=timeout 10000ms: Sorocaba-SP
+    vila-hortencia (Vila Hort├¬ncia) falhou: page.content: Target page, context or browser has been closed
+    jardim-emilia (Jardim Emilia) falhou: page.goto: Target page, context or browser has been closed
+    jardim-faculdade (Jardim Faculdade) falhou: page.goto: Target page, context or browser has been closed
+  teto 100 ÔåÆ 25 bairros (seed=0 extraidos=25)
+  tiling heur├¡stico: 25 bairro(s)
+    vila-florinda (Vila Florinda) falhou: page.goto: Target page, context or browser has been closed
+    jardim-paulistano (Jardim Paulistano) falhou: page.goto: Target page, context or browser has been closed
+    jardim-santa-rosalia (Jardim Santa Ros├ília) falhou: page.goto: Target page, context or browser has been closed
+    jardim-vergueiro (Jardim Vergueiro) falhou: page.goto: Target page, context or browser has been closed
+    vila-assis (Vila Assis) falhou: page.goto: Target page, context or browser has been closed
+    centro: +100 new=100 ├║nicas=200 [teto]
+    vila-leao (Vila Leao) falhou: page.goto: Target page, context or browser has been closed
+    alem-ponte (Al├®m Ponte) falhou: page.goto: Target page, context or browser has been closed
+    vila-santana (Vila Santana) falhou: page.goto: Target page, context or browser has been closed
+    jardim-america (Jardim America) falhou: page.goto: Target page, context or browser has been closed
+    vila-carvalho (Vila Carvalho) falhou: page.goto: Target page, context or browser has been closed
+    vila-independencia (Vila Independencia) falhou: page.goto: Target page, context or browser has been closed
+    parque-campolim (Parque Campolim) falhou: page.goto: Target page, context or browser has been closed
+    vila-hortencia: +100 new=100 ├║nicas=300 [teto]
+    vila-lucy (Vila Lucy) falhou: page.goto: Target page, context or browser has been closed
+    trujilo (Trujilo) falhou: page.goto: Target page, context or browser has been closed
+    vila-jardini (Vila Jardini) falhou: page.goto: Target page, context or browser has been closed
+    vila-augusta (Vila Augusta) falhou: page.goto: Target page, context or browser has been closed
+    vila-haro (Vila Haro) falhou: page.goto: Target page, context or browser has been closed
+    vila-trujillo (Vila Trujillo) falhou: page.goto: Target page, context or browser has been closed
+    vila-santa-rita (Vila Santa Rita) falhou: page.goto: Target page, context or browser has been closed
+    trujillo (Trujillo) falhou: page.goto: Target page, context or browser has been closed
+    jardim-emilia: +100 new=99 ├║nicas=399 [teto]
+    jardim-pelegrino (Jardim Pelegrino) falhou: page.goto: Target page, context or browser has been closed
+    jardim-faculdade: +100 new=100 ├║nicas=499 [teto]
+    vila-florinda: +100 new=58 ├║nicas=557 [teto]
+    jardim-paulistano: +100 new=100 ├║nicas=657 [teto]
+    jardim-santa-rosalia: +100 new=49 ├║nicas=706 [teto]
+    jardim-vergueiro: +100 new=100 ├║nicas=806 [teto]
+    vila-assis: +100 new=22 ├║nicas=828 [teto]
+    vila-leao: +100 new=20 ├║nicas=848 [teto]
+    alem-ponte: +100 new=0 ├║nicas=848 [teto]
+    vila-santana: +100 new=100 ├║nicas=948 [teto]
+    jardim-america: +100 new=100 ├║nicas=1048 [teto]
+    vila-carvalho: +100 new=100 ├║nicas=1148 [teto]
+    vila-independencia: +100 new=100 ├║nicas=1248 [teto]
+    parque-campolim: +100 new=36 ├║nicas=1284 [teto]
+    vila-lucy: +100 new=20 ├║nicas=1304 [teto]
+    trujilo: +100 new=10 ├║nicas=1314 [teto]
+    vila-jardini: +100 new=2 ├║nicas=1316 [teto]
+    vila-augusta: +100 new=94 ├║nicas=1410 [teto]
+    vila-haro: +100 new=3 ├║nicas=1413 [teto]
+    vila-trujillo: +100 new=6 ├║nicas=1419 [teto]
+    vila-santa-rita: +5 new=5 ├║nicas=1424
+    trujillo: +100 new=0 ├║nicas=1424 [teto]
+    jardim-pelegrino: +100 new=100 ├║nicas=1524 [teto]
+  [normal] 110809ms n=1524 miss=30
+[27/5571] Osasco-SP baseline=980 cat=0
+  teto 100 ÔåÆ 17 bairros (seed=0 extraidos=17)
+  tiling heur├¡stico: 17 bairro(s)
+    jardim-das-flores: +100 new=100 ├║nicas=200 [teto]
+  [short] 10001ms n=0 miss=980 err=timeout 10000ms: Osasco-SP
+    km-18 (Km 18) falhou: page.content: Target page, context or browser has been closed
+    vila-osasco (Vila Osasco) falhou: page.goto: Target page, context or browser has been closed
+    vila-yara (Vila Yara) falhou: page.goto: Target page, context or browser has been closed
+    centro (Centro) falhou: page.goto: Target page, context or browser has been closed
+    bela-vista (Bela Vista) falhou: page.goto: Target page, context or browser has been closed
+    piratininga (Piratininga) falhou: page.goto: Target page, context or browser has been closed
+  teto 100 ÔåÆ 17 bairros (seed=0 extraidos=17)
+  tiling heur├¡stico: 17 bairro(s)
+    rochdale (Rochdale) falhou: page.goto: Target page, context or browser has been closed
+    pestana (Pestana) falhou: page.goto: Target page, context or browser has been closed
+    cidade-das-flores (Cidade das Flores) falhou: page.goto: Target page, context or browser has been closed
+    vila-quitauna (Vila Quitauna) falhou: page.goto: Target page, context or browser has been closed
+    pres-altino (Pres. Altino) falhou: page.goto: Target page, context or browser has been closed
+    vila-yolanda (Vila Yolanda) falhou: page.goto: Target page, context or browser has been closed
+    jardim-das-flores: +100 new=100 ├║nicas=200 [teto]
+    bussocaba (Bussocaba) falhou: page.goto: Target page, context or browser has been closed
+    jardim-roberto (Jardim Roberto) falhou: page.goto: Target page, context or browser has been closed
+    vila-campesina (Vila Campesina) falhou: page.goto: Target page, context or browser has been closed
+    ayrosa (Ayrosa) falhou: page.goto: Target page, context or browser has been closed
+    km-18: +100 new=8 ├║nicas=208 [teto]
+    vila-yara: +100 new=100 ├║nicas=308 [teto]
+    vila-osasco: +100 new=21 ├║nicas=329 [teto]
+    centro: +100 new=100 ├║nicas=429 [teto]
+    bela-vista: +100 new=99 ├║nicas=528 [teto]
+    piratininga: +100 new=100 ├║nicas=628 [teto]
+    rochdale: +100 new=43 ├║nicas=671 [teto]
+    pestana: +100 new=19 ├║nicas=690 [teto]
+    cidade-das-flores: +100 new=14 ├║nicas=704 [teto]
+    vila-quitauna: +100 new=100 ├║nicas=804 [teto]
+    pres-altino: +100 new=14 ├║nicas=818 [teto]
+    vila-yolanda: +100 new=100 ├║nicas=918 [teto]
+    bussocaba: +100 new=39 ├║nicas=957 [teto]
+    jardim-roberto: +100 new=0 ├║nicas=957 [teto]
+    vila-campesina: +100 new=27 ├║nicas=984 [teto]
+    ayrosa: +100 new=0 ├║nicas=984 [teto]
+  [normal] 72870ms n=984 miss=16
+[28/5571] Uberl├óndia-MG baseline=681 cat=0
+  teto 100 ÔåÆ 16 bairros (seed=0 extraidos=16)
+  tiling heur├¡stico: 16 bairro(s)
+    nossa-sra-aparecida: +22 new=22 ├║nicas=122
+  [short] 10011ms n=0 miss=681 err=timeout 10000ms: Uberl├óndia-MG
+    saraiva (Saraiva) falhou: page.content: Target page, context or browser has been closed
+  teto 100 ÔåÆ 16 bairros (seed=0 extraidos=16)
+  tiling heur├¡stico: 16 bairro(s)
+    tibery (Tibery) falhou: page.goto: Target page, context or browser has been closed
+    cazeca (Cazeca) falhou: page.goto: Target page, context or browser has been closed
+    santa-monica (Santa M├┤nica) falhou: page.goto: Target page, context or browser has been closed
+    aparecida (Aparecida) falhou: page.goto: Target page, context or browser has been closed
+    centro (Centro) falhou: page.goto: Target page, context or browser has been closed
+    santa-maria (Santa Maria) falhou: page.goto: Target page, context or browser has been closed
+    nossa-sra-aparecida: +22 new=22 ├║nicas=122
+    prefeitura (Prefeitura) falhou: page.goto: Target page, context or browser has been closed
+    brasil (Brasil) falhou: page.goto: Target page, context or browser has been closed
+    lidice (L├¡dice) falhou: page.goto: Target page, context or browser has been closed
+    progresso (Progresso) falhou: page.goto: Target page, context or browser has been closed
+    tabajaras (Tabajaras) falhou: page.goto: Target page, context or browser has been closed
+    martins (Martins) falhou: page.goto: Target page, context or browser has been closed
+    jardim-finotti-i (Jardim Finotti I) falhou: page.goto: Target page, context or browser has been closed
+    saraiva: +100 new=100 ├║nicas=222 [teto]
+    osvaldo-rezende (Osvaldo Rezende) falhou: page.goto: Target page, context or browser has been closed
+    tibery: +100 new=47 ├║nicas=269 [teto]
+    cazeca: +100 new=25 ├║nicas=294 [teto]
+    santa-monica: +70 new=70 ├║nicas=364
+    aparecida: +100 new=100 ├║nicas=464 [teto]
+    centro: +70 new=0 ├║nicas=464
+    santa-maria: +100 new=100 ├║nicas=564 [teto]
+    prefeitura (Prefeitura) falhou: sem academias em https://wellhub.com/pt-br/search/mg/prefeitura/?map=1
+    brasil: +22 new=0 ├║nicas=564
+    lidice: +100 new=93 ├║nicas=657 [teto]
+    progresso: +22 new=0 ├║nicas=657
+    tabajaras: +18 new=18 ├║nicas=675
+    martins: +100 new=46 ├║nicas=721 [teto]
+    jardim-finotti-i: +100 new=33 ├║nicas=754 [teto]
+    osvaldo-rezende: +100 new=21 ├║nicas=775 [teto]
+  [normal] 96949ms n=775 miss=12
+[29/5571] Ribeir├úo Preto-SP baseline=1609 cat=0
+  teto 100 ÔåÆ 19 bairros (seed=0 extraidos=19)
+  tiling heur├¡stico: 19 bairro(s)
+    vila-amelia: +100 new=100 ├║nicas=200 [teto]
+  [short] 10008ms n=0 miss=1609 err=timeout 10000ms: Ribeir├úo Preto-SP
+    centro (Centro) falhou: page.content: Target page, context or browser has been closed
+    vila-tiberio (Vila Tiberio) falhou: page.goto: Target page, context or browser has been closed
+    jardim-republica (Jardim Rep├║blica) falhou: page.goto: Target page, context or browser has been closed
+    vila-virginia (Vila Virginia) falhou: page.goto: Target page, context or browser has been closed
+  teto 100 ÔåÆ 19 bairros (seed=0 extraidos=19)
+  tiling heur├¡stico: 19 bairro(s)
+    jardim-sumare (Jardim Sumare) falhou: page.goto: Target page, context or browser has been closed
+    r-cmte-marcondes-salgado (R. Cmte. Marcondes Salgado) falhou: page.goto: Target page, context or browser has been closed
+    sumarezinho (Sumarezinho) falhou: page.goto: Target page, context or browser has been closed
+    jardim-antartica (Jardim Antartica) falhou: page.goto: Target page, context or browser has been closed
+    ipiranga (Ipiranga) falhou: page.goto: Target page, context or browser has been closed
+    vila-amelia: +100 new=100 ├║nicas=200 [teto]
+    boulevard (Boulevard) falhou: page.goto: Target page, context or browser has been closed
+    setor-central (Setor Central) falhou: page.goto: Target page, context or browser has been closed
+    campos-elisios (Campos El├¡sios) falhou: page.goto: Target page, context or browser has been closed
+    alto-da-boa-vista (Alto da Boa Vista) falhou: page.goto: Target page, context or browser has been closed
+    vila-seixas (Vila Seixas) falhou: page.goto: Target page, context or browser has been closed
+    jardim-sao-luiz (Jardim Sao Luiz) falhou: page.goto: Target page, context or browser has been closed
+    centro: +100 new=100 ├║nicas=300 [teto]
+    jardim-mosteiro (Jardim Mosteiro) falhou: page.goto: Target page, context or browser has been closed
+    jardim-paulista (Jardim Paulista) falhou: page.goto: Target page, context or browser has been closed
+    jardim-piratininga (Jardim Piratininga) falhou: page.goto: Target page, context or browser has been closed
+    vila-tiberio: +100 new=17 ├║nicas=317 [teto]
+    jardim-republica: +100 new=100 ├║nicas=417 [teto]
+    vila-virginia: +100 new=100 ├║nicas=517 [teto]
+    jardim-sumare: +100 new=100 ├║nicas=617 [teto]
+    r-cmte-marcondes-salgado: +100 new=54 ├║nicas=671 [teto]
+    sumarezinho: +100 new=100 ├║nicas=771 [teto]
+    jardim-antartica: +100 new=18 ├║nicas=789 [teto]
+    ipiranga: +100 new=100 ├║nicas=889 [teto]
+    boulevard: +100 new=100 ├║nicas=989 [teto]
+    setor-central: +100 new=11 ├║nicas=1000 [teto]
+    campos-elisios: +11 new=11 ├║nicas=1011
+    alto-da-boa-vista: +100 new=100 ├║nicas=1111 [teto]
+    vila-seixas: +100 new=97 ├║nicas=1208 [teto]
+    jardim-sao-luiz: +100 new=100 ├║nicas=1308 [teto]
+    jardim-mosteiro: +100 new=100 ├║nicas=1408 [teto]
+    jardim-paulista: +100 new=100 ├║nicas=1508 [teto]
+    jardim-piratininga: +100 new=100 ├║nicas=1608 [teto]
+  [normal] 81501ms n=1608 miss=39
+[30/5571] S├úo Jos├® dos Campos-SP baseline=1406 cat=0
+  teto 100 ÔåÆ 29 bairros (seed=0 extraidos=29)
+  tiling heur├¡stico: 29 bairro(s)
+    centro: +100 new=100 ├║nicas=200 [teto]
+    jardim-bela-vista: +100 new=100 ├║nicas=300 [teto]
+  [short] 10011ms n=0 miss=1406 err=timeout 10000ms: S├úo Jos├® dos Campos-SP
+    vila-zizinha (Vila Zizinha) falhou: page.goto: Target page, context or browser has been closed
+    santana (Santana) falhou: page.goto: Target page, context or browser has been closed
+    vila-maria (Vila Maria) falhou: page.goto: Target page, context or browser has been closed
+    jardim-sao-dimas (Jardim Sao Dimas) falhou: page.goto: Target page, context or browser has been closed
+    monte-castelo (Monte Castelo) falhou: page.goto: Target page, context or browser has been closed
+  teto 100 ÔåÆ 29 bairros (seed=0 extraidos=29)
+  tiling heur├¡stico: 29 bairro(s)
+    vila-rossi (Vila Rossi) falhou: page.goto: Target page, context or browser has been closed
+    jardim-paulista (Jardim Paulista) falhou: page.goto: Target page, context or browser has been closed
+    jardim-apolo (Jardim Apolo) falhou: page.goto: Target page, context or browser has been closed
+    vila-adyana (Vila Adyana) falhou: page.goto: Target page, context or browser has been closed
+    vila-industrial (Vila Industrial) falhou: page.goto: Target page, context or browser has been closed
+    centro: +100 new=100 ├║nicas=200 [teto]
+    jardim-apolo-i (Jardim Apolo I) falhou: page.goto: Target page, context or browser has been closed
+    jardim-vale-paraiso (Jardim Vale Paraiso) falhou: page.goto: Target page, context or browser has been closed
+    jardim-nova-america (Jardim Nova America) falhou: page.goto: Target page, context or browser has been closed
+    jardim-esplanada (Jardim Esplanada) falhou: page.goto: Target page, context or browser has been closed
+    jardim-esplanada-ii (Jardim Esplanada II) falhou: page.goto: Target page, context or browser has been closed
+    jardim-augusta (Jardim Augusta) falhou: page.goto: Target page, context or browser has been closed
+    jardim-bela-vista: +100 new=100 ├║nicas=300 [teto]
+    jardim-oswaldo-cruz (Jardim Oswaldo Cruz) falhou: page.goto: Target page, context or browser has been closed
+    vila-jaci (Vila Jaci) falhou: page.goto: Target page, context or browser has been closed
+    vila-betania (Vila Betania) falhou: page.goto: Target page, context or browser has been closed
+    vila-rubi (Vila Rubi) falhou: page.goto: Target page, context or browser has been closed
+    lot-res-vista-linda (Lot. Res. Vista Linda) falhou: page.goto: Target page, context or browser has been closed
+    jardim-altos-de-santana (Jardim Altos de Santana) falhou: page.goto: Target page, context or browser has been closed
+    res-tatetuba (Res. Tatetuba) falhou: page.goto: Target page, context or browser has been closed
+    vila-ema (Vila Ema) falhou: page.goto: Target page, context or browser has been closed
+    jardim-telespark (Jardim Telespark) falhou: page.goto: Target page, context or browser has been closed
+    vila-zizinha: +100 new=7 ├║nicas=307 [teto]
+    jardim-apolo-ii (Jardim Apolo II) falhou: page.goto: Target page, context or browser has been closed
+    vila-tatetuba (Vila Tatetuba) falhou: page.goto: Target page, context or browser has been closed
+    santana: +100 new=100 ├║nicas=407 [teto]
+    vila-maria: +100 new=98 ├║nicas=505 [teto]
+    jardim-sao-dimas: +100 new=23 ├║nicas=528 [teto]
+    monte-castelo: +2 new=2 ├║nicas=530
+    vila-rossi: +100 new=100 ├║nicas=630 [teto]
+    jardim-paulista: +100 new=100 ├║nicas=730 [teto]
+    jardim-apolo: +100 new=100 ├║nicas=830 [teto]
+    vila-adyana: +100 new=4 ├║nicas=834 [teto]
+    vila-industrial: +100 new=100 ├║nicas=934 [teto]
+    jardim-apolo-i: +100 new=12 ├║nicas=946 [teto]
+    jardim-vale-paraiso: +100 new=2 ├║nicas=948 [teto]
+    jardim-nova-america: +84 new=84 ├║nicas=1032
+    jardim-esplanada: +83 new=0 ├║nicas=1032
+    jardim-esplanada-ii: +100 new=5 ├║nicas=1037 [teto]
+    jardim-augusta: +100 new=1 ├║nicas=1038 [teto]
+    jardim-oswaldo-cruz: +100 new=0 ├║nicas=1038 [teto]
+    vila-jaci: +100 new=0 ├║nicas=1038 [teto]
+    vila-betania: +100 new=100 ├║nicas=1138 [teto]
+    vila-rubi: +100 new=100 ├║nicas=1238 [teto]
+    lot-res-vista-linda: +100 new=39 ├║nicas=1277 [teto]
+    jardim-altos-de-santana: +58 new=58 ├║nicas=1335
+    res-tatetuba: +100 new=0 ├║nicas=1335 [teto]
+    vila-ema: +100 new=56 ├║nicas=1391 [teto]
+    jardim-telespark: +100 new=1 ├║nicas=1392 [teto]
+    jardim-apolo-ii: +100 new=13 ├║nicas=1405 [teto]
+    vila-tatetuba: +100 new=5 ├║nicas=1410 [teto]
+  [normal] 122245ms n=1410 miss=20
+  ­ƒÆ¥ checkpoint 30 loss_timeout=5
+[31/5571] Jaboat├úo dos Guararapes-PE baseline=384 cat=0
+  teto 100 ÔåÆ 14 bairros (seed=0 extraidos=14)
+  tiling heur├¡stico: 14 bairro(s)
+    centro: +100 new=100 ├║nicas=200 [teto]
+  [short] 10006ms n=0 miss=384 err=timeout 10000ms: Jaboat├úo dos Guararapes-PE
+    santo-aleixo (Santo Aleixo) falhou: page.content: Target page, context or browser has been closed
+    padre-roma (Padre Roma) falhou: page.goto: Target page, context or browser has been closed
+    vila-rica (Vila Rica) falhou: page.goto: Target page, context or browser has been closed
+    socorro (Socorro) falhou: page.goto: Target page, context or browser has been closed
+  teto 100 ÔåÆ 14 bairros (seed=0 extraidos=14)
+  tiling heur├¡stico: 14 bairro(s)
+    sucupira (Sucupira) falhou: page.goto: Target page, context or browser has been closed
+    curado-ii (Curado II) falhou: page.goto: Target page, context or browser has been closed
+    curado (Curado) falhou: page.goto: Target page, context or browser has been closed
+    dois-carneiros (Dois Carneiros) falhou: page.goto: Target page, context or browser has been closed
+    cavaleiro (Cavaleiro) falhou: page.goto: Target page, context or browser has been closed
+    centro: +100 new=100 ├║nicas=200 [teto]
+    marcos-freire (Marcos Freire) falhou: page.goto: Target page, context or browser has been closed
+    guararapes (Guararapes) falhou: page.goto: Target page, context or browser has been closed
+    muribeca-dos-guararapes (Muribeca dos Guararapes) falhou: page.goto: Target page, context or browser has been closed
+    prazeres (Prazeres) falhou: page.goto: Target page, context or browser has been closed
+    santo-aleixo: +100 new=12 ├║nicas=212 [teto]
+    padre-roma: +100 new=6 ├║nicas=218 [teto]
+    vila-rica: +100 new=2 ├║nicas=220 [teto]
+    socorro: +100 new=15 ├║nicas=235 [teto]
+    sucupira: +4 new=4 ├║nicas=239
+    curado-ii: +100 new=3 ├║nicas=242 [teto]
+    curado: +100 new=26 ├║nicas=268 [teto]
+    dois-carneiros: +100 new=18 ├║nicas=286 [teto]
+    cavaleiro: +100 new=0 ├║nicas=286 [teto]
+    marcos-freire: +100 new=16 ├║nicas=302 [teto]
+    guararapes: +100 new=62 ├║nicas=364 [teto]
+    muribeca-dos-guararapes: +100 new=11 ├║nicas=375 [teto]
+    prazeres: +100 new=11 ├║nicas=386 [teto]
+  [normal] 61675ms n=386 miss=6
+[32/5571] Cuiab├í-MT baseline=216 cat=0
+  teto 100 ÔåÆ 47 bairros (seed=0 extraidos=47)
+  tiling heur├¡stico: 47 bairro(s)
+    araes: +100 new=3 ├║nicas=103 [teto]
+  [short] 10002ms n=0 miss=216 err=timeout 10000ms: Cuiab├í-MT
+    bau (Ba├║) falhou: page.content: Target page, context or browser has been closed
+  teto 100 ÔåÆ 47 bairros (seed=0 extraidos=47)
+  tiling heur├¡stico: 47 bairro(s)
+    centro-norte (Centro Norte) falhou: page.goto: Target page, context or browser has been closed
+    centro (Centro) falhou: page.goto: Target page, context or browser has been closed
+    quilombo (Quilombo) falhou: page.goto: Target page, context or browser has been closed
+    centro-sul (Centro Sul) falhou: page.goto: Target page, context or browser has been closed
+    dom-aquino (Dom Aquino) falhou: page.goto: Target page, context or browser has been closed
+    bosque (Bosque) falhou: page.goto: Target page, context or browser has been closed
+    araes: +100 new=3 ├║nicas=103 [teto]
+    goiabeiras (Goiabeiras) falhou: page.goto: Target page, context or browser has been closed
+    bosque-da-saude (Bosque da Saude) falhou: page.goto: Target page, context or browser has been closed
+    areao (Are├úo) falhou: page.goto: Target page, context or browser has been closed
+    popular (Popular) falhou: page.goto: Target page, context or browser has been closed
+    duque-de-caxias-ii (Duque de Caxias II) falhou: page.goto: Target page, context or browser has been closed
+    pico-do-amor (Pico do Amor) falhou: page.goto: Target page, context or browser has been closed
+    jardim-das-americas (Jardim das Am├®ricas) falhou: page.goto: Target page, context or browser has been closed
+    jardim-paulista (Jardim Paulista) falhou: page.goto: Target page, context or browser has been closed
+    bau: +100 new=3 ├║nicas=106 [teto]
+    duque-de-caxias (Duque de Caxias) falhou: page.goto: Target page, context or browser has been closed
+    jardim-cuiaba (Jardim Cuiaba) falhou: page.goto: Target page, context or browser has been closed
+    cidade-alta (Cidade Alta) falhou: page.goto: Target page, context or browser has been closed
+    santa-marta (Santa Marta) falhou: page.goto: Target page, context or browser has been closed
+    jardim-italia (Jardim It├ília) falhou: page.goto: Target page, context or browser has been closed
+    porto (Porto) falhou: page.goto: Target page, context or browser has been closed
+    jardim-mariana (Jardim Mariana) falhou: page.goto: Target page, context or browser has been closed
+    santa-rosa (Santa Rosa) falhou: page.goto: Target page, context or browser has been closed
+    jardim-kennedy (Jardim Kennedy) falhou: page.goto: Target page, context or browser has been closed
+    centro-norte: +100 new=1 ├║nicas=107 [teto]
+    jardim-aclimacao (Jardim Aclimacao) falhou: page.goto: Target page, context or browser has been closed
+    jardim-petropolis (Jardim Petropolis) falhou: page.goto: Target page, context or browser has been closed
+    barra-do-pari (Barra do Pari) falhou: page.goto: Target page, context or browser has been closed
+    jardim-primavera (Jardim Primavera) falhou: page.goto: Target page, context or browser has been closed
+    verdao (Verd├úo) falhou: page.goto: Target page, context or browser has been closed
+    lixeira (Lixeira) falhou: page.goto: Target page, context or browser has been closed
+    carumbe (Carumb├®) falhou: page.goto: Target page, context or browser has been closed
+    boa-esperanca (Boa Esperan├ºa) falhou: page.goto: Target page, context or browser has been closed
+    centro: +7 new=7 ├║nicas=114
+    novo-colorado (Novo Colorado) falhou: page.goto: Target page, context or browser has been closed
+    morada-do-ouro (Morada do Ouro) falhou: page.goto: Target page, context or browser has been closed
+    jardim-california (Jardim California) falhou: page.goto: Target page, context or browser has been closed
+    coophamil (Coophamil) falhou: page.goto: Target page, context or browser has been closed
+    santa-cruz (Santa Cruz) falhou: page.goto: Target page, context or browser has been closed
+    planalto (Planalto) falhou: page.goto: Target page, context or browser has been closed
+    coophema (Coophema) falhou: page.goto: Target page, context or browser has been closed
+    cpa-iii (CPA III) falhou: page.goto: Target page, context or browser has been closed
+    cpa-i (Cpa I) falhou: page.goto: Target page, context or browser has been closed
+    quilombo: +100 new=0 ├║nicas=114 [teto]
+    morada-da-serra (Morada da Serra) falhou: page.goto: Target page, context or browser has been closed
+    cpa-ii (Cpa II) falhou: page.goto: Target page, context or browser has been closed
+    jardim-gramado (Jardim Gramado) falhou: page.goto: Target page, context or browser has been closed
+    coxipo-da-ponte (Coxip├│ da Ponte) falhou: page.goto: Target page, context or browser has been closed
+    jardim-universitario (Jardim Universitario) falhou: page.goto: Target page, context or browser has been closed
+  fallback geo grid @ -15.5951,-56.0923
+    centro-sul: +100 new=8 ├║nicas=122 [teto]
+    dom-aquino: +1 new=1 ├║nicas=123
+    bosque: +22 new=22 ├║nicas=145
+    goiabeiras: +100 new=26 ├║nicas=171 [teto]
+    bosque-da-saude: +100 new=1 ├║nicas=172 [teto]
+    areao: +100 new=0 ├║nicas=172 [teto]
+    popular: +100 new=0 ├║nicas=172 [teto]
+    duque-de-caxias-ii: +100 new=1 ├║nicas=173 [teto]
+    pico-do-amor: +100 new=0 ├║nicas=173 [teto]
+    jardim-das-americas: +100 new=0 ├║nicas=173 [teto]
+    jardim-paulista: +100 new=0 ├║nicas=173 [teto]
+    duque-de-caxias: +100 new=0 ├║nicas=173 [teto]
+    jardim-cuiaba: +100 new=4 ├║nicas=177 [teto]
+    cidade-alta: +8 new=8 ├║nicas=185
+    santa-marta: +100 new=1 ├║nicas=186 [teto]
+    jardim-italia: +100 new=0 ├║nicas=186 [teto]
+    porto: +100 new=0 ├║nicas=186 [teto]
+    jardim-mariana: +100 new=0 ├║nicas=186 [teto]
+    santa-rosa: +8 new=0 ├║nicas=186
+    jardim-kennedy: +1 new=1 ├║nicas=187
+    jardim-aclimacao: +100 new=0 ├║nicas=187 [teto]
+    jardim-petropolis: +100 new=0 ├║nicas=187 [teto]
+    barra-do-pari: +100 new=6 ├║nicas=193 [teto]
+    jardim-primavera: +10 new=10 ├║nicas=203
+    verdao: +100 new=0 ├║nicas=203 [teto]
+    lixeira: +100 new=0 ├║nicas=203 [teto]
+    carumbe: +100 new=0 ├║nicas=203 [teto]
+    boa-esperanca: +10 new=0 ├║nicas=203
+    novo-colorado: +100 new=0 ├║nicas=203 [teto]
+    morada-do-ouro: +100 new=0 ├║nicas=203 [teto]
+    jardim-california: +100 new=0 ├║nicas=203 [teto]
+    coophamil: +100 new=0 ├║nicas=203 [teto]
+    santa-cruz: +2 new=2 ├║nicas=205
+    planalto: +100 new=0 ├║nicas=205 [teto]
+    coophema: +100 new=0 ├║nicas=205 [teto]
+    cpa-iii: +11 new=11 ├║nicas=216
+  [normal] 180008ms n=0 miss=216 err=timeout 180000ms: Cuiab├í-MT
+[33/5571] Feira de Santana-BA baseline=355 cat=0
+    cpa-i (Cpa I) falhou: page.goto: Target page, context or browser has been closed
+    morada-da-serra (Morada da Serra) falhou: page.goto: Target page, context or browser has been closed
+    cpa-ii (Cpa II) falhou: page.goto: Target page, context or browser has been closed
+    jardim-gramado (Jardim Gramado) falhou: page.goto: Target page, context or browser has been closed
+    coxipo-da-ponte (Coxip├│ da Ponte) falhou: page.goto: Target page, context or browser has been closed
+    jardim-universitario (Jardim Universitario) falhou: page.goto: Target page, context or browser has been closed
+  teto 100 ÔåÆ 22 bairros (seed=0 extraidos=22)
+  tiling heur├¡stico: 22 bairro(s)
+    centro: +100 new=100 ├║nicas=200 [teto]
+  [short] 10015ms n=0 miss=355 err=timeout 10000ms: Feira de Santana-BA
+    ponto-central (Ponto Central) falhou: page.content: Target page, context or browser has been closed
+    sao-joao (S├úo JO├âO) falhou: page.goto: Target page, context or browser has been closed
+    capuchinhos (Capuchinhos) falhou: page.goto: Target page, context or browser has been closed
+    brasilia (Bras├¡lia) falhou: page.goto: Target page, context or browser has been closed
+  teto 100 ÔåÆ 22 bairros (seed=0 extraidos=22)
+  tiling heur├¡stico: 22 bairro(s)
+    caseb (Caseb) falhou: page.goto: Target page, context or browser has been closed
+    cel-jose-pinto (Cel. Jose Pinto) falhou: page.goto: Target page, context or browser has been closed
+    queimadinha (Queimadinha) falhou: page.goto: Target page, context or browser has been closed
+    santa-monica (Santa Monica) falhou: page.goto: Target page, context or browser has been closed
+    serraria-brasil (Serraria Brasil) falhou: page.goto: Target page, context or browser has been closed
+    parque-getulio-vargas (Parque Get├║lio Vargas) falhou: page.goto: Target page, context or browser has been closed
+    centro: +100 new=100 ├║nicas=200 [teto]
+    olhos-d-agua (Olhos D'agua) falhou: page.goto: Target page, context or browser has been closed
+    chacara-sao-cosme (Ch├ícara S├úo Cosme) falhou: page.goto: Target page, context or browser has been closed
+    jardim-acacia (Jardim Ac├ícia) falhou: page.goto: Target page, context or browser has been closed
+    sobradinho (Sobradinho) falhou: page.goto: Target page, context or browser has been closed
+    pres-getulio-vargas (Pres. Getulio Vargas) falhou: page.goto: Target page, context or browser has been closed
+    calumbi (Calumbi) falhou: page.goto: Target page, context or browser has been closed
+    ponto-central: +100 new=9 ├║nicas=209 [teto]
+    sim (Sim) falhou: page.goto: Target page, context or browser has been closed
+    baraunas (Bara├║nas) falhou: page.goto: Target page, context or browser has been closed
+    tomba (Tomba) falhou: page.goto: Target page, context or browser has been closed
+    conceicao (Concei├º├úo) falhou: page.goto: Target page, context or browser has been closed
+    jardim-cruzeiro (Jardim Cruzeiro) falhou: page.goto: Target page, context or browser has been closed
+    sao-joao: +100 new=36 ├║nicas=245 [teto]
+    capuchinhos: +100 new=5 ├║nicas=250 [teto]
+    brasilia: +6 new=6 ├║nicas=256
+    caseb: +100 new=6 ├║nicas=262 [teto]
+    cel-jose-pinto: +100 new=4 ├║nicas=266 [teto]
+    queimadinha: +100 new=18 ├║nicas=284 [teto]
+    santa-monica: +100 new=15 ├║nicas=299 [teto]
+    serraria-brasil: +100 new=9 ├║nicas=308 [teto]
+    parque-getulio-vargas: +100 new=2 ├║nicas=310 [teto]
+    olhos-d-agua: +100 new=6 ├║nicas=316 [teto]
+    chacara-sao-cosme: +100 new=1 ├║nicas=317 [teto]
+    jardim-acacia: +100 new=2 ├║nicas=319 [teto]
+    sobradinho: +3 new=3 ├║nicas=322
+    pres-getulio-vargas: +4 new=4 ├║nicas=326
+    calumbi: +100 new=6 ├║nicas=332 [teto]
+    sim: +100 new=17 ├║nicas=349 [teto]
+    baraunas: +2 new=2 ├║nicas=351
+    tomba: +100 new=2 ├║nicas=353 [teto]
+    conceicao: +100 new=0 ├║nicas=353 [teto]
+    jardim-cruzeiro: +100 new=7 ├║nicas=360 [teto]
+  [normal] 94369ms n=360 miss=1
+[34/5571] Joinville-SC baseline=460 cat=0
+  teto 100 ÔåÆ 18 bairros (seed=0 extraidos=18)
+  tiling heur├¡stico: 18 bairro(s)
+    centro: +1 new=1 ├║nicas=101
+  [short] 10006ms n=0 miss=460 err=timeout 10000ms: Joinville-SC
+    atiradores: +100 new=7 ├║nicas=108 [teto]
+    anita-garibaldi (Anita Garibaldi) falhou: sem academias em https://wellhub.com/pt-br/search/sc/anita-garibaldi/?map=1
+    bucarein: +100 new=11 ├║nicas=119 [teto]
+    america: +100 new=21 ├║nicas=140 [teto]
+    gloria: +83 new=83 ├║nicas=223
+    boa-vista: +92 new=9 ├║nicas=232
+    saguacu: +100 new=8 ├║nicas=240 [teto]
+    comasa: +100 new=11 ├║nicas=251 [teto]
+    gremio-schulz: +99 new=7 ├║nicas=258
+    guanabara: +62 new=62 ├║nicas=320
+    itaum: +100 new=8 ├║nicas=328 [teto]
+    floresta: +5 new=5 ├║nicas=333
+    santo-antonio: +6 new=6 ├║nicas=339
+    costa-e-silva: +100 new=8 ├║nicas=347 [teto]
+    iririu: +100 new=0 ├║nicas=347 [teto]
+    fatima: +100 new=100 ├║nicas=447 [teto]
+    sao-marcos: +66 new=5 ├║nicas=452

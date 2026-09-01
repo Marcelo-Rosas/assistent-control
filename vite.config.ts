@@ -8,6 +8,8 @@ export default defineConfig(({ mode }) => {
       server: {
         port: 8081, // 8080 often taken by navi (localhost)
         host: '0.0.0.0',
+        strictPort: true,
+        open: '/ml/train',
       },
       plugins: [react()],
       define: {

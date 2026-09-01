@@ -15,10 +15,35 @@
  *   BATCH_SIZE=50
  */
 import fs from 'fs/promises';
+import fsSync from 'fs';
 import path from 'path';
 import { createHash } from 'crypto';
 import { createClient } from '@supabase/supabase-js';
 import { PLANO_RANK, modalityToMetaKey } from '../src/lib/modalityClassifier';
+
+function loadDotEnv(filePath: string): void {
+  if (!fsSync.existsSync(filePath) || !fsSync.statSync(filePath).isFile()) return;
+  for (const line of fsSync.readFileSync(filePath, 'utf-8').split(/\r?\n/)) {
+    const trimmed = line.trim();
+    if (!trimmed || trimmed.startsWith('#')) continue;
+    const eq = trimmed.indexOf('=');
+    if (eq <= 0) continue;
+    const key = trimmed.slice(0, eq).trim();
+    let value = trimmed.slice(eq + 1).trim();
+    const hashIdx = value.search(/\s+#/);
+    if (hashIdx >= 0) value = value.slice(0, hashIdx).trim();
+    if (
+      (value.startsWith('"') && value.endsWith('"')) ||
+      (value.startsWith("'") && value.endsWith("'"))
+    ) {
+      value = value.slice(1, -1);
+    }
+    if (process.env[key] === undefined) process.env[key] = value;
+  }
+}
+
+loadDotEnv(path.join(process.cwd(), '.env'));
+loadDotEnv(path.join(process.cwd(), '.env.local'));
 
 type PlanRef = {
   name?: string;
@@ -120,8 +145,14 @@ const MODALITY_MAP: Record<string, string> = {
 const DEFAULT_MODALITY = 'Academia Geral/Outros';
 const BATCH_SIZE = Number(process.env.BATCH_SIZE || 50);
 const ROOT = process.cwd();
-const INPUT_PATH =
-  process.env.INPUT_PATH || path.join(ROOT, 'data/processed/totalpass-sp-all.json');
+function resolveInputPath(): string {
+  if (process.env.INPUT_PATH?.trim()) return process.env.INPUT_PATH.trim();
+  const br = path.join(ROOT, 'data/raw/totalpass-brasil-all.json');
+  const sp = path.join(ROOT, 'data/processed/totalpass-sp-all.json');
+  return fsSync.existsSync(br) ? br : sp;
+}
+
+const INPUT_PATH = resolveInputPath();
 
 function requireEnv(name: string): string {
   const v = process.env[name]?.trim();
@@ -216,6 +247,15 @@ function gymToChunk(
   const municipios = Array.isArray(attrs.municipios_relacionados)
     ? attrs.municipios_relacionados.filter((m) => typeof m === 'string' && m.trim())
     : [];
+  const cidadeRaw =
+    (Array.isArray(attrs.municipios_busca)
+      ? attrs.municipios_busca.find((m) => typeof m === 'string' && m.trim())
+      : '') ||
+    municipios[0] ||
+    '';
+  const cidade = String(cidadeRaw)
+    .replace(/\s*\(Grid[^)]*\)\s*/gi, '')
+    .trim();
   const modalidadeLabel = mapModality(attrs.featured_modality_id);
   const planos = planNames(attrs);
   const warningRaw = (attrs.warning_message || '').trim() || null;
@@ -253,6 +293,7 @@ function gymToChunk(
     meta: {
       nome_academia: nome,
       endereco,
+      cidade: cidade || null,
       municipios_relacionados: municipios,
       modalidade: modalidadeLabel,
       modalidade_key: modalityToMetaKey(modalidadeLabel),

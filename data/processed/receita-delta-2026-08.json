@@ -1,0 +1,16 @@
+{
+  "generated_at": "2026-08-28T21:47:57.218Z",
+  "month": "2026-08",
+  "counts": {
+    "entrantes_mes": 0,
+    "baixados_mes": 0,
+    "diff_novos": 0,
+    "diff_baixados": 0
+  },
+  "samples": {
+    "entrantes_mes": [],
+    "baixados_mes": [],
+    "diff_novos": [],
+    "diff_baixados": []
+  }
+}
