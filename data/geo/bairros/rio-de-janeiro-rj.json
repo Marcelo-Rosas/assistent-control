@@ -1,0 +1,838 @@
+{
+  "cidade": "Rio de Janeiro",
+  "uf": "RJ",
+  "ibge": "3304557",
+  "fonte": "Prefeitura da Cidade do Rio de Janeiro — ArcGIS Limites_administrativos, layer \"Limite de Bairros\" (Lei municipal 5.407/2012); area_plane em km²",
+  "bairros": [
+    {
+      "slug": "abolicao",
+      "bairro": "Abolição",
+      "area_ha": 62
+    },
+    {
+      "slug": "acari",
+      "bairro": "Acari",
+      "area_ha": 161
+    },
+    {
+      "slug": "agua-santa",
+      "bairro": "Água Santa",
+      "area_ha": 243
+    },
+    {
+      "slug": "alto-da-boa-vista",
+      "bairro": "Alto da Boa Vista",
+      "area_ha": 3150
+    },
+    {
+      "slug": "anchieta",
+      "bairro": "Anchieta",
+      "area_ha": 435
+    },
+    {
+      "slug": "andarai",
+      "bairro": "Andaraí",
+      "area_ha": 226
+    },
+    {
+      "slug": "anil",
+      "bairro": "Anil",
+      "area_ha": 350
+    },
+    {
+      "slug": "argentino",
+      "bairro": "Argentino",
+      "area_ha": 3
+    },
+    {
+      "slug": "bancarios",
+      "bairro": "Bancários",
+      "area_ha": 98
+    },
+    {
+      "slug": "bangu",
+      "bairro": "Bangu",
+      "area_ha": 3597
+    },
+    {
+      "slug": "barra-da-tijuca",
+      "bairro": "Barra da Tijuca",
+      "area_ha": 4627
+    },
+    {
+      "slug": "barra-de-guaratiba",
+      "bairro": "Barra de Guaratiba",
+      "area_ha": 944
+    },
+    {
+      "slug": "barra-olimpica",
+      "bairro": "Barra Olímpica",
+      "area_ha": 1097
+    },
+    {
+      "slug": "barros-filho",
+      "bairro": "Barros Filho",
+      "area_ha": 172
+    },
+    {
+      "slug": "benfica",
+      "bairro": "Benfica",
+      "area_ha": 174
+    },
+    {
+      "slug": "bento-ribeiro",
+      "bairro": "Bento Ribeiro",
+      "area_ha": 304
+    },
+    {
+      "slug": "bonsucesso",
+      "bairro": "Bonsucesso",
+      "area_ha": 220
+    },
+    {
+      "slug": "botafogo",
+      "bairro": "Botafogo",
+      "area_ha": 480
+    },
+    {
+      "slug": "bras-de-pina",
+      "bairro": "Brás de Pina",
+      "area_ha": 296
+    },
+    {
+      "slug": "cachambi",
+      "bairro": "Cachambi",
+      "area_ha": 225
+    },
+    {
+      "slug": "cacuia",
+      "bairro": "Cacuia",
+      "area_ha": 207
+    },
+    {
+      "slug": "caju",
+      "bairro": "Caju",
+      "area_ha": 535
+    },
+    {
+      "slug": "camorim",
+      "bairro": "Camorim",
+      "area_ha": 735
+    },
+    {
+      "slug": "campinho",
+      "bairro": "Campinho",
+      "area_ha": 98
+    },
+    {
+      "slug": "campo-dos-afonsos",
+      "bairro": "Campo dos Afonsos",
+      "area_ha": 325
+    },
+    {
+      "slug": "campo-grande",
+      "bairro": "Campo Grande",
+      "area_ha": 10445
+    },
+    {
+      "slug": "cascadura",
+      "bairro": "Cascadura",
+      "area_ha": 284
+    },
+    {
+      "slug": "catete",
+      "bairro": "Catete",
+      "area_ha": 68
+    },
+    {
+      "slug": "catumbi",
+      "bairro": "Catumbi",
+      "area_ha": 54
+    },
+    {
+      "slug": "cavalcanti",
+      "bairro": "Cavalcanti",
+      "area_ha": 192
+    },
+    {
+      "slug": "centro",
+      "bairro": "Centro",
+      "area_ha": 542
+    },
+    {
+      "slug": "cidade-de-deus",
+      "bairro": "Cidade de Deus",
+      "area_ha": 127
+    },
+    {
+      "slug": "cidade-nova",
+      "bairro": "Cidade Nova",
+      "area_ha": 93
+    },
+    {
+      "slug": "cidade-universitaria",
+      "bairro": "Cidade Universitária",
+      "area_ha": 469
+    },
+    {
+      "slug": "cocota",
+      "bairro": "Cocotá",
+      "area_ha": 49
+    },
+    {
+      "slug": "coelho-neto",
+      "bairro": "Coelho Neto",
+      "area_ha": 251
+    },
+    {
+      "slug": "colegio",
+      "bairro": "Colégio",
+      "area_ha": 226
+    },
+    {
+      "slug": "complexo-do-alemao",
+      "bairro": "Complexo do Alemão",
+      "area_ha": 296
+    },
+    {
+      "slug": "copacabana",
+      "bairro": "Copacabana",
+      "area_ha": 410
+    },
+    {
+      "slug": "cordovil",
+      "bairro": "Cordovil",
+      "area_ha": 368
+    },
+    {
+      "slug": "cosme-velho",
+      "bairro": "Cosme Velho",
+      "area_ha": 89
+    },
+    {
+      "slug": "cosmos",
+      "bairro": "Cosmos",
+      "area_ha": 1126
+    },
+    {
+      "slug": "costa-barros",
+      "bairro": "Costa Barros",
+      "area_ha": 181
+    },
+    {
+      "slug": "curicica",
+      "bairro": "Curicica",
+      "area_ha": 334
+    },
+    {
+      "slug": "del-castilho",
+      "bairro": "Del Castilho",
+      "area_ha": 144
+    },
+    {
+      "slug": "deodoro",
+      "bairro": "Deodoro",
+      "area_ha": 464
+    },
+    {
+      "slug": "encantado",
+      "bairro": "Encantado",
+      "area_ha": 106
+    },
+    {
+      "slug": "engenheiro-leal",
+      "bairro": "Engenheiro Leal",
+      "area_ha": 71
+    },
+    {
+      "slug": "engenho-da-rainha",
+      "bairro": "Engenho da Rainha",
+      "area_ha": 223
+    },
+    {
+      "slug": "engenho-de-dentro",
+      "bairro": "Engenho de Dentro",
+      "area_ha": 392
+    },
+    {
+      "slug": "engenho-novo",
+      "bairro": "Engenho Novo",
+      "area_ha": 264
+    },
+    {
+      "slug": "estacio",
+      "bairro": "Estácio",
+      "area_ha": 98
+    },
+    {
+      "slug": "flamengo",
+      "bairro": "Flamengo",
+      "area_ha": 165
+    },
+    {
+      "slug": "freguesia-ilha",
+      "bairro": "Freguesia (Ilha)",
+      "area_ha": 406
+    },
+    {
+      "slug": "freguesia-jacarepagua",
+      "bairro": "Freguesia (Jacarepaguá)",
+      "area_ha": 1033
+    },
+    {
+      "slug": "galeao",
+      "bairro": "Galeão",
+      "area_ha": 1896
+    },
+    {
+      "slug": "gamboa",
+      "bairro": "Gamboa",
+      "area_ha": 111
+    },
+    {
+      "slug": "gardenia-azul",
+      "bairro": "Gardênia Azul",
+      "area_ha": 124
+    },
+    {
+      "slug": "gavea",
+      "bairro": "Gávea",
+      "area_ha": 258
+    },
+    {
+      "slug": "gericino",
+      "bairro": "Gericinó",
+      "area_ha": 253
+    },
+    {
+      "slug": "gloria",
+      "bairro": "Glória",
+      "area_ha": 114
+    },
+    {
+      "slug": "grajau",
+      "bairro": "Grajaú",
+      "area_ha": 574
+    },
+    {
+      "slug": "grumari",
+      "bairro": "Grumari",
+      "area_ha": 960
+    },
+    {
+      "slug": "guadalupe",
+      "bairro": "Guadalupe",
+      "area_ha": 382
+    },
+    {
+      "slug": "guaratiba",
+      "bairro": "Guaratiba",
+      "area_ha": 13179
+    },
+    {
+      "slug": "higienopolis",
+      "bairro": "Higienópolis",
+      "area_ha": 116
+    },
+    {
+      "slug": "honorio-gurgel",
+      "bairro": "Honório Gurgel",
+      "area_ha": 137
+    },
+    {
+      "slug": "humaita",
+      "bairro": "Humaitá",
+      "area_ha": 105
+    },
+    {
+      "slug": "ilha-de-guaratiba",
+      "bairro": "Ilha de Guaratiba",
+      "area_ha": 771
+    },
+    {
+      "slug": "imperial-de-sao-cristovao",
+      "bairro": "Imperial de São Cristóvão",
+      "area_ha": 411
+    },
+    {
+      "slug": "inhauma",
+      "bairro": "Inhaúma",
+      "area_ha": 349
+    },
+    {
+      "slug": "inhoaiba",
+      "bairro": "Inhoaíba",
+      "area_ha": 829
+    },
+    {
+      "slug": "ipanema",
+      "bairro": "Ipanema",
+      "area_ha": 308
+    },
+    {
+      "slug": "iraja",
+      "bairro": "Irajá",
+      "area_ha": 748
+    },
+    {
+      "slug": "itanhanga",
+      "bairro": "Itanhangá",
+      "area_ha": 1320
+    },
+    {
+      "slug": "jabour",
+      "bairro": "Jabour",
+      "area_ha": 33
+    },
+    {
+      "slug": "jacare",
+      "bairro": "Jacaré",
+      "area_ha": 84
+    },
+    {
+      "slug": "jacarepagua",
+      "bairro": "Jacarepaguá",
+      "area_ha": 6821
+    },
+    {
+      "slug": "jacarezinho",
+      "bairro": "Jacarezinho",
+      "area_ha": 94
+    },
+    {
+      "slug": "jardim-america",
+      "bairro": "Jardim América",
+      "area_ha": 197
+    },
+    {
+      "slug": "jardim-botanico",
+      "bairro": "Jardim Botânico",
+      "area_ha": 269
+    },
+    {
+      "slug": "jardim-carioca",
+      "bairro": "Jardim Carioca",
+      "area_ha": 162
+    },
+    {
+      "slug": "jardim-guanabara",
+      "bairro": "Jardim Guanabara",
+      "area_ha": 321
+    },
+    {
+      "slug": "jardim-sulacap",
+      "bairro": "Jardim Sulacap",
+      "area_ha": 787
+    },
+    {
+      "slug": "joa",
+      "bairro": "Joá",
+      "area_ha": 169
+    },
+    {
+      "slug": "lagoa",
+      "bairro": "Lagoa",
+      "area_ha": 511
+    },
+    {
+      "slug": "lapa",
+      "bairro": "Lapa",
+      "area_ha": 30
+    },
+    {
+      "slug": "laranjeiras",
+      "bairro": "Laranjeiras",
+      "area_ha": 249
+    },
+    {
+      "slug": "leblon",
+      "bairro": "Leblon",
+      "area_ha": 215
+    },
+    {
+      "slug": "leme",
+      "bairro": "Leme",
+      "area_ha": 98
+    },
+    {
+      "slug": "lins-de-vasconcelos",
+      "bairro": "Lins de Vasconcelos",
+      "area_ha": 267
+    },
+    {
+      "slug": "madureira",
+      "bairro": "Madureira",
+      "area_ha": 379
+    },
+    {
+      "slug": "magalhaes-bastos",
+      "bairro": "Magalhães Bastos",
+      "area_ha": 198
+    },
+    {
+      "slug": "mangueira",
+      "bairro": "Mangueira",
+      "area_ha": 80
+    },
+    {
+      "slug": "manguinhos",
+      "bairro": "Manguinhos",
+      "area_ha": 262
+    },
+    {
+      "slug": "maracana",
+      "bairro": "Maracanã",
+      "area_ha": 167
+    },
+    {
+      "slug": "mare",
+      "bairro": "Maré",
+      "area_ha": 427
+    },
+    {
+      "slug": "marechal-hermes",
+      "bairro": "Marechal Hermes",
+      "area_ha": 389
+    },
+    {
+      "slug": "maria-da-graca",
+      "bairro": "Maria da Graça",
+      "area_ha": 82
+    },
+    {
+      "slug": "meier",
+      "bairro": "Méier",
+      "area_ha": 247
+    },
+    {
+      "slug": "monero",
+      "bairro": "Moneró",
+      "area_ha": 52
+    },
+    {
+      "slug": "olaria",
+      "bairro": "Olaria",
+      "area_ha": 369
+    },
+    {
+      "slug": "osvaldo-cruz",
+      "bairro": "Osvaldo Cruz",
+      "area_ha": 207
+    },
+    {
+      "slug": "paciencia",
+      "bairro": "Paciência",
+      "area_ha": 2742
+    },
+    {
+      "slug": "padre-miguel",
+      "bairro": "Padre Miguel",
+      "area_ha": 487
+    },
+    {
+      "slug": "paqueta",
+      "bairro": "Paquetá",
+      "area_ha": 171
+    },
+    {
+      "slug": "parada-de-lucas",
+      "bairro": "Parada de Lucas",
+      "area_ha": 206
+    },
+    {
+      "slug": "parque-anchieta",
+      "bairro": "Parque Anchieta",
+      "area_ha": 391
+    },
+    {
+      "slug": "parque-columbia",
+      "bairro": "Parque Colúmbia",
+      "area_ha": 152
+    },
+    {
+      "slug": "pavuna",
+      "bairro": "Pavuna",
+      "area_ha": 831
+    },
+    {
+      "slug": "pechincha",
+      "bairro": "Pechincha",
+      "area_ha": 283
+    },
+    {
+      "slug": "pedra-de-guaratiba",
+      "bairro": "Pedra de Guaratiba",
+      "area_ha": 364
+    },
+    {
+      "slug": "penha",
+      "bairro": "Penha",
+      "area_ha": 581
+    },
+    {
+      "slug": "penha-circular",
+      "bairro": "Penha Circular",
+      "area_ha": 462
+    },
+    {
+      "slug": "piedade",
+      "bairro": "Piedade",
+      "area_ha": 389
+    },
+    {
+      "slug": "pilares",
+      "bairro": "Pilares",
+      "area_ha": 184
+    },
+    {
+      "slug": "pitangueiras",
+      "bairro": "Pitangueiras",
+      "area_ha": 60
+    },
+    {
+      "slug": "portuguesa",
+      "bairro": "Portuguesa",
+      "area_ha": 119
+    },
+    {
+      "slug": "praca-da-bandeira",
+      "bairro": "Praça da Bandeira",
+      "area_ha": 72
+    },
+    {
+      "slug": "praca-seca",
+      "bairro": "Praça Seca",
+      "area_ha": 650
+    },
+    {
+      "slug": "praia-da-bandeira",
+      "bairro": "Praia da Bandeira",
+      "area_ha": 38
+    },
+    {
+      "slug": "quintino-bocaiuva",
+      "bairro": "Quintino Bocaiúva",
+      "area_ha": 432
+    },
+    {
+      "slug": "ramos",
+      "bairro": "Ramos",
+      "area_ha": 279
+    },
+    {
+      "slug": "realengo",
+      "bairro": "Realengo",
+      "area_ha": 2605
+    },
+    {
+      "slug": "recreio-dos-bandeirantes",
+      "bairro": "Recreio dos Bandeirantes",
+      "area_ha": 3066
+    },
+    {
+      "slug": "riachuelo",
+      "bairro": "Riachuelo",
+      "area_ha": 93
+    },
+    {
+      "slug": "ribeira",
+      "bairro": "Ribeira",
+      "area_ha": 86
+    },
+    {
+      "slug": "ricardo-de-albuquerque",
+      "bairro": "Ricardo de Albuquerque",
+      "area_ha": 212
+    },
+    {
+      "slug": "rio-comprido",
+      "bairro": "Rio Comprido",
+      "area_ha": 334
+    },
+    {
+      "slug": "rocha",
+      "bairro": "Rocha",
+      "area_ha": 131
+    },
+    {
+      "slug": "rocha-miranda",
+      "bairro": "Rocha Miranda",
+      "area_ha": 289
+    },
+    {
+      "slug": "rocinha",
+      "bairro": "Rocinha",
+      "area_ha": 144
+    },
+    {
+      "slug": "sampaio",
+      "bairro": "Sampaio",
+      "area_ha": 88
+    },
+    {
+      "slug": "santa-cruz",
+      "bairro": "Santa Cruz",
+      "area_ha": 12504
+    },
+    {
+      "slug": "santa-teresa",
+      "bairro": "Santa Teresa",
+      "area_ha": 516
+    },
+    {
+      "slug": "santissimo",
+      "bairro": "Santíssimo",
+      "area_ha": 832
+    },
+    {
+      "slug": "santo-cristo",
+      "bairro": "Santo Cristo",
+      "area_ha": 168
+    },
+    {
+      "slug": "sao-conrado",
+      "bairro": "São Conrado",
+      "area_ha": 649
+    },
+    {
+      "slug": "sao-francisco-xavier",
+      "bairro": "São Francisco Xavier",
+      "area_ha": 65
+    },
+    {
+      "slug": "saude",
+      "bairro": "Saúde",
+      "area_ha": 36
+    },
+    {
+      "slug": "senador-camara",
+      "bairro": "Senador Camará",
+      "area_ha": 1691
+    },
+    {
+      "slug": "senador-vasconcelos",
+      "bairro": "Senador Vasconcelos",
+      "area_ha": 644
+    },
+    {
+      "slug": "sepetiba",
+      "bairro": "Sepetiba",
+      "area_ha": 1162
+    },
+    {
+      "slug": "tanque",
+      "bairro": "Tanque",
+      "area_ha": 557
+    },
+    {
+      "slug": "taquara",
+      "bairro": "Taquara",
+      "area_ha": 1321
+    },
+    {
+      "slug": "taua",
+      "bairro": "Tauá",
+      "area_ha": 167
+    },
+    {
+      "slug": "tijuca",
+      "bairro": "Tijuca",
+      "area_ha": 1007
+    },
+    {
+      "slug": "todos-os-santos",
+      "bairro": "Todos os Santos",
+      "area_ha": 101
+    },
+    {
+      "slug": "tomas-coelho",
+      "bairro": "Tomás Coelho",
+      "area_ha": 175
+    },
+    {
+      "slug": "turiacu",
+      "bairro": "Turiaçú",
+      "area_ha": 126
+    },
+    {
+      "slug": "urca",
+      "bairro": "Urca",
+      "area_ha": 232
+    },
+    {
+      "slug": "vargem-grande",
+      "bairro": "Vargem Grande",
+      "area_ha": 3938
+    },
+    {
+      "slug": "vargem-pequena",
+      "bairro": "Vargem Pequena",
+      "area_ha": 1444
+    },
+    {
+      "slug": "vasco-da-gama",
+      "bairro": "Vasco da Gama",
+      "area_ha": 86
+    },
+    {
+      "slug": "vaz-lobo",
+      "bairro": "Vaz Lobo",
+      "area_ha": 110
+    },
+    {
+      "slug": "vicente-de-carvalho",
+      "bairro": "Vicente de Carvalho",
+      "area_ha": 184
+    },
+    {
+      "slug": "vidigal",
+      "bairro": "Vidigal",
+      "area_ha": 162
+    },
+    {
+      "slug": "vigario-geral",
+      "bairro": "Vigário Geral",
+      "area_ha": 339
+    },
+    {
+      "slug": "vila-da-penha",
+      "bairro": "Vila da Penha",
+      "area_ha": 154
+    },
+    {
+      "slug": "vila-isabel",
+      "bairro": "Vila Isabel",
+      "area_ha": 322
+    },
+    {
+      "slug": "vila-kennedy",
+      "bairro": "Vila Kennedy",
+      "area_ha": 147
+    },
+    {
+      "slug": "vila-kosmos",
+      "bairro": "Vila Kosmos",
+      "area_ha": 152
+    },
+    {
+      "slug": "vila-militar",
+      "bairro": "Vila Militar",
+      "area_ha": 1076
+    },
+    {
+      "slug": "vila-valqueire",
+      "bairro": "Vila Valqueire",
+      "area_ha": 423
+    },
+    {
+      "slug": "vista-alegre",
+      "bairro": "Vista Alegre",
+      "area_ha": 125
+    },
+    {
+      "slug": "zumbi",
+      "bairro": "Zumbi",
+      "area_ha": 16
+    }
+  ]
+}
