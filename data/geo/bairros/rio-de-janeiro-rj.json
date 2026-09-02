@@ -8,25 +8,33 @@
       "slug": "abolicao",
       "bairro": "Abolição",
       "area_ha": 62,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1514.11
     },
     {
       "slug": "acari",
       "bairro": "Acari",
       "area_ha": 161,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 489.26
     },
     {
       "slug": "agua-santa",
       "bairro": "Água Santa",
       "area_ha": 243,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1463.18
     },
     {
       "slug": "alto-da-boa-vista",
       "bairro": "Alto da Boa Vista",
       "area_ha": 3150,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1587.15
     },
     {
       "slug": "anchieta",
@@ -34,19 +42,25 @@
       "area_ha": 435,
       "match_slugs": [
         "parque-anchieta"
-      ]
+      ],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 771.47
     },
     {
       "slug": "andarai",
       "bairro": "Andaraí",
       "area_ha": 226,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 2500.55
     },
     {
       "slug": "anil",
       "bairro": "Anil",
       "area_ha": 350,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1806.93
     },
     {
       "slug": "argentino",
@@ -58,25 +72,33 @@
       "slug": "bancarios",
       "bairro": "Bancários",
       "area_ha": 98,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1085.94
     },
     {
       "slug": "bangu",
       "bairro": "Bangu",
       "area_ha": 3597,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 873.39
     },
     {
       "slug": "barra-da-tijuca",
       "bairro": "Barra da Tijuca",
       "area_ha": 4627,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 6012.99
     },
     {
       "slug": "barra-de-guaratiba",
       "bairro": "Barra de Guaratiba",
       "area_ha": 944,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1049.23
     },
     {
       "slug": "barra-olimpica",
@@ -88,307 +110,409 @@
       "slug": "barros-filho",
       "bairro": "Barros Filho",
       "area_ha": 172,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 659.54
     },
     {
       "slug": "benfica",
       "bairro": "Benfica",
       "area_ha": 174,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 792.31
     },
     {
       "slug": "bento-ribeiro",
       "bairro": "Bento Ribeiro",
       "area_ha": 304,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1274.33
     },
     {
       "slug": "bonsucesso",
       "bairro": "Bonsucesso",
       "area_ha": 220,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1330.68
     },
     {
       "slug": "botafogo",
       "bairro": "Botafogo",
       "area_ha": 480,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 4948.93
     },
     {
       "slug": "bras-de-pina",
       "bairro": "Brás de Pina",
       "area_ha": 296,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1026.59
     },
     {
       "slug": "cachambi",
       "bairro": "Cachambi",
       "area_ha": 225,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 2092.95
     },
     {
       "slug": "cacuia",
       "bairro": "Cacuia",
       "area_ha": 207,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1170.85
     },
     {
       "slug": "caju",
       "bairro": "Caju",
       "area_ha": 535,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 658.95
     },
     {
       "slug": "camorim",
       "bairro": "Camorim",
       "area_ha": 735,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 3554.92
     },
     {
       "slug": "campinho",
       "bairro": "Campinho",
       "area_ha": 98,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1398.01
     },
     {
       "slug": "campo-dos-afonsos",
       "bairro": "Campo dos Afonsos",
       "area_ha": 325,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 2446.73
     },
     {
       "slug": "campo-grande",
       "bairro": "Campo Grande",
       "area_ha": 10445,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1209.27
     },
     {
       "slug": "cascadura",
       "bairro": "Cascadura",
       "area_ha": 284,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1110.09
     },
     {
       "slug": "catete",
       "bairro": "Catete",
       "area_ha": 68,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 2918.9
     },
     {
       "slug": "catumbi",
       "bairro": "Catumbi",
       "area_ha": 54,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 859.07
     },
     {
       "slug": "cavalcanti",
       "bairro": "Cavalcanti",
       "area_ha": 192,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 924.26
     },
     {
       "slug": "centro",
       "bairro": "Centro",
       "area_ha": 542,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 2305.4
     },
     {
       "slug": "cidade-de-deus",
       "bairro": "Cidade de Deus",
       "area_ha": 127,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 607.94
     },
     {
       "slug": "cidade-nova",
       "bairro": "Cidade Nova",
       "area_ha": 93,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1521.51
     },
     {
       "slug": "cidade-universitaria",
       "bairro": "Cidade Universitária",
       "area_ha": 469,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 897.45
     },
     {
       "slug": "cocota",
       "bairro": "Cocotá",
       "area_ha": 49,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1572.58
     },
     {
       "slug": "coelho-neto",
       "bairro": "Coelho Neto",
       "area_ha": 251,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 851.99
     },
     {
       "slug": "colegio",
       "bairro": "Colégio",
       "area_ha": 226,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 906.14
     },
     {
       "slug": "complexo-do-alemao",
       "bairro": "Complexo do Alemão",
       "area_ha": 296,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 533.04
     },
     {
       "slug": "copacabana",
       "bairro": "Copacabana",
       "area_ha": 410,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 4515.96
     },
     {
       "slug": "cordovil",
       "bairro": "Cordovil",
       "area_ha": 368,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1006.32
     },
     {
       "slug": "cosme-velho",
       "bairro": "Cosme Velho",
       "area_ha": 89,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 2988.6
     },
     {
       "slug": "cosmos",
       "bairro": "Cosmos",
       "area_ha": 1126,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 760.24
     },
     {
       "slug": "costa-barros",
       "bairro": "Costa Barros",
       "area_ha": 181,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 547.28
     },
     {
       "slug": "curicica",
       "bairro": "Curicica",
       "area_ha": 334,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1079.96
     },
     {
       "slug": "del-castilho",
       "bairro": "Del Castilho",
       "area_ha": 144,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1508.93
     },
     {
       "slug": "deodoro",
       "bairro": "Deodoro",
       "area_ha": 464,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1212.57
     },
     {
       "slug": "encantado",
       "bairro": "Encantado",
       "area_ha": 106,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1190.47
     },
     {
       "slug": "engenheiro-leal",
       "bairro": "Engenheiro Leal",
       "area_ha": 71,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 756.1
     },
     {
       "slug": "engenho-da-rainha",
       "bairro": "Engenho da Rainha",
       "area_ha": 223,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1019.9
     },
     {
       "slug": "engenho-de-dentro",
       "bairro": "Engenho de Dentro",
       "area_ha": 392,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1628.36
     },
     {
       "slug": "engenho-novo",
       "bairro": "Engenho Novo",
       "area_ha": 264,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1341.1
     },
     {
       "slug": "estacio",
       "bairro": "Estácio",
       "area_ha": 98,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 989.77
     },
     {
       "slug": "flamengo",
       "bairro": "Flamengo",
       "area_ha": 165,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 5346.55
     },
     {
       "slug": "freguesia-ilha",
       "bairro": "Freguesia (Ilha)",
       "area_ha": 406,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1340.79
     },
     {
       "slug": "freguesia-jacarepagua",
       "bairro": "Freguesia (Jacarepaguá)",
       "area_ha": 1033,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 2779.64
     },
     {
       "slug": "galeao",
       "bairro": "Galeão",
       "area_ha": 1896,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 988.99
     },
     {
       "slug": "gamboa",
       "bairro": "Gamboa",
       "area_ha": 111,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 836.88
     },
     {
       "slug": "gardenia-azul",
       "bairro": "Gardênia Azul",
       "area_ha": 124,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 869.79
     },
     {
       "slug": "gavea",
       "bairro": "Gávea",
       "area_ha": 258,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 5520.64
     },
     {
       "slug": "gericino",
       "bairro": "Gericinó",
       "area_ha": 253,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 662.13
     },
     {
       "slug": "gloria",
       "bairro": "Glória",
       "area_ha": 114,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 4297.31
     },
     {
       "slug": "grajau",
       "bairro": "Grajaú",
       "area_ha": 574,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 2818.81
     },
     {
       "slug": "grumari",
       "bairro": "Grumari",
       "area_ha": 960,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 434.89
     },
     {
       "slug": "guadalupe",
       "bairro": "Guadalupe",
       "area_ha": 382,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 964.97
     },
     {
       "slug": "guaratiba",
@@ -396,25 +520,33 @@
       "area_ha": 13179,
       "match_slugs": [
         "pedra-de-guaratiba"
-      ]
+      ],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 755.17
     },
     {
       "slug": "higienopolis",
       "bairro": "Higienópolis",
       "area_ha": 116,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1350.02
     },
     {
       "slug": "honorio-gurgel",
       "bairro": "Honório Gurgel",
       "area_ha": 137,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 814.39
     },
     {
       "slug": "humaita",
       "bairro": "Humaitá",
       "area_ha": 105,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 5575.1
     },
     {
       "slug": "ilha-de-guaratiba",
@@ -432,31 +564,41 @@
       "slug": "inhauma",
       "bairro": "Inhaúma",
       "area_ha": 349,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 886.42
     },
     {
       "slug": "inhoaiba",
       "bairro": "Inhoaíba",
       "area_ha": 829,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 728.45
     },
     {
       "slug": "ipanema",
       "bairro": "Ipanema",
       "area_ha": 308,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 6947.49
     },
     {
       "slug": "iraja",
       "bairro": "Irajá",
       "area_ha": 748,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1484.91
     },
     {
       "slug": "itanhanga",
       "bairro": "Itanhangá",
       "area_ha": 1320,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1058.88
     },
     {
       "slug": "jabour",
@@ -468,157 +610,209 @@
       "slug": "jacare",
       "bairro": "Jacaré",
       "area_ha": 84,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 800.92
     },
     {
       "slug": "jacarepagua",
       "bairro": "Jacarepaguá",
       "area_ha": 6821,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1617.41
     },
     {
       "slug": "jacarezinho",
       "bairro": "Jacarezinho",
       "area_ha": 94,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 596.1
     },
     {
       "slug": "jardim-america",
       "bairro": "Jardim América",
       "area_ha": 197,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 940.77
     },
     {
       "slug": "jardim-botanico",
       "bairro": "Jardim Botânico",
       "area_ha": 269,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 6096.23
     },
     {
       "slug": "jardim-carioca",
       "bairro": "Jardim Carioca",
       "area_ha": 162,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1186.52
     },
     {
       "slug": "jardim-guanabara",
       "bairro": "Jardim Guanabara",
       "area_ha": 321,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 3263.83
     },
     {
       "slug": "jardim-sulacap",
       "bairro": "Jardim Sulacap",
       "area_ha": 787,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1928.73
     },
     {
       "slug": "joa",
       "bairro": "Joá",
       "area_ha": 169,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 4196.27
     },
     {
       "slug": "lagoa",
       "bairro": "Lagoa",
       "area_ha": 511,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 7957.79
     },
     {
       "slug": "lapa",
       "bairro": "Lapa",
       "area_ha": 30,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 3090.47
     },
     {
       "slug": "laranjeiras",
       "bairro": "Laranjeiras",
       "area_ha": 249,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 4908.79
     },
     {
       "slug": "leblon",
       "bairro": "Leblon",
       "area_ha": 215,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 7802.06
     },
     {
       "slug": "leme",
       "bairro": "Leme",
       "area_ha": 98,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 4854.54
     },
     {
       "slug": "lins-de-vasconcelos",
       "bairro": "Lins de Vasconcelos",
       "area_ha": 267,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1343.83
     },
     {
       "slug": "madureira",
       "bairro": "Madureira",
       "area_ha": 379,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1165.88
     },
     {
       "slug": "magalhaes-bastos",
       "bairro": "Magalhães Bastos",
       "area_ha": 198,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 960.2
     },
     {
       "slug": "mangueira",
       "bairro": "Mangueira",
       "area_ha": 80,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 622.69
     },
     {
       "slug": "manguinhos",
       "bairro": "Manguinhos",
       "area_ha": 262,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 577.37
     },
     {
       "slug": "maracana",
       "bairro": "Maracanã",
       "area_ha": 167,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 3838.82
     },
     {
       "slug": "mare",
       "bairro": "Maré",
       "area_ha": 427,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 588.02
     },
     {
       "slug": "marechal-hermes",
       "bairro": "Marechal Hermes",
       "area_ha": 389,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1091.34
     },
     {
       "slug": "maria-da-graca",
       "bairro": "Maria da Graça",
       "area_ha": 82,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1449.88
     },
     {
       "slug": "meier",
       "bairro": "Méier",
       "area_ha": 247,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 2669.93
     },
     {
       "slug": "monero",
       "bairro": "Moneró",
       "area_ha": 52,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 2328.68
     },
     {
       "slug": "olaria",
       "bairro": "Olaria",
       "area_ha": 369,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1277.71
     },
     {
       "slug": "osvaldo-cruz",
@@ -630,55 +824,73 @@
       "slug": "paciencia",
       "bairro": "Paciência",
       "area_ha": 2742,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 736.46
     },
     {
       "slug": "padre-miguel",
       "bairro": "Padre Miguel",
       "area_ha": 487,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 837.91
     },
     {
       "slug": "paqueta",
       "bairro": "Paquetá",
       "area_ha": 171,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1850.31
     },
     {
       "slug": "parada-de-lucas",
       "bairro": "Parada de Lucas",
       "area_ha": 206,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1009.77
     },
     {
       "slug": "parque-anchieta",
       "bairro": "Parque Anchieta",
       "area_ha": 391,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1045.13
     },
     {
       "slug": "parque-columbia",
       "bairro": "Parque Colúmbia",
       "area_ha": 152,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 725.71
     },
     {
       "slug": "pavuna",
       "bairro": "Pavuna",
       "area_ha": 831,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 821.23
     },
     {
       "slug": "pechincha",
       "bairro": "Pechincha",
       "area_ha": 283,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 2384.33
     },
     {
       "slug": "pedra-de-guaratiba",
       "bairro": "Pedra de Guaratiba",
       "area_ha": 364,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1161.27
     },
     {
       "slug": "penha",
@@ -687,103 +899,137 @@
       "match_slugs": [
         "penha-circular",
         "vila-da-penha"
-      ]
+      ],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1175.49
     },
     {
       "slug": "penha-circular",
       "bairro": "Penha Circular",
       "area_ha": 462,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1219.32
     },
     {
       "slug": "piedade",
       "bairro": "Piedade",
       "area_ha": 389,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1220.98
     },
     {
       "slug": "pilares",
       "bairro": "Pilares",
       "area_ha": 184,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 994.79
     },
     {
       "slug": "pitangueiras",
       "bairro": "Pitangueiras",
       "area_ha": 60,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1073.76
     },
     {
       "slug": "portuguesa",
       "bairro": "Portuguesa",
       "area_ha": 119,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1986.62
     },
     {
       "slug": "praca-da-bandeira",
       "bairro": "Praça da Bandeira",
       "area_ha": 72,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 2696.31
     },
     {
       "slug": "praca-seca",
       "bairro": "Praça Seca",
       "area_ha": 650,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1233.05
     },
     {
       "slug": "praia-da-bandeira",
       "bairro": "Praia da Bandeira",
       "area_ha": 38,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 2037.75
     },
     {
       "slug": "quintino-bocaiuva",
       "bairro": "Quintino Bocaiúva",
       "area_ha": 432,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1217.8
     },
     {
       "slug": "ramos",
       "bairro": "Ramos",
       "area_ha": 279,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1270.09
     },
     {
       "slug": "realengo",
       "bairro": "Realengo",
       "area_ha": 2605,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 934.52
     },
     {
       "slug": "recreio-dos-bandeirantes",
       "bairro": "Recreio dos Bandeirantes",
       "area_ha": 3066,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 3513.11
     },
     {
       "slug": "riachuelo",
       "bairro": "Riachuelo",
       "area_ha": 93,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1744.88
     },
     {
       "slug": "ribeira",
       "bairro": "Ribeira",
       "area_ha": 86,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 2421.9
     },
     {
       "slug": "ricardo-de-albuquerque",
       "bairro": "Ricardo de Albuquerque",
       "area_ha": 212,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 731.39
     },
     {
       "slug": "rio-comprido",
       "bairro": "Rio Comprido",
       "area_ha": 334,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1438.96
     },
     {
       "slug": "rocha",
@@ -791,223 +1037,297 @@
       "area_ha": 131,
       "match_slugs": [
         "rocha-miranda"
-      ]
+      ],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1273.08
     },
     {
       "slug": "rocha-miranda",
       "bairro": "Rocha Miranda",
       "area_ha": 289,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1081.41
     },
     {
       "slug": "rocinha",
       "bairro": "Rocinha",
       "area_ha": 144,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 737.95
     },
     {
       "slug": "sampaio",
       "bairro": "Sampaio",
       "area_ha": 88,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1025.96
     },
     {
       "slug": "santa-cruz",
       "bairro": "Santa Cruz",
       "area_ha": 12504,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 704.81
     },
     {
       "slug": "santa-teresa",
       "bairro": "Santa Teresa",
       "area_ha": 516,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1663.4
     },
     {
       "slug": "santissimo",
       "bairro": "Santíssimo",
       "area_ha": 832,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 859.87
     },
     {
       "slug": "santo-cristo",
       "bairro": "Santo Cristo",
       "area_ha": 168,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 864.19
     },
     {
       "slug": "sao-conrado",
       "bairro": "São Conrado",
       "area_ha": 649,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 6066.83
     },
     {
       "slug": "sao-francisco-xavier",
       "bairro": "São Francisco Xavier",
       "area_ha": 65,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1657.63
     },
     {
       "slug": "saude",
       "bairro": "Saúde",
       "area_ha": 36,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1443.77
     },
     {
       "slug": "senador-camara",
       "bairro": "Senador Camará",
       "area_ha": 1691,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 759.84
     },
     {
       "slug": "senador-vasconcelos",
       "bairro": "Senador Vasconcelos",
       "area_ha": 644,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 872.26
     },
     {
       "slug": "sepetiba",
       "bairro": "Sepetiba",
       "area_ha": 1162,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 725.29
     },
     {
       "slug": "tanque",
       "bairro": "Tanque",
       "area_ha": 557,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1306.16
     },
     {
       "slug": "taquara",
       "bairro": "Taquara",
       "area_ha": 1321,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1652.6
     },
     {
       "slug": "taua",
       "bairro": "Tauá",
       "area_ha": 167,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1052.97
     },
     {
       "slug": "tijuca",
       "bairro": "Tijuca",
       "area_ha": 1007,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 3457.73
     },
     {
       "slug": "todos-os-santos",
       "bairro": "Todos os Santos",
       "area_ha": 101,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 2535.45
     },
     {
       "slug": "tomas-coelho",
       "bairro": "Tomás Coelho",
       "area_ha": 175,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 909.42
     },
     {
       "slug": "turiacu",
       "bairro": "Turiaçú",
       "area_ha": 126,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 949.58
     },
     {
       "slug": "urca",
       "bairro": "Urca",
       "area_ha": 232,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 5010.53
     },
     {
       "slug": "vargem-grande",
       "bairro": "Vargem Grande",
       "area_ha": 3938,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1340.16
     },
     {
       "slug": "vargem-pequena",
       "bairro": "Vargem Pequena",
       "area_ha": 1444,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1440
     },
     {
       "slug": "vasco-da-gama",
       "bairro": "Vasco da Gama",
       "area_ha": 86,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 977.66
     },
     {
       "slug": "vaz-lobo",
       "bairro": "Vaz Lobo",
       "area_ha": 110,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1108.22
     },
     {
       "slug": "vicente-de-carvalho",
       "bairro": "Vicente de Carvalho",
       "area_ha": 184,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 995.17
     },
     {
       "slug": "vidigal",
       "bairro": "Vidigal",
       "area_ha": 162,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 792.25
     },
     {
       "slug": "vigario-geral",
       "bairro": "Vigário Geral",
       "area_ha": 339,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 712.11
     },
     {
       "slug": "vila-da-penha",
       "bairro": "Vila da Penha",
       "area_ha": 154,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1960.79
     },
     {
       "slug": "vila-isabel",
       "bairro": "Vila Isabel",
       "area_ha": 322,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 2541.68
     },
     {
       "slug": "vila-kennedy",
       "bairro": "Vila Kennedy",
       "area_ha": 147,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 633.82
     },
     {
       "slug": "vila-kosmos",
       "bairro": "Vila Kosmos",
       "area_ha": 152,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1121.11
     },
     {
       "slug": "vila-militar",
       "bairro": "Vila Militar",
       "area_ha": 1076,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1398.51
     },
     {
       "slug": "vila-valqueire",
       "bairro": "Vila Valqueire",
       "area_ha": 423,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1940.79
     },
     {
       "slug": "vista-alegre",
       "bairro": "Vista Alegre",
       "area_ha": 125,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1607.86
     },
     {
       "slug": "zumbi",
       "bairro": "Zumbi",
       "area_ha": 16,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 2254.63
     }
   ]
 }

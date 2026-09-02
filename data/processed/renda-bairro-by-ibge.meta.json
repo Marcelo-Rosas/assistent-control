@@ -1,0 +1,4965 @@
+{
+  "updated_at": "2026-09-02T02:06:46.871Z",
+  "details": [
+    {
+      "ibge": "3106200",
+      "fonte": "IBGE Censo 2022 — mediana rend. responsável (FTP) escalada por SIDRA 10295 renda_pc municipal",
+      "rows": [
+        {
+          "bairro": "Santa Inês",
+          "bairro_norm": "santa ines",
+          "renda_pc": 3660.62,
+          "renda_media": 5743.87,
+          "domicilios": 3339,
+          "moradores": 8778
+        },
+        {
+          "bairro": "Horto Florestal",
+          "bairro_norm": "horto florestal",
+          "renda_pc": 1832.55,
+          "renda_media": 2875.45,
+          "domicilios": 2055,
+          "moradores": 5399
+        },
+        {
+          "bairro": "Sagrada Família",
+          "bairro_norm": "sagrada familia",
+          "renda_pc": 3922.91,
+          "renda_media": 6155.43,
+          "domicilios": 13985,
+          "moradores": 33342
+        },
+        {
+          "bairro": "Nova Vista",
+          "bairro_norm": "nova vista",
+          "renda_pc": 1937.11,
+          "renda_media": 3039.51,
+          "domicilios": 2788,
+          "moradores": 7477
+        },
+        {
+          "bairro": "Boa Vista",
+          "bairro_norm": "boa vista",
+          "renda_pc": 1905.19,
+          "renda_media": 2989.43,
+          "domicilios": 5708,
+          "moradores": 15171
+        },
+        {
+          "bairro": "Vila Boa Vista",
+          "bairro_norm": "vila boa vista",
+          "renda_pc": 990.14,
+          "renda_media": 1553.62,
+          "domicilios": 262,
+          "moradores": 759
+        },
+        {
+          "bairro": "Casa Branca",
+          "bairro_norm": "casa branca",
+          "renda_pc": 1641.86,
+          "renda_media": 2576.24,
+          "domicilios": 1948,
+          "moradores": 5537
+        },
+        {
+          "bairro": "Colégio Batista",
+          "bairro_norm": "colegio batista",
+          "renda_pc": 4374.32,
+          "renda_media": 6863.74,
+          "domicilios": 3915,
+          "moradores": 8945
+        },
+        {
+          "bairro": "Floresta",
+          "bairro_norm": "floresta",
+          "renda_pc": 4286.05,
+          "renda_media": 6725.23,
+          "domicilios": 4997,
+          "moradores": 10538
+        },
+        {
+          "bairro": "Santa Tereza",
+          "bairro_norm": "santa tereza",
+          "renda_pc": 4152.53,
+          "renda_media": 6515.73,
+          "domicilios": 5867,
+          "moradores": 13153
+        },
+        {
+          "bairro": "São Vicente",
+          "bairro_norm": "sao vicente",
+          "renda_pc": 935.35,
+          "renda_media": 1467.66,
+          "domicilios": 177,
+          "moradores": 514
+        },
+        {
+          "bairro": "Vila Dias",
+          "bairro_norm": "vila dias",
+          "renda_pc": 1022.7,
+          "renda_media": 1604.72,
+          "domicilios": 314,
+          "moradores": 843
+        },
+        {
+          "bairro": "Horto",
+          "bairro_norm": "horto",
+          "renda_pc": 3227.47,
+          "renda_media": 5064.21,
+          "domicilios": 1294,
+          "moradores": 2775
+        },
+        {
+          "bairro": "João Alfredo",
+          "bairro_norm": "joao alfredo",
+          "renda_pc": 1416.88,
+          "renda_media": 2223.23,
+          "domicilios": 125,
+          "moradores": 373
+        },
+        {
+          "bairro": "São Geraldo",
+          "bairro_norm": "sao geraldo",
+          "renda_pc": 1882.61,
+          "renda_media": 2954,
+          "domicilios": 4520,
+          "moradores": 12120
+        },
+        {
+          "bairro": "Vila São Geraldo",
+          "bairro_norm": "vila sao geraldo",
+          "renda_pc": 950.43,
+          "renda_media": 1491.31,
+          "domicilios": 59,
+          "moradores": 158
+        },
+        {
+          "bairro": "Grota",
+          "bairro_norm": "grota",
+          "renda_pc": 1129.43,
+          "renda_media": 1772.19,
+          "domicilios": 43,
+          "moradores": 125
+        },
+        {
+          "bairro": "Mariano de Abreu",
+          "bairro_norm": "mariano de abreu",
+          "renda_pc": 1115.81,
+          "renda_media": 1750.81,
+          "domicilios": 1099,
+          "moradores": 3208
+        },
+        {
+          "bairro": "Esplanada",
+          "bairro_norm": "esplanada",
+          "renda_pc": 3032.23,
+          "renda_media": 4757.87,
+          "domicilios": 3113,
+          "moradores": 7808
+        },
+        {
+          "bairro": "Vila Nossa Senhora do Rosário",
+          "bairro_norm": "vila nossa senhora do rosario",
+          "renda_pc": 1238.98,
+          "renda_media": 1944.08,
+          "domicilios": 196,
+          "moradores": 526
+        },
+        {
+          "bairro": "Pompéia",
+          "bairro_norm": "pompeia",
+          "renda_pc": 2435.9,
+          "renda_media": 3822.16,
+          "domicilios": 1998,
+          "moradores": 5144
+        },
+        {
+          "bairro": "São Rafael",
+          "bairro_norm": "sao rafael",
+          "renda_pc": 1084.82,
+          "renda_media": 1702.19,
+          "domicilios": 341,
+          "moradores": 915
+        },
+        {
+          "bairro": "Vera Cruz",
+          "bairro_norm": "vera cruz",
+          "renda_pc": 2163.17,
+          "renda_media": 3394.23,
+          "domicilios": 1324,
+          "moradores": 3536
+        },
+        {
+          "bairro": "Saudade",
+          "bairro_norm": "saudade",
+          "renda_pc": 1974.76,
+          "renda_media": 3098.59,
+          "domicilios": 1515,
+          "moradores": 4037
+        },
+        {
+          "bairro": "Alto Vera Cruz",
+          "bairro_norm": "alto vera cruz",
+          "renda_pc": 1150.18,
+          "renda_media": 1804.75,
+          "domicilios": 6520,
+          "moradores": 18936
+        },
+        {
+          "bairro": "Caetano Furquim",
+          "bairro_norm": "caetano furquim",
+          "renda_pc": 1130.17,
+          "renda_media": 1773.35,
+          "domicilios": 144,
+          "moradores": 458
+        },
+        {
+          "bairro": "Taquaril",
+          "bairro_norm": "taquaril",
+          "renda_pc": 1281.7,
+          "renda_media": 2011.12,
+          "domicilios": 1295,
+          "moradores": 3739
+        },
+        {
+          "bairro": "Granja de Freitas",
+          "bairro_norm": "granja de freitas",
+          "renda_pc": 1013.62,
+          "renda_media": 1590.47,
+          "domicilios": 2351,
+          "moradores": 6652
+        },
+        {
+          "bairro": "Conjunto Taquaril",
+          "bairro_norm": "conjunto taquaril",
+          "renda_pc": 976.53,
+          "renda_media": 1532.27,
+          "domicilios": 4853,
+          "moradores": 14011
+        },
+        {
+          "bairro": "Jonas Veiga",
+          "bairro_norm": "jonas veiga",
+          "renda_pc": 2239.88,
+          "renda_media": 3514.59,
+          "domicilios": 1142,
+          "moradores": 3113
+        },
+        {
+          "bairro": "Pirineus",
+          "bairro_norm": "pirineus",
+          "renda_pc": 3297.31,
+          "renda_media": 5173.8,
+          "domicilios": 254,
+          "moradores": 791
+        },
+        {
+          "bairro": "Cidade Jardim Taquaril",
+          "bairro_norm": "cidade jardim taquaril",
+          "renda_pc": 1555.71,
+          "renda_media": 2441.06,
+          "domicilios": 342,
+          "moradores": 996
+        },
+        {
+          "bairro": "Santa Efigênia",
+          "bairro_norm": "santa efigenia",
+          "renda_pc": 4741.77,
+          "renda_media": 7440.3,
+          "domicilios": 6914,
+          "moradores": 15261
+        },
+        {
+          "bairro": "Paraíso",
+          "bairro_norm": "paraiso",
+          "renda_pc": 2599.23,
+          "renda_media": 4078.45,
+          "domicilios": 4711,
+          "moradores": 12092
+        },
+        {
+          "bairro": "Vila Ponta Porã",
+          "bairro_norm": "vila ponta pora",
+          "renda_pc": 1018.15,
+          "renda_media": 1597.57,
+          "domicilios": 277,
+          "moradores": 737
+        },
+        {
+          "bairro": "Cônego Pinheiro",
+          "bairro_norm": "conego pinheiro",
+          "renda_pc": 1242.7,
+          "renda_media": 1949.92,
+          "domicilios": 133,
+          "moradores": 382
+        },
+        {
+          "bairro": "Cônego Pinheiro A",
+          "bairro_norm": "conego pinheiro a",
+          "renda_pc": 1679.63,
+          "renda_media": 2635.5,
+          "domicilios": 60,
+          "moradores": 165
+        },
+        {
+          "bairro": "Vila Paraíso",
+          "bairro_norm": "vila paraiso",
+          "renda_pc": 1082.6,
+          "renda_media": 1698.71,
+          "domicilios": 110,
+          "moradores": 322
+        },
+        {
+          "bairro": "Novo São Lucas",
+          "bairro_norm": "novo sao lucas",
+          "renda_pc": 4689.11,
+          "renda_media": 7357.67,
+          "domicilios": 1463,
+          "moradores": 3554
+        },
+        {
+          "bairro": "Vila Novo São Lucas",
+          "bairro_norm": "vila novo sao lucas",
+          "renda_pc": 993.42,
+          "renda_media": 1558.78,
+          "domicilios": 1193,
+          "moradores": 3655
+        },
+        {
+          "bairro": "Fazendinha",
+          "bairro_norm": "fazendinha",
+          "renda_pc": 969.54,
+          "renda_media": 1521.31,
+          "domicilios": 1227,
+          "moradores": 3625
+        },
+        {
+          "bairro": "Nossa Senhora do Rosário",
+          "bairro_norm": "nossa senhora do rosario",
+          "renda_pc": 1052.76,
+          "renda_media": 1651.89,
+          "domicilios": 477,
+          "moradores": 1333
+        },
+        {
+          "bairro": "Vila Santo Antônio",
+          "bairro_norm": "vila santo antonio",
+          "renda_pc": 1266.5,
+          "renda_media": 1987.27,
+          "domicilios": 42,
+          "moradores": 101
+        },
+        {
+          "bairro": "Lagoinha",
+          "bairro_norm": "lagoinha",
+          "renda_pc": 2359.83,
+          "renda_media": 3702.81,
+          "domicilios": 1328,
+          "moradores": 2936
+        },
+        {
+          "bairro": "São Cristóvão",
+          "bairro_norm": "sao cristovao",
+          "renda_pc": 1871.7,
+          "renda_media": 2936.88,
+          "domicilios": 1087,
+          "moradores": 2358
+        },
+        {
+          "bairro": "Cachoeirinha",
+          "bairro_norm": "cachoeirinha",
+          "renda_pc": 2188.7,
+          "renda_media": 3434.28,
+          "domicilios": 2972,
+          "moradores": 7558
+        },
+        {
+          "bairro": "Vila Nova Cachoeirinha IV",
+          "bairro_norm": "vila nova cachoeirinha iv",
+          "renda_pc": 941.38,
+          "renda_media": 1477.11,
+          "domicilios": 190,
+          "moradores": 514
+        },
+        {
+          "bairro": "Canadá",
+          "bairro_norm": "canada",
+          "renda_pc": 2191.09,
+          "renda_media": 3438.03,
+          "domicilios": 153,
+          "moradores": 401
+        },
+        {
+          "bairro": "Concórdia",
+          "bairro_norm": "concordia",
+          "renda_pc": 2027.68,
+          "renda_media": 3181.63,
+          "domicilios": 3459,
+          "moradores": 8589
+        },
+        {
+          "bairro": "Vila Tiradentes",
+          "bairro_norm": "vila tiradentes",
+          "renda_pc": 958.26,
+          "renda_media": 1503.6,
+          "domicilios": 494,
+          "moradores": 1346
+        },
+        {
+          "bairro": "Vila do Pombal",
+          "bairro_norm": "vila do pombal",
+          "renda_pc": 1133.65,
+          "renda_media": 1778.81,
+          "domicilios": 35,
+          "moradores": 103
+        },
+        {
+          "bairro": "Graça",
+          "bairro_norm": "graca",
+          "renda_pc": 4149.18,
+          "renda_media": 6510.47,
+          "domicilios": 2034,
+          "moradores": 4866
+        },
+        {
+          "bairro": "Silveira",
+          "bairro_norm": "silveira",
+          "renda_pc": 5685.55,
+          "renda_media": 8921.19,
+          "domicilios": 2205,
+          "moradores": 5367
+        },
+        {
+          "bairro": "Nova Floresta",
+          "bairro_norm": "nova floresta",
+          "renda_pc": 3865.42,
+          "renda_media": 6065.23,
+          "domicilios": 1582,
+          "moradores": 3801
+        },
+        {
+          "bairro": "Renascença",
+          "bairro_norm": "renascenca",
+          "renda_pc": 2896.28,
+          "renda_media": 4544.54,
+          "domicilios": 2973,
+          "moradores": 7278
+        },
+        {
+          "bairro": "Santa Cruz",
+          "bairro_norm": "santa cruz",
+          "renda_pc": 2256.33,
+          "renda_media": 3540.4,
+          "domicilios": 7512,
+          "moradores": 19165
+        },
+        {
+          "bairro": "Vila da Paz",
+          "bairro_norm": "vila da paz",
+          "renda_pc": 1515.14,
+          "renda_media": 2377.4,
+          "domicilios": 175,
+          "moradores": 498
+        },
+        {
+          "bairro": "Vila Inestan",
+          "bairro_norm": "vila inestan",
+          "renda_pc": 946.51,
+          "renda_media": 1485.16,
+          "domicilios": 267,
+          "moradores": 626
+        },
+        {
+          "bairro": "Ipiranga",
+          "bairro_norm": "ipiranga",
+          "renda_pc": 3956.73,
+          "renda_media": 6208.5,
+          "domicilios": 4554,
+          "moradores": 10922
+        },
+        {
+          "bairro": "Vila Ipiranga",
+          "bairro_norm": "vila ipiranga",
+          "renda_pc": 1043.91,
+          "renda_media": 1638,
+          "domicilios": 60,
+          "moradores": 144
+        },
+        {
+          "bairro": "Palmares",
+          "bairro_norm": "palmares",
+          "renda_pc": 5189.62,
+          "renda_media": 8143.02,
+          "domicilios": 2463,
+          "moradores": 6379
+        },
+        {
+          "bairro": "Maria Virgínia",
+          "bairro_norm": "maria virginia",
+          "renda_pc": 2255.82,
+          "renda_media": 3539.6,
+          "domicilios": 1317,
+          "moradores": 3512
+        },
+        {
+          "bairro": "São Sebastião",
+          "bairro_norm": "sao sebastiao",
+          "renda_pc": 900.59,
+          "renda_media": 1413.12,
+          "domicilios": 137,
+          "moradores": 413
+        },
+        {
+          "bairro": "São Paulo",
+          "bairro_norm": "sao paulo",
+          "renda_pc": 1699.53,
+          "renda_media": 2666.73,
+          "domicilios": 1237,
+          "moradores": 3057
+        },
+        {
+          "bairro": "Andiroba",
+          "bairro_norm": "andiroba",
+          "renda_pc": 847.12,
+          "renda_media": 1329.21,
+          "domicilios": 346,
+          "moradores": 975
+        },
+        {
+          "bairro": "Vila São Paulo",
+          "bairro_norm": "vila sao paulo",
+          "renda_pc": 1052.27,
+          "renda_media": 1651.12,
+          "domicilios": 551,
+          "moradores": 1443
+        },
+        {
+          "bairro": "Cidade Nova",
+          "bairro_norm": "cidade nova",
+          "renda_pc": 5658.22,
+          "renda_media": 8878.3,
+          "domicilios": 5440,
+          "moradores": 13153
+        },
+        {
+          "bairro": "União",
+          "bairro_norm": "uniao",
+          "renda_pc": 3587.16,
+          "renda_media": 5628.6,
+          "domicilios": 5184,
+          "moradores": 13184
+        },
+        {
+          "bairro": "Vila de Sá",
+          "bairro_norm": "vila de sa",
+          "renda_pc": 975.5,
+          "renda_media": 1530.65,
+          "domicilios": 113,
+          "moradores": 304
+        },
+        {
+          "bairro": "Dom Joaquim",
+          "bairro_norm": "dom joaquim",
+          "renda_pc": 3789.08,
+          "renda_media": 5945.43,
+          "domicilios": 1301,
+          "moradores": 3254
+        },
+        {
+          "bairro": "Penha",
+          "bairro_norm": "penha",
+          "renda_pc": 2148.15,
+          "renda_media": 3370.66,
+          "domicilios": 785,
+          "moradores": 2069
+        },
+        {
+          "bairro": "Fernão Dias",
+          "bairro_norm": "fernao dias",
+          "renda_pc": 4870.1,
+          "renda_media": 7641.67,
+          "domicilios": 2387,
+          "moradores": 6345
+        },
+        {
+          "bairro": "Centro",
+          "bairro_norm": "centro",
+          "renda_pc": 3582.79,
+          "renda_media": 5621.75,
+          "domicilios": 7399,
+          "moradores": 14211
+        },
+        {
+          "bairro": "Vila Suzana I",
+          "bairro_norm": "vila suzana i",
+          "renda_pc": 1412.09,
+          "renda_media": 2215.7,
+          "domicilios": 197,
+          "moradores": 573
+        },
+        {
+          "bairro": "Vila Suzana II",
+          "bairro_norm": "vila suzana ii",
+          "renda_pc": 756.75,
+          "renda_media": 1187.41,
+          "domicilios": 30,
+          "moradores": 95
+        },
+        {
+          "bairro": "Funcionários",
+          "bairro_norm": "funcionarios",
+          "renda_pc": 9041.09,
+          "renda_media": 14186.35,
+          "domicilios": 4008,
+          "moradores": 9239
+        },
+        {
+          "bairro": "Savassi",
+          "bairro_norm": "savassi",
+          "renda_pc": 8813.1,
+          "renda_media": 13828.61,
+          "domicilios": 6838,
+          "moradores": 13669
+        },
+        {
+          "bairro": "Boa Viagem",
+          "bairro_norm": "boa viagem",
+          "renda_pc": 7159.4,
+          "renda_media": 11233.8,
+          "domicilios": 2131,
+          "moradores": 4077
+        },
+        {
+          "bairro": "Lourdes",
+          "bairro_norm": "lourdes",
+          "renda_pc": 8842.64,
+          "renda_media": 13874.97,
+          "domicilios": 8243,
+          "moradores": 17619
+        },
+        {
+          "bairro": "Santo Agostinho",
+          "bairro_norm": "santo agostinho",
+          "renda_pc": 9235.55,
+          "renda_media": 14491.48,
+          "domicilios": 4860,
+          "moradores": 10992
+        },
+        {
+          "bairro": "Barro Preto",
+          "bairro_norm": "barro preto",
+          "renda_pc": 4279.36,
+          "renda_media": 6714.73,
+          "domicilios": 2862,
+          "moradores": 5419
+        },
+        {
+          "bairro": "São Lucas",
+          "bairro_norm": "sao lucas",
+          "renda_pc": 4573.77,
+          "renda_media": 7176.69,
+          "domicilios": 1150,
+          "moradores": 2662
+        },
+        {
+          "bairro": "Nossa Senhora da Aparecida",
+          "bairro_norm": "nossa senhora da aparecida",
+          "renda_pc": 1087.37,
+          "renda_media": 1706.19,
+          "domicilios": 1426,
+          "moradores": 4269
+        },
+        {
+          "bairro": "Nossa Senhora da Conceição",
+          "bairro_norm": "nossa senhora da conceicao",
+          "renda_pc": 1026.56,
+          "renda_media": 1610.77,
+          "domicilios": 2006,
+          "moradores": 5553
+        },
+        {
+          "bairro": "Santana do Cafezal",
+          "bairro_norm": "santana do cafezal",
+          "renda_pc": 961.93,
+          "renda_media": 1509.36,
+          "domicilios": 1215,
+          "moradores": 3574
+        },
+        {
+          "bairro": "Nossa Senhora de Fátima",
+          "bairro_norm": "nossa senhora de fatima",
+          "renda_pc": 920.25,
+          "renda_media": 1443.97,
+          "domicilios": 3414,
+          "moradores": 9772
+        },
+        {
+          "bairro": "Marçola",
+          "bairro_norm": "marcola",
+          "renda_pc": 1043.64,
+          "renda_media": 1637.58,
+          "domicilios": 2083,
+          "moradores": 6024
+        },
+        {
+          "bairro": "Serra",
+          "bairro_norm": "serra",
+          "renda_pc": 7519.61,
+          "renda_media": 11799,
+          "domicilios": 8209,
+          "moradores": 18980
+        },
+        {
+          "bairro": "Mangabeiras",
+          "bairro_norm": "mangabeiras",
+          "renda_pc": 11751.97,
+          "renda_media": 18439.99,
+          "domicilios": 566,
+          "moradores": 1712
+        },
+        {
+          "bairro": "Comiteco",
+          "bairro_norm": "comiteco",
+          "renda_pc": 9397.22,
+          "renda_media": 14745.15,
+          "domicilios": 559,
+          "moradores": 1661
+        },
+        {
+          "bairro": "Belvedere",
+          "bairro_norm": "belvedere",
+          "renda_pc": 13702.95,
+          "renda_media": 21501.27,
+          "domicilios": 3008,
+          "moradores": 7783
+        },
+        {
+          "bairro": "Santa Lúcia",
+          "bairro_norm": "santa lucia",
+          "renda_pc": 7444.11,
+          "renda_media": 11680.54,
+          "domicilios": 3038,
+          "moradores": 8225
+        },
+        {
+          "bairro": "Acaba Mundo",
+          "bairro_norm": "acaba mundo",
+          "renda_pc": 1060.83,
+          "renda_media": 1664.55,
+          "domicilios": 492,
+          "moradores": 1520
+        },
+        {
+          "bairro": "São Bento",
+          "bairro_norm": "sao bento",
+          "renda_pc": 9309.52,
+          "renda_media": 14607.55,
+          "domicilios": 1109,
+          "moradores": 2964
+        },
+        {
+          "bairro": "Conjunto Santa Maria",
+          "bairro_norm": "conjunto santa maria",
+          "renda_pc": 1151.25,
+          "renda_media": 1806.43,
+          "domicilios": 476,
+          "moradores": 1483
+        },
+        {
+          "bairro": "Vila Bandeirantes",
+          "bairro_norm": "vila bandeirantes",
+          "renda_pc": 1233.2,
+          "renda_media": 1935.01,
+          "domicilios": 136,
+          "moradores": 373
+        },
+        {
+          "bairro": "Luxemburgo",
+          "bairro_norm": "luxemburgo",
+          "renda_pc": 8343.62,
+          "renda_media": 13091.95,
+          "domicilios": 2766,
+          "moradores": 6737
+        },
+        {
+          "bairro": "Coração de Jesus",
+          "bairro_norm": "coracao de jesus",
+          "renda_pc": 6481.93,
+          "renda_media": 10170.78,
+          "domicilios": 2318,
+          "moradores": 5064
+        },
+        {
+          "bairro": "Vila Paris",
+          "bairro_norm": "vila paris",
+          "renda_pc": 6704.41,
+          "renda_media": 10519.87,
+          "domicilios": 1460,
+          "moradores": 3310
+        },
+        {
+          "bairro": "Monte São José",
+          "bairro_norm": "monte sao jose",
+          "renda_pc": 1141.99,
+          "renda_media": 1791.89,
+          "domicilios": 327,
+          "moradores": 1013
+        },
+        {
+          "bairro": "Cidade Jardim",
+          "bairro_norm": "cidade jardim",
+          "renda_pc": 6426.85,
+          "renda_media": 10084.36,
+          "domicilios": 596,
+          "moradores": 1280
+        },
+        {
+          "bairro": "Santo Antônio",
+          "bairro_norm": "santo antonio",
+          "renda_pc": 6636.74,
+          "renda_media": 10413.69,
+          "domicilios": 9257,
+          "moradores": 20481
+        },
+        {
+          "bairro": "Vila Santa Lúcia",
+          "bairro_norm": "vila santa lucia",
+          "renda_pc": 966.85,
+          "renda_media": 1517.09,
+          "domicilios": 1826,
+          "moradores": 5531
+        },
+        {
+          "bairro": "Santa Rita de Cássia",
+          "bairro_norm": "santa rita de cassia",
+          "renda_pc": 1057.97,
+          "renda_media": 1660.06,
+          "domicilios": 1691,
+          "moradores": 4966
+        },
+        {
+          "bairro": "Estrela",
+          "bairro_norm": "estrela",
+          "renda_pc": 1002.73,
+          "renda_media": 1573.38,
+          "domicilios": 501,
+          "moradores": 1534
+        },
+        {
+          "bairro": "São Pedro",
+          "bairro_norm": "sao pedro",
+          "renda_pc": 7227.66,
+          "renda_media": 11340.91,
+          "domicilios": 2720,
+          "moradores": 6146
+        },
+        {
+          "bairro": "Carmo",
+          "bairro_norm": "carmo",
+          "renda_pc": 8318.28,
+          "renda_media": 13052.19,
+          "domicilios": 1780,
+          "moradores": 3806
+        },
+        {
+          "bairro": "Cruzeiro",
+          "bairro_norm": "cruzeiro",
+          "renda_pc": 6671.48,
+          "renda_media": 10468.21,
+          "domicilios": 3203,
+          "moradores": 7155
+        },
+        {
+          "bairro": "Anchieta",
+          "bairro_norm": "anchieta",
+          "renda_pc": 7960.58,
+          "renda_media": 12490.93,
+          "domicilios": 5244,
+          "moradores": 11573
+        },
+        {
+          "bairro": "Sion",
+          "bairro_norm": "sion",
+          "renda_pc": 7929.86,
+          "renda_media": 12442.73,
+          "domicilios": 8329,
+          "moradores": 19740
+        },
+        {
+          "bairro": "Santa Isabel",
+          "bairro_norm": "santa isabel",
+          "renda_pc": 1128.59,
+          "renda_media": 1770.87,
+          "domicilios": 42,
+          "moradores": 98
+        },
+        {
+          "bairro": "Vila FUMEC",
+          "bairro_norm": "vila fumec",
+          "renda_pc": 1660.06,
+          "renda_media": 2604.79,
+          "domicilios": 27,
+          "moradores": 73
+        },
+        {
+          "bairro": "Pindura Saia",
+          "bairro_norm": "pindura saia",
+          "renda_pc": 1076.24,
+          "renda_media": 1688.73,
+          "domicilios": 57,
+          "moradores": 160
+        },
+        {
+          "bairro": "Mala e Cuia",
+          "bairro_norm": "mala e cuia",
+          "renda_pc": 1674.28,
+          "renda_media": 2627.11,
+          "domicilios": 18,
+          "moradores": 45
+        },
+        {
+          "bairro": "Prado",
+          "bairro_norm": "prado",
+          "renda_pc": 5181.07,
+          "renda_media": 8129.61,
+          "domicilios": 5595,
+          "moradores": 12834
+        },
+        {
+          "bairro": "Vila Calafate",
+          "bairro_norm": "vila calafate",
+          "renda_pc": 923.66,
+          "renda_media": 1449.32,
+          "domicilios": 223,
+          "moradores": 581
+        },
+        {
+          "bairro": "Calafate",
+          "bairro_norm": "calafate",
+          "renda_pc": 3832.27,
+          "renda_media": 6013.21,
+          "domicilios": 2934,
+          "moradores": 7116
+        },
+        {
+          "bairro": "Barroca",
+          "bairro_norm": "barroca",
+          "renda_pc": 4899.49,
+          "renda_media": 7687.78,
+          "domicilios": 1142,
+          "moradores": 2653
+        },
+        {
+          "bairro": "Alto Barroca",
+          "bairro_norm": "alto barroca",
+          "renda_pc": 4586.39,
+          "renda_media": 7196.49,
+          "domicilios": 1925,
+          "moradores": 4384
+        },
+        {
+          "bairro": "Grajaú",
+          "bairro_norm": "grajau",
+          "renda_pc": 5061.95,
+          "renda_media": 7942.7,
+          "domicilios": 2643,
+          "moradores": 6162
+        },
+        {
+          "bairro": "Nova Granada",
+          "bairro_norm": "nova granada",
+          "renda_pc": 4302.74,
+          "renda_media": 6751.42,
+          "domicilios": 2772,
+          "moradores": 6625
+        },
+        {
+          "bairro": "Barão Homem de Melo IV",
+          "bairro_norm": "barao homem de melo iv",
+          "renda_pc": 960.65,
+          "renda_media": 1507.35,
+          "domicilios": 385,
+          "moradores": 1096
+        },
+        {
+          "bairro": "Jardim América",
+          "bairro_norm": "jardim america",
+          "renda_pc": 3237.36,
+          "renda_media": 5079.73,
+          "domicilios": 4120,
+          "moradores": 10140
+        },
+        {
+          "bairro": "Nova Suíssa",
+          "bairro_norm": "nova suissa",
+          "renda_pc": 4230.68,
+          "renda_media": 6638.35,
+          "domicilios": 6284,
+          "moradores": 14642
+        },
+        {
+          "bairro": "Salgado Filho",
+          "bairro_norm": "salgado filho",
+          "renda_pc": 2566.03,
+          "renda_media": 4026.35,
+          "domicilios": 5718,
+          "moradores": 14063
+        },
+        {
+          "bairro": "Gutierrez",
+          "bairro_norm": "gutierrez",
+          "renda_pc": 7409.62,
+          "renda_media": 11626.42,
+          "domicilios": 6642,
+          "moradores": 16112
+        },
+        {
+          "bairro": "Guaratã",
+          "bairro_norm": "guarata",
+          "renda_pc": 1424.23,
+          "renda_media": 2234.75,
+          "domicilios": 242,
+          "moradores": 664
+        },
+        {
+          "bairro": "Cinquentenário",
+          "bairro_norm": "cinquentenario",
+          "renda_pc": 2833.03,
+          "renda_media": 4445.3,
+          "domicilios": 2725,
+          "moradores": 6910
+        },
+        {
+          "bairro": "Marajó",
+          "bairro_norm": "marajo",
+          "renda_pc": 2293.5,
+          "renda_media": 3598.72,
+          "domicilios": 1133,
+          "moradores": 2930
+        },
+        {
+          "bairro": "Estrela do Oriente",
+          "bairro_norm": "estrela do oriente",
+          "renda_pc": 2653.65,
+          "renda_media": 4163.83,
+          "domicilios": 2571,
+          "moradores": 6583
+        },
+        {
+          "bairro": "Betânia",
+          "bairro_norm": "betania",
+          "renda_pc": 1950.35,
+          "renda_media": 3060.29,
+          "domicilios": 3787,
+          "moradores": 10319
+        },
+        {
+          "bairro": "Vila Vista Alegre",
+          "bairro_norm": "vila vista alegre",
+          "renda_pc": 1120.34,
+          "renda_media": 1757.92,
+          "domicilios": 3634,
+          "moradores": 9867
+        },
+        {
+          "bairro": "Nova Cintra",
+          "bairro_norm": "nova cintra",
+          "renda_pc": 1540.27,
+          "renda_media": 2416.83,
+          "domicilios": 1699,
+          "moradores": 4541
+        },
+        {
+          "bairro": "Imbaúbas",
+          "bairro_norm": "imbaubas",
+          "renda_pc": 1155.33,
+          "renda_media": 1812.83,
+          "domicilios": 443,
+          "moradores": 1338
+        },
+        {
+          "bairro": "Nova Gameleira",
+          "bairro_norm": "nova gameleira",
+          "renda_pc": 2464.54,
+          "renda_media": 3867.1,
+          "domicilios": 3331,
+          "moradores": 8523
+        },
+        {
+          "bairro": "Vila Nova Gameleira I",
+          "bairro_norm": "vila nova gameleira i",
+          "renda_pc": 1284.45,
+          "renda_media": 2015.43,
+          "domicilios": 263,
+          "moradores": 752
+        },
+        {
+          "bairro": "Vila Nova Gameleira II",
+          "bairro_norm": "vila nova gameleira ii",
+          "renda_pc": 1496.18,
+          "renda_media": 2347.65,
+          "domicilios": 406,
+          "moradores": 1034
+        },
+        {
+          "bairro": "Jardinópolis",
+          "bairro_norm": "jardinopolis",
+          "renda_pc": 1890.43,
+          "renda_media": 2966.27,
+          "domicilios": 576,
+          "moradores": 1480
+        },
+        {
+          "bairro": "Cabana do Pai Tomás",
+          "bairro_norm": "cabana do pai tomas",
+          "renda_pc": 1047.89,
+          "renda_media": 1644.24,
+          "domicilios": 5225,
+          "moradores": 14704
+        },
+        {
+          "bairro": "Vista Alegre",
+          "bairro_norm": "vista alegre",
+          "renda_pc": 1475.85,
+          "renda_media": 2315.76,
+          "domicilios": 1604,
+          "moradores": 4200
+        },
+        {
+          "bairro": "Bairro das Indústrias II",
+          "bairro_norm": "bairro das industrias ii",
+          "renda_pc": 1734.65,
+          "renda_media": 2721.83,
+          "domicilios": 416,
+          "moradores": 1112
+        },
+        {
+          "bairro": "Custodinha",
+          "bairro_norm": "custodinha",
+          "renda_pc": 883.66,
+          "renda_media": 1386.55,
+          "domicilios": 107,
+          "moradores": 259
+        },
+        {
+          "bairro": "Madre Gertrudes",
+          "bairro_norm": "madre gertrudes",
+          "renda_pc": 1858.26,
+          "renda_media": 2915.79,
+          "domicilios": 1451,
+          "moradores": 3885
+        },
+        {
+          "bairro": "Vila Madre Gertrudes I",
+          "bairro_norm": "vila madre gertrudes i",
+          "renda_pc": 992.77,
+          "renda_media": 1557.76,
+          "domicilios": 483,
+          "moradores": 1262
+        },
+        {
+          "bairro": "Vila Madre Gertrudes II",
+          "bairro_norm": "vila madre gertrudes ii",
+          "renda_pc": 944.42,
+          "renda_media": 1481.88,
+          "domicilios": 188,
+          "moradores": 557
+        },
+        {
+          "bairro": "Vila Madre Gertrudes III",
+          "bairro_norm": "vila madre gertrudes iii",
+          "renda_pc": 1089.4,
+          "renda_media": 1709.38,
+          "domicilios": 55,
+          "moradores": 128
+        },
+        {
+          "bairro": "Vila Madre Gertrudes V",
+          "bairro_norm": "vila madre gertrudes v",
+          "renda_pc": 1041.83,
+          "renda_media": 1634.74,
+          "domicilios": 72,
+          "moradores": 218
+        },
+        {
+          "bairro": "Camargos",
+          "bairro_norm": "camargos",
+          "renda_pc": 2731.83,
+          "renda_media": 4286.51,
+          "domicilios": 6588,
+          "moradores": 16091
+        },
+        {
+          "bairro": "Virgínia",
+          "bairro_norm": "virginia",
+          "renda_pc": 1380.61,
+          "renda_media": 2166.32,
+          "domicilios": 31,
+          "moradores": 94
+        },
+        {
+          "bairro": "Sport Club",
+          "bairro_norm": "sport club",
+          "renda_pc": 1145.94,
+          "renda_media": 1798.09,
+          "domicilios": 78,
+          "moradores": 236
+        },
+        {
+          "bairro": "Vila da Amizade",
+          "bairro_norm": "vila da amizade",
+          "renda_pc": 1061.41,
+          "renda_media": 1665.45,
+          "domicilios": 119,
+          "moradores": 353
+        },
+        {
+          "bairro": "Ambrosina",
+          "bairro_norm": "ambrosina",
+          "renda_pc": 991.83,
+          "renda_media": 1556.28,
+          "domicilios": 226,
+          "moradores": 631
+        },
+        {
+          "bairro": "Vila Nova Gameleira III",
+          "bairro_norm": "vila nova gameleira iii",
+          "renda_pc": 2329.01,
+          "renda_media": 3654.44,
+          "domicilios": 50,
+          "moradores": 144
+        },
+        {
+          "bairro": "Gameleira",
+          "bairro_norm": "gameleira",
+          "renda_pc": 1998.15,
+          "renda_media": 3135.29,
+          "domicilios": 77,
+          "moradores": 194
+        },
+        {
+          "bairro": "Barão Homem de Melo I",
+          "bairro_norm": "barao homem de melo i",
+          "renda_pc": 1316.82,
+          "renda_media": 2066.22,
+          "domicilios": 115,
+          "moradores": 344
+        },
+        {
+          "bairro": "Barão Homem de Melo III",
+          "bairro_norm": "barao homem de melo iii",
+          "renda_pc": 997.45,
+          "renda_media": 1565.09,
+          "domicilios": 44,
+          "moradores": 124
+        },
+        {
+          "bairro": "Vila Nova Paraíso",
+          "bairro_norm": "vila nova paraiso",
+          "renda_pc": 1058.7,
+          "renda_media": 1661.21,
+          "domicilios": 237,
+          "moradores": 647
+        },
+        {
+          "bairro": "Ventosa",
+          "bairro_norm": "ventosa",
+          "renda_pc": 938.41,
+          "renda_media": 1472.45,
+          "domicilios": 2113,
+          "moradores": 6536
+        },
+        {
+          "bairro": "Vila Santa Rosa",
+          "bairro_norm": "vila santa rosa",
+          "renda_pc": 963.03,
+          "renda_media": 1511.09,
+          "domicilios": 391,
+          "moradores": 1092
+        },
+        {
+          "bairro": "Parque São José",
+          "bairro_norm": "parque sao jose",
+          "renda_pc": 2053.93,
+          "renda_media": 3222.82,
+          "domicilios": 1241,
+          "moradores": 3191
+        },
+        {
+          "bairro": "Havaí",
+          "bairro_norm": "havai",
+          "renda_pc": 2913.87,
+          "renda_media": 4572.14,
+          "domicilios": 6166,
+          "moradores": 15867
+        },
+        {
+          "bairro": "Vila Havaí",
+          "bairro_norm": "vila havai",
+          "renda_pc": 893.17,
+          "renda_media": 1401.47,
+          "domicilios": 103,
+          "moradores": 294
+        },
+        {
+          "bairro": "São Jorge I",
+          "bairro_norm": "sao jorge i",
+          "renda_pc": 1183.69,
+          "renda_media": 1857.33,
+          "domicilios": 585,
+          "moradores": 1678
+        },
+        {
+          "bairro": "São Jorge II",
+          "bairro_norm": "sao jorge ii",
+          "renda_pc": 1081.4,
+          "renda_media": 1696.83,
+          "domicilios": 960,
+          "moradores": 3363
+        },
+        {
+          "bairro": "São Jorge III",
+          "bairro_norm": "sao jorge iii",
+          "renda_pc": 1039.6,
+          "renda_media": 1631.24,
+          "domicilios": 876,
+          "moradores": 2645
+        },
+        {
+          "bairro": "Vila Antena",
+          "bairro_norm": "vila antena",
+          "renda_pc": 948.09,
+          "renda_media": 1487.64,
+          "domicilios": 642,
+          "moradores": 1857
+        },
+        {
+          "bairro": "Santa Sofia",
+          "bairro_norm": "santa sofia",
+          "renda_pc": 1040.16,
+          "renda_media": 1632.12,
+          "domicilios": 935,
+          "moradores": 2828
+        },
+        {
+          "bairro": "Leonina",
+          "bairro_norm": "leonina",
+          "renda_pc": 905.48,
+          "renda_media": 1420.78,
+          "domicilios": 1038,
+          "moradores": 3166
+        },
+        {
+          "bairro": "Chácara Leonina",
+          "bairro_norm": "chacara leonina",
+          "renda_pc": 835.43,
+          "renda_media": 1310.87,
+          "domicilios": 280,
+          "moradores": 848
+        },
+        {
+          "bairro": "Alpes",
+          "bairro_norm": "alpes",
+          "renda_pc": 1272.24,
+          "renda_media": 1996.27,
+          "domicilios": 812,
+          "moradores": 2330
+        },
+        {
+          "bairro": "Pantanal",
+          "bairro_norm": "pantanal",
+          "renda_pc": 899.31,
+          "renda_media": 1411.1,
+          "domicilios": 152,
+          "moradores": 402
+        },
+        {
+          "bairro": "Estoril",
+          "bairro_norm": "estoril",
+          "renda_pc": 4747.07,
+          "renda_media": 7448.61,
+          "domicilios": 2371,
+          "moradores": 5541
+        },
+        {
+          "bairro": "Palmeiras",
+          "bairro_norm": "palmeiras",
+          "renda_pc": 2123.79,
+          "renda_media": 3332.43,
+          "domicilios": 3193,
+          "moradores": 8465
+        },
+        {
+          "bairro": "Buritis",
+          "bairro_norm": "buritis",
+          "renda_pc": 6898.56,
+          "renda_media": 10824.51,
+          "domicilios": 17094,
+          "moradores": 42342
+        },
+        {
+          "bairro": "Olhos d'Água",
+          "bairro_norm": "olhos d'agua",
+          "renda_pc": 1098.06,
+          "renda_media": 1722.97,
+          "domicilios": 1003,
+          "moradores": 2921
+        },
+        {
+          "bairro": "Pilar",
+          "bairro_norm": "pilar",
+          "renda_pc": 1260.85,
+          "renda_media": 1978.39,
+          "domicilios": 1424,
+          "moradores": 3807
+        },
+        {
+          "bairro": "Céu Azul",
+          "bairro_norm": "ceu azul",
+          "renda_pc": 1688.96,
+          "renda_media": 2650.15,
+          "domicilios": 8252,
+          "moradores": 22779
+        },
+        {
+          "bairro": "Alípio de Melo",
+          "bairro_norm": "alipio de melo",
+          "renda_pc": 2947.55,
+          "renda_media": 4624.99,
+          "domicilios": 2945,
+          "moradores": 7914
+        },
+        {
+          "bairro": "Alto Caiçaras",
+          "bairro_norm": "alto caicaras",
+          "renda_pc": 2834.7,
+          "renda_media": 4447.92,
+          "domicilios": 2636,
+          "moradores": 6727
+        },
+        {
+          "bairro": "Alto dos Pinheiros",
+          "bairro_norm": "alto dos pinheiros",
+          "renda_pc": 2398.29,
+          "renda_media": 3763.15,
+          "domicilios": 1156,
+          "moradores": 2996
+        },
+        {
+          "bairro": "Álvaro Camargos",
+          "bairro_norm": "alvaro camargos",
+          "renda_pc": 3635.94,
+          "renda_media": 5705.14,
+          "domicilios": 413,
+          "moradores": 1143
+        },
+        {
+          "bairro": "Aparecida",
+          "bairro_norm": "aparecida",
+          "renda_pc": 1844.79,
+          "renda_media": 2894.66,
+          "domicilios": 3288,
+          "moradores": 8415
+        },
+        {
+          "bairro": "Aparecida Sétima Seção",
+          "bairro_norm": "aparecida setima secao",
+          "renda_pc": 1435.54,
+          "renda_media": 2252.51,
+          "domicilios": 1713,
+          "moradores": 4609
+        },
+        {
+          "bairro": "Bom Jesus",
+          "bairro_norm": "bom jesus",
+          "renda_pc": 1717.65,
+          "renda_media": 2695.16,
+          "domicilios": 1220,
+          "moradores": 3063
+        },
+        {
+          "bairro": "Bonfim",
+          "bairro_norm": "bonfim",
+          "renda_pc": 1941.85,
+          "renda_media": 3046.95,
+          "domicilios": 1645,
+          "moradores": 3894
+        },
+        {
+          "bairro": "Caiçara-Adelaide",
+          "bairro_norm": "caicara-adelaide",
+          "renda_pc": 3465.63,
+          "renda_media": 5437.91,
+          "domicilios": 3704,
+          "moradores": 9126
+        },
+        {
+          "bairro": "Caiçaras",
+          "bairro_norm": "caicaras",
+          "renda_pc": 3468.31,
+          "renda_media": 5442.12,
+          "domicilios": 5087,
+          "moradores": 12407
+        },
+        {
+          "bairro": "Califórnia",
+          "bairro_norm": "california",
+          "renda_pc": 2084.34,
+          "renda_media": 3270.53,
+          "domicilios": 2789,
+          "moradores": 6773
+        },
+        {
+          "bairro": "Vila Rica",
+          "bairro_norm": "vila rica",
+          "renda_pc": 4988.32,
+          "renda_media": 7827.16,
+          "domicilios": 83,
+          "moradores": 217
+        },
+        {
+          "bairro": "Carlos Prates",
+          "bairro_norm": "carlos prates",
+          "renda_pc": 2902.25,
+          "renda_media": 4553.92,
+          "domicilios": 5549,
+          "moradores": 12631
+        },
+        {
+          "bairro": "Conjunto Califórnia I",
+          "bairro_norm": "conjunto california i",
+          "renda_pc": 3241.98,
+          "renda_media": 5086.99,
+          "domicilios": 1382,
+          "moradores": 3490
+        },
+        {
+          "bairro": "Conjunto Califórnia II",
+          "bairro_norm": "conjunto california ii",
+          "renda_pc": 1651.2,
+          "renda_media": 2590.89,
+          "domicilios": 733,
+          "moradores": 1824
+        },
+        {
+          "bairro": "Conjunto Celso Machado",
+          "bairro_norm": "conjunto celso machado",
+          "renda_pc": 3304.22,
+          "renda_media": 5184.65,
+          "domicilios": 794,
+          "moradores": 2237
+        },
+        {
+          "bairro": "Conjunto Jardim Filadélfia",
+          "bairro_norm": "conjunto jardim filadelfia",
+          "renda_pc": 992.83,
+          "renda_media": 1557.84,
+          "domicilios": 893,
+          "moradores": 2623
+        },
+        {
+          "bairro": "Conjunto Novo Dom Bosco",
+          "bairro_norm": "conjunto novo dom bosco",
+          "renda_pc": 1131.01,
+          "renda_media": 1774.67,
+          "domicilios": 216,
+          "moradores": 633
+        },
+        {
+          "bairro": "Coqueiros",
+          "bairro_norm": "coqueiros",
+          "renda_pc": 1688.84,
+          "renda_media": 2649.95,
+          "domicilios": 2508,
+          "moradores": 6821
+        },
+        {
+          "bairro": "Coração Eucarístico",
+          "bairro_norm": "coracao eucaristico",
+          "renda_pc": 4484.93,
+          "renda_media": 7037.29,
+          "domicilios": 2715,
+          "moradores": 6333
+        },
+        {
+          "bairro": "Delta",
+          "bairro_norm": "delta",
+          "renda_pc": 1084.99,
+          "renda_media": 1702.46,
+          "domicilios": 320,
+          "moradores": 868
+        },
+        {
+          "bairro": "Dom Bosco",
+          "bairro_norm": "dom bosco",
+          "renda_pc": 1900.44,
+          "renda_media": 2981.98,
+          "domicilios": 3119,
+          "moradores": 8310
+        },
+        {
+          "bairro": "Dom Cabral",
+          "bairro_norm": "dom cabral",
+          "renda_pc": 3057.66,
+          "renda_media": 4797.76,
+          "domicilios": 1215,
+          "moradores": 3103
+        },
+        {
+          "bairro": "Engenho Nogueira",
+          "bairro_norm": "engenho nogueira",
+          "renda_pc": 2604.68,
+          "renda_media": 4087,
+          "domicilios": 883,
+          "moradores": 2359
+        },
+        {
+          "bairro": "Ermelinda",
+          "bairro_norm": "ermelinda",
+          "renda_pc": 2134.31,
+          "renda_media": 3348.94,
+          "domicilios": 1043,
+          "moradores": 2596
+        },
+        {
+          "bairro": "Glória",
+          "bairro_norm": "gloria",
+          "renda_pc": 1853.57,
+          "renda_media": 2908.43,
+          "domicilios": 4813,
+          "moradores": 12525
+        },
+        {
+          "bairro": "Inconfidência",
+          "bairro_norm": "inconfidencia",
+          "renda_pc": 1839.25,
+          "renda_media": 2885.96,
+          "domicilios": 1050,
+          "moradores": 2681
+        },
+        {
+          "bairro": "Jardim Alvorada",
+          "bairro_norm": "jardim alvorada",
+          "renda_pc": 1396.59,
+          "renda_media": 2191.39,
+          "domicilios": 3008,
+          "moradores": 8063
+        },
+        {
+          "bairro": "Jardim Montanhês",
+          "bairro_norm": "jardim montanhes",
+          "renda_pc": 2327.54,
+          "renda_media": 3652.14,
+          "domicilios": 2048,
+          "moradores": 4817
+        },
+        {
+          "bairro": "Jardim São José",
+          "bairro_norm": "jardim sao jose",
+          "renda_pc": 1336.7,
+          "renda_media": 2097.42,
+          "domicilios": 2647,
+          "moradores": 7045
+        },
+        {
+          "bairro": "João Pinheiro",
+          "bairro_norm": "joao pinheiro",
+          "renda_pc": 2492.64,
+          "renda_media": 3911.19,
+          "domicilios": 3102,
+          "moradores": 7685
+        },
+        {
+          "bairro": "Vila Maloca",
+          "bairro_norm": "vila maloca",
+          "renda_pc": 855.06,
+          "renda_media": 1341.68,
+          "domicilios": 219,
+          "moradores": 528
+        },
+        {
+          "bairro": "Lorena",
+          "bairro_norm": "lorena",
+          "renda_pc": 1437.32,
+          "renda_media": 2255.29,
+          "domicilios": 20,
+          "moradores": 54
+        },
+        {
+          "bairro": "Maravilha",
+          "bairro_norm": "maravilha",
+          "renda_pc": 1386.91,
+          "renda_media": 2176.2,
+          "domicilios": 20,
+          "moradores": 58
+        },
+        {
+          "bairro": "Marmiteiros",
+          "bairro_norm": "marmiteiros",
+          "renda_pc": 1033.63,
+          "renda_media": 1621.86,
+          "domicilios": 249,
+          "moradores": 721
+        },
+        {
+          "bairro": "Minas Brasil",
+          "bairro_norm": "minas brasil",
+          "renda_pc": 3851.83,
+          "renda_media": 6043.9,
+          "domicilios": 1412,
+          "moradores": 3390
+        },
+        {
+          "bairro": "Monsenhor Messias",
+          "bairro_norm": "monsenhor messias",
+          "renda_pc": 3000.04,
+          "renda_media": 4707.35,
+          "domicilios": 1702,
+          "moradores": 3921
+        },
+        {
+          "bairro": "Nova Cachoeirinha",
+          "bairro_norm": "nova cachoeirinha",
+          "renda_pc": 2198.84,
+          "renda_media": 3450.19,
+          "domicilios": 1671,
+          "moradores": 4041
+        },
+        {
+          "bairro": "Nova Esperança",
+          "bairro_norm": "nova esperanca",
+          "renda_pc": 1832.49,
+          "renda_media": 2875.36,
+          "domicilios": 1569,
+          "moradores": 4083
+        },
+        {
+          "bairro": "Novo Glória",
+          "bairro_norm": "novo gloria",
+          "renda_pc": 1655.13,
+          "renda_media": 2597.06,
+          "domicilios": 2487,
+          "moradores": 6784
+        },
+        {
+          "bairro": "Oeste",
+          "bairro_norm": "oeste",
+          "renda_pc": 2090.93,
+          "renda_media": 3280.87,
+          "domicilios": 1551,
+          "moradores": 3880
+        },
+        {
+          "bairro": "Padre Eustáquio",
+          "bairro_norm": "padre eustaquio",
+          "renda_pc": 3351.68,
+          "renda_media": 5259.12,
+          "domicilios": 10598,
+          "moradores": 24583
+        },
+        {
+          "bairro": "Pedreira Prado Lopes",
+          "bairro_norm": "pedreira prado lopes",
+          "renda_pc": 871.82,
+          "renda_media": 1367.97,
+          "domicilios": 1500,
+          "moradores": 4327
+        },
+        {
+          "bairro": "Pindorama",
+          "bairro_norm": "pindorama",
+          "renda_pc": 1478.14,
+          "renda_media": 2319.35,
+          "domicilios": 5595,
+          "moradores": 15213
+        },
+        {
+          "bairro": "Santa Maria",
+          "bairro_norm": "santa maria",
+          "renda_pc": 2036.73,
+          "renda_media": 3195.83,
+          "domicilios": 2328,
+          "moradores": 6352
+        },
+        {
+          "bairro": "Santo André",
+          "bairro_norm": "santo andre",
+          "renda_pc": 1843,
+          "renda_media": 2891.84,
+          "domicilios": 2466,
+          "moradores": 6123
+        },
+        {
+          "bairro": "Vila Paquetá",
+          "bairro_norm": "vila paqueta",
+          "renda_pc": 850.24,
+          "renda_media": 1334.11,
+          "domicilios": 200,
+          "moradores": 526
+        },
+        {
+          "bairro": "São Francisco das Chagas",
+          "bairro_norm": "sao francisco das chagas",
+          "renda_pc": 1047.67,
+          "renda_media": 1643.9,
+          "domicilios": 211,
+          "moradores": 620
+        },
+        {
+          "bairro": "São Salvador",
+          "bairro_norm": "sao salvador",
+          "renda_pc": 1504.28,
+          "renda_media": 2360.36,
+          "domicilios": 1955,
+          "moradores": 5291
+        },
+        {
+          "bairro": "Senhor dos Passos",
+          "bairro_norm": "senhor dos passos",
+          "renda_pc": 24423.33,
+          "renda_media": 38322.59,
+          "domicilios": 900,
+          "moradores": 2512
+        },
+        {
+          "bairro": "Serrano",
+          "bairro_norm": "serrano",
+          "renda_pc": 2803.45,
+          "renda_media": 4398.89,
+          "domicilios": 4020,
+          "moradores": 10379
+        },
+        {
+          "bairro": "Sumaré",
+          "bairro_norm": "sumare",
+          "renda_pc": 1638.8,
+          "renda_media": 2571.43,
+          "domicilios": 14,
+          "moradores": 40
+        },
+        {
+          "bairro": "Antena Montanhês",
+          "bairro_norm": "antena montanhes",
+          "renda_pc": 1323.2,
+          "renda_media": 2076.23,
+          "domicilios": 187,
+          "moradores": 529
+        },
+        {
+          "bairro": "Vila Califórnia",
+          "bairro_norm": "vila california",
+          "renda_pc": 957.03,
+          "renda_media": 1501.67,
+          "domicilios": 1150,
+          "moradores": 2929
+        },
+        {
+          "bairro": "Coqueiral",
+          "bairro_norm": "coqueiral",
+          "renda_pc": 946.04,
+          "renda_media": 1484.43,
+          "domicilios": 453,
+          "moradores": 1276
+        },
+        {
+          "bairro": "Vila Jardim Alvorada",
+          "bairro_norm": "vila jardim alvorada",
+          "renda_pc": 906.19,
+          "renda_media": 1421.9,
+          "domicilios": 1125,
+          "moradores": 3035
+        },
+        {
+          "bairro": "Vila Jardim Montanhês",
+          "bairro_norm": "vila jardim montanhes",
+          "renda_pc": 1035.51,
+          "renda_media": 1624.82,
+          "domicilios": 141,
+          "moradores": 394
+        },
+        {
+          "bairro": "Vila Nova Cachoeirinha I",
+          "bairro_norm": "vila nova cachoeirinha i",
+          "renda_pc": 928,
+          "renda_media": 1456.12,
+          "domicilios": 682,
+          "moradores": 1795
+        },
+        {
+          "bairro": "Vila Nova Cachoeirinha II",
+          "bairro_norm": "vila nova cachoeirinha ii",
+          "renda_pc": 1121.27,
+          "renda_media": 1759.38,
+          "domicilios": 39,
+          "moradores": 112
+        },
+        {
+          "bairro": "Vila Oeste",
+          "bairro_norm": "vila oeste",
+          "renda_pc": 1149.1,
+          "renda_media": 1803.05,
+          "domicilios": 429,
+          "moradores": 1166
+        },
+        {
+          "bairro": "Vila PUC",
+          "bairro_norm": "vila puc",
+          "renda_pc": 2241.21,
+          "renda_media": 3516.67,
+          "domicilios": 25,
+          "moradores": 72
+        },
+        {
+          "bairro": "Santo Antônio Barroquinha",
+          "bairro_norm": "santo antonio barroquinha",
+          "renda_pc": 957.3,
+          "renda_media": 1502.09,
+          "domicilios": 143,
+          "moradores": 381
+        },
+        {
+          "bairro": "Vila Sumaré",
+          "bairro_norm": "vila sumare",
+          "renda_pc": 1017.73,
+          "renda_media": 1596.92,
+          "domicilios": 750,
+          "moradores": 2235
+        },
+        {
+          "bairro": "Trinta e Um de Março",
+          "bairro_norm": "trinta e um de marco",
+          "renda_pc": 1212.52,
+          "renda_media": 1902.56,
+          "domicilios": 444,
+          "moradores": 1242
+        },
+        {
+          "bairro": "Aeroporto",
+          "bairro_norm": "aeroporto",
+          "renda_pc": 4060.3,
+          "renda_media": 6371.01,
+          "domicilios": 708,
+          "moradores": 1594
+        },
+        {
+          "bairro": "Bandeirantes",
+          "bairro_norm": "bandeirantes",
+          "renda_pc": 5205.58,
+          "renda_media": 8168.07,
+          "domicilios": 2287,
+          "moradores": 6074
+        },
+        {
+          "bairro": "Vila São Francisco",
+          "bairro_norm": "vila sao francisco",
+          "renda_pc": 1180.03,
+          "renda_media": 1851.58,
+          "domicilios": 22,
+          "moradores": 54
+        },
+        {
+          "bairro": "Braúnas",
+          "bairro_norm": "braunas",
+          "renda_pc": 3223.4,
+          "renda_media": 5057.83,
+          "domicilios": 657,
+          "moradores": 1909
+        },
+        {
+          "bairro": "Castelo",
+          "bairro_norm": "castelo",
+          "renda_pc": 5506.58,
+          "renda_media": 8640.36,
+          "domicilios": 11512,
+          "moradores": 28498
+        },
+        {
+          "bairro": "Confisco",
+          "bairro_norm": "confisco",
+          "renda_pc": 1316.16,
+          "renda_media": 2065.18,
+          "domicilios": 1380,
+          "moradores": 4088
+        },
+        {
+          "bairro": "Conjunto Lagoa",
+          "bairro_norm": "conjunto lagoa",
+          "renda_pc": 2409.91,
+          "renda_media": 3781.38,
+          "domicilios": 187,
+          "moradores": 538
+        },
+        {
+          "bairro": "Conjunto São Francisco de Assis",
+          "bairro_norm": "conjunto sao francisco de assis",
+          "renda_pc": 1069.07,
+          "renda_media": 1677.47,
+          "domicilios": 121,
+          "moradores": 364
+        },
+        {
+          "bairro": "Copacabana",
+          "bairro_norm": "copacabana",
+          "renda_pc": 2115.19,
+          "renda_media": 3318.94,
+          "domicilios": 5281,
+          "moradores": 14451
+        },
+        {
+          "bairro": "Dona Clara",
+          "bairro_norm": "dona clara",
+          "renda_pc": 4498.02,
+          "renda_media": 7057.84,
+          "domicilios": 3451,
+          "moradores": 9089
+        },
+        {
+          "bairro": "Garças",
+          "bairro_norm": "garcas",
+          "renda_pc": 5537.26,
+          "renda_media": 8688.5,
+          "domicilios": 363,
+          "moradores": 1197
+        },
+        {
+          "bairro": "Indaiá",
+          "bairro_norm": "indaia",
+          "renda_pc": 3900.29,
+          "renda_media": 6119.94,
+          "domicilios": 1230,
+          "moradores": 2886
+        },
+        {
+          "bairro": "Itatiaia",
+          "bairro_norm": "itatiaia",
+          "renda_pc": 1534.82,
+          "renda_media": 2408.29,
+          "domicilios": 662,
+          "moradores": 1762
+        },
+        {
+          "bairro": "Jaraguá",
+          "bairro_norm": "jaragua",
+          "renda_pc": 4978.22,
+          "renda_media": 7811.32,
+          "domicilios": 1773,
+          "moradores": 4642
+        },
+        {
+          "bairro": "Jardim Atlântico",
+          "bairro_norm": "jardim atlantico",
+          "renda_pc": 3870.37,
+          "renda_media": 6072.99,
+          "domicilios": 448,
+          "moradores": 1308
+        },
+        {
+          "bairro": "Liberdade",
+          "bairro_norm": "liberdade",
+          "renda_pc": 4951.85,
+          "renda_media": 7769.94,
+          "domicilios": 2091,
+          "moradores": 5109
+        },
+        {
+          "bairro": "Manacás",
+          "bairro_norm": "manacas",
+          "renda_pc": 2568.67,
+          "renda_media": 4030.49,
+          "domicilios": 4059,
+          "moradores": 10560
+        },
+        {
+          "bairro": "Nova Pampulha",
+          "bairro_norm": "nova pampulha",
+          "renda_pc": 2012.94,
+          "renda_media": 3158.5,
+          "domicilios": 108,
+          "moradores": 309
+        },
+        {
+          "bairro": "Novo Ouro Preto",
+          "bairro_norm": "novo ouro preto",
+          "renda_pc": 947.35,
+          "renda_media": 1486.49,
+          "domicilios": 177,
+          "moradores": 523
+        },
+        {
+          "bairro": "Ouro Preto",
+          "bairro_norm": "ouro preto",
+          "renda_pc": 4131.21,
+          "renda_media": 6482.28,
+          "domicilios": 7950,
+          "moradores": 20152
+        },
+        {
+          "bairro": "Paquetá",
+          "bairro_norm": "paqueta",
+          "renda_pc": 4512.94,
+          "renda_media": 7081.25,
+          "domicilios": 3905,
+          "moradores": 10002
+        },
+        {
+          "bairro": "Santa Rosa",
+          "bairro_norm": "santa rosa",
+          "renda_pc": 3811.13,
+          "renda_media": 5980.04,
+          "domicilios": 2400,
+          "moradores": 6180
+        },
+        {
+          "bairro": "Santa Terezinha",
+          "bairro_norm": "santa terezinha",
+          "renda_pc": 1938.61,
+          "renda_media": 3041.87,
+          "domicilios": 5344,
+          "moradores": 14068
+        },
+        {
+          "bairro": "São Francisco",
+          "bairro_norm": "sao francisco",
+          "renda_pc": 2189.61,
+          "renda_media": 3435.71,
+          "domicilios": 1716,
+          "moradores": 3980
+        },
+        {
+          "bairro": "São José",
+          "bairro_norm": "sao jose",
+          "renda_pc": 7071.1,
+          "renda_media": 11095.24,
+          "domicilios": 590,
+          "moradores": 1536
+        },
+        {
+          "bairro": "São Luíz",
+          "bairro_norm": "sao luiz",
+          "renda_pc": 6904.46,
+          "renda_media": 10833.78,
+          "domicilios": 1451,
+          "moradores": 4030
+        },
+        {
+          "bairro": "Suzana",
+          "bairro_norm": "suzana",
+          "renda_pc": 1450.66,
+          "renda_media": 2276.22,
+          "domicilios": 669,
+          "moradores": 1756
+        },
+        {
+          "bairro": "Trevo",
+          "bairro_norm": "trevo",
+          "renda_pc": 2043.37,
+          "renda_media": 3206.24,
+          "domicilios": 3340,
+          "moradores": 9848
+        },
+        {
+          "bairro": "Universitário",
+          "bairro_norm": "universitario",
+          "renda_pc": 1755.48,
+          "renda_media": 2754.52,
+          "domicilios": 727,
+          "moradores": 1834
+        },
+        {
+          "bairro": "Urca",
+          "bairro_norm": "urca",
+          "renda_pc": 1467.4,
+          "renda_media": 2302.5,
+          "domicilios": 1366,
+          "moradores": 3732
+        },
+        {
+          "bairro": "Vila Aeroporto",
+          "bairro_norm": "vila aeroporto",
+          "renda_pc": 1037.88,
+          "renda_media": 1628.53,
+          "domicilios": 327,
+          "moradores": 931
+        },
+        {
+          "bairro": "Vila Aeroporto Jaraguá",
+          "bairro_norm": "vila aeroporto jaragua",
+          "renda_pc": 1040.9,
+          "renda_media": 1633.28,
+          "domicilios": 148,
+          "moradores": 428
+        },
+        {
+          "bairro": "Vila Engenho Nogueira",
+          "bairro_norm": "vila engenho nogueira",
+          "renda_pc": 849.87,
+          "renda_media": 1333.53,
+          "domicilios": 67,
+          "moradores": 193
+        },
+        {
+          "bairro": "Real I",
+          "bairro_norm": "real i",
+          "renda_pc": 801.2,
+          "renda_media": 1257.16,
+          "domicilios": 44,
+          "moradores": 115
+        },
+        {
+          "bairro": "Real II",
+          "bairro_norm": "real ii",
+          "renda_pc": 854.56,
+          "renda_media": 1340.89,
+          "domicilios": 212,
+          "moradores": 575
+        },
+        {
+          "bairro": "Túnel de Ibirité",
+          "bairro_norm": "tunel de ibirite",
+          "renda_pc": 1985.48,
+          "renda_media": 3115.42,
+          "domicilios": 584,
+          "moradores": 1663
+        },
+        {
+          "bairro": "Marieta I",
+          "bairro_norm": "marieta i",
+          "renda_pc": 1132.26,
+          "renda_media": 1776.62,
+          "domicilios": 244,
+          "moradores": 637
+        },
+        {
+          "bairro": "Marieta II",
+          "bairro_norm": "marieta ii",
+          "renda_pc": 1019.13,
+          "renda_media": 1599.12,
+          "domicilios": 65,
+          "moradores": 169
+        },
+        {
+          "bairro": "Marieta 3ª Seção",
+          "bairro_norm": "marieta 3ª secao",
+          "renda_pc": 1386.86,
+          "renda_media": 2176.12,
+          "domicilios": 34,
+          "moradores": 95
+        },
+        {
+          "bairro": "Vila Piratininga",
+          "bairro_norm": "vila piratininga",
+          "renda_pc": 881.51,
+          "renda_media": 1383.17,
+          "domicilios": 507,
+          "moradores": 1464
+        },
+        {
+          "bairro": "Jatobá",
+          "bairro_norm": "jatoba",
+          "renda_pc": 1309.03,
+          "renda_media": 2054,
+          "domicilios": 1184,
+          "moradores": 3210
+        },
+        {
+          "bairro": "Marilândia",
+          "bairro_norm": "marilandia",
+          "renda_pc": 1539.01,
+          "renda_media": 2414.86,
+          "domicilios": 481,
+          "moradores": 1297
+        },
+        {
+          "bairro": "Vila Batik",
+          "bairro_norm": "vila batik",
+          "renda_pc": 962.51,
+          "renda_media": 1510.28,
+          "domicilios": 73,
+          "moradores": 223
+        },
+        {
+          "bairro": "São João",
+          "bairro_norm": "sao joao",
+          "renda_pc": 978.68,
+          "renda_media": 1535.65,
+          "domicilios": 579,
+          "moradores": 1680
+        },
+        {
+          "bairro": "Serra do Curral",
+          "bairro_norm": "serra do curral",
+          "renda_pc": 1193.64,
+          "renda_media": 1872.94,
+          "domicilios": 168,
+          "moradores": 437
+        },
+        {
+          "bairro": "Bonsucesso",
+          "bairro_norm": "bonsucesso",
+          "renda_pc": 1302.31,
+          "renda_media": 2043.45,
+          "domicilios": 2908,
+          "moradores": 8220
+        },
+        {
+          "bairro": "Bernadete",
+          "bairro_norm": "bernadete",
+          "renda_pc": 965.15,
+          "renda_media": 1514.42,
+          "domicilios": 431,
+          "moradores": 1257
+        },
+        {
+          "bairro": "Alto das Antenas",
+          "bairro_norm": "alto das antenas",
+          "renda_pc": 722.39,
+          "renda_media": 1133.5,
+          "domicilios": 209,
+          "moradores": 632
+        },
+        {
+          "bairro": "Esperança",
+          "bairro_norm": "esperanca",
+          "renda_pc": 898.97,
+          "renda_media": 1410.57,
+          "domicilios": 594,
+          "moradores": 1793
+        },
+        {
+          "bairro": "Vila CEMIG",
+          "bairro_norm": "vila cemig",
+          "renda_pc": 1016.95,
+          "renda_media": 1595.69,
+          "domicilios": 1781,
+          "moradores": 5088
+        },
+        {
+          "bairro": "Flávio Marques Lisboa",
+          "bairro_norm": "flavio marques lisboa",
+          "renda_pc": 1517.56,
+          "renda_media": 2381.2,
+          "domicilios": 2759,
+          "moradores": 7340
+        },
+        {
+          "bairro": "Flávio de Oliveira",
+          "bairro_norm": "flavio de oliveira",
+          "renda_pc": 1782.47,
+          "renda_media": 2796.87,
+          "domicilios": 845,
+          "moradores": 2187
+        },
+        {
+          "bairro": "Cardoso",
+          "bairro_norm": "cardoso",
+          "renda_pc": 1832.84,
+          "renda_media": 2875.9,
+          "domicilios": 3620,
+          "moradores": 9788
+        },
+        {
+          "bairro": "Araguaia",
+          "bairro_norm": "araguaia",
+          "renda_pc": 1787.1,
+          "renda_media": 2804.13,
+          "domicilios": 5461,
+          "moradores": 14562
+        },
+        {
+          "bairro": "Milionários",
+          "bairro_norm": "milionarios",
+          "renda_pc": 1758.37,
+          "renda_media": 2759.05,
+          "domicilios": 4214,
+          "moradores": 11188
+        },
+        {
+          "bairro": "Vila Nova dos Milionários",
+          "bairro_norm": "vila nova dos milionarios",
+          "renda_pc": 1012.09,
+          "renda_media": 1588.07,
+          "domicilios": 176,
+          "moradores": 443
+        },
+        {
+          "bairro": "Vila COPASA",
+          "bairro_norm": "vila copasa",
+          "renda_pc": 828.78,
+          "renda_media": 1300.44,
+          "domicilios": 86,
+          "moradores": 244
+        },
+        {
+          "bairro": "Conjunto Bonsucesso",
+          "bairro_norm": "conjunto bonsucesso",
+          "renda_pc": 1074.03,
+          "renda_media": 1685.26,
+          "domicilios": 242,
+          "moradores": 730
+        },
+        {
+          "bairro": "Bairro Novo das Indústrias",
+          "bairro_norm": "bairro novo das industrias",
+          "renda_pc": 1418.9,
+          "renda_media": 2226.39,
+          "domicilios": 1684,
+          "moradores": 4560
+        },
+        {
+          "bairro": "Alta Tensão",
+          "bairro_norm": "alta tensao",
+          "renda_pc": 1047.84,
+          "renda_media": 1644.17,
+          "domicilios": 79,
+          "moradores": 218
+        },
+        {
+          "bairro": "Alta Tensão I",
+          "bairro_norm": "alta tensao i",
+          "renda_pc": 1053.43,
+          "renda_media": 1652.93,
+          "domicilios": 649,
+          "moradores": 1710
+        },
+        {
+          "bairro": "Bairro das Indústrias I",
+          "bairro_norm": "bairro das industrias i",
+          "renda_pc": 1482.86,
+          "renda_media": 2326.75,
+          "domicilios": 2905,
+          "moradores": 7364
+        },
+        {
+          "bairro": "Pongelupe",
+          "bairro_norm": "pongelupe",
+          "renda_pc": 1944.96,
+          "renda_media": 3051.83,
+          "domicilios": 825,
+          "moradores": 2434
+        },
+        {
+          "bairro": "Solar do Barreiro",
+          "bairro_norm": "solar do barreiro",
+          "renda_pc": 1445.52,
+          "renda_media": 2268.16,
+          "domicilios": 2181,
+          "moradores": 5778
+        },
+        {
+          "bairro": "Corumbiara",
+          "bairro_norm": "corumbiara",
+          "renda_pc": 998.47,
+          "renda_media": 1566.7,
+          "domicilios": 372,
+          "moradores": 1121
+        },
+        {
+          "bairro": "Vila Ecológica",
+          "bairro_norm": "vila ecologica",
+          "renda_pc": 859.86,
+          "renda_media": 1349.2,
+          "domicilios": 933,
+          "moradores": 2811
+        },
+        {
+          "bairro": "Distrito Industrial do Jatobá",
+          "bairro_norm": "distrito industrial do jatoba",
+          "renda_pc": 977.1,
+          "renda_media": 1533.16,
+          "domicilios": 1744,
+          "moradores": 4895
+        },
+        {
+          "bairro": "Águas Claras",
+          "bairro_norm": "aguas claras",
+          "renda_pc": 959.51,
+          "renda_media": 1505.56,
+          "domicilios": 874,
+          "moradores": 2493
+        },
+        {
+          "bairro": "Vitória da Conquista",
+          "bairro_norm": "vitoria da conquista",
+          "renda_pc": 880.75,
+          "renda_media": 1381.99,
+          "domicilios": 507,
+          "moradores": 1536
+        },
+        {
+          "bairro": "Vila Independência I",
+          "bairro_norm": "vila independencia i",
+          "renda_pc": 1075.73,
+          "renda_media": 1687.93,
+          "domicilios": 874,
+          "moradores": 2457
+        },
+        {
+          "bairro": "Vila Independência II",
+          "bairro_norm": "vila independencia ii",
+          "renda_pc": 916.71,
+          "renda_media": 1438.41,
+          "domicilios": 277,
+          "moradores": 815
+        },
+        {
+          "bairro": "Vila Independência IV",
+          "bairro_norm": "vila independencia iv",
+          "renda_pc": 1257.87,
+          "renda_media": 1973.72,
+          "domicilios": 93,
+          "moradores": 274
+        },
+        {
+          "bairro": "Independência",
+          "bairro_norm": "independencia",
+          "renda_pc": 1306.51,
+          "renda_media": 2050.04,
+          "domicilios": 2702,
+          "moradores": 7325
+        },
+        {
+          "bairro": "Mineirão",
+          "bairro_norm": "mineirao",
+          "renda_pc": 1448.98,
+          "renda_media": 2273.59,
+          "domicilios": 1477,
+          "moradores": 4129
+        },
+        {
+          "bairro": "Vila Mangueiras",
+          "bairro_norm": "vila mangueiras",
+          "renda_pc": 1056.98,
+          "renda_media": 1658.5,
+          "domicilios": 603,
+          "moradores": 1747
+        },
+        {
+          "bairro": "Mangueiras",
+          "bairro_norm": "mangueiras",
+          "renda_pc": 1816.04,
+          "renda_media": 2849.55,
+          "domicilios": 1308,
+          "moradores": 3604
+        },
+        {
+          "bairro": "Petrópolis",
+          "bairro_norm": "petropolis",
+          "renda_pc": 2097.73,
+          "renda_media": 3291.54,
+          "domicilios": 1002,
+          "moradores": 2820
+        },
+        {
+          "bairro": "Vila Petrópolis",
+          "bairro_norm": "vila petropolis",
+          "renda_pc": 858.5,
+          "renda_media": 1347.07,
+          "domicilios": 110,
+          "moradores": 297
+        },
+        {
+          "bairro": "Santa Rita",
+          "bairro_norm": "santa rita",
+          "renda_pc": 1073.5,
+          "renda_media": 1684.42,
+          "domicilios": 863,
+          "moradores": 2573
+        },
+        {
+          "bairro": "Ernesto do Nascimento",
+          "bairro_norm": "ernesto do nascimento",
+          "renda_pc": 1958.3,
+          "renda_media": 3072.76,
+          "domicilios": 626,
+          "moradores": 1852
+        },
+        {
+          "bairro": "Vale do Jatobá",
+          "bairro_norm": "vale do jatoba",
+          "renda_pc": 1412.82,
+          "renda_media": 2216.86,
+          "domicilios": 2571,
+          "moradores": 7202
+        },
+        {
+          "bairro": "Jardim do Vale",
+          "bairro_norm": "jardim do vale",
+          "renda_pc": 1061.84,
+          "renda_media": 1666.13,
+          "domicilios": 339,
+          "moradores": 964
+        },
+        {
+          "bairro": "Conjunto Jatobá",
+          "bairro_norm": "conjunto jatoba",
+          "renda_pc": 1067.42,
+          "renda_media": 1674.88,
+          "domicilios": 1182,
+          "moradores": 3270
+        },
+        {
+          "bairro": "Novo Santa Cecília",
+          "bairro_norm": "novo santa cecilia",
+          "renda_pc": 1365.91,
+          "renda_media": 2143.24,
+          "domicilios": 708,
+          "moradores": 2061
+        },
+        {
+          "bairro": "Vila Pinho",
+          "bairro_norm": "vila pinho",
+          "renda_pc": 1084.87,
+          "renda_media": 1702.26,
+          "domicilios": 2434,
+          "moradores": 6927
+        },
+        {
+          "bairro": "Brasil Industrial",
+          "bairro_norm": "brasil industrial",
+          "renda_pc": 1866.43,
+          "renda_media": 2928.61,
+          "domicilios": 2329,
+          "moradores": 6196
+        },
+        {
+          "bairro": "Diamante",
+          "bairro_norm": "diamante",
+          "renda_pc": 2284.7,
+          "renda_media": 3584.92,
+          "domicilios": 6172,
+          "moradores": 16981
+        },
+        {
+          "bairro": "Olaria",
+          "bairro_norm": "olaria",
+          "renda_pc": 1655.43,
+          "renda_media": 2597.53,
+          "domicilios": 2446,
+          "moradores": 6599
+        },
+        {
+          "bairro": "CDI Jatobá",
+          "bairro_norm": "cdi jatoba",
+          "renda_pc": 816.34,
+          "renda_media": 1280.92,
+          "domicilios": 419,
+          "moradores": 1025
+        },
+        {
+          "bairro": "Santa Cecília",
+          "bairro_norm": "santa cecilia",
+          "renda_pc": 1483.15,
+          "renda_media": 2327.2,
+          "domicilios": 1151,
+          "moradores": 3141
+        },
+        {
+          "bairro": "Vila Formosa",
+          "bairro_norm": "vila formosa",
+          "renda_pc": 1056.97,
+          "renda_media": 1658.49,
+          "domicilios": 444,
+          "moradores": 1260
+        },
+        {
+          "bairro": "Castanheira",
+          "bairro_norm": "castanheira",
+          "renda_pc": 1120.87,
+          "renda_media": 1758.76,
+          "domicilios": 1809,
+          "moradores": 5022
+        },
+        {
+          "bairro": "Miramar",
+          "bairro_norm": "miramar",
+          "renda_pc": 1857.32,
+          "renda_media": 2914.31,
+          "domicilios": 1949,
+          "moradores": 5212
+        },
+        {
+          "bairro": "Santa Helena",
+          "bairro_norm": "santa helena",
+          "renda_pc": 2278.92,
+          "renda_media": 3575.85,
+          "domicilios": 1991,
+          "moradores": 5133
+        },
+        {
+          "bairro": "Teixeira Dias",
+          "bairro_norm": "teixeira dias",
+          "renda_pc": 2324.41,
+          "renda_media": 3647.22,
+          "domicilios": 2144,
+          "moradores": 5756
+        },
+        {
+          "bairro": "Barreiro",
+          "bairro_norm": "barreiro",
+          "renda_pc": 3408.54,
+          "renda_media": 5348.33,
+          "domicilios": 3579,
+          "moradores": 9492
+        },
+        {
+          "bairro": "Santa Margarida",
+          "bairro_norm": "santa margarida",
+          "renda_pc": 1597.4,
+          "renda_media": 2506.47,
+          "domicilios": 756,
+          "moradores": 1921
+        },
+        {
+          "bairro": "Ademar Maldonado",
+          "bairro_norm": "ademar maldonado",
+          "renda_pc": 2372.1,
+          "renda_media": 3722.05,
+          "domicilios": 535,
+          "moradores": 1437
+        },
+        {
+          "bairro": "Átila de Paiva",
+          "bairro_norm": "atila de paiva",
+          "renda_pc": 1986.76,
+          "renda_media": 3117.42,
+          "domicilios": 322,
+          "moradores": 926
+        },
+        {
+          "bairro": "Vila Átila de Paiva",
+          "bairro_norm": "vila atila de paiva",
+          "renda_pc": 891,
+          "renda_media": 1398.06,
+          "domicilios": 479,
+          "moradores": 1351
+        },
+        {
+          "bairro": "João Paulo II",
+          "bairro_norm": "joao paulo ii",
+          "renda_pc": 1551.27,
+          "renda_media": 2434.1,
+          "domicilios": 612,
+          "moradores": 1395
+        },
+        {
+          "bairro": "Vila Tirol",
+          "bairro_norm": "vila tirol",
+          "renda_pc": 1062.23,
+          "renda_media": 1666.74,
+          "domicilios": 54,
+          "moradores": 124
+        },
+        {
+          "bairro": "Tirol",
+          "bairro_norm": "tirol",
+          "renda_pc": 2002.72,
+          "renda_media": 3142.47,
+          "domicilios": 4226,
+          "moradores": 11578
+        },
+        {
+          "bairro": "Lindéia",
+          "bairro_norm": "lindeia",
+          "renda_pc": 1415.65,
+          "renda_media": 2221.29,
+          "domicilios": 8180,
+          "moradores": 21888
+        },
+        {
+          "bairro": "Serra Verde",
+          "bairro_norm": "serra verde",
+          "renda_pc": 1483.65,
+          "renda_media": 2327.99,
+          "domicilios": 4698,
+          "moradores": 12242
+        },
+        {
+          "bairro": "Várzea da Palma",
+          "bairro_norm": "varzea da palma",
+          "renda_pc": 947.66,
+          "renda_media": 1486.97,
+          "domicilios": 42,
+          "moradores": 105
+        },
+        {
+          "bairro": "Venda Nova",
+          "bairro_norm": "venda nova",
+          "renda_pc": 1918.34,
+          "renda_media": 3010.07,
+          "domicilios": 1026,
+          "moradores": 2724
+        },
+        {
+          "bairro": "Canto do Sabiá",
+          "bairro_norm": "canto do sabia",
+          "renda_pc": 998.27,
+          "renda_media": 1566.39,
+          "domicilios": 132,
+          "moradores": 379
+        },
+        {
+          "bairro": "Vila Copacabana",
+          "bairro_norm": "vila copacabana",
+          "renda_pc": 1143.34,
+          "renda_media": 1794.01,
+          "domicilios": 148,
+          "moradores": 420
+        },
+        {
+          "bairro": "Vila dos Anjos",
+          "bairro_norm": "vila dos anjos",
+          "renda_pc": 924.4,
+          "renda_media": 1450.48,
+          "domicilios": 240,
+          "moradores": 746
+        },
+        {
+          "bairro": "Vila Satélite",
+          "bairro_norm": "vila satelite",
+          "renda_pc": 1115,
+          "renda_media": 1749.54,
+          "domicilios": 88,
+          "moradores": 280
+        },
+        {
+          "bairro": "Vila São João Batista",
+          "bairro_norm": "vila sao joao batista",
+          "renda_pc": 1145.82,
+          "renda_media": 1797.9,
+          "domicilios": 762,
+          "moradores": 2270
+        },
+        {
+          "bairro": "Vila Piratininga A",
+          "bairro_norm": "vila piratininga a",
+          "renda_pc": 1063.14,
+          "renda_media": 1668.17,
+          "domicilios": 93,
+          "moradores": 265
+        },
+        {
+          "bairro": "São Marcos",
+          "bairro_norm": "sao marcos",
+          "renda_pc": 1478.1,
+          "renda_media": 2319.28,
+          "domicilios": 2283,
+          "moradores": 6279
+        },
+        {
+          "bairro": "Ipê",
+          "bairro_norm": "ipe",
+          "renda_pc": 1530.87,
+          "renda_media": 2402.08,
+          "domicilios": 1675,
+          "moradores": 4526
+        },
+        {
+          "bairro": "Goiânia",
+          "bairro_norm": "goiania",
+          "renda_pc": 1631.87,
+          "renda_media": 2560.57,
+          "domicilios": 5586,
+          "moradores": 15214
+        },
+        {
+          "bairro": "Morro dos Macacos",
+          "bairro_norm": "morro dos macacos",
+          "renda_pc": 886.73,
+          "renda_media": 1391.37,
+          "domicilios": 145,
+          "moradores": 368
+        },
+        {
+          "bairro": "São Benedito",
+          "bairro_norm": "sao benedito",
+          "renda_pc": 1038.79,
+          "renda_media": 1629.97,
+          "domicilios": 556,
+          "moradores": 1652
+        },
+        {
+          "bairro": "Guanabara",
+          "bairro_norm": "guanabara",
+          "renda_pc": 782.33,
+          "renda_media": 1227.56,
+          "domicilios": 27,
+          "moradores": 73
+        },
+        {
+          "bairro": "Vila da Luz",
+          "bairro_norm": "vila da luz",
+          "renda_pc": 857.26,
+          "renda_media": 1345.12,
+          "domicilios": 484,
+          "moradores": 1363
+        },
+        {
+          "bairro": "Maria Goretti",
+          "bairro_norm": "maria goretti",
+          "renda_pc": 1515.97,
+          "renda_media": 2378.7,
+          "domicilios": 3002,
+          "moradores": 8198
+        },
+        {
+          "bairro": "Pirajá",
+          "bairro_norm": "piraja",
+          "renda_pc": 2233.72,
+          "renda_media": 3504.92,
+          "domicilios": 1172,
+          "moradores": 3155
+        },
+        {
+          "bairro": "Eymard",
+          "bairro_norm": "eymard",
+          "renda_pc": 1740.34,
+          "renda_media": 2730.77,
+          "domicilios": 1397,
+          "moradores": 3708
+        },
+        {
+          "bairro": "Vitória",
+          "bairro_norm": "vitoria",
+          "renda_pc": 1712.05,
+          "renda_media": 2686.38,
+          "domicilios": 1702,
+          "moradores": 4472
+        },
+        {
+          "bairro": "Pousada Santo Antônio",
+          "bairro_norm": "pousada santo antonio",
+          "renda_pc": 1867.05,
+          "renda_media": 2929.59,
+          "domicilios": 1017,
+          "moradores": 2746
+        },
+        {
+          "bairro": "Bela Vitória",
+          "bairro_norm": "bela vitoria",
+          "renda_pc": 1579.95,
+          "renda_media": 2479.1,
+          "domicilios": 235,
+          "moradores": 630
+        },
+        {
+          "bairro": "Jardim Vitória",
+          "bairro_norm": "jardim vitoria",
+          "renda_pc": 1343.22,
+          "renda_media": 2107.64,
+          "domicilios": 6422,
+          "moradores": 18137
+        },
+        {
+          "bairro": "Vila Maria",
+          "bairro_norm": "vila maria",
+          "renda_pc": 955.17,
+          "renda_media": 1498.75,
+          "domicilios": 1653,
+          "moradores": 4665
+        },
+        {
+          "bairro": "Mirtes",
+          "bairro_norm": "mirtes",
+          "renda_pc": 1024.26,
+          "renda_media": 1607.17,
+          "domicilios": 109,
+          "moradores": 326
+        },
+        {
+          "bairro": "São Gabriel",
+          "bairro_norm": "sao gabriel",
+          "renda_pc": 1715.39,
+          "renda_media": 2691.62,
+          "domicilios": 5141,
+          "moradores": 13371
+        },
+        {
+          "bairro": "São Dimas",
+          "bairro_norm": "sao dimas",
+          "renda_pc": 870.67,
+          "renda_media": 1366.17,
+          "domicilios": 90,
+          "moradores": 212
+        },
+        {
+          "bairro": "Vila Esplanada",
+          "bairro_norm": "vila esplanada",
+          "renda_pc": 1066.04,
+          "renda_media": 1672.72,
+          "domicilios": 329,
+          "moradores": 897
+        },
+        {
+          "bairro": "Vila São Gabriel",
+          "bairro_norm": "vila sao gabriel",
+          "renda_pc": 860.83,
+          "renda_media": 1350.73,
+          "domicilios": 225,
+          "moradores": 612
+        },
+        {
+          "bairro": "Dom Silvério",
+          "bairro_norm": "dom silverio",
+          "renda_pc": 1488.65,
+          "renda_media": 2335.84,
+          "domicilios": 1675,
+          "moradores": 4447
+        },
+        {
+          "bairro": "Boa Esperança",
+          "bairro_norm": "boa esperanca",
+          "renda_pc": 1108.29,
+          "renda_media": 1739.01,
+          "domicilios": 201,
+          "moradores": 542
+        },
+        {
+          "bairro": "Três Marias",
+          "bairro_norm": "tres marias",
+          "renda_pc": 1013.35,
+          "renda_media": 1590.05,
+          "domicilios": 261,
+          "moradores": 728
+        },
+        {
+          "bairro": "Ouro Minas",
+          "bairro_norm": "ouro minas",
+          "renda_pc": 1484.84,
+          "renda_media": 2329.86,
+          "domicilios": 1857,
+          "moradores": 5096
+        },
+        {
+          "bairro": "Vila Ouro Minas",
+          "bairro_norm": "vila ouro minas",
+          "renda_pc": 963.15,
+          "renda_media": 1511.28,
+          "domicilios": 298,
+          "moradores": 886
+        },
+        {
+          "bairro": "Belmonte",
+          "bairro_norm": "belmonte",
+          "renda_pc": 1333.87,
+          "renda_media": 2092.98,
+          "domicilios": 953,
+          "moradores": 2606
+        },
+        {
+          "bairro": "Nazaré",
+          "bairro_norm": "nazare",
+          "renda_pc": 1321.14,
+          "renda_media": 2073,
+          "domicilios": 2825,
+          "moradores": 7707
+        },
+        {
+          "bairro": "Vista do Sol",
+          "bairro_norm": "vista do sol",
+          "renda_pc": 1164.83,
+          "renda_media": 1827.74,
+          "domicilios": 2003,
+          "moradores": 5562
+        },
+        {
+          "bairro": "Grotinha",
+          "bairro_norm": "grotinha",
+          "renda_pc": 1023.95,
+          "renda_media": 1606.68,
+          "domicilios": 97,
+          "moradores": 298
+        },
+        {
+          "bairro": "Acaiaca",
+          "bairro_norm": "acaiaca",
+          "renda_pc": 1629.93,
+          "renda_media": 2557.52,
+          "domicilios": 1037,
+          "moradores": 2907
+        },
+        {
+          "bairro": "Paulo VI",
+          "bairro_norm": "paulo vi",
+          "renda_pc": 1370.33,
+          "renda_media": 2150.18,
+          "domicilios": 4399,
+          "moradores": 11915
+        },
+        {
+          "bairro": "Beira-Linha",
+          "bairro_norm": "beira-linha",
+          "renda_pc": 927.72,
+          "renda_media": 1455.68,
+          "domicilios": 1277,
+          "moradores": 3836
+        },
+        {
+          "bairro": "Ribeiro de Abreu",
+          "bairro_norm": "ribeiro de abreu",
+          "renda_pc": 1271.94,
+          "renda_media": 1995.8,
+          "domicilios": 5549,
+          "moradores": 15493
+        },
+        {
+          "bairro": "Antônio Ribeiro de Abreu 1ª Seção",
+          "bairro_norm": "antonio ribeiro de abreu 1ª secao",
+          "renda_pc": 1019.99,
+          "renda_media": 1600.47,
+          "domicilios": 88,
+          "moradores": 237
+        },
+        {
+          "bairro": "Capitão Eduardo",
+          "bairro_norm": "capitao eduardo",
+          "renda_pc": 966.4,
+          "renda_media": 1516.38,
+          "domicilios": 1722,
+          "moradores": 4856
+        },
+        {
+          "bairro": "Conjunto Paulo VI",
+          "bairro_norm": "conjunto paulo vi",
+          "renda_pc": 853.07,
+          "renda_media": 1338.55,
+          "domicilios": 1082,
+          "moradores": 3216
+        },
+        {
+          "bairro": "Conjunto Capitão Eduardo",
+          "bairro_norm": "conjunto capitao eduardo",
+          "renda_pc": 948.7,
+          "renda_media": 1488.61,
+          "domicilios": 925,
+          "moradores": 2668
+        },
+        {
+          "bairro": "Beija Flor",
+          "bairro_norm": "beija flor",
+          "renda_pc": 1186.33,
+          "renda_media": 1861.47,
+          "domicilios": 654,
+          "moradores": 1881
+        },
+        {
+          "bairro": "Itapoã",
+          "bairro_norm": "itapoa",
+          "renda_pc": 3887.3,
+          "renda_media": 6099.56,
+          "domicilios": 3918,
+          "moradores": 9869
+        },
+        {
+          "bairro": "Santa Amélia",
+          "bairro_norm": "santa amelia",
+          "renda_pc": 3910.2,
+          "renda_media": 6135.49,
+          "domicilios": 7912,
+          "moradores": 20338
+        },
+        {
+          "bairro": "Santa Branca",
+          "bairro_norm": "santa branca",
+          "renda_pc": 3174.42,
+          "renda_media": 4980.97,
+          "domicilios": 2228,
+          "moradores": 5613
+        },
+        {
+          "bairro": "Santa Mônica",
+          "bairro_norm": "santa monica",
+          "renda_pc": 2357.61,
+          "renda_media": 3699.32,
+          "domicilios": 8276,
+          "moradores": 21903
+        },
+        {
+          "bairro": "São Tomáz",
+          "bairro_norm": "sao tomaz",
+          "renda_pc": 1335.37,
+          "renda_media": 2095.32,
+          "domicilios": 2142,
+          "moradores": 5787
+        },
+        {
+          "bairro": "Universo",
+          "bairro_norm": "universo",
+          "renda_pc": 1048.17,
+          "renda_media": 1644.68,
+          "domicilios": 465,
+          "moradores": 1272
+        },
+        {
+          "bairro": "Aarão Reis",
+          "bairro_norm": "aarao reis",
+          "renda_pc": 1850.41,
+          "renda_media": 2903.48,
+          "domicilios": 1082,
+          "moradores": 2838
+        },
+        {
+          "bairro": "Bacurau",
+          "bairro_norm": "bacurau",
+          "renda_pc": 956.93,
+          "renda_media": 1501.52,
+          "domicilios": 30,
+          "moradores": 63
+        },
+        {
+          "bairro": "Biquinhas",
+          "bairro_norm": "biquinhas",
+          "renda_pc": 991.82,
+          "renda_media": 1556.27,
+          "domicilios": 594,
+          "moradores": 1688
+        },
+        {
+          "bairro": "Boa União II",
+          "bairro_norm": "boa uniao ii",
+          "renda_pc": 800.72,
+          "renda_media": 1256.41,
+          "domicilios": 105,
+          "moradores": 345
+        },
+        {
+          "bairro": "Boa União I",
+          "bairro_norm": "boa uniao i",
+          "renda_pc": 722.61,
+          "renda_media": 1133.84,
+          "domicilios": 53,
+          "moradores": 105
+        },
+        {
+          "bairro": "Campo Alegre",
+          "bairro_norm": "campo alegre",
+          "renda_pc": 1842.93,
+          "renda_media": 2891.74,
+          "domicilios": 855,
+          "moradores": 2463
+        },
+        {
+          "bairro": "Canaã",
+          "bairro_norm": "canaa",
+          "renda_pc": 2488.25,
+          "renda_media": 3904.3,
+          "domicilios": 678,
+          "moradores": 1980
+        },
+        {
+          "bairro": "Conjunto Floramar",
+          "bairro_norm": "conjunto floramar",
+          "renda_pc": 974.6,
+          "renda_media": 1529.25,
+          "domicilios": 296,
+          "moradores": 885
+        },
+        {
+          "bairro": "Conjunto Providência",
+          "bairro_norm": "conjunto providencia",
+          "renda_pc": 983.65,
+          "renda_media": 1543.45,
+          "domicilios": 123,
+          "moradores": 318
+        },
+        {
+          "bairro": "Etelvina Carneiro",
+          "bairro_norm": "etelvina carneiro",
+          "renda_pc": 1851.46,
+          "renda_media": 2905.12,
+          "domicilios": 750,
+          "moradores": 2150
+        },
+        {
+          "bairro": "Floramar",
+          "bairro_norm": "floramar",
+          "renda_pc": 2015.8,
+          "renda_media": 3162.99,
+          "domicilios": 3338,
+          "moradores": 8868
+        },
+        {
+          "bairro": "Frei Leopoldo",
+          "bairro_norm": "frei leopoldo",
+          "renda_pc": 1422.86,
+          "renda_media": 2232.61,
+          "domicilios": 1207,
+          "moradores": 3197
+        },
+        {
+          "bairro": "Granja Werneck",
+          "bairro_norm": "granja werneck",
+          "renda_pc": 891.4,
+          "renda_media": 1398.7,
+          "domicilios": 3597,
+          "moradores": 10434
+        },
+        {
+          "bairro": "Guarani",
+          "bairro_norm": "guarani",
+          "renda_pc": 1857.1,
+          "renda_media": 2913.97,
+          "domicilios": 2686,
+          "moradores": 7163
+        },
+        {
+          "bairro": "Heliópolis",
+          "bairro_norm": "heliopolis",
+          "renda_pc": 2916.96,
+          "renda_media": 4577,
+          "domicilios": 2842,
+          "moradores": 7416
+        },
+        {
+          "bairro": "Jaqueline",
+          "bairro_norm": "jaqueline",
+          "renda_pc": 1445,
+          "renda_media": 2267.35,
+          "domicilios": 6634,
+          "moradores": 18480
+        },
+        {
+          "bairro": "Jardim Felicidade",
+          "bairro_norm": "jardim felicidade",
+          "renda_pc": 944.11,
+          "renda_media": 1481.4,
+          "domicilios": 4750,
+          "moradores": 14202
+        },
+        {
+          "bairro": "Jardim Guanabara",
+          "bairro_norm": "jardim guanabara",
+          "renda_pc": 2026.65,
+          "renda_media": 3180.02,
+          "domicilios": 4495,
+          "moradores": 12098
+        },
+        {
+          "bairro": "Juliana",
+          "bairro_norm": "juliana",
+          "renda_pc": 1497.34,
+          "renda_media": 2349.47,
+          "domicilios": 2326,
+          "moradores": 6159
+        },
+        {
+          "bairro": "Lajedo",
+          "bairro_norm": "lajedo",
+          "renda_pc": 1222.24,
+          "renda_media": 1917.82,
+          "domicilios": 1789,
+          "moradores": 4966
+        },
+        {
+          "bairro": "Madri",
+          "bairro_norm": "madri",
+          "renda_pc": 1264.17,
+          "renda_media": 1983.6,
+          "domicilios": 342,
+          "moradores": 978
+        },
+        {
+          "bairro": "Maria Teresa",
+          "bairro_norm": "maria teresa",
+          "renda_pc": 1137.74,
+          "renda_media": 1785.22,
+          "domicilios": 311,
+          "moradores": 904
+        },
+        {
+          "bairro": "Mariquinhas",
+          "bairro_norm": "mariquinhas",
+          "renda_pc": 856.15,
+          "renda_media": 1343.38,
+          "domicilios": 905,
+          "moradores": 2856
+        },
+        {
+          "bairro": "Minaslândia",
+          "bairro_norm": "minaslandia",
+          "renda_pc": 1681.31,
+          "renda_media": 2638.14,
+          "domicilios": 2360,
+          "moradores": 6348
+        },
+        {
+          "bairro": "Mirante",
+          "bairro_norm": "mirante",
+          "renda_pc": 831.83,
+          "renda_media": 1305.23,
+          "domicilios": 176,
+          "moradores": 496
+        },
+        {
+          "bairro": "Monte Azul",
+          "bairro_norm": "monte azul",
+          "renda_pc": 1165.19,
+          "renda_media": 1828.3,
+          "domicilios": 952,
+          "moradores": 2754
+        },
+        {
+          "bairro": "Novo Aarão Reis",
+          "bairro_norm": "novo aarao reis",
+          "renda_pc": 937.59,
+          "renda_media": 1471.17,
+          "domicilios": 2646,
+          "moradores": 7517
+        },
+        {
+          "bairro": "Novo Tupi",
+          "bairro_norm": "novo tupi",
+          "renda_pc": 978.74,
+          "renda_media": 1535.74,
+          "domicilios": 1019,
+          "moradores": 3170
+        },
+        {
+          "bairro": "Planalto",
+          "bairro_norm": "planalto",
+          "renda_pc": 2852.17,
+          "renda_media": 4475.33,
+          "domicilios": 7080,
+          "moradores": 18232
+        },
+        {
+          "bairro": "Primeiro de Maio",
+          "bairro_norm": "primeiro de maio",
+          "renda_pc": 1011.91,
+          "renda_media": 1587.78,
+          "domicilios": 729,
+          "moradores": 1907
+        },
+        {
+          "bairro": "Providência",
+          "bairro_norm": "providencia",
+          "renda_pc": 1336.28,
+          "renda_media": 2096.75,
+          "domicilios": 2552,
+          "moradores": 6956
+        },
+        {
+          "bairro": "Vila SESC",
+          "bairro_norm": "vila sesc",
+          "renda_pc": 1035.05,
+          "renda_media": 1624.09,
+          "domicilios": 111,
+          "moradores": 307
+        },
+        {
+          "bairro": "São Bernardo",
+          "bairro_norm": "sao bernardo",
+          "renda_pc": 1458.63,
+          "renda_media": 2288.73,
+          "domicilios": 2934,
+          "moradores": 8090
+        },
+        {
+          "bairro": "São Gonçalo",
+          "bairro_norm": "sao goncalo",
+          "renda_pc": 1219.43,
+          "renda_media": 1913.41,
+          "domicilios": 868,
+          "moradores": 2313
+        },
+        {
+          "bairro": "Vila Jardim Leblon",
+          "bairro_norm": "vila jardim leblon",
+          "renda_pc": 1048.95,
+          "renda_media": 1645.9,
+          "domicilios": 104,
+          "moradores": 285
+        },
+        {
+          "bairro": "Satélite",
+          "bairro_norm": "satelite",
+          "renda_pc": 1626.9,
+          "renda_media": 2552.76,
+          "domicilios": 149,
+          "moradores": 435
+        },
+        {
+          "bairro": "Solimões",
+          "bairro_norm": "solimoes",
+          "renda_pc": 1132.31,
+          "renda_media": 1776.71,
+          "domicilios": 410,
+          "moradores": 1165
+        },
+        {
+          "bairro": "Tupi A",
+          "bairro_norm": "tupi a",
+          "renda_pc": 1554.61,
+          "renda_media": 2439.34,
+          "domicilios": 3460,
+          "moradores": 9130
+        },
+        {
+          "bairro": "Tupi B",
+          "bairro_norm": "tupi b",
+          "renda_pc": 1436.29,
+          "renda_media": 2253.68,
+          "domicilios": 4862,
+          "moradores": 13390
+        },
+        {
+          "bairro": "Vila Clóris",
+          "bairro_norm": "vila cloris",
+          "renda_pc": 2568.02,
+          "renda_media": 4029.47,
+          "domicilios": 2522,
+          "moradores": 6386
+        },
+        {
+          "bairro": "Vila Minaslândia",
+          "bairro_norm": "vila minaslandia",
+          "renda_pc": 903.86,
+          "renda_media": 1418.24,
+          "domicilios": 268,
+          "moradores": 684
+        },
+        {
+          "bairro": "Vila Nova",
+          "bairro_norm": "vila nova",
+          "renda_pc": 864.69,
+          "renda_media": 1356.79,
+          "domicilios": 168,
+          "moradores": 495
+        },
+        {
+          "bairro": "Vila Primeiro de Maio",
+          "bairro_norm": "vila primeiro de maio",
+          "renda_pc": 893.09,
+          "renda_media": 1401.35,
+          "domicilios": 1249,
+          "moradores": 3431
+        },
+        {
+          "bairro": "Xodó-Marize",
+          "bairro_norm": "xodo-marize",
+          "renda_pc": 1103.93,
+          "renda_media": 1732.17,
+          "domicilios": 479,
+          "moradores": 1358
+        },
+        {
+          "bairro": "Zilah Spósito",
+          "bairro_norm": "zilah sposito",
+          "renda_pc": 794.79,
+          "renda_media": 1247.1,
+          "domicilios": 708,
+          "moradores": 2194
+        },
+        {
+          "bairro": "Apolônia",
+          "bairro_norm": "apolonia",
+          "renda_pc": 943.65,
+          "renda_media": 1480.68,
+          "domicilios": 1844,
+          "moradores": 5294
+        },
+        {
+          "bairro": "Candelária",
+          "bairro_norm": "candelaria",
+          "renda_pc": 2178.28,
+          "renda_media": 3417.94,
+          "domicilios": 3042,
+          "moradores": 7997
+        },
+        {
+          "bairro": "Cenáculo",
+          "bairro_norm": "cenaculo",
+          "renda_pc": 2081.12,
+          "renda_media": 3265.48,
+          "domicilios": 1189,
+          "moradores": 3051
+        },
+        {
+          "bairro": "Conjunto Minascaixa",
+          "bairro_norm": "conjunto minascaixa",
+          "renda_pc": 1244.87,
+          "renda_media": 1953.33,
+          "domicilios": 1291,
+          "moradores": 3898
+        },
+        {
+          "bairro": "Conjunto Serra Verde",
+          "bairro_norm": "conjunto serra verde",
+          "renda_pc": 1324.91,
+          "renda_media": 2078.92,
+          "domicilios": 81,
+          "moradores": 261
+        },
+        {
+          "bairro": "Vila Mantiqueira",
+          "bairro_norm": "vila mantiqueira",
+          "renda_pc": 1123.52,
+          "renda_media": 1762.91,
+          "domicilios": 150,
+          "moradores": 419
+        },
+        {
+          "bairro": "Jardim Europa",
+          "bairro_norm": "jardim europa",
+          "renda_pc": 1577.35,
+          "renda_media": 2475.02,
+          "domicilios": 3408,
+          "moradores": 8998
+        },
+        {
+          "bairro": "Flamengo",
+          "bairro_norm": "flamengo",
+          "renda_pc": 971.78,
+          "renda_media": 1524.82,
+          "domicilios": 97,
+          "moradores": 290
+        },
+        {
+          "bairro": "Jardim dos Comerciários",
+          "bairro_norm": "jardim dos comerciarios",
+          "renda_pc": 1264.43,
+          "renda_media": 1984.02,
+          "domicilios": 6802,
+          "moradores": 19117
+        },
+        {
+          "bairro": "Jardim Leblon",
+          "bairro_norm": "jardim leblon",
+          "renda_pc": 1441,
+          "renda_media": 2261.07,
+          "domicilios": 3365,
+          "moradores": 9015
+        },
+        {
+          "bairro": "Lagoa",
+          "bairro_norm": "lagoa",
+          "renda_pc": 1121.72,
+          "renda_media": 1760.09,
+          "domicilios": 2700,
+          "moradores": 7821
+        },
+        {
+          "bairro": "Lagoinha Leblon",
+          "bairro_norm": "lagoinha leblon",
+          "renda_pc": 1317.72,
+          "renda_media": 2067.63,
+          "domicilios": 2080,
+          "moradores": 5753
+        },
+        {
+          "bairro": "Letícia",
+          "bairro_norm": "leticia",
+          "renda_pc": 1666.55,
+          "renda_media": 2614.98,
+          "domicilios": 2537,
+          "moradores": 6772
+        },
+        {
+          "bairro": "Mantiqueira",
+          "bairro_norm": "mantiqueira",
+          "renda_pc": 1364.01,
+          "renda_media": 2140.26,
+          "domicilios": 7136,
+          "moradores": 19874
+        },
+        {
+          "bairro": "Maria Helena",
+          "bairro_norm": "maria helena",
+          "renda_pc": 1558.02,
+          "renda_media": 2444.68,
+          "domicilios": 2017,
+          "moradores": 5606
+        },
+        {
+          "bairro": "Minascaixa",
+          "bairro_norm": "minascaixa",
+          "renda_pc": 1625.24,
+          "renda_media": 2550.16,
+          "domicilios": 3377,
+          "moradores": 9244
+        },
+        {
+          "bairro": "São João Batista",
+          "bairro_norm": "sao joao batista",
+          "renda_pc": 2185.69,
+          "renda_media": 3429.56,
+          "domicilios": 6883,
+          "moradores": 17646
+        },
+        {
+          "bairro": "Nova América",
+          "bairro_norm": "nova america",
+          "renda_pc": 748.51,
+          "renda_media": 1174.48,
+          "domicilios": 50,
+          "moradores": 147
+        },
+        {
+          "bairro": "Parque São Pedro",
+          "bairro_norm": "parque sao pedro",
+          "renda_pc": 2074.3,
+          "renda_media": 3254.78,
+          "domicilios": 1051,
+          "moradores": 2827
+        },
+        {
+          "bairro": "Piratininga",
+          "bairro_norm": "piratininga",
+          "renda_pc": 1395.18,
+          "renda_media": 2189.18,
+          "domicilios": 7471,
+          "moradores": 20175
+        },
+        {
+          "bairro": "Rio Branco",
+          "bairro_norm": "rio branco",
+          "renda_pc": 2026.39,
+          "renda_media": 3179.61,
+          "domicilios": 4323,
+          "moradores": 11806
+        },
+        {
+          "bairro": "Vila Santa Monica 1ª Seção",
+          "bairro_norm": "vila santa monica 1ª secao",
+          "renda_pc": 1009.3,
+          "renda_media": 1583.69,
+          "domicilios": 539,
+          "moradores": 1548
+        },
+        {
+          "bairro": "Vila Santa Monica 2ª Seção",
+          "bairro_norm": "vila santa monica 2ª secao",
+          "renda_pc": 804.4,
+          "renda_media": 1262.19,
+          "domicilios": 61,
+          "moradores": 166
+        },
+        {
+          "bairro": "Itaipu",
+          "bairro_norm": "itaipu",
+          "renda_pc": 1397.29,
+          "renda_media": 2192.49,
+          "domicilios": 2589,
+          "moradores": 7191
+        },
+        {
+          "bairro": "Vila Nossa Senhora Aparecida",
+          "bairro_norm": "vila nossa senhora aparecida",
+          "renda_pc": 908.45,
+          "renda_media": 1425.45,
+          "domicilios": 510,
+          "moradores": 1440
+        },
+        {
+          "bairro": "Belém",
+          "bairro_norm": "belem",
+          "renda_pc": 1197.5,
+          "renda_media": 1879,
+          "domicilios": 14,
+          "moradores": 42
+        },
+        {
+          "bairro": "Vila Vera Cruz I",
+          "bairro_norm": "vila vera cruz i",
+          "renda_pc": 1091.01,
+          "renda_media": 1711.9,
+          "domicilios": 63,
+          "moradores": 175
+        },
+        {
+          "bairro": "Vila Vera Cruz II",
+          "bairro_norm": "vila vera cruz ii",
+          "renda_pc": 1261.73,
+          "renda_media": 1979.78,
+          "domicilios": 20,
+          "moradores": 54
+        }
+      ]
+    },
+    {
+      "ibge": "3509502",
+      "fonte": "IBGE Censo 2022 — mediana rend. responsável distrito (FTP) escalada por SIDRA 10295 renda_pc municipal",
+      "rows": [
+        {
+          "bairro": "Campinas",
+          "bairro_norm": "campinas",
+          "renda_pc": 1703.64,
+          "renda_media": 68070213.8,
+          "domicilios": 300888,
+          "moradores": 770918
+        },
+        {
+          "bairro": "Barão Geraldo",
+          "bairro_norm": "barao geraldo",
+          "renda_pc": 1500,
+          "renda_media": 59933751.48,
+          "domicilios": 22593,
+          "moradores": 58649
+        },
+        {
+          "bairro": "Joaquim Egídio",
+          "bairro_norm": "joaquim egidio",
+          "renda_pc": 1738.93,
+          "renda_media": 69480397.87,
+          "domicilios": 483,
+          "moradores": 1327
+        },
+        {
+          "bairro": "Nova Aparecida",
+          "bairro_norm": "nova aparecida",
+          "renda_pc": 106.53,
+          "renda_media": 4256336.36,
+          "domicilios": 13350,
+          "moradores": 37043
+        },
+        {
+          "bairro": "Souzas",
+          "bairro_norm": "souzas",
+          "renda_pc": 2393.72,
+          "renda_media": 95643045.98,
+          "domicilios": 6326,
+          "moradores": 17463
+        },
+        {
+          "bairro": "Ouro Verde",
+          "bairro_norm": "ouro verde",
+          "renda_pc": 126.86,
+          "renda_media": 5068640.43,
+          "domicilios": 43450,
+          "moradores": 124463
+        },
+        {
+          "bairro": "Campo Grande",
+          "bairro_norm": "campo grande",
+          "renda_pc": 126.9,
+          "renda_media": 5070274.59,
+          "domicilios": 42414,
+          "moradores": 124893
+        }
+      ]
+    },
+    {
+      "ibge": "3518800",
+      "fonte": "IBGE Censo 2022 — mediana rend. responsável (FTP) escalada por SIDRA 10295 renda_pc municipal",
+      "rows": [
+        {
+          "bairro": "Aeroporto Internacional",
+          "bairro_norm": "aeroporto internacional",
+          "renda_pc": 3365.31,
+          "renda_media": 7743.16,
+          "domicilios": 221,
+          "moradores": 708
+        },
+        {
+          "bairro": "Água Chata",
+          "bairro_norm": "agua chata",
+          "renda_pc": 1202,
+          "renda_media": 2765.64,
+          "domicilios": 7951,
+          "moradores": 22963
+        },
+        {
+          "bairro": "Água Azul",
+          "bairro_norm": "agua azul",
+          "renda_pc": 849.3,
+          "renda_media": 1954.14,
+          "domicilios": 718,
+          "moradores": 2200
+        },
+        {
+          "bairro": "Aracília",
+          "bairro_norm": "aracilia",
+          "renda_pc": 897.57,
+          "renda_media": 2065.2,
+          "domicilios": 736,
+          "moradores": 2081
+        },
+        {
+          "bairro": "Bananal",
+          "bairro_norm": "bananal",
+          "renda_pc": 746.19,
+          "renda_media": 1716.89,
+          "domicilios": 13303,
+          "moradores": 41023
+        },
+        {
+          "bairro": "Bela Vista",
+          "bairro_norm": "bela vista",
+          "renda_pc": 1007.07,
+          "renda_media": 2317.15,
+          "domicilios": 6811,
+          "moradores": 19247
+        },
+        {
+          "bairro": "Bom Clima",
+          "bairro_norm": "bom clima",
+          "renda_pc": 1361.21,
+          "renda_media": 3131.97,
+          "domicilios": 3666,
+          "moradores": 10185
+        },
+        {
+          "bairro": "Bonsucesso",
+          "bairro_norm": "bonsucesso",
+          "renda_pc": 949.03,
+          "renda_media": 2183.6,
+          "domicilios": 34133,
+          "moradores": 100848
+        },
+        {
+          "bairro": "Cabuçu",
+          "bairro_norm": "cabucu",
+          "renda_pc": 1107.14,
+          "renda_media": 2547.39,
+          "domicilios": 26870,
+          "moradores": 77999
+        },
+        {
+          "bairro": "Capelinha",
+          "bairro_norm": "capelinha",
+          "renda_pc": 627.49,
+          "renda_media": 1443.78,
+          "domicilios": 14,
+          "moradores": 41
+        },
+        {
+          "bairro": "Cecap",
+          "bairro_norm": "cecap",
+          "renda_pc": 1796.22,
+          "renda_media": 4132.87,
+          "domicilios": 4077,
+          "moradores": 10000
+        },
+        {
+          "bairro": "Centro",
+          "bairro_norm": "centro",
+          "renda_pc": 3720.99,
+          "renda_media": 8561.54,
+          "domicilios": 9654,
+          "moradores": 24517
+        },
+        {
+          "bairro": "Cocaia",
+          "bairro_norm": "cocaia",
+          "renda_pc": 1412.32,
+          "renda_media": 3249.57,
+          "domicilios": 9407,
+          "moradores": 25424
+        },
+        {
+          "bairro": "Cumbíca",
+          "bairro_norm": "cumbica",
+          "renda_pc": 932.62,
+          "renda_media": 2145.85,
+          "domicilios": 29947,
+          "moradores": 87230
+        },
+        {
+          "bairro": "Fátima",
+          "bairro_norm": "fatima",
+          "renda_pc": 1422.5,
+          "renda_media": 3273,
+          "domicilios": 5356,
+          "moradores": 14662
+        },
+        {
+          "bairro": "Fortaleza",
+          "bairro_norm": "fortaleza",
+          "renda_pc": 890.77,
+          "renda_media": 2049.56,
+          "domicilios": 5143,
+          "moradores": 14956
+        },
+        {
+          "bairro": "Gopoúva",
+          "bairro_norm": "gopouva",
+          "renda_pc": 1831.75,
+          "renda_media": 4214.62,
+          "domicilios": 10577,
+          "moradores": 26379
+        },
+        {
+          "bairro": "Invernada",
+          "bairro_norm": "invernada",
+          "renda_pc": 802.38,
+          "renda_media": 1846.18,
+          "domicilios": 4816,
+          "moradores": 14493
+        },
+        {
+          "bairro": "Itaím",
+          "bairro_norm": "itaim",
+          "renda_pc": 779.34,
+          "renda_media": 1793.17,
+          "domicilios": 9576,
+          "moradores": 29134
+        },
+        {
+          "bairro": "Itapegica",
+          "bairro_norm": "itapegica",
+          "renda_pc": 1527.52,
+          "renda_media": 3514.63,
+          "domicilios": 7137,
+          "moradores": 19317
+        },
+        {
+          "bairro": "Jardim Vila Galvão",
+          "bairro_norm": "jardim vila galvao",
+          "renda_pc": 1316.26,
+          "renda_media": 3028.56,
+          "domicilios": 5595,
+          "moradores": 15668
+        },
+        {
+          "bairro": "Lavras",
+          "bairro_norm": "lavras",
+          "renda_pc": 956.8,
+          "renda_media": 2201.48,
+          "domicilios": 6093,
+          "moradores": 17757
+        },
+        {
+          "bairro": "Macedo",
+          "bairro_norm": "macedo",
+          "renda_pc": 2528.61,
+          "renda_media": 5818.02,
+          "domicilios": 9160,
+          "moradores": 23206
+        },
+        {
+          "bairro": "Maia",
+          "bairro_norm": "maia",
+          "renda_pc": 3915.49,
+          "renda_media": 9009.05,
+          "domicilios": 1952,
+          "moradores": 5279
+        },
+        {
+          "bairro": "Mato das Cobras",
+          "bairro_norm": "mato das cobras",
+          "renda_pc": 709.07,
+          "renda_media": 1631.48,
+          "domicilios": 3941,
+          "moradores": 12275
+        },
+        {
+          "bairro": "Monte Carmelo",
+          "bairro_norm": "monte carmelo",
+          "renda_pc": 960.26,
+          "renda_media": 2209.43,
+          "domicilios": 2018,
+          "moradores": 5895
+        },
+        {
+          "bairro": "Morro Grande",
+          "bairro_norm": "morro grande",
+          "renda_pc": 791.1,
+          "renda_media": 1820.23,
+          "domicilios": 100,
+          "moradores": 314
+        },
+        {
+          "bairro": "Morros",
+          "bairro_norm": "morros",
+          "renda_pc": 1138.25,
+          "renda_media": 2618.96,
+          "domicilios": 13597,
+          "moradores": 40848
+        },
+        {
+          "bairro": "Paraventi",
+          "bairro_norm": "paraventi",
+          "renda_pc": 1712.81,
+          "renda_media": 3940.96,
+          "domicilios": 4020,
+          "moradores": 11057
+        },
+        {
+          "bairro": "Picanço",
+          "bairro_norm": "picanco",
+          "renda_pc": 2253.34,
+          "renda_media": 5184.65,
+          "domicilios": 19401,
+          "moradores": 52763
+        },
+        {
+          "bairro": "Pimentas",
+          "bairro_norm": "pimentas",
+          "renda_pc": 889.65,
+          "renda_media": 2046.98,
+          "domicilios": 57603,
+          "moradores": 168071
+        },
+        {
+          "bairro": "Ponte Grande",
+          "bairro_norm": "ponte grande",
+          "renda_pc": 1924.84,
+          "renda_media": 4428.82,
+          "domicilios": 9691,
+          "moradores": 25484
+        },
+        {
+          "bairro": "Porto da Igreja",
+          "bairro_norm": "porto da igreja",
+          "renda_pc": 881.31,
+          "renda_media": 2027.78,
+          "domicilios": 18,
+          "moradores": 45
+        },
+        {
+          "bairro": "Presidente Dutra",
+          "bairro_norm": "presidente dutra",
+          "renda_pc": 954.44,
+          "renda_media": 2196.05,
+          "domicilios": 15134,
+          "moradores": 43971
+        },
+        {
+          "bairro": "Sadokim",
+          "bairro_norm": "sadokim",
+          "renda_pc": 864.04,
+          "renda_media": 1988.05,
+          "domicilios": 3278,
+          "moradores": 9487
+        },
+        {
+          "bairro": "São João",
+          "bairro_norm": "sao joao",
+          "renda_pc": 1133.33,
+          "renda_media": 2607.65,
+          "domicilios": 23657,
+          "moradores": 70342
+        },
+        {
+          "bairro": "São Roque",
+          "bairro_norm": "sao roque",
+          "renda_pc": 2486.51,
+          "renda_media": 5721.15,
+          "domicilios": 829,
+          "moradores": 2182
+        },
+        {
+          "bairro": "Taboão",
+          "bairro_norm": "taboao",
+          "renda_pc": 995.5,
+          "renda_media": 2290.51,
+          "domicilios": 25316,
+          "moradores": 75705
+        },
+        {
+          "bairro": "TANQUE GRANDE",
+          "bairro_norm": "tanque grande",
+          "renda_pc": 729.41,
+          "renda_media": 1678.29,
+          "domicilios": 58,
+          "moradores": 149
+        },
+        {
+          "bairro": "Torres Tibagy",
+          "bairro_norm": "torres tibagy",
+          "renda_pc": 1786.21,
+          "renda_media": 4109.84,
+          "domicilios": 7121,
+          "moradores": 18837
+        },
+        {
+          "bairro": "Tranquilidade",
+          "bairro_norm": "tranquilidade",
+          "renda_pc": 1374.65,
+          "renda_media": 3162.89,
+          "domicilios": 1982,
+          "moradores": 5204
+        },
+        {
+          "bairro": "Vila Augusta",
+          "bairro_norm": "vila augusta",
+          "renda_pc": 2922.11,
+          "renda_media": 6723.4,
+          "domicilios": 13415,
+          "moradores": 35207
+        },
+        {
+          "bairro": "Vila Barros",
+          "bairro_norm": "vila barros",
+          "renda_pc": 1084.71,
+          "renda_media": 2495.77,
+          "domicilios": 6580,
+          "moradores": 18227
+        },
+        {
+          "bairro": "Vila Galvão",
+          "bairro_norm": "vila galvao",
+          "renda_pc": 2532.11,
+          "renda_media": 5826.06,
+          "domicilios": 11847,
+          "moradores": 32245
+        },
+        {
+          "bairro": "Vila Rio",
+          "bairro_norm": "vila rio",
+          "renda_pc": 1429.62,
+          "renda_media": 3289.38,
+          "domicilios": 17759,
+          "moradores": 49589
+        }
+      ]
+    },
+    {
+      "ibge": "4314902",
+      "fonte": "IBGE Censo 2022 — mediana rend. responsável (FTP) escalada por SIDRA 10295 renda_pc municipal",
+      "rows": [
+        {
+          "bairro": "Medianeira",
+          "bairro_norm": "medianeira",
+          "renda_pc": 1676.39,
+          "renda_media": 4935.25,
+          "domicilios": 3650,
+          "moradores": 8692
+        },
+        {
+          "bairro": "Praia de Belas",
+          "bairro_norm": "praia de belas",
+          "renda_pc": 2807.34,
+          "renda_media": 8264.74,
+          "domicilios": 841,
+          "moradores": 1506
+        },
+        {
+          "bairro": "Cidade Baixa",
+          "bairro_norm": "cidade baixa",
+          "renda_pc": 2078.61,
+          "renda_media": 6119.38,
+          "domicilios": 7702,
+          "moradores": 12780
+        },
+        {
+          "bairro": "Menino-Deus",
+          "bairro_norm": "menino-deus",
+          "renda_pc": 2986.74,
+          "renda_media": 8792.89,
+          "domicilios": 14023,
+          "moradores": 27566
+        },
+        {
+          "bairro": "Farroupilha",
+          "bairro_norm": "farroupilha",
+          "renda_pc": 2748.95,
+          "renda_media": 8092.83,
+          "domicilios": 394,
+          "moradores": 756
+        },
+        {
+          "bairro": "Santa Cecília",
+          "bairro_norm": "santa cecilia",
+          "renda_pc": 2247.19,
+          "renda_media": 6615.68,
+          "domicilios": 2372,
+          "moradores": 4609
+        },
+        {
+          "bairro": "Santana",
+          "bairro_norm": "santana",
+          "renda_pc": 2301.66,
+          "renda_media": 6776.03,
+          "domicilios": 9001,
+          "moradores": 17584
+        },
+        {
+          "bairro": "Azenha",
+          "bairro_norm": "azenha",
+          "renda_pc": 2122.36,
+          "renda_media": 6248.18,
+          "domicilios": 6177,
+          "moradores": 12026
+        },
+        {
+          "bairro": "Santa Tereza",
+          "bairro_norm": "santa tereza",
+          "renda_pc": 1098.99,
+          "renda_media": 3235.41,
+          "domicilios": 11655,
+          "moradores": 30996
+        },
+        {
+          "bairro": "Nonoai",
+          "bairro_norm": "nonoai",
+          "renda_pc": 1713.15,
+          "renda_media": 5043.47,
+          "domicilios": 8528,
+          "moradores": 20531
+        },
+        {
+          "bairro": "Teresópolis",
+          "bairro_norm": "teresopolis",
+          "renda_pc": 2206.63,
+          "renda_media": 6496.27,
+          "domicilios": 5257,
+          "moradores": 12891
+        },
+        {
+          "bairro": "Glória",
+          "bairro_norm": "gloria",
+          "renda_pc": 1225.18,
+          "renda_media": 3606.89,
+          "domicilios": 6066,
+          "moradores": 15141
+        },
+        {
+          "bairro": "Coronel Aparício Borges",
+          "bairro_norm": "coronel aparicio borges",
+          "renda_pc": 809.55,
+          "renda_media": 2383.3,
+          "domicilios": 6032,
+          "moradores": 16920
+        },
+        {
+          "bairro": "Santo Antônio",
+          "bairro_norm": "santo antonio",
+          "renda_pc": 1909.5,
+          "renda_media": 5621.53,
+          "domicilios": 6136,
+          "moradores": 13026
+        },
+        {
+          "bairro": "Partenon",
+          "bairro_norm": "partenon",
+          "renda_pc": 1503.22,
+          "renda_media": 4425.43,
+          "domicilios": 18287,
+          "moradores": 43014
+        },
+        {
+          "bairro": "Vila João Pessoa",
+          "bairro_norm": "vila joao pessoa",
+          "renda_pc": 1074.71,
+          "renda_media": 3163.91,
+          "domicilios": 3977,
+          "moradores": 10365
+        },
+        {
+          "bairro": "Jardim Botânico",
+          "bairro_norm": "jardim botanico",
+          "renda_pc": 2510.23,
+          "renda_media": 7390.07,
+          "domicilios": 5579,
+          "moradores": 11311
+        },
+        {
+          "bairro": "Petrópolis",
+          "bairro_norm": "petropolis",
+          "renda_pc": 3780.68,
+          "renda_media": 11130.24,
+          "domicilios": 18240,
+          "moradores": 37352
+        },
+        {
+          "bairro": "Bom Jesus",
+          "bairro_norm": "bom jesus",
+          "renda_pc": 939.13,
+          "renda_media": 2764.77,
+          "domicilios": 8967,
+          "moradores": 24574
+        },
+        {
+          "bairro": "Cavalhada",
+          "bairro_norm": "cavalhada",
+          "renda_pc": 1447.24,
+          "renda_media": 4260.63,
+          "domicilios": 10709,
+          "moradores": 25015
+        },
+        {
+          "bairro": "Camaquã",
+          "bairro_norm": "camaqua",
+          "renda_pc": 1483.15,
+          "renda_media": 4366.36,
+          "domicilios": 7511,
+          "moradores": 17909
+        },
+        {
+          "bairro": "Cristal",
+          "bairro_norm": "cristal",
+          "renda_pc": 1700,
+          "renda_media": 5004.76,
+          "domicilios": 10228,
+          "moradores": 24600
+        },
+        {
+          "bairro": "Vila Assunção",
+          "bairro_norm": "vila assuncao",
+          "renda_pc": 3164.49,
+          "renda_media": 9316.17,
+          "domicilios": 1530,
+          "moradores": 3818
+        },
+        {
+          "bairro": "Tristeza",
+          "bairro_norm": "tristeza",
+          "renda_pc": 3106.21,
+          "renda_media": 9144.6,
+          "domicilios": 7747,
+          "moradores": 17096
+        },
+        {
+          "bairro": "Vila Conceição",
+          "bairro_norm": "vila conceicao",
+          "renda_pc": 2886.59,
+          "renda_media": 8498.06,
+          "domicilios": 394,
+          "moradores": 969
+        },
+        {
+          "bairro": "Pedra Redonda",
+          "bairro_norm": "pedra redonda",
+          "renda_pc": 5957.15,
+          "renda_media": 17537.7,
+          "domicilios": 188,
+          "moradores": 538
+        },
+        {
+          "bairro": "Ipanema",
+          "bairro_norm": "ipanema",
+          "renda_pc": 2577.88,
+          "renda_media": 7589.22,
+          "domicilios": 5210,
+          "moradores": 13168
+        },
+        {
+          "bairro": "Espírito Santo",
+          "bairro_norm": "espirito santo",
+          "renda_pc": 1989.72,
+          "renda_media": 5857.7,
+          "domicilios": 1982,
+          "moradores": 4952
+        },
+        {
+          "bairro": "Guarujá",
+          "bairro_norm": "guaruja",
+          "renda_pc": 1777.04,
+          "renda_media": 5231.56,
+          "domicilios": 2310,
+          "moradores": 6134
+        },
+        {
+          "bairro": "Vila Nova",
+          "bairro_norm": "vila nova",
+          "renda_pc": 1352.87,
+          "renda_media": 3982.81,
+          "domicilios": 12652,
+          "moradores": 31988
+        },
+        {
+          "bairro": "Arquipélago",
+          "bairro_norm": "arquipelago",
+          "renda_pc": 714.55,
+          "renda_media": 2103.63,
+          "domicilios": 2272,
+          "moradores": 6386
+        },
+        {
+          "bairro": "Cascata",
+          "bairro_norm": "cascata",
+          "renda_pc": 672.94,
+          "renda_media": 1981.13,
+          "domicilios": 3533,
+          "moradores": 9231
+        },
+        {
+          "bairro": "Agronomia",
+          "bairro_norm": "agronomia",
+          "renda_pc": 1061.15,
+          "renda_media": 3124,
+          "domicilios": 969,
+          "moradores": 2580
+        },
+        {
+          "bairro": "Centro Histórico",
+          "bairro_norm": "centro historico",
+          "renda_pc": 2227.78,
+          "renda_media": 6558.54,
+          "domicilios": 17744,
+          "moradores": 30115
+        },
+        {
+          "bairro": "Belém Velho",
+          "bairro_norm": "belem velho",
+          "renda_pc": 804.16,
+          "renda_media": 2367.44,
+          "domicilios": 4073,
+          "moradores": 10843
+        },
+        {
+          "bairro": "Bom Fim",
+          "bairro_norm": "bom fim",
+          "renda_pc": 2649.3,
+          "renda_media": 7799.48,
+          "domicilios": 5831,
+          "moradores": 10145
+        },
+        {
+          "bairro": "Independência",
+          "bairro_norm": "independencia",
+          "renda_pc": 2710.36,
+          "renda_media": 7979.24,
+          "domicilios": 3727,
+          "moradores": 6854
+        },
+        {
+          "bairro": "Floresta",
+          "bairro_norm": "floresta",
+          "renda_pc": 1740.79,
+          "renda_media": 5124.85,
+          "domicilios": 4177,
+          "moradores": 8703
+        },
+        {
+          "bairro": "Moinhos de Vento",
+          "bairro_norm": "moinhos de vento",
+          "renda_pc": 4588.04,
+          "renda_media": 13507.09,
+          "domicilios": 5045,
+          "moradores": 9972
+        },
+        {
+          "bairro": "Rio Branco",
+          "bairro_norm": "rio branco",
+          "renda_pc": 4190.79,
+          "renda_media": 12337.6,
+          "domicilios": 7626,
+          "moradores": 15626
+        },
+        {
+          "bairro": "Bela Vista",
+          "bairro_norm": "bela vista",
+          "renda_pc": 5644.73,
+          "renda_media": 16617.95,
+          "domicilios": 5244,
+          "moradores": 11805
+        },
+        {
+          "bairro": "MontSerrat",
+          "bairro_norm": "montserrat",
+          "renda_pc": 4221.11,
+          "renda_media": 12426.86,
+          "domicilios": 5143,
+          "moradores": 10331
+        },
+        {
+          "bairro": "Auxiliadora",
+          "bairro_norm": "auxiliadora",
+          "renda_pc": 3754.64,
+          "renda_media": 11053.58,
+          "domicilios": 4505,
+          "moradores": 8899
+        },
+        {
+          "bairro": "São João",
+          "bairro_norm": "sao joao",
+          "renda_pc": 2442.66,
+          "renda_media": 7191.14,
+          "domicilios": 4970,
+          "moradores": 10417
+        },
+        {
+          "bairro": "São Geraldo",
+          "bairro_norm": "sao geraldo",
+          "renda_pc": 1619.46,
+          "renda_media": 4767.66,
+          "domicilios": 3319,
+          "moradores": 6829
+        },
+        {
+          "bairro": "Navegantes",
+          "bairro_norm": "navegantes",
+          "renda_pc": 1416.51,
+          "renda_media": 4170.17,
+          "domicilios": 1416,
+          "moradores": 3300
+        },
+        {
+          "bairro": "Higienópolis",
+          "bairro_norm": "higienopolis",
+          "renda_pc": 3617.41,
+          "renda_media": 10649.56,
+          "domicilios": 4809,
+          "moradores": 10197
+        },
+        {
+          "bairro": "Passo da Areia",
+          "bairro_norm": "passo da areia",
+          "renda_pc": 2333.68,
+          "renda_media": 6870.3,
+          "domicilios": 10449,
+          "moradores": 22485
+        },
+        {
+          "bairro": "Cristo Redentor",
+          "bairro_norm": "cristo redentor",
+          "renda_pc": 2071.09,
+          "renda_media": 6097.23,
+          "domicilios": 7185,
+          "moradores": 15073
+        },
+        {
+          "bairro": "Jardim São Pedro",
+          "bairro_norm": "jardim sao pedro",
+          "renda_pc": 1741.03,
+          "renda_media": 5125.55,
+          "domicilios": 1436,
+          "moradores": 3277
+        },
+        {
+          "bairro": "Jardim Lindóia",
+          "bairro_norm": "jardim lindoia",
+          "renda_pc": 2834.4,
+          "renda_media": 8344.4,
+          "domicilios": 3271,
+          "moradores": 7398
+        },
+        {
+          "bairro": "Anchieta",
+          "bairro_norm": "anchieta",
+          "renda_pc": 722.17,
+          "renda_media": 2126.04,
+          "domicilios": 288,
+          "moradores": 789
+        },
+        {
+          "bairro": "Boa Vista",
+          "bairro_norm": "boa vista",
+          "renda_pc": 3908.23,
+          "renda_media": 11505.74,
+          "domicilios": 4216,
+          "moradores": 9150
+        },
+        {
+          "bairro": "Vila Ipiranga",
+          "bairro_norm": "vila ipiranga",
+          "renda_pc": 1868.03,
+          "renda_media": 5499.45,
+          "domicilios": 8495,
+          "moradores": 17843
+        },
+        {
+          "bairro": "Três Figueiras",
+          "bairro_norm": "tres figueiras",
+          "renda_pc": 5659.37,
+          "renda_media": 16661.06,
+          "domicilios": 1584,
+          "moradores": 3851
+        },
+        {
+          "bairro": "Chácara das Pedras",
+          "bairro_norm": "chacara das pedras",
+          "renda_pc": 3698.94,
+          "renda_media": 10889.59,
+          "domicilios": 2358,
+          "moradores": 5635
+        },
+        {
+          "bairro": "Vila Jardim",
+          "bairro_norm": "vila jardim",
+          "renda_pc": 1577,
+          "renda_media": 4642.66,
+          "domicilios": 4723,
+          "moradores": 11373
+        },
+        {
+          "bairro": "Sarandi",
+          "bairro_norm": "sarandi",
+          "renda_pc": 1203.1,
+          "renda_media": 3541.9,
+          "domicilios": 20300,
+          "moradores": 51308
+        },
+        {
+          "bairro": "Santa Maria Goretti",
+          "bairro_norm": "santa maria goretti",
+          "renda_pc": 1956.94,
+          "renda_media": 5761.2,
+          "domicilios": 1393,
+          "moradores": 3035
+        },
+        {
+          "bairro": "Rubem Berta",
+          "bairro_norm": "rubem berta",
+          "renda_pc": 757.91,
+          "renda_media": 2231.28,
+          "domicilios": 11564,
+          "moradores": 27879
+        },
+        {
+          "bairro": "São Sebastião",
+          "bairro_norm": "sao sebastiao",
+          "renda_pc": 1991.12,
+          "renda_media": 5861.81,
+          "domicilios": 3373,
+          "moradores": 7484
+        },
+        {
+          "bairro": "Humaitá",
+          "bairro_norm": "humaita",
+          "renda_pc": 1428.26,
+          "renda_media": 4204.77,
+          "domicilios": 5335,
+          "moradores": 12721
+        },
+        {
+          "bairro": "Farrapos",
+          "bairro_norm": "farrapos",
+          "renda_pc": 828.52,
+          "renda_media": 2439.15,
+          "domicilios": 6506,
+          "moradores": 17579
+        },
+        {
+          "bairro": "Jardim Carvalho",
+          "bairro_norm": "jardim carvalho",
+          "renda_pc": 1615.04,
+          "renda_media": 4754.65,
+          "domicilios": 9185,
+          "moradores": 23375
+        },
+        {
+          "bairro": "Jardim do Salso",
+          "bairro_norm": "jardim do salso",
+          "renda_pc": 3741.84,
+          "renda_media": 11015.88,
+          "domicilios": 2930,
+          "moradores": 6566
+        },
+        {
+          "bairro": "Restinga",
+          "bairro_norm": "restinga",
+          "renda_pc": 656.44,
+          "renda_media": 1932.54,
+          "domicilios": 22199,
+          "moradores": 62104
+        },
+        {
+          "bairro": "Ponta Grossa",
+          "bairro_norm": "ponta grossa",
+          "renda_pc": 839.09,
+          "renda_media": 2470.27,
+          "domicilios": 3446,
+          "moradores": 8899
+        },
+        {
+          "bairro": "Hípica",
+          "bairro_norm": "hipica",
+          "renda_pc": 1508.24,
+          "renda_media": 4440.22,
+          "domicilios": 10900,
+          "moradores": 28617
+        },
+        {
+          "bairro": "Belém Novo",
+          "bairro_norm": "belem novo",
+          "renda_pc": 1580.11,
+          "renda_media": 4651.8,
+          "domicilios": 3732,
+          "moradores": 9714
+        },
+        {
+          "bairro": "Lami",
+          "bairro_norm": "lami",
+          "renda_pc": 590.97,
+          "renda_media": 1739.79,
+          "domicilios": 2514,
+          "moradores": 6637
+        },
+        {
+          "bairro": "Serraria",
+          "bairro_norm": "serraria",
+          "renda_pc": 935.37,
+          "renda_media": 2753.71,
+          "domicilios": 1562,
+          "moradores": 4371
+        },
+        {
+          "bairro": "Lageado",
+          "bairro_norm": "lageado",
+          "renda_pc": 816.51,
+          "renda_media": 2403.78,
+          "domicilios": 2073,
+          "moradores": 5627
+        },
+        {
+          "bairro": "Lomba do Pinheiro",
+          "bairro_norm": "lomba do pinheiro",
+          "renda_pc": 808.04,
+          "renda_media": 2378.86,
+          "domicilios": 21785,
+          "moradores": 59104
+        },
+        {
+          "bairro": "Mário Quintana",
+          "bairro_norm": "mario quintana",
+          "renda_pc": 750.46,
+          "renda_media": 2209.35,
+          "domicilios": 15714,
+          "moradores": 43929
+        },
+        {
+          "bairro": "Jardim Isabel",
+          "bairro_norm": "jardim isabel",
+          "renda_pc": 3991,
+          "renda_media": 11749.4,
+          "domicilios": 922,
+          "moradores": 2525
+        },
+        {
+          "bairro": "Aberta dos Morros",
+          "bairro_norm": "aberta dos morros",
+          "renda_pc": 1122.16,
+          "renda_media": 3303.6,
+          "domicilios": 3763,
+          "moradores": 9839
+        },
+        {
+          "bairro": "Boa Vista do Sul",
+          "bairro_norm": "boa vista do sul",
+          "renda_pc": 761.57,
+          "renda_media": 2242.05,
+          "domicilios": 1053,
+          "moradores": 2683
+        },
+        {
+          "bairro": "Campo Novo",
+          "bairro_norm": "campo novo",
+          "renda_pc": 869.32,
+          "renda_media": 2559.27,
+          "domicilios": 3385,
+          "moradores": 8735
+        },
+        {
+          "bairro": "Chapéu do Sol",
+          "bairro_norm": "chapeu do sol",
+          "renda_pc": 613,
+          "renda_media": 1804.67,
+          "domicilios": 2108,
+          "moradores": 5506
+        },
+        {
+          "bairro": "Costa e Silva",
+          "bairro_norm": "costa e silva",
+          "renda_pc": 856.9,
+          "renda_media": 2522.7,
+          "domicilios": 5098,
+          "moradores": 13521
+        },
+        {
+          "bairro": "Extrema",
+          "bairro_norm": "extrema",
+          "renda_pc": 708.23,
+          "renda_media": 2085,
+          "domicilios": 903,
+          "moradores": 2347
+        },
+        {
+          "bairro": "Jardim Europa",
+          "bairro_norm": "jardim europa",
+          "renda_pc": 6172,
+          "renda_media": 18170.23,
+          "domicilios": 1628,
+          "moradores": 4331
+        },
+        {
+          "bairro": "Jardim Floresta",
+          "bairro_norm": "jardim floresta",
+          "renda_pc": 1165.06,
+          "renda_media": 3429.9,
+          "domicilios": 911,
+          "moradores": 2227
+        },
+        {
+          "bairro": "Jardim Itu",
+          "bairro_norm": "jardim itu",
+          "renda_pc": 2062.76,
+          "renda_media": 6072.71,
+          "domicilios": 7134,
+          "moradores": 17470
+        },
+        {
+          "bairro": "Jardim Leopoldina",
+          "bairro_norm": "jardim leopoldina",
+          "renda_pc": 1018.73,
+          "renda_media": 2999.11,
+          "domicilios": 7769,
+          "moradores": 16130
+        },
+        {
+          "bairro": "Jardim Sabará",
+          "bairro_norm": "jardim sabara",
+          "renda_pc": 1701.98,
+          "renda_media": 5010.59,
+          "domicilios": 4752,
+          "moradores": 11269
+        },
+        {
+          "bairro": "Morro Santana",
+          "bairro_norm": "morro santana",
+          "renda_pc": 1252.23,
+          "renda_media": 3686.55,
+          "domicilios": 8914,
+          "moradores": 21618
+        },
+        {
+          "bairro": "Parque Santa Fé",
+          "bairro_norm": "parque santa fe",
+          "renda_pc": 1367.69,
+          "renda_media": 4026.44,
+          "domicilios": 2622,
+          "moradores": 6660
+        },
+        {
+          "bairro": "Passo das Pedras",
+          "bairro_norm": "passo das pedras",
+          "renda_pc": 910.52,
+          "renda_media": 2680.55,
+          "domicilios": 5408,
+          "moradores": 14337
+        },
+        {
+          "bairro": "Pitinga",
+          "bairro_norm": "pitinga",
+          "renda_pc": 563.33,
+          "renda_media": 1658.42,
+          "domicilios": 2588,
+          "moradores": 7010
+        },
+        {
+          "bairro": "Santa Rosa de Lima",
+          "bairro_norm": "santa rosa de lima",
+          "renda_pc": 677.19,
+          "renda_media": 1993.63,
+          "domicilios": 13434,
+          "moradores": 34554
+        },
+        {
+          "bairro": "São Caetano",
+          "bairro_norm": "sao caetano",
+          "renda_pc": 975.59,
+          "renda_media": 2872.12,
+          "domicilios": 278,
+          "moradores": 733
+        },
+        {
+          "bairro": "Sétimo Céu",
+          "bairro_norm": "setimo ceu",
+          "renda_pc": 4548.86,
+          "renda_media": 13391.74,
+          "domicilios": 411,
+          "moradores": 1166
+        },
+        {
+          "bairro": "Vila São José",
+          "bairro_norm": "vila sao jose",
+          "renda_pc": 818.6,
+          "renda_media": 2409.95,
+          "domicilios": 8883,
+          "moradores": 23971
+        }
+      ]
+    }
+  ]
+}

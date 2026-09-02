@@ -6,7 +6,9 @@
   "bairros": [
     {
       "slug": "aeroporto",
-      "bairro": "Aeroporto"
+      "bairro": "Aeroporto",
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 3365.31
     },
     {
       "slug": "bairro-sao-roque",
@@ -14,7 +16,9 @@
     },
     {
       "slug": "centro",
-      "bairro": "Centro"
+      "bairro": "Centro",
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 3720.99
     },
     {
       "slug": "cidade-aracilia",
@@ -34,11 +38,15 @@
     },
     {
       "slug": "cocaia",
-      "bairro": "Cocaia"
+      "bairro": "Cocaia",
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1412.32
     },
     {
       "slug": "gopouva",
-      "bairro": "Gopouva"
+      "bairro": "Gopouva",
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1831.75
     },
     {
       "slug": "jardim-adriana",
@@ -214,7 +222,9 @@
     },
     {
       "slug": "jardim-vila-galvao",
-      "bairro": "Jardim Vila Galvao"
+      "bairro": "Jardim Vila Galvao",
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1316.26
     },
     {
       "slug": "jardim-zaira",
@@ -226,7 +236,9 @@
     },
     {
       "slug": "macedo",
-      "bairro": "Macedo"
+      "bairro": "Macedo",
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 2528.61
     },
     {
       "slug": "parque-cecap",
@@ -270,11 +282,15 @@
     },
     {
       "slug": "picanco",
-      "bairro": "Picanco"
+      "bairro": "Picanco",
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 2253.34
     },
     {
       "slug": "ponte-grande",
-      "bairro": "Ponte Grande"
+      "bairro": "Ponte Grande",
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1924.84
     },
     {
       "slug": "residencial-e-comercial-guarulhos",
@@ -290,11 +306,15 @@
     },
     {
       "slug": "vila-augusta",
-      "bairro": "Vila Augusta"
+      "bairro": "Vila Augusta",
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 2922.11
     },
     {
       "slug": "vila-barros",
-      "bairro": "Vila Barros"
+      "bairro": "Vila Barros",
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1084.71
     },
     {
       "slug": "vila-carmela-i",
@@ -306,7 +326,9 @@
     },
     {
       "slug": "vila-galvao",
-      "bairro": "Vila Galvao"
+      "bairro": "Vila Galvao",
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 2532.11
     },
     {
       "slug": "vila-itapoan",

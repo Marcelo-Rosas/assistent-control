@@ -1,8 +1,8 @@
 {
   "cities": 1,
-  "total_gyms_before": 44551,
-  "total_gyms_after": 44629,
-  "net_new": 78,
+  "total_gyms_before": 44633,
+  "total_gyms_after": 44703,
+  "net_new": 70,
   "formula": {
     "floor_ms": 180000,
     "city_pass_ms": 10000,
@@ -19,34 +19,34 @@
   },
   "rows": [
     {
-      "key": "Campinas-SP",
-      "before": 1792,
-      "scraped": 4305,
-      "after": 4673,
-      "new_gyms": 2881,
-      "timeout_ms": 1085500,
-      "timeout_rule": "max(180000, 10000 + 139×6500 + 8×6500 + 120000)",
+      "key": "Guarulhos-SP",
+      "before": 2446,
+      "scraped": 4972,
+      "after": 5606,
+      "new_gyms": 3160,
+      "timeout_ms": 786500,
+      "timeout_rule": "max(180000, 10000 + 93×6500 + 8×6500 + 120000)",
       "timeout_breakdown": {
         "floor_ms": 180000,
         "city_pass_ms": 10000,
-        "bairro_count": 139,
+        "bairro_count": 93,
         "per_bairro_ms": 6500,
-        "bairros_ms": 903500,
+        "bairros_ms": 604500,
         "geo_points": 8,
         "geo_point_ms": 6500,
         "geo_ms": 52000,
         "buffer_ms": 120000,
-        "subtotal_ms": 1085500,
-        "timeout_ms": 1085500,
-        "rule": "max(180000, 10000 + 139×6500 + 8×6500 + 120000)"
+        "subtotal_ms": 786500,
+        "timeout_ms": 786500,
+        "rule": "max(180000, 10000 + 93×6500 + 8×6500 + 120000)"
       },
-      "elapsed_ms": 459264,
+      "elapsed_ms": 287733,
       "outcome": "COMPLETE",
-      "bairros_planned": 139,
-      "bairros_done": 139,
+      "bairros_planned": 93,
+      "bairros_done": 93,
       "bairros_completion_pct": 100,
       "timed_out": false
     }
   ],
-  "timestamp": "2026-09-01T23:45:56.528Z"
+  "timestamp": "2026-09-02T02:29:54.188Z"
 }

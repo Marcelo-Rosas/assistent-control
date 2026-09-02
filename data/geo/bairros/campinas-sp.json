@@ -17,7 +17,9 @@
     {
       "slug": "barao-geraldo",
       "bairro": "Barao Geraldo",
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1500
     },
     {
       "slug": "bonfim",
@@ -440,7 +442,9 @@
     {
       "slug": "nova-aparecida",
       "bairro": "Nova Aparecida",
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 106.53
     },
     {
       "slug": "nova-campinas",

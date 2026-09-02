@@ -17,7 +17,14 @@ export type BairroCatalogEntry = {
   area_ha?: number;
   populacao_2022?: number;
   densidade_hab_ha?: number;
+  /** Renda domiciliar média em salários mínimos/mês (IBGE Censo, quando disponível) */
   renda_media_sm?: number;
+  /** Renda per capita mensal em R$ (IBGE Censo 2022 / GymSite renda_bairro) */
+  renda_pc?: number;
+  /** Renda média domiciliar mensal em R$ */
+  renda_media?: number;
+  /** Origem dos campos de renda neste registro */
+  renda_fonte?: string;
 };
 
 export type BairrosCatalog = {

@@ -12,7 +12,9 @@
       "densidade_hab_ha": 41.8,
       "match_slugs": [
         "parque-grajau"
-      ]
+      ],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 716.36
     },
     {
       "slug": "jardim-angela",
@@ -22,7 +24,9 @@
       "densidade_hab_ha": 84.2,
       "match_slugs": [
         "jardim-angela-zona-leste"
-      ]
+      ],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 703.64
     },
     {
       "slug": "capao-redondo",
@@ -30,7 +34,9 @@
       "populacao_2022": 270767,
       "area_ha": 1377,
       "densidade_hab_ha": 196.6,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 861.72
     },
     {
       "slug": "sapopemba",
@@ -40,7 +46,9 @@
       "densidade_hab_ha": 199,
       "match_slugs": [
         "jardim-sapopemba"
-      ]
+      ],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 848
     },
     {
       "slug": "sacoma",
@@ -50,7 +58,9 @@
       "densidade_hab_ha": 186.7,
       "match_slugs": [
         "jardim-santa-cruz-sacoma"
-      ]
+      ],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1445.19
     },
     {
       "slug": "jardim-sao-luis",
@@ -58,7 +68,9 @@
       "populacao_2022": 259377,
       "area_ha": 2400,
       "densidade_hab_ha": 108.1,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 992.92
     },
     {
       "slug": "cidade-ademar",
@@ -66,7 +78,9 @@
       "populacao_2022": 249218,
       "area_ha": 1200,
       "densidade_hab_ha": 207.7,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1034.7
     },
     {
       "slug": "brasilandia",
@@ -76,7 +90,9 @@
       "densidade_hab_ha": 115.8,
       "match_slugs": [
         "vila-brasilandia"
-      ]
+      ],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 793.16
     },
     {
       "slug": "campo-limpo",
@@ -86,7 +102,9 @@
       "densidade_hab_ha": 187.4,
       "match_slugs": [
         "jardim-campo-limpo"
-      ]
+      ],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1201.31
     },
     {
       "slug": "jabaquara",
@@ -97,7 +115,9 @@
       "match_slugs": [
         "parque-jabaquara",
         "jardim-jabaquara"
-      ]
+      ],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1999.91
     },
     {
       "slug": "jaragua",
@@ -111,7 +131,9 @@
         "jardim-sao-joao-jaragua",
         "jardim-jaragua-itaim-paulista",
         "loteamento-city-jaragua"
-      ]
+      ],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 936.1
     },
     {
       "slug": "itaquera",
@@ -119,7 +141,9 @@
       "populacao_2022": 210960,
       "area_ha": 1400,
       "densidade_hab_ha": 150.7,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1142.31
     },
     {
       "slug": "itaim-paulista",
@@ -127,7 +151,9 @@
       "populacao_2022": 205295,
       "area_ha": 1500,
       "densidade_hab_ha": 136.9,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 814.37
     },
     {
       "slug": "tremembe",
@@ -135,7 +161,9 @@
       "populacao_2022": 196563,
       "area_ha": 5630,
       "densidade_hab_ha": 34.9,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1090.51
     },
     {
       "slug": "cidade-tiradentes",
@@ -143,7 +171,9 @@
       "populacao_2022": 194177,
       "area_ha": 1500,
       "densidade_hab_ha": 129.5,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 718.41
     },
     {
       "slug": "cidade-dutra",
@@ -153,7 +183,9 @@
       "densidade_hab_ha": 62.3,
       "match_slugs": [
         "vila-sao-jose-cidade-dutra"
-      ]
+      ],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1030.71
     },
     {
       "slug": "pirituba",
@@ -165,7 +197,9 @@
         "jardim-pirituba",
         "jardim-cidade-pirituba",
         "vila-pirituba"
-      ]
+      ],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1558.19
     },
     {
       "slug": "vila-andrade",
@@ -173,7 +207,9 @@
       "populacao_2022": 168669,
       "area_ha": 1031,
       "densidade_hab_ha": 163.6,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 3471.77
     },
     {
       "slug": "lajeado",
@@ -184,7 +220,9 @@
       "match_slugs": [
         "jardim-lajeado",
         "vila-iolanda-lajeado"
-      ]
+      ],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 698.72
     },
     {
       "slug": "pedreira",
@@ -194,7 +232,9 @@
       "densidade_hab_ha": 87.5,
       "match_slugs": [
         "jardim-da-pedreira"
-      ]
+      ],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 749.17
     },
     {
       "slug": "sao-mateus",
@@ -204,7 +244,9 @@
       "densidade_hab_ha": 119.8,
       "match_slugs": [
         "cidade-sao-mateus"
-      ]
+      ],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1044.52
     },
     {
       "slug": "parelheiros",
@@ -214,7 +256,9 @@
       "densidade_hab_ha": 10,
       "match_slugs": [
         "jardim-novo-parelheiros"
-      ]
+      ],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 673.44
     },
     {
       "slug": "iguatemi",
@@ -224,7 +268,9 @@
       "densidade_hab_ha": 76.4,
       "match_slugs": [
         "jardim-iguatemi"
-      ]
+      ],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 693.75
     },
     {
       "slug": "sao-rafael",
@@ -235,7 +281,9 @@
       "match_slugs": [
         "parque-sao-rafael",
         "jardim-sao-rafael"
-      ]
+      ],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 715.5
     },
     {
       "slug": "cachoeirinha",
@@ -245,7 +293,9 @@
       "densidade_hab_ha": 107.8,
       "match_slugs": [
         "vila-nova-cachoeirinha"
-      ]
+      ],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1029.09
     },
     {
       "slug": "cangaiba",
@@ -253,7 +303,9 @@
       "populacao_2022": 141172,
       "area_ha": 1600,
       "densidade_hab_ha": 88.2,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1132
     },
     {
       "slug": "vila-curuca",
@@ -261,7 +313,9 @@
       "populacao_2022": 140673,
       "area_ha": 970,
       "densidade_hab_ha": 145,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 851.78
     },
     {
       "slug": "sao-lucas",
@@ -271,7 +325,9 @@
       "densidade_hab_ha": 139.4,
       "match_slugs": [
         "parque-sao-lucas"
-      ]
+      ],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1390.04
     },
     {
       "slug": "freguesia-do-o",
@@ -279,7 +335,9 @@
       "populacao_2022": 137240,
       "area_ha": 1050,
       "densidade_hab_ha": 130.7,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1575.8
     },
     {
       "slug": "cidade-lider",
@@ -287,7 +345,9 @@
       "populacao_2022": 136660,
       "area_ha": 1020,
       "densidade_hab_ha": 134,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1028.07
     },
     {
       "slug": "vila-jacui",
@@ -295,7 +355,9 @@
       "populacao_2022": 134189,
       "area_ha": 770,
       "densidade_hab_ha": 174.3,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 878.55
     },
     {
       "slug": "penha",
@@ -305,7 +367,9 @@
       "densidade_hab_ha": 117.2,
       "match_slugs": [
         "penha-de-franca"
-      ]
+      ],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1527.22
     },
     {
       "slug": "rio-pequeno",
@@ -313,7 +377,9 @@
       "populacao_2022": 131631,
       "area_ha": 970,
       "densidade_hab_ha": 135.7,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1943.92
     },
     {
       "slug": "jardim-helena",
@@ -321,7 +387,9 @@
       "populacao_2022": 129409,
       "area_ha": 910,
       "densidade_hab_ha": 142.2,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 701.39
     },
     {
       "slug": "saude",
@@ -333,7 +401,9 @@
         "jardim-da-saude",
         "bosque-da-saude",
         "vila-da-saude"
-      ]
+      ],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 3996.09
     },
     {
       "slug": "jose-bonifacio",
@@ -343,7 +413,9 @@
       "densidade_hab_ha": 91,
       "match_slugs": [
         "conjunto-residencial-jose-bonifacio"
-      ]
+      ],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 901.01
     },
     {
       "slug": "vila-mariana",
@@ -353,7 +425,9 @@
       "densidade_hab_ha": 148,
       "match_slugs": [
         "jardim-vila-mariana"
-      ]
+      ],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 5863.39
     },
     {
       "slug": "vila-sonia",
@@ -361,7 +435,9 @@
       "populacao_2022": 123748,
       "area_ha": 990,
       "densidade_hab_ha": 125,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 2682.01
     },
     {
       "slug": "raposo-tavares",
@@ -372,7 +448,9 @@
       "match_slugs": [
         "jardim-sao-jorge-raposo-tavares",
         "jardim-raposo-tavares"
-      ]
+      ],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1307.77
     },
     {
       "slug": "ipiranga",
@@ -380,7 +458,9 @@
       "populacao_2022": 116271,
       "area_ha": 1050,
       "densidade_hab_ha": 110.7,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 2843.63
     },
     {
       "slug": "campo-grande",
@@ -390,7 +470,9 @@
       "densidade_hab_ha": 88.5,
       "match_slugs": [
         "vila-campo-grande"
-      ]
+      ],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 2997.68
     },
     {
       "slug": "santana",
@@ -401,7 +483,9 @@
       "match_slugs": [
         "vila-santana",
         "chacara-santana"
-      ]
+      ],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 3443.85
     },
     {
       "slug": "vila-medeiros",
@@ -409,7 +493,9 @@
       "populacao_2022": 114939,
       "area_ha": 770,
       "densidade_hab_ha": 149.3,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1110.52
     },
     {
       "slug": "ermelino-matarazzo",
@@ -417,7 +503,9 @@
       "populacao_2022": 112333,
       "area_ha": 870,
       "densidade_hab_ha": 129.1,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1037.03
     },
     {
       "slug": "guaianases",
@@ -425,7 +513,9 @@
       "populacao_2022": 109316,
       "area_ha": 860,
       "densidade_hab_ha": 127.1,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 827.21
     },
     {
       "slug": "vila-maria",
@@ -437,7 +527,9 @@
         "vila-maria-luisa",
         "vila-maria-baixa",
         "vila-maria-alta"
-      ]
+      ],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1515.76
     },
     {
       "slug": "vila-prudente",
@@ -447,7 +539,9 @@
       "densidade_hab_ha": 106.8,
       "match_slugs": [
         "parque-da-vila-prudente"
-      ]
+      ],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 2126.47
     },
     {
       "slug": "mandaqui",
@@ -457,7 +551,9 @@
       "densidade_hab_ha": 78.4,
       "match_slugs": [
         "parque-mandaqui"
-      ]
+      ],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 2065.99
     },
     {
       "slug": "vila-matilde",
@@ -465,7 +561,9 @@
       "populacao_2022": 103558,
       "area_ha": 890,
       "densidade_hab_ha": 116.4,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1525.46
     },
     {
       "slug": "cursino",
@@ -473,7 +571,9 @@
       "populacao_2022": 103171,
       "area_ha": 1280,
       "densidade_hab_ha": 80.6,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 2390.77
     },
     {
       "slug": "perdizes",
@@ -481,7 +581,9 @@
       "populacao_2022": 102391,
       "area_ha": 630,
       "densidade_hab_ha": 162.5,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 5279.29
     },
     {
       "slug": "itaim-bibi",
@@ -489,7 +591,9 @@
       "populacao_2022": 101452,
       "area_ha": 990,
       "densidade_hab_ha": 102.5,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 7672.13
     },
     {
       "slug": "tucuruvi",
@@ -497,7 +601,9 @@
       "populacao_2022": 99559,
       "area_ha": 944,
       "densidade_hab_ha": 105.5,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 2296.33
     },
     {
       "slug": "tatuape",
@@ -507,7 +613,9 @@
       "densidade_hab_ha": 120.2,
       "match_slugs": [
         "chacara-tatuape"
-      ]
+      ],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 3785.57
     },
     {
       "slug": "artur-alvim",
@@ -517,7 +625,9 @@
       "densidade_hab_ha": 144.8,
       "match_slugs": [
         "parque-artur-alvim"
-      ]
+      ],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1115.29
     },
     {
       "slug": "vila-formosa",
@@ -527,7 +637,9 @@
       "densidade_hab_ha": 124.6,
       "match_slugs": [
         "jardim-vila-formosa"
-      ]
+      ],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 2276.59
     },
     {
       "slug": "ponte-rasa",
@@ -538,7 +650,9 @@
       "match_slugs": [
         "vila-ponte-rasa",
         "jardim-ponte-rasa"
-      ]
+      ],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1148.77
     },
     {
       "slug": "aricanduva",
@@ -549,7 +663,9 @@
       "match_slugs": [
         "jardim-aricanduva",
         "vila-aricanduva"
-      ]
+      ],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1279.52
     },
     {
       "slug": "sao-domingos",
@@ -560,7 +676,9 @@
       "match_slugs": [
         "parque-sao-domingos",
         "vila-sao-domingos"
-      ]
+      ],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1631.79
     },
     {
       "slug": "perus",
@@ -570,7 +688,9 @@
       "densidade_hab_ha": 36.7,
       "match_slugs": [
         "vila-perus"
-      ]
+      ],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 865.46
     },
     {
       "slug": "jacana",
@@ -578,7 +698,9 @@
       "populacao_2022": 87329,
       "area_ha": 780,
       "densidade_hab_ha": 112,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1098.3
     },
     {
       "slug": "agua-rasa",
@@ -586,7 +708,9 @@
       "populacao_2022": 85788,
       "area_ha": 690,
       "densidade_hab_ha": 124.3,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 2702.29
     },
     {
       "slug": "santo-amaro",
@@ -596,7 +720,9 @@
       "densidade_hab_ha": 54.4,
       "match_slugs": [
         "parque-novo-santo-amaro"
-      ]
+      ],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 4868.17
     },
     {
       "slug": "carrao",
@@ -608,7 +734,9 @@
         "vila-carrao",
         "jardim-novo-carrao",
         "jardim-vila-carrao"
-      ]
+      ],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 2178.05
     },
     {
       "slug": "limao",
@@ -618,7 +746,9 @@
       "densidade_hab_ha": 130.8,
       "match_slugs": [
         "do-limao"
-      ]
+      ],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1558.36
     },
     {
       "slug": "moema",
@@ -626,7 +756,9 @@
       "populacao_2022": 81899,
       "area_ha": 900,
       "densidade_hab_ha": 91,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 7482.81
     },
     {
       "slug": "jardim-paulista",
@@ -634,7 +766,9 @@
       "populacao_2022": 81859,
       "area_ha": 610,
       "densidade_hab_ha": 134.2,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 7253.21
     },
     {
       "slug": "sao-miguel-paulista",
@@ -650,7 +784,9 @@
       "populacao_2022": 80972,
       "area_ha": 390,
       "densidade_hab_ha": 207.6,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 3729.97
     },
     {
       "slug": "mooca",
@@ -661,7 +797,9 @@
       "match_slugs": [
         "parque-da-mooca",
         "alto-da-mooca"
-      ]
+      ],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 3006.94
     },
     {
       "slug": "casa-verde",
@@ -672,7 +810,9 @@
       "match_slugs": [
         "casa-verde-media",
         "casa-verde-alta"
-      ]
+      ],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1674.29
     },
     {
       "slug": "lapa",
@@ -684,7 +824,9 @@
         "mirante-alto-da-lapa",
         "alto-da-lapa",
         "lapa-de-baixo"
-      ]
+      ],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 4513.91
     },
     {
       "slug": "anhanguera",
@@ -694,7 +836,9 @@
       "densidade_hab_ha": 22.6,
       "match_slugs": [
         "jardim-anhanguera"
-      ]
+      ],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1014.42
     },
     {
       "slug": "parque-do-carmo",
@@ -702,7 +846,9 @@
       "populacao_2022": 74677,
       "area_ha": 1540,
       "densidade_hab_ha": 48.5,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1129.69
     },
     {
       "slug": "campo-belo",
@@ -712,7 +858,9 @@
       "densidade_hab_ha": 80.8,
       "match_slugs": [
         "recanto-campo-belo"
-      ]
+      ],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 5317.27
     },
     {
       "slug": "liberdade",
@@ -720,7 +868,9 @@
       "populacao_2022": 66056,
       "area_ha": 370,
       "densidade_hab_ha": 178.5,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 3875.24
     },
     {
       "slug": "pinheiros",
@@ -732,7 +882,9 @@
         "alto-de-pinheiros",
         "jardim-universidade-pinheiros",
         "jardim-pinheiros"
-      ]
+      ],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 6739.37
     },
     {
       "slug": "republica",
@@ -740,7 +892,9 @@
       "populacao_2022": 60825,
       "area_ha": 230,
       "densidade_hab_ha": 264.5,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 3113.14
     },
     {
       "slug": "bela-vista",
@@ -750,7 +904,9 @@
       "densidade_hab_ha": 230.9,
       "match_slugs": [
         "jardim-bela-vista-zona-sul"
-      ]
+      ],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 4447.4
     },
     {
       "slug": "belem",
@@ -760,7 +916,9 @@
       "densidade_hab_ha": 93,
       "match_slugs": [
         "jardim-belem"
-      ]
+      ],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 2169.5
     },
     {
       "slug": "jaguare",
@@ -768,7 +926,9 @@
       "populacao_2022": 55382,
       "area_ha": 660,
       "densidade_hab_ha": 83.9,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 2052.05
     },
     {
       "slug": "consolacao",
@@ -776,7 +936,9 @@
       "populacao_2022": 53144,
       "area_ha": 370,
       "densidade_hab_ha": 143.6,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 5768.92
     },
     {
       "slug": "vila-guilherme",
@@ -784,7 +946,9 @@
       "populacao_2022": 52587,
       "area_ha": 690,
       "densidade_hab_ha": 76.2,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 2197.73
     },
     {
       "slug": "butanta",
@@ -794,7 +958,9 @@
       "densidade_hab_ha": 40.1,
       "match_slugs": [
         "vila-butanta"
-      ]
+      ],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 3125.76
     },
     {
       "slug": "vila-leopoldina",
@@ -802,7 +968,9 @@
       "populacao_2022": 46875,
       "area_ha": 720,
       "densidade_hab_ha": 65.1,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 4520.53
     },
     {
       "slug": "cambuci",
@@ -810,7 +978,9 @@
       "populacao_2022": 45163,
       "area_ha": 390,
       "densidade_hab_ha": 115.8,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 2676.37
     },
     {
       "slug": "morumbi",
@@ -823,7 +993,9 @@
         "super-quadra-morumbi",
         "jardim-fonte-do-morumbi",
         "jardim-parque-morumbi"
-      ]
+      ],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 5739.65
     },
     {
       "slug": "bras",
@@ -831,7 +1003,9 @@
       "populacao_2022": 38750,
       "area_ha": 350,
       "densidade_hab_ha": 110.7,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1883.48
     },
     {
       "slug": "socorro",
@@ -841,7 +1015,9 @@
       "densidade_hab_ha": 29.5,
       "match_slugs": [
         "capela-do-socorro"
-      ]
+      ],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1916.83
     },
     {
       "slug": "alto-de-pinheiros",
@@ -849,7 +1025,9 @@
       "populacao_2022": 37359,
       "area_ha": 770,
       "densidade_hab_ha": 48.5,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 6065.93
     },
     {
       "slug": "bom-retiro",
@@ -857,7 +1035,9 @@
       "populacao_2022": 33520,
       "area_ha": 400,
       "densidade_hab_ha": 83.8,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1603.62
     },
     {
       "slug": "barra-funda",
@@ -867,7 +1047,9 @@
       "densidade_hab_ha": 59.7,
       "match_slugs": [
         "varzea-da-barra-funda"
-      ]
+      ],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 5459.78
     },
     {
       "slug": "jaguara",
@@ -877,7 +1059,9 @@
       "densidade_hab_ha": 53.8,
       "match_slugs": [
         "vila-jaguara"
-      ]
+      ],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1357.13
     },
     {
       "slug": "se",
@@ -885,7 +1069,9 @@
       "populacao_2022": 23832,
       "area_ha": 210,
       "densidade_hab_ha": 113.5,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1694.72
     },
     {
       "slug": "pari",
@@ -893,7 +1079,9 @@
       "populacao_2022": 17359,
       "area_ha": 290,
       "densidade_hab_ha": 59.9,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 1586.48
     },
     {
       "slug": "marsilac",
@@ -901,7 +1089,9 @@
       "populacao_2022": 11451,
       "area_ha": 20000,
       "densidade_hab_ha": 0.6,
-      "match_slugs": []
+      "match_slugs": [],
+      "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
+      "renda_pc": 589.36
     }
   ]
 }
