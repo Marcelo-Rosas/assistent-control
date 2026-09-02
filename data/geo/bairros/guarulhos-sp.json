@@ -1,0 +1,380 @@
+{
+  "cidade": "Guarulhos",
+  "uf": "SP",
+  "ibge": "3518800",
+  "fonte": "Receita Federal — CNAE 9313100 principal ativos, município RFB 6477 (Guarulhos-SP); sem catálogo oficial único de polígonos de bairro",
+  "bairros": [
+    {
+      "slug": "aeroporto",
+      "bairro": "Aeroporto"
+    },
+    {
+      "slug": "bairro-sao-roque",
+      "bairro": "Bairro Sao Roque"
+    },
+    {
+      "slug": "centro",
+      "bairro": "Centro"
+    },
+    {
+      "slug": "cidade-aracilia",
+      "bairro": "Cidade Aracilia"
+    },
+    {
+      "slug": "cidade-parque-alvorada",
+      "bairro": "Cidade Parque Alvorada"
+    },
+    {
+      "slug": "cidade-serodio",
+      "bairro": "Cidade Serodio"
+    },
+    {
+      "slug": "cidade-soberana",
+      "bairro": "Cidade Soberana"
+    },
+    {
+      "slug": "cocaia",
+      "bairro": "Cocaia"
+    },
+    {
+      "slug": "gopouva",
+      "bairro": "Gopouva"
+    },
+    {
+      "slug": "jardim-adriana",
+      "bairro": "Jardim Adriana"
+    },
+    {
+      "slug": "jardim-alamo",
+      "bairro": "Jardim Alamo"
+    },
+    {
+      "slug": "jardim-albertina",
+      "bairro": "Jardim Albertina"
+    },
+    {
+      "slug": "jardim-bananal",
+      "bairro": "Jardim Bananal"
+    },
+    {
+      "slug": "jardim-barbosa",
+      "bairro": "Jardim Barbosa"
+    },
+    {
+      "slug": "jardim-belvedere",
+      "bairro": "Jardim Belvedere"
+    },
+    {
+      "slug": "jardim-bom-clima",
+      "bairro": "Jardim Bom Clima"
+    },
+    {
+      "slug": "jardim-carvalho",
+      "bairro": "Jardim Carvalho"
+    },
+    {
+      "slug": "jardim-cumbica",
+      "bairro": "Jardim Cumbica"
+    },
+    {
+      "slug": "jardim-divinolandia",
+      "bairro": "Jardim Divinolandia"
+    },
+    {
+      "slug": "jardim-dos-afonsos",
+      "bairro": "Jardim Dos Afonsos"
+    },
+    {
+      "slug": "jardim-dos-pimentas",
+      "bairro": "Jardim Dos Pimentas"
+    },
+    {
+      "slug": "jardim-dourado",
+      "bairro": "Jardim Dourado"
+    },
+    {
+      "slug": "jardim-eliana",
+      "bairro": "Jardim Eliana"
+    },
+    {
+      "slug": "jardim-eugenia",
+      "bairro": "Jardim Eugenia"
+    },
+    {
+      "slug": "jardim-figueira",
+      "bairro": "Jardim Figueira"
+    },
+    {
+      "slug": "jardim-flor-da-montanha",
+      "bairro": "Jardim Flor Da Montanha"
+    },
+    {
+      "slug": "jardim-fortaleza",
+      "bairro": "Jardim Fortaleza"
+    },
+    {
+      "slug": "jardim-gracinda",
+      "bairro": "Jardim Gracinda"
+    },
+    {
+      "slug": "jardim-iv-centenario",
+      "bairro": "Jardim Iv Centenario"
+    },
+    {
+      "slug": "jardim-jacy",
+      "bairro": "Jardim Jacy"
+    },
+    {
+      "slug": "jardim-jade",
+      "bairro": "Jardim Jade"
+    },
+    {
+      "slug": "jardim-leblon",
+      "bairro": "Jardim Leblon"
+    },
+    {
+      "slug": "jardim-madeirense",
+      "bairro": "Jardim Madeirense"
+    },
+    {
+      "slug": "jardim-mediterraneo",
+      "bairro": "Jardim Mediterraneo"
+    },
+    {
+      "slug": "jardim-monte-alto",
+      "bairro": "Jardim Monte Alto"
+    },
+    {
+      "slug": "jardim-nova-cidade",
+      "bairro": "Jardim Nova Cidade"
+    },
+    {
+      "slug": "jardim-nova-guarulhos",
+      "bairro": "Jardim Nova Guarulhos"
+    },
+    {
+      "slug": "jardim-paraiso",
+      "bairro": "Jardim Paraiso"
+    },
+    {
+      "slug": "jardim-ponte-alta-i",
+      "bairro": "Jardim Ponte Alta I"
+    },
+    {
+      "slug": "jardim-presidente-dutra",
+      "bairro": "Jardim Presidente Dutra"
+    },
+    {
+      "slug": "jardim-rosa-de-franca",
+      "bairro": "Jardim Rosa De Franca"
+    },
+    {
+      "slug": "jardim-santa-clara",
+      "bairro": "Jardim Santa Clara"
+    },
+    {
+      "slug": "jardim-santa-lidia",
+      "bairro": "Jardim Santa Lidia"
+    },
+    {
+      "slug": "jardim-santa-mena",
+      "bairro": "Jardim Santa Mena"
+    },
+    {
+      "slug": "jardim-santo-expedito",
+      "bairro": "Jardim Santo Expedito"
+    },
+    {
+      "slug": "jardim-sao-geraldo",
+      "bairro": "Jardim Sao Geraldo"
+    },
+    {
+      "slug": "jardim-sao-joao",
+      "bairro": "Jardim Sao Joao"
+    },
+    {
+      "slug": "jardim-sao-paulo",
+      "bairro": "Jardim Sao Paulo"
+    },
+    {
+      "slug": "jardim-terezopolis",
+      "bairro": "Jardim Terezopolis"
+    },
+    {
+      "slug": "jardim-tijuco",
+      "bairro": "Jardim Tijuco"
+    },
+    {
+      "slug": "jardim-tranquilidade",
+      "bairro": "Jardim Tranquilidade"
+    },
+    {
+      "slug": "jardim-valeria",
+      "bairro": "Jardim Valeria"
+    },
+    {
+      "slug": "jardim-vila-galvao",
+      "bairro": "Jardim Vila Galvao"
+    },
+    {
+      "slug": "jardim-zaira",
+      "bairro": "Jardim Zaira"
+    },
+    {
+      "slug": "jd-paraventi",
+      "bairro": "Jd. Paraventi"
+    },
+    {
+      "slug": "macedo",
+      "bairro": "Macedo"
+    },
+    {
+      "slug": "parque-cecap",
+      "bairro": "Parque Cecap"
+    },
+    {
+      "slug": "parque-continental-i",
+      "bairro": "Parque Continental I"
+    },
+    {
+      "slug": "parque-continental-ii",
+      "bairro": "Parque Continental Ii"
+    },
+    {
+      "slug": "parque-das-nacoes",
+      "bairro": "Parque Das Nacoes"
+    },
+    {
+      "slug": "parque-flamengo",
+      "bairro": "Parque Flamengo"
+    },
+    {
+      "slug": "parque-goncalves-junior",
+      "bairro": "Parque Goncalves Junior"
+    },
+    {
+      "slug": "parque-industrial-cumbica",
+      "bairro": "Parque Industrial Cumbica"
+    },
+    {
+      "slug": "parque-renato-maia",
+      "bairro": "Parque Renato Maia"
+    },
+    {
+      "slug": "parque-santos-dumont",
+      "bairro": "Parque Santos Dumont"
+    },
+    {
+      "slug": "parque-sao-miguel",
+      "bairro": "Parque Sao Miguel"
+    },
+    {
+      "slug": "picanco",
+      "bairro": "Picanco"
+    },
+    {
+      "slug": "ponte-grande",
+      "bairro": "Ponte Grande"
+    },
+    {
+      "slug": "residencial-e-comercial-guarulhos",
+      "bairro": "Residencial E Comercial Guarulhos"
+    },
+    {
+      "slug": "residencial-parque-cumbica",
+      "bairro": "Residencial Parque Cumbica"
+    },
+    {
+      "slug": "vila-adelaide-perella",
+      "bairro": "Vila Adelaide Perella"
+    },
+    {
+      "slug": "vila-augusta",
+      "bairro": "Vila Augusta"
+    },
+    {
+      "slug": "vila-barros",
+      "bairro": "Vila Barros"
+    },
+    {
+      "slug": "vila-carmela-i",
+      "bairro": "Vila Carmela I"
+    },
+    {
+      "slug": "vila-das-bandeiras",
+      "bairro": "Vila Das Bandeiras"
+    },
+    {
+      "slug": "vila-galvao",
+      "bairro": "Vila Galvao"
+    },
+    {
+      "slug": "vila-itapoan",
+      "bairro": "Vila Itapoan"
+    },
+    {
+      "slug": "vila-izabel",
+      "bairro": "Vila Izabel"
+    },
+    {
+      "slug": "vila-leonor",
+      "bairro": "Vila Leonor"
+    },
+    {
+      "slug": "vila-milton",
+      "bairro": "Vila Milton"
+    },
+    {
+      "slug": "vila-miriam",
+      "bairro": "Vila Miriam"
+    },
+    {
+      "slug": "vila-nova-bonsucesso",
+      "bairro": "Vila Nova Bonsucesso"
+    },
+    {
+      "slug": "vila-nova-cumbica",
+      "bairro": "Vila Nova Cumbica"
+    },
+    {
+      "slug": "vila-paraiso",
+      "bairro": "Vila Paraiso"
+    },
+    {
+      "slug": "vila-pedro-moreira",
+      "bairro": "Vila Pedro Moreira"
+    },
+    {
+      "slug": "vila-progresso",
+      "bairro": "Vila Progresso"
+    },
+    {
+      "slug": "vila-renata",
+      "bairro": "Vila Renata"
+    },
+    {
+      "slug": "vila-rosalia",
+      "bairro": "Vila Rosalia"
+    },
+    {
+      "slug": "vila-sao-joao",
+      "bairro": "Vila Sao Joao"
+    },
+    {
+      "slug": "vila-sao-jorge",
+      "bairro": "Vila Sao Jorge"
+    },
+    {
+      "slug": "vila-sao-ricardo",
+      "bairro": "Vila Sao Ricardo"
+    },
+    {
+      "slug": "vila-sirena",
+      "bairro": "Vila Sirena"
+    },
+    {
+      "slug": "vila-vicentina",
+      "bairro": "Vila Vicentina"
+    }
+  ]
+}

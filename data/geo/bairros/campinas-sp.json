@@ -6,559 +6,711 @@
   "bairros": [
     {
       "slug": "arruamento-luiz-vicentin",
-      "bairro": "Arruamento Luiz Vicentin"
+      "bairro": "Arruamento Luiz Vicentin",
+      "match_slugs": []
     },
     {
       "slug": "bairro-das-palmeiras",
-      "bairro": "Bairro Das Palmeiras"
+      "bairro": "Bairro Das Palmeiras",
+      "match_slugs": []
     },
     {
       "slug": "barao-geraldo",
-      "bairro": "Barao Geraldo"
+      "bairro": "Barao Geraldo",
+      "match_slugs": []
     },
     {
       "slug": "bonfim",
-      "bairro": "Bonfim"
+      "bairro": "Bonfim",
+      "match_slugs": []
     },
     {
       "slug": "bosque",
-      "bairro": "Bosque"
+      "bairro": "Bosque",
+      "match_slugs": []
     },
     {
       "slug": "botafogo",
-      "bairro": "Botafogo"
+      "bairro": "Botafogo",
+      "match_slugs": [
+        "jardim-novo-botafogo"
+      ]
     },
     {
       "slug": "cambui",
-      "bairro": "Cambui"
+      "bairro": "Cambui",
+      "match_slugs": []
     },
     {
       "slug": "campos-eliseos",
-      "bairro": "Campos Eliseos"
+      "bairro": "Campos Eliseos",
+      "match_slugs": [
+        "jardim-novo-campos-eliseos",
+        "jardim-campos-eliseos",
+        "novo-campos-eliseos"
+      ]
     },
     {
       "slug": "centro",
-      "bairro": "Centro"
+      "bairro": "Centro",
+      "match_slugs": []
     },
     {
       "slug": "chacara-da-barra",
-      "bairro": "Chacara Da Barra"
+      "bairro": "Chacara Da Barra",
+      "match_slugs": []
     },
     {
       "slug": "chacara-primavera",
-      "bairro": "Chacara Primavera"
+      "bairro": "Chacara Primavera",
+      "match_slugs": []
     },
     {
       "slug": "chacara-santa-margarida",
-      "bairro": "Chacara Santa Margarida"
+      "bairro": "Chacara Santa Margarida",
+      "match_slugs": []
     },
     {
       "slug": "chacara-vieira",
-      "bairro": "Chacara Vieira"
+      "bairro": "Chacara Vieira",
+      "match_slugs": []
     },
     {
       "slug": "cid-universitaria",
-      "bairro": "Cid. Universitaria"
+      "bairro": "Cid. Universitaria",
+      "match_slugs": []
     },
     {
       "slug": "cidade-satelite-iris",
-      "bairro": "Cidade Satelite Iris"
+      "bairro": "Cidade Satelite Iris",
+      "match_slugs": []
     },
     {
       "slug": "cidade-universitaria",
-      "bairro": "Cidade Universitaria"
+      "bairro": "Cidade Universitaria",
+      "match_slugs": [
+        "cidade-universitaria-campineira"
+      ]
     },
     {
       "slug": "cidade-universitaria-campineira",
-      "bairro": "Cidade Universitaria Campineira"
+      "bairro": "Cidade Universitaria Campineira",
+      "match_slugs": []
     },
     {
       "slug": "cidade-universitarias",
-      "bairro": "Cidade Universitarias"
+      "bairro": "Cidade Universitarias",
+      "match_slugs": []
     },
     {
       "slug": "conjunto-habitacional-padre-anchieta",
-      "bairro": "Conjunto Habitacional Padre Anchieta"
+      "bairro": "Conjunto Habitacional Padre Anchieta",
+      "match_slugs": []
     },
     {
       "slug": "conjunto-residencial-parque-sao-bento",
-      "bairro": "Conjunto Residencial Parque Sao Bento"
+      "bairro": "Conjunto Residencial Parque Sao Bento",
+      "match_slugs": []
     },
     {
       "slug": "dic-iii-conjunto-habitacional-ruy-novaes",
-      "bairro": "Dic Iii (Conjunto Habitacional Ruy Novaes)"
+      "bairro": "Dic Iii (Conjunto Habitacional Ruy Novaes)",
+      "match_slugs": []
     },
     {
       "slug": "dic-iv-conjunto-habitacional-lech-walesa",
-      "bairro": "Dic Iv (Conjunto Habitacional Lech Walesa)"
+      "bairro": "Dic Iv (Conjunto Habitacional Lech Walesa)",
+      "match_slugs": []
     },
     {
       "slug": "fundacao-da-casa-popular",
-      "bairro": "Fundacao Da Casa Popular"
+      "bairro": "Fundacao Da Casa Popular",
+      "match_slugs": []
     },
     {
       "slug": "jardim-andorinhas",
-      "bairro": "Jardim Andorinhas"
+      "bairro": "Jardim Andorinhas",
+      "match_slugs": []
     },
     {
       "slug": "jardim-aurelia",
-      "bairro": "Jardim Aurelia"
+      "bairro": "Jardim Aurelia",
+      "match_slugs": []
     },
     {
       "slug": "jardim-bela-vista",
-      "bairro": "Jardim Bela Vista"
+      "bairro": "Jardim Bela Vista",
+      "match_slugs": []
     },
     {
       "slug": "jardim-boa-esperanca",
-      "bairro": "Jardim Boa Esperanca"
+      "bairro": "Jardim Boa Esperanca",
+      "match_slugs": []
     },
     {
       "slug": "jardim-brasil",
-      "bairro": "Jardim Brasil"
+      "bairro": "Jardim Brasil",
+      "match_slugs": []
     },
     {
       "slug": "jardim-campo-belo",
-      "bairro": "Jardim Campo Belo"
+      "bairro": "Jardim Campo Belo",
+      "match_slugs": []
     },
     {
       "slug": "jardim-campos-eliseos",
-      "bairro": "Jardim Campos Eliseos"
+      "bairro": "Jardim Campos Eliseos",
+      "match_slugs": []
     },
     {
       "slug": "jardim-capivari",
-      "bairro": "Jardim Capivari"
+      "bairro": "Jardim Capivari",
+      "match_slugs": []
     },
     {
       "slug": "jardim-chapadao",
-      "bairro": "Jardim Chapadao"
+      "bairro": "Jardim Chapadao",
+      "match_slugs": []
     },
     {
       "slug": "jardim-conceicao-sousas",
-      "bairro": "Jardim Conceicao (Sousas)"
+      "bairro": "Jardim Conceicao (Sousas)",
+      "match_slugs": []
     },
     {
       "slug": "jardim-das-bandeiras",
-      "bairro": "Jardim Das Bandeiras"
+      "bairro": "Jardim Das Bandeiras",
+      "match_slugs": []
     },
     {
       "slug": "jardim-das-paineiras",
-      "bairro": "Jardim Das Paineiras"
+      "bairro": "Jardim Das Paineiras",
+      "match_slugs": []
     },
     {
       "slug": "jardim-do-lago",
-      "bairro": "Jardim Do Lago"
+      "bairro": "Jardim Do Lago",
+      "match_slugs": []
     },
     {
       "slug": "jardim-dom-bosco",
-      "bairro": "Jardim Dom Bosco"
+      "bairro": "Jardim Dom Bosco",
+      "match_slugs": []
     },
     {
       "slug": "jardim-dos-oliveiras",
-      "bairro": "Jardim Dos Oliveiras"
+      "bairro": "Jardim Dos Oliveiras",
+      "match_slugs": []
     },
     {
       "slug": "jardim-fernanda",
-      "bairro": "Jardim Fernanda"
+      "bairro": "Jardim Fernanda",
+      "match_slugs": []
     },
     {
       "slug": "jardim-flamboyant",
-      "bairro": "Jardim Flamboyant"
+      "bairro": "Jardim Flamboyant",
+      "match_slugs": []
     },
     {
       "slug": "jardim-florence-ii",
-      "bairro": "Jardim Florence Ii"
+      "bairro": "Jardim Florence Ii",
+      "match_slugs": []
     },
     {
       "slug": "jardim-guanabara",
-      "bairro": "Jardim Guanabara"
+      "bairro": "Jardim Guanabara",
+      "match_slugs": []
     },
     {
       "slug": "jardim-guarani",
-      "bairro": "Jardim Guarani"
+      "bairro": "Jardim Guarani",
+      "match_slugs": []
     },
     {
       "slug": "jardim-londres",
-      "bairro": "Jardim Londres"
+      "bairro": "Jardim Londres",
+      "match_slugs": []
     },
     {
       "slug": "jardim-madalena",
-      "bairro": "Jardim Madalena"
+      "bairro": "Jardim Madalena",
+      "match_slugs": []
     },
     {
       "slug": "jardim-melina-i",
-      "bairro": "Jardim Melina I"
+      "bairro": "Jardim Melina I",
+      "match_slugs": []
     },
     {
       "slug": "jardim-metonopolis",
-      "bairro": "Jardim Metonopolis"
+      "bairro": "Jardim Metonopolis",
+      "match_slugs": []
     },
     {
       "slug": "jardim-mirassol",
-      "bairro": "Jardim Mirassol"
+      "bairro": "Jardim Mirassol",
+      "match_slugs": []
     },
     {
       "slug": "jardim-monte-cristo-parque-oziel",
-      "bairro": "Jardim Monte Cristo/Parque Oziel"
+      "bairro": "Jardim Monte Cristo/Parque Oziel",
+      "match_slugs": []
     },
     {
       "slug": "jardim-myrian-moreira-da-costa",
-      "bairro": "Jardim Myrian Moreira Da Costa"
+      "bairro": "Jardim Myrian Moreira Da Costa",
+      "match_slugs": []
     },
     {
       "slug": "jardim-nossa-senhora-auxiliadora",
-      "bairro": "Jardim Nossa Senhora Auxiliadora"
+      "bairro": "Jardim Nossa Senhora Auxiliadora",
+      "match_slugs": []
     },
     {
       "slug": "jardim-nova-america",
-      "bairro": "Jardim Nova America"
+      "bairro": "Jardim Nova America",
+      "match_slugs": []
     },
     {
       "slug": "jardim-nova-europa",
-      "bairro": "Jardim Nova Europa"
+      "bairro": "Jardim Nova Europa",
+      "match_slugs": []
     },
     {
       "slug": "jardim-novo-botafogo",
-      "bairro": "Jardim Novo Botafogo"
+      "bairro": "Jardim Novo Botafogo",
+      "match_slugs": []
     },
     {
       "slug": "jardim-novo-campos-eliseos",
-      "bairro": "Jardim Novo Campos Eliseos"
+      "bairro": "Jardim Novo Campos Eliseos",
+      "match_slugs": []
     },
     {
       "slug": "jardim-novo-sao-jose",
-      "bairro": "Jardim Novo Sao Jose"
+      "bairro": "Jardim Novo Sao Jose",
+      "match_slugs": []
     },
     {
       "slug": "jardim-ouro-preto",
-      "bairro": "Jardim Ouro Preto"
+      "bairro": "Jardim Ouro Preto",
+      "match_slugs": []
     },
     {
       "slug": "jardim-paraiso",
-      "bairro": "Jardim Paraiso"
+      "bairro": "Jardim Paraiso",
+      "match_slugs": []
     },
     {
       "slug": "jardim-pauliceia",
-      "bairro": "Jardim Pauliceia"
+      "bairro": "Jardim Pauliceia",
+      "match_slugs": []
     },
     {
       "slug": "jardim-planalto-de-viracopos",
-      "bairro": "Jardim Planalto De Viracopos"
+      "bairro": "Jardim Planalto De Viracopos",
+      "match_slugs": []
     },
     {
       "slug": "jardim-proenca",
-      "bairro": "Jardim Proenca"
+      "bairro": "Jardim Proenca",
+      "match_slugs": [
+        "jardim-proenca-i"
+      ]
     },
     {
       "slug": "jardim-proenca-i",
-      "bairro": "Jardim Proenca I"
+      "bairro": "Jardim Proenca I",
+      "match_slugs": []
     },
     {
       "slug": "jardim-professora-tarcilia",
-      "bairro": "Jardim Professora Tarcilia"
+      "bairro": "Jardim Professora Tarcilia",
+      "match_slugs": []
     },
     {
       "slug": "jardim-santa-genebra",
-      "bairro": "Jardim Santa Genebra"
+      "bairro": "Jardim Santa Genebra",
+      "match_slugs": [
+        "jardim-santa-genebra-ii"
+      ]
     },
     {
       "slug": "jardim-santa-genebra-ii",
-      "bairro": "Jardim Santa Genebra Ii"
+      "bairro": "Jardim Santa Genebra Ii",
+      "match_slugs": []
     },
     {
       "slug": "jardim-santa-lucia",
-      "bairro": "Jardim Santa Lucia"
+      "bairro": "Jardim Santa Lucia",
+      "match_slugs": []
     },
     {
       "slug": "jardim-santa-monica",
-      "bairro": "Jardim Santa Monica"
+      "bairro": "Jardim Santa Monica",
+      "match_slugs": []
     },
     {
       "slug": "jardim-sao-carlos",
-      "bairro": "Jardim Sao Carlos"
+      "bairro": "Jardim Sao Carlos",
+      "match_slugs": []
     },
     {
       "slug": "jardim-sao-cristovao",
-      "bairro": "Jardim Sao Cristovao"
+      "bairro": "Jardim Sao Cristovao",
+      "match_slugs": []
     },
     {
       "slug": "jardim-sao-domingos",
-      "bairro": "Jardim Sao Domingos"
+      "bairro": "Jardim Sao Domingos",
+      "match_slugs": []
     },
     {
       "slug": "jardim-sao-gabriel",
-      "bairro": "Jardim Sao Gabriel"
+      "bairro": "Jardim Sao Gabriel",
+      "match_slugs": []
     },
     {
       "slug": "jardim-sao-jose",
-      "bairro": "Jardim Sao Jose"
+      "bairro": "Jardim Sao Jose",
+      "match_slugs": []
     },
     {
       "slug": "jardim-sao-judas-tadeu",
-      "bairro": "Jardim Sao Judas Tadeu"
+      "bairro": "Jardim Sao Judas Tadeu",
+      "match_slugs": []
     },
     {
       "slug": "jardim-sao-pedro-de-viracopos",
-      "bairro": "Jardim Sao Pedro De Viracopos"
+      "bairro": "Jardim Sao Pedro De Viracopos",
+      "match_slugs": []
     },
     {
       "slug": "jardim-sao-vicente",
-      "bairro": "Jardim Sao Vicente"
+      "bairro": "Jardim Sao Vicente",
+      "match_slugs": []
     },
     {
       "slug": "jd-nova-europa",
-      "bairro": "Jd Nova Europa"
+      "bairro": "Jd Nova Europa",
+      "match_slugs": []
     },
     {
       "slug": "jd-n-sra-auxiliadora",
-      "bairro": "Jd.N.Sra.Auxiliadora"
+      "bairro": "Jd.N.Sra.Auxiliadora",
+      "match_slugs": []
     },
     {
       "slug": "loteamento-alphaville-campinas",
-      "bairro": "Loteamento Alphaville Campinas"
+      "bairro": "Loteamento Alphaville Campinas",
+      "match_slugs": []
     },
     {
       "slug": "loteamento-caminhos-de-sao-conrado-sousas",
-      "bairro": "Loteamento Caminhos De Sao Conrado (Sousas)"
+      "bairro": "Loteamento Caminhos De Sao Conrado (Sousas)",
+      "match_slugs": []
     },
     {
       "slug": "loteamento-center-santa-genebra",
-      "bairro": "Loteamento Center Santa Genebra"
+      "bairro": "Loteamento Center Santa Genebra",
+      "match_slugs": []
     },
     {
       "slug": "loteamento-parque-sao-martinho",
-      "bairro": "Loteamento Parque Sao Martinho"
+      "bairro": "Loteamento Parque Sao Martinho",
+      "match_slugs": []
     },
     {
       "slug": "loteamento-residencial-vila-bella",
-      "bairro": "Loteamento Residencial Vila Bella"
+      "bairro": "Loteamento Residencial Vila Bella",
+      "wellhub_absent": true,
+      "match_slugs": []
     },
     {
       "slug": "mansoes-s-antonio",
-      "bairro": "Mansoes S Antonio"
+      "bairro": "Mansoes S Antonio",
+      "match_slugs": []
     },
     {
       "slug": "mansoes-santo-antonio",
-      "bairro": "Mansoes Santo Antonio"
+      "bairro": "Mansoes Santo Antonio",
+      "match_slugs": []
     },
     {
       "slug": "nova-aparecida",
-      "bairro": "Nova Aparecida"
+      "bairro": "Nova Aparecida",
+      "match_slugs": []
     },
     {
       "slug": "nova-campinas",
-      "bairro": "Nova Campinas"
+      "bairro": "Nova Campinas",
+      "match_slugs": []
     },
     {
       "slug": "novo-campos-eliseos",
-      "bairro": "Novo Campos Eliseos"
+      "bairro": "Novo Campos Eliseos",
+      "match_slugs": []
     },
     {
       "slug": "parque-ceasa",
-      "bairro": "Parque Ceasa"
+      "bairro": "Parque Ceasa",
+      "match_slugs": []
     },
     {
       "slug": "parque-da-figueira",
-      "bairro": "Parque Da Figueira"
+      "bairro": "Parque Da Figueira",
+      "match_slugs": []
     },
     {
       "slug": "parque-das-flores",
-      "bairro": "Parque Das Flores"
+      "bairro": "Parque Das Flores",
+      "match_slugs": []
     },
     {
       "slug": "parque-das-industrias",
-      "bairro": "Parque Das Industrias"
+      "bairro": "Parque Das Industrias",
+      "match_slugs": []
     },
     {
       "slug": "parque-das-universidades",
-      "bairro": "Parque Das Universidades"
+      "bairro": "Parque Das Universidades",
+      "match_slugs": []
     },
     {
       "slug": "parque-dos-cisnes",
-      "bairro": "Parque Dos Cisnes"
+      "bairro": "Parque Dos Cisnes",
+      "match_slugs": []
     },
     {
       "slug": "parque-imperador",
-      "bairro": "Parque Imperador"
+      "bairro": "Parque Imperador",
+      "match_slugs": []
     },
     {
       "slug": "parque-industrial",
-      "bairro": "Parque Industrial"
+      "bairro": "Parque Industrial",
+      "match_slugs": []
     },
     {
       "slug": "parque-italia",
-      "bairro": "Parque Italia"
+      "bairro": "Parque Italia",
+      "match_slugs": []
     },
     {
       "slug": "parque-residencial-vila-uniao",
-      "bairro": "Parque Residencial Vila Uniao"
+      "bairro": "Parque Residencial Vila Uniao",
+      "match_slugs": []
     },
     {
       "slug": "parque-rural-fazenda-santa-candida",
-      "bairro": "Parque Rural Fazenda Santa Candida"
+      "bairro": "Parque Rural Fazenda Santa Candida",
+      "match_slugs": []
     },
     {
       "slug": "parque-sao-paulo",
-      "bairro": "Parque Sao Paulo"
+      "bairro": "Parque Sao Paulo",
+      "match_slugs": []
     },
     {
       "slug": "parque-sao-quirino",
-      "bairro": "Parque Sao Quirino"
+      "bairro": "Parque Sao Quirino",
+      "match_slugs": []
     },
     {
       "slug": "parque-taquaral",
-      "bairro": "Parque Taquaral"
+      "bairro": "Parque Taquaral",
+      "match_slugs": []
     },
     {
       "slug": "parque-universitario-de-viracopos",
-      "bairro": "Parque Universitario De Viracopos"
+      "bairro": "Parque Universitario De Viracopos",
+      "match_slugs": []
     },
     {
       "slug": "parque-valenca-i",
-      "bairro": "Parque Valenca I"
+      "bairro": "Parque Valenca I",
+      "match_slugs": []
     },
     {
       "slug": "parque-via-norte",
-      "bairro": "Parque Via Norte"
+      "bairro": "Parque Via Norte",
+      "match_slugs": []
     },
     {
       "slug": "parque-vista-alegre",
-      "bairro": "Parque Vista Alegre"
+      "bairro": "Parque Vista Alegre",
+      "match_slugs": []
     },
     {
       "slug": "parque-xangrila",
-      "bairro": "Parque Xangrila"
+      "bairro": "Parque Xangrila",
+      "match_slugs": []
     },
     {
       "slug": "ponte-preta",
-      "bairro": "Ponte Preta"
+      "bairro": "Ponte Preta",
+      "match_slugs": []
     },
     {
       "slug": "recanto-do-sol-i",
-      "bairro": "Recanto Do Sol I"
+      "bairro": "Recanto Do Sol I",
+      "match_slugs": []
     },
     {
       "slug": "residencial-nova-bandeirante",
-      "bairro": "Residencial Nova Bandeirante"
+      "bairro": "Residencial Nova Bandeirante",
+      "match_slugs": []
     },
     {
       "slug": "residencial-parque-da-fazenda",
-      "bairro": "Residencial Parque Da Fazenda"
+      "bairro": "Residencial Parque Da Fazenda",
+      "match_slugs": []
     },
     {
       "slug": "residencial-porto-seguro",
-      "bairro": "Residencial Porto Seguro"
+      "bairro": "Residencial Porto Seguro",
+      "match_slugs": []
     },
     {
       "slug": "residencial-vila-reggio",
-      "bairro": "Residencial Vila Reggio"
+      "bairro": "Residencial Vila Reggio",
+      "match_slugs": []
     },
     {
       "slug": "sao-bernardo",
-      "bairro": "Sao Bernardo"
+      "bairro": "Sao Bernardo",
+      "match_slugs": []
     },
     {
       "slug": "swiss-park",
-      "bairro": "Swiss Park"
+      "bairro": "Swiss Park",
+      "match_slugs": []
     },
     {
       "slug": "taquaral",
-      "bairro": "Taquaral"
+      "bairro": "Taquaral",
+      "match_slugs": []
     },
     {
       "slug": "vila-aeroporto",
-      "bairro": "Vila Aeroporto"
+      "bairro": "Vila Aeroporto",
+      "match_slugs": []
     },
     {
       "slug": "vila-andrade-neves",
-      "bairro": "Vila Andrade Neves"
+      "bairro": "Vila Andrade Neves",
+      "match_slugs": []
     },
     {
       "slug": "vila-anhanguera",
-      "bairro": "Vila Anhanguera"
+      "bairro": "Vila Anhanguera",
+      "match_slugs": []
     },
     {
       "slug": "vila-brandina",
-      "bairro": "Vila Brandina"
+      "bairro": "Vila Brandina",
+      "match_slugs": []
     },
     {
       "slug": "vila-costa-e-silva",
-      "bairro": "Vila Costa E Silva"
+      "bairro": "Vila Costa E Silva",
+      "match_slugs": []
     },
     {
       "slug": "vila-formosa",
-      "bairro": "Vila Formosa"
+      "bairro": "Vila Formosa",
+      "match_slugs": []
     },
     {
       "slug": "vila-georgina",
-      "bairro": "Vila Georgina"
+      "bairro": "Vila Georgina",
+      "match_slugs": []
     },
     {
       "slug": "vila-industrial",
-      "bairro": "Vila Industrial"
+      "bairro": "Vila Industrial",
+      "match_slugs": []
     },
     {
       "slug": "vila-itapura",
-      "bairro": "Vila Itapura"
+      "bairro": "Vila Itapura",
+      "match_slugs": []
     },
     {
       "slug": "vila-joao-jorge",
-      "bairro": "Vila Joao Jorge"
+      "bairro": "Vila Joao Jorge",
+      "match_slugs": []
     },
     {
       "slug": "vila-joaquim-inacio",
-      "bairro": "Vila Joaquim Inacio"
+      "bairro": "Vila Joaquim Inacio",
+      "match_slugs": []
     },
     {
       "slug": "vila-lemos",
-      "bairro": "Vila Lemos"
+      "bairro": "Vila Lemos",
+      "match_slugs": []
     },
     {
       "slug": "vila-marieta",
-      "bairro": "Vila Marieta"
+      "bairro": "Vila Marieta",
+      "match_slugs": []
     },
     {
       "slug": "vila-mimosa",
-      "bairro": "Vila Mimosa"
+      "bairro": "Vila Mimosa",
+      "match_slugs": []
     },
     {
       "slug": "vila-padre-manoel-de-nobrega",
-      "bairro": "Vila Padre Manoel De Nobrega"
+      "bairro": "Vila Padre Manoel De Nobrega",
+      "match_slugs": []
     },
     {
       "slug": "vila-paraiso",
-      "bairro": "Vila Paraiso"
+      "bairro": "Vila Paraiso",
+      "match_slugs": []
     },
     {
       "slug": "vila-pompeia",
-      "bairro": "Vila Pompeia"
+      "bairro": "Vila Pompeia",
+      "match_slugs": []
     },
     {
       "slug": "vila-progresso",
-      "bairro": "Vila Progresso"
+      "bairro": "Vila Progresso",
+      "match_slugs": []
     },
     {
       "slug": "vila-proost-de-souza",
-      "bairro": "Vila Proost De Souza"
+      "bairro": "Vila Proost De Souza",
+      "match_slugs": []
     },
     {
       "slug": "vila-rossi",
-      "bairro": "Vila Rossi"
+      "bairro": "Vila Rossi",
+      "match_slugs": []
     },
     {
       "slug": "vila-santa-rita-sousas",
-      "bairro": "Vila Santa Rita (Sousas)"
+      "bairro": "Vila Santa Rita (Sousas)",
+      "match_slugs": []
     },
     {
       "slug": "vila-sonia-sousas",
-      "bairro": "Vila Sonia (Sousas)"
+      "bairro": "Vila Sonia (Sousas)",
+      "match_slugs": []
     },
     {
       "slug": "vila-teixeira",
-      "bairro": "Vila Teixeira"
+      "bairro": "Vila Teixeira",
+      "match_slugs": []
     },
     {
       "slug": "ville-sainte-helene",
-      "bairro": "Ville Sainte Helene"
+      "bairro": "Ville Sainte Helene",
+      "match_slugs": []
     }
   ]
 }

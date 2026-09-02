@@ -1,0 +1,84 @@
+{
+  "ran_at": "2026-09-01T23:59:48.409Z",
+  "cidade": "Campinas",
+  "uf": "SP",
+  "slugs": [
+    "jardim-conceicao-sousas",
+    "jardim-mirassol",
+    "jardim-professora-tarcilia",
+    "loteamento-caminhos-de-sao-conrado-sousas",
+    "loteamento-residencial-vila-bella",
+    "mansoes-s-antonio",
+    "parque-das-flores",
+    "residencial-parque-da-fazenda",
+    "vila-santa-rita-sousas"
+  ],
+  "before_gyms": 44629,
+  "after_gyms": 44629,
+  "delta": 0,
+  "rows": [
+    {
+      "bairro": "Jardim Conceicao (Sousas)",
+      "slug": "jardim-conceicao-sousas",
+      "scraped": 100,
+      "new_gyms": 0,
+      "tagged": 100
+    },
+    {
+      "bairro": "Jardim Mirassol",
+      "slug": "jardim-mirassol",
+      "scraped": 58,
+      "new_gyms": 0,
+      "tagged": 58
+    },
+    {
+      "bairro": "Jardim Professora Tarcilia",
+      "slug": "jardim-professora-tarcilia",
+      "scraped": 100,
+      "new_gyms": 0,
+      "tagged": 100
+    },
+    {
+      "bairro": "Loteamento Caminhos De Sao Conrado (Sousas)",
+      "slug": "loteamento-caminhos-de-sao-conrado-sousas",
+      "scraped": 100,
+      "new_gyms": 0,
+      "tagged": 100
+    },
+    {
+      "bairro": "Loteamento Residencial Vila Bella",
+      "slug": "loteamento-residencial-vila-bella",
+      "scraped": 0,
+      "new_gyms": 0,
+      "tagged": 0
+    },
+    {
+      "bairro": "Mansoes S Antonio",
+      "slug": "mansoes-s-antonio",
+      "scraped": 100,
+      "new_gyms": 0,
+      "tagged": 100
+    },
+    {
+      "bairro": "Parque Das Flores",
+      "slug": "parque-das-flores",
+      "scraped": 100,
+      "new_gyms": 0,
+      "tagged": 100
+    },
+    {
+      "bairro": "Residencial Parque Da Fazenda",
+      "slug": "residencial-parque-da-fazenda",
+      "scraped": 40,
+      "new_gyms": 0,
+      "tagged": 40
+    },
+    {
+      "bairro": "Vila Santa Rita (Sousas)",
+      "slug": "vila-santa-rita-sousas",
+      "scraped": 100,
+      "new_gyms": 0,
+      "tagged": 100
+    }
+  ]
+}
