@@ -1,0 +1,39 @@
+{
+  "description": "Canonical clinic fixture — Vivedouro Saúde Integrada (Santana-SP). Source: Brasil API 2026-09-02.",
+  "website": "https://vivedouro.com.br/",
+  "totalpass_slug": "vivedouro-geriatria-ltda",
+  "expected": {
+    "in_wellness_principal_ativos": true,
+    "in_9313100_only": false,
+    "cnae_segment": "clinica_ne",
+    "cnae_segment_group": "clinica",
+    "cnae_tags_includes": ["geriatria"]
+  },
+  "record": {
+    "cnpj": "29460053000177",
+    "cnpj_basico": "29460053",
+    "cnpj_ordem": "0001",
+    "cnpj_dv": "77",
+    "identificador_matriz_filial": "1",
+    "nome_fantasia": "VIVEDOURO SAUDE INTEGRADA",
+    "situacao_cadastral": "02",
+    "data_inicio_atividade": "20180117",
+    "cnae_fiscal_principal": "8630599",
+    "cnae_fiscal_secundaria": "4771701,7210000,8412400,8599604,8610101,8610102,8630501,8630503,8630506,8640205,8640210,8650001,8660700,8711501",
+    "cnae_match": "principal",
+    "cnae_segment": "clinica_ne",
+    "cnae_fiscal_matched": "8630599",
+    "cnae_tags": ["geriatria"],
+    "tipo_logradouro": "RUA",
+    "logradouro": "ALFREDO PUJOL",
+    "numero": "1117",
+    "complemento": null,
+    "bairro": "SANTANA",
+    "cep": "02017011",
+    "uf": "SP",
+    "municipio": "7107",
+    "ddd_1": "11",
+    "telefone_1": "26892591",
+    "correio_eletronico": null
+  }
+}

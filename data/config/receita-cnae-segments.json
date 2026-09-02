@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "segments": [
+    { "id": "academia", "cnae": "9313100", "label": "Condicionamento físico" },
+    { "id": "esportes", "cnae": "8591100", "label": "Ensino de esportes (luta)" },
+    { "id": "danca", "cnae": "8592901", "label": "Ensino de dança" },
+    { "id": "spa_estetica", "cnae": "9602502", "label": "Estética / spa" },
+    { "id": "clinica", "cnae": "8630503", "label": "Clínica ambulatorial (consultas)" },
+    { "id": "clinica_ne", "cnae": "8630599", "label": "Atenção ambulatorial NE" },
+    { "id": "geriatria", "cnae": "8711501", "label": "Clínicas geriátricas" },
+    { "id": "fisioterapia", "cnae": "8650004", "label": "Fisioterapia" }
+  ],
+  "segment_groups": {
+    "clinica": ["clinica", "clinica_ne", "geriatria"]
+  },
+  "tags": [
+    { "id": "pilates", "match": "nome_fantasia", "pattern": "pilates" },
+    { "id": "geriatria", "match": "nome_fantasia", "pattern": "geriatria" },
+    { "id": "geriatria", "match": "cnae", "cnae": "8711501" }
+  ]
+}
