@@ -1,0 +1,76 @@
+{
+  "ran_at": "2026-09-02T02:48:33.733Z",
+  "cidade": "Guarulhos",
+  "uf": "SP",
+  "slugs": [
+    "cidade-aracilia",
+    "jardim-dos-pimentas",
+    "jardim-iv-centenario",
+    "jardim-jade",
+    "jardim-leblon",
+    "jardim-ponte-alta-i",
+    "jardim-tijuco",
+    "vila-miriam"
+  ],
+  "before_gyms": 44703,
+  "after_gyms": 44703,
+  "delta": 0,
+  "rows": [
+    {
+      "bairro": "Cidade Aracilia",
+      "slug": "cidade-aracilia",
+      "scraped": 100,
+      "new_gyms": 0,
+      "tagged": 100
+    },
+    {
+      "bairro": "Jardim Dos Pimentas",
+      "slug": "jardim-dos-pimentas",
+      "scraped": 100,
+      "new_gyms": 0,
+      "tagged": 100
+    },
+    {
+      "bairro": "Jardim Iv Centenario",
+      "slug": "jardim-iv-centenario",
+      "scraped": 100,
+      "new_gyms": 0,
+      "tagged": 100
+    },
+    {
+      "bairro": "Jardim Jade",
+      "slug": "jardim-jade",
+      "scraped": 75,
+      "new_gyms": 0,
+      "tagged": 75
+    },
+    {
+      "bairro": "Jardim Leblon",
+      "slug": "jardim-leblon",
+      "scraped": 55,
+      "new_gyms": 0,
+      "tagged": 55
+    },
+    {
+      "bairro": "Jardim Ponte Alta I",
+      "slug": "jardim-ponte-alta-i",
+      "scraped": 100,
+      "new_gyms": 0,
+      "tagged": 100
+    },
+    {
+      "bairro": "Jardim Tijuco",
+      "slug": "jardim-tijuco",
+      "scraped": 100,
+      "new_gyms": 0,
+      "tagged": 100
+    },
+    {
+      "bairro": "Vila Miriam",
+      "slug": "vila-miriam",
+      "scraped": 100,
+      "new_gyms": 0,
+      "tagged": 100
+    }
+  ]
+}

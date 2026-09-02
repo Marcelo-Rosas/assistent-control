@@ -3,7 +3,7 @@
  *
  * Run:
  *   npx tsx scripts/scrape-wellhub-bairros-gap.ts --cidade "Rio de Janeiro" --uf RJ --slugs=argentino
- *   npx tsx scripts/scrape-wellhub-bairros-gap.ts --cidade "São Paulo" --uf SP --slugs=cachoeirinha,carrao
+ *   npx tsx scripts/scrape-wellhub-bairros-gap.ts --cidade "Guarulhos" --uf SP --missing
  */
 import fs from 'fs/promises';
 import path from 'path';
@@ -24,7 +24,7 @@ const ROOT = process.cwd();
 const OUTPUT_PATH = path.join(ROOT, 'data/raw/wellhub-brasil-all.json');
 const DELAY_MS = Number(process.env.DELAY_MS || 500);
 
-function parseArgs(): { cidade: string; uf: string; slugs: string[] } {
+function parseArgs(): { cidade: string; uf: string; slugs: string[]; fromAudit: boolean } {
   const cidade =
     process.argv.find((a) => a.startsWith('--cidade='))?.split('=').slice(1).join('=') ||
     process.argv[process.argv.indexOf('--cidade') + 1];
@@ -33,22 +33,58 @@ function parseArgs(): { cidade: string; uf: string; slugs: string[] } {
     process.argv[process.argv.indexOf('--uf') + 1] ||
     ''
   ).toUpperCase();
-  const slugsRaw =
-    process.argv.find((a) => a.startsWith('--slugs='))?.split('=')[1] ||
-    process.argv[process.argv.indexOf('--slugs') + 1] ||
-    '';
+  const fromAudit = process.argv.includes('--missing') || process.argv.includes('--from-audit');
+
+  const eq = process.argv.find((a) => a.startsWith('--slugs='));
+  let slugsRaw = eq ? eq.split('=').slice(1).join('=') : '';
+  if (!slugsRaw) {
+    const idx = process.argv.indexOf('--slugs');
+    if (idx >= 0 && process.argv[idx + 1] && !process.argv[idx + 1].startsWith('--')) {
+      slugsRaw = process.argv[idx + 1];
+    }
+  }
   const slugs = slugsRaw
     .split(',')
     .map((s) => s.trim())
     .filter(Boolean);
 
-  if (!cidade || !uf || !slugs.length) {
+  if (!cidade || !uf) {
     console.error(
-      'Uso: --cidade "Rio de Janeiro" --uf RJ --slugs=argentino[,outro-slug]',
+      'Uso: --cidade "Guarulhos" --uf SP --slugs=slug1,slug2 | --missing',
     );
     process.exit(1);
   }
-  return { cidade, uf, slugs };
+  if (!slugs.length && !fromAudit) {
+    console.error(
+      'Informe --slugs=slug1,slug2 ou --missing (bairros gap do audit)',
+    );
+    process.exit(1);
+  }
+  return { cidade, uf, slugs, fromAudit };
+}
+
+async function slugsFromAudit(cidade: string, uf: string): Promise<string[]> {
+  const auditPath = path.join(ROOT, 'public/data/bairro-coverage-audit.json');
+  const audit = JSON.parse(await fs.readFile(auditPath, 'utf-8')) as {
+    rows: Array<{
+      cidade: string;
+      uf: string;
+      wellhub: { missing_bairros?: string[] };
+    }>;
+  };
+  const row = audit.rows.find(
+    (r) => r.cidade === cidade && r.uf === uf,
+  );
+  const names = row?.wellhub.missing_bairros ?? [];
+  if (!names.length) return [];
+
+  const catalog = await loadBairrosCatalog(cidade, uf);
+  if (!catalog) return [];
+
+  const byName = new Map(catalog.bairros.map((b) => [b.bairro.toLowerCase(), resolveSearchSlug(b)]));
+  return names
+    .map((n) => byName.get(n.toLowerCase()))
+    .filter((s): s is string => Boolean(s));
 }
 
 async function loadGymMap(): Promise<Map<string, WellhubGymRaw>> {
@@ -75,7 +111,16 @@ async function saveGymMap(gymMap: Map<string, WellhubGymRaw>, note: string): Pro
 }
 
 async function main(): Promise<void> {
-  const { cidade, uf, slugs } = parseArgs();
+  const { cidade, uf, fromAudit, slugs: slugsArg } = parseArgs();
+  let slugs = slugsArg;
+  if (fromAudit) {
+    slugs = await slugsFromAudit(cidade, uf);
+    if (!slugs.length) {
+      console.error(`Audit sem missing_bairros WH para ${cidade}-${uf}`);
+      process.exit(1);
+    }
+    console.log(`--missing: ${slugs.length} slug(s) do audit`);
+  }
   const catalog = await loadBairrosCatalog(cidade, uf);
   if (!catalog) {
     console.error(`Catálogo ausente para ${cidade}-${uf}`);

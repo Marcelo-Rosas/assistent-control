@@ -8,395 +8,488 @@
       "slug": "aeroporto",
       "bairro": "Aeroporto",
       "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
-      "renda_pc": 3365.31
+      "renda_pc": 3365.31,
+      "match_slugs": []
     },
     {
       "slug": "bairro-sao-roque",
-      "bairro": "Bairro Sao Roque"
+      "bairro": "Bairro Sao Roque",
+      "match_slugs": []
     },
     {
       "slug": "centro",
       "bairro": "Centro",
       "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
-      "renda_pc": 3720.99
+      "renda_pc": 3720.99,
+      "match_slugs": []
     },
     {
       "slug": "cidade-aracilia",
-      "bairro": "Cidade Aracilia"
+      "bairro": "Cidade Aracilia",
+      "match_slugs": []
     },
     {
       "slug": "cidade-parque-alvorada",
-      "bairro": "Cidade Parque Alvorada"
+      "bairro": "Cidade Parque Alvorada",
+      "match_slugs": []
     },
     {
       "slug": "cidade-serodio",
-      "bairro": "Cidade Serodio"
+      "bairro": "Cidade Serodio",
+      "match_slugs": []
     },
     {
       "slug": "cidade-soberana",
-      "bairro": "Cidade Soberana"
+      "bairro": "Cidade Soberana",
+      "match_slugs": []
     },
     {
       "slug": "cocaia",
       "bairro": "Cocaia",
       "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
-      "renda_pc": 1412.32
+      "renda_pc": 1412.32,
+      "match_slugs": []
     },
     {
       "slug": "gopouva",
       "bairro": "Gopouva",
       "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
-      "renda_pc": 1831.75
+      "renda_pc": 1831.75,
+      "match_slugs": []
     },
     {
       "slug": "jardim-adriana",
-      "bairro": "Jardim Adriana"
+      "bairro": "Jardim Adriana",
+      "match_slugs": []
     },
     {
       "slug": "jardim-alamo",
-      "bairro": "Jardim Alamo"
+      "bairro": "Jardim Alamo",
+      "match_slugs": []
     },
     {
       "slug": "jardim-albertina",
-      "bairro": "Jardim Albertina"
+      "bairro": "Jardim Albertina",
+      "match_slugs": []
     },
     {
       "slug": "jardim-bananal",
-      "bairro": "Jardim Bananal"
+      "bairro": "Jardim Bananal",
+      "match_slugs": []
     },
     {
       "slug": "jardim-barbosa",
-      "bairro": "Jardim Barbosa"
+      "bairro": "Jardim Barbosa",
+      "match_slugs": []
     },
     {
       "slug": "jardim-belvedere",
-      "bairro": "Jardim Belvedere"
+      "bairro": "Jardim Belvedere",
+      "match_slugs": []
     },
     {
       "slug": "jardim-bom-clima",
-      "bairro": "Jardim Bom Clima"
+      "bairro": "Jardim Bom Clima",
+      "match_slugs": []
     },
     {
       "slug": "jardim-carvalho",
-      "bairro": "Jardim Carvalho"
+      "bairro": "Jardim Carvalho",
+      "match_slugs": []
     },
     {
       "slug": "jardim-cumbica",
-      "bairro": "Jardim Cumbica"
+      "bairro": "Jardim Cumbica",
+      "match_slugs": []
     },
     {
       "slug": "jardim-divinolandia",
-      "bairro": "Jardim Divinolandia"
+      "bairro": "Jardim Divinolandia",
+      "match_slugs": []
     },
     {
       "slug": "jardim-dos-afonsos",
-      "bairro": "Jardim Dos Afonsos"
+      "bairro": "Jardim Dos Afonsos",
+      "match_slugs": []
     },
     {
       "slug": "jardim-dos-pimentas",
-      "bairro": "Jardim Dos Pimentas"
+      "bairro": "Jardim Dos Pimentas",
+      "match_slugs": []
     },
     {
       "slug": "jardim-dourado",
-      "bairro": "Jardim Dourado"
+      "bairro": "Jardim Dourado",
+      "match_slugs": []
     },
     {
       "slug": "jardim-eliana",
-      "bairro": "Jardim Eliana"
+      "bairro": "Jardim Eliana",
+      "match_slugs": []
     },
     {
       "slug": "jardim-eugenia",
-      "bairro": "Jardim Eugenia"
+      "bairro": "Jardim Eugenia",
+      "match_slugs": []
     },
     {
       "slug": "jardim-figueira",
-      "bairro": "Jardim Figueira"
+      "bairro": "Jardim Figueira",
+      "match_slugs": []
     },
     {
       "slug": "jardim-flor-da-montanha",
-      "bairro": "Jardim Flor Da Montanha"
+      "bairro": "Jardim Flor Da Montanha",
+      "match_slugs": []
     },
     {
       "slug": "jardim-fortaleza",
-      "bairro": "Jardim Fortaleza"
+      "bairro": "Jardim Fortaleza",
+      "match_slugs": []
     },
     {
       "slug": "jardim-gracinda",
-      "bairro": "Jardim Gracinda"
+      "bairro": "Jardim Gracinda",
+      "match_slugs": []
     },
     {
       "slug": "jardim-iv-centenario",
-      "bairro": "Jardim Iv Centenario"
+      "bairro": "Jardim Iv Centenario",
+      "match_slugs": []
     },
     {
       "slug": "jardim-jacy",
-      "bairro": "Jardim Jacy"
+      "bairro": "Jardim Jacy",
+      "match_slugs": []
     },
     {
       "slug": "jardim-jade",
-      "bairro": "Jardim Jade"
+      "bairro": "Jardim Jade",
+      "match_slugs": []
     },
     {
       "slug": "jardim-leblon",
-      "bairro": "Jardim Leblon"
+      "bairro": "Jardim Leblon",
+      "match_slugs": []
     },
     {
       "slug": "jardim-madeirense",
-      "bairro": "Jardim Madeirense"
+      "bairro": "Jardim Madeirense",
+      "match_slugs": []
     },
     {
       "slug": "jardim-mediterraneo",
-      "bairro": "Jardim Mediterraneo"
+      "bairro": "Jardim Mediterraneo",
+      "match_slugs": []
     },
     {
       "slug": "jardim-monte-alto",
-      "bairro": "Jardim Monte Alto"
+      "bairro": "Jardim Monte Alto",
+      "match_slugs": []
     },
     {
       "slug": "jardim-nova-cidade",
-      "bairro": "Jardim Nova Cidade"
+      "bairro": "Jardim Nova Cidade",
+      "match_slugs": []
     },
     {
       "slug": "jardim-nova-guarulhos",
-      "bairro": "Jardim Nova Guarulhos"
+      "bairro": "Jardim Nova Guarulhos",
+      "match_slugs": []
     },
     {
       "slug": "jardim-paraiso",
-      "bairro": "Jardim Paraiso"
+      "bairro": "Jardim Paraiso",
+      "match_slugs": []
     },
     {
       "slug": "jardim-ponte-alta-i",
-      "bairro": "Jardim Ponte Alta I"
+      "bairro": "Jardim Ponte Alta I",
+      "match_slugs": []
     },
     {
       "slug": "jardim-presidente-dutra",
-      "bairro": "Jardim Presidente Dutra"
+      "bairro": "Jardim Presidente Dutra",
+      "match_slugs": []
     },
     {
       "slug": "jardim-rosa-de-franca",
-      "bairro": "Jardim Rosa De Franca"
+      "bairro": "Jardim Rosa De Franca",
+      "match_slugs": []
     },
     {
       "slug": "jardim-santa-clara",
-      "bairro": "Jardim Santa Clara"
+      "bairro": "Jardim Santa Clara",
+      "match_slugs": []
     },
     {
       "slug": "jardim-santa-lidia",
-      "bairro": "Jardim Santa Lidia"
+      "bairro": "Jardim Santa Lidia",
+      "match_slugs": []
     },
     {
       "slug": "jardim-santa-mena",
-      "bairro": "Jardim Santa Mena"
+      "bairro": "Jardim Santa Mena",
+      "match_slugs": []
     },
     {
       "slug": "jardim-santo-expedito",
-      "bairro": "Jardim Santo Expedito"
+      "bairro": "Jardim Santo Expedito",
+      "match_slugs": []
     },
     {
       "slug": "jardim-sao-geraldo",
-      "bairro": "Jardim Sao Geraldo"
+      "bairro": "Jardim Sao Geraldo",
+      "match_slugs": []
     },
     {
       "slug": "jardim-sao-joao",
-      "bairro": "Jardim Sao Joao"
+      "bairro": "Jardim Sao Joao",
+      "match_slugs": []
     },
     {
       "slug": "jardim-sao-paulo",
-      "bairro": "Jardim Sao Paulo"
+      "bairro": "Jardim Sao Paulo",
+      "match_slugs": []
     },
     {
       "slug": "jardim-terezopolis",
-      "bairro": "Jardim Terezopolis"
+      "bairro": "Jardim Terezopolis",
+      "match_slugs": []
     },
     {
       "slug": "jardim-tijuco",
-      "bairro": "Jardim Tijuco"
+      "bairro": "Jardim Tijuco",
+      "match_slugs": []
     },
     {
       "slug": "jardim-tranquilidade",
-      "bairro": "Jardim Tranquilidade"
+      "bairro": "Jardim Tranquilidade",
+      "match_slugs": []
     },
     {
       "slug": "jardim-valeria",
-      "bairro": "Jardim Valeria"
+      "bairro": "Jardim Valeria",
+      "match_slugs": []
     },
     {
       "slug": "jardim-vila-galvao",
       "bairro": "Jardim Vila Galvao",
       "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
-      "renda_pc": 1316.26
+      "renda_pc": 1316.26,
+      "match_slugs": []
     },
     {
       "slug": "jardim-zaira",
-      "bairro": "Jardim Zaira"
+      "bairro": "Jardim Zaira",
+      "match_slugs": []
     },
     {
       "slug": "jd-paraventi",
-      "bairro": "Jd. Paraventi"
+      "bairro": "Jd. Paraventi",
+      "match_slugs": []
     },
     {
       "slug": "macedo",
       "bairro": "Macedo",
       "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
-      "renda_pc": 2528.61
+      "renda_pc": 2528.61,
+      "match_slugs": []
     },
     {
       "slug": "parque-cecap",
-      "bairro": "Parque Cecap"
+      "bairro": "Parque Cecap",
+      "match_slugs": []
     },
     {
       "slug": "parque-continental-i",
-      "bairro": "Parque Continental I"
+      "bairro": "Parque Continental I",
+      "match_slugs": []
     },
     {
       "slug": "parque-continental-ii",
-      "bairro": "Parque Continental Ii"
+      "bairro": "Parque Continental Ii",
+      "match_slugs": []
     },
     {
       "slug": "parque-das-nacoes",
-      "bairro": "Parque Das Nacoes"
+      "bairro": "Parque Das Nacoes",
+      "match_slugs": []
     },
     {
       "slug": "parque-flamengo",
-      "bairro": "Parque Flamengo"
+      "bairro": "Parque Flamengo",
+      "match_slugs": []
     },
     {
       "slug": "parque-goncalves-junior",
-      "bairro": "Parque Goncalves Junior"
+      "bairro": "Parque Goncalves Junior",
+      "match_slugs": []
     },
     {
       "slug": "parque-industrial-cumbica",
-      "bairro": "Parque Industrial Cumbica"
+      "bairro": "Parque Industrial Cumbica",
+      "match_slugs": []
     },
     {
       "slug": "parque-renato-maia",
-      "bairro": "Parque Renato Maia"
+      "bairro": "Parque Renato Maia",
+      "match_slugs": []
     },
     {
       "slug": "parque-santos-dumont",
-      "bairro": "Parque Santos Dumont"
+      "bairro": "Parque Santos Dumont",
+      "match_slugs": []
     },
     {
       "slug": "parque-sao-miguel",
-      "bairro": "Parque Sao Miguel"
+      "bairro": "Parque Sao Miguel",
+      "match_slugs": []
     },
     {
       "slug": "picanco",
       "bairro": "Picanco",
       "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
-      "renda_pc": 2253.34
+      "renda_pc": 2253.34,
+      "match_slugs": []
     },
     {
       "slug": "ponte-grande",
       "bairro": "Ponte Grande",
       "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
-      "renda_pc": 1924.84
+      "renda_pc": 1924.84,
+      "match_slugs": []
     },
     {
       "slug": "residencial-e-comercial-guarulhos",
-      "bairro": "Residencial E Comercial Guarulhos"
+      "bairro": "Residencial E Comercial Guarulhos",
+      "match_slugs": []
     },
     {
       "slug": "residencial-parque-cumbica",
-      "bairro": "Residencial Parque Cumbica"
+      "bairro": "Residencial Parque Cumbica",
+      "match_slugs": []
     },
     {
       "slug": "vila-adelaide-perella",
-      "bairro": "Vila Adelaide Perella"
+      "bairro": "Vila Adelaide Perella",
+      "match_slugs": []
     },
     {
       "slug": "vila-augusta",
       "bairro": "Vila Augusta",
       "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
-      "renda_pc": 2922.11
+      "renda_pc": 2922.11,
+      "match_slugs": []
     },
     {
       "slug": "vila-barros",
       "bairro": "Vila Barros",
       "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
-      "renda_pc": 1084.71
+      "renda_pc": 1084.71,
+      "match_slugs": []
     },
     {
       "slug": "vila-carmela-i",
-      "bairro": "Vila Carmela I"
+      "bairro": "Vila Carmela I",
+      "match_slugs": []
     },
     {
       "slug": "vila-das-bandeiras",
-      "bairro": "Vila Das Bandeiras"
+      "bairro": "Vila Das Bandeiras",
+      "match_slugs": []
     },
     {
       "slug": "vila-galvao",
       "bairro": "Vila Galvao",
       "renda_fonte": "data/processed/renda-bairro-by-ibge.json (IBGE Censo 2022)",
-      "renda_pc": 2532.11
+      "renda_pc": 2532.11,
+      "match_slugs": []
     },
     {
       "slug": "vila-itapoan",
-      "bairro": "Vila Itapoan"
+      "bairro": "Vila Itapoan",
+      "match_slugs": []
     },
     {
       "slug": "vila-izabel",
-      "bairro": "Vila Izabel"
+      "bairro": "Vila Izabel",
+      "match_slugs": []
     },
     {
       "slug": "vila-leonor",
-      "bairro": "Vila Leonor"
+      "bairro": "Vila Leonor",
+      "match_slugs": []
     },
     {
       "slug": "vila-milton",
-      "bairro": "Vila Milton"
+      "bairro": "Vila Milton",
+      "match_slugs": []
     },
     {
       "slug": "vila-miriam",
-      "bairro": "Vila Miriam"
+      "bairro": "Vila Miriam",
+      "match_slugs": []
     },
     {
       "slug": "vila-nova-bonsucesso",
-      "bairro": "Vila Nova Bonsucesso"
+      "bairro": "Vila Nova Bonsucesso",
+      "match_slugs": []
     },
     {
       "slug": "vila-nova-cumbica",
-      "bairro": "Vila Nova Cumbica"
+      "bairro": "Vila Nova Cumbica",
+      "match_slugs": []
     },
     {
       "slug": "vila-paraiso",
-      "bairro": "Vila Paraiso"
+      "bairro": "Vila Paraiso",
+      "match_slugs": []
     },
     {
       "slug": "vila-pedro-moreira",
-      "bairro": "Vila Pedro Moreira"
+      "bairro": "Vila Pedro Moreira",
+      "match_slugs": []
     },
     {
       "slug": "vila-progresso",
-      "bairro": "Vila Progresso"
+      "bairro": "Vila Progresso",
+      "match_slugs": []
     },
     {
       "slug": "vila-renata",
-      "bairro": "Vila Renata"
+      "bairro": "Vila Renata",
+      "match_slugs": []
     },
     {
       "slug": "vila-rosalia",
-      "bairro": "Vila Rosalia"
+      "bairro": "Vila Rosalia",
+      "match_slugs": []
     },
     {
       "slug": "vila-sao-joao",
-      "bairro": "Vila Sao Joao"
+      "bairro": "Vila Sao Joao",
+      "match_slugs": []
     },
     {
       "slug": "vila-sao-jorge",
-      "bairro": "Vila Sao Jorge"
+      "bairro": "Vila Sao Jorge",
+      "match_slugs": []
     },
     {
       "slug": "vila-sao-ricardo",
-      "bairro": "Vila Sao Ricardo"
+      "bairro": "Vila Sao Ricardo",
+      "match_slugs": []
     },
     {
       "slug": "vila-sirena",
-      "bairro": "Vila Sirena"
+      "bairro": "Vila Sirena",
+      "match_slugs": []
     },
     {
       "slug": "vila-vicentina",
-      "bairro": "Vila Vicentina"
+      "bairro": "Vila Vicentina",
+      "match_slugs": []
     }
   ]
 }
