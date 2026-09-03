@@ -33,6 +33,21 @@ import keras
 import numpy as np
 import tensorflow as tf
 
+# Seed padrao do projeto. Sem seed fixa, `glorot_uniform` sorteia pesos novos a
+# cada import e `report()` vira ruido: medido 0.1023-0.8310 de score na MESMA
+# entidade, cruzando o limiar 0.66 em 3 de 12 execucoes. Ou seja, o relatorio
+# afirmava "viavel" por sorteio. Ver set_seed() / train_reasoner().
+DEFAULT_SEED = 20260903
+
+
+def set_seed(seed: int = DEFAULT_SEED) -> None:
+    """Fixa os RNG de random/NumPy/TF de uma vez (Keras 3).
+
+    Precisa rodar ANTES de instanciar o modelo — os pesos sao sorteados no
+    build, entao semear depois nao torna o `report()` reprodutivel.
+    """
+    keras.utils.set_random_seed(seed)
+
 
 # ----------------------------------------------------------------------------
 # 1. Base de conhecimento tensorizada
@@ -220,9 +235,19 @@ class RuleBank(keras.layers.Layer):
         self.rules = rules
 
     def build(self, _) -> None:
-        n = max(len(self.rules), 1)
+        # Sem regras nao ha confianca a aprender. Criar a variavel assim mesmo
+        # (o antigo `max(len, 1)`) punha um peso treinavel que nenhuma loss
+        # tocava: o trainer municipal emitia
+        # "Gradients do not exist for variables ['rule_bank/rule_confidence']"
+        # a cada run, um alarme real afogado como ruido de rotina.
+        if not self.rules:
+            self.confidence = None
+            return
         self.confidence = self.add_weight(
-            name="rule_confidence", shape=(n,), initializer="ones", trainable=True,
+            name="rule_confidence",
+            shape=(len(self.rules),),
+            initializer="ones",
+            trainable=True,
         )
 
     def consistency_loss(
@@ -368,6 +393,52 @@ class ViabilityReasoner(keras.Model):
 
 
 # ----------------------------------------------------------------------------
+# 4b. Treino — obrigatorio antes de confiar em report()
+# ----------------------------------------------------------------------------
+def train_reasoner(
+    model: "ViabilityReasoner",
+    triples: Sequence[tuple[int, int, int]],
+    viab_targets: Sequence[int],
+    viab_labels: Sequence[float],
+    groundings: list | None = None,
+    steps: int = 200,
+    lr: float = 1e-2,
+) -> "ViabilityReasoner":
+    """Treino self-supervised curto que ESTRUTURA os embeddings.
+
+    Sem esta etapa `report()` le pesos glorot_uniform crus e o score e ruido —
+    nao um sinal de mercado. Chame sempre depois de `set_seed()` para que o
+    relatorio seja reprodutivel.
+
+    ATENCAO (leitura do resultado): `viab_labels` e supervisao direta. No toy
+    passamos savassi=1.0 / centro=0.0, entao o `rotulo=alta` de Savassi reflete
+    o rotulo que demos, nao evidencia de mercado. So vira evidencia quando os
+    labels vierem de dados reais (renda/IBGE/aluguel) num KG proprio.
+    """
+    pos = np.array(list(triples), dtype=np.int64)
+    targets = list(viab_targets)
+    labels = tf.constant(list(viab_labels), tf.float32)
+    opt = keras.optimizers.Adam(lr)
+    num_entities = model.kg.num_entities
+
+    for _ in range(steps):
+        neg = pos.copy()
+        neg[:, 2] = np.random.randint(0, num_entities, size=len(pos))
+        with tf.GradientTape() as tape:
+            H, _ = model.reason()
+            loss = model.kge_loss(H, pos, neg) + model.viability_loss(
+                H, targets, labels
+            )
+            if groundings:
+                loss += 0.1 * model.rules.consistency_loss(
+                    model.scorer, H, groundings
+                )
+        grads = tape.gradient(loss, model.trainable_variables)
+        opt.apply_gradients(zip(grads, model.trainable_variables))
+    return model
+
+
+# ----------------------------------------------------------------------------
 # 5. Exemplo mínimo (toy) — viabilidade de bairro para frete fitness
 # ----------------------------------------------------------------------------
 def _toy_demo() -> None:
@@ -388,31 +459,20 @@ def _toy_demo() -> None:
         (8, 4, 0), (9, 4, 1),            # gym x em savassi, gym y no centro
         (8, 3, 7),                       # gym x coberto por totalpass
     ]
+    set_seed()
     kg = KnowledgeGraph(entity2id, relation2id, triples)
     rules = [Rule(body=[0, 1], head=1, name="bairro_bh_herda_renda")]
 
     model = ViabilityReasoner(kg, embedding_dim=32, max_hops=2, rules=rules)
 
-    # Treino self-supervised curtinho só p/ estruturar embeddings (demo).
-    pos = np.array(triples, dtype=np.int64)
-    opt = keras.optimizers.Adam(1e-2)
-    labels = tf.constant([1.0, 0.0], tf.float32)  # savassi viável, centro não
-    targets = [0, 1]
-    for step in range(200):
-        neg = pos.copy()
-        neg[:, 2] = np.random.randint(0, kg.num_entities, size=len(pos))
-        with tf.GradientTape() as tape:
-            H, _ = model.reason()
-            loss = (
-                model.kge_loss(H, pos, neg)
-                + model.viability_loss(H, targets, labels)
-                + 0.1 * model.rules.consistency_loss(
-                    model.scorer, H,
-                    [(np.array([0, 1]), [np.array([2, 2])], np.array([3, 4]))],
-                )
-            )
-        grads = tape.gradient(loss, model.trainable_variables)
-        opt.apply_gradients(zip(grads, model.trainable_variables))
+    # labels supervisionados do toy: savassi viável, centro não.
+    train_reasoner(
+        model,
+        triples,
+        viab_targets=[0, 1],
+        viab_labels=[1.0, 0.0],
+        groundings=[(np.array([0, 1]), [np.array([2, 2])], np.array([3, 4]))],
+    )
 
     from pprint import pprint
 
