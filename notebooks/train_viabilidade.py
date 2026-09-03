@@ -31,7 +31,11 @@ import sys
 import numpy as np
 import tensorflow as tf
 
-from reasoning_neuron_viabilidade import KnowledgeGraph, ViabilityReasoner
+from reasoning_neuron_viabilidade import (
+    KnowledgeGraph,
+    ViabilityReasoner,
+    set_seed,
+)
 
 DEFAULT_JSON = "data/academia.train.json"
 AGGREGATORS = ("wellhub", "totalpass", "gurupass")
@@ -62,6 +66,65 @@ def _quartil_faixa(valores: np.ndarray) -> np.ndarray:
         else:
             out[i] = int(np.searchsorted(qs, x, side="right"))
     return out
+
+
+# ----------------------------------------------------------------------------
+# 1b. TensorBoard — instrumentacao opcional (--tb)
+# ----------------------------------------------------------------------------
+LOGDIR = "runs"
+
+
+_LOGDIR_ATUAL = ""
+
+
+def _tb_writer(nome: str):
+    import datetime
+
+    global _LOGDIR_ATUAL
+    stamp = datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
+    _LOGDIR_ATUAL = f"{LOGDIR}/{stamp}-{nome}"
+    return tf.summary.create_file_writer(_LOGDIR_ATUAL)
+
+
+def _tb_projector(logdir: str, H, kg, labels, city_ids, cidades) -> None:
+    """Embeddings das cidades para a aba Projector.
+
+    Grava o formato que o Projector espera: checkpoint TF + metadata.tsv com
+    uma linha de cabecalho e uma por vetor, na MESMA ordem do tensor.
+
+    O metadata leva nome, UF, regiao, gap e pattern — nao o codigo IBGE. Sao
+    as colunas pelas quais se colore a nuvem; so com o codigo a aba fica
+    ilegivel (numero de 7 digitos nao diz nada a quem olha).
+    """
+    import os
+
+    from tensorboard.plugins import projector
+
+    os.makedirs(logdir, exist_ok=True)
+    ids = [int(i) for i in city_ids]
+    # city_ids segue a ordem de `cidades` (ambos vem do mesmo loop em build_kg).
+    assert len(ids) == len(cidades), "ordem de city_ids e cidades divergiu"
+
+    with open(os.path.join(logdir, "metadata.tsv"), "w", encoding="utf-8") as f:
+        f.write("cidade\tuf\tregiao\tgap_agg\tpattern\trecomendada\n")
+        for i, c in enumerate(cidades):
+            nome = str(c.get("cidade") or c.get("ibge") or "?").replace("\t", " ")
+            f.write(
+                f"{nome}\t{c.get('uf','?')}\t{c.get('region','?')}\t"
+                f"{int(c.get('gap_agg') or 0)}\t{c.get('pattern','?')}\t"
+                f"{int(labels[i])}\n"
+            )
+
+    emb = tf.Variable(tf.gather(H, ids), name="cidades")
+    ckpt = tf.train.Checkpoint(embedding=emb)
+    ckpt.save(os.path.join(logdir, "embedding.ckpt"))
+
+    cfg = projector.ProjectorConfig()
+    e = cfg.embeddings.add()
+    # Nome que o plugin procura no checkpoint (sufixo fixo do Checkpoint API).
+    e.tensor_name = "embedding/.ATTRIBUTES/VARIABLE_VALUE"
+    e.metadata_path = "metadata.tsv"
+    projector.visualize_embeddings(logdir, cfg)
 
 
 # ----------------------------------------------------------------------------
@@ -171,7 +234,14 @@ def main(path: str = DEFAULT_JSON) -> None:
         sys.stdout.reconfigure(encoding="utf-8")  # console Windows = cp1252
     except Exception:
         pass
+    # `default_rng(42)` ja fixava split e negativos, mas NAO o init dos pesos
+    # (glorot_uniform le o RNG global do TF). Sem isto o AUC sob masking — o
+    # unico numero informativo deste experimento — variava entre execucoes:
+    # medido 0.904 / 0.912 / 0.923 nos mesmos dados.
+    set_seed()
     rng = np.random.default_rng(42)
+    usar_tb = "--tb" in sys.argv
+    writer = _tb_writer("viabilidade") if usar_tb else None
     cidades, rec_set = load_cidades(path)
     kg, city_ids, labels, feats, masked_rel = build_kg(cidades, rec_set)
     n = len(city_ids)
@@ -203,9 +273,23 @@ def main(path: str = DEFAULT_JSON) -> None:
         neg[:, 2] = rng.integers(0, kg.num_entities, size=len(pos))
         with tf.GradientTape() as tape:
             H, _ = model.reason()
-            loss = model.kge_loss(H, pos, neg) + model.viability_loss(H, ctr, ltr)
+            l_kge = model.kge_loss(H, pos, neg)
+            l_viab = model.viability_loss(H, ctr, ltr)
+            loss = l_kge + l_viab
         grads = tape.gradient(loss, model.trainable_variables)
         opt.apply_gradients(zip(grads, model.trainable_variables))
+
+        if writer is not None and step % 5 == 0:
+            s_va_step = tf.nn.sigmoid(
+                model.viability_logit(H, city_ids[va].astype(np.int64))
+            ).numpy()
+            with writer.as_default(step=step):
+                tf.summary.scalar("loss/total", float(loss))
+                tf.summary.scalar("loss/kge", float(l_kge))
+                tf.summary.scalar("loss/viabilidade", float(l_viab))
+                tf.summary.scalar("auc/held_out", float(auc(yva, s_va_step)))
+                tf.summary.histogram("embeddings/cidades", tf.gather(H, city_ids))
+                tf.summary.histogram("score/held_out", s_va_step)
 
     # AUC held-out sem masking
     H, _ = model.reason()
@@ -248,6 +332,62 @@ def main(path: str = DEFAULT_JSON) -> None:
     print(f"\nCheckpoint salvável via model.save_weights(). N={n} é pequeno — "
           f"tratar como scoring estruturado + explicabilidade, não deep learning.")
 
+    if writer is not None:
+        # Vazamento medido: `recomendacao` e identica a (gap_agg > 0) nas 645
+        # cidades. Vai para a aba Text junto dos numeros — quem abrir o
+        # dashboard tem de ler o AUC 1.000 ja com essa ressalva ao lado.
+        gap_raw = np.array([int(c.get("gap_agg") or 0) for c in cidades])
+        vazou = bool(((gap_raw > 0).astype(int) == labels).all())
+        with writer.as_default(step=0):
+            tf.summary.text(
+                "00_leia_primeiro",
+                "## Vazamento de label\n\n"
+                f"`recomendacao == (gap_agg > 0)`: **{vazou}** "
+                f"({int(((gap_raw > 0).astype(int) != labels).sum())} discordancias "
+                f"em {n} cidades).\n\n"
+                "O label E a feature. Por isso baseline e reasoner empatam em "
+                "AUC 1.000 — a tarefa e trivial, nao ha valor relacional sendo "
+                "medido. **O unico numero informativo aqui e o AUC sob masking**, "
+                "onde as arestas de renda e gap sao escondidas.\n\n"
+                "Para medir de verdade, o label precisa vir de fora do eixo de "
+                "oferta: contrato fechado, academia aberta, receita.",
+            )
+            tf.summary.text(
+                "01_resultados",
+                f"| metrica | valor |\n|---|---|\n"
+                f"| AUC baseline flat | {auc_base:.3f} |\n"
+                f"| AUC reasoner | {auc_full:.3f} |\n"
+                f"| AUC reasoner (masking) | {auc_mask:.3f} |\n"
+                f"| delta vs baseline | {delta:+.3f} |\n"
+                f"| cidades | {n} |\n"
+                f"| positivos | {int(labels.sum())} "
+                f"({100 * labels.mean():.1f}%) |",
+            )
+            tf.summary.scalar("auc/baseline_flat", auc_base)
+            tf.summary.scalar("auc/reasoner", auc_full)
+            tf.summary.scalar("auc/reasoner_masking", auc_mask)
+            # PR curve pede labels booleanos + predicoes no held-out.
+            try:
+                from tensorboard.plugins.pr_curve import summary as pr_summary
+
+                tf.summary.experimental.write_raw_pb(
+                    pr_summary.pb(
+                        "pr/held_out",
+                        yva.astype(bool),
+                        s_va.astype(np.float32),
+                        num_thresholds=127,
+                    ).SerializeToString(),
+                    step=0,
+                )
+            except Exception as exc:  # noqa: BLE001 — PR curve e acessorio
+                print(f"aviso: PR curve nao gravada ({exc})")
+        writer.flush()
+
+        _tb_projector(_LOGDIR_ATUAL, H, kg, labels, city_ids, cidades)
+        print(f"\nTensorBoard: tensorboard --logdir {LOGDIR}")
+
 
 if __name__ == "__main__":
-    main(sys.argv[1] if len(sys.argv) > 1 else DEFAULT_JSON)
+    # Flags nao sao caminho: sem isso "--tb" era lido como o JSON de entrada.
+    _args = [a for a in sys.argv[1:] if not a.startswith("-")]
+    main(_args[0] if _args else DEFAULT_JSON)
