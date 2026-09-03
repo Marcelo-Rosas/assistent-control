@@ -56,7 +56,7 @@ def test_sintetiza_audio_com_mime_coerente():
     out = jt.sintetizar_audio("Savassi sustenta a tese, senhor.")
     assert out.data, "áudio vazio"
     assert out.content_type in MIMES_VALIDOS, out.content_type
-    assert out.backend in {"edge", "piper", "sapi"}, out.backend
+    assert out.backend in {"eleven", "edge", "piper", "sapi"}, out.backend
 
     if out.content_type == "audio/wav":
         # WAV tem header inspecionável: confere que não é silêncio.
@@ -86,10 +86,11 @@ def test_texto_vazio_e_erro_explicito():
 def test_backend_forcado_respeitado(monkeypatch):
     """`JARVIS_TTS_BACKEND` fixa o backend — é como se diagnostica qual falhou."""
     jt = _load()
-    for bk in ("edge", "piper", "sapi"):
+    for bk in ("eleven", "edge", "piper", "sapi"):
         monkeypatch.setenv("JARVIS_TTS_BACKEND", bk)
+        # Reload env-sensitive checks: disponivel() lê os.environ live
         if not jt.disponivel():
-            continue  # backend ausente nesta máquina
+            continue
         out = jt.sintetizar_audio("teste")
         assert out.backend == bk, f"pediu {bk}, veio {out.backend}"
         assert out.content_type in MIMES_VALIDOS
@@ -99,6 +100,7 @@ def test_cascade_cai_para_o_proximo(monkeypatch):
     """Backend indisponível não pode emudecer: o cascade tenta o seguinte."""
     jt = _tts_ou_skip()
     monkeypatch.setenv("JARVIS_TTS_BACKEND", "auto")
+    monkeypatch.setattr(jt, "_eleven_ok", lambda: False)
     monkeypatch.setattr(jt, "_edge_ok", lambda: False)
     out = jt.sintetizar_audio("teste de queda")
     assert out.backend in {"piper", "sapi"}, out.backend
@@ -109,4 +111,11 @@ def test_vozes_disponiveis_sao_qualificadas():
     """Cada voz vem prefixada pelo backend — "faber" sozinho seria ambíguo."""
     jt = _load()
     for v in jt.vozes_disponiveis():
-        assert v == "sapi" or v.startswith(("edge:", "piper:")), v
+        assert v == "sapi" or v.startswith(("eleven:", "edge:", "piper:")), v
+
+
+def test_eleven_sem_chave_nao_quebra(monkeypatch):
+    jt = _load()
+    monkeypatch.delenv("ELEVENLABS_API_KEY", raising=False)
+    monkeypatch.setenv("JARVIS_TTS_BACKEND", "eleven")
+    assert jt.disponivel() is False

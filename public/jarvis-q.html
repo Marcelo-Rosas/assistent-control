@@ -1037,11 +1037,9 @@
         return out;
       }
 
-      /* ── voz neural local (Piper) ──
-         O servidor sintetiza e devolve WAV. Preferido sobre a Web Speech API
-         porque as unicas vozes pt-BR desta maquina sao SAPI5 legadas. Se o
-         /health disser que nao ha TTS, ou a requisicao falhar, caimos para a
-         Web Speech sem interromper a conversa. */
+      /* ── voz neural no server (Antonio edge-tts → Piper → SAPI) ──
+         Preferido sobre Web Speech (Maria SAPI robótica). /tts e /speak
+         devolvem MP3 (edge) ou WAV. Falha → Web Speech. */
       var ttsLocal = false;      /* definido pelo /health */
       var audioAtual = null;
 
@@ -1053,8 +1051,8 @@
         }
       }
 
-      async function speakPiper(text) {
-        var res = await fetch(API + "/tts", {
+      async function speakServer(text) {
+        var res = await fetch(API + "/speak", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ texto: text }),
@@ -1081,11 +1079,10 @@
         stopAudio();
         if (ttsLocal) {
           setState("speaking", "Falando…");
-          speakPiper(text)
+          speakServer(text)
             .then(function () { setState("ready", "Pronto"); })
             .catch(function () {
-              /* Falha do Piper nao pode emudecer o HUD: repassa para o
-                 sintetizador do navegador. */
+              /* Falha do server nao pode emudecer o HUD: Web Speech. */
               ttsLocal = false;
               speakWebSpeech(text);
             });
@@ -1372,7 +1369,15 @@
             /* Decide o caminho de voz UMA vez, no boot, em vez de descobrir
                por falha no meio da primeira fala. */
             ttsLocal = !!d.tts;
-            var voz = ttsLocal ? " · voz local" : "";
+            var voz = "";
+            if (ttsLocal) {
+              var pref = String(d.tts_prefer || "");
+              if (pref.indexOf("eleven") === 0) voz = " · ElevenLabs";
+              else if (pref.indexOf("Antonio") >= 0 ||
+                (d.vozes || []).some(function (v) { return String(v).indexOf("Antonio") >= 0; }))
+                voz = " · Antonio";
+              else voz = " · voz server";
+            }
             apiStatus.textContent =
               "API ok · " + (location.host || "127.0.0.1:8765") + voz;
             apiStatus.className = "api-foot ok";

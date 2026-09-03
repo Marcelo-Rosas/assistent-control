@@ -122,10 +122,23 @@ class JarvisQHandler(BaseHTTPRequestHandler):
                     "service": "jarvis-q",
                     "tts": tts_ok,
                     "vozes": jarvis_tts.vozes_disponiveis() if tts_ok else [],
-                    "tts_prefer": "edge:pt-BR-AntonioNeural",
+                    "tts_prefer": (
+                        f"eleven:{os.environ.get('ELEVENLABS_VOICE_ID', 'library')}"
+                        if (jarvis_tts and getattr(jarvis_tts, "_eleven_ok", lambda: False)())
+                        else "edge:pt-BR-AntonioNeural"
+                    ),
                     "tts_backend": (
                         jarvis_tts.last_backend()
                         if tts_ok and hasattr(jarvis_tts, "last_backend")
+                        else None
+                    ),
+                    # `tts_prefer` e o que o cascade usaria AGORA (primeira voz
+                    # da lista), enquanto `tts_backend` e quem atendeu por
+                    # ultimo. O HUD rotula o rodape com o primeiro: no boot,
+                    # antes de qualquer fala, so a preferencia existe.
+                    "tts_prefer": (
+                        (jarvis_tts.vozes_disponiveis() or [None])[0]
+                        if tts_ok
                         else None
                     ),
                 },
