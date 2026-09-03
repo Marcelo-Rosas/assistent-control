@@ -17,3 +17,6 @@ data/raw/Receita/*.headers.txt
 data/processed/receita-cnae-*.csv
 data/processed/receita-cnae-*.json
 data/raw/*-brasil-all.json 
+
+# TotalPass enriched (134 MB, 30k JSONs por academia) — lar = disco local / Supabase Storage
+data/processed/totalpass-enriched/
