@@ -149,7 +149,7 @@ async function main(): Promise<void> {
     version: '2' as const,
     generated_at: new Date().toISOString(),
     provider: 'cep' as const,
-    stats: { total: 0, resolved: 0, failed: 0 },
+    stats: { total: 0, resolved: 0, resolved_cep: 0, failed: 0 },
     by_gym_id: {},
     failures: [],
   };
@@ -252,7 +252,8 @@ async function main(): Promise<void> {
       const counts = countTpBairroIndex(existing);
       existing.stats = {
         total: counts.resolved_any + counts.failed,
-        resolved: counts.resolved_cep,
+        resolved: counts.resolved_any,
+        resolved_cep: counts.resolved_cep,
         failed: counts.failed,
       };
       existing.generated_at = new Date().toISOString();
@@ -270,7 +271,8 @@ async function main(): Promise<void> {
   const counts = countTpBairroIndex(existing);
   existing.stats = {
     total: counts.resolved_any + counts.failed,
-    resolved: counts.resolved_cep,
+    resolved: counts.resolved_any,
+    resolved_cep: counts.resolved_cep,
     failed: counts.failed,
   };
   existing.generated_at = new Date().toISOString();

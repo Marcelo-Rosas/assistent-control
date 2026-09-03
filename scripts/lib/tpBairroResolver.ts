@@ -52,7 +52,10 @@ export type TpBairroIndex = {
   provider: 'nominatim' | 'cep';
   stats: {
     total: number;
+    /** entradas com bairro resolvido, qualquer proveniencia (nominatim + CEP + cache) */
     resolved: number;
+    /** subconjunto de `resolved` com CEP valido (receita_cep / receita_logradouro_cep) */
+    resolved_cep: number;
     failed: number;
   };
   by_gym_id: Record<string, TpBairroResolved>;

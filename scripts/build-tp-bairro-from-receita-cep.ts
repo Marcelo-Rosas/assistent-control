@@ -52,7 +52,7 @@ async function main(): Promise<void> {
       version: '2',
       generated_at: new Date().toISOString(),
       provider: 'cep',
-      stats: { total: 0, resolved: 0, failed: 0 },
+      stats: { total: 0, resolved: 0, resolved_cep: 0, failed: 0 },
       by_gym_id: {},
       failures: [],
     } satisfies TpBairroIndex);
@@ -130,7 +130,8 @@ async function main(): Promise<void> {
   const counts = countTpBairroIndex(index);
   index.stats = {
     total: counts.resolved_any + index.failures.length,
-    resolved: counts.resolved_cep,
+    resolved: counts.resolved_any,
+    resolved_cep: counts.resolved_cep,
     failed: index.failures.length,
   };
   index.generated_at = new Date().toISOString();
