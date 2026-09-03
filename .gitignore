@@ -31,3 +31,10 @@ runs/
 # Bytecode Python
 __pycache__/
 *.pyc
+
+# Base comercial e dados da Receita — removidos do histórico (repo público).
+# Vivem no disco e no Supabase Storage; backup em ~/vectra-dados-fora-do-git.
+data/academia.train.json
+public/data/academia.train.json
+data/processed/receita-enriched-totalpass.csv
+data/processed/receita-kpis-*.json
