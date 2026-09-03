@@ -1,0 +1,54 @@
+{
+  "entity2id": {
+    "bairro:savassi": 0,
+    "bairro:centro": 1,
+    "cidade:bh": 2,
+    "renda:alta": 3,
+    "renda:media": 4,
+    "aluguel:alto": 5,
+    "aluguel:medio": 6,
+    "aggr:totalpass": 7,
+    "gym:x": 8,
+    "gym:y": 9
+  },
+  "relation2id": {
+    "pertence_a": 0,
+    "tem_renda": 1,
+    "tem_aluguel": 2,
+    "coberto_por": 3,
+    "localizado_em": 4
+  },
+  "triples": [
+    [0, 0, 2],
+    [1, 0, 2],
+    [0, 1, 3],
+    [1, 1, 4],
+    [0, 2, 5],
+    [1, 2, 6],
+    [8, 4, 0],
+    [9, 4, 1],
+    [8, 3, 7]
+  ],
+  "rules": [
+    {
+      "body": [0, 1],
+      "head": 1,
+      "name": "bairro_bh_herda_renda"
+    }
+  ],
+  "train": {
+    "_nota": "SUPERVISAO DIRETA, nao evidencia de mercado: os labels abaixo dizem ao modelo que Savassi e viavel e Centro nao. Com 2 exemplos o treino satura (1.0/0.0) e memoriza. Serve para tornar report() DETERMINISTICO e demonstravel; nao serve para concluir viabilidade real. KG real com labels de renda/IBGE/aluguel = spec proprio.",
+    "seed": 20260903,
+    "steps": 200,
+    "viab_targets": [0, 1],
+    "viab_labels": [1.0, 0.0],
+    "groundings": [
+      {
+        "regra": "bairro_bh_herda_renda",
+        "a": [0, 1],
+        "mids": [[2, 2]],
+        "b": [3, 4]
+      }
+    ]
+  }
+}
