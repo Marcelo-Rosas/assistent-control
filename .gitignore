@@ -16,3 +16,4 @@ data/raw/Receita/_*.html
 data/raw/Receita/*.headers.txt
 data/processed/receita-cnae-*.csv
 data/processed/receita-cnae-*.json
+data/raw/*-brasil-all.json 
