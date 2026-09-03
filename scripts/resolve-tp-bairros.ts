@@ -1,37 +1,45 @@
 /**
- * F2 — Resolve bairro TP via reverse geocode (Nominatim) lat/lng.
+ * F2 — Resolve bairro TP via CEP (Receita match → ViaCEP / BrasilAPI).
  *
  * Input:  data/raw/totalpass-brasil-all.json
  * Output: data/processed/tp-bairro-index.json
- * Cache:  data/processed/tp-bairro-geocode-cache.json
+ * CEP cache: data/processed/tp-cep-cache.json
  * Progress: data/processed/tp-bairro-resolve-progress.json
  *
  * Run:
  *   npm run resolve:tp-bairros
  *   npm run resolve:tp-bairros -- --uf=RS --limit=50
- *   npm run smoke:tp-bairro-geocode
+ *   npm run resolve:tp-bairros -- --only-failures
  */
 import fs from 'fs/promises';
 import path from 'path';
 import { cidadeKey } from './lib/academia-normalize.ts';
+import { loadTpReceitaCepMap } from './lib/tpReceitaCepMatch.ts';
 import {
-  loadGeocodeCache,
+  countTpBairroIndex,
+  isValidCepResolved,
   loadTpBairroIndex,
-  reverseGeocodeBairro,
-  saveGeocodeCache,
+  resolveTpBairroViaCep,
   saveTpBairroIndex,
   type TpBairroIndex,
-  type TpBairroResolved,
 } from './lib/tpBairroResolver.ts';
+import { loadCepCache, saveCepCache, loadLogradouroCache, saveLogradouroCache } from './lib/tpCepResolver.ts';
 
 type ListGym = {
   id: string;
   attributes?: {
+    name?: string;
+    slug?: string;
+    full_address?: string;
     location?: { lat?: number; lng?: number };
     municipios_busca?: string[];
     municipios_relacionados?: string[];
     uf?: string;
   };
+};
+
+type EnrichedRecord = {
+  detail?: { endereco?: string };
 };
 
 type ProgressState = {
@@ -47,20 +55,22 @@ const INDEX_PATH =
   process.env.INDEX_PATH || path.join(ROOT, 'data/processed/tp-bairro-index.json');
 const PROGRESS_PATH =
   process.env.PROGRESS_PATH || path.join(ROOT, 'data/processed/tp-bairro-resolve-progress.json');
+const ENRICH_DIR =
+  process.env.OUTPUT_DIR || path.join(ROOT, 'data/processed/totalpass-enriched/by-id');
 const DELAY_MS = Number(process.env.DELAY_MS || 1100);
 const LIMIT_ARG = process.argv.find((a) => a.startsWith('--limit='))?.split('=')[1];
 const LIMIT = Number(process.env.LIMIT || LIMIT_ARG || 0);
 const CHECKPOINT_EVERY = Number(process.env.CHECKPOINT_EVERY || 50);
 const UF_ARG = process.argv.find((a) => a.startsWith('--uf='))?.split('=')[1]?.toUpperCase() ?? null;
+const ONLY_FAILURES = process.argv.includes('--only-failures');
+const FORCE = process.argv.includes('--force');
 
 function sleep(ms: number): Promise<void> {
   return new Promise((r) => setTimeout(r, ms));
 }
 
 function gymUf(g: ListGym): string | null {
-  const uf = g.attributes?.uf?.trim().toUpperCase();
-  if (uf) return uf;
-  return null;
+  return g.attributes?.uf?.trim().toUpperCase() ?? null;
 }
 
 function gymCoords(g: ListGym): { lat: number; lng: number } | null {
@@ -93,9 +103,22 @@ async function saveProgress(state: ProgressState): Promise<void> {
   await fs.rename(tmp, PROGRESS_PATH);
 }
 
+async function loadDetailAddress(gymId: string): Promise<string | null> {
+  try {
+    const raw = await fs.readFile(path.join(ENRICH_DIR, `${gymId}.json`), 'utf8');
+    const rec = JSON.parse(raw) as EnrichedRecord;
+    return rec.detail?.endereco?.trim() || null;
+  } catch {
+    return null;
+  }
+}
+
 async function main(): Promise<void> {
-  console.log(`Resolve TP bairros (Nominatim)${UF_ARG ? ` UF=${UF_ARG}` : ''}`);
+  console.log(`Resolve TP bairros (CEP)${UF_ARG ? ` UF=${UF_ARG}` : ''}${ONLY_FAILURES ? ' only-failures' : ''}`);
   console.log(`DELAY_MS=${DELAY_MS} LIMIT=${LIMIT || '∞'} CHECKPOINT_EVERY=${CHECKPOINT_EVERY}\n`);
+
+  const receitaCepMap = await loadTpReceitaCepMap();
+  console.log(`Receita match alta → CEP: ${receitaCepMap.size} tp_ids\n`);
 
   const raw = JSON.parse(await fs.readFile(INPUT_PATH, 'utf8')) as { data?: ListGym[] };
   let gyms = (raw.data ?? []).filter((g) => g?.id && gymCoords(g));
@@ -119,22 +142,35 @@ async function main(): Promise<void> {
   }
 
   const progress = await loadProgress();
-  const completed = new Set(progress.completed);
-  const cache = await loadGeocodeCache();
+  const completed = new Set(FORCE ? [] : progress.completed);
+  const cepCache = await loadCepCache();
+  const logradouroCache = await loadLogradouroCache();
   const existing = (await loadTpBairroIndex(INDEX_PATH)) ?? {
-    version: '1' as const,
+    version: '2' as const,
     generated_at: new Date().toISOString(),
-    provider: 'nominatim' as const,
+    provider: 'cep' as const,
     stats: { total: 0, resolved: 0, failed: 0 },
     by_gym_id: {},
     failures: [],
   };
 
-  let pending = gyms.filter((g) => !completed.has(g.id));
+  existing.version = '2';
+  existing.provider = 'cep';
+
+  const failureIds = new Set((existing.failures ?? []).map((f) => f.gym_id));
+
+  let pending = gyms.filter((g) => {
+    if (ONLY_FAILURES && !failureIds.has(g.id)) return false;
+    if (!FORCE && existing.by_gym_id[g.id] && isValidCepResolved(existing.by_gym_id[g.id]!)) {
+      return false;
+    }
+    return true;
+  });
+
   if (LIMIT > 0) pending = pending.slice(0, LIMIT);
 
   console.log(
-    `Com coords: ${gyms.length} · já ok: ${completed.size} · pending: ${pending.length}\n`,
+    `Com coords: ${gyms.length} · receita_cep map: ${receitaCepMap.size} · pending: ${pending.length}\n`,
   );
 
   let sinceCheckpoint = 0;
@@ -142,36 +178,68 @@ async function main(): Promise<void> {
   let fail = 0;
 
   for (let i = 0; i < pending.length; i++) {
-    const gym = pending[i];
+    const gym = pending[i]!;
     const coords = gymCoords(gym)!;
-    console.log(`[${i + 1}/${pending.length}] ${gym.id.slice(0, 8)}… ${coords.lat},${coords.lng}`);
+    const receitaHit = receitaCepMap.get(gym.id);
+    const detailAddress = await loadDetailAddress(gym.id);
+    const listAddress = gym.attributes?.full_address ?? null;
 
+    console.log(
+      `[${i + 1}/${pending.length}] ${gym.attributes?.name ?? gym.id.slice(0, 8)}…` +
+        `${receitaHit ? ' [receita_cep]' : ''}`,
+    );
+
+    let hadCache = false;
     try {
-      const resolved = await reverseGeocodeBairro(coords.lat, coords.lng, { cache });
-      if (resolved) {
-        existing.by_gym_id[gym.id] = { ...resolved, source: 'nominatim' };
-        console.log(`  OK bairro=${resolved.bairro} (${resolved.bairro_slug})`);
+      const cepDigits = receitaHit?.cep.replace(/\D/g, '') ?? null;
+      hadCache = Boolean(
+        cepDigits && cepCache[`cep:${cepDigits}`] && 'bairro' in cepCache[`cep:${cepDigits}`]!,
+      );
+
+      const resolved = await resolveTpBairroViaCep({
+        gymId: gym.id,
+        lat: coords.lat,
+        lng: coords.lng,
+        receitaHit,
+        listAddress,
+        detailAddress,
+        cepCache,
+        logradouroCache,
+      });
+
+      existing.failures = (existing.failures ?? []).filter((f) => f.gym_id !== gym.id);
+
+      if (resolved && isValidCepResolved(resolved)) {
+        existing.by_gym_id[gym.id] = resolved;
+        console.log(
+          `  OK cep=${resolved.cep} bairro=${resolved.bairro} (${resolved.bairro_slug}) source=${resolved.source}`,
+        );
         ok += 1;
+        progress.failed = progress.failed.filter((f) => f.gym_id !== gym.id);
       } else {
+        const err = receitaHit || detailAddress || listAddress ? 'cep_lookup_fail' : 'sem_cep';
         existing.failures.push({
           gym_id: gym.id,
           lat: coords.lat,
           lng: coords.lng,
-          error: 'sem_bairro_nominatim',
+          error: err,
         });
-        progress.failed.push({ gym_id: gym.id, error: 'sem_bairro_nominatim' });
+        progress.failed = progress.failed.filter((f) => f.gym_id !== gym.id);
+        progress.failed.push({ gym_id: gym.id, error: err });
         fail += 1;
-        console.warn('  WARN sem bairro no endereço Nominatim');
+        console.warn(`  FAIL ${err}`);
       }
       completed.add(gym.id);
     } catch (err) {
       const message = err instanceof Error ? err.message : String(err);
+      existing.failures = (existing.failures ?? []).filter((f) => f.gym_id !== gym.id);
       existing.failures.push({
         gym_id: gym.id,
         lat: coords.lat,
         lng: coords.lng,
         error: message,
       });
+      progress.failed = progress.failed.filter((f) => f.gym_id !== gym.id);
       progress.failed.push({ gym_id: gym.id, error: message });
       fail += 1;
       console.warn(`  ERRO: ${message}`);
@@ -181,38 +249,42 @@ async function main(): Promise<void> {
     sinceCheckpoint += 1;
 
     if (sinceCheckpoint >= CHECKPOINT_EVERY) {
+      const counts = countTpBairroIndex(existing);
       existing.stats = {
-        total: completed.size,
-        resolved: Object.keys(existing.by_gym_id).length,
-        failed: existing.failures.length,
+        total: counts.resolved_any + counts.failed,
+        resolved: counts.resolved_cep,
+        failed: counts.failed,
       };
       existing.generated_at = new Date().toISOString();
-      await saveGeocodeCache(cache);
+      await saveCepCache(cepCache);
+      await saveLogradouroCache(logradouroCache);
       await saveTpBairroIndex(INDEX_PATH, existing);
       await saveProgress(progress);
       sinceCheckpoint = 0;
       console.log(`  💾 checkpoint resolved=${existing.stats.resolved}`);
     }
 
-    if (i < pending.length - 1) await sleep(DELAY_MS);
+    if (i < pending.length - 1 && !hadCache) await sleep(DELAY_MS);
   }
 
+  const counts = countTpBairroIndex(existing);
   existing.stats = {
-    total: completed.size,
-    resolved: Object.keys(existing.by_gym_id).length,
-    failed: existing.failures.length,
+    total: counts.resolved_any + counts.failed,
+    resolved: counts.resolved_cep,
+    failed: counts.failed,
   };
   existing.generated_at = new Date().toISOString();
-  await saveGeocodeCache(cache);
+  await saveCepCache(cepCache);
+  await saveLogradouroCache(logradouroCache);
   await saveTpBairroIndex(INDEX_PATH, existing);
   await saveProgress(progress);
 
   console.log('\n=== Resumo ===');
   console.log(`OK nesta rodada: ${ok}`);
   console.log(`Falhas nesta rodada: ${fail}`);
-  console.log(`Total resolved index: ${existing.stats.resolved}`);
+  console.log(`Total resolved CEP: ${counts.resolved_cep} · legacy+CEP: ${counts.resolved_any}`);
   console.log(`Index: ${INDEX_PATH}`);
-  console.log(`Cache: data/processed/tp-bairro-geocode-cache.json`);
+  console.log(`CEP cache: data/processed/tp-cep-cache.json`);
 }
 
 main().catch((err) => {
