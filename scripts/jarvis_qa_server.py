@@ -64,17 +64,28 @@ class JarvisQHandler(BaseHTTPRequestHandler):
             self._json(400, {"ok": False, "error": 'campo "texto" obrigatório'})
             return
         voz = data.get("voz") if isinstance(data, dict) else None
+        voz = voz if isinstance(voz, str) else None
         try:
-            wav = jarvis_tts.sintetizar(texto.strip(), voz if isinstance(voz, str) else None)
+            # O backend escolhido decide o formato: edge-tts devolve MP3,
+            # Piper e SAPI devolvem WAV. Anunciar "audio/wav" para todos
+            # deixava o Content-Type mentindo sobre metade dos casos.
+            if hasattr(jarvis_tts, "sintetizar_audio"):
+                out = jarvis_tts.sintetizar_audio(texto.strip(), voz)
+                audio, mime, backend = out.data, out.content_type, out.backend
+            else:  # modulo antigo, so WAV
+                audio = jarvis_tts.sintetizar(texto.strip(), voz)
+                mime, backend = "audio/wav", "piper"
         except Exception as exc:  # noqa: BLE001 — local debug
             self._json(500, {"ok": False, "error": str(exc)})
             return
         self.send_response(200)
-        self.send_header("Content-Type", "audio/wav")
-        self.send_header("Content-Length", str(len(wav)))
+        self.send_header("Content-Type", mime)
+        self.send_header("Content-Length", str(len(audio)))
+        self.send_header("X-Jarvis-TTS-Backend", backend)
         self.send_header("Cache-Control", "no-store")
+        self._cors()
         self.end_headers()
-        self.wfile.write(wav)
+        self.wfile.write(audio)
 
     def _json(self, code: int, payload: object) -> None:
         body = json.dumps(payload, ensure_ascii=False).encode("utf-8")
@@ -111,6 +122,12 @@ class JarvisQHandler(BaseHTTPRequestHandler):
                     "service": "jarvis-q",
                     "tts": tts_ok,
                     "vozes": jarvis_tts.vozes_disponiveis() if tts_ok else [],
+                    "tts_prefer": "edge:pt-BR-AntonioNeural",
+                    "tts_backend": (
+                        jarvis_tts.last_backend()
+                        if tts_ok and hasattr(jarvis_tts, "last_backend")
+                        else None
+                    ),
                 },
             )
             return
@@ -125,7 +142,8 @@ class JarvisQHandler(BaseHTTPRequestHandler):
 
     def do_POST(self) -> None:  # noqa: N802
         path = urlparse(self.path).path
-        if path == "/tts":
+        # /speak = alias de /tts (HUD e docs)
+        if path in ("/tts", "/speak"):
             self._handle_tts()
             return
         if path != "/ask":
@@ -170,16 +188,24 @@ def _aquecer() -> None:
         print(f"aviso: reasoner nao aqueceu ({exc})", flush=True)
     if jarvis_tts is not None and jarvis_tts.disponivel():
         try:
+            # Nao referenciar constante de voz: o modulo e um cascade e o nome
+            # da voz depende do backend que atender. Quem respondeu so se sabe
+            # DEPOIS de sintetizar.
             jarvis_tts.sintetizar("Pronto.")
-            print(f"voz local pronta ({jarvis_tts.DEFAULT_VOICE})", flush=True)
+            usado = (
+                jarvis_tts.last_backend()
+                if hasattr(jarvis_tts, "last_backend")
+                else "?"
+            )
+            print(f"voz pronta (backend={usado})", flush=True)
         except Exception as exc:  # noqa: BLE001
-            print(f"aviso: voz local nao aqueceu ({exc})", flush=True)
+            print(f"aviso: voz nao aqueceu ({exc})", flush=True)
 
 
 def main() -> int:
     server = ThreadingHTTPServer((HOST, PORT), JarvisQHandler)
     print(f"JARVIS-Q listening on http://{HOST}:{PORT}/", flush=True)
-    print("POST /ask  POST /tts  GET /health  UI /", flush=True)
+    print("POST /ask  POST /tts|/speak  GET /health  UI /", flush=True)
     _aquecer()
     try:
         server.serve_forever()

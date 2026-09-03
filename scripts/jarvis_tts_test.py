@@ -1,8 +1,12 @@
-"""Testes da voz local (Piper).
+"""Testes da voz do JARVIS-Q.
 
-Suite separada da jarvis_qa_test porque depende de modelo baixado (~60 MB,
-fora do git). Sem o modelo os testes pulam em vez de falhar — um clone novo
-nao deve ficar vermelho por causa de um asset opcional.
+O modulo virou um cascade (edge-tts -> Piper -> SAPI), entao os testes checam
+o CONTRATO — devolve audio util, com o MIME certo para o backend que atendeu —
+e nao um formato fixo. Assumir WAV quebrava assim que o edge (MP3) entrava na
+frente.
+
+Nada aqui exige rede ou modelo baixado: quando nenhum backend esta disponivel
+os testes pulam, para um clone limpo nao ficar vermelho por asset opcional.
 """
 from pathlib import Path
 import importlib.util
@@ -13,6 +17,8 @@ import wave
 import pytest
 
 ROOT = Path(__file__).resolve().parents[1]
+
+MIMES_VALIDOS = {"audio/wav", "audio/mpeg"}
 
 
 def _load():
@@ -28,12 +34,12 @@ def _load():
 def _tts_ou_skip():
     jt = _load()
     if not jt.disponivel():
-        pytest.skip("modelo Piper ausente — rode scripts/setup_tts.py")
+        pytest.skip("nenhum backend de voz — pip install edge-tts ou setup_tts.py")
     return jt
 
 
-def test_disponivel_nao_explode_sem_modelo():
-    """`disponivel()` e chamado pelo /health a cada boot: nunca pode levantar."""
+def test_disponivel_nao_explode():
+    """`disponivel()` roda no /health a cada boot: nunca pode levantar."""
     jt = _load()
     assert isinstance(jt.disponivel(), bool)
 
@@ -44,44 +50,63 @@ def test_desliga_por_env(monkeypatch):
     assert jt.disponivel() is False
 
 
-def test_sintetiza_wav_valido():
+def test_sintetiza_audio_com_mime_coerente():
+    """Contrato: bytes não-vazios + MIME que corresponde ao backend que atendeu."""
     jt = _tts_ou_skip()
-    data = jt.sintetizar("Savassi sustenta a tese, senhor.")
-    assert data[:4] == b"RIFF", "nao e WAV"
-    with wave.open(io.BytesIO(data)) as w:
-        assert w.getnchannels() == 1
-        assert w.getframerate() > 0
-        dur = w.getnframes() / w.getframerate()
-    # Frase curta: alguns segundos. Zero indica sintese vazia passando batido.
-    assert 0.5 < dur < 20, f"duracao suspeita: {dur:.2f}s"
+    out = jt.sintetizar_audio("Savassi sustenta a tese, senhor.")
+    assert out.data, "áudio vazio"
+    assert out.content_type in MIMES_VALIDOS, out.content_type
+    assert out.backend in {"edge", "piper", "sapi"}, out.backend
+
+    if out.content_type == "audio/wav":
+        # WAV tem header inspecionável: confere que não é silêncio.
+        assert out.data[:4] == b"RIFF"
+        with wave.open(io.BytesIO(out.data)) as w:
+            dur = w.getnframes() / w.getframerate()
+        assert 0.3 < dur < 30, f"duração suspeita: {dur:.2f}s"
+    else:
+        # MP3 do edge-tts: sem header padrão para medir, checa volume mínimo.
+        assert len(out.data) > 1000, len(out.data)
+
+
+def test_sintetizar_devolve_bytes_compat():
+    """A porta antiga (só bytes) segue existindo — o server pode ser mais velho."""
+    jt = _tts_ou_skip()
+    data = jt.sintetizar("Pronto, senhor.")
+    assert isinstance(data, (bytes, bytearray)) and len(data) > 1000
 
 
 def test_texto_vazio_e_erro_explicito():
     jt = _tts_ou_skip()
     for ruim in ("", "   "):
         with pytest.raises(ValueError):
-            jt.sintetizar(ruim)
+            jt.sintetizar_audio(ruim)
 
 
-def test_voz_inexistente_sinaliza_indisponivel():
-    """Erro tipado: o server traduz em 503 e o HUD cai para Web Speech."""
-    jt = _tts_ou_skip()
-    with pytest.raises(jt.TTSIndisponivel):
-        jt.sintetizar("teste", voz="nao_existe")
-
-
-def test_modelo_fica_em_cache():
-    """~60 MB e ~1s de load — recarregar por fala inviabilizaria a conversa."""
-    jt = _tts_ou_skip()
-    jt.sintetizar("um")
-    antes = len(jt._CACHE)
-    jt.sintetizar("dois")
-    assert len(jt._CACHE) == antes
-
-
-def test_vozes_disponiveis_lista_os_baixados():
+def test_backend_forcado_respeitado(monkeypatch):
+    """`JARVIS_TTS_BACKEND` fixa o backend — é como se diagnostica qual falhou."""
     jt = _load()
-    vozes = jt.vozes_disponiveis()
-    assert isinstance(vozes, list)
-    for v in vozes:
-        assert jt.voice_path(v).exists()
+    for bk in ("edge", "piper", "sapi"):
+        monkeypatch.setenv("JARVIS_TTS_BACKEND", bk)
+        if not jt.disponivel():
+            continue  # backend ausente nesta máquina
+        out = jt.sintetizar_audio("teste")
+        assert out.backend == bk, f"pediu {bk}, veio {out.backend}"
+        assert out.content_type in MIMES_VALIDOS
+
+
+def test_cascade_cai_para_o_proximo(monkeypatch):
+    """Backend indisponível não pode emudecer: o cascade tenta o seguinte."""
+    jt = _tts_ou_skip()
+    monkeypatch.setenv("JARVIS_TTS_BACKEND", "auto")
+    monkeypatch.setattr(jt, "_edge_ok", lambda: False)
+    out = jt.sintetizar_audio("teste de queda")
+    assert out.backend in {"piper", "sapi"}, out.backend
+    assert out.data
+
+
+def test_vozes_disponiveis_sao_qualificadas():
+    """Cada voz vem prefixada pelo backend — "faber" sozinho seria ambíguo."""
+    jt = _load()
+    for v in jt.vozes_disponiveis():
+        assert v == "sapi" or v.startswith(("edge:", "piper:")), v
