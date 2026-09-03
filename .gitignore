@@ -20,3 +20,14 @@ data/raw/*-brasil-all.json
 
 # TotalPass enriched (134 MB, 30k JSONs por academia) — lar = disco local / Supabase Storage
 data/processed/totalpass-enriched/
+
+# Voz local: modelos Piper (~60 MB cada), áudio e capturas geradas.
+# Repor com: python scripts/setup_tts.py
+data/tts/
+
+# Logs de TensorBoard (regeráveis: python notebooks/train_viabilidade.py --tb)
+runs/
+
+# Bytecode Python
+__pycache__/
+*.pyc
