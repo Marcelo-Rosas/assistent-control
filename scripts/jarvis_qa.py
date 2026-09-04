@@ -418,6 +418,329 @@ def _base_label(toy: dict) -> str:
     return "toy(supervisionado)" if toy.get("train", {}).get("viab_labels") else "kg"
 
 
+def looks_like_penetracao(text: str) -> bool:
+    """Cobertura/penetração por bairro × agregador (TP/WH/GP)."""
+    q = unicodedata.normalize("NFKC", text).casefold()
+    tem_agreg = any(
+        k in q
+        for k in (
+            "totalpass",
+            "wellhub",
+            "gurupass",
+            "guru pass",
+            " tp ",
+            " wh ",
+            " gp ",
+            "vs wh",
+            "vs tp",
+            "vs gp",
+            "tp vs",
+            "wh vs",
+            "cobertura",
+            "penetra",
+            "aceitam",
+            "usam tp",
+            "usam wh",
+            "usam o total",
+            "usam total",
+            "usam well",
+            "usam guru",
+        )
+    )
+    # "tp vs wh" / "quantas usam" sem espaços laterais
+    tem_agreg = tem_agreg or bool(
+        re.search(r"\b(tp|wh|gp)\b", q)
+    ) or ("total pass" in q)
+    tem_bairro = "bairro" in q or bool(
+        re.search(r"\bno\s+[a-záàâãéêíóôõúç]{3,}", q)
+    )
+    tem_contagem = any(
+        k in q
+        for k in (
+            "quanta",
+            "quantos",
+            "qtd",
+            "número",
+            "numero",
+            "vs",
+            "versus",
+            "compar",
+            "penetra",
+            "cobertura",
+            "mercado",
+        )
+    )
+    return bool(tem_agreg and (tem_bairro or tem_contagem))
+
+
+# Cidades conhecidas (fold sem acento → display). Espelha jarvis_rag._CIDADE_CANON.
+_CIDADES_QUERY: tuple[tuple[str, str], ...] = (
+    ("sao bernardo do campo", "São Bernardo do Campo"),
+    ("rio de janeiro", "Rio de Janeiro"),
+    ("belo horizonte", "Belo Horizonte"),
+    ("porto alegre", "Porto Alegre"),
+    ("santo andre", "Santo André"),
+    ("sao paulo", "São Paulo"),
+    ("florianopolis", "Florianópolis"),
+    ("brasilia", "Brasília"),
+    ("campinas", "Campinas"),
+    ("guarulhos", "Guarulhos"),
+    ("curitiba", "Curitiba"),
+    ("salvador", "Salvador"),
+    ("fortaleza", "Fortaleza"),
+    ("recife", "Recife"),
+    ("goiania", "Goiânia"),
+    ("belem", "Belém"),
+    ("manaus", "Manaus"),
+    ("vitoria", "Vitória"),
+    ("santos", "Santos"),
+    ("niteroi", "Niterói"),
+)
+
+
+def _fold_txt(s: str) -> str:
+    s = unicodedata.normalize("NFD", s)
+    s = "".join(c for c in s if unicodedata.category(c) != "Mn")
+    return s.casefold()
+
+
+def extract_cidade_from_query(text: str) -> str | None:
+    """Extrai cidade: 'em Belo Horizonte', 'Paraíso São Paulo', trailing city."""
+    q = unicodedata.normalize("NFKC", text)
+    q_fold = _fold_txt(q)
+    # Preferir match mais longo (São Bernardo antes de Santo …).
+    for fold, display in sorted(_CIDADES_QUERY, key=lambda x: -len(x[0])):
+        # "em Cidade" / "na Cidade" / "de Cidade" ou cidade colada ao fim do bairro.
+        pat = rf"(?:(?:\bem|\bna|\bno)\s+)?\b{re.escape(fold)}\b"
+        if re.search(pat, q_fold):
+            return display
+    return None
+
+
+def _strip_cidade_do_bairro(cand: str, cidade: str | None) -> str | None:
+    """Remove sufixo de cidade/conectores: 'Paraíso São Paulo' → 'Paraíso'."""
+    c = cand.strip(" ,.?!:;")
+    if not c:
+        return None
+    if cidade:
+        city_fold = _fold_txt(cidade)
+        city_n = len(cidade.split())
+        words = c.split()
+        if len(words) >= city_n and _fold_txt(" ".join(words[-city_n:])) == city_fold:
+            words = words[:-city_n]
+            while words and words[-1].casefold().strip(",") in (
+                "em",
+                "na",
+                "no",
+                "de",
+                "da",
+                "do",
+            ):
+                words.pop()
+            c = " ".join(words).strip(" ,.?!:;")
+    if not c:
+        return None
+    if c.casefold() in ("brasil", "total", "mercado", "grafo", "bairro"):
+        return None
+    return c
+
+
+def extract_bairro_from_query(text: str) -> str | None:
+    """Extrai nome do bairro: 'no bairro X', 'bairro X', 'X em Cidade'."""
+    q = unicodedata.normalize("NFKC", text)
+    cidade = extract_cidade_from_query(q)
+
+    m = re.search(
+        r"\bbairro\s+([A-Za-zÀ-ÿ0-9][A-Za-zÀ-ÿ0-9\-']*(?:\s+[A-Za-zÀ-ÿ0-9\-']+){0,4})",
+        q,
+        flags=re.I,
+    )
+    if m:
+        got = _strip_cidade_do_bairro(m.group(1), cidade)
+        if got:
+            return got
+    m = re.search(
+        r"\bno\s+([A-Za-zÀ-ÿ][A-Za-zÀ-ÿ0-9\-']*(?:\s+[A-Za-zÀ-ÿ0-9\-']+){0,3})",
+        q,
+        flags=re.I,
+    )
+    if m:
+        got = _strip_cidade_do_bairro(m.group(1), cidade)
+        if got:
+            return got
+    # "Savassi em Belo Horizonte" / "cobertura TP Paraíso São Paulo"
+    if cidade:
+        q_fold = _fold_txt(q)
+        city_fold = _fold_txt(cidade)
+        idx = q_fold.find(city_fold)
+        if idx > 0:
+            before = q[:idx].rstrip(" ,.?!:;")
+            m2 = re.search(
+                r"([A-Za-zÀ-ÿ][A-Za-zÀ-ÿ0-9\-']*(?:\s+[A-Za-zÀ-ÿ0-9\-']+){0,3})\s*$",
+                before,
+            )
+            if m2:
+                got = _strip_cidade_do_bairro(m2.group(1), None)
+                if got and got.casefold() not in (
+                    "no",
+                    "na",
+                    "em",
+                    "do",
+                    "da",
+                    "de",
+                    "cobertura",
+                    "quantas",
+                    "usam",
+                    "totalpass",
+                    "wellhub",
+                    "gurupass",
+                ):
+                    return got
+    return None
+
+
+def _try_rag_penetracao(texto: str) -> AskResult | None:
+    """RAG-first: censo distinct TP/WH/GP (+ Receita) no bairro."""
+    try:
+        import jarvis_rag as jr
+    except ImportError:
+        return None
+    if not jr.penetracao_disponivel():
+        return None
+    bairro = extract_bairro_from_query(texto)
+    if not bairro:
+        return None
+    cidade = extract_cidade_from_query(texto)
+    # Ambíguo sem cidade: perguntar — não mesclar Brasil.
+    if not cidade and jr.bairro_ambiguo(bairro):
+        label = bairro.strip().title()
+        return {
+            "resposta": (
+                f"O bairro {label} existe em várias cidades. "
+                f"Qual cidade o senhor quer — por exemplo São Paulo ou Belo Horizonte?"
+            ),
+            "fala": "",
+            "modo": "rag",
+            "porque": "penetracao; geo_ambiguidade; pedir_cidade",
+            "fontes": [
+                "rag:penetracao",
+                f"bairro:{jr.normalize_bairro_slug(bairro)}",
+                "geo:ambiguidade",
+            ],
+            "contexto": {},
+        }
+    try:
+        agg = jr.contar_penetracao(bairro, cidade=cidade)
+    except jr.RagIndisponivel:
+        return None
+    except Exception:
+        return None
+    counts = agg.get("counts") or {}
+    if agg.get("geo_scope") == "ambiguidade":
+        fala = jr.narrar_penetracao(agg)
+        return {
+            "resposta": fala,
+            "fala": "",
+            "modo": "rag",
+            "porque": "penetracao; geo_ambiguidade; pedir_cidade",
+            "fontes": [
+                "rag:penetracao",
+                f"bairro:{agg.get('bairro_slug') or bairro}",
+                "geo:ambiguidade",
+            ],
+            "contexto": {},
+        }
+    if not any(int(counts.get(k) or 0) for k in ("totalpass", "wellhub", "gurupass", "receita")):
+        onde = bairro.strip().title()
+        if cidade:
+            onde = f"{onde} ({cidade})"
+        return {
+            "resposta": (
+                f"Não achei cobertura indexada no bairro {onde}, {{sr}}. "
+                f"Posso tentar outro bairro ou cruzar com o grafo depois."
+            ),
+            "fala": "",
+            "modo": "rag",
+            "porque": "penetracao; counts=0; bairro sem match",
+            "fontes": ["rag:penetracao", f"bairro:{jr.normalize_bairro_slug(bairro)}"],
+            "contexto": {},
+        }
+    fala = jr.narrar_penetracao(agg)
+    # TF é meio: oferta leve só quando há sinal de cobertura.
+    if any(int(counts.get(k) or 0) for k in ("totalpass", "wellhub", "gurupass")):
+        fala = fala.rstrip() + " Quer cruzar com renda ou aluguel no grafo?"
+    fontes = [
+        "rag:penetracao",
+        f"bairro:{agg.get('bairro_slug') or bairro}",
+        f"tp:{counts.get('totalpass', 0)}",
+        f"wh:{counts.get('wellhub', 0)}",
+        f"gp:{counts.get('gurupass', 0)}",
+        f"receita:{counts.get('receita', 0)}",
+    ]
+    if agg.get("cidade"):
+        fontes.append(f"cidade:{agg.get('cidade')}")
+    if agg.get("geo_scope"):
+        fontes.append(f"geo:{agg.get('geo_scope')}")
+    return {
+        "resposta": fala,
+        "fala": "",
+        "modo": "rag",
+        "porque": (
+            f"penetracao RAG-first; distinct por academia; "
+            f"tp={counts.get('totalpass')}; wh={counts.get('wellhub')}; "
+            f"gp={counts.get('gurupass')}; receita={counts.get('receita')}; "
+            f"geo={agg.get('geo_scope')}"
+        ),
+        "fontes": fontes,
+        "contexto": {},
+    }
+
+
+def _try_rag(texto: str) -> AskResult | None:
+    """Fonte RAG só quando grafo/playbook não fecharam. Nunca decide no lugar deles.
+
+    Retorna AskResult modo=rag ou None (cai na recusa). Falha de Ollama/Supabase
+    não vira erro pro usuário — vira silêncio e sem_match.
+    """
+    try:
+        import jarvis_rag as jr
+    except ImportError:
+        return None
+    if not jr.disponivel():
+        return None
+    try:
+        chunks = jr.buscar(texto)
+    except jr.RagIndisponivel:
+        return None
+    except Exception:
+        return None
+    if not chunks:
+        return None
+    fala = jr.narrar(chunks)
+    if not fala:
+        return None
+    top = chunks[0]
+    sim = float(top.get("similarity") or top.get("score") or 0)
+    cid = top.get("chunk_id") or top.get("id") or "?"
+    grupo = top.get("_grupo") or "?"
+    fontes = [f"chunk:{cid}", f"sim:{sim:.2f}", f"grupo:{grupo}"]
+    for c in chunks[1:]:
+        cid2 = c.get("chunk_id") or c.get("id")
+        if cid2:
+            fontes.append(f"chunk:{cid2}")
+    return {
+        "resposta": fala,
+        "fala": "",
+        "modo": "rag",
+        "porque": (
+            f"RAG (fonte); sim={sim:.3f}; grupo={grupo}; "
+            "não é fato do grafo"
+        ),
+        "fontes": fontes,
+        "contexto": {},
+    }
+
+
 def _recusa(resposta: str) -> AskResult:
     return {
         "resposta": resposta,
@@ -582,6 +905,12 @@ def _ask_raw(
     intent, ents = parse_intent(texto, names)
     faq = match_playbook(texto, faqs)
 
+    # --- RAG-first: penetração bairro × agregadores (antes do toy TF) ---
+    if looks_like_penetracao(texto):
+        pen = _try_rag_penetracao(texto)
+        if pen is not None:
+            return pen
+
     # --- step 1b: follow-up sobre a entidade do turno anterior ---
     # Sem isso o JARVIS oferecia "Cruzo com aluguel ou renda?" e respondia
     # "essa eu nao fecho" ao "sim" seguinte — oferta que o sistema nao honrava.
@@ -663,7 +992,7 @@ def _ask_raw(
             }
         return _recusa(
             "Estou sem TensorFlow e sem aba do playbook para essa pergunta, {sr}. "
-            "Peça o Projector, ou uma aba pelo nome."
+            "Reformule ou peça uma aba pelo nome."
         )
 
     # --- step 3: playbook + TF (only when intent is playbook_aba) ---
@@ -675,19 +1004,19 @@ def _ask_raw(
             "fontes": [f"playbook:#{faq.section_id}"],
         }
 
-    # Ensure reasoner when hybrid / rede paths need it
+    # Ensure reasoner when hybrid / rede paths need it.
+    # NÃO subir TF só porque a frase citou uma entidade do toy — senão
+    # "pilates na Savassi" paga 20s de reasoner antes do RAG (fonte).
     if reasoner is None and (
         any(r["name"].casefold() in q for r in toy.get("rules", []))
         or ("herda" in q and "renda" in q and ents)
         or intent in ("viabilidade", "relacao_kg")
-        or ents
     ):
         try:
             reasoner = _default_reasoner(toy)
         except ImportError:
             return _recusa(
-                "O motor de rede não subiu, {sr}. As abas do playbook seguem à disposição: "
-                "o Projector, por exemplo."
+                "O motor de rede não subiu, {sr}. As abas do playbook seguem à disposição."
             )
 
     # --- step 4: hybrid (wins over rede) ---
@@ -841,8 +1170,12 @@ def _ask_raw(
             "fontes": ["kg:triple"],
         }
 
-    # Unknown entity that looks like viabilidade
+    # Unknown entity that looks like viabilidade — tenta RAG antes de recusar
+    # (ex.: "pilates na Savassi" pode não estar no toy KG).
     if _looks_like_viabilidade(q) and not ents:
+        rag = _try_rag(texto)
+        if rag is not None:
+            return rag
         return _recusa(
             "Não localizei essa entidade no grafo, {sr}. Savassi, por exemplo, eu tenho."
         )
@@ -854,10 +1187,15 @@ def _ask_raw(
             f"Essa aba não consta, {{sr}}. Conheço estas: {sample}. Qual prefere?"
         )
 
-    # --- step 6: recusa ---
+    # --- step 6: RAG (fonte) → senão recusa ---
+    # Ordem: playbook/híbrido/rede já tentaram. RAG não sobrepõe veredito TF.
+    rag = _try_rag(texto)
+    if rag is not None:
+        return rag
+
     return _recusa(
-        "Essa eu não fecho, {sr}. Posso tratar do Projector, da viabilidade de "
-        "Savassi, ou de um bairro herdar renda. O que prefere?"
+        "Essa eu não fecho, {sr}. Posso buscar cobertura de agregador por bairro "
+        "ou uma aba do playbook pelo nome. O que prefere?"
     )
 
 

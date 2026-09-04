@@ -103,6 +103,53 @@ TTS/STT **não** no CI.
 - Desktop: mesmo `ask()`; STT Whisper; TTS Antonio com fallback Daniel.
 - Mobile: cliente HTTP na frente do mesmo `ask()`.
 
+## Addendum — RAG-first penetração (bairro × agregadores)
+
+Date: 2026-09-03  
+Status: **locked** (produto)
+
+### Papéis dos `*_GROUP_ID` (mesmos do GymSite/Eros)
+
+| Grupo | Papel |
+|-------|--------|
+| `RECEITA_GROUP_ID` | **Universo** de academias abertas (CNAE/RFB). Denominador de mercado no bairro quando disponível. |
+| `TOTALPASS` / `WELLHUB` / `GURUPASS` | **Cobertura** do agregador (quem aceita o plano). Numerador de penetração. |
+| `MERCADO` | Conteúdo/contexto; **não** entra no censo de penetração. |
+
+Cobertura ≠ universo: contar “academias no bairro X” = Receita (quando há chunks); contar “usam TP/WH/GP” = distinct no grupo do agregador.
+
+### Roteamento
+
+Perguntas de penetração / cobertura por bairro (“quantas usam TP vs WH vs GP no bairro X?”) → **RAG-first** (antes de TF toy / playbook genérico).  
+TF é **meio**, não face: após a resposta factual, oferecer cruzamento TF (renda/aluguel/pop) só quando útil.  
+Recusa default: sem pitch de demo toy (“Projector / Savassi viável / herda renda”).
+
+### Contagem (não confundir com top-k semântico)
+
+- `match_chunks` top-k = recuperação semântica; **não** é censo.
+- Contagem: PostgREST em `eros_knowledge_chunks` filtrado por `group_id` + `meta->>bairro_normalizado` (+ `meta->>cidade` quando houver), distinct por chave de academia (`cnpj` / `gym_id` / `nome_academia` / `source_ref`).
+- Normalização **única** (`bairro_filter_variants` / `cidade_filter_variants`): query → slug kebab (`paraiso`) **e** UPPER+espaço (`PARAISO`); cidade → canônico display (`São Paulo`) + variantes sem acento. Probe: metas usam `bairro_normalizado` + `cidade` (não há `cidade_normalizada`).
+- **Geo:** sem cidade e bairro ambíguo (`centro`, `paraiso`, …) → pedir cidade; **não** mesclar Brasil. Com cidade → filtrar os quatro grupos no mesmo escopo. `%` WH/Receita só se `mesmo_escopo` (cidade) e Receita ≥ cobertura.
+- Embeddings: Ollama **nativo** (`JARVIS_OLLAMA_URL` / `OLLAMA_EMBED_URL` → `http://localhost:11434`), nunca OpenAI-compat `.../v1`.
+- **GuruPass meta:** ingest deve gravar `meta.bairro_normalizado` (slug kebab, mesmo `normalizeBairro` do Wellhub / `normalize_bairro_slug` do JARVIS). Chunks antigos: `npx tsx scripts/backfill-gp-bairro-normalizado.ts` (dry-run) e `--apply` para gravar.
+- **TotalPass meta:** `ingest-totalpass-sp` **não** grava `bairro`/`bairro_normalizado`. Resolver CEP/Nominatim (`resolve:tp-bairros` → `tp-bairro-index.json`) e aplicar: `npx tsx scripts/backfill-tp-bairro-normalizado.ts` (dry-run) e `--apply`. Sem isso, penetração TP=0 em bairros só resolvidos no índice (ex. Pinheiros SP).
+- **Receita meta:** ingest deve gravar `meta.bairro_normalizado` em **UPPER+espaço** (`BELA VISTA`) + `cidade` canônica. Chunks com `bairro_normalizado` null (geo incompleta no RAG) mas CNPJ no parque RFB local: `npx tsx scripts/backfill-receita-meta-by-rfb.ts` (dry-run) e `--apply`. CNPJs ausentes do grupo: `npm run ingest:receita` (`scripts/ingest-receita-cnae.ts`, fonte RFB local; default dry-run + `MISSING_ONLY=1`; `--apply`; filtros `UF`/`MUNICIPIO`/`BAIRRO`; depois `npm run embed:receita`). Ex. Bela Vista SP: `UF=SP MUNICIPIO=7107 BAIRRO="Bela Vista" npm run ingest:receita -- --apply`. Nacional: sem filtros (lento). Não inventa denom: até o universo fechar, se max(TP,WH,GP) > Receita → prosa “universo parcial / cobertura vs censo”, sem % de mercado.
+
+### Narrativa
+
+Distinct counts TP/WH/GP (+ Receita se houver) + prosa curta: maior penetração, plano top se `meta` tiver.
+
+**Denom / % de mercado (locked):**
+
+| Condição | Comportamento |
+|----------|----------------|
+| `mesmo_escopo` e Receita ≥ max(TP,WH,GP) e WH>0 | Pode narrar WH % do universo Receita. |
+| `mesmo_escopo` e max(TP,WH,GP) > Receita | **Não** alegar % de mercado. Reportar counts crus; explicar universo parcial / gap CNPJ-RFB; opcional `cobertura vs censo: max/Receita`. |
+| Sem cidade / escopo nacional | % omitida (praças podem misturar). |
+| Receita = 0 | % omitida. |
+
+União CNPJ Receita∪agregadores como denom: **só** se `meta.cnpj` confiável nos dois lados; hoje agregadores tipicamente não têm — não implementar.
+
 ## Self-review
 
 - Sem TBD. `regra_fallback` só com TF morto + playbook. Playbook canônico = `public/playbook-tensorboard.html`. Viabilidade = `report()` 0.66/0.40; infer tripla 0.7. Recusa = `modo=regra` + `porque=sem_match`. Híbrido vence empate com rede. Fixture KG obrigatório.
