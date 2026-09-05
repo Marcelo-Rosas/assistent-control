@@ -120,7 +120,11 @@ Para cada gym TP (gym_id):
    source = 'receita_cep' | 'receita_logradouro_cep' | 'detail_cep' | ...
    registerAggregatorBairro + match_slugs (como hoje)
 
-5. Sem CEP ou lookup falhou → failures[] (não inventar)
+5. Sem CEP → failures[] `sem_cep`
+6. **CEP genérico (-000) sem bairro fino** (lookup vazio + F2.2 falhou ou só devolveu -000):
+   → `source=cep_municipio`, `bairro` = nome do **município**, `cep_geral=true`
+   → `nota`: "CEP geral do município (X/UF) — Correios não distingue bairro neste CEP"
+   → **não** inventa bairro de rua/parse/Nominatim
 ```
 
 ### Obter CEP via Receita (caminho principal)
@@ -158,13 +162,14 @@ Confiança do match endereço (`num+rua`, `addr_sim=100`) valida o CEP, não sub
 type TpBairroSource =
   | 'receita_cep'              // CEP RF específico
   | 'receita_logradouro_cep'   // CEP refinado F2.2 a partir de -000
+  | 'cep_municipio'            // CEP -000: unidade = município (cep_geral)
   | 'detail_cep'
   | 'viacep'
   | 'brasilapi'
   | 'cache';
 
 type TpBairroResolved = {
-  bairro: string;
+  bairro: string;        // bairro Correios; se cep_geral → nome do município
   bairro_slug: string;
   cep: string;           // 8 dígitos — CEP usado no lookup final (pode ≠ cep_rf)
   cep_rf?: string;       // CEP original Receita quando refinado
@@ -173,6 +178,10 @@ type TpBairroResolved = {
   lat: number;
   lng: number;
   resolved_at: string;
+  cep_geral?: boolean;
+  municipio?: string;
+  uf?: string;
+  nota?: string;
 };
 ```
 

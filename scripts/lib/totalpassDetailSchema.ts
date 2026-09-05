@@ -24,6 +24,87 @@ export type TotalPassDetailSchema = {
 type ModalityRef = { id: string; translated_name: string };
 type GymPlan = { categoria: string; plano_minimo: string; modality_ids: string[] };
 
+/** Amenity-like tokens that TP sometimes puts in `modalities`. Folded (PT, no accent). */
+export const TP_AMENITY_ALIASES: Record<string, string> = {
+  'area infantil': 'Espaço Kids',
+  'area infantil supervisada': 'Espaço Kids',
+  'area infantil supervisionada': 'Espaço Kids',
+  'espaco kids': 'Espaço Kids',
+  'espaco kid': 'Espaço Kids',
+  'banheiro infantil': 'Banheiro Infantil',
+  'vestiario infantil': 'Vestiário Infantil',
+  playground: 'Playground',
+  bercario: 'Berçário',
+  fraldario: 'Fraldário',
+};
+
+export function normalizeTpLabel(raw: string): string {
+  return String(raw ?? '').replace(/\s+/g, ' ').trim();
+}
+
+function foldPt(s: string): string {
+  return normalizeTpLabel(s)
+    .normalize('NFD')
+    .replace(/\p{M}/gu, '')
+    .toLowerCase();
+}
+
+function isSnakeCaseSlug(s: string): boolean {
+  return /^[a-z0-9]+(?:_[a-z0-9]+)+$/.test(s);
+}
+
+/** Prefers translated_name over snake_case `name` slug. */
+export function pickDisplayName(name?: string, translatedName?: string): string {
+  const translated = normalizeTpLabel(translatedName ?? '');
+  const slugOrName = normalizeTpLabel(name ?? '');
+  if (translated && !isSnakeCaseSlug(translated)) return translated;
+  if (slugOrName && !isSnakeCaseSlug(slugOrName)) return slugOrName;
+  return translated || slugOrName;
+}
+
+export function amenityCanonicalName(label: string): string | null {
+  const folded = foldPt(label);
+  if (!folded) return null;
+  if (TP_AMENITY_ALIASES[folded]) return TP_AMENITY_ALIASES[folded];
+  if (folded.startsWith('area infantil ')) return 'Espaço Kids';
+  return null;
+}
+
+function dedupeLabels(labels: string[]): string[] {
+  const seen = new Set<string>();
+  const out: string[] = [];
+  for (const raw of labels) {
+    const n = normalizeTpLabel(raw);
+    if (!n) continue;
+    const key = foldPt(n);
+    if (seen.has(key)) continue;
+    seen.add(key);
+    out.push(n);
+  }
+  return out;
+}
+
+/** Move amenity-like items from modalidades → comodidades (dedup). Sports stay. */
+export function remapAmenityLikeModalities(
+  modalidades: string[],
+  comodidades: string[],
+): { modalidades: string[]; comodidades: string[] } {
+  const kept: string[] = [];
+  const moved: string[] = [];
+  for (const raw of modalidades) {
+    const n = normalizeTpLabel(raw);
+    if (!n) continue;
+    const canon = amenityCanonicalName(n);
+    if (canon) moved.push(canon);
+    else kept.push(n);
+  }
+  const amenities = [
+    ...comodidades.map((c) => amenityCanonicalName(c) ?? normalizeTpLabel(c)),
+    ...moved,
+  ];
+  return { modalidades: dedupeLabels(kept), comodidades: dedupeLabels(amenities) };
+}
+
 function unescapeJs(s: string): string {
   try {
     return JSON.parse(`"${s}"`) as string;
@@ -47,9 +128,13 @@ function extractModalities(html: string): ModalityRef[] {
   if (!blockM) return [];
   const out: ModalityRef[] = [];
   for (const m of blockM[1].matchAll(
-    /\\"id\\":\\"(\d+)\\"[\s\S]*?\\"translated_name\\":\\"(.*?)\\"/g,
+    /\\"id\\":\\"(\d+)\\"([\s\S]*?)\\"translated_name\\":\\"(.*?)\\"/g,
   )) {
-    out.push({ id: m[1], translated_name: unescapeJs(m[2]) });
+    const rest = m[2];
+    const translated = unescapeJs(m[3]);
+    const nameM = rest.match(/\\"name\\":\\"(.*?)\\"/);
+    const slugName = nameM ? unescapeJs(nameM[1]) : undefined;
+    out.push({ id: m[1], translated_name: pickDisplayName(slugName, translated) });
   }
   return out;
 }
@@ -72,6 +157,10 @@ function extractGymPlans(html: string): GymPlan[] {
 function extractStructures(html: string): string[] {
   const m = html.match(/\\"structures\\":\[([\s\S]*?)\]/);
   if (!m) return [];
+  const translated = [...m[1].matchAll(/\\"translated_name\\":\\"(.*?)\\"/g)].map((x) =>
+    unescapeJs(x[1]),
+  );
+  if (translated.length) return translated;
   return [...m[1].matchAll(/\\"(.*?)\\"/g)].map((x) => unescapeJs(x[1]));
 }
 
@@ -104,13 +193,18 @@ export function extractTotalPassDetailSchema(
   const gymPlans = extractGymPlans(html);
   const website = scalarField(html, 'website');
 
+  const remapped = remapAmenityLikeModalities(
+    modalities.map((m) => m.translated_name),
+    extractStructures(html),
+  );
+
   const modalidades_e_planos: TotalPassDetailSchema['modalidades_e_planos'] = [];
   for (const plan of gymPlans) {
     for (const id of plan.modality_ids) {
       const name = byId.get(id);
-      if (!name) continue;
+      if (!name || amenityCanonicalName(name)) continue;
       modalidades_e_planos.push({
-        modalidade: name,
+        modalidade: normalizeTpLabel(name),
         categoria: plan.categoria,
         plano_minimo: plan.plano_minimo,
       });
@@ -126,10 +220,10 @@ export function extractTotalPassDetailSchema(
       instagram: website,
       email: scalarField(html, 'email'),
     },
-    modalidades: modalities.map((m) => m.translated_name),
+    modalidades: remapped.modalidades,
     modalidades_e_planos,
     horarios_academia: extractGymHours(html),
-    comodidades: extractStructures(html),
+    comodidades: remapped.comodidades,
   };
 }
 

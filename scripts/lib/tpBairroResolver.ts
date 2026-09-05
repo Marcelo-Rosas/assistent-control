@@ -9,6 +9,8 @@ import {
   isCepGenerico,
   loadCepCache,
   lookupBairroFromCep,
+  lookupLocalidadeFromCep,
+  normalizeCep,
   refineCepViaLogradouro,
   saveCepCache,
   type CepCacheEntry,
@@ -26,10 +28,12 @@ export type TpBairroSource =
   | 'cache'
   | 'viacep'
   | 'brasilapi'
+  | 'cep_municipio'
   | 'nominatim'
   | 'index';
 
 export type TpBairroResolved = {
+  /** Nome do bairro Correios; se `cep_geral`, nome do município (unidade geográfica). */
   bairro: string;
   bairro_slug: string;
   cep: string;
@@ -40,6 +44,12 @@ export type TpBairroResolved = {
   lng: number;
   provider: 'cep' | 'nominatim';
   resolved_at: string;
+  /** CEP município (-000): Correios não distingue bairro. */
+  cep_geral?: boolean;
+  municipio?: string;
+  uf?: string;
+  /** Mensagem humana — ex. CEP geral do município. */
+  nota?: string;
   /** @deprecated legacy Nominatim only */
   nominatim_place_id?: number;
   /** @deprecated legacy Nominatim only */
@@ -245,6 +255,41 @@ export async function resolveTpBairroViaCep(
         rawCep = refined.cep;
         cepOrigin = 'receita_logradouro_cep';
       }
+    }
+  }
+
+  // CEP genérico (-000) sem bairro fino: usa município + marca CEP geral (não inventa bairro).
+  if (!lookup && isCepGenerico(rawCep)) {
+    let municipio = String(receitaHit?.municipio ?? '').trim() || null;
+    let uf = String(receitaHit?.uf ?? '').trim().toUpperCase() || null;
+
+    if (!municipio) {
+      const loc = await lookupLocalidadeFromCep(rawCep, { fetch: opts.fetch });
+      if (loc) {
+        municipio = loc.localidade;
+        uf = loc.uf ?? uf;
+      }
+    }
+
+    const cepNorm = normalizeCep(rawCep);
+    if (municipio && municipio.length >= 2 && cepNorm) {
+      const ufLabel = uf ? `/${uf}` : '';
+      return {
+        bairro: municipio,
+        bairro_slug: bairroSlug(municipio),
+        cep: cepNorm,
+        cep_rf: cepRf && normalizeCep(cepRf) !== cepNorm ? cepRf : undefined,
+        source: 'cep_municipio',
+        cnpj,
+        lat,
+        lng,
+        provider: 'cep',
+        resolved_at: new Date().toISOString(),
+        cep_geral: true,
+        municipio,
+        uf: uf || undefined,
+        nota: `CEP geral do município (${municipio}${ufLabel}) — Correios não distingue bairro neste CEP`,
+      };
     }
   }
 

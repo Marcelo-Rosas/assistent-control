@@ -305,4 +305,42 @@ describe('tpCepResolver', () => {
     const lookup = await lookupBairroFromCep(refined.cep, { fetch: mockFetch, cache: cache as never });
     assert.equal(lookup?.bairro, 'Centro');
   });
+
+  it('refineCepViaLogradouro invalida cache ok com CEP genérico', async () => {
+    const calls: string[] = [];
+    const mockFetch: LookupFetch = async (url) => {
+      calls.push(String(url));
+      const u = String(url);
+      if (u.includes('/RS/Marau/')) {
+        return new Response(
+          JSON.stringify([{ cep: '99150-123', bairro: 'Centro', uf: 'RS' }]),
+          { status: 200, headers: { 'Content-Type': 'application/json' } },
+        );
+      }
+      throw new Error(`unexpected ${u}`);
+    };
+
+    const cache: Record<string, { ok: true; cep: string; cep_rf: string }> = {
+      'addr:rs:marau:rua gilda fialho': {
+        ok: true,
+        cep: '99150000',
+        cep_rf: '99150000',
+      },
+    };
+
+    const refined = await refineCepViaLogradouro(
+      {
+        cep_rf: '99150000',
+        uf: 'RS',
+        municipio: 'Marau',
+        logradouro: 'GILDA FIALHO',
+        tipo_logradouro: 'RUA',
+      },
+      { fetch: mockFetch, cache: cache as never },
+    );
+
+    assert.equal(refined.ok, true);
+    if (refined.ok) assert.equal(refined.cep, '99150123');
+    assert.equal(calls.length, 1);
+  });
 });

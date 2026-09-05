@@ -103,13 +103,13 @@ Um arquivo por academia. Estrutura completa:
 | `contato.telefone` | `string \| null` | JSON-LD `telephone` | Telefone |
 | `contato.instagram` | `string \| null` | payload `website` | Instagram ou site |
 | `contato.email` | `string \| null` | payload `email` | E-mail |
-| `modalidades` | `string[]` | payload `modalities` | Lista de modalidades |
+| `modalidades` | `string[]` | payload `modalities` | Lista de modalidades (amenities mal classificadas, ex. Área Infantil / Espaço Kids, vão para `comodidades` canônico **Espaço Kids**) |
 | `modalidades_e_planos` | `object[]` | `gym_plan` + join | Modalidade × categoria × plano |
 | `modalidades_e_planos[].modalidade` | `string` | modalities | Nome traduzido |
 | `modalidades_e_planos[].categoria` | `string` | gym_plan `name` | Ex.: "Musculação + Aulas" |
 | `modalidades_e_planos[].plano_minimo` | `string` | gym_plan plan | Ex.: "TP 1+" |
 | `horarios_academia` | `Record<string,string>` | payload `gymHours` | Chave = dia (sem acento), valor = horário |
-| `comodidades` | `string[]` | payload `structures` | Armários, Wi-fi, etc. |
+| `comodidades` | `string[]` | payload `structures` | Armários, Wi-fi, etc. (+ remap de amenities que vieram em `modalities`) |
 
 ### Campos **não** incluídos (deprecados)
 

@@ -315,7 +315,14 @@ export async function refineCepViaLogradouro(
 
   const cacheKey = logradouroCacheKey(opts.uf, opts.municipio, primaryQuery);
   const cached = fetchOpts?.cache?.[cacheKey];
-  if (cached) return cached;
+  // Cache antigo pode gravar ok:true com CEP ainda genérico (-000) — invalidar.
+  if (cached) {
+    if (cached.ok === true && isCepGenerico(cached.cep)) {
+      delete fetchOpts?.cache?.[cacheKey];
+    } else {
+      return cached;
+    }
+  }
   if (fetchOpts?.skipNetwork) return { ok: false, reason: 'cep_logradouro_vazio' };
 
   const fetchFn = fetchOpts?.fetch ?? fetch;
@@ -328,8 +335,14 @@ export async function refineCepViaLogradouro(
     if (refined) break;
   }
   let result: RefineCepResult;
-  if (!refined) {
-    result = { ok: false, reason: hits.length === 0 ? 'cep_logradouro_vazio' : 'cep_logradouro_ambiguo' };
+  if (!refined || isCepGenerico(refined)) {
+    const onlyGeneric =
+      hits.length > 0 && hits.every((h) => isCepGenerico(normalizeCep(h.cep) ?? ''));
+    result = {
+      ok: false,
+      reason:
+        hits.length === 0 || onlyGeneric ? 'cep_logradouro_vazio' : 'cep_logradouro_ambiguo',
+    };
   } else {
     const bairroHint = hits.find((h) => normalizeCep(h.cep) === refined)?.bairro;
     result = { ok: true, cep: refined, cep_rf: cepRf, bairro_hint: bairroHint };
@@ -441,6 +454,71 @@ function isRetryableCepError(err: unknown): boolean {
     return status === 429 || status >= 500;
   }
   return true;
+}
+
+export type CepLocalidadeOk = {
+  cep: string;
+  localidade: string;
+  uf: string | null;
+  provider: CepProvider;
+  resolved_at: string;
+};
+
+/**
+ * CEP genérico (-000) → só município/UF (ViaCEP devolve localidade com bairro vazio).
+ * Não exige bairro. Não grava negativo no cache de bairro.
+ */
+export async function lookupLocalidadeFromCep(
+  rawCep: string,
+  opts?: {
+    fetch?: LookupFetch;
+    skipNetwork?: boolean;
+  },
+): Promise<CepLocalidadeOk | null> {
+  const cep = normalizeCep(rawCep);
+  if (!cep || opts?.skipNetwork) return null;
+
+  const fetchFn = opts?.fetch ?? fetch;
+
+  try {
+    const url = `https://viacep.com.br/ws/${cep}/json/`;
+    const res = await fetchFn(url, { headers: { Accept: 'application/json' } });
+    if (res.ok) {
+      const body = (await res.json()) as ViaCepResponse;
+      if (!body.erro) {
+        const localidade = String(body.localidade ?? '').trim();
+        if (localidade.length >= 2) {
+          return {
+            cep,
+            localidade,
+            uf: body.uf?.trim().toUpperCase() || null,
+            provider: 'viacep',
+            resolved_at: new Date().toISOString(),
+          };
+        }
+      }
+    }
+  } catch {
+    /* try BrasilAPI */
+  }
+
+  try {
+    const url = `https://brasilapi.com.br/api/cep/v2/${cep}`;
+    const res = await fetchFn(url, { headers: { Accept: 'application/json' } });
+    if (!res.ok) return null;
+    const body = (await res.json()) as BrasilApiCepResponse;
+    const localidade = String(body.city ?? '').trim();
+    if (localidade.length < 2) return null;
+    return {
+      cep,
+      localidade,
+      uf: body.state?.trim().toUpperCase() || null,
+      provider: 'brasilapi',
+      resolved_at: new Date().toISOString(),
+    };
+  } catch {
+    return null;
+  }
 }
 
 /**
