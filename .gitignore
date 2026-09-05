@@ -38,3 +38,15 @@ data/academia.train.json
 public/data/academia.train.json
 data/processed/receita-enriched-totalpass.csv
 data/processed/receita-kpis-*.json
+
+# Caches e progresso de pipeline (regeráveis pelos próprios scripts)
+data/processed/tp-cep-cache.json
+data/processed/tp-cep-logradouro-cache.json
+data/processed/tp-bairro-geocode-cache.json
+data/processed/ingest-receita-progress.json
+data/processed/*-preflight.log
+data/processed/*-recover.log
+data/processed/bh-wfs-capabilities.xml
+data/cache/
+output/
+cotacoes/
