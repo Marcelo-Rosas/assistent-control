@@ -26,6 +26,8 @@ UI_PATH = ROOT / "public" / "jarvis-q.html"
 sys.path.insert(0, str(SCRIPTS))
 from jarvis_qa import ask  # noqa: E402
 
+_ELEVEN_CACHE: tuple[float, dict] | None = None
+
 try:
     import jarvis_tts  # noqa: E402
 except Exception:  # noqa: BLE001 — TTS e opcional; o HUD cai para Web Speech
@@ -46,6 +48,28 @@ class JarvisQHandler(BaseHTTPRequestHandler):
         self.send_header("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
         self.send_header("Access-Control-Allow-Headers", "Content-Type")
 
+    def _eleven_status(self) -> dict | None:
+        """Cota/tier da ElevenLabs, com cache — evita bater na API a cada boot."""
+        import time
+
+        global _ELEVEN_CACHE
+        if jarvis_tts is None or not getattr(jarvis_tts, "_eleven_ok", lambda: False)():
+            return None
+        agora = time.time()
+        if _ELEVEN_CACHE and agora - _ELEVEN_CACHE[0] < 300:
+            return _ELEVEN_CACHE[1]
+        try:
+            import jarvis_eleven
+
+            info = jarvis_eleven.assinatura()
+            cfg = jarvis_eleven.ElevenConfig.from_env()
+            info["voice_id"] = cfg.voice_id
+            info["model_id"] = cfg.model_id
+        except Exception as exc:  # noqa: BLE001 — status nao pode derrubar /health
+            info = {"erro": str(exc)}
+        _ELEVEN_CACHE = (agora, info)
+        return info
+
     def _handle_tts(self) -> None:
         """Sintetiza uma fala e devolve WAV. Erro aqui nao pode derrubar a
         resposta: o HUD trata 4xx/5xx caindo para a Web Speech API."""
@@ -65,12 +89,19 @@ class JarvisQHandler(BaseHTTPRequestHandler):
             return
         voz = data.get("voz") if isinstance(data, dict) else None
         voz = voz if isinstance(voz, str) else None
+        # Turno anterior: a ElevenLabs o usa como contexto de prosodia, para a
+        # entonacao nao reiniciar do zero a cada resposta. Backends locais
+        # ignoram (nao tem o recurso).
+        anterior = data.get("previous_text") if isinstance(data, dict) else None
+        anterior = anterior if isinstance(anterior, str) and anterior.strip() else None
         try:
-            # O backend escolhido decide o formato: edge-tts devolve MP3,
-            # Piper e SAPI devolvem WAV. Anunciar "audio/wav" para todos
-            # deixava o Content-Type mentindo sobre metade dos casos.
+            # O backend escolhido decide o formato: ElevenLabs e edge-tts
+            # devolvem MP3, Piper e SAPI devolvem WAV. Anunciar "audio/wav"
+            # para todos deixava o Content-Type mentindo em metade dos casos.
             if hasattr(jarvis_tts, "sintetizar_audio"):
-                out = jarvis_tts.sintetizar_audio(texto.strip(), voz)
+                out = jarvis_tts.sintetizar_audio(
+                    texto.strip(), voz, previous_text=anterior
+                )
                 audio, mime, backend = out.data, out.content_type, out.backend
             else:  # modulo antigo, so WAV
                 audio = jarvis_tts.sintetizar(texto.strip(), voz)
@@ -122,25 +153,31 @@ class JarvisQHandler(BaseHTTPRequestHandler):
                     "service": "jarvis-q",
                     "tts": tts_ok,
                     "vozes": jarvis_tts.vozes_disponiveis() if tts_ok else [],
+                    # `tts_prefer` e o que o cascade usaria AGORA (primeira voz
+                    # da lista); `tts_backend` e quem atendeu por ultimo. O HUD
+                    # rotula o rodape com o primeiro: no boot, antes de qualquer
+                    # fala, so a preferencia existe.
+                    # (Havia duas chaves "tts_prefer" neste literal — a segunda
+                    # sobrescrevia a primeira em silencio.)
                     "tts_prefer": (
-                        f"eleven:{os.environ.get('ELEVENLABS_VOICE_ID', 'library')}"
-                        if (jarvis_tts and getattr(jarvis_tts, "_eleven_ok", lambda: False)())
-                        else "edge:pt-BR-AntonioNeural"
+                        (jarvis_tts.vozes_disponiveis() or [None])[0]
+                        if tts_ok
+                        else None
                     ),
                     "tts_backend": (
                         jarvis_tts.last_backend()
                         if tts_ok and hasattr(jarvis_tts, "last_backend")
                         else None
                     ),
-                    # `tts_prefer` e o que o cascade usaria AGORA (primeira voz
-                    # da lista), enquanto `tts_backend` e quem atendeu por
-                    # ultimo. O HUD rotula o rodape com o primeiro: no boot,
-                    # antes de qualquer fala, so a preferencia existe.
-                    "tts_prefer": (
-                        (jarvis_tts.vozes_disponiveis() or [None])[0]
-                        if tts_ok
+                    # Por que o backend preferido nao atendeu, quando aplicavel.
+                    "tts_aviso": (
+                        jarvis_tts.ultimo_erro()
+                        if tts_ok and hasattr(jarvis_tts, "ultimo_erro")
                         else None
                     ),
+                    # Cota da ElevenLabs: creditos acabando derrubam a voz para
+                    # o proximo backend sem aviso; melhor ver antes.
+                    "eleven": self._eleven_status(),
                 },
             )
             return

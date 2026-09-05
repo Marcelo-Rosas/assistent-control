@@ -1,15 +1,22 @@
-"""Síntese de voz do JARVIS-Q — cascade.
+"""Síntese de voz do JARVIS-Q — ElevenLabs primeiro, degradação explícita.
 
 Ordem (auto):
-  1. ElevenLabs (se ``ELEVENLABS_API_KEY``) — voz de biblioteca / tua, **não** clone MCU
-  2. edge-tts ``pt-BR-AntonioNeural`` (−12% / −8Hz)
+  1. ElevenLabs (jarvis_eleven) — voz pt-BR de biblioteca, controles completos
+  2. edge-tts ``pt-BR-AntonioNeural``
   3. Piper ONNX offline (``data/tts/piper/``)
   4. pyttsx3 / SAPI
 
+Por que manter fallback num sistema "ElevenLabs-first": a API tem três modos
+de falha que não dependem de nós — cota esgotada (402), teto de concorrência
+do plano (429, 5 simultâneas no multilingual_v2) e rede fora. Emudecer o
+assistente nessas horas seria pior que falar com voz inferior. O cascade é
+degradação declarada, não indecisão: ``last_backend()`` e o header
+``X-Jarvis-TTS-Backend`` dizem sempre quem atendeu, e ``ultimo_erro()`` diz
+por que o preferido não atendeu.
+
 ``JARVIS_TTS_BACKEND``: ``auto`` | ``eleven`` | ``edge`` | ``piper`` | ``sapi``
 ``JARVIS_TTS=0`` desliga tudo (HUD → Web Speech).
-``ELEVENLABS_VOICE_ID`` — id da Voice Library (default George do quickstart).
-``JARVIS_TTS_VOICE`` — sobrescreve voz edge (pt-BR-…).
+Config da ElevenLabs (voz, modelo, settings, seed): ver jarvis_eleven.
 """
 from __future__ import annotations
 
@@ -34,11 +41,16 @@ try:
 except ImportError:
     pass
 
+try:
+    import jarvis_eleven as _eleven
+except ImportError:  # pragma: no cover — execução fora de scripts/
+    import sys
+
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    import jarvis_eleven as _eleven
+
 DEFAULT_EDGE_VOICE = os.environ.get("JARVIS_TTS_VOICE", "pt-BR-AntonioNeural")
 DEFAULT_PIPER_VOICE = os.environ.get("JARVIS_TTS_PIPER_VOICE", "faber")
-# Quickstart ElevenLabs: "George". Troca na Voice Library por voz PT-BR se quiser.
-DEFAULT_ELEVEN_VOICE = os.environ.get("ELEVENLABS_VOICE_ID", "JBFqnCBsd6RMkjVDRZzb")
-ELEVEN_MODEL = os.environ.get("ELEVENLABS_MODEL_ID", "eleven_multilingual_v2")
 EDGE_RATE = os.environ.get("JARVIS_TTS_EDGE_RATE", "-12%")
 EDGE_PITCH = os.environ.get("JARVIS_TTS_EDGE_PITCH", "-8Hz")
 LENGTH_SCALE = float(os.environ.get("JARVIS_TTS_LENGTH", "1.06"))
@@ -47,6 +59,9 @@ SAPI_RATE = int(os.environ.get("JARVIS_TTS_SAPI_RATE", "150"))
 _LOCK = threading.Lock()
 _CACHE: dict[str, object] = {}
 _LAST_BACKEND: str | None = None
+_ULTIMO_ERRO: str | None = None
+
+BACKENDS = ("eleven", "edge", "piper", "sapi")
 
 
 class TTSIndisponivel(RuntimeError):
@@ -56,25 +71,13 @@ class TTSIndisponivel(RuntimeError):
 @dataclass(frozen=True)
 class AudioOut:
     data: bytes
-    content_type: str  # audio/wav | audio/mpeg
+    content_type: str  # audio/wav | audio/mpeg | audio/ogg
     backend: str       # eleven | edge | piper | sapi
 
 
+# --------------------------------------------------------------- disponibilidade
 def voice_path(nome: str) -> Path:
     return VOICES_DIR / f"pt_BR-{nome}-medium.onnx"
-
-
-def vozes_disponiveis() -> list[str]:
-    out: list[str] = []
-    if _eleven_ok():
-        out.append(f"eleven:{DEFAULT_ELEVEN_VOICE}")
-    if _edge_ok():
-        out.append(f"edge:{DEFAULT_EDGE_VOICE}")
-    for nome in _piper_names():
-        out.append(f"piper:{nome}")
-    if _sapi_ok():
-        out.append("sapi")
-    return out
 
 
 def _piper_names() -> list[str]:
@@ -86,19 +89,8 @@ def _piper_names() -> list[str]:
     )
 
 
-def _eleven_api_key() -> str | None:
-    key = (os.environ.get("ELEVENLABS_API_KEY") or "").strip()
-    return key or None
-
-
 def _eleven_ok() -> bool:
-    if not _eleven_api_key():
-        return False
-    try:
-        import elevenlabs  # noqa: F401
-    except ImportError:
-        return False
-    return True
+    return _eleven.disponivel()
 
 
 def _edge_ok() -> bool:
@@ -125,23 +117,79 @@ def _sapi_ok() -> bool:
     return True
 
 
+def _check(backend: str) -> bool:
+    """Resolve a checagem NO MOMENTO da chamada.
+
+    Um dict {nome: funcao} congelaria as referencias na importacao, e trocar
+    `jarvis_tts._eleven_ok` (em teste ou para simular queda) nao teria efeito
+    algum sobre o cascade — que e justamente o comportamento que precisa ser
+    verificavel.
+    """
+    fn = globals().get(f"_{backend}_ok")
+    return bool(fn and fn())
+
+
+def backend_pedido() -> str:
+    return (os.environ.get("JARVIS_TTS_BACKEND", "auto") or "auto").lower()
+
+
 def disponivel() -> bool:
     if os.environ.get("JARVIS_TTS", "1") == "0":
         return False
-    backend = os.environ.get("JARVIS_TTS_BACKEND", "auto").lower()
-    if backend == "eleven":
-        return _eleven_ok()
-    if backend == "edge":
-        return _edge_ok()
-    if backend == "piper":
-        return _piper_ok()
-    if backend == "sapi":
-        return _sapi_ok()
-    return _eleven_ok() or _edge_ok() or _piper_ok() or _sapi_ok()
+    alvo = backend_pedido()
+    if alvo in BACKENDS:
+        return _check(alvo)
+    return any(_check(b) for b in BACKENDS)
 
 
 def last_backend() -> str | None:
     return _LAST_BACKEND
+
+
+def ultimo_erro() -> str | None:
+    """Por que o backend preferido não atendeu — diagnóstico sem ler log."""
+    return _ULTIMO_ERRO
+
+
+def vozes_disponiveis() -> list[str]:
+    out: list[str] = []
+    if _eleven_ok():
+        out += [f"eleven:{a}" for a in _eleven.VOZES_PT_BR]
+    if _edge_ok():
+        out.append(f"edge:{DEFAULT_EDGE_VOICE}")
+    out += [f"piper:{n}" for n in _piper_names()]
+    if _sapi_ok():
+        out.append("sapi")
+    return out
+
+
+# ----------------------------------------------------------------- sintetizadores
+def _sintetizar_eleven(
+    texto: str, voz: str | None, previous_text: str | None
+) -> AudioOut:
+    cfg = _eleven.ElevenConfig.from_env()
+    if voz:
+        alvo = voz.split(":", 1)[1] if voz.startswith("eleven:") else voz
+        cfg.voice_id = _eleven.VOZES_PT_BR.get(alvo.lower(), alvo)
+    data, mime = _eleven.sintetizar(texto, cfg, previous_text=previous_text)
+    return AudioOut(data=data, content_type=mime, backend="eleven")
+
+
+def _sintetizar_edge(texto: str, voz: str) -> AudioOut:
+    import edge_tts
+
+    async def _run() -> bytes:
+        communicate = edge_tts.Communicate(texto, voz, rate=EDGE_RATE, pitch=EDGE_PITCH)
+        buf = io.BytesIO()
+        async for chunk in communicate.stream():
+            if chunk["type"] == "audio":
+                buf.write(chunk["data"])
+        return buf.getvalue()
+
+    data = asyncio.run(_run())
+    if not data:
+        raise TTSIndisponivel("edge-tts devolveu áudio vazio")
+    return AudioOut(data=data, content_type="audio/mpeg", backend="edge")
 
 
 def _load_piper(nome: str):
@@ -155,52 +203,6 @@ def _load_piper(nome: str):
                 raise TTSIndisponivel(f"modelo ausente: {caminho.name}")
             _CACHE[key] = PiperVoice.load(str(caminho))
         return _CACHE[key]
-
-
-def _collect_audio_chunks(audio) -> bytes:
-    """SDK pode devolver generator/iterator de bytes ou bytes únicos."""
-    if isinstance(audio, (bytes, bytearray)):
-        return bytes(audio)
-    buf = io.BytesIO()
-    for chunk in audio:
-        if isinstance(chunk, (bytes, bytearray)):
-            buf.write(chunk)
-    return buf.getvalue()
-
-
-def _sintetizar_eleven(texto: str, voice_id: str) -> AudioOut:
-    from elevenlabs.client import ElevenLabs
-
-    client = ElevenLabs(api_key=_eleven_api_key())
-    audio = client.text_to_speech.convert(
-        text=texto,
-        voice_id=voice_id,
-        model_id=ELEVEN_MODEL,
-        output_format="mp3_44100_128",
-    )
-    data = _collect_audio_chunks(audio)
-    if not data:
-        raise TTSIndisponivel("ElevenLabs devolveu áudio vazio")
-    return AudioOut(data=data, content_type="audio/mpeg", backend="eleven")
-
-
-def _sintetizar_edge(texto: str, voz: str) -> AudioOut:
-    import edge_tts
-
-    async def _run() -> bytes:
-        communicate = edge_tts.Communicate(
-            texto, voz, rate=EDGE_RATE, pitch=EDGE_PITCH
-        )
-        buf = io.BytesIO()
-        async for chunk in communicate.stream():
-            if chunk["type"] == "audio":
-                buf.write(chunk["data"])
-        return buf.getvalue()
-
-    data = asyncio.run(_run())
-    if not data:
-        raise TTSIndisponivel("edge-tts devolveu áudio vazio")
-    return AudioOut(data=data, content_type="audio/mpeg", backend="edge")
 
 
 def _sintetizar_piper(texto: str, nome: str) -> AudioOut:
@@ -222,12 +224,12 @@ def _pick_sapi_voice(engine) -> str | None:
     voices = engine.getProperty("voices") or []
     ranked: list[tuple[int, object]] = []
     for v in voices:
-        n = (getattr(v, "name", "") or "").lower()
-        vid = (getattr(v, "id", "") or "").lower()
-        blob = n + " " + vid
+        blob = (
+            (getattr(v, "name", "") or "") + " " + (getattr(v, "id", "") or "")
+        ).lower()
         if "daniel" in blob:
             ranked.append((0, v))
-        elif "brazil" in blob or "portuguese" in blob or "pt-br" in blob or "maria" in blob:
+        elif any(t in blob for t in ("brazil", "portuguese", "pt-br", "maria")):
             ranked.append((1, v))
     ranked.sort(key=lambda x: x[0])
     if ranked:
@@ -260,112 +262,74 @@ def _sintetizar_sapi(texto: str) -> AudioOut:
             pass
 
 
+# ------------------------------------------------------------------------- porta
 def sintetizar(texto: str, voz: str | None = None) -> bytes:
-    """Compat: devolve só bytes. Prefer ``sintetizar_audio`` para MIME/backend."""
+    """Compat: só bytes. Prefira ``sintetizar_audio`` para MIME/backend."""
     return sintetizar_audio(texto, voz).data
 
 
-def sintetizar_audio(texto: str, voz: str | None = None) -> AudioOut:
-    global _LAST_BACKEND
+def sintetizar_audio(
+    texto: str,
+    voz: str | None = None,
+    *,
+    previous_text: str | None = None,
+) -> AudioOut:
+    """Sintetiza pelo primeiro backend que atender, na ordem do cascade.
+
+    `previous_text` é repassado à ElevenLabs como contexto de prosódia; os
+    demais backends o ignoram, por não terem o recurso.
+    """
+    global _LAST_BACKEND, _ULTIMO_ERRO
     if not texto or not texto.strip():
         raise ValueError("texto vazio")
     texto = texto.strip()
-    backend = os.environ.get("JARVIS_TTS_BACKEND", "auto").lower()
 
-    errors: list[str] = []
+    alvo = backend_pedido()
+    ordem = [alvo] if alvo in BACKENDS else list(BACKENDS)
+    erros: list[str] = []
 
-    def try_eleven() -> AudioOut | None:
-        if not _eleven_ok():
-            return None
-        if voz and (
-            voz.startswith("pt-BR-")
-            or voz.startswith("piper:")
-            or voz.startswith("edge:")
-            or voz == "sapi"
-        ):
-            return None
-        voice_id = DEFAULT_ELEVEN_VOICE
-        if voz and voz.startswith("eleven:"):
-            voice_id = voz.split(":", 1)[1]
-        elif voz and len(voz) >= 16 and "-" not in voz[:5]:
-            # id cru da library
-            voice_id = voz
+    for bk in ordem:
+        if not _check(bk):
+            continue
         try:
-            return _sintetizar_eleven(texto, voice_id)
-        except Exception as exc:  # noqa: BLE001
-            errors.append(f"eleven:{exc}")
-            return None
+            if bk == "eleven":
+                out = _sintetizar_eleven(texto, voz, previous_text)
+            elif bk == "edge":
+                nome = (
+                    voz.split(":", 1)[1]
+                    if (voz or "").startswith("edge:")
+                    else DEFAULT_EDGE_VOICE
+                )
+                out = _sintetizar_edge(
+                    texto, nome if nome.startswith("pt-") else DEFAULT_EDGE_VOICE
+                )
+            elif bk == "piper":
+                nome = (
+                    voz.split(":", 1)[1]
+                    if (voz or "").startswith("piper:")
+                    else DEFAULT_PIPER_VOICE
+                )
+                out = _sintetizar_piper(texto, nome)
+            else:
+                out = _sintetizar_sapi(texto)
+        except Exception as exc:  # noqa: BLE001 — falha de um backend não derruba o cascade
+            # Erro da ElevenLabs vira mensagem acionável: cota, chave e teto de
+            # concorrência pedem providências diferentes.
+            detalhe = str(exc)
+            if bk == "eleven" and isinstance(exc, _eleven.ElevenErro):
+                if exc.sem_creditos:
+                    detalhe = "créditos esgotados no plano"
+                elif exc.chave_invalida:
+                    detalhe = "chave inválida ou sem permissão"
+                elif exc.concorrencia:
+                    detalhe = "teto de requisições simultâneas do plano"
+            erros.append(f"{bk}: {detalhe}")
+            continue
+        _LAST_BACKEND = out.backend
+        _ULTIMO_ERRO = "; ".join(erros) or None
+        return out
 
-    def try_edge() -> AudioOut | None:
-        if not _edge_ok():
-            return None
-        if voz and voz.startswith("piper:"):
-            return None
-        if voz and voz == "sapi":
-            return None
-        if voz and voz.startswith("eleven:"):
-            return None
-        name = voz if (voz and voz.startswith("pt-BR-")) else DEFAULT_EDGE_VOICE
-        if voz and voz.startswith("edge:"):
-            name = voz.split(":", 1)[1]
-        try:
-            return _sintetizar_edge(
-                texto, name if name.startswith("pt-") else DEFAULT_EDGE_VOICE
-            )
-        except Exception as exc:  # noqa: BLE001
-            errors.append(f"edge:{exc}")
-            return None
-
-    def try_piper() -> AudioOut | None:
-        nome = DEFAULT_PIPER_VOICE
-        if voz and voz.startswith("piper:"):
-            nome = voz.split(":", 1)[1]
-        elif voz and not voz.startswith("pt-") and voz not in ("sapi",) and not (
-            voz.startswith("eleven:") or voz.startswith("edge:")
-        ):
-            if voice_path(voz).exists():
-                nome = voz
-        if not _piper_ok(nome):
-            return None
-        try:
-            return _sintetizar_piper(texto, nome)
-        except Exception as exc:  # noqa: BLE001
-            errors.append(f"piper:{exc}")
-            return None
-
-    def try_sapi() -> AudioOut | None:
-        if not _sapi_ok():
-            return None
-        try:
-            return _sintetizar_sapi(texto)
-        except Exception as exc:  # noqa: BLE001
-            errors.append(f"sapi:{exc}")
-            return None
-
-    order: list
-    if backend == "eleven":
-        order = [try_eleven]
-    elif backend == "edge":
-        order = [try_edge]
-    elif backend == "piper":
-        order = [try_piper]
-    elif backend == "sapi":
-        order = [try_sapi]
-    else:
-        order = [try_eleven, try_edge, try_piper, try_sapi]
-
-    for fn in order:
-        out = fn()
-        if out is not None:
-            _LAST_BACKEND = out.backend
-            return out
-
-    if voz and voz not in ("sapi",) and not voz.startswith(
-        ("pt-", "piper:", "eleven:", "edge:")
-    ):
-        raise TTSIndisponivel(f"voz indisponível: {voz}")
-
+    _ULTIMO_ERRO = "; ".join(erros) or None
     raise TTSIndisponivel(
-        "nenhum backend TTS disponível: "
-        + ("; ".join(errors) or "defina ELEVENLABS_API_KEY ou use edge-tts")
+        "nenhum backend de voz atendeu" + (f" ({_ULTIMO_ERRO})" if _ULTIMO_ERRO else "")
     )
