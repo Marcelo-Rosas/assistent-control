@@ -14,6 +14,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { createHash } from 'node:crypto';
 import { createClient } from '@supabase/supabase-js';
+import { normalizeBairro } from '../src/lib/modalityClassifier';
 
 const ROOT = process.cwd();
 const FILE = process.env.GP_FILE ?? 'data/processed/gurupass-normalized.json';
@@ -120,9 +121,28 @@ function buildChunks(item: Item): { chunk: Record<string, unknown>; synthetic: b
       firstStr(item.neighborhood, item.bairro),
     );
 
-  const cidade = firstStr(item.city, item.cidade, item.municipio);
-  const uf = firstStr(item.uf, item.state);
-  const bairro = firstStr(item.neighborhood, item.bairro);
+  const cidadeRaw = item.city ?? item.cidade ?? item.municipio;
+  const cidade =
+    typeof cidadeRaw === 'string'
+      ? cidadeRaw.trim()
+      : cidadeRaw && typeof cidadeRaw === 'object'
+        ? firstStr((cidadeRaw as Record<string, unknown>).name)
+        : '';
+  const ufRaw = item.uf ?? item.state;
+  const uf =
+    typeof ufRaw === 'string'
+      ? ufRaw.trim()
+      : ufRaw && typeof ufRaw === 'object'
+        ? firstStr((ufRaw as Record<string, unknown>).code, (ufRaw as Record<string, unknown>).name)
+        : '';
+  const bairroRaw = item.neighborhood ?? item.bairro;
+  const bairro =
+    typeof bairroRaw === 'string'
+      ? bairroRaw.trim()
+      : bairroRaw && typeof bairroRaw === 'object'
+        ? firstStr((bairroRaw as Record<string, unknown>).name)
+        : '';
+  const bairroNorm = bairro ? normalizeBairro(bairro) : '';
   const endereco = firstStr(
     item.fullAddres,
     item.fullAddress,
@@ -218,6 +238,7 @@ function buildChunks(item: Item): { chunk: Record<string, unknown>; synthetic: b
           cidade,
           uf: uf || null,
           bairro: bairro || null,
+          bairro_normalizado: bairroNorm || null,
           endereco: endereco || null,
           municipios_relacionados: municipios,
           modalidade: String(mod).toLowerCase(),

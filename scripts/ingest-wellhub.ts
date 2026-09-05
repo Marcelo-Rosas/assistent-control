@@ -4,6 +4,7 @@
  *
  * Input:  data/processed/wellhub-normalized.json
  * Run:    npm run ingest:wellhub
+ * Filtros opcionais: CIDADE="São Paulo" BAIRRO=Pinheiros
  *
  * Env (.env / .env.local):
  *   SUPABASE_URL | VITE_SUPABASE_URL
@@ -11,6 +12,7 @@
  *   WELLHUB_GROUP_ID
  *   TARGET_TENANT_ID  (opcional)
  *   INPUT_PATH        (opcional)
+ *   CIDADE / BAIRRO   (opcional — filtra antes do chunk)
  *   BATCH_SIZE=50
  */
 import fs from 'fs';
@@ -85,7 +87,7 @@ const INPUT_PATH =
   process.env.INPUT_PATH || path.join(ROOT, 'data/processed/wellhub-normalized.json');
 
 function loadDotEnv(filePath: string): void {
-  if (!fs.existsSync(filePath)) return;
+  if (!fs.existsSync(filePath) || !fs.statSync(filePath).isFile()) return;
   const raw = fs.readFileSync(filePath, 'utf-8');
   for (const line of raw.split(/\r?\n/)) {
     const trimmed = line.trim();
@@ -344,6 +346,31 @@ async function main(): Promise<void> {
   if (!Array.isArray(academias)) {
     console.error('JSON inválido: esperado AcademiaWellhub[]');
     process.exit(1);
+  }
+
+  const filterCidade = process.env.CIDADE?.trim() || '';
+  const filterBairro = process.env.BAIRRO?.trim() || '';
+  const foldCity = (s: string) =>
+    s
+      .normalize('NFD')
+      .replace(/\p{M}/gu, '')
+      .toLowerCase()
+      .trim();
+  if (filterCidade || filterBairro) {
+    const before = academias.length;
+    const wantCity = filterCidade ? foldCity(filterCidade) : '';
+    const wantBairro = filterBairro ? normalizeBairro(filterBairro) : '';
+    academias = academias.filter((ac) => {
+      if (wantCity && foldCity(ac.cidade || '') !== wantCity) return false;
+      if (wantBairro) {
+        const b = normalizeBairro(extractBairro(ac.endereco || ''));
+        if (b !== wantBairro) return false;
+      }
+      return true;
+    });
+    console.log(
+      `Filtro CIDADE=${filterCidade || '*'} BAIRRO=${filterBairro || '*'}: ${before} → ${academias.length}`,
+    );
   }
 
   const drafts = prepareWellhubChunks(groupId, tenantId, academias);

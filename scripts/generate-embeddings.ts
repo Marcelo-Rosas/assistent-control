@@ -21,6 +21,9 @@
  *   DELAY_MS=200
  *   PAGE_SIZE=500
  *   LIMIT=0                 # 0 = todos pending; >0 = teto (teste)
+ *   EMBED_META_BAIRRO=pinheiros   # optional: meta.bairro_normalizado
+ *   EMBED_TEXT_ILIKE=Pinheiros    # optional: text ILIKE
+ *   OLLAMA_EMBED_URL / JARVIS_OLLAMA_URL  # native Ollama (not .../v1)
  */
 import fs from 'fs';
 import path from 'path';
@@ -119,6 +122,12 @@ function resolveGroupId(): string {
     console.error('Defina ENGENHEIRO_GROUP_ID (npm run setup:engenheiro)');
     process.exit(1);
   }
+  if (hint === 'receita' || hint === 'rfb' || hint === 'cnae') {
+    const rec = process.env.RECEITA_GROUP_ID?.trim();
+    if (rec) return rec;
+    console.error('Defina RECEITA_GROUP_ID');
+    process.exit(1);
+  }
 
   const explicit = process.env.TARGET_GROUP_ID?.trim();
   if (explicit) return explicit;
@@ -130,10 +139,11 @@ function resolveGroupId(): string {
     process.env.REGULATORIO_GROUP_ID?.trim() ||
     process.env.MERCADO_GROUP_ID?.trim() ||
     process.env.ENGENHEIRO_GROUP_ID?.trim() ||
+    process.env.RECEITA_GROUP_ID?.trim() ||
     '';
   if (!id) {
     console.error(
-      'Defina WELLHUB_GROUP_ID, TOTALPASS_GROUP_ID, REGULATORIO_GROUP_ID, MERCADO_GROUP_ID, ENGENHEIRO_GROUP_ID ou TARGET_GROUP_ID',
+      'Defina WELLHUB_GROUP_ID, TOTALPASS_GROUP_ID, REGULATORIO_GROUP_ID, MERCADO_GROUP_ID, ENGENHEIRO_GROUP_ID, RECEITA_GROUP_ID ou TARGET_GROUP_ID',
     );
     process.exit(1);
   }
@@ -274,16 +284,22 @@ async function fetchPendingChunks(
 ): Promise<PendingChunk[]> {
   const out: PendingChunk[] = [];
   let from = 0;
+  // Prefer embedding_model=pending (ingest marker). Avoid OR with embedding IS NULL —
+  // that seq-scans huge groups (receita/wellhub) and hits statement_timeout.
+  const metaBairro = process.env.EMBED_META_BAIRRO?.trim().toLowerCase();
+  const textIlike = process.env.EMBED_TEXT_ILIKE?.trim();
 
   while (true) {
     const to = from + pageSize - 1;
-    // pending = model pending OR embedding null (PostgREST)
-    const { data, error } = await supabase
+    let q = supabase
       .from('eros_knowledge_chunks')
       .select('id, chunk_id, text, embedding_model')
       .eq('group_id', groupId)
-      .or('embedding.is.null,embedding_model.eq.pending')
-      // id is unique — avoids skip/dup when many rows share created_at
+      .eq('embedding_model', 'pending');
+    if (metaBairro) q = q.eq('meta->>bairro_normalizado', metaBairro);
+    if (textIlike) q = q.ilike('text', `%${textIlike}%`);
+    const { data, error } = await q
+      // id is unique - avoids skip/dup when many rows share created_at
       .order('id', { ascending: true })
       .range(from, to);
 
@@ -322,10 +338,14 @@ async function main(): Promise<void> {
   const model = resolveModel(provider);
   const version = process.env.EMBEDDING_VERSION || '1';
   const apiKey = embeddingApiKey();
+  // Prefer native local Ollama for embeds (JARVIS_OLLAMA_URL / OLLAMA_EMBED_URL).
+  // Do not rely on OLLAMA_BASE_URL .../v1 OpenAI-compat gateway.
   const ollamaBase = (
+    process.env.OLLAMA_EMBED_URL ||
+    process.env.JARVIS_OLLAMA_URL ||
     process.env.OLLAMA_BASE_URL ||
     process.env.EMBEDDING_BASE_URL ||
-    'https://ollama2.vectracargo.com.br'
+    'http://localhost:11434'
   ).replace(/\/v1\/?$/, '');
 
   if (provider !== 'ollama' && !apiKey) {
@@ -399,14 +419,23 @@ async function main(): Promise<void> {
   }
 
   // Reconta pending neste grupo (count, sem puxar rows — evita timeout)
-  const { count: stillPendingCount, error: pendingCountErr } = await supabase
+  let pendingCountQ = supabase
     .from('eros_knowledge_chunks')
     .select('id', { count: 'exact', head: true })
     .eq('group_id', groupId)
-    .or('embedding.is.null,embedding_model.eq.pending');
+    .eq('embedding_model', 'pending');
+  const metaBairroCount = process.env.EMBED_META_BAIRRO?.trim().toLowerCase();
+  const textIlikeCount = process.env.EMBED_TEXT_ILIKE?.trim();
+  if (metaBairroCount) pendingCountQ = pendingCountQ.eq('meta->>bairro_normalizado', metaBairroCount);
+  if (textIlikeCount) pendingCountQ = pendingCountQ.ilike('text', `%${textIlikeCount}%`);
+  const { count: stillPendingCount, error: pendingCountErr } = await pendingCountQ;
   if (pendingCountErr) throw new Error(`count_pending: ${pendingCountErr.message}`);
   const stillPendingLen = stillPendingCount ?? 0;
-  const allDone = stillPendingLen === 0;
+  // Filtered runs only clear a subset — do not publish the whole group.
+  const filterActive = Boolean(
+    process.env.EMBED_META_BAIRRO?.trim() || process.env.EMBED_TEXT_ILIKE?.trim(),
+  );
+  const allDone = !filterActive && stillPendingLen === 0;
 
   const { count } = await supabase
     .from('eros_knowledge_chunks')
