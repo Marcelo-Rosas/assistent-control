@@ -13,18 +13,19 @@ type SpinGenerateBody = {
 function buildSpinPrompt(input: SpinGenerateBody) {
   const history = (input.last_messages || []).slice(-12);
   const lines = history
-    .map((m) => `${m.direction === 'incoming' ? 'Cliente' : 'Eros'}: ${m.content}`)
+    .map((m) => `${m.direction === 'incoming' ? 'Cliente' : 'GymSite'}: ${m.content}`)
     .join('\n');
 
   return [
-    'Você é o assistente GymSite / Vectra fitness, especializado em frete de equipamentos para academias.',
-    'Contexto: conversa via Instagram/WhatsApp com uma academia ou estúdio.',
+    'Você é o assistente comercial GymSite Intelligence (viabilidade de academias).',
+    'Contexto: conversa via Instagram/WhatsApp com dono, gestor ou investidor de academia/estúdio.',
+    'Domínio: expansão de pontos, mercado fitness, agregadores (Gurupass/TotalPass/Wellhub), geo e regulatório — não é frete nem logística.',
     'Objetivo: responder usando SPIN Selling, curto e natural, PT-BR.',
     'Regras:',
     '- máximo 600 caracteres',
     '- não use emojis',
     '- faça 1 pergunta por vez',
-    '- termine com um CTA claro (ex: confirmar cidade/bairro, data, volume).',
+    '- termine com um CTA claro (ex: confirmar cidade/bairro, plano mínimo, etapa do projeto).',
     `Goal: ${input.goal || 'qualificar'}`,
     '',
     'Histórico:',
