@@ -1,0 +1,51 @@
+{
+  "generated_at": "2026-09-04T18:20:00.000Z",
+  "before": {
+    "failures": 505,
+    "resolved": 26047,
+    "resolved_cep": 6432
+  },
+  "after": {
+    "failures": 484,
+    "resolved": 26068,
+    "resolved_cep": 6453
+  },
+  "delta": {
+    "failures": -21,
+    "resolved_cep": 21
+  },
+  "slice_applied": {
+    "name": "receita_match_tier_media",
+    "n": 21,
+    "ok": 21,
+    "fail": 0,
+    "by_source": {
+      "cache_or_receita_cep": 16,
+      "cep_municipio": 3,
+      "receita_logradouro_cep": 2
+    },
+    "script": "scripts/retry-cla27-media-slice.ts --tiers=media --apply"
+  },
+  "residual_taxonomy": {
+    "total": 484,
+    "by_reason": {
+      "cep_lookup_fail": 484
+    },
+    "sem_cep_qualquer": 480,
+    "receita_alta_fino_lookup_morto": 4,
+    "detail_or_list_cep": 0,
+    "match_any_tier_remaining": 8,
+    "of_which_with_cep": 4,
+    "no_match_any_tier": 476,
+    "dead_alta_fino_ceps": [
+      { "cep": "59611300", "uf": "RN", "municipio": "Mossoró", "note": "ViaCEP erro + BrasilAPI 404" },
+      { "cep": "83430544", "uf": "PR", "municipio": "Campina Grande do Sul", "note": "ViaCEP erro + BrasilAPI 404" },
+      { "cep": "78975020", "uf": "RO", "municipio": "Cacoal", "note": "ViaCEP erro + BrasilAPI 404" },
+      { "cep": "44571005", "uf": "BA", "municipio": "Santo Antônio de Jesus", "note": "ViaCEP erro + BrasilAPI 404; logradouro ambiguo" }
+    ]
+  },
+  "blocked": {
+    "reason": "476 failures sem match Receita (qualquer tier) e sem CEP literal em detail/list. Sem nova fonte de CEP não há recovery honesto (spec: não inventar bairro via Nominatim/parse).",
+    "next": "CLA-21 audit cobertura bairro×município (cov% honesto) OU nova fonte CEP (enrich detail, match rebuild, outra API)"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "apply": false,
+  "try_logradouro": true,
+  "beforeFailed": 505,
+  "ok": 0,
+  "fail": 4,
+  "results": [
+    {
+      "gymId": "1d58d447-4079-4058-8c68-2570a45374a7",
+      "ok": false,
+      "cep": "59611300"
+    },
+    {
+      "gymId": "ecf5898e-beea-4f8d-938e-da1a67463ff5",
+      "ok": false,
+      "cep": "83430544"
+    },
+    {
+      "gymId": "20ce5a15-c4c3-44b5-b484-bc8c70f4bd40",
+      "ok": false,
+      "cep": "78975020"
+    },
+    {
+      "gymId": "d080a29a-4ec2-43c2-8eb1-9dab109a486b",
+      "ok": false,
+      "cep": "44571005"
+    }
+  ]
+}

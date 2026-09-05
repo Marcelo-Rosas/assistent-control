@@ -1,0 +1,105 @@
+<meta charset="utf-8"><title>Acesso Bloqueado</title><meta name="robots" content="noindex, nofollow"><meta name="viewport" content="width=device-width,initial-scale=1"><style>#gocache-error-page {
+        color: #404040 !important;
+        font-family: "Open Sans", Helvetica, Arial, sans-serif !important;
+        font-size: 15px !important;
+        letter-spacing: normal;
+        line-height: 1.5 !important;
+        text-decoration: none !important;
+
+        display: block;
+        margin: 0 auto;
+        padding: 0 16px;
+        position: relative;
+        text-align: center;
+        max-width: 960px;
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      #gocache-error-page p {
+        font-size: 12px;
+      }
+
+      #logo-gocache {
+        width: 127px;
+        height: 30px;
+        max-width: 100%;
+      }
+
+      body.gocache-body-default {
+        margin: 0;
+        padding-top: 8%;
+        background-color: #f9f9f9;
+      }
+
+      h1 {
+        font-size: 3.8em;
+        margin: 2px;
+      }
+
+      h2 {
+        font-size: 2em;
+        margin: 2px;
+        color: #999999;
+        font-weight: 100;
+      }
+
+      h4 {
+        margin: 2px;
+        font-size: 1.3em;
+      }
+
+      hr {
+        width: 60%;
+        border-top: 1px #ebebeb solid;
+      }
+
+      .g-recaptcha {
+        display: inline-block;
+      }
+
+      .reasons {
+        width: 30%;
+        display: inline-block;
+        position: relative;
+        vertical-align: top;
+        padding: 8px;
+        box-sizing: border-box;
+      }
+
+      @media (max-width: 768px) {
+        body.gocache-body-default {
+          padding-top: 12%;
+        }
+        h1 {
+          font-size: 2.2em;
+        }
+        h2 {
+          font-size: 1.4em;
+        }
+        .reasons {
+          display: block;
+          width: 100%;
+          max-width: 420px;
+          margin: 0 auto;
+        }
+        hr {
+          width: 85%;
+        }
+
+        #gocache-error-page br {
+          line-height: 0.6;
+        }
+      }
+
+      @media (max-width: 480px) {
+        body.gocache-body-default {
+          padding-top: 16%;
+        }
+        h1 {
+          font-size: 1.8em;
+        }
+        h2 {
+          font-size: 1.2em;
+        }
+      }</style><body class="gocache-body-default"><div id="gocache-error-page"><h1>Acesso bloqueado</h1><h2>Não foi possível acessar <b>pbh.gov.br</b></h2><br><br><br><div class="reasons"><h4>Por que fui bloqueado?</h4><p>O site é protegido por um serviço de segurança online que o protege contra ataques. Este acesso foi filtrado e classificado como indevido.</div><div class="reasons"><h4>O que eu devo fazer?</h4><p>Entre em contato por email com o dono do site, informando sobre o bloqueio. Envie o <i>ID da requisição</i> exibido abaixo para facilitar a investigação.</div><br><br><br><hr><p><b>ID da requisição:</b> f9c2ded3588ad1b4a6c906aa7e0b03d9 - <b>Seu endereço IP:</b> 179.221.200.199<p><b>Horário:</b> 2026-09-01 18:55:01 - <b>Local:</b> 1s3</div>

@@ -1,0 +1,22 @@
+{
+  "failures": 484,
+  "withAnyMatch": 8,
+  "withCep": 4,
+  "byTier": {
+    "media": 2,
+    "alta": 6
+  },
+  "bySlice": {
+    "no_match_any_tier": 476,
+    "media_sem_cep_rf": 2,
+    "alta_sem_cep_rf": 2,
+    "alta_fino": 4
+  },
+  "mediaGenerico": 0,
+  "mediaFino": 0,
+  "baixaGenerico": 0,
+  "baixaFino": 0,
+  "detailOrListCep": 0,
+  "noMatch": 476,
+  "mediaSamples": []
+}

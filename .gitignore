@@ -50,3 +50,11 @@ data/processed/bh-wfs-capabilities.xml
 data/cache/
 output/
 cotacoes/
+
+# Saídas grandes de pipeline (regeráveis; repo é público — ver Supabase Storage)
+data/processed/wellhub-normalized.json
+data/processed/receita-x-totalpass-match.json
+data/processed/rfb-parque-temporal.json
+data/processed/painel-viabilidade-asof.json
+data/processed/receita-whitespace-prospects.csv
+data/processed/recomendador-poa/

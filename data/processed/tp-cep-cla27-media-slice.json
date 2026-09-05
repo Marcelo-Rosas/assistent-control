@@ -1,0 +1,212 @@
+{
+  "apply": true,
+  "tiers": [
+    "media"
+  ],
+  "before": {
+    "failures": 505,
+    "resolved_cep": 6432
+  },
+  "after": {
+    "failures": 484,
+    "resolved_cep": 6453
+  },
+  "ok": 21,
+  "fail": 0,
+  "bySource": {
+    "cache": 16,
+    "cep_municipio": 3,
+    "receita_logradouro_cep": 2
+  },
+  "results": [
+    {
+      "gymId": "4a129df4-ea5e-4b8e-b035-08f4a1f6eccb",
+      "ok": true,
+      "tier": "media",
+      "source": "cache",
+      "cep": "70390150",
+      "bairro": "Asa Sul",
+      "cep_geral": false
+    },
+    {
+      "gymId": "ca41f013-e4f0-42f4-b693-d0cf5441da1b",
+      "ok": true,
+      "tier": "media",
+      "source": "cache",
+      "cep": "71591375",
+      "bairro": "Del Lago I (Itapoã)",
+      "cep_geral": false
+    },
+    {
+      "gymId": "f50a75bc-1d61-4916-90c8-60e6566631f1",
+      "ok": true,
+      "tier": "media",
+      "source": "cache",
+      "cep": "71936250",
+      "bairro": "Sul (Águas Claras)",
+      "cep_geral": false
+    },
+    {
+      "gymId": "a696245a-20f0-4a8c-9b2b-86cace18acdb",
+      "ok": true,
+      "tier": "media",
+      "source": "cache",
+      "cep": "70670426",
+      "bairro": "Setor Sudoeste",
+      "cep_geral": false
+    },
+    {
+      "gymId": "ee9c5d4a-9e80-437d-a20f-10ca051f88d1",
+      "ok": true,
+      "tier": "media",
+      "source": "cep_municipio",
+      "cep": "38140000",
+      "bairro": "Prata",
+      "cep_geral": true
+    },
+    {
+      "gymId": "6bb9843c-081c-4e48-aaf0-fb0851f870e3",
+      "ok": true,
+      "tier": "media",
+      "source": "cache",
+      "cep": "70200003",
+      "bairro": "Asa Sul",
+      "cep_geral": false
+    },
+    {
+      "gymId": "fe33effd-bd2d-4d0a-9e47-926eb1cede2b",
+      "ok": true,
+      "tier": "media",
+      "source": "cache",
+      "cep": "71625620",
+      "bairro": "Setor de Habitações Individuais Sul",
+      "cep_geral": false
+    },
+    {
+      "gymId": "850c6bbe-eec3-4fb9-b3c3-d6553803cf1b",
+      "ok": true,
+      "tier": "media",
+      "source": "cache",
+      "cep": "71735505",
+      "bairro": "Park Way",
+      "cep_geral": false
+    },
+    {
+      "gymId": "7afe37f6-fba1-4521-8fe0-75038ada8eac",
+      "ok": true,
+      "tier": "media",
+      "source": "cache",
+      "cep": "70680470",
+      "bairro": "Setor Sudoeste",
+      "cep_geral": false
+    },
+    {
+      "gymId": "50099d46-7a93-4bba-8049-b2edf50ce919",
+      "ok": true,
+      "tier": "media",
+      "source": "cache",
+      "cep": "70670502",
+      "bairro": "Setor Sudoeste",
+      "cep_geral": false
+    },
+    {
+      "gymId": "d858a580-af65-4ad7-880d-27a1cec47514",
+      "ok": true,
+      "tier": "media",
+      "source": "cache",
+      "cep": "71901260",
+      "bairro": "Norte (Águas Claras)",
+      "cep_geral": false
+    },
+    {
+      "gymId": "1632d25d-e5d5-41d2-9810-80cb83302e5b",
+      "ok": true,
+      "tier": "media",
+      "source": "cep_municipio",
+      "cep": "35540000",
+      "bairro": "Oliveira",
+      "cep_geral": true
+    },
+    {
+      "gymId": "03f02e9c-a828-4e51-a25e-2e97ba7f70ae",
+      "ok": true,
+      "tier": "media",
+      "source": "receita_logradouro_cep",
+      "cep": "99560970",
+      "bairro": "Centro",
+      "cep_geral": false
+    },
+    {
+      "gymId": "f0ae296c-6b86-4b97-84fe-8e22b98f9a13",
+      "ok": true,
+      "tier": "media",
+      "source": "cep_municipio",
+      "cep": "39516000",
+      "bairro": "Mamonas",
+      "cep_geral": true
+    },
+    {
+      "gymId": "8c07ee27-977f-4e6c-a103-635b43d543ac",
+      "ok": true,
+      "tier": "media",
+      "source": "cache",
+      "cep": "37200068",
+      "bairro": "Centro",
+      "cep_geral": false
+    },
+    {
+      "gymId": "35d8e006-5174-4909-a8d0-751b267f358d",
+      "ok": true,
+      "tier": "media",
+      "source": "cache",
+      "cep": "28905970",
+      "bairro": "Centro",
+      "cep_geral": false
+    },
+    {
+      "gymId": "83ec7180-74c9-4220-9def-9fe9ac325e81",
+      "ok": true,
+      "tier": "media",
+      "source": "cache",
+      "cep": "35574348",
+      "bairro": "Sagrado Coração de Jesus",
+      "cep_geral": false
+    },
+    {
+      "gymId": "9186e683-517f-4f28-87c3-e64302ace896",
+      "ok": true,
+      "tier": "media",
+      "source": "cache",
+      "cep": "70675100",
+      "bairro": "Setor Sudoeste",
+      "cep_geral": false
+    },
+    {
+      "gymId": "fce92e2c-43c9-4d92-ad2b-fbb94f0f35bb",
+      "ok": true,
+      "tier": "media",
+      "source": "receita_logradouro_cep",
+      "cep": "37205213",
+      "bairro": "Jardim Bela Vista",
+      "cep_geral": false
+    },
+    {
+      "gymId": "d888984a-cbdb-476a-99ab-ccb9b4ffdcd7",
+      "ok": true,
+      "tier": "media",
+      "source": "cache",
+      "cep": "29102842",
+      "bairro": "Residencial Coqueiral",
+      "cep_geral": false
+    },
+    {
+      "gymId": "160fb6c7-0ef4-49a8-9f59-ef9f38a056b5",
+      "ok": true,
+      "tier": "media",
+      "source": "cache",
+      "cep": "29102035",
+      "bairro": "Praia de Itaparica",
+      "cep_geral": false
+    }
+  ]
+}

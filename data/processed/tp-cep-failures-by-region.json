@@ -1,0 +1,295 @@
+{
+  "total": 948,
+  "com_cep_receita": 447,
+  "regTable": [
+    {
+      "regiao": "Sudeste",
+      "falhas": 513,
+      "top_ceps": [
+        {
+          "cep": "37470-000",
+          "n": 7
+        },
+        {
+          "cep": "11900-000",
+          "n": 4
+        },
+        {
+          "cep": "36415-000",
+          "n": 4
+        },
+        {
+          "cep": "38770-000",
+          "n": 4
+        },
+        {
+          "cep": "14340-000",
+          "n": 3
+        },
+        {
+          "cep": "18185-000",
+          "n": 3
+        }
+      ],
+      "padroes": [
+        {
+          "padrao": "xxxxx-0000 (genérico município)",
+          "n": 166
+        },
+        {
+          "padrao": "xxxx0-000 (genérico)",
+          "n": 20
+        }
+      ]
+    },
+    {
+      "regiao": "Centro-Oeste",
+      "falhas": 147,
+      "top_ceps": [
+        {
+          "cep": "78850-000",
+          "n": 6
+        },
+        {
+          "cep": "78360-000",
+          "n": 3
+        },
+        {
+          "cep": "75600-000",
+          "n": 2
+        },
+        {
+          "cep": "75860-000",
+          "n": 2
+        },
+        {
+          "cep": "78580-000",
+          "n": 2
+        },
+        {
+          "cep": "79130-000",
+          "n": 2
+        }
+      ],
+      "padroes": [
+        {
+          "padrao": "xxxxx-0000 (genérico município)",
+          "n": 41
+        },
+        {
+          "padrao": "xxxx0-000 (genérico)",
+          "n": 3
+        }
+      ]
+    },
+    {
+      "regiao": "Nordeste",
+      "falhas": 139,
+      "top_ceps": [
+        {
+          "cep": "48700-000",
+          "n": 6
+        },
+        {
+          "cep": "44380-000",
+          "n": 3
+        },
+        {
+          "cep": "48400-000",
+          "n": 3
+        },
+        {
+          "cep": "49400-000",
+          "n": 3
+        },
+        {
+          "cep": "56230-000",
+          "n": 3
+        },
+        {
+          "cep": "59570-000",
+          "n": 3
+        }
+      ],
+      "padroes": [
+        {
+          "padrao": "xxxxx-0000 (genérico município)",
+          "n": 116
+        },
+        {
+          "padrao": "xxxx0-000 (genérico)",
+          "n": 11
+        },
+        {
+          "padrao": "outros",
+          "n": 2
+        }
+      ]
+    },
+    {
+      "regiao": "Sul",
+      "falhas": 131,
+      "top_ceps": [
+        {
+          "cep": "83430-000",
+          "n": 4
+        },
+        {
+          "cep": "84200-000",
+          "n": 4
+        },
+        {
+          "cep": "83750-000",
+          "n": 3
+        },
+        {
+          "cep": "84320-000",
+          "n": 2
+        },
+        {
+          "cep": "84400-000",
+          "n": 2
+        },
+        {
+          "cep": "84940-000",
+          "n": 2
+        }
+      ],
+      "padroes": [
+        {
+          "padrao": "xxxxx-0000 (genérico município)",
+          "n": 65
+        },
+        {
+          "padrao": "xxxx0-000 (genérico)",
+          "n": 4
+        },
+        {
+          "padrao": "outros",
+          "n": 1
+        }
+      ]
+    },
+    {
+      "regiao": "Norte",
+      "falhas": 18,
+      "top_ceps": [
+        {
+          "cep": "68390-000",
+          "n": 2
+        },
+        {
+          "cep": "68400-000",
+          "n": 2
+        },
+        {
+          "cep": "68515-000",
+          "n": 2
+        },
+        {
+          "cep": "68165-000",
+          "n": 1
+        },
+        {
+          "cep": "68380-000",
+          "n": 1
+        },
+        {
+          "cep": "68440-000",
+          "n": 1
+        }
+      ],
+      "padroes": [
+        {
+          "padrao": "xxxxx-0000 (genérico município)",
+          "n": 12
+        },
+        {
+          "padrao": "xxxx0-000 (genérico)",
+          "n": 5
+        },
+        {
+          "padrao": "outros",
+          "n": 1
+        }
+      ]
+    }
+  ],
+  "globalTopCeps": [
+    {
+      "cep": "37470-000",
+      "n": 7,
+      "regiao": "Sudeste"
+    },
+    {
+      "cep": "48700-000",
+      "n": 6,
+      "regiao": "Nordeste"
+    },
+    {
+      "cep": "78850-000",
+      "n": 6,
+      "regiao": "Centro-Oeste"
+    },
+    {
+      "cep": "11900-000",
+      "n": 4,
+      "regiao": "Sudeste"
+    },
+    {
+      "cep": "36415-000",
+      "n": 4,
+      "regiao": "Sudeste"
+    },
+    {
+      "cep": "38770-000",
+      "n": 4,
+      "regiao": "Sudeste"
+    },
+    {
+      "cep": "83430-000",
+      "n": 4,
+      "regiao": "Sul"
+    },
+    {
+      "cep": "84200-000",
+      "n": 4,
+      "regiao": "Sul"
+    },
+    {
+      "cep": "14340-000",
+      "n": 3,
+      "regiao": "Sudeste"
+    },
+    {
+      "cep": "18185-000",
+      "n": 3,
+      "regiao": "Sudeste"
+    },
+    {
+      "cep": "28400-000",
+      "n": 3,
+      "regiao": "Sudeste"
+    },
+    {
+      "cep": "29830-000",
+      "n": 3,
+      "regiao": "Sudeste"
+    },
+    {
+      "cep": "37600-000",
+      "n": 3,
+      "regiao": "Sudeste"
+    },
+    {
+      "cep": "39300-000",
+      "n": 3,
+      "regiao": "Sudeste"
+    },
+    {
+      "cep": "44380-000",
+      "n": 3,
+      "regiao": "Nordeste"
+    }
+  ]
+}
