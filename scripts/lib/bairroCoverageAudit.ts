@@ -17,8 +17,16 @@ import {
   matchesDistritoSlug,
   registerAggregatorBairro,
 } from './catalogDistritoResolver.ts';
+import {
+  classifyMunicipioTier,
+  isTierAtLeast,
+  MUNICIPIO_TIER_DEFINITION,
+  type MunicipioTier,
+} from './municipioTier.ts';
 
 export { matchesDistritoSlug };
+export { classifyMunicipioTier, isTierAtLeast, MUNICIPIO_TIER_DEFINITION };
+export type { MunicipioTier };
 
 export type AggregatorId = 'wellhub' | 'totalpass' | 'gurupass';
 
@@ -33,6 +41,10 @@ export type AggregatorBairroStats = {
   coverage_pct: number | null;
   missing_bairros: string[];
   failures: string[];
+  /** TP: gyms cujo bairro veio do índice (CEP/Nominatim/cache). */
+  index_hit_count?: number;
+  /** TP: subset de index_hit com source CEP (receita_cep / cep_municipio / receita_logradouro_cep). */
+  cep_hit_count?: number;
 };
 
 export type MunicipioCoverageRow = {
@@ -40,6 +52,8 @@ export type MunicipioCoverageRow = {
   cidade: string;
   uf: string;
   ibge: string | null;
+  populacao: number | null;
+  tier: MunicipioTier | null;
   reference_source: ReferenceSource;
   reference_bairro_count: number;
   catalog_file: string | null;
@@ -54,17 +68,58 @@ export type MunicipioCoverageRow = {
   gaps: string[];
 };
 
+export type TpIndexAuditStats = {
+  total: number;
+  resolved: number;
+  resolved_cep: number;
+  failed: number;
+  provider: string | null;
+  /** % resolved / total no índice. */
+  resolved_pct: number | null;
+  /** % resolved_cep / total — métrica CEP honesta (≠ 100% sem CEP em todo gym). */
+  resolved_cep_pct: number | null;
+};
+
+export type MissingBairrosT3PlusEntry = {
+  municipio_key: string;
+  cidade: string;
+  uf: string;
+  tier: MunicipioTier;
+  populacao: number | null;
+  reference_source: ReferenceSource;
+  reference_bairro_count: number;
+  tp_gym_count: number;
+  tp_parseable_pct: number | null;
+  tp_coverage_pct: number | null;
+  tp_cep_hit_count: number;
+  tp_index_hit_count: number;
+  missing_bairros: string[];
+};
+
 export type BairroCoverageAuditReport = {
   version: '1';
   generated_at: string;
   filter_uf: string | null;
+  /** Baseline histórico pré-re-run CEP (audit 2026-09-02). */
+  baseline_2026_09_02?: {
+    avg_tp_coverage_pct: number;
+    note: string;
+  };
   summary: {
     municipios_audited: number;
     municipios_with_catalog: number;
     municipios_with_receita_ref: number;
+    municipios_t3_plus: number;
     avg_wh_coverage_pct: number | null;
     avg_tp_coverage_pct: number | null;
+    /** Média cov% TP só em T3+ com gyms TP e coverage mensurável. */
+      avg_tp_coverage_pct_t3_plus: number | null;
+    avg_tp_parseable_pct: number | null;
+    /** Parseable TP ponderado por gym_count (mais honesto que média municipal). */
+    tp_parseable_pct_gym_weighted: number | null;
     avg_gp_coverage_pct: number | null;
+    tp_index: TpIndexAuditStats | null;
+    honesty_notes: string[];
     aggregator_failures: Record<AggregatorId, string[]>;
   };
   plan_100pct_review: {
@@ -72,8 +127,26 @@ export type BairroCoverageAuditReport = {
     totalpass: string[];
     gurupass: string[];
   };
+  missing_bairros_t3_plus: MissingBairrosT3PlusEntry[];
   rows: MunicipioCoverageRow[];
 };
+
+const CEP_SOURCES = new Set([
+  'receita_cep',
+  'cep_municipio',
+  'receita_logradouro_cep',
+  'detail_cep',
+  'list_cep',
+  'viacep',
+  'brasilapi',
+]);
+
+export function isCepBairroSource(source: string | undefined | null): boolean {
+  if (!source) return false;
+  const s = source.toLowerCase();
+  if (CEP_SOURCES.has(s)) return true;
+  return s.includes('cep') && !s.includes('nominatim');
+}
 
 /** Padrão WH: "... - Bairro, Cidade - UF, CEP" */
 export function extractBairroFromAddress(endereco: string, cidade?: string): string {
@@ -110,6 +183,8 @@ function emptyAggStats(): AggregatorBairroStats {
     coverage_pct: null,
     missing_bairros: [],
     failures: [],
+    index_hit_count: 0,
+    cep_hit_count: 0,
   };
 }
 
@@ -292,14 +367,17 @@ function indexGymsByMunicipio<T>(
 }
 
 export function buildMunicipioCoverageRows(opts: {
-  municipios: Array<{ nome: string; uf: string; ibge?: string }>;
+  municipios: Array<{ nome: string; uf: string; ibge?: string; populacao?: number }>;
   filterUf: string | null;
   catalogs: Map<string, BairrosCatalog>;
   receitaByIbge: Map<string, Set<string>>;
   whGyms: WhGym[];
   tpGyms: TpGym[];
   gpGyms: GpGym[];
-  tpBairroByGymId?: Record<string, { bairro: string; bairro_slug?: string }>;
+  tpBairroByGymId?: Record<
+    string,
+    { bairro: string; bairro_slug?: string; source?: string; cep?: string }
+  >;
   whProgress?: Record<string, { bairros_planned?: number; bairros_done?: number }>;
 }): MunicipioCoverageRow[] {
   const whIndex = indexGymsByMunicipio(opts.whGyms, (g, index) => {
@@ -420,6 +498,12 @@ export function buildMunicipioCoverageRows(opts: {
       const addr = a.full_address ?? '';
       tp.gym_count += 1;
       const geocoded = g.id ? opts.tpBairroByGymId?.[g.id] : undefined;
+      if (geocoded?.bairro?.trim()) {
+        tp.index_hit_count = (tp.index_hit_count ?? 0) + 1;
+        if (isCepBairroSource(geocoded.source) || (geocoded.cep && geocoded.cep.replace(/\D/g, '').length === 8)) {
+          tp.cep_hit_count = (tp.cep_hit_count ?? 0) + 1;
+        }
+      }
       const b =
         geocoded?.bairro?.trim() ||
         extractBairroFromAddress(addr, mun.nome) ||
@@ -485,11 +569,19 @@ export function buildMunicipioCoverageRows(opts: {
     const planned = prog?.bairros_planned ?? null;
     const done = prog?.bairros_done ?? null;
 
+    const populacao =
+      typeof mun.populacao === 'number' && Number.isFinite(mun.populacao)
+        ? mun.populacao
+        : null;
+    const tier = classifyMunicipioTier(populacao);
+
     rows.push({
       municipio_key: key,
       cidade: mun.nome,
       uf: mun.uf,
       ibge: mun.ibge ?? null,
+      populacao,
+      tier,
       reference_source: referenceSource,
       reference_bairro_count: referenceCount,
       catalog_file: catalog ? catalogFileName(mun.nome, mun.uf) : null,
@@ -515,9 +607,43 @@ export function buildMunicipioCoverageRows(opts: {
   });
 }
 
+export function buildMissingBairrosT3Plus(
+  rows: MunicipioCoverageRow[],
+): MissingBairrosT3PlusEntry[] {
+  return rows
+    .filter(
+      (r) =>
+        isTierAtLeast(r.tier, 'T3') &&
+        r.totalpass.gym_count > 0 &&
+        r.reference_bairro_count > 0,
+    )
+    .map((r) => ({
+      municipio_key: r.municipio_key,
+      cidade: r.cidade,
+      uf: r.uf,
+      tier: r.tier!,
+      populacao: r.populacao,
+      reference_source: r.reference_source,
+      reference_bairro_count: r.reference_bairro_count,
+      tp_gym_count: r.totalpass.gym_count,
+      tp_parseable_pct: r.totalpass.parseable_pct,
+      tp_coverage_pct: r.totalpass.coverage_pct,
+      tp_cep_hit_count: r.totalpass.cep_hit_count ?? 0,
+      tp_index_hit_count: r.totalpass.index_hit_count ?? 0,
+      missing_bairros: r.totalpass.missing_bairros,
+    }))
+    .sort((a, b) => {
+      const ma = a.missing_bairros.length;
+      const mb = b.missing_bairros.length;
+      if (mb !== ma) return mb - ma;
+      return (b.populacao ?? 0) - (a.populacao ?? 0);
+    });
+}
+
 export function summarizeReport(
   rows: MunicipioCoverageRow[],
   filterUf: string | null,
+  tpIndexStats?: TpIndexAuditStats | null,
 ): BairroCoverageAuditReport {
   const avg = (vals: (number | null)[]) => {
     const ok = vals.filter((v): v is number => v != null);
@@ -525,27 +651,57 @@ export function summarizeReport(
     return Math.round((ok.reduce((a, b) => a + b, 0) / ok.length) * 10) / 10;
   };
 
+  const t3plus = rows.filter((r) => isTierAtLeast(r.tier, 'T3'));
+  const missingT3 = buildMissingBairrosT3Plus(rows);
+
+  const tpWithGyms = rows.filter((r) => r.totalpass.gym_count > 0);
+  const tpGymTotal = tpWithGyms.reduce((s, r) => s + r.totalpass.gym_count, 0);
+  const tpParseableTotal = tpWithGyms.reduce((s, r) => s + r.totalpass.parseable_count, 0);
+
+  const honesty_notes = [
+    'cov% = bairros da referência (catálogo/Receita) com ≥1 gym do agregador — NÃO é % de gyms com CEP.',
+    'Meta 100% cov vs universo oficial é irrealista sem CEP em todo gym TP e sem catálogo completo.',
+    'TP pós-CEP: use parseable_pct / tp_parseable_pct_gym_weighted + tp_index.resolved_cep_pct (fonte CEP).',
+    'avg_tp_coverage_pct é média municipal (não ponderada) — T3+ e index CEP são leituras melhores.',
+    `Tiers: ${MUNICIPIO_TIER_DEFINITION}`,
+  ];
+
   return {
     version: '1',
     generated_at: new Date().toISOString(),
     filter_uf: filterUf,
+    baseline_2026_09_02: {
+      avg_tp_coverage_pct: 35.6,
+      note: 'Audit 2026-09-02 (index ~25800 resolved / 864 failed; Nominatim-heavy).',
+    },
     summary: {
       municipios_audited: rows.length,
       municipios_with_catalog: rows.filter((r) => r.catalog_file).length,
       municipios_with_receita_ref: rows.filter((r) => r.receita_bairro_count > 0).length,
+      municipios_t3_plus: t3plus.length,
       avg_wh_coverage_pct: avg(rows.map((r) => r.wellhub.coverage_pct)),
       avg_tp_coverage_pct: avg(rows.map((r) => r.totalpass.coverage_pct)),
+      avg_tp_coverage_pct_t3_plus: avg(
+        t3plus
+          .filter((r) => r.totalpass.gym_count > 0)
+          .map((r) => r.totalpass.coverage_pct),
+      ),
+      avg_tp_parseable_pct: avg(tpWithGyms.map((r) => r.totalpass.parseable_pct)),
+      tp_parseable_pct_gym_weighted: pct(tpParseableTotal, tpGymTotal),
       avg_gp_coverage_pct: avg(rows.map((r) => r.gurupass.coverage_pct)),
+      tp_index: tpIndexStats ?? null,
+      honesty_notes,
       aggregator_failures: {
         wellhub: [
-          'Catálogo oficial só POA — resto usa SEED+heurística MAX 50 bairros',
+          'Catálogo oficial só em municípios piloto — resto usa SEED+heurística MAX 50 bairros',
           'Teto 100 resultados/URL — sub-grid não implementado',
           'Bairro só via parse endereço pós-scrape',
         ],
         totalpass: [
           'Scrape só lat/lng por município — zero tiling bairro',
-          'full_address listagem sem bairro — F2 geocode Nominatim (CLA-22)',
-          'Index: data/processed/tp-bairro-index.json',
+          'Bairro canônico via CEP (CLA-22); Nominatim legado no index ainda presente',
+          'Index: data/processed/tp-bairro-index.json — residual sem CEP = CLA-27',
+          '100% cov vs Receita/catálogo exige CEP em todo gym + ref completa — não prometido',
           'Municípios sem lat/lng ignorados no scrape',
         ],
         gurupass: [
@@ -563,15 +719,18 @@ export function summarizeReport(
         'Heurística sem catálogo NÃO garante 100% — cap MAX_BAIRROS=50',
       ],
       totalpass: [
-        '100% bairro no TP exigiria API/search por bairro ou grid fino — não existe hoje',
-        'F2 geocode reverso lat/lng → bairro (Nominatim + cache)',
-        'Métrica cov% após npm run resolve:tp-bairros + audit:bairro-coverage',
+        '100% bairro no TP exigiria API/search por bairro ou CEP em 100% dos gyms — não existe hoje',
+        'F2 CEP canônico (ViaCEP/BrasilAPI + Receita) — Nominatim deprecated',
+        'Métrica honesta: resolved_cep_pct no index + parseable_pct + cov% vs ref (esperado <<100)',
+        'Residual failures (~sem CEP) = CLA-27 — não bloquear audit F3 em 100% CEP',
+        'Re-audit: npm run audit:bairro-coverage após resolve:tp-bairros',
       ],
       gurupass: [
         'Melhor agregador para bairro (neighborhood nativo)',
         '100% vs universo oficial ainda precisa catálogo ou Receita como referência',
       ],
     },
+    missing_bairros_t3_plus: missingT3,
     rows,
   };
 }
