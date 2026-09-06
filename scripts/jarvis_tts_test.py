@@ -49,6 +49,13 @@ def test_desliga_por_env(monkeypatch):
     monkeypatch.setenv("JARVIS_TTS", "0")
     assert jt.disponivel() is False
 
+def test_produto_cascade_locked():
+    """Trava de produto: cascade EL->Antonio->Piper->SAPI."""
+    jt = _load()
+    assert jt.BACKENDS == ("eleven", "edge", "piper", "sapi")
+    assert "AntonioNeural" in jt.DEFAULT_EDGE_VOICE
+
+
 
 def test_sintetiza_audio_com_mime_coerente():
     """Contrato: bytes não-vazios + MIME que corresponde ao backend que atendeu."""
@@ -119,3 +126,56 @@ def test_eleven_sem_chave_nao_quebra(monkeypatch):
     monkeypatch.delenv("ELEVENLABS_API_KEY", raising=False)
     monkeypatch.setenv("JARVIS_TTS_BACKEND", "eleven")
     assert jt.disponivel() is False
+
+
+def test_hud_speak_envia_previous_text():
+    """Spec voz § HUD.2: lastSpokenText viaja no body do /speak."""
+    html = (ROOT / "public" / "jarvis-q.html").read_text(encoding="utf-8")
+    assert "lastSpokenText" in html
+    assert "previous_text" in html
+    # body do /speak precisa incluir o campo (não só comentário)
+    assert "previous_text: lastSpokenText" in html.replace(" ", "") or (
+        '"previous_text"' in html and "lastSpokenText" in html
+    )
+
+
+def test_hud_mostra_cota_e_tts_aviso():
+    html = (ROOT / "public" / "jarvis-q.html").read_text(encoding="utf-8")
+    assert "tts_aviso" in html
+    assert "pct_usado" in html
+    assert "cota baixa" in html.lower() or "ElevenLabs: cota" in html
+    assert "applyHealthVoice" in html or "refreshTtsHealth" in html
+
+def test_hud_nao_desliga_ttsLocal_em_falha():
+    html = (ROOT / "public" / "jarvis-q.html").read_text(encoding="utf-8")
+    # política antiga: ttsLocal = false dentro do catch de speakServer
+    assert "ttsLocal = false" in html.split("speakServer")[0]  # declaração ok no boot
+    # no handler de falha de speak NÃO pode haver atribuição permanente
+    speak_fn = html.split("function speak(text)")[1].split("function speakWebSpeech")[0]
+    assert "ttsLocal = false" not in speak_fn
+    assert "speakWebSpeech" in speak_fn
+
+def test_backend_warmup_nunca_eleven(monkeypatch):
+    jt = _load()
+    monkeypatch.setattr(jt, "_edge_ok", lambda: True)
+    monkeypatch.setattr(jt, "_piper_ok", lambda: True)
+    monkeypatch.setattr(jt, "_sapi_ok", lambda: True)
+    assert jt.backend_warmup() == "edge"
+
+    monkeypatch.setattr(jt, "_edge_ok", lambda: False)
+    assert jt.backend_warmup() == "piper"
+
+    monkeypatch.setattr(jt, "_piper_ok", lambda: False)
+    assert jt.backend_warmup() == "sapi"
+
+    monkeypatch.setattr(jt, "_sapi_ok", lambda: False)
+    assert jt.backend_warmup() is None  # só EL → skip
+
+
+def test_backend_warmup_ignora_eleven_ok(monkeypatch):
+    jt = _load()
+    monkeypatch.setattr(jt, "_eleven_ok", lambda: True)
+    monkeypatch.setattr(jt, "_edge_ok", lambda: False)
+    monkeypatch.setattr(jt, "_piper_ok", lambda: False)
+    monkeypatch.setattr(jt, "_sapi_ok", lambda: False)
+    assert jt.backend_warmup() is None

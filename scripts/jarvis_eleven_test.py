@@ -7,6 +7,8 @@ clone limpo ou um CI sem segredo não ficarem vermelhos.
 from pathlib import Path
 import importlib.util
 import sys
+import io
+import time
 import urllib.error
 
 import pytest
@@ -37,6 +39,21 @@ def test_voz_padrao_e_brasileira():
     el = _load()
     assert el.VOZ_PADRAO in el.VOZES_PT_BR
     assert "JBFqnCBsd6RMkjVDRZzb" not in el.VOZES_PT_BR.values()
+
+def test_produto_voz_lair_locked():
+    """Trava de produto: voz lair + settings calibrados (addendum SDD voz)."""
+    el = _load()
+    assert el.VOZ_PADRAO == "lair"
+    assert el.VOZES_PT_BR["lair"] == "4r3G9XKliGgVZLKMgjik"
+    assert el.MODELO_PADRAO == "eleven_multilingual_v2"
+    cfg = el.ElevenConfig.from_env()
+    # settings default do spec (sem env override)
+    assert cfg.settings.stability == 0.55
+    assert cfg.settings.similarity_boost == 0.80
+    assert cfg.settings.style == 0.0
+    assert cfg.settings.speed == 0.96
+    assert cfg.settings.use_speaker_boost is True
+
 
 
 def test_apelido_de_voz_resolve_para_id(monkeypatch):
@@ -124,6 +141,55 @@ def test_sem_chave_erro_tipado(monkeypatch):
         el.sintetizar("teste")
 
 
+def test_sintetizar_retry_uma_vez_em_429(monkeypatch):
+    el = _load()
+    monkeypatch.setenv("ELEVENLABS_API_KEY", "fake-key")
+    calls = {"n": 0}
+
+    class _Ok:
+        def read(self):
+            return b"\xff\xfb" + b"\x00" * 1200
+
+    def fake_urlopen(req, timeout=90):
+        calls["n"] += 1
+        if calls["n"] == 1:
+            fp = io.BytesIO(b'{"detail":"rate"}')
+            raise urllib.error.HTTPError(
+                "https://api.elevenlabs.io/v1/x", 429, "Too Many", hdrs=None, fp=fp
+            )
+        return _Ok()
+
+    sleeps = []
+    monkeypatch.setattr(el.urllib.request, "urlopen", fake_urlopen)
+    monkeypatch.setattr(el.time, "sleep", lambda s: sleeps.append(s))
+    audio, mime = el.sintetizar("oi")
+    assert calls["n"] == 2
+    assert mime == "audio/mpeg"
+    assert len(audio) > 1000
+    assert len(sleeps) == 1
+    assert 0.4 <= sleeps[0] <= 0.8
+
+
+def test_sintetizar_429_duas_vezes_propaga(monkeypatch):
+    el = _load()
+    monkeypatch.setenv("ELEVENLABS_API_KEY", "fake-key")
+    calls = {"n": 0}
+
+    def always_429(req, timeout=90):
+        calls["n"] += 1
+        fp = io.BytesIO(b"{}")
+        raise urllib.error.HTTPError(
+            "https://api.elevenlabs.io/v1/x", 429, "Too Many", hdrs=None, fp=fp
+        )
+
+    monkeypatch.setattr(el.urllib.request, "urlopen", always_429)
+    monkeypatch.setattr(el.time, "sleep", lambda s: None)
+    with pytest.raises(el.ElevenErro) as exc:
+        el.sintetizar("oi")
+    assert exc.value.concorrencia
+    assert calls["n"] == 2  # não loop infinito
+
+
 # -------------------------------------------------------------------- rede
 def test_assinatura_traz_cota():
     el = _com_chave_ou_skip()
@@ -149,3 +215,25 @@ def test_previous_text_nao_quebra():
         previous_text="Savassi sustenta a tese, senhor.",
     )
     assert len(audio) > 1000
+
+def test_env_example_documenta_elevenlabs():
+    texto = (ROOT / ".env.example").read_text(encoding="utf-8")
+    for chave in (
+        "ELEVENLABS_API_KEY",
+        "ELEVENLABS_VOICE_ID",
+        "ELEVENLABS_MODEL_ID",
+        "ELEVENLABS_OUTPUT_FORMAT",
+        "ELEVENLABS_LANGUAGE",
+        "ELEVENLABS_STABILITY",
+        "ELEVENLABS_SIMILARITY",
+        "ELEVENLABS_STYLE",
+        "ELEVENLABS_SPEED",
+        "ELEVENLABS_SEED",
+        "JARVIS_TTS",
+        "JARVIS_TTS_BACKEND",
+        "JARVIS_TTS_VOICE",
+        "JARVIS_TTS_PIPER_VOICE",
+    ):
+        assert chave in texto, chave
+    assert "eleven_multilingual_v2" in texto
+    assert "lair" in texto

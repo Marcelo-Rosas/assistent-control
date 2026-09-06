@@ -146,6 +146,20 @@ def last_backend() -> str | None:
     return _LAST_BACKEND
 
 
+def backend_warmup() -> str | None:
+    """Backend para boot/warmup sem gastar caracteres ElevenLabs.
+
+    Ordem: edge → piper → sapi. Se só EL estiver ok, devolve None (skip).
+    """
+    if _edge_ok():
+        return "edge"
+    if _piper_ok():
+        return "piper"
+    if _sapi_ok():
+        return "sapi"
+    return None
+
+
 def ultimo_erro() -> str | None:
     """Por que o backend preferido não atendeu — diagnóstico sem ler log."""
     return _ULTIMO_ERRO

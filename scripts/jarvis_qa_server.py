@@ -237,19 +237,31 @@ def _aquecer() -> None:
     except Exception as exc:  # noqa: BLE001 — aquecimento e best-effort
         print(f"aviso: reasoner nao aqueceu ({exc})", flush=True)
     if jarvis_tts is not None and jarvis_tts.disponivel():
-        try:
-            # Nao referenciar constante de voz: o modulo e um cascade e o nome
-            # da voz depende do backend que atender. Quem respondeu so se sabe
-            # DEPOIS de sintetizar.
-            jarvis_tts.sintetizar("Pronto.")
-            usado = (
-                jarvis_tts.last_backend()
-                if hasattr(jarvis_tts, "last_backend")
-                else "?"
-            )
-            print(f"voz pronta (backend={usado})", flush=True)
-        except Exception as exc:  # noqa: BLE001
-            print(f"aviso: voz nao aqueceu ({exc})", flush=True)
+        wk = (
+            jarvis_tts.backend_warmup()
+            if hasattr(jarvis_tts, "backend_warmup")
+            else None
+        )
+        if wk is None:
+            print("voz: skip warmup (evita gastar chars ElevenLabs)", flush=True)
+        else:
+            old = os.environ.get("JARVIS_TTS_BACKEND")
+            try:
+                os.environ["JARVIS_TTS_BACKEND"] = wk
+                jarvis_tts.sintetizar("Pronto.")
+                usado = (
+                    jarvis_tts.last_backend()
+                    if hasattr(jarvis_tts, "last_backend")
+                    else wk
+                )
+                print(f"voz pronta (warmup={usado})", flush=True)
+            except Exception as exc:  # noqa: BLE001
+                print(f"aviso: voz nao aqueceu ({exc})", flush=True)
+            finally:
+                if old is None:
+                    os.environ.pop("JARVIS_TTS_BACKEND", None)
+                else:
+                    os.environ["JARVIS_TTS_BACKEND"] = old
 
 
 def main() -> int:

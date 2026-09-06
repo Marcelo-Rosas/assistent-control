@@ -606,6 +606,7 @@
     }
     .api-foot.ok { color: var(--ok); }
     .api-foot.bad { color: var(--danger); }
+    .api-foot.warn { color: var(--warn, #e6a23c); }
 
     /* ── Settings drawer ── */
     .overlay {
@@ -1037,10 +1038,11 @@
         return out;
       }
 
-      /* ── voz neural no server (Antonio edge-tts → Piper → SAPI) ──
-         Preferido sobre Web Speech (Maria SAPI robótica). /tts e /speak
-         devolvem MP3 (edge) ou WAV. Falha → Web Speech. */
+      /* ── voz neural no server (ElevenLabs-first → Antonio → Piper → SAPI) ──
+         Preferido sobre Web Speech. /tts e /speak devolvem MP3/WAV.
+         previous_text = último falado (prosódia EL). Falha total → Web Speech. */
       var ttsLocal = false;      /* definido pelo /health */
+      var lastSpokenText = "";  /* último texto falado — prosódia EL */
       var audioAtual = null;
 
       function stopAudio() {
@@ -1052,10 +1054,12 @@
       }
 
       async function speakServer(text) {
+        var payload = { texto: text };
+        if (lastSpokenText) payload["previous_text"] = lastSpokenText;
         var res = await fetch(API + "/speak", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ texto: text }),
+          body: JSON.stringify(payload),
         });
         if (!res.ok) throw new Error("HTTP " + res.status);
         var blob = await res.blob();
@@ -1064,7 +1068,11 @@
         audioAtual = a;
         a.playbackRate = 1;
         return new Promise(function (resolve, reject) {
-          a.onended = function () { stopAudio(); resolve(); };
+          a.onended = function () {
+            stopAudio();
+            lastSpokenText = text;
+            resolve();
+          };
           a.onerror = function () { stopAudio(); reject(new Error("audio")); };
           a.play().catch(reject);
         });
@@ -1082,8 +1090,8 @@
           speakServer(text)
             .then(function () { setState("ready", "Pronto"); })
             .catch(function () {
-              /* Falha do server nao pode emudecer o HUD: Web Speech. */
-              ttsLocal = false;
+              /* Emergência deste turno apenas — NÃO desligar ttsLocal na sessão.
+                 Próximo turno tenta o server de novo (cascade pode ter recuperado). */
               speakWebSpeech(text);
             });
           return;
@@ -1112,7 +1120,10 @@
           if (preferredVoice) u.voice = preferredVoice;
           u.onend = function () {
             if (idx < frases.length) setTimeout(proxima, PAUSA_FRASE);
-            else setState("ready", "Pronto");
+            else {
+              lastSpokenText = text;
+              setState("ready", "Pronto");
+            }
           };
           /* Falha no meio nao pode deixar o HUD presa em "Falando…". */
           u.onerror = function () { setState("ready", "Pronto"); };
@@ -1362,34 +1373,55 @@
       });
 
       /* ── health ── */
-      fetch(API + "/health")
-        .then(function (r) { return r.json(); })
-        .then(function (d) {
-          if (d && d.ok) {
-            /* Decide o caminho de voz UMA vez, no boot, em vez de descobrir
-               por falha no meio da primeira fala. */
-            ttsLocal = !!d.tts;
-            var voz = "";
-            if (ttsLocal) {
-              var pref = String(d.tts_prefer || "");
-              if (pref.indexOf("eleven") === 0) voz = " · ElevenLabs";
-              else if (pref.indexOf("Antonio") >= 0 ||
-                (d.vozes || []).some(function (v) { return String(v).indexOf("Antonio") >= 0; }))
-                voz = " · Antonio";
-              else voz = " · voz server";
-            }
-            apiStatus.textContent =
-              "API ok · " + (location.host || "127.0.0.1:8765") + voz;
-            apiStatus.className = "api-foot ok";
-          } else {
-            apiStatus.textContent = "API respondeu sem ok";
-            apiStatus.className = "api-foot bad";
-          }
-        })
-        .catch(function () {
-          apiStatus.textContent = "API offline — inicie jarvis_qa_server.py";
+      function applyHealthVoice(d) {
+        if (!d || !d.ok) {
+          apiStatus.textContent = "API respondeu sem ok";
           apiStatus.className = "api-foot bad";
-        });
+          return;
+        }
+        ttsLocal = !!d.tts;
+        var voz = "";
+        if (ttsLocal) {
+          var pref = String(d.tts_prefer || "");
+          if (pref.indexOf("eleven") === 0) voz = " · ElevenLabs";
+          else if (pref.indexOf("Antonio") >= 0 ||
+            (d.vozes || []).some(function (v) { return String(v).indexOf("Antonio") >= 0; }))
+            voz = " · Antonio";
+          else voz = " · voz server";
+        }
+        var extra = "";
+        var warn = false;
+        if (d.tts_aviso) {
+          extra += " · " + String(d.tts_aviso);
+          warn = true;
+        }
+        var el = d.eleven;
+        if (el && !el.erro) {
+          var pct = el.pct_usado;
+          var rest = el.restantes;
+          if ((typeof pct === "number" && pct >= 90) ||
+              (typeof rest === "number" && rest < 500)) {
+            extra += " · ElevenLabs: cota baixa — caindo para Antonio";
+            warn = true;
+          }
+        }
+        apiStatus.textContent =
+          "API ok · " + (location.host || "127.0.0.1:8765") + voz + extra;
+        apiStatus.className = warn ? "api-foot warn" : "api-foot ok";
+      }
+
+      function refreshTtsHealth() {
+        return fetch(API + "/health")
+          .then(function (r) { return r.json(); })
+          .then(applyHealthVoice)
+          .catch(function () {
+            apiStatus.textContent = "API offline — inicie jarvis_qa_server.py";
+            apiStatus.className = "api-foot bad";
+          });
+      }
+
+      refreshTtsHealth();
+      setInterval(refreshTtsHealth, 5 * 60 * 1000);
 
       setState("ready", "Pronto");
     })();

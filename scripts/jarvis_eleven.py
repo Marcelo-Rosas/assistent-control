@@ -26,6 +26,8 @@ from __future__ import annotations
 
 import json
 import os
+import random
+import time
 import urllib.error
 import urllib.request
 from dataclasses import dataclass, field
@@ -239,12 +241,23 @@ def sintetizar(
         data=json.dumps(payload).encode("utf-8"),
         headers={"xi-api-key": key, "Content-Type": "application/json"},
     )
-    try:
-        audio = urllib.request.urlopen(req, timeout=timeout).read()
-    except urllib.error.HTTPError as exc:
-        raise _erro_http(exc) from exc
-    except OSError as exc:  # rede fora, DNS, timeout
-        raise ElevenErro(f"rede indisponível: {exc}") from exc
+    tentativas = 2
+    ultimo: ElevenErro | None = None
+    for i in range(tentativas):
+        try:
+            audio = urllib.request.urlopen(req, timeout=timeout).read()
+            break
+        except urllib.error.HTTPError as exc:
+            err = _erro_http(exc)
+            if err.concorrencia and i + 1 < tentativas:
+                time.sleep(random.uniform(0.4, 0.8))
+                ultimo = err
+                continue
+            raise err from exc
+        except OSError as exc:  # rede fora, DNS, timeout
+            raise ElevenErro(f"rede indisponível: {exc}") from exc
+    else:
+        raise ultimo or ElevenErro("ElevenLabs 429 sem resposta")
 
     if not audio:
         raise ElevenErro("ElevenLabs devolveu áudio vazio")
