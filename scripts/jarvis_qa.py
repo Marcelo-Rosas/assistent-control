@@ -245,6 +245,36 @@ def load_playbook(path: Path) -> list[PlaybookFaq]:
     return faqs
 
 
+
+def is_playbook_factual_puro(q: str, toy: dict) -> bool:
+    """Passo 3 do spec: playbook só se a query NÃO pede grounding de Rule."""
+    qn = unicodedata.normalize("NFKC", q).casefold()
+    if "herda" in qn and "renda" in qn:
+        return False
+    for r in toy.get("rules", []):
+        name = (r.get("name") or "").casefold()
+        if name and name in qn:
+            return False
+    return True
+
+
+
+
+def rule_body_grounds(texto: str, toy: dict, ents: list[str]) -> dict | None:
+    """v1: heurística name / herda+renda. Body walk real = spec depois."""
+    q = unicodedata.normalize("NFKC", texto).casefold()
+    for r in toy.get("rules", []):
+        name = r.get("name", "")
+        if name and name.casefold() in q:
+            return r
+    if "herda" in q and "renda" in q and ents:
+        return next(
+            (r for r in toy.get("rules", []) if "herda" in r.get("name", "")),
+            toy["rules"][0] if toy.get("rules") else None,
+        )
+    return None
+
+
 def match_playbook(text: str, faqs: list[PlaybookFaq]) -> PlaybookFaq | None:
     """Match FAQ by title substring; prefer Projector when query mentions it.
 
@@ -321,10 +351,21 @@ def tf_available() -> bool:
     try:
         import tensorflow  # noqa: F401
         import keras  # noqa: F401
-
-        return True
     except ImportError:
         return False
+    try:
+        raw = TOY_PATH.read_text(encoding="utf-8")
+        data = json.loads(raw)
+        if not data.get("entity2id") or not data.get("relation2id"):
+            return False
+    except (OSError, json.JSONDecodeError, TypeError):
+        return False
+    # Probe: neurônio importável (instanciação pesada fica no build_reasoner)
+    try:
+        _import_neuron()
+    except Exception:
+        return False
+    return True
 
 
 def _import_neuron():
@@ -407,6 +448,49 @@ def _default_toy() -> dict:
             _CACHE["toy"] = json.loads(TOY_PATH.read_text(encoding="utf-8"))
         return _CACHE["toy"]
 
+
+
+def _try_load_toy() -> dict | None:
+    try:
+        toy = _default_toy()
+    except (OSError, json.JSONDecodeError, KeyError, TypeError):
+        return None
+    # Same bar as tf_available: empty maps = load failure so toy_missing gates fire.
+    if not toy.get("entity2id") or not toy.get("relation2id"):
+        return None
+    return toy
+
+
+def _kg_indisponivel() -> AskResult:
+    return {
+        "resposta": (
+            "O grafo toy está indisponível, {sr}. "
+            "Não consigo fechar viabilidade nem relação agora."
+        ),
+        "fala": "",
+        "modo": "regra",
+        "porque": "kg_toy_indisponivel",
+        "fontes": [],
+        "contexto": {},
+    }
+
+
+def _wants_kg_graph(q: str, intent: str) -> bool:
+    """True when the query needs the KG toy (viabilidade / relação / híbrido)."""
+    if intent in ("viabilidade", "relacao_kg"):
+        return True
+    if _looks_like_viabilidade(q):
+        return True
+    if "herda" in q and "renda" in q:
+        return True
+    rel_words = (
+        "pertence_a",
+        "tem_renda",
+        "tem_aluguel",
+        "coberto_por",
+        "localizado_em",
+    )
+    return any(w in q for w in rel_words)
 
 def _base_label(toy: dict) -> str:
     """Rotula a procedencia do score p/ o painel.
@@ -891,25 +975,52 @@ def _ask_raw(
     ctx_in: dict | None = None,
     ctx_out: dict | None = None,
 ) -> AskResult:
-    if tf_ok is None:
-        tf_ok = tf_available()
-
     faqs = faqs if faqs is not None else _default_faqs()
-    toy = toy if toy is not None else _default_toy()
-    names = list(toy["entity2id"].keys())
     q = unicodedata.normalize("NFKC", texto).casefold()
-
     ctx_in = ctx_in if ctx_in is not None else contexto_vazio()
     ctx_out = ctx_out if ctx_out is not None else {}
+
+    # Passo 0: penetração ANTES de toy / parse_intent KG
+    if looks_like_penetracao(texto):
+        pen = _try_rag_penetracao(texto)
+        if pen is not None:
+            fontes = pen.get("fontes") or []
+            counts_pos = any(
+                f.startswith(p) and f.split(":", 1)[-1] not in ("0", "")
+                for f in fontes
+                for p in ("tp:", "wh:", "gp:")
+            )
+            if counts_pos:
+                ctx_out.update({"oferta": "cruzar"})
+            # pen["contexto"] é descartado por ask(); ctx_out manda
+            return pen
+
+    toy_missing = False
+    if toy is None:
+        loaded = _try_load_toy()
+        if loaded is None:
+            toy_missing = True
+            toy = {}
+            names = []
+            if tf_ok is None:
+                tf_ok = False
+        else:
+            toy = loaded
+            names = list(toy["entity2id"].keys())
+            if tf_ok is None:
+                tf_ok = tf_available()
+    else:
+        names = list(toy.get("entity2id", {}).keys())
+        if tf_ok is None:
+            tf_ok = tf_available()
 
     intent, ents = parse_intent(texto, names)
     faq = match_playbook(texto, faqs)
 
-    # --- RAG-first: penetração bairro × agregadores (antes do toy TF) ---
-    if looks_like_penetracao(texto):
-        pen = _try_rag_penetracao(texto)
-        if pen is not None:
-            return pen
+    # Fixture morto: intents de grafo → resposta controlada (não playbook/recusa).
+    # Penetração (passo 0) já saiu; playbook factual puro segue sem toy.
+    if toy_missing and _wants_kg_graph(q, intent):
+        return _kg_indisponivel()
 
     # --- step 1b: follow-up sobre a entidade do turno anterior ---
     # Sem isso o JARVIS oferecia "Cruzo com aluguel ou renda?" e respondia
@@ -978,11 +1089,15 @@ def _ask_raw(
     if ents and intent == "lixo" and ctx_in.get("entidade"):
         intent = "viabilidade"
     # Viabilidade+ents wins over playbook (f14 title starts with Viabilidade).
-    if intent == "lixo" and faq is not None:
+    # Não promover playbook_aba se a query pede Rule (híbrido vence empate).
+    if intent == "lixo" and faq is not None and is_playbook_factual_puro(q, toy):
         intent = "playbook_aba"
 
     # --- step 2: TF off ---
     if not tf_ok:
+        # Keep one gate for intent promoted after the early toy_missing check (e.g. anafora).
+        if toy_missing and _wants_kg_graph(q, intent):
+            return _kg_indisponivel()
         if intent == "playbook_aba" and faq is not None:
             return {
                 "resposta": faq_to_dialogue(faq),
@@ -996,7 +1111,7 @@ def _ask_raw(
         )
 
     # --- step 3: playbook + TF (only when intent is playbook_aba) ---
-    if intent == "playbook_aba" and faq is not None:
+    if intent == "playbook_aba" and faq is not None and is_playbook_factual_puro(q, toy):
         return {
             "resposta": faq_to_dialogue(faq),
             "modo": "regra",
@@ -1008,8 +1123,7 @@ def _ask_raw(
     # NÃO subir TF só porque a frase citou uma entidade do toy — senão
     # "pilates na Savassi" paga 20s de reasoner antes do RAG (fonte).
     if reasoner is None and (
-        any(r["name"].casefold() in q for r in toy.get("rules", []))
-        or ("herda" in q and "renda" in q and ents)
+        rule_body_grounds(texto, toy, ents) is not None
         or intent in ("viabilidade", "relacao_kg")
     ):
         try:
@@ -1018,19 +1132,11 @@ def _ask_raw(
             return _recusa(
                 "O motor de rede não subiu, {sr}. As abas do playbook seguem à disposição."
             )
+        except (OSError, json.JSONDecodeError, KeyError, TypeError, ValueError):
+            return _kg_indisponivel()
 
     # --- step 4: hybrid (wins over rede) ---
-    rule_hit = None
-    for r in toy.get("rules", []):
-        name = r.get("name", "")
-        if name and name.casefold() in q:
-            rule_hit = r
-            break
-    if rule_hit is None and ("herda" in q and "renda" in q and ents):
-        rule_hit = next(
-            (r for r in toy.get("rules", []) if "herda" in r.get("name", "")),
-            toy["rules"][0] if toy.get("rules") else None,
-        )
+    rule_hit = rule_body_grounds(texto, toy, ents)
 
     if rule_hit is not None:
         rname = rule_hit["name"]
@@ -1082,7 +1188,10 @@ def _ask_raw(
     # --- step 5: rede ---
     if ents and intent == "viabilidade":
         if reasoner is None:
-            reasoner = _default_reasoner(toy)
+            try:
+                reasoner = _default_reasoner(toy)
+            except Exception:
+                return _kg_indisponivel()
         report = reasoner.report(ents[0])
         rotulo = report["rotulo"]
         label = _entity_label(ents[0])
@@ -1122,7 +1231,10 @@ def _ask_raw(
 
     if ents and intent == "relacao_kg":
         if reasoner is None:
-            reasoner = _default_reasoner(toy)
+            try:
+                reasoner = _default_reasoner(toy)
+            except Exception:
+                return _kg_indisponivel()
 
         e2i = toy["entity2id"]
         r2i = toy["relation2id"]
@@ -1151,7 +1263,7 @@ def _ask_raw(
         )
         known = reasoner.kg.is_known(s_id, r_id, o_id)
         sl, ol = _entity_label(s_name), _entity_label(o_name)
-        if not known and prob < 0.7:
+        if not known and prob < _import_neuron().INFER_THRESHOLD:
             resp = (
                 f"Não tenho confiança para afirmar que {sl} {rel_name} {ol}, {{sr}}. "
                 f"Prefiro não arriscar. Tento outra relação?"
@@ -1182,7 +1294,7 @@ def _ask_raw(
 
     # Unknown aba / tensorboard tab
     if faq is None and _looks_like_unknown_aba(q):
-        sample = ", ".join(f.title for f in faqs[:5])
+        sample = ", ".join(f"{f.section_id}:{f.title}" for f in faqs)
         return _recusa(
             f"Essa aba não consta, {{sr}}. Conheço estas: {sample}. Qual prefere?"
         )

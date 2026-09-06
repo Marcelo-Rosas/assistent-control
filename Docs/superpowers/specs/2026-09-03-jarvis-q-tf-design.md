@@ -1,157 +1,276 @@
-# JARVIS-Q — Q&A cognitivo TensorFlow (regras / rede / híbrido)
+# JARVIS-Q — Q&A cognitivo TensorFlow (regras / rede / híbrido / RAG)
 
 Date: 2026-09-03  
-Status: **aprovado** (2026-09-03)  
-Scope: **só Q&A local** (CLI). Desktop (voz/STT) e mobile ficam specs depois.  
-Repo: `assistent-control`.
+Status: **aprovado** (2026-09-03); **contrato corrigido** (2026-09-06)  
+Scope: **Q&A local** — CLI Python + playbook HTML + KG toy (TF) + **censo/RAG** via PostgREST + Ollama local quando a pergunta é penetração/cobertura ou fallback semântico. Desktop (voz/STT) e mobile ficam specs depois.  
+Repo: `assistent-control` (nome canônico do diretório/git; não “assistant-control”).
 
 ## Problem
 
-Curso [Jarvis! / JARVIS Academy](https://drive.google.com/drive/folders/11lh62OS2aBncITs45DyPhwLgP8JhiA4Z) e o prompt em `Downloads\jarvis` tratam **Claude + AIOS + n8n** como cérebro. O produto que queremos é o contrário: **TensorFlow raciocina** (grafo + regras + hops), texto só entra e sai. Já existe motor em `notebooks/reasoning_neuron_viabilidade.py`. Falta uma porta `ask()` com três modos explícitos e playbook TensorBoard como FAQ determinística.
+Curso [Jarvis! / JARVIS Academy](https://drive.google.com/drive/folders/11lh62OS2aBncITs45DyPhwLgP8JhiA4Z) e o prompt em `Downloads\jarvis` tratam **Claude + AIOS + n8n** como cérebro. O produto que queremos é o contrário: **TensorFlow raciocina** (grafo + regras + hops) onde o grafo decide; **RAG/PostgREST** responde censo de mercado por bairro; texto só entra e sai. Já existe motor em `notebooks/reasoning_neuron_viabilidade.py` e porta `ask()` em `scripts/jarvis_qa.py`.
+
+**Segredo (colar aqui):** proibido gravar GitHub PAT / comando do curso / material Drive com token em código, git ou logs. Ver também § Segredos operacionais.
 
 ## Decisions (brainstorm 2026-09-03)
 
 | Tema | Escolha |
 |------|---------|
 | Nome | **JARVIS-Q** (núcleo). Não clonar `gaahzx/jarvis-app`. |
-| Ordem de produto | Q&A → desktop (STT/TTS) → mobile. Este spec = Q&A. |
+| Ordem de produto | Q&A → desktop (STT/TTS) → mobile. Este spec = Q&A (+ voz opcional no HUD local; addendum voz separado). |
 | Arquitetura | Abordagem **1**: embrulhar neurônio existente + router. Não IBM LNN do zero. Não Leon/LLM como cérebro. |
-| Claude/AIOS no v1 | **Não.** Papel do Claude vira router determinístico. Papel do AIOS vira KG + estado JSON. |
-| Voz | Fora do v1. Smoke já feito: `pt-BR-AntonioNeural` (net) + `Microsoft Daniel` (offline). Spec desktop depois. |
-| Segredo | **Proibido** gravar GitHub PAT / comando do curso em código, git ou logs. |
+| Claude/AIOS no v1 | **Não.** Papel do Claude vira router determinístico. Papel do AIOS = **contexto por turno** no `AskResult` (stateless server), não sessão global. |
+| Voz | Fora do contrato cognitivo v1. Smoke TTS existe (ElevenLabs / Antonio / Daniel) — addendum de voz à parte. |
+| Segredo | **Proibido** PAT do curso; env só em `.env` / `.env.local` (gitignored). |
 
 ## Contract
 
-`ask(texto: str) -> AskResult`
+`ask(texto: str, *, contexto: dict | None = None) -> AskResult`
 
 ```text
 AskResult
   resposta: str          # PT-BR, humano
-  modo: enum             # regra | rede | hibrido | regra_fallback
-  porque: str            # uma frase: por que este modo
-  fontes: list[str]      # ids: playbook:#f13, kg:triple, rule:nome
+  fala: str              # mesma frase normalizada p/ TTS (pode ser "")
+  modo: enum             # regra | rede | hibrido | regra_fallback | rag
+  porque: str            # uma frase: por que este modo (+ flags textuais)
+  fontes: list[str]      # ids tipados — ver § Fontes
+  contexto: dict         # ver § Contexto; cliente devolve no turno seguinte
 ```
 
-Um turno = **um** `modo`. Híbrido pode citar score da rede **e** nome da regra no `porque`/`fontes`. Não mistura três narrativas.
+Um turno = **um** `modo`. Híbrido pode citar score da rede **e** nome da regra no `porque`/`fontes`. Não mistura três narrativas TF + RAG no mesmo `modo`.
+
+Campo `conflito` / `confianca` **não** existem no v1: conflito híbrido vai em `porque` (`…; conflito`). API rica = spec depois.
+
+### Fontes (formato locked)
+
+| Prefixo | Significado | Exemplos |
+|---------|-------------|----------|
+| `playbook:#fN` | seção HTML | `playbook:#f13` |
+| `kg:triple` | fato / caminho KG | `kg:triple` |
+| `rule:nome` | RuleBank | `rule:bairro_bh_herda_renda` |
+| `report:entidade` | `ViabilityReasoner.report()` | `report:bairro:savassi` |
+| `rag:penetracao` | censo distinct bairro×grupo | sempre com counts |
+| `bairro:slug` | bairro normalizado kebab | `bairro:paraiso` |
+| `cidade:Nome` | escopo cidade | `cidade:São Paulo` |
+| `geo:…` | escopo geo | `geo:cidade`, `geo:ambiguidade` |
+| `tp:N` / `wh:N` / `gp:N` / `receita:N` | counts distinct | `wh:25` |
+| `chunk:id` | chunk semântico (fallback RAG) | + `sim:0.84` + `grupo:nome` |
+
+Recusa `sem_match`: `fontes=[]`.
+
+### Contexto (ex-AIOS, v1)
+
+Server **stateless**. Persistência = cliente ecoa `AskResult.contexto` no próximo `ask(..., contexto=…)`.
+
+```text
+contexto = { entidade: str | null, oferta: str | null }
+# oferta exemplos: "cruzar" (renda/aluguel após penetração ou viabilidade)
+```
+
+Sem arquivo de sessão global. Sem misturar clientes.
 
 ## Components
 
 | Peça | Função | Fonte |
-|------|--------|--------|
-| Router | intent + entidades; escolhe modo | novo, Python |
-| Regras (playbook) | abas TensorBoard 01–15, ELI5, “como abrir” | canônico: `public/playbook-tensorboard.html` (cópia em `data/jarvis/` só se o plano copiar; scratchpad **não** é fonte) |
+|------|--------|-------|
+| Router | intent + entidades + precedência RAG/TF | `scripts/jarvis_qa.py` |
+| Regras (playbook) | abas TensorBoard 01–15 | `public/playbook-tensorboard.html` |
 | Regras (KG) | `KnowledgeGraph.is_known` | `reasoning_neuron_viabilidade.py` |
-| Rede (relação) | `ReasoningNeuron.propagate` + `TripleScorer` | mesmo arquivo |
-| Rede (viabilidade) | `ViabilityReasoner.report()` (`viab_head`, não o bilinear da tripla) | mesmo arquivo |
-| Híbrido | `RuleBank` + t-norm produto | mesmo arquivo |
-| CLI | `npx`/`python` uma pergunta | `scripts/jarvis_qa.py` (entrada) |
+| Rede (relação) | `TripleScorer` | mesmo arquivo |
+| Rede (viabilidade) | `ViabilityReasoner.report()` | mesmo arquivo |
+| Híbrido | `RuleBank` + t-norm | mesmo arquivo |
+| RAG penetração | distinct PostgREST por `group_id` + bairro | `scripts/jarvis_rag.py` |
+| RAG semântico | `match_chunks` + Ollama embed (fallback) | mesmo |
+| CLI | `python scripts/jarvis_qa.py "…"` (JSON stdout) | sem wrapper `npx` |
+
+### Constantes v1 (centralizado)
+
+| Constante | Valor | Uso |
+|-----------|-------|-----|
+| `VIAB_ALTA` | 0.66 | `rotulo=alta`; só então afirmar “viável” |
+| `VIAB_MEDIA` | 0.40 | `rotulo=media` |
+| `INFER_THRESHOLD` | 0.7 | tripla inferida (`TripleScorer`) entra na prosa só se ≥ |
+| Embedding RAG | 1024 | `mxbai-embed-large` via Ollama nativo |
+
+### Intent
+
+```text
+intent ∈ {
+  penetracao,      # cobertura/censo bairro × TP|WH|GP|Receita
+  playbook_aba,    # FAQ TensorBoard (após match)
+  viabilidade,
+  relacao_kg,
+  lixo
+}
+```
+
+`penetracao` quando `looks_like_penetracao(texto)` (agregador/cobertura/quantas + bairro ou contagem) — **antes** de parse KG.
+
+### Playbook matcher (locked)
+
+1. Normalizar NFKC + casefold.
+2. Se query contém `projector` → seção cujo título casefold == `projector` (`#f13`).
+3. Senão: título da seção (len ≥ 4) é **substring** da query, ou query (len ≥ 4) substring do título.
+4. **Proibido:** match por primeiro token (`PR` ⊂ `Projector`).
+5. Sem fuzzy edit-distance no v1.
 
 ### Roteamento (ordem fixa, sem LLM)
 
-`tf_ok` = import Keras/TF + `ViabilityReasoner` sobe (sem exigir GPU).
+`tf_ok` = import Keras/TF **e** `data/jarvis/kg-toy.json` carrega **e** `ViabilityReasoner` instancia. Se TF importa mas fixture some/corrupto → **não** é `regra_fallback` de playbook genérico: recusa controlada `porque=kg_toy_indisponivel` (`modo=regra`, `fontes=[]`) para intents que precisam do grafo.
 
-1. Parse: intent ∈ {playbook_aba, viabilidade, relacao_kg, lixo} + entidades (aba TB, nomes do `entity2id` se houver match).
-2. **Se `not tf_ok`:** playbook casa (FAQ, sem tripla) → `regra_fallback`. Senão → recusa `modo=regra`, `fontes=[]`, `porque=sem_match` (não há rede/híbrido sem TF).
-3. **Se `tf_ok`:** playbook casa **e** não pede inferência de tripla/viabilidade → `regra`.
-4. Há `Rule` cujo `body` casa o caminho pedido → `hibrido`.
-5. Entidades no KG:
-   - intent `viabilidade` → `rede` via `report()`;
-   - intent `relacao_kg` → `rede` via `TripleScorer`.
-6. Nada → recusa: `modo=regra`, `fontes=[]`, `porque=sem_match`.
+0. **Intent `penetracao`** (ou `looks_like_penetracao`) → caminho RAG-first (§ Addendum RAG). **Não** cai no toy Savassi/Projector. `modo=rag`. Independe de `tf_ok`.
+1. Parse restante: intent ∈ {playbook_aba, viabilidade, relacao_kg, lixo} + entidades do `entity2id`.
+2. **Se `not tf_ok`:** playbook casa (FAQ factual) → `regra_fallback`. Senão → recusa `sem_match` (exceto se passo 0 já respondeu).
+3. **Playbook factual puro** → `regra`: matcher hit **e** a query **não** pede grounding de `Rule` (sem `herda`+`renda` / nome de regra / caminho body⇒head) **e** não é `viabilidade`/`relacao_kg` com entidades.
+4. Há `Rule` cujo `body` casa o caminho pedido → `hibrido` (**vence** empate com playbook do passo 3 e com rede do passo 5).
+5. Entidades no KG: `viabilidade` → `rede` via `report()`; `relacao_kg` → `rede` via `TripleScorer`.
+6. Fallback RAG semântico (`match_chunks`) se grafo/playbook falharam → `modo=rag`, fontes `chunk:` / `sim:` / `grupo:`.
+7. Nada → recusa: `modo=regra`, `fontes=[]`, `porque=sem_match` — **sem** pitch demo toy (Projector / Savassi viável / herda renda).
 
-`regra_fallback` **só** no passo 2 (`not tf_ok` + playbook). Com TF no ar, playbook = `regra`, nunca fallback.
+`regra_fallback` **só** no passo 2 (`not tf_ok` + playbook factual). Com TF no ar, playbook = `regra`.
 
-Empate 4 vs 5: **híbrido ganha** se existe grounding de regra; senão rede.
+**Empates**
+
+| A vs B | Vence |
+|--------|-------|
+| 0 (penetração) vs qualquer TF | RAG penetração |
+| 3 (playbook factual) vs 4 (Rule) | **híbrido (4)** se body grounding |
+| 4 vs 5 | **híbrido** se grounding; senão rede |
+
+### Clarificação geo vs recusa KG (um tom)
+
+| Situação | `modo` | Comportamento |
+|----------|--------|---------------|
+| Bairro ambíguo sem cidade (lista locked: centro, paraíso, …) | `rag` | Pedir cidade; `fontes` incl. `geo:ambiguidade` |
+| Entidade pedida fora do KG toy (viabilidade/relação) | `regra` | Recusa + exemplo de entidade **que existe no fixture**; sem misturar pitch de penetração |
+| Counts 0 com bairro+cidade válidos | `rag` | Explicar gap / sem cobertura indexada; opcional oferecer outro bairro |
 
 ## Data
 
-- Playbook: seções `f1`–`f15` + nota “como abrir” + TOC. Fonte canônica = `public/playbook-tensorboard.html`. PDF em `output/pdf/` é só export.
-- KG v1: fixture versionado `data/jarvis/kg-toy.json` derivado do `_toy_demo` (não KG vazio).
-- Viabilidade (`report()`): `viabilidade` = sigmoid(`viab_head`); `rotulo` = `alta` se ≥ 0.66, `media` se ≥ 0.40, senão `baixa`. Afirmar “viável” **só** se `rotulo=alta`. `baixa`/`media` = incerteza no texto. `infer_threshold` default **0.7** só para `fatos_inferidos` (`TripleScorer` em triplas ausentes da KB).
-- Relação KG: `TripleScorer.prob`; tripla inferida (não `is_known`) entra na resposta só se ≥ **0.7**. Abaixo disso: incerteza, não afirma o fato.
-- Híbrido: se `body > head` (ReLU do consistency) no grounding da pergunta → incluir `conflito` em `porque`; ainda responde com confiança da regra.
+- Playbook: seções `f1`–`f15`. Canônico = `public/playbook-tensorboard.html`.
+- KG v1: `data/jarvis/kg-toy.json` (obrigatório no boot do reasoner).
+- Viabilidade / inferência: ver § Constantes v1.
+- Híbrido: `body > head` → anexar `conflito` em `porque`; ainda responde.
 
 ## Errors
 
-- Entidade fora do KG: recusa + exemplo com entidade que existe no fixture.
-- Aba TensorBoard inexistente: listar nomes 01–15; não inventar aba.
-- Sem log de tokens, sem HTTP para GitHub do curso.
+- Aba TensorBoard inexistente: listar nomes 01–15; não inventar.
+- Sem log de tokens; sem HTTP para GitHub do curso.
+
+## Segredos operacionais
+
+| Segredo / config | Onde | Git? |
+|------------------|------|------|
+| GitHub PAT / comando Academy | **nunca** | não |
+| `SUPABASE_*` / service role / PostgREST URL | `.env.local` | não |
+| `*_GROUP_ID` | `.env.local` | não (UUIDs de workspace) |
+| `JARVIS_OLLAMA_URL` / `OLLAMA_EMBED_URL` | `.env.local` (default localhost) | URL local ok documentar; sem credencial |
+| `ELEVENLABS_API_KEY` | `.env.local` | não |
 
 ## Tests (smoke)
 
-Arquivo: `scripts/lib/jarvisQa.test.ts` **ou** pytest ao lado do script Python — **escolha:** pytest em `scripts/jarvis_qa_test.py` porque o motor é TF/Keras.
+Arquivo: `scripts/jarvis_qa_test.py` (pytest; motor TF/Keras). **Sem** `npx` / TS para o núcleo.
 
-Casos:
+**TF / playbook**
 
-1. “o que é Projector?” + TF ok → `modo=regra`, fonte `playbook:#f13`
-2. Viabilidade de entidade do toy (ex. `bairro:savassi`) → `modo=rede`, `fontes` citam `report`, `porque` tem `rotulo` (`alta`/`media`/`baixa`)
-3. Caminho de `Rule` do toy → `modo=hibrido`, nome da regra em `fontes`
-4. “asdf qwerty” → recusa, `porque=sem_match`
-5. TF off (import fail simulado) + Projector → `modo=regra_fallback`; TF off + viabilidade → recusa `sem_match`
+1. “o que é Projector?” + TF ok → `modo=regra`, `playbook:#f13`
+2. Viabilidade entidade toy → `modo=rede`, `report:…`, `rotulo` em `porque`
+3. Caminho `Rule` toy → `modo=hibrido`, `rule:…`
+4. “asdf qwerty” → `porque=sem_match`, sem pitch toy
+5. TF off + Projector → `regra_fallback`; TF off + viabilidade → `sem_match`
 
-TTS/STT **não** no CI.
+**Addendum RAG (obrigatório)**
+
+6. Penetração bairro+cidade com counts > 0 → `modo=rag`, `rag:penetracao`, `tp:`/`wh:`/`gp:`/`receita:`
+7. Bairro ambíguo sem cidade → `modo=rag`, `geo:ambiguidade`, pede cidade
+8. `mesmo_escopo` e max(TP,WH,GP) > Receita → prosa **sem** % de mercado
+9. `mesmo_escopo` e Receita ≥ max e WH>0 → pode narrar % WH; TF off **não** desliga penetração RAG
+
+TTS/STT **não** no CI (testes ElevenLabs marcam skip sem chave).
 
 ## Out of scope (este spec)
 
-- Clone/install JARVIS Academy, Obsidian, n8n, 4 API keys.
-- Desktop HUD, Whisper, Antonio/Daniel em produção.
-- App mobile.
-- Substituir `ReasoningNeuron` por IBM LNN.
+- Clone/install JARVIS Academy, Obsidian, n8n.
+- App mobile; Whisper STT produção.
+- IBM LNN no lugar do `ReasoningNeuron`.
+- União CNPJ Receita∪agregadores como denom (meta agregador tipicamente sem CNPJ).
+- Campos estruturados `conflito`/`confianca` no JSON.
 
-## Later (não implementar agora)
+## Later
 
-- Desktop: mesmo `ask()`; STT Whisper; TTS Antonio com fallback Daniel.
-- Mobile: cliente HTTP na frente do mesmo `ask()`.
+- Desktop: STT Whisper; TTS — addendum voz (ElevenLabs-first).
+- Mobile: cliente HTTP no mesmo `ask()`.
+- KG real (renda IBGE / bairro vivo) — spec próprio; toy permanece demo determinística.
 
 ## Addendum — RAG-first penetração (bairro × agregadores)
 
 Date: 2026-09-03  
-Status: **locked** (produto)
+Status: **locked** (produto); contrato alinhado em 2026-09-06 (§ Contract / Roteamento passo 0)
 
-### Papéis dos `*_GROUP_ID` (mesmos do GymSite/Eros)
+### Papéis dos `*_GROUP_ID`
 
 | Grupo | Papel |
 |-------|--------|
-| `RECEITA_GROUP_ID` | **Universo** de academias abertas (CNAE/RFB). Denominador de mercado no bairro quando disponível. |
-| `TOTALPASS` / `WELLHUB` / `GURUPASS` | **Cobertura** do agregador (quem aceita o plano). Numerador de penetração. |
-| `MERCADO` | Conteúdo/contexto; **não** entra no censo de penetração. |
+| `RECEITA_GROUP_ID` | **Universo** academias abertas (CNAE/RFB). Denominador quando disponível. |
+| `TOTALPASS` / `WELLHUB` / `GURUPASS` | **Cobertura** do agregador. Numerador. |
+| `MERCADO` | Contexto; **não** no censo. |
 
-Cobertura ≠ universo: contar “academias no bairro X” = Receita (quando há chunks); contar “usam TP/WH/GP” = distinct no grupo do agregador.
+### Acceptance (v1 — não silenciar gap)
 
-### Roteamento
+| Cenário | Comportamento aceito |
+|---------|----------------------|
+| Pinheiros SP **com** `backfill-tp-bairro-normalizado` aplicado | TP count > 0 esperado no smoke de penetração |
+| TP/GP/Receita meta ausente / parcial | `modo=rag`, counts podem ser 0; `porque` marca gap; prosa explica “sem cobertura indexada” / “universo parcial” — **não** é bug de router |
+| max(agregadores) > Receita no mesmo escopo | counts crus; **proibido** % de mercado |
 
-Perguntas de penetração / cobertura por bairro (“quantas usam TP vs WH vs GP no bairro X?”) → **RAG-first** (antes de TF toy / playbook genérico).  
-TF é **meio**, não face: após a resposta factual, oferecer cruzamento TF (renda/aluguel/pop) só quando útil.  
-Recusa default: sem pitch de demo toy (“Projector / Savassi viável / herda renda”).
+Ops de backfill (GP/TP/Receita) permanecem na § Contagem abaixo; acceptance acima define o que o produto pode devolver.
 
-### Contagem (não confundir com top-k semântico)
+### Contagem
 
-- `match_chunks` top-k = recuperação semântica; **não** é censo.
-- Contagem: PostgREST em `eros_knowledge_chunks` filtrado por `group_id` + `meta->>bairro_normalizado` (+ `meta->>cidade` quando houver), distinct por chave de academia (`cnpj` / `gym_id` / `nome_academia` / `source_ref`).
-- Normalização **única** (`bairro_filter_variants` / `cidade_filter_variants`): query → slug kebab (`paraiso`) **e** UPPER+espaço (`PARAISO`); cidade → canônico display (`São Paulo`) + variantes sem acento. Probe: metas usam `bairro_normalizado` + `cidade` (não há `cidade_normalizada`).
-- **Geo:** sem cidade e bairro ambíguo (`centro`, `paraiso`, …) → pedir cidade; **não** mesclar Brasil. Com cidade → filtrar os quatro grupos no mesmo escopo. `%` WH/Receita só se `mesmo_escopo` (cidade) e Receita ≥ cobertura.
-- Embeddings: Ollama **nativo** (`JARVIS_OLLAMA_URL` / `OLLAMA_EMBED_URL` → `http://localhost:11434`), nunca OpenAI-compat `.../v1`.
-- **GuruPass meta:** ingest deve gravar `meta.bairro_normalizado` (slug kebab, mesmo `normalizeBairro` do Wellhub / `normalize_bairro_slug` do JARVIS). Chunks antigos: `npx tsx scripts/backfill-gp-bairro-normalizado.ts` (dry-run) e `--apply` para gravar.
-- **TotalPass meta:** `ingest-totalpass-sp` **não** grava `bairro`/`bairro_normalizado`. Resolver CEP/Nominatim (`resolve:tp-bairros` → `tp-bairro-index.json`) e aplicar: `npx tsx scripts/backfill-tp-bairro-normalizado.ts` (dry-run) e `--apply`. Sem isso, penetração TP=0 em bairros só resolvidos no índice (ex. Pinheiros SP).
-- **Receita meta:** ingest deve gravar `meta.bairro_normalizado` em **UPPER+espaço** (`BELA VISTA`) + `cidade` canônica. Chunks com `bairro_normalizado` null (geo incompleta no RAG) mas CNPJ no parque RFB local: `npx tsx scripts/backfill-receita-meta-by-rfb.ts` (dry-run) e `--apply`. CNPJs ausentes do grupo: `npm run ingest:receita` (`scripts/ingest-receita-cnae.ts`, fonte RFB local; default dry-run + `MISSING_ONLY=1`; `--apply`; filtros `UF`/`MUNICIPIO`/`BAIRRO`; depois `npm run embed:receita`). Ex. Bela Vista SP: `UF=SP MUNICIPIO=7107 BAIRRO="Bela Vista" npm run ingest:receita -- --apply`. Nacional: sem filtros (lento). Não inventa denom: até o universo fechar, se max(TP,WH,GP) > Receita → prosa “universo parcial / cobertura vs censo”, sem % de mercado.
+- `match_chunks` top-k ≠ censo.
+- Censo: PostgREST `eros_knowledge_chunks` por `group_id` + `meta->>bairro_normalizado` (+ cidade), distinct (`cnpj` / `gym_id` / `nome_academia` / `source_ref`).
+- Normalização: slug kebab **e** UPPER+espaço; cidade canônica + variantes.
+- Geo: ambíguo sem cidade → pedir cidade (passo clarificação).
+- Embeddings: Ollama nativo (`JARVIS_OLLAMA_URL`), dim 1024; nunca `.../v1` OpenAI-compat.
+- Backfills: GP / TP / Receita como já documentado (scripts `backfill-*-bairro-normalizado`, `ingest:receita`, `embed:receita`).
 
-### Narrativa
-
-Distinct counts TP/WH/GP (+ Receita se houver) + prosa curta: maior penetração, plano top se `meta` tiver.
-
-**Denom / % de mercado (locked):**
+### Narrativa + denom %
 
 | Condição | Comportamento |
 |----------|----------------|
-| `mesmo_escopo` e Receita ≥ max(TP,WH,GP) e WH>0 | Pode narrar WH % do universo Receita. |
-| `mesmo_escopo` e max(TP,WH,GP) > Receita | **Não** alegar % de mercado. Reportar counts crus; explicar universo parcial / gap CNPJ-RFB; opcional `cobertura vs censo: max/Receita`. |
-| Sem cidade / escopo nacional | % omitida (praças podem misturar). |
-| Receita = 0 | % omitida. |
+| `mesmo_escopo` e Receita ≥ max(TP,WH,GP) e WH>0 | Pode narrar WH % do universo Receita |
+| `mesmo_escopo` e max > Receita | Sem %; prosa universo parcial |
+| Sem cidade / nacional | % omitida |
+| Receita = 0 | % omitida |
 
-União CNPJ Receita∪agregadores como denom: **só** se `meta.cnpj` confiável nos dois lados; hoje agregadores tipicamente não têm — não implementar.
+Após counts > 0: oferta leve de cruzar renda/aluguel no grafo (TF como **meio**).
+
+## Addendum — correção de contrato (2026-09-06)
+
+Fecha os furos da revisão:
+
+| # | Furo | Resolução neste doc |
+|---|------|---------------------|
+| 1 | `modo` sem RAG | enum + `rag`; fontes tipadas |
+| 2 | intent sem penetração | `penetracao` + passo 0 |
+| 3 | playbook engole híbrido | “factual puro” vs Rule; 4 vence 3 |
+| 4 | matcher indefinido | § Playbook matcher |
+| 5 | fontes RAG | tabela § Fontes |
+| 6 | backfill silencioso | § Acceptance |
+| 7 | `tf_ok` raso | fixture obrigatório; `kg_toy_indisponivel` |
+| 8 | dois tons de recusa | tabela clarificação geo vs KG |
+| 9 | segredos incompletos | § Segredos operacionais |
+| 10 | smokes só TF | casos 6–9 |
+| 11 | estado JSON sumiu | § Contexto |
+| 12 | `npx` orphan | CLI só Python |
+| 13 | conflito só prosa | explícito v1 |
+| 14 | thresholds | § Constantes v1 |
+| 15 | scope mentia | Scope atualizado |
+| 16–18 | Drive / typo repo / Slack | nota Problem; repo canônico; Slack irrelevante |
 
 ## Self-review
 
-- Sem TBD. `regra_fallback` só com TF morto + playbook. Playbook canônico = `public/playbook-tensorboard.html`. Viabilidade = `report()` 0.66/0.40; infer tripla 0.7. Recusa = `modo=regra` + `porque=sem_match`. Híbrido vence empate com rede. Fixture KG obrigatório.
-- Consistente com seções aprovadas 1–4.
-- Um plano de implementação cabe neste spec (Q&A só).
+- Enum e ordem cobrem TF **e** RAG; self-review anterior “sem TBD” era falso — corrigido aqui.
+- `regra_fallback` só TF morto + playbook factual.
+- Fixture KG obrigatório para caminhos rede/híbrido.
+- Acceptance de penetração distingue gap de dados vs bug de router.
+- Voz/ElevenLabs e KG real de bairro = docs separados (não reabrir este contrato sem addendum).

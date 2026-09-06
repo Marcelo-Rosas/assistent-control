@@ -39,6 +39,10 @@ import tensorflow as tf
 # afirmava "viavel" por sorteio. Ver set_seed() / train_reasoner().
 DEFAULT_SEED = 20260903
 
+VIAB_ALTA = 0.66
+VIAB_MEDIA = 0.40
+INFER_THRESHOLD = 0.7
+
 
 def set_seed(seed: int = DEFAULT_SEED) -> None:
     """Fixa os RNG de random/NumPy/TF de uma vez (Keras 3).
@@ -336,7 +340,7 @@ class ViabilityReasoner(keras.Model):
 
     # ---------- inferência + relatório ----------
     def report(
-        self, entity_name: str, top_k: int = 5, infer_threshold: float = 0.7
+        self, entity_name: str, top_k: int = 5, infer_threshold: float = INFER_THRESHOLD
     ) -> dict:
         """Relatório de viabilidade auditável para uma entidade (ex.: bairro)."""
         eid = self.kg.entity2id[entity_name]
@@ -363,7 +367,9 @@ class ViabilityReasoner(keras.Model):
                 if conf[i] > 0.5
             ]
 
-        rotulo = "alta" if score >= 0.66 else "media" if score >= 0.40 else "baixa"
+        rotulo = (
+            "alta" if score >= VIAB_ALTA else "media" if score >= VIAB_MEDIA else "baixa"
+        )
         return {
             "entidade": entity_name,
             "viabilidade": round(score, 4),

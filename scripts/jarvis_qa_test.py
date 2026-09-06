@@ -29,7 +29,6 @@ def test_kg_toy_exists_and_matches_demo():
     assert data["train"]["viab_targets"] == [0, 1]
     assert isinstance(data["train"]["seed"], int)
 
-
 def test_playbook_projector_is_f13():
     jq = _load_jarvis_qa()
     faqs = jq.load_playbook(ROOT / "public" / "playbook-tensorboard.html")
@@ -38,6 +37,13 @@ def test_playbook_projector_is_f13():
     assert hit.section_id == "f13"
     assert "Projector" in hit.title
 
+def test_match_playbook_pr_nao_casa_projector():
+    jq = _load_jarvis_qa()
+    faqs = jq._default_faqs()
+    assert jq.match_playbook("o que é PR?", faqs) is None
+    assert jq.match_playbook("o que é Projector?", faqs) is not None
+    hit = jq.match_playbook("o que é Projector?", faqs)
+    assert hit.section_id == "f13"
 
 def test_parse_intent_viabilidade_savassi():
     jq = _load_jarvis_qa()
@@ -46,13 +52,11 @@ def test_parse_intent_viabilidade_savassi():
     assert intent == "viabilidade"
     assert "bairro:savassi" in ents
 
-
 def test_parse_intent_lixo():
     jq = _load_jarvis_qa()
     intent, ents = jq.parse_intent("asdf qwerty", ["bairro:savassi"])
     assert intent == "lixo"
     assert ents == []
-
 
 def test_ask_projector_regra():
     jq = _load_jarvis_qa()
@@ -66,7 +70,6 @@ def test_ask_projector_regra():
     assert "playbook:#" not in r["resposta"].casefold()
     assert r["resposta"].count(".") + r["resposta"].count("?") <= 4
 
-
 def test_faq_to_dialogue_short():
     jq = _load_jarvis_qa()
     faq = jq.PlaybookFaq(
@@ -79,7 +82,17 @@ def test_faq_to_dialogue_short():
     assert "Aba Fake" in line
     assert "xxx" not in line  # must not dump the wall
 
+def test_constantes_viabilidade_exportadas():
+    import sys
+    from pathlib import Path
 
+    nb = Path(__file__).resolve().parents[1] / "notebooks"
+    sys.path.insert(0, str(nb))
+    import reasoning_neuron_viabilidade as rn
+
+    assert rn.VIAB_ALTA == 0.66
+    assert rn.VIAB_MEDIA == 0.40
+    assert rn.INFER_THRESHOLD == 0.7
 
 def test_ask_viabilidade_savassi():
     import pytest
@@ -95,7 +108,6 @@ def test_ask_viabilidade_savassi():
     assert "rotulo=alta" in r["porque"], r["porque"]
     # Procedencia declarada: o painel nao pode vender supervisao como evidencia.
     assert "base=toy(supervisionado)" in r["porque"], r["porque"]
-
 
 def test_viabilidade_e_determinista():
     """Mesma pergunta, dois reasoners independentes -> mesmo score.
@@ -118,7 +130,6 @@ def test_viabilidade_e_determinista():
     ]
     assert scores[0] == scores[1], scores
 
-
 def test_treino_separa_savassi_de_centro():
     """O treino tem de PRODUZIR contraste, nao so rodar.
 
@@ -140,7 +151,6 @@ def test_treino_separa_savassi_de_centro():
     assert centro["rotulo"] == "baixa", centro
     assert savassi["viabilidade"] - centro["viabilidade"] >= 0.5
 
-
 def test_toy_train_ligado_por_padrao(monkeypatch):
     """Treino e opt-OUT. Se virar opt-in, o default volta a ler pesos crus."""
     jq = _load_jarvis_qa()
@@ -148,7 +158,6 @@ def test_toy_train_ligado_por_padrao(monkeypatch):
     assert jq._toy_train_enabled() is True
     monkeypatch.setenv("JARVIS_QA_TOY_TRAIN", "0")
     assert jq._toy_train_enabled() is False
-
 
 def test_ask_hibrido_regra_toy():
     import pytest
@@ -160,6 +169,38 @@ def test_ask_hibrido_regra_toy():
     assert any("bairro_bh_herda_renda" in f for f in r["fontes"])
     assert any("rule:bairro_bh_herda_renda" in f for f in r["fontes"])
 
+def test_ask_hibrido_vence_playbook_projector():
+    """Spec empate 3 vs 4: Rule grounding vence playbook factual (Projector)."""
+    import pytest
+
+    pytest.importorskip("tensorflow")
+    jq = _load_jarvis_qa()
+    r = jq.ask("bairro:savassi herda renda no Projector?", tf_ok=True)
+    assert r["modo"] == "hibrido", r
+    assert any(f == "rule:bairro_bh_herda_renda" for f in r["fontes"]), r["fontes"]
+    assert not any(f.startswith("playbook:") for f in r["fontes"]), r["fontes"]
+
+def test_rule_body_grounds_savassi_renda():
+    jq = _load_jarvis_qa()
+    toy = jq._default_toy()
+    hit = jq.rule_body_grounds(
+        "bairro:savassi herda renda?",
+        toy,
+        ["bairro:savassi"],
+    )
+    assert hit is not None
+    assert hit["name"] == "bairro_bh_herda_renda"
+
+def test_is_playbook_factual_puro_gate():
+    jq = _load_jarvis_qa()
+    toy = jq._default_toy()
+    assert jq.is_playbook_factual_puro("o que é Projector?", toy) is True
+    assert jq.is_playbook_factual_puro(
+        "bairro:savassi herda renda no Projector?", toy
+    ) is False
+    assert jq.is_playbook_factual_puro(
+        "bairro_bh_herda_renda no Projector", toy
+    ) is False
 
 def test_ask_lixo_sem_match(monkeypatch):
     monkeypatch.setenv("JARVIS_RAG", "0")
@@ -168,7 +209,6 @@ def test_ask_lixo_sem_match(monkeypatch):
     assert r["modo"] == "regra"
     assert r["porque"] == "sem_match"
     assert r["fontes"] == []
-
 
 def test_ask_rag_como_fonte(monkeypatch):
     """Grafo não cobre → RAG responde; modo=rag; fontes chunk+sim."""
@@ -207,7 +247,6 @@ def test_ask_rag_como_fonte(monkeypatch):
     assert "não é fato do grafo" in r["porque"]
     assert "Studio X" in r["resposta"]
 
-
 def test_ask_rag_nao_sobrepoe_playbook(monkeypatch):
     """Projector continua regra mesmo com RAG ligado."""
     jq = _load_jarvis_qa()
@@ -232,6 +271,42 @@ def test_ask_rag_nao_sobrepoe_playbook(monkeypatch):
     assert r["modo"] == "regra"
     assert "playbook:#f13" in r["fontes"]
 
+def test_tf_ok_false_when_toy_missing(tmp_path, monkeypatch):
+    jq = _load_jarvis_qa()
+    missing = tmp_path / "no-kg.json"
+    monkeypatch.setattr(jq, "TOY_PATH", missing)
+    # limpar cache de toy/reasoner/tf
+    with jq._CACHE_LOCK:
+        jq._CACHE.clear()
+    assert jq.tf_available() is False
+
+def test_ask_kg_toy_indisponivel_em_viabilidade(tmp_path, monkeypatch):
+    jq = _load_jarvis_qa()
+    monkeypatch.setattr(jq, "TOY_PATH", tmp_path / "broken.json")
+    (tmp_path / "broken.json").write_text("{not-json", encoding="utf-8")
+    with jq._CACHE_LOCK:
+        jq._CACHE.clear()
+    # Força caminho de grafo sem injetar toy válido
+    r = jq.ask("bairro:savassi é viável?", tf_ok=None, toy=None)
+    assert r["modo"] == "regra"
+    assert r["porque"] == "kg_toy_indisponivel"
+    assert r["fontes"] == []
+
+def test_ask_kg_toy_indisponivel_empty_maps(tmp_path, monkeypatch):
+    """Empty entity2id/relation2id must count as load failure (same bar as tf_available)."""
+    jq = _load_jarvis_qa()
+    empty = tmp_path / "empty-maps.json"
+    empty.write_text(
+        '{"entity2id": {}, "relation2id": {}, "triples": [], "rules": []}',
+        encoding="utf-8",
+    )
+    monkeypatch.setattr(jq, "TOY_PATH", empty)
+    with jq._CACHE_LOCK:
+        jq._CACHE.clear()
+    r = jq.ask("bairro:savassi é viável?", tf_ok=None, toy=None)
+    assert r["modo"] == "regra"
+    assert r["porque"] == "kg_toy_indisponivel"
+    assert r["fontes"] == []
 
 def test_ask_tf_off_projector_fallback():
     jq = _load_jarvis_qa()
@@ -239,13 +314,11 @@ def test_ask_tf_off_projector_fallback():
     assert r["modo"] == "regra_fallback"
     assert "playbook:#f13" in r["fontes"]
 
-
 def test_ask_tf_off_viabilidade_recusa():
     jq = _load_jarvis_qa()
     r = jq.ask("bairro:savassi é viável?", tf_ok=False)
     assert r["modo"] == "regra"
     assert r["porque"] == "sem_match"
-
 
 def test_cli_json_projector(tmp_path):
     import os
@@ -268,7 +341,6 @@ def test_cli_json_projector(tmp_path):
 
 # ---------------------------------------------------------------- voz / persona
 
-
 def test_entidade_inexistente_nao_vira_relatorio(monkeypatch):
     """Entidade fora do grafo tem de ser recusada, nao trocada por outra.
 
@@ -286,7 +358,6 @@ def test_entidade_inexistente_nao_vira_relatorio(monkeypatch):
     assert r["porque"] == "sem_match"
     assert "sustenta" not in r["resposta"].casefold()
 
-
 def test_relacao_kg_respeita_direcao_da_pergunta():
     """Sujeito e objeto na ordem da frase, nao na ordem do dicionario.
 
@@ -303,7 +374,6 @@ def test_relacao_kg_respeita_direcao_da_pergunta():
     assert resp.index("X") < resp.index("Totalpass"), resp
     assert "known=True" in r["porque"], r["porque"]
 
-
 def test_ask_devolve_campo_fala():
     jq = _load_jarvis_qa()
     r = jq.ask("o que é Projector?", tf_ok=True)
@@ -311,7 +381,6 @@ def test_ask_devolve_campo_fala():
     # Vocativo resolvido: nenhum marcador cru vaza para tela ou fala.
     assert "{sr}" not in r["resposta"]
     assert "{sr}" not in r["fala"]
-
 
 def test_voz_normaliza_sigla_e_decimal():
     import importlib.util as _il
@@ -329,7 +398,6 @@ def test_voz_normaliza_sigla_e_decimal():
     # Travessao vira pausa audivel, nao fica como glifo mudo.
     assert "—" not in jv.to_speech("viável — alto")
 
-
 def test_registro_trata_por_senhor():
     """A persona precisa aparecer, mas sem virar bordao em toda frase."""
     jq = _load_jarvis_qa()
@@ -341,7 +409,6 @@ def test_registro_trata_por_senhor():
 
 # ------------------------------------------------- racional narrado (item 1)
 
-
 def test_narrar_fatores_usa_o_que_pesou():
     """`fatores_top` vira frase. Antes o router usava 2 de 6 campos do report."""
     jq = _load_jarvis_qa()
@@ -349,7 +416,6 @@ def test_narrar_fatores_usa_o_que_pesou():
     frase = jq.narrar_fatores(rep)
     assert "renda" in frase and "aluguel" in frase
     assert "tem_renda" not in frase, "nome de campo vazando na fala: " + frase
-
 
 def test_narrar_fatores_nao_inventa_contraste():
     """Fator secundario irrelevante nao vira "logo atras"."""
@@ -363,7 +429,6 @@ def test_narrar_fatores_nao_inventa_contraste():
     assert jq.narrar_fatores({"fatores_top": [["coberto_por", 0.0]]}) == ""
     assert jq.narrar_fatores({}) == ""
 
-
 def test_resposta_de_viabilidade_explica_o_porque():
     import pytest
 
@@ -375,7 +440,6 @@ def test_resposta_de_viabilidade_explica_o_porque():
 
 
 # ------------------------------------------------- conversa encadeada (item 2)
-
 
 def test_followup_cumpre_a_oferta():
     """A oferta do turno anterior tem de ser honrada.
@@ -400,7 +464,6 @@ def test_followup_cumpre_a_oferta():
     assert "kg:triple" in r3["fontes"]
     assert "tripla" in r3["porque"]
 
-
 def test_anafora_troca_de_entidade():
     """"e o centro?" herda a leitura em curso e passa a valer para Centro."""
     import pytest
@@ -413,7 +476,6 @@ def test_anafora_troca_de_entidade():
     assert "Centro" in r2["resposta"], r2["resposta"]
     assert r2["contexto"]["entidade"] == "bairro:centro"
 
-
 def test_porque_abre_os_fatores():
     import pytest
 
@@ -425,7 +487,6 @@ def test_porque_abre_os_fatores():
     assert "Pesou" in r2["resposta"], r2["resposta"]
     assert "fatores_top" in r2["porque"]
 
-
 def test_sem_contexto_nao_inventa_entidade(monkeypatch):
     """Follow-up sem conversa previa continua sendo recusa, nao chute."""
     import pytest
@@ -436,7 +497,6 @@ def test_sem_contexto_nao_inventa_entidade(monkeypatch):
     r = jq.ask("sim", tf_ok=True)
     assert r["porque"] == "sem_match", r
 
-
 def test_aceite_so_vale_em_frase_curta():
     """"sim" dentro de frase longa e diferente nao e aceite da oferta."""
     jq = _load_jarvis_qa()
@@ -445,7 +505,6 @@ def test_aceite_so_vale_em_frase_curta():
     assert not jq._e_aceite(
         "sim eu queria entender melhor como funciona a aba projector do playbook"
     )
-
 
 def test_looks_like_penetracao():
     jq = _load_jarvis_qa()
@@ -456,7 +515,6 @@ def test_looks_like_penetracao():
     assert not jq.looks_like_penetracao("o que é Projector?")
     assert not jq.looks_like_penetracao("asdf qwerty")
 
-
 def test_extract_bairro_from_query():
     jq = _load_jarvis_qa()
     b = jq.extract_bairro_from_query("No bairro Paraíso, quantas usam TP vs WH?")
@@ -465,7 +523,6 @@ def test_extract_bairro_from_query():
     b2 = jq.extract_bairro_from_query("No bairro Bela Vista, cobertura Wellhub")
     assert b2 is not None
     assert "bela" in b2.casefold()
-
 
 def test_extract_cidade_e_bairro_com_cidade():
     jq = _load_jarvis_qa()
@@ -481,7 +538,6 @@ def test_extract_cidade_e_bairro_com_cidade():
     b2 = jq.extract_bairro_from_query("cobertura TotalPass Savassi em Belo Horizonte")
     assert b2 is not None
     assert "savassi" in b2.casefold()
-
 
 def test_ask_penetracao_rag_first(monkeypatch):
     """Penetração não passa pelo toy TF — vai direto ao censo RAG."""
@@ -554,6 +610,71 @@ def test_ask_penetracao_rag_first(monkeypatch):
     assert "renda" in r["resposta"].casefold() or "aluguel" in r["resposta"].casefold()
     assert "penetracao RAG-first" in r["porque"]
 
+def test_penetracao_counts_positivos_oferece_cruzar(monkeypatch):
+    jq = _load_jarvis_qa()
+    # Reusar o FakeRag de test_ask_penetracao_rag_first (counts > 0)
+    # (copiar o FakeRag do teste existente; nao importar fixture compartilhada TBD)
+
+    class _FakeRag:
+        RagIndisponivel = RuntimeError
+
+        @staticmethod
+        def penetracao_disponivel():
+            return True
+
+        @staticmethod
+        def normalize_bairro_slug(b):
+            return "paraiso"
+
+        @staticmethod
+        def bairro_ambiguo(b):
+            return False
+
+        @staticmethod
+        def contar_penetracao(bairro, cidade=None):
+            return {
+                "bairro": bairro,
+                "bairro_slug": "paraiso",
+                "cidade": "São Paulo",
+                "cidade_canon": "São Paulo",
+                "geo_scope": "cidade",
+                "mesmo_escopo": True,
+                "counts": {
+                    "totalpass": 4,
+                    "wellhub": 10,
+                    "gurupass": 0,
+                    "receita": 27,
+                },
+                "planos_top": {
+                    "wellhub": "Wellhub Basic",
+                    "totalpass": "TP 1",
+                    "gurupass": None,
+                    "receita": None,
+                },
+            }
+
+        @staticmethod
+        def narrar_penetracao(agg):
+            return (
+                "No bairro Paraíso (São Paulo): TotalPass 4, Wellhub 10, GuruPass 0; "
+                "universo Receita 27 academia(s) aberta(s)."
+            )
+
+        @staticmethod
+        def disponivel():
+            return False
+
+        @staticmethod
+        def buscar(q):
+            raise AssertionError("no")
+
+    monkeypatch.setitem(__import__("sys").modules, "jarvis_rag", _FakeRag)
+    r = jq.ask(
+        "No bairro Paraíso em São Paulo, quantas usam TP vs WH vs GP?",
+        tf_ok=True,
+    )
+    assert r["modo"] == "rag"
+    assert r["contexto"].get("oferta") == "cruzar"
 
 def test_ask_penetracao_ambiguidade_pede_cidade(monkeypatch):
     jq = _load_jarvis_qa()
@@ -595,6 +716,178 @@ def test_ask_penetracao_ambiguidade_pede_cidade(monkeypatch):
     assert "cidade" in r["resposta"].casefold()
     assert "pedir_cidade" in r["porque"]
 
+def test_penetracao_nao_depende_do_toy(tmp_path, monkeypatch):
+    """Successful RAG penetração (tf_ok=None, toy=None) must never touch toy/TF."""
+    jq = _load_jarvis_qa()
+    monkeypatch.setattr(jq, "TOY_PATH", tmp_path / "ausente.json")
+    with jq._CACHE_LOCK:
+        jq._CACHE.clear()
+
+    def _fail_try_load_toy(*a, **k):
+        raise AssertionError("_try_load_toy must not run on RAG penetração path")
+
+    def _fail_default_toy(*a, **k):
+        raise AssertionError("_default_toy must not run on RAG penetração path")
+
+    def _fail_tf_available(*a, **k):
+        raise AssertionError("tf_available must not run on RAG penetração path")
+
+    monkeypatch.setattr(jq, "_try_load_toy", _fail_try_load_toy)
+    monkeypatch.setattr(jq, "_default_toy", _fail_default_toy)
+    monkeypatch.setattr(jq, "tf_available", _fail_tf_available)
+
+    class _FakeRag:
+        RagIndisponivel = RuntimeError
+
+        @staticmethod
+        def penetracao_disponivel():
+            return True
+
+        @staticmethod
+        def normalize_bairro_slug(b):
+            return "paraiso"
+
+        @staticmethod
+        def bairro_ambiguo(b):
+            return False
+
+        @staticmethod
+        def contar_penetracao(bairro, cidade=None):
+            return {
+                "bairro": bairro,
+                "bairro_slug": "paraiso",
+                "cidade": "São Paulo",
+                "cidade_canon": "São Paulo",
+                "geo_scope": "cidade",
+                "mesmo_escopo": True,
+                "counts": {
+                    "totalpass": 2,
+                    "wellhub": 3,
+                    "gurupass": 0,
+                    "receita": 10,
+                },
+                "planos_top": {
+                    "wellhub": "Basic",
+                    "totalpass": None,
+                    "gurupass": None,
+                    "receita": None,
+                },
+            }
+
+        @staticmethod
+        def narrar_penetracao(agg):
+            return "No bairro Paraíso (São Paulo): TotalPass 2, Wellhub 3, GuruPass 0."
+
+        @staticmethod
+        def disponivel():
+            return False
+
+        @staticmethod
+        def buscar(q):
+            raise AssertionError("buscar semantico nao deve rodar")
+
+    monkeypatch.setitem(__import__("sys").modules, "jarvis_rag", _FakeRag)
+    r = jq.ask(
+        "No bairro Paraíso em São Paulo, quantas usam TP vs WH vs GP?",
+        tf_ok=None,
+        toy=None,
+    )
+    assert r["modo"] == "rag", r
+    assert "rag:penetracao" in r["fontes"]
+
+def _fake_rag_counts(counts, *, mesmo_escopo=True, cidade="São Paulo"):
+    class _FakeRag:
+        RagIndisponivel = RuntimeError
+
+        @staticmethod
+        def penetracao_disponivel():
+            return True
+
+        @staticmethod
+        def normalize_bairro_slug(b):
+            return "pinheiros"
+
+        @staticmethod
+        def bairro_ambiguo(b):
+            return False
+
+        @staticmethod
+        def contar_penetracao(bairro, cidade=None):
+            return {
+                "bairro": bairro,
+                "bairro_slug": "pinheiros",
+                "cidade": cidade or "São Paulo",
+                "cidade_canon": cidade or "São Paulo",
+                "geo_scope": "cidade",
+                "mesmo_escopo": mesmo_escopo,
+                "counts": counts,
+                "planos_top": {
+                    "wellhub": "Basic",
+                    "totalpass": None,
+                    "gurupass": None,
+                    "receita": None,
+                },
+            }
+
+        @staticmethod
+        def narrar_penetracao(agg):
+            import jarvis_rag as real
+
+            # Usa a prosa real se o módulo existir; senão reimport via path do jq
+            return real.narrar_penetracao(agg)
+
+        @staticmethod
+        def disponivel():
+            return False
+
+        @staticmethod
+        def buscar(q):
+            raise AssertionError("buscar semantico nao deve rodar")
+
+    return _FakeRag
+
+def test_ask_penetracao_smoke8_sem_pct_quando_cobertura_gt_receita(monkeypatch):
+    """Smoke 8: max(TP,WH,GP) > Receita + mesmo_escopo → sem % de mercado."""
+    jq = _load_jarvis_qa()
+    # Garante narrar_penetracao real disponível no Fake
+    import jarvis_rag as jr
+
+    counts = {"totalpass": 40, "wellhub": 50, "gurupass": 5, "receita": 30}
+    fake = _fake_rag_counts(counts)
+
+    def _narr(agg):
+        return jr.narrar_penetracao(agg)
+
+    fake.narrar_penetracao = staticmethod(_narr)
+    monkeypatch.setitem(__import__("sys").modules, "jarvis_rag", fake)
+    r = jq.ask(
+        "No bairro Pinheiros em São Paulo, quantas usam TP vs WH vs GP?",
+        tf_ok=True,
+    )
+    assert r["modo"] == "rag"
+    assert "rag:penetracao" in r["fontes"]
+    assert "%" not in r["resposta"] or "omitida" in r["resposta"].casefold()
+    assert "mercado" not in r["resposta"].casefold() or "omitida" in r["resposta"].casefold()
+    # Preferir assert explícito da policy:
+    assert "omitida" in r["resposta"].casefold() or "universo parcial" in r["resposta"].casefold()
+
+def test_ask_penetracao_smoke9_pct_wh_e_tf_off(monkeypatch):
+    """Smoke 9: Receita >= max e WH>0 → pode % WH; TF off não desliga RAG."""
+    jq = _load_jarvis_qa()
+    import jarvis_rag as jr
+
+    counts = {"totalpass": 4, "wellhub": 10, "gurupass": 0, "receita": 27}
+    fake = _fake_rag_counts(counts)
+    fake.narrar_penetracao = staticmethod(lambda agg: jr.narrar_penetracao(agg))
+    monkeypatch.setitem(__import__("sys").modules, "jarvis_rag", fake)
+    r = jq.ask(
+        "No bairro Pinheiros em São Paulo, quantas usam TP vs WH vs GP?",
+        tf_ok=False,
+    )
+    assert r["modo"] == "rag", r
+    assert "rag:penetracao" in r["fontes"]
+    assert "%" in r["resposta"]
+    assert "wellhub" in r["resposta"].casefold()
 
 def test_recusa_sem_pitch_toy(monkeypatch):
     """Recusa default não empurra Projector / Savassi / herda renda."""
@@ -606,7 +899,6 @@ def test_recusa_sem_pitch_toy(monkeypatch):
     assert "projector" not in low
     assert "savassi" not in low
     assert "herda" not in low
-
 
 def test_regra_nao_treinada_nao_e_narrada():
     """Confiança no valor de nascimento não é "regra que entrou na conta".
@@ -649,3 +941,16 @@ def test_rulebank_sem_regras_nao_cria_peso_morto():
     )
     assert tuple(com.rules.confidence.shape) == (1,)
     assert com.report("a")["regras_ativadas"]
+
+def test_unknown_aba_lista_f1_a_f15(monkeypatch):
+    monkeypatch.setenv("JARVIS_RAG", "0")
+    jq = _load_jarvis_qa()
+    r = jq.ask("qual a aba tensorboard do foobar inexistente?", tf_ok=True)
+    assert r["modo"] == "regra"
+    assert r["fontes"] == []
+    # Deve citar aberturas f1..f15 ou os 15 títulos
+    faqs = jq._default_faqs()
+    assert len(faqs) >= 15
+    mentioned = sum(1 for f in faqs if f.title in r["resposta"] or f.section_id in r["resposta"])
+    assert mentioned >= 15, r["resposta"]
+
