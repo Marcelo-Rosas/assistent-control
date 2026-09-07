@@ -991,7 +991,14 @@ def _ask_raw(
                 for p in ("tp:", "wh:", "gp:")
             )
             if counts_pos:
+                slug = None
+                for f in fontes:
+                    if f.startswith("bairro:") and f.count(":") == 1:
+                        slug = f.split(":", 1)[1]
+                        break
                 ctx_out.update({"oferta": "cruzar"})
+                if slug:
+                    ctx_out["entidade"] = f"bairro:{slug}"
             # pen["contexto"] é descartado por ask(); ctx_out manda
             return pen
 
@@ -1026,9 +1033,42 @@ def _ask_raw(
     # Sem isso o JARVIS oferecia "Cruzo com aluguel ou renda?" e respondia
     # "essa eu nao fecho" ao "sim" seguinte — oferta que o sistema nao honrava.
     corrente = ctx_in.get("entidade")
+    oferta = ctx_in.get("oferta")
+    quer_cruzar = oferta == "cruzar" and (
+        _e_aceite(q) or _quer_eixo(q) is not None
+    )
+    if quer_cruzar and not ents and faq is None:
+        if not corrente:
+            return {
+                "resposta": (
+                    "Qual bairro o senhor quer cruzar com renda ou aluguel, {sr}?"
+                ),
+                "fala": "",
+                "modo": "regra",
+                "porque": "cruzar_sem_entidade",
+                "fontes": ["rag:penetracao"],
+                "contexto": {},
+            }
+        e2i = toy.get("entity2id") or {}
+        if corrente not in e2i:
+            label = _entity_label(corrente)
+            slug = corrente.split(":", 1)[-1]
+            ctx_out.update({"entidade": corrente, "oferta": "cruzar"})
+            return {
+                "resposta": (
+                    f"O grafo toy ainda não cobre {label}, {{sr}}. "
+                    f"A penetração ficou registrada; renda/aluguel desse bairro "
+                    f"vem no KG real."
+                ),
+                "fala": "",
+                "modo": "regra",
+                "porque": "bairro_fora_do_kg_toy",
+                "fontes": ["rag:penetracao", f"bairro:{slug}"],
+                "contexto": {},
+            }
+
     if tf_ok and corrente and not ents and faq is None:
         eixo = _quer_eixo(q)
-        oferta = ctx_in.get("oferta")
         if eixo is None and _e_aceite(q) and oferta == "cruzar":
             eixo = "tem_renda"  # default da oferta "aluguel ou renda"
         rotulo_ctx = _entity_label(corrente)
@@ -1098,7 +1138,12 @@ def _ask_raw(
         # Keep one gate for intent promoted after the early toy_missing check (e.g. anafora).
         if toy_missing and _wants_kg_graph(q, intent):
             return _kg_indisponivel()
-        if intent == "playbook_aba" and faq is not None:
+        # Mesmo gate do passo 3: rule grounding / herda+renda NÃO vira fallback FAQ.
+        if (
+            intent == "playbook_aba"
+            and faq is not None
+            and is_playbook_factual_puro(q, toy)
+        ):
             return {
                 "resposta": faq_to_dialogue(faq),
                 "modo": "regra_fallback",

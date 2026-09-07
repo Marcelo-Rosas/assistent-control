@@ -193,6 +193,9 @@ Sem cidade + slug ∈ lista → `geo:ambiguidade` (não mesclar Brasil).
 
 ## Errors
 
+- Entidade fora do KG toy (viabilidade/relação): recusa + exemplo de entidade que existe no fixture.
+- Oferta `cruzar` após penetração com `bairro:{slug}` ∉ toy → `porque=bairro_fora_do_kg_toy` (sem pitch Projector/Savassi).
+- Oferta `cruzar` sem `entidade` → `porque=cruzar_sem_entidade`.
 - Aba TensorBoard inexistente: listar nomes 01–15; não inventar.
 - Sem log de tokens; sem HTTP para GitHub do curso.
 

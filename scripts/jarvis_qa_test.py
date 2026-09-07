@@ -314,6 +314,14 @@ def test_ask_tf_off_projector_fallback():
     assert r["modo"] == "regra_fallback"
     assert "playbook:#f13" in r["fontes"]
 
+def test_ask_tf_off_projector_herda_renda_nao_fallback():
+    """Smoke 5c: pede_rule_grounding + TF off → não regra_fallback de Projector."""
+    jq = _load_jarvis_qa()
+    r = jq.ask("Projector herda renda?", tf_ok=False)
+    assert r["modo"] != "regra_fallback", r
+    assert "playbook:#f13" not in (r.get("fontes") or [])
+    assert r["porque"] in ("sem_match", "kg_toy_indisponivel")
+
 def test_ask_tf_off_viabilidade_recusa():
     jq = _load_jarvis_qa()
     r = jq.ask("bairro:savassi é viável?", tf_ok=False)
@@ -795,7 +803,11 @@ def test_penetracao_nao_depende_do_toy(tmp_path, monkeypatch):
     assert r["modo"] == "rag", r
     assert "rag:penetracao" in r["fontes"]
 
-def _fake_rag_counts(counts, *, mesmo_escopo=True, cidade="São Paulo"):
+def _fake_rag_counts(counts, *, mesmo_escopo=True, cidade="São Paulo", bairro_slug="pinheiros"):
+    import jarvis_rag as _real_jr
+
+    _narr_real = _real_jr.narrar_penetracao
+
     class _FakeRag:
         RagIndisponivel = RuntimeError
 
@@ -805,7 +817,7 @@ def _fake_rag_counts(counts, *, mesmo_escopo=True, cidade="São Paulo"):
 
         @staticmethod
         def normalize_bairro_slug(b):
-            return "pinheiros"
+            return bairro_slug
 
         @staticmethod
         def bairro_ambiguo(b):
@@ -815,7 +827,7 @@ def _fake_rag_counts(counts, *, mesmo_escopo=True, cidade="São Paulo"):
         def contar_penetracao(bairro, cidade=None):
             return {
                 "bairro": bairro,
-                "bairro_slug": "pinheiros",
+                "bairro_slug": bairro_slug,
                 "cidade": cidade or "São Paulo",
                 "cidade_canon": cidade or "São Paulo",
                 "geo_scope": "cidade",
@@ -831,10 +843,7 @@ def _fake_rag_counts(counts, *, mesmo_escopo=True, cidade="São Paulo"):
 
         @staticmethod
         def narrar_penetracao(agg):
-            import jarvis_rag as real
-
-            # Usa a prosa real se o módulo existir; senão reimport via path do jq
-            return real.narrar_penetracao(agg)
+            return _narr_real(agg)
 
         @staticmethod
         def disponivel():
@@ -845,6 +854,49 @@ def _fake_rag_counts(counts, *, mesmo_escopo=True, cidade="São Paulo"):
             raise AssertionError("buscar semantico nao deve rodar")
 
     return _FakeRag
+
+
+def test_penetracao_contexto_entidade_e_oferta(monkeypatch):
+    jq = _load_jarvis_qa()
+    monkeypatch.setitem(
+        __import__("sys").modules,
+        "jarvis_rag",
+        _fake_rag_counts(
+            {"totalpass": 4, "wellhub": 10, "gurupass": 0, "receita": 27},
+            bairro_slug="paraiso",
+        ),
+    )
+    r = jq.ask(
+        "No bairro Paraíso em São Paulo, quantas usam TP vs WH vs GP?",
+        tf_ok=True,
+    )
+    assert r["modo"] == "rag"
+    assert r["contexto"].get("oferta") == "cruzar"
+    assert r["contexto"].get("entidade") == "bairro:paraiso"
+
+
+def test_ask_penetracao_smoke10_eco_cruzar(monkeypatch):
+    """Smoke 10: eco oferta após penetração — sem sem_match genérico."""
+    jq = _load_jarvis_qa()
+    monkeypatch.setitem(
+        __import__("sys").modules,
+        "jarvis_rag",
+        _fake_rag_counts(
+            {"totalpass": 4, "wellhub": 10, "gurupass": 0, "receita": 27},
+            bairro_slug="paraiso",
+        ),
+    )
+    r1 = jq.ask(
+        "No bairro Paraíso em São Paulo, quantas usam TP vs WH vs GP?",
+        tf_ok=True,
+    )
+    r2 = jq.ask("sim", tf_ok=True, contexto=r1["contexto"])
+    assert r2["porque"] != "sem_match", r2
+    assert r2["modo"] == "regra"
+    assert r2["porque"] == "bairro_fora_do_kg_toy"
+    assert "projector" not in r2["resposta"].casefold()
+    assert "savassi" not in r2["resposta"].casefold()
+
 
 def test_ask_penetracao_smoke8_sem_pct_quando_cobertura_gt_receita(monkeypatch):
     """Smoke 8: max(TP,WH,GP) > Receita + mesmo_escopo → sem % de mercado."""
