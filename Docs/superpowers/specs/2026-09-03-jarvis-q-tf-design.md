@@ -1,7 +1,7 @@
 # JARVIS-Q — Q&A cognitivo TensorFlow (regras / rede / híbrido / RAG)
 
 Date: 2026-09-03  
-Status: **aprovado** (2026-09-03); **contrato corrigido** (2026-09-06)  
+Status: **aprovado** (2026-09-03); **contrato corrigido** (2026-09-06); **Bugbot 6 findings** (2026-09-06)  
 Scope: **Q&A local** — CLI Python + playbook HTML + KG toy (TF) + **censo/RAG** via PostgREST + Ollama local quando a pergunta é penetração/cobertura ou fallback semântico. Desktop (voz/STT) e mobile ficam specs depois.  
 Repo: `assistent-control` (nome canônico do diretório/git; não “assistant-control”).
 
@@ -113,20 +113,52 @@ intent ∈ {
 4. **Proibido:** match por primeiro token (`PR` ⊂ `Projector`).
 5. Sem fuzzy edit-distance no v1.
 
+### Predicados de roteamento (locked)
+
+```text
+pede_rule_grounding(q) =
+  ("herda" in q AND "renda" in q)
+  OR nome de Rule do toy in q
+  OR caminho body⇒head explícito na query
+
+playbook_factual_puro(q, faq) =
+  faq != null
+  AND NOT pede_rule_grounding(q)
+  AND intent NOT IN {viabilidade, relacao_kg} com entidades
+```
+
 ### Roteamento (ordem fixa, sem LLM)
 
-`tf_ok` = import Keras/TF **e** `data/jarvis/kg-toy.json` carrega **e** `ViabilityReasoner` instancia. Se TF importa mas fixture some/corrupto → **não** é `regra_fallback` de playbook genérico: recusa controlada `porque=kg_toy_indisponivel` (`modo=regra`, `fontes=[]`) para intents que precisam do grafo.
+**Definição de `tf_ok` (três bits):**
+
+| Bit | Condição |
+|-----|----------|
+| A | import Keras/TF ok |
+| B | `data/jarvis/kg-toy.json` existe e parseia |
+| C | `ViabilityReasoner` instancia com o fixture |
+
+`tf_ok` = A ∧ B ∧ C.
+
+**Antes da lista numerada — falha de fixture (A ok, B∨C falha):**  
+intents que precisam do grafo (`viabilidade`, `relacao_kg`, ou `pede_rule_grounding`) → `modo=regra`, `fontes=[]`, `porque=kg_toy_indisponivel`.  
+**Não** cair em `sem_match` nem em `regra_fallback` por playbook genérico nesse caso.  
+Playbook factual puro **ainda pode** responder FAQ (`modo=regra` se A+B+C ok; ou `regra_fallback` se A falhou — ver passo 2).
 
 0. **Intent `penetracao`** (ou `looks_like_penetracao`) → caminho RAG-first (§ Addendum RAG). **Não** cai no toy Savassi/Projector. `modo=rag`. Independe de `tf_ok`.
-1. Parse restante: intent ∈ {playbook_aba, viabilidade, relacao_kg, lixo} + entidades do `entity2id`.
-2. **Se `not tf_ok`:** playbook casa (FAQ factual) → `regra_fallback`. Senão → recusa `sem_match` (exceto se passo 0 já respondeu).
-3. **Playbook factual puro** → `regra`: matcher hit **e** a query **não** pede grounding de `Rule` (sem `herda`+`renda` / nome de regra / caminho body⇒head) **e** não é `viabilidade`/`relacao_kg` com entidades.
-4. Há `Rule` cujo `body` casa o caminho pedido → `hibrido` (**vence** empate com playbook do passo 3 e com rede do passo 5).
-5. Entidades no KG: `viabilidade` → `rede` via `report()`; `relacao_kg` → `rede` via `TripleScorer`.
+1. Parse restante: intent ∈ {playbook_aba, viabilidade, relacao_kg, lixo} + entidades do `entity2id`. Avaliar `pede_rule_grounding` / `playbook_factual_puro`.
+2. **Se `not tf_ok`:**
+   - Se B∨C falhou e intent precisa de grafo → já tratado acima (`kg_toy_indisponivel`); **não** reprocessar como `sem_match`.
+   - Senão se `playbook_factual_puro` → `regra_fallback`.
+   - Senão se `pede_rule_grounding` ou intent grafo sem fixture → `kg_toy_indisponivel` (se A) ou `sem_match` (se ¬A).
+   - Senão → recusa `sem_match` (exceto se passo 0 já respondeu).
+   - **Proibido:** com `not tf_ok`, promover FAQ só porque o matcher hit se `pede_rule_grounding` for true (ex. “Projector herda renda” → **não** `regra_fallback` de Projector).
+3. **Playbook factual puro** → `regra`: `playbook_factual_puro` (gate idêntico ao passo 2).
+4. Há `Rule` cujo `body` casa o caminho pedido → `hibrido` (**vence** empate com playbook do passo 3 e com rede do passo 5). Requer `tf_ok`.
+5. Entidades no KG: `viabilidade` → `rede` via `report()`; `relacao_kg` → `rede` via `TripleScorer`. Requer `tf_ok`.
 6. Fallback RAG semântico (`match_chunks`) se grafo/playbook falharam → `modo=rag`, fontes `chunk:` / `sim:` / `grupo:`.
 7. Nada → recusa: `modo=regra`, `fontes=[]`, `porque=sem_match` — **sem** pitch demo toy (Projector / Savassi viável / herda renda).
 
-`regra_fallback` **só** no passo 2 (`not tf_ok` + playbook factual). Com TF no ar, playbook = `regra`.
+`regra_fallback` **só** no passo 2 (`not tf_ok` **e** `playbook_factual_puro`). Com TF no ar, playbook = `regra`.
 
 **Empates**
 
@@ -136,11 +168,19 @@ intent ∈ {
 | 3 (playbook factual) vs 4 (Rule) | **híbrido (4)** se body grounding |
 | 4 vs 5 | **híbrido** se grounding; senão rede |
 
+### Bairros ambíguos (lista locked)
+
+Canônico = frozenset em `scripts/jarvis_rag.py` (`_BAIRROS_AMBIGUOS`), slugs kebab:
+
+`centro`, `paraiso`, `boa-vista`, `bela-vista`, `jardim-america`, `jardim-paulista`, `vila-nova`, `vila-maria`, `santo-antonio`, `sao-jose`, `sao-francisco`, `industrial`, `cidade-nova`, `alto-da-boa-vista`
+
+Sem cidade + slug ∈ lista → `geo:ambiguidade` (não mesclar Brasil).
+
 ### Clarificação geo vs recusa KG (um tom)
 
 | Situação | `modo` | Comportamento |
 |----------|--------|---------------|
-| Bairro ambíguo sem cidade (lista locked: centro, paraíso, …) | `rag` | Pedir cidade; `fontes` incl. `geo:ambiguidade` |
+| Bairro ambíguo sem cidade (§ lista locked) | `rag` | Pedir cidade; `fontes` incl. `geo:ambiguidade` |
 | Entidade pedida fora do KG toy (viabilidade/relação) | `regra` | Recusa + exemplo de entidade **que existe no fixture**; sem misturar pitch de penetração |
 | Counts 0 com bairro+cidade válidos | `rag` | Explicar gap / sem cobertura indexada; opcional oferecer outro bairro |
 
@@ -176,14 +216,17 @@ Arquivo: `scripts/jarvis_qa_test.py` (pytest; motor TF/Keras). **Sem** `npx` / T
 2. Viabilidade entidade toy → `modo=rede`, `report:…`, `rotulo` em `porque`
 3. Caminho `Rule` toy → `modo=hibrido`, `rule:…`
 4. “asdf qwerty” → `porque=sem_match`, sem pitch toy
-5. TF off + Projector → `regra_fallback`; TF off + viabilidade → `sem_match`
+5. TF off (¬A) + Projector factual → `regra_fallback`; TF off + viabilidade → `sem_match`
+5b. TF import ok + `kg-toy.json` ausente/corrupto + viabilidade → `modo=regra`, `porque=kg_toy_indisponivel` (não `sem_match`)
+5c. TF off + “Projector herda renda” (`pede_rule_grounding`) → **não** `regra_fallback` de Projector; `sem_match` ou `kg_toy_indisponivel` conforme bits A/B/C
 
 **Addendum RAG (obrigatório)**
 
-6. Penetração bairro+cidade com counts > 0 → `modo=rag`, `rag:penetracao`, `tp:`/`wh:`/`gp:`/`receita:`
-7. Bairro ambíguo sem cidade → `modo=rag`, `geo:ambiguidade`, pede cidade
+6. Penetração bairro+cidade com counts > 0 → `modo=rag`, `rag:penetracao`, `tp:`/`wh:`/`gp:`/`receita:`; `contexto.oferta == "cruzar"`
+7. Bairro ambíguo sem cidade (slug ∈ lista locked) → `modo=rag`, `geo:ambiguidade`, pede cidade
 8. `mesmo_escopo` e max(TP,WH,GP) > Receita → prosa **sem** % de mercado
 9. `mesmo_escopo` e Receita ≥ max e WH>0 → pode narrar % WH; TF off **não** desliga penetração RAG
+10. Após smoke 6: segundo `ask("sim", contexto=eco)` honra oferta `cruzar` (eixo renda default) **ou** responde eixo pedido — não `sem_match` genérico
 
 TTS/STT **não** no CI (testes ElevenLabs marcam skip sem chave).
 
@@ -242,7 +285,22 @@ Ops de backfill (GP/TP/Receita) permanecem na § Contagem abaixo; acceptance aci
 | Sem cidade / nacional | % omitida |
 | Receita = 0 | % omitida |
 
-Após counts > 0: oferta leve de cruzar renda/aluguel no grafo (TF como **meio**).
+Após counts > 0: oferta leve de cruzar renda/aluguel no grafo (TF como **meio**); setar `contexto.oferta = "cruzar"` (e `entidade` se houver âncora no turno).
+
+### `mesmo_escopo` (definição locked)
+
+Retorno de `contar_penetracao` / narrador:
+
+```text
+geo_scope =
+  "cidade"       se cidade canônica foi fornecida e aplicada no filtro dos 4 grupos
+  "ambiguidade"  se sem cidade E slug ∈ _BAIRROS_AMBIGUOS
+  "nacional"     se sem cidade E slug não ambíguo
+
+mesmo_escopo = (geo_scope == "cidade")
+```
+
+Só com `mesmo_escopo=true` a prosa pode calcular % WH/Receita (sujeito à tabela denom abaixo). Escopo nacional ou ambiguidade → % omitida.
 
 ## Addendum — correção de contrato (2026-09-06)
 
@@ -256,21 +314,32 @@ Fecha os furos da revisão:
 | 4 | matcher indefinido | § Playbook matcher |
 | 5 | fontes RAG | tabela § Fontes |
 | 6 | backfill silencioso | § Acceptance |
-| 7 | `tf_ok` raso | fixture obrigatório; `kg_toy_indisponivel` |
+| 7 | `tf_ok` raso | bits A/B/C; `kg_toy_indisponivel` na ordem (não só prosa) |
 | 8 | dois tons de recusa | tabela clarificação geo vs KG |
 | 9 | segredos incompletos | § Segredos operacionais |
-| 10 | smokes só TF | casos 6–9 |
-| 11 | estado JSON sumiu | § Contexto |
+| 10 | smokes só TF | casos 6–10 |
+| 11 | estado JSON sumiu | § Contexto + smoke 10 |
 | 12 | `npx` orphan | CLI só Python |
 | 13 | conflito só prosa | explícito v1 |
 | 14 | thresholds | § Constantes v1 |
 | 15 | scope mentia | Scope atualizado |
 | 16–18 | Drive / typo repo / Slack | nota Problem; repo canônico; Slack irrelevante |
 
+### Bugbot follow-up (2026-09-06)
+
+| # | Finding | Resolução |
+|---|---------|-----------|
+| B1 | Passo 2 ignora `kg_toy_indisponivel` | bits A/B/C + ramo explícito antes/dentro do passo 2 |
+| B2 | Passo 2 sem gate factual puro | predicados `playbook_factual_puro` / `pede_rule_grounding`; smoke 5c |
+| B3 | `mesmo_escopo` indefinido | § definição locked (`geo_scope == "cidade"`) |
+| B4 | lista ambíguos incompleta | 14 slugs + ponteiro `jarvis_rag._BAIRROS_AMBIGUOS` |
+| B5 | smoke `kg_toy_indisponivel` | caso 5b |
+| B6 | `contexto.oferta` sem smoke | casos 6 + 10 |
+
 ## Self-review
 
 - Enum e ordem cobrem TF **e** RAG; self-review anterior “sem TBD” era falso — corrigido aqui.
-- `regra_fallback` só TF morto + playbook factual.
-- Fixture KG obrigatório para caminhos rede/híbrido.
-- Acceptance de penetração distingue gap de dados vs bug de router.
+- `regra_fallback` só TF morto + `playbook_factual_puro` (mesmo gate do passo 3).
+- Fixture KG obrigatório para caminhos rede/híbrido; falha → `kg_toy_indisponivel` nos smokes.
+- `mesmo_escopo` e bairros ambíguos enumerados; acceptance distingue gap vs bug.
 - Voz/ElevenLabs e KG real de bairro = docs separados (não reabrir este contrato sem addendum).
