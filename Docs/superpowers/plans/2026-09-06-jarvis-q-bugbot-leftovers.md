@@ -45,7 +45,7 @@
 - Consumes: `ask(texto, tf_ok=False)`, `is_playbook_factual_puro`, passo 2
 - Produces: `modo != regra_fallback`; `porque` ∈ {`sem_match`, `kg_toy_indisponivel`} conforme bits; **não** `playbook:#f13` em `fontes`
 
-- [ ] **Step 1: Write the failing test**
+- [x] **Step 1: Write the failing test**
 
 ```python
 def test_ask_tf_off_projector_herda_renda_nao_fallback():
@@ -57,7 +57,7 @@ def test_ask_tf_off_projector_herda_renda_nao_fallback():
     assert r["porque"] in ("sem_match", "kg_toy_indisponivel")
 ```
 
-- [ ] **Step 2: Run test to verify it fails (or already passes)**
+- [x] **Step 2: Run test to verify it fails (or already passes)**
 
 ```powershell
 cd C:\Users\marce\jarvis-eleven
@@ -66,13 +66,13 @@ cd C:\Users\marce\jarvis-eleven
 
 Expected: FAIL se o passo 2 ainda promove FAQ sem gate; PASS se `is_playbook_factual_puro` já bloqueia (aí só documentar e ir ao Step 4).
 
-- [ ] **Step 3: Minimal fix se FAIL**
+- [x] **Step 3: Minimal fix se FAIL**
 
 No bloco `if not tf_ok:`: só `regra_fallback` quando `intent == "playbook_aba"` **e** `is_playbook_factual_puro(q, toy)` (toy pode ser `{}` se missing — gate ainda rejeita `herda`+`renda`).
 
 Não promover `playbook_aba` a partir de `lixo` se `not is_playbook_factual_puro`.
 
-- [ ] **Step 4: Run test — expect PASS**
+- [x] **Step 4: Run test — expect PASS**
 
 ```powershell
 .\.venv\Scripts\python.exe -m pytest scripts/jarvis_qa_test.py::test_ask_tf_off_projector_herda_renda_nao_fallback scripts/jarvis_qa_test.py::test_ask_tf_off_projector_fallback -v
@@ -105,7 +105,7 @@ git commit -m "test(jarvis-q): smoke 5c — TF off + rule grounding nao vira pla
     - se `entidade` ∉ toy → `modo=regra`, `porque=bairro_fora_do_kg_toy`, `fontes=["rag:penetracao"]` (ou `kg:triple` vazio), prosa sem pitch toy
     - se `oferta=cruzar` e aceite e `entidade is None` → pedir bairro / `porque=cruzar_sem_entidade` (não `sem_match`)
 
-- [ ] **Step 1: Write failing tests**
+- [x] **Step 1: Write failing tests**
 
 ```python
 def test_penetracao_contexto_entidade_e_oferta(monkeypatch):
@@ -142,7 +142,7 @@ def test_ask_penetracao_smoke10_eco_cruzar(monkeypatch):
     assert "savassi" not in r2["resposta"].casefold()
 ```
 
-- [ ] **Step 2: Run tests — expect FAIL**
+- [x] **Step 2: Run tests — expect FAIL**
 
 ```powershell
 .\.venv\Scripts\python.exe -m pytest scripts/jarvis_qa_test.py::test_penetracao_contexto_entidade_e_oferta scripts/jarvis_qa_test.py::test_ask_penetracao_smoke10_eco_cruzar -v
@@ -150,7 +150,7 @@ def test_ask_penetracao_smoke10_eco_cruzar(monkeypatch):
 
 Expected: FAIL (`entidade` ausente e/ou `sem_match` no segundo turno).
 
-- [ ] **Step 3: Implement**
+- [x] **Step 3: Implement**
 
 1. No passo 0 (após counts > 0), além de `oferta=cruzar`:
 
@@ -197,7 +197,7 @@ Permitir follow-up mesmo com `not ents` e `faq is None`; **não** exigir `tf_ok`
 
 3. Spec Errors (uma linha): `bairro_fora_do_kg_toy` = oferta cruzar após RAG quando slug ∉ toy.
 
-- [ ] **Step 4: Run tests — expect PASS**
+- [x] **Step 4: Run tests — expect PASS**
 
 ```powershell
 .\.venv\Scripts\python.exe -m pytest scripts/jarvis_qa_test.py::test_penetracao_contexto_entidade_e_oferta scripts/jarvis_qa_test.py::test_ask_penetracao_smoke10_eco_cruzar scripts/jarvis_qa_test.py::test_penetracao_counts_positivos_oferece_cruzar scripts/jarvis_qa_test.py::test_followup_cumpre_a_oferta -v
@@ -220,7 +220,7 @@ git commit -m "fix(jarvis-q): smoke 10 — entidade apos penetracao e cruzar for
 - Verify: `scripts/jarvis_qa_test.py`
 - Sync: copiar spec atualizado para `assistent-control` se o worktree divergir
 
-- [ ] **Step 1: Run focused suite**
+- [x] **Step 1: Run focused suite**
 
 ```powershell
 cd C:\Users\marce\jarvis-eleven
@@ -229,7 +229,7 @@ cd C:\Users\marce\jarvis-eleven
 
 Expected: PASS
 
-- [ ] **Step 2: Sync docs to main workspace (copy, sem commit)**
+- [x] **Step 2: Sync docs to main workspace (copy, sem commit)**
 
 ```powershell
 Copy-Item C:\Users\marce\jarvis-eleven\Docs\superpowers\specs\2026-09-03-jarvis-q-tf-design.md `
@@ -238,7 +238,7 @@ Copy-Item C:\Users\marce\assistent-control\Docs\superpowers\plans\2026-09-06-jar
   C:\Users\marce\jarvis-eleven\Docs\superpowers\plans\2026-09-06-jarvis-q-bugbot-leftovers.md -Force
 ```
 
-- [ ] **Step 3: Commit** (só se humano pedir) — opcional, mensagem: `docs(jarvis-q): plan bugbot leftovers 5c+10`
+- [x] **Step 3: Commit** (só se humano pedir) — opcional, mensagem: `docs(jarvis-q): plan bugbot leftovers 5c+10`
 
 ---
 
